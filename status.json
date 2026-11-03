@@ -31,19 +31,32 @@
     "18:08:53 ********4197: connection close 515 Stream Errored (restart required)",
     "18:08:58 ********4197: CONNECTED ✅",
     "18:09:16 ********5182: LINKING (phone ne code accept kiya)",
-    "18:11:30 ********5182: connection close 428 Connection Terminated by Server"
+    "18:11:30 ********5182: connection close 428 Connection Terminated by Server",
+    "18:11:37 ********5182: connection close 401 Connection Failure",
+    "18:11:37 ********5182: logged out"
   ],
   "guest_frames": {
-    "number": "********4197",
-    "state": "connected",
+    "number": "********5182",
+    "state": "linking",
     "frames": [
-      "18:08:29 iq:set <pair-device>",
-      "18:08:32 iq:result <link_code_companion_reg[companion_hello]>",
-      "18:08:49 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
-      "18:08:49 iq:result",
-      "18:08:51 iq:set <pair-success>",
-      "18:08:53 stream:error: code=515",
-      "18:08:53 xmlstreamend:"
+      "18:08:00 iq:set <pair-device>",
+      "18:08:00 iq:result <link_code_companion_reg[companion_hello]>",
+      "18:08:30 iq:result",
+      "18:09:00 iq:result",
+      "18:09:15 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
+      "18:09:16 iq:result",
+      "18:09:30 iq:result",
+      "18:10:00 iq:get",
+      "18:10:00 iq:result",
+      "18:10:18 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
+      "18:10:18 iq:result",
+      "18:10:25 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
+      "18:10:25 iq:result",
+      "18:10:30 iq:result",
+      "18:10:32 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
+      "18:10:32 iq:result",
+      "18:11:00 iq:result",
+      "18:11:30 xmlstreamend:"
     ]
   },
   "channel": {
@@ -54,6 +67,6 @@
     "opted_in": 1,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-03T18:11:34.535Z",
-  "uptime_s": 630
+  "updated_at": "2026-11-03T18:11:37.994Z",
+  "uptime_s": 634
 }
