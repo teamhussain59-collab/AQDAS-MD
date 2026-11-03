@@ -8,6 +8,17 @@
   "slots_max": 10,
   "panel_url": "https://wise-des-generation-drivers.trycloudflare.com",
   "panel_at": "2026-11-03T17:33:19.390Z",
-  "updated_at": "2026-11-03T17:33:19.390Z",
-  "uptime_s": 5
+  "linked": [
+    {
+      "number": "********7157",
+      "state": "connected"
+    }
+  ],
+  "guest_log": [
+    "17:33:16 ********7157: LINKING (phone ne code accept kiya)",
+    "17:33:16 ********7157: CONNECTED ✅"
+  ],
+  "guest_frames": null,
+  "updated_at": "2026-11-03T17:33:20.827Z",
+  "uptime_s": 6
 }
