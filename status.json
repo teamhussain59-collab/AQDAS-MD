@@ -12,13 +12,24 @@
     {
       "number": "********7157",
       "state": "connected"
+    },
+    {
+      "number": "********5182",
+      "state": "pairing"
     }
   ],
   "guest_log": [
     "18:01:07 ********7157: LINKING (phone ne code accept kiya)",
     "18:01:08 ********7157: CONNECTED ✅"
   ],
-  "guest_frames": null,
+  "guest_frames": {
+    "number": "********5182",
+    "state": "pairing",
+    "frames": [
+      "18:08:00 iq:set <pair-device>",
+      "18:08:00 iq:result <link_code_companion_reg[companion_hello]>"
+    ]
+  },
   "channel": {
     "ok": true,
     "name": "AQDAS TECH",
@@ -27,6 +38,6 @@
     "opted_in": 0,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-03T18:07:05.537Z",
-  "uptime_s": 361
+  "updated_at": "2026-11-03T18:08:04.978Z",
+  "uptime_s": 421
 }
