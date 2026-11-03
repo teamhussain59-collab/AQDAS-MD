@@ -1,12 +1,12 @@
 {
   "status": "waiting_qr",
   "code": null,
-  "qr": "https://wa.me/settings/linked_devices#2@n/XH6Owth2+0h8BWVWQeyXjU2An+arsJXNO1HS8pzZGlOH9MmmPHs7zI6ltaxUfbPYAAEz+tarYJfdNByQV/fJ4HDeJF/808o60=,Ee3O3z264mL6z4o1c9aV6tx4jHFES9S5H34WeFYfTi4=,eSY0AW4ghT+4f0nDLIPaO41hwfH1r5ko4uU55OZLUQU=,z2IotDIgOuvQYCjmd4Ad9PYHp4ebDbEBd0az5JYTK70=,1",
-  "qr_at": "2026-11-03T14:59:27.260Z",
+  "qr": "https://wa.me/settings/linked_devices#2@nfEkysKh9KJcnEqEuCayc6teyktJAnjt3VOX5ZUHmFKvidG9+zmgA8APKWeZa/FRSc1eMQuvr5x6/IJ1be/wb7a/ZWWUrCZCAus=,Ee3O3z264mL6z4o1c9aV6tx4jHFES9S5H34WeFYfTi4=,eSY0AW4ghT+4f0nDLIPaO41hwfH1r5ko4uU55OZLUQU=,z2IotDIgOuvQYCjmd4Ad9PYHp4ebDbEBd0az5JYTK70=,1",
+  "qr_at": "2026-11-03T15:00:07.280Z",
   "code_at": null,
   "last_event": null,
   "number_masked": "********7157",
   "run_id": "41658858081",
-  "updated_at": "2026-11-03T14:59:27.260Z",
-  "uptime_s": 41
+  "updated_at": "2026-11-03T15:00:07.280Z",
+  "uptime_s": 81
 }
