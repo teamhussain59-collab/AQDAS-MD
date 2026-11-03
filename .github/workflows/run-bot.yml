@@ -13,6 +13,10 @@
 name: AQDAS MD Bot
 on:
   workflow_dispatch:
+  # code badle (main branch) to bot khud naye code se restart
+  push:
+    branches: [main]
+    paths: ['lib/**', 'plugins/**', 'main.js', 'config.js', 'package.json', 'scripts/**', '.github/workflows/run-bot.yml']
   schedule:
     - cron: '0 */6 * * *'
 permissions:
