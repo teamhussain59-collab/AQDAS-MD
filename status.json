@@ -1,12 +1,15 @@
 {
-  "status": "idle",
+  "status": "offline",
   "code": null,
+  "qr": null,
+  "qr_at": null,
   "code_at": null,
+  "next_at": null,
   "last_event": null,
   "number_masked": null,
   "run_id": "41687773100",
   "slots_max": 10,
-  "panel_url": "https://ultra-capacity-sometimes-fill.trycloudflare.com",
+  "panel_url": null,
   "panel_at": "2026-11-03T17:49:30.670Z",
   "linked": [
     {
@@ -19,6 +22,6 @@
     "17:49:28 ********7157: CONNECTED ✅"
   ],
   "guest_frames": null,
-  "updated_at": "2026-11-03T17:49:32.831Z",
-  "uptime_s": 7
+  "updated_at": "2026-11-03T17:50:28.093Z",
+  "uptime_s": 62
 }
