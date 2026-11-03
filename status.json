@@ -37,7 +37,8 @@
     "number": "",
     "state": "pairing",
     "frames": [
-      "17:54:08 iq:set <pair-device>"
+      "17:54:08 iq:set <pair-device>",
+      "17:54:38 iq:result"
     ]
   },
   "channel": {
@@ -47,6 +48,6 @@
     "auto": true,
     "opted_in": 0
   },
-  "updated_at": "2026-11-03T17:54:13.084Z",
-  "uptime_s": 194
+  "updated_at": "2026-11-03T17:54:43.086Z",
+  "uptime_s": 224
 }
