@@ -1,7 +1,10 @@
 {
-  "status": "waiting_pair",
-  "code": "L7LJ-NZRE",
+  "status": "starting",
+  "code": null,
+  "code_at": null,
+  "last_event": null,
   "number_masked": "********7157",
-  "run_id": "41655879723",
-  "updated_at": "2026-11-03T14:46:00.471Z"
+  "run_id": "41657107689",
+  "updated_at": "2026-11-03T14:48:17.876Z",
+  "uptime_s": 0
 }
