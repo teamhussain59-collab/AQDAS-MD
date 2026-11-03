@@ -34,7 +34,8 @@
     "state": "pairing",
     "frames": [
       "17:52:33 iq:set <pair-device>",
-      "17:52:34 iq:result <link_code_companion_reg[companion_hello]>"
+      "17:52:34 iq:result <link_code_companion_reg[companion_hello]>",
+      "17:53:03 iq:result"
     ]
   },
   "channel": {
@@ -44,6 +45,6 @@
     "auto": true,
     "opted_in": 0
   },
-  "updated_at": "2026-11-03T17:53:00.796Z",
-  "uptime_s": 122
+  "updated_at": "2026-11-03T17:53:07.757Z",
+  "uptime_s": 129
 }
