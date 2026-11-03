@@ -4,21 +4,8 @@
   "code_at": null,
   "last_event": null,
   "number_masked": null,
-  "run_id": "41670404731",
+  "run_id": "41672181311",
   "slots_max": 10,
-  "panel_url": "https://forget-workstation-workplace-explore.trycloudflare.com",
-  "panel_at": "2026-11-03T16:06:09.598Z",
-  "linked": [
-    {
-      "number": "********7157",
-      "state": "connected"
-    }
-  ],
-  "guest_log": [
-    "16:06:06 ********7157: LINKING (phone ne code accept kiya)",
-    "16:06:07 ********7157: CONNECTED ✅"
-  ],
-  "guest_frames": null,
-  "updated_at": "2026-11-03T16:06:11.076Z",
-  "uptime_s": 6
+  "updated_at": "2026-11-03T16:16:27.702Z",
+  "uptime_s": 1
 }
