@@ -1,16 +1,16 @@
 {
-  "status": "starting",
+  "status": "rate_limited",
   "code": null,
   "qr": null,
   "qr_at": null,
   "code_at": null,
-  "next_at": null,
-  "last_event": "close 428 Connection Terminated by Server",
+  "next_at": "2026-11-03T16:05:31.950Z",
+  "last_event": "WhatsApp ne bohat codes ki wajah se 40 min ke liye rok diya (rate-overlimit)",
   "number_masked": "********7157",
   "run_id": "41661517313",
   "slots_max": 10,
   "panel_url": "https://appraisal-certified-url-institute.trycloudflare.com",
   "panel_at": "2026-11-03T15:14:41.206Z",
-  "updated_at": "2026-11-03T15:28:50.332Z",
-  "uptime_s": 853
+  "updated_at": "2026-11-03T15:28:51.650Z",
+  "uptime_s": 855
 }
