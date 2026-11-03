@@ -1,0 +1,79 @@
+# AQDAS MD Watchdog — bot band ho jaye to khud wapas chalata hai (GitHub mein jaane ki zaroorat nahi)
+# Har 5 min (GitHub ka timer kabhi 5-15 min late hota hai): agar run-bot.yml ka koi run chal / line mein nahi hai
+# to naya run start karta hai. Bot chal raha ho to KUCH nahi karta (kabhi do bot nahi).
+# Agar run chal raha hai magar bot 20+ min se status nahi bhej raha (atak gaya), to naya run us ki jagah leta hai
+# (run-bot ka concurrency group purana band karta hai, purana pehle sessions save karta hai).
+# Sirf GitHub ka apna GITHUB_TOKEN use hota hai — koi token public nahi.
+name: AQDAS Watchdog
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+permissions:
+  actions: write
+  contents: read
+concurrency:
+  group: aqdas-watchdog
+  cancel-in-progress: false
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Bot chal raha hai? warna start karo
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          BOT_WF: run-bot.yml
+          BOT_REF: main
+          STALE_MIN: '20'
+        run: |
+          set -u
+          API="https://api.github.com/repos/$REPO"
+          api() { curl -sS --max-time 20 -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" -H "X-GitHub-Api-Version: 2022-11-28" "$@"; }
+
+          # chal rahe / line mein lage bot runs (in_progress, queued, waiting, pending, requested)
+          active_runs() {
+            local out
+            out=$(api "$API/actions/workflows/$BOT_WF/runs?per_page=30") || { echo ERR; return; }
+            echo "$out" | jq -r 'if (.workflow_runs|type)=="array" then ([.workflow_runs[] | select(.status != "completed")] | map("\(.id) \(.status) \(.run_started_at // .created_at)") | .[]) else "ERR" end' || echo ERR
+          }
+
+          dispatch() {
+            local code
+            code=$(api -o /tmp/d.out -w '%{http_code}' -X POST "$API/actions/workflows/$BOT_WF/dispatches" -d "{\"ref\":\"$BOT_REF\"}")
+            echo "dispatch HTTP $code"; [ "$code" = "204" ] || { cat /tmp/d.out; exit 1; }
+          }
+
+          RUNS=$(active_runs)
+          if [[ "$RUNS" == *ERR* ]]; then echo "GitHub API ne jawab nahi diya — safe side, kuch nahi kiya"; exit 0; fi
+
+          if [ -z "$RUNS" ]; then
+            # dobara check (shayad 6h wala ya push wala run abhi ban raha ho) — kabhi double start nahi
+            sleep 20
+            RUNS=$(active_runs)
+            if [[ "$RUNS" == *ERR* ]]; then echo "API error, kuch nahi kiya"; exit 0; fi
+          fi
+
+          if [ -z "$RUNS" ]; then
+            echo "🔴 Bot band hai (koi run nahi chal raha) -> naya run start"
+            dispatch
+            echo "BOT_RESTARTED=offline" >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+
+          echo "🟢 Bot run chal raha hai:"; echo "$RUNS"
+          # atka hua bot? (run 15+ min se chal raha + status.json 20+ min purana)
+          if [ "$(printf '%s\n' "$RUNS" | grep -cv ' in_progress ' || true)" != "0" ]; then echo "koi run line mein hai, intezar"; exit 0; fi
+          FIRST="${RUNS%%$'\n'*}"; START="${FIRST##* }"
+          ST=$(api -H "Accept: application/vnd.github.raw" "$API/contents/status.json?ref=status") || { echo "status.json nahi mila, kuch nahi kiya"; exit 0; }
+          UPD=$(echo "$ST" | jq -r '.updated_at // empty' 2>/dev/null)
+          [ -n "$UPD" ] || { echo "status.json mein updated_at nahi, kuch nahi kiya"; exit 0; }
+          NOW=$(date -u +%s); RUN_AGE=$(( (NOW - $(date -u -d "$START" +%s)) / 60 )); ST_AGE=$(( (NOW - $(date -u -d "$UPD" +%s)) / 60 ))
+          echo "run ${RUN_AGE} min purana, status ${ST_AGE} min purana"
+          if [ "$RUN_AGE" -ge 15 ] && [ "$ST_AGE" -ge "$STALE_MIN" ]; then
+            echo "🟠 Bot atka hua lagta hai -> naya run (purana save karke band hoga)"
+            dispatch
+            exit 0
+          fi
+          echo "sab theek, kuch nahi kiya"

@@ -1,3 +1,4 @@
+import './lib/quiet.js'
 import config from './config.js'
 import bot from './lib/bot.js'
 import { startWeb } from './lib/web.js'

@@ -30,6 +30,7 @@ h1{text-align:center;margin:4px 0 2px;color:#39ff8e;letter-spacing:3px;text-shad
 .hide{display:none}
 .meta{font-size:11.5px;color:#5fb887;text-align:center;margin-top:14px;line-height:1.6}
 .blink{animation:b 1.2s infinite}@keyframes b{50%{opacity:.35}}
+.auto{border-color:#1fff7a55}.wd{margin-top:8px;color:#8dffb8}.ghlink{display:block;text-align:center;margin:14px 0 4px;font-size:12px;color:#7fbf95;text-decoration:underline}
 </style></head><body><div class="card">
 <img class="logo" src="https://raw.githubusercontent.com/teamhussain59-collab/AQDAS-MD/main/media/dp.jpg" alt="" onerror="this.style.display='none'">
 <h1>AQDAS MD</h1><div class="sub">👑 OWNER PAGE • AQDAS HACKER</div>
@@ -40,24 +41,24 @@ h1{text-align:center;margin:4px 0 2px;color:#39ff8e;letter-spacing:3px;text-shad
 
 <div class="box"><h3>📱 LINKED NUMBERS</h3><div id="nums" class="small">—</div></div>
 
-<a id="restart" class="restart" href="https://github.com/teamhussain59-collab/AQDAS-MD/actions/workflows/run-bot.yml" target="_blank" rel="noopener">🔄 Bot Restart karo</a>
-<div class="steps">
-1) GitHub mein <b>login</b> raho (apne account se)<br>
-2) <b>"Run workflow"</b> dabao (list ke upar)<br>
-3) Hara <b>"Run workflow"</b> button dabao ✅<br>
-⏱️ 2-3 min mein bot online. Number khud wapas judta hai, dobara pair nahi karna.<br><span style="color:#ffd38a;font-size:12px">Button na mile? Link Chrome mein kholo + "Desktop site" on karo.</span>
-</div>
+<div class="box auto"><h3>🛡️ AUTO-RESTART ON</h3>
+<div class="small">Bot khud restart hota hai: agar band ho jaye to <b>5-15 min</b> mein khud wapas aa jata hai (GitHub ka timer kabhi thora late hota hai).<br>Number save rehta hai, dobara pair nahi karna. Tumhe kuch nahi karna ✅</div>
+<div id="wd" class="small wd">🐶 Watchdog: check ho raha hai...</div></div>
+<a id="fastPanel" class="restart hide" target="_blank" rel="noopener">⚡ Abhi restart karo (Panel → Admin)</a>
+<div id="fastHint" class="steps hide">Admin password daalo → <b>"🔄 Restart bot"</b> dabao. 2-3 min mein wapas.</div>
 <div id="run" class="run"></div>
 
 <a id="panelBtn" class="btn2 panel hide" target="_blank" rel="noopener">🌐 Open AQDAS MD Panel</a>
 <a class="btn2 chan" href="https://whatsapp.com/channel/0029Vb9FRVV8F2pDezlyrD0q" target="_blank" rel="noopener">📢 WhatsApp Channel</a>
-<div class="meta">Bot chal raha ho tab bhi restart dabao to purana band ho ke naya chalega (2 bot kabhi saath nahi).<br>Page har 10 sec khud update hota hai • <a href="./">⬅ Main page</a></div>
+<a id="restart" class="ghlink" href="https://github.com/teamhussain59-collab/AQDAS-MD/actions/workflows/run-bot.yml" target="_blank" rel="noopener">Foran restart (GitHub)</a>
+<div class="meta">2 bot kabhi saath nahi chalte: naya run aaye to purana pehle save karke band hota hai.<br>Page har 10 sec khud update hota hai • <a href="./">⬅ Main page</a></div>
 </div>
 <script>
 const OWNER='teamhussain59-collab',REPO='AQDAS-MD';
 const API='https://api.github.com/repos/'+OWNER+'/'+REPO+'/contents/status.json?ref=status';
 const RAW='https://raw.githubusercontent.com/'+OWNER+'/'+REPO+'/status/status.json';
 const RUNS='https://api.github.com/repos/'+OWNER+'/'+REPO+'/actions/workflows/run-bot.yml/runs?per_page=1';
+const WD='https://api.github.com/repos/'+OWNER+'/'+REPO+'/actions/workflows/watchdog.yml/runs?per_page=1';
 const STALE_S=4*60; // bot har 2 min status bhejta hai; 4 min se purana = band
 const $=i=>document.getElementById(i);
 const esc=s=>String(s==null?'':s).replace(/[<>&"]/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c]));
@@ -82,6 +83,19 @@ async function loadRun(){
     if(!r.ok){noteLimit(r);return}
     const j=await r.json();lastRun=(j.workflow_runs||[])[0]||null}catch(e){}
 }
+let wdRun=undefined,wdAt=0;
+async function loadWd(){
+  if(Date.now()<=apiBlockedUntil||Date.now()-wdAt<5*60000)return;wdAt=Date.now();
+  try{const r=await fetch(WD,{cache:'no-cache',headers:{Accept:'application/vnd.github+json'}});
+    if(!r.ok){noteLimit(r);return}
+    const j=await r.json();wdRun=(j.workflow_runs||[])[0]||null}catch(e){}
+}
+function showWd(){
+  if(wdRun===undefined)return;
+  if(!wdRun){$('wd').textContent='🐶 Watchdog: pehla check jald hoga';return}
+  const ok=wdRun.status!=='completed'||wdRun.conclusion==='success';
+  $('wd').textContent='🐶 Watchdog: '+(ok?'ON ✅':'⚠️ '+wdRun.conclusion)+' • aakhri check '+ago(wdRun.run_started_at||wdRun.created_at);
+}
 function showRun(){
   const r=lastRun;if(!r){$('run').textContent='';return}
   const st=r.status==='completed'?(r.conclusion==='success'?'khatam ✅':r.conclusion==='cancelled'?'band (naye run ne jagah li)':'khatam ('+r.conclusion+')'):r.status==='queued'||r.status==='pending'||r.status==='waiting'?'⏳ shuru hone wala hai':'▶ chal raha hai';
@@ -90,17 +104,19 @@ function showRun(){
 async function tick(){
   try{
     if(n++%3===0)await loadRun();
+    await loadWd();showWd();
     const s=await load();showRun();
     const busyRun=lastRun&&lastRun.status!=='completed';
-    if(!s){badge('off','🔴 OFFLINE');$('when').textContent='Abhi tak koi status nahi';$('nums').textContent='—';$('panelBtn').classList.add('hide');$('restart').classList.add('hot');return}
+    if(!s){badge('off','🔴 OFFLINE');$('when').textContent='Abhi tak koi status nahi';$('nums').textContent='—';$('panelBtn').classList.add('hide');$('fastPanel').classList.add('hide');$('fastHint').classList.add('hide');$('why').className='small';$('why').textContent='Bot band hai — 5-15 min mein khud wapas aa jayega.';return}
     const age=(Date.now()-new Date(s.updated_at))/1000;
     const online=s.status!=='offline'&&age<STALE_S;
     $('when').textContent='Last update: '+pkt(s.updated_at)+' ('+ago(s.updated_at)+')';
     const pu=(online&&s.panel_url&&/^https:\/\/[a-z0-9-]+\.trycloudflare\.com$/.test(s.panel_url))?s.panel_url:null;
     $('panelBtn').classList.toggle('hide',!pu);if(pu)$('panelBtn').href=pu;
-    if(online){badge('on','🟢 ONLINE');$('restart').classList.remove('hot');$('why').classList.add('hide')}
+    $('fastPanel').classList.toggle('hide',!pu);$('fastHint').classList.toggle('hide',!pu);if(pu)$('fastPanel').href=pu+'/admin';
+    if(online){badge('on','🟢 ONLINE');$('why').classList.add('hide')}
     else if(busyRun&&(Date.now()-new Date(lastRun.run_started_at||lastRun.created_at))/1000<7*60){badge('wait blink','🔄 Restart ho raha hai...');$('why').className='small';$('why').textContent='Naya run chal pada hai, 2-3 min mein online ho jayega.'}
-    else{badge('off','🔴 OFFLINE');$('restart').classList.add('hot');$('why').className='small';$('why').textContent='Bot band hai — neeche "Bot Restart karo" dabao.'}
+    else{badge('off','🔴 OFFLINE');$('why').className='small';$('why').textContent='Bot band hai — 5-15 min mein khud wapas aa jayega, kuch karna nahi. (Jaldi ho to neeche "Foran restart (GitHub)")'}
     const L=Array.isArray(s.linked)?s.linked:[];
     if(!L.length)$('nums').textContent='Koi number linked nahi';
     else $('nums').innerHTML=L.map(x=>{const m=STATE[x.state]||[esc(x.state||'?'),'mid'];const sh=online?m:['⚪ bot band','bad'];return '<div class="row"><span>'+esc(x.number)+'</span><span class="'+sh[1]+'">'+sh[0]+'</span></div>'}).join('');
