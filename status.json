@@ -20,6 +20,10 @@
     {
       "number": "qr",
       "state": "pairing"
+    },
+    {
+      "number": "********5182",
+      "state": "pairing"
     }
   ],
   "guest_log": [
@@ -30,15 +34,15 @@
     "17:52:38 ******5182: code bana",
     "17:55:09 ********5182: connection close 428 Connection Terminated by Server",
     "17:55:12 ********5182: connection close 401 Connection Failure",
-    "17:55:12 ********5182: logged out"
+    "17:55:12 ********5182: logged out",
+    "17:55:36 ********5182: code bana"
   ],
   "guest_frames": {
-    "number": "",
+    "number": "********5182",
     "state": "pairing",
     "frames": [
-      "17:54:08 iq:set <pair-device>",
-      "17:54:38 iq:result",
-      "17:55:08 iq:result"
+      "17:55:31 iq:set <pair-device>",
+      "17:55:31 iq:result <link_code_companion_reg[companion_hello]>"
     ]
   },
   "channel": {
@@ -48,6 +52,6 @@
     "auto": true,
     "opted_in": 0
   },
-  "updated_at": "2026-11-03T17:55:16.633Z",
-  "uptime_s": 258
+  "updated_at": "2026-11-03T17:55:42.229Z",
+  "uptime_s": 284
 }
