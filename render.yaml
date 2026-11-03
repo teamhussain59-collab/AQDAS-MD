@@ -1,0 +1,25 @@
+# Render.com Blueprint: GitHub repo connect karo -> "New Blueprint" -> ye file khud parh lega
+services:
+  - type: web
+    name: aqdas-md
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: WEB
+        value: "true"
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: OWNER_NUMBER
+        sync: false
+      - key: OPENROUTER_API_KEY
+        sync: false
+      - key: OPENROUTER_MODEL
+        value: openai/gpt-4o-mini
+      - key: SESSION_ID
+        sync: false
+      - key: PREFIX
+        value: "."
+      - key: TZ
+        value: Asia/Karachi
