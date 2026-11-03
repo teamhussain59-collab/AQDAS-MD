@@ -1,0 +1,28 @@
+# Download sources test (manual) — GitHub runner se YouTube / TikTok / Insta / FB kaunse raste chalte hain
+name: Download test
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install yt-dlp (+ ffmpeg static)
+        run: |
+          pip install -U yt-dlp
+          curl -fsSL --max-time 120 -o /tmp/ff.tar.xz https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz && tar -xJf /tmp/ff.tar.xz -C /tmp && sudo cp /tmp/ffmpeg-*-static/ffmpeg /tmp/ffmpeg-*-static/ffprobe /usr/local/bin/ || echo "static ffmpeg fail"
+          ffmpeg -version | head -1 || true
+      - name: Probe
+        run: node test/dl_probe.mjs
+      - name: Bot download module (lib/download.js) test
+        if: always()
+        run: |
+          npm install --omit=dev --ignore-scripts >/dev/null 2>&1 || npm install --omit=dev >/dev/null 2>&1
+          node scripts/patch-baileys.mjs >/dev/null 2>&1 || true
+          if [ -f test/dl_module.mjs ]; then node test/dl_module.mjs; else echo "no module test"; fi
