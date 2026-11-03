@@ -1,7 +1,10 @@
 {
-  "status": "idle",
+  "status": "offline",
   "code": null,
+  "qr": null,
+  "qr_at": null,
   "code_at": null,
+  "next_at": null,
   "last_event": null,
   "number_masked": null,
   "run_id": "41682982801",
@@ -17,8 +20,8 @@
     "17:21:02 ********7157: CONNECTED ✅"
   ],
   "guest_frames": null,
-  "panel_url": "https://this-trainers-major-safari.trycloudflare.com",
+  "panel_url": null,
   "panel_at": "2026-11-03T17:21:06.053Z",
-  "updated_at": "2026-11-03T17:23:00.231Z",
-  "uptime_s": 121
+  "updated_at": "2026-11-03T17:23:32.984Z",
+  "uptime_s": 154
 }
