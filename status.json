@@ -8,6 +8,17 @@
   "slots_max": 10,
   "panel_url": "https://tin-prophet-lisa-ste.trycloudflare.com",
   "panel_at": "2026-11-03T17:42:09.096Z",
-  "updated_at": "2026-11-03T17:42:09.096Z",
-  "uptime_s": 5
+  "linked": [
+    {
+      "number": "********7157",
+      "state": "connected"
+    }
+  ],
+  "guest_log": [
+    "17:42:06 ********7157: LINKING (phone ne code accept kiya)",
+    "17:42:06 ********7157: CONNECTED ✅"
+  ],
+  "guest_frames": null,
+  "updated_at": "2026-11-03T17:42:10.453Z",
+  "uptime_s": 6
 }
