@@ -1,10 +1,10 @@
 {
-  "status": "starting",
-  "code": null,
-  "code_at": null,
+  "status": "waiting_pair",
+  "code": "LVEV-1Y4M",
+  "code_at": "2026-11-03T14:51:56.963Z",
   "last_event": "close 401 Connection Failure",
   "number_masked": "********7157",
   "run_id": "41657107689",
-  "updated_at": "2026-11-03T14:51:56.600Z",
-  "uptime_s": 219
+  "updated_at": "2026-11-03T14:51:58.061Z",
+  "uptime_s": 221
 }
