@@ -8,6 +8,17 @@
   "slots_max": 10,
   "panel_url": "https://garbage-script-appreciate-honolulu.trycloudflare.com",
   "panel_at": "2026-11-03T18:27:53.426Z",
-  "updated_at": "2026-11-03T18:27:53.426Z",
-  "uptime_s": 5
+  "linked": [
+    {
+      "number": "********7157",
+      "state": "connected"
+    }
+  ],
+  "guest_log": [
+    "18:27:50 ********7157: LINKING (phone ne code accept kiya)",
+    "18:27:51 ********7157: CONNECTED ✅"
+  ],
+  "guest_frames": null,
+  "updated_at": "2026-11-03T18:27:55.150Z",
+  "uptime_s": 7
 }
