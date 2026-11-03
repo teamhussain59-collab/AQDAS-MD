@@ -31,14 +31,30 @@
     "17:51:00 ********7157: CONNECTED ✅",
     "17:51:44 ********5182: code bana",
     "17:51:58 ********5182: LINKING (phone ne code accept kiya)",
-    "17:52:38 ******5182: code bana"
+    "17:52:38 ******5182: code bana",
+    "17:55:09 ********5182: connection close 428 Connection Terminated by Server",
+    "17:55:12 ********5182: connection close 401 Connection Failure",
+    "17:55:12 ********5182: logged out"
   ],
   "guest_frames": {
-    "number": "",
-    "state": "pairing",
+    "number": "********5182",
+    "state": "linking",
     "frames": [
-      "17:54:08 iq:set <pair-device>",
-      "17:54:38 iq:result"
+      "17:51:39 iq:set <pair-device>",
+      "17:51:39 iq:result <link_code_companion_reg[companion_hello]>",
+      "17:51:58 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
+      "17:51:58 iq:result",
+      "17:52:09 iq:result",
+      "17:52:39 iq:get",
+      "17:52:39 iq:result",
+      "17:52:48 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
+      "17:52:48 iq:result",
+      "17:52:48 notification:link_code_companion_reg <link_code_companion_reg[refresh_code]>",
+      "17:53:09 iq:result",
+      "17:53:39 iq:result",
+      "17:54:09 iq:result",
+      "17:54:39 iq:result",
+      "17:55:09 xmlstreamend:"
     ]
   },
   "channel": {
@@ -48,6 +64,6 @@
     "auto": true,
     "opted_in": 0
   },
-  "updated_at": "2026-11-03T17:54:59.814Z",
-  "uptime_s": 241
+  "updated_at": "2026-11-03T17:55:12.631Z",
+  "uptime_s": 254
 }
