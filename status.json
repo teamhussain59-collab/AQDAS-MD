@@ -1,7 +1,7 @@
 {
-  "status": "starting",
-  "code": null,
+  "status": "waiting_pair",
+  "code": "CHLR-8HT4",
   "number_masked": "********7157",
   "run_id": "41655879723",
-  "updated_at": "2026-11-03T14:40:20.006Z"
+  "updated_at": "2026-11-03T14:40:23.567Z"
 }
