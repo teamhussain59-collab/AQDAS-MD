@@ -17,11 +17,15 @@ function cmd (name, alias, kind, usage, desc, needUrl = false) {
       if (needUrl && !isUrl(ctx.text)) return ctx.reply(`❌ Link do. Use: ${ctx.prefix}${name} ${usage}`)
       await ctx.react('⏳')
       await ctx.reply(`📥 Download ho raha hai... (${kind === 'audio' ? 'song' : 'video'})`)
-      const r = await download(ctx.text, kind)
+      let r
+      try { r = await download(ctx.text, kind) } catch (e) { await ctx.react('❌'); return ctx.reply('❌ ' + e.message) }
       try {
         if (kind === 'audio') {
           await ctx.reply({ audio: r.buffer, mimetype: 'audio/mpeg', fileName: r.title + '.mp3' })
           await ctx.reply(`🎵 *${r.title}*\n_— AQDAS MD_`)
+        } else if (r.buffer.length > 60 * 1048576) {
+          // WhatsApp video ki had ~64MB: bari file document ban ke jati hai
+          await ctx.reply({ document: r.buffer, mimetype: 'video/mp4', fileName: r.title.slice(0, 60) + '.mp4', caption: `🎬 *${r.title}*\n(bari file, document mein)\n_— AQDAS MD_` })
         } else {
           await ctx.reply({ video: r.buffer, mimetype: 'video/mp4', caption: `🎬 *${r.title}*\n_— AQDAS MD_` })
         }

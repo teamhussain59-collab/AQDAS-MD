@@ -55,8 +55,15 @@ jobs:
       - name: Install ffmpeg + yt-dlp
         if: steps.check.outputs.ready == 'true'
         run: |
-          sudo apt-get update -y && sudo apt-get install -y ffmpeg
-          pip install -U yt-dlp
+          # static ffmpeg (~20 sec) — apt wala kabhi 9 min le leta tha; fail ho to apt
+          pip install -U yt-dlp &
+          if curl -fsSL --max-time 120 -o /tmp/ff.tar.xz https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz && tar -xJf /tmp/ff.tar.xz -C /tmp; then
+            sudo cp /tmp/ffmpeg-*-static/ffmpeg /tmp/ffmpeg-*-static/ffprobe /usr/local/bin/
+          else
+            sudo apt-get update -y && sudo apt-get install -y --no-install-recommends ffmpeg
+          fi
+          wait
+          ffmpeg -version | head -1; yt-dlp --version
       - name: Install cloudflared (public panel link)
         if: steps.check.outputs.ready == 'true'
         run: |

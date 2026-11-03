@@ -5,9 +5,9 @@ import { list } from '../lib/plugins.js'
 import { runtime } from '../lib/utils.js'
 import { dpPath, songPath } from '../lib/assets.js'
 
-const ICON = { main: '🏠', owner: '👑', auto: '⚙️', group: '👥', sticker: '🖼️', ai: '🤖', download: '📥', fun: '😂', tools: '🛠️', other: '✨' }
-const TITLE = { main: 'MAIN', owner: 'OWNER', auto: 'AUTO (ON/OFF)', group: 'GROUP', sticker: 'STICKER', ai: 'AI', download: 'DOWNLOAD', fun: 'FUN', tools: 'TOOLS', other: 'OTHER' }
-const ORDER = ['main', 'ai', 'download', 'sticker', 'tools', 'fun', 'group', 'auto', 'owner', 'other']
+const ICON = { main: '🏠', owner: '👑', auto: '⚙️', group: '👥', sticker: '🖼️', ai: '🤖', download: '📥', fun: '😂', tools: '🛠️', islamic: '🕌', other: '✨' }
+const TITLE = { main: 'MAIN', owner: 'OWNER', auto: 'AUTO (ON/OFF)', group: 'GROUP', sticker: 'STICKER', ai: 'AI', download: 'DOWNLOAD', fun: 'FUN', tools: 'TOOLS', islamic: 'ISLAMIC', other: 'OTHER' }
+const ORDER = ['main', 'islamic', 'ai', 'download', 'sticker', 'tools', 'fun', 'group', 'auto', 'owner', 'other']
 
 export function menuText (ctx) {
   const p = ctx.settings.get('prefix')

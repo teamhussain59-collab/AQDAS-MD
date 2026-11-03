@@ -157,7 +157,9 @@ await t('private mode: strangers ignored, owner works', async () => {
 await t('status: auto view reads, auto react reacts with statusJidList', async () => {
   settings.set('autoStatusView', true); settings.set('autoStatusReact', true)
   const sock = mockSock()
+  ;(await import('../lib/handler.js'))._setStatusDelay(() => 0) // asal mein 5-20 sec natural gap
   await handleMessage(mockBot(sock), { key: { remoteJid: 'status@broadcast', id: 'S1', participant: '5@lid', participantAlt: '923000000005@s.whatsapp.net' }, message: { conversation: 'story' } })
+  await new Promise(r => setTimeout(r, 30))
   assert.ok(sock.sent.find(s => s.read))
   const r = sock.sent.find(s => s.content?.react)
   assert.ok(r && r.jid === 'status@broadcast' && r.opts.statusJidList.includes('923000000005@s.whatsapp.net'))

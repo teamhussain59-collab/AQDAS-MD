@@ -24,7 +24,7 @@ const config = {
   keepAliveUrl: process.env.KEEP_ALIVE_URL || process.env.RENDER_EXTERNAL_URL || process.env.KOYEB_PUBLIC_DOMAIN && ('https://' + process.env.KOYEB_PUBLIC_DOMAIN) || '',
   ytdlp: process.env.YTDLP_PATH || 'yt-dlp',
   ffmpeg: process.env.FFMPEG_PATH || 'ffmpeg',
-  maxDownloadMB: Number(process.env.MAX_DOWNLOAD_MB || 60),
+  maxDownloadMB: Number(process.env.MAX_DOWNLOAD_MB || 100),
   defaults: {
     autoReact: bool(process.env.AUTO_REACT, true),
     reactEmojis: list(process.env.AUTO_REACT_EMOJIS, ['❤️', '🔥', '😂', '😍', '👍', '💯', '😎', '🥰', '🤖', '⚡']),
@@ -32,7 +32,7 @@ const config = {
     autoRead: bool(process.env.AUTO_READ, false),
     autoStatusView: bool(process.env.AUTO_STATUS_VIEW, true),
     autoStatusReact: bool(process.env.AUTO_STATUS_REACT, false),
-    statusEmojis: list(process.env.STATUS_REACT_EMOJIS, ['💚', '🔥', '😍', '💯']),
+    statusEmojis: list(process.env.STATUS_REACT_EMOJIS, ['😊', '😇', '🙂', '😘', '😍', '😌', '😢', '🥺', '😳']),
     alwaysOnline: bool(process.env.ALWAYS_ONLINE, false),
     autoTyping: bool(process.env.AUTO_TYPING, false),
     menuSong: bool(process.env.MENU_SONG, true),

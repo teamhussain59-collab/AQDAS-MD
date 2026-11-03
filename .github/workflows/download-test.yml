@@ -26,3 +26,6 @@ jobs:
           npm install --omit=dev --ignore-scripts >/dev/null 2>&1 || npm install --omit=dev >/dev/null 2>&1
           node scripts/patch-baileys.mjs >/dev/null 2>&1 || true
           if [ -f test/dl_module.mjs ]; then node test/dl_module.mjs; else echo "no module test"; fi
+      - name: Quran live
+        if: always()
+        run: node test/quran_live.mjs

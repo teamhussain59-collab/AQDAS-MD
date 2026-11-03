@@ -2,6 +2,7 @@ import fs from 'fs'
 import config from '../config.js'
 import { ORIGINAL_DP, trimTo30, saveSong, resetSong, saveDp, resetDp } from '../lib/assets.js'
 import { download, ytdlpAvailable } from '../lib/download.js'
+import { splitEmojis } from '../lib/chgroup.js'
 
 const onoff = (a) => { a = String(a || '').toLowerCase(); return a === 'on' || a === 'enable' || a === '1' ? true : a === 'off' || a === 'disable' || a === '0' ? false : null }
 
@@ -22,7 +23,17 @@ function toggle (name, key, label, alias = []) {
 export default [
   toggle('autoreact', 'autoReact', 'Auto React', ['areact']),
   toggle('autoread', 'autoRead', 'Auto Read (blue tick)'),
-  toggle('autostatus', 'autoStatusView', 'Auto Status View', ['statusview', 'autoview']),
+  {
+    name: 'autostatus', alias: ['autoview'], category: 'auto', owner: true, usage: 'on/off', desc: 'Status auto view + react (5-20 sec natural gap, max 60/ghanta)',
+    async run (ctx) {
+      const v = onoff(ctx.args[0])
+      const s = ctx.settings.load()
+      if (v === null) return ctx.reply(`*Auto Status (view + react)* abhi: ${s.autoStatusView && s.autoStatusReact ? 'ON ✅' : 'OFF ❌'}\nEmojis: ${s.statusEmojis.join(' ')}\nUse: ${ctx.prefix}autostatus on / off\nEmojis badlo: ${ctx.prefix}statusemoji 😊😇🙂`)
+      s.autoStatusView = v; s.autoStatusReact = v; ctx.settings.save()
+      await ctx.reply(`✅ *Auto Status* ${v ? 'ON — status dekh ke react karega (5-20 sec baad, max 60/ghanta)' : 'OFF'}`)
+    }
+  },
+  toggle('statusview', 'autoStatusView', 'Auto Status View (sirf dekhna)'),
   toggle('statusreact', 'autoStatusReact', 'Auto Status React', ['autostatusreact', 'autoreactstatus']),
   toggle('alwaysonline', 'alwaysOnline', 'Always Online', ['online']),
   toggle('autotyping', 'autoTyping', 'Typing... dikhana (commands pe)', ['typing']),
@@ -37,9 +48,9 @@ export default [
     }
   },
   {
-    name: 'statusemoji', category: 'auto', owner: true, usage: '💚,🔥', desc: 'Status react ke emojis',
+    name: 'statusemoji', category: 'auto', owner: true, usage: '😊😇🙂', desc: 'Status react ke emojis',
     async run (ctx) {
-      const list = ctx.text.split(/[,\s]+/).filter(Boolean)
+      const list = splitEmojis(ctx.text)
       if (!list.length) return ctx.reply(`Abhi: ${ctx.settings.get('statusEmojis').join(' ')}`)
       ctx.settings.set('statusEmojis', list)
       await ctx.reply(`✅ Status emojis: ${list.join(' ')}`)

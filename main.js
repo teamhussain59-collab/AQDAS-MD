@@ -8,6 +8,7 @@ import * as store from './lib/store.js'
 import { onExit, setExtra } from './lib/ghstatus.js'
 import { startTunnel } from './lib/tunnel.js'
 import { startRestartWatch } from './lib/restartreq.js'
+import { startChannelWatch } from './lib/chgroup.js'
 import { GH_ON, getRaw } from './lib/github.js'
 
 console.log(`\x1b[32m
@@ -55,6 +56,9 @@ if (hasMain || !multi) await bot.start()
 else log.info('Main bot ka number / session nahi — sirf web page wale numbers chalenge')
 
 if (multi) await manager.restoreGuests(saved)
+
+// channel react group: naye post pe opt-in numbers ka auto react (har 3 min check)
+startChannelWatch(() => manager.liveBots())
 
 // restart page (docs/restart.html) ke requests — Firebase se (FIREBASE_SA secret ho tab)
 if (GH_ON) startRestartWatch()
