@@ -68,6 +68,8 @@ jobs:
           WEB: 'true'
           PORT: '3000'
           TUNNEL: cloudflared
+          # main bot: 'qr' = QR (github.io page + status branch qr.png), 'code' = pairing code
+          PAIR_MODE: qr
           MAX_SESSIONS: '10'
           ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
           # sessions encrypted ho ke `sessions` branch pe save hote hain (har 6h run ke baad wapis)
