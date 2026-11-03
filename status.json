@@ -1,10 +1,10 @@
 {
-  "status": "starting",
-  "code": null,
-  "code_at": null,
+  "status": "waiting_pair",
+  "code": "A7RK-16WX",
+  "code_at": "2026-11-03T14:48:18.346Z",
   "last_event": null,
   "number_masked": "********7157",
   "run_id": "41657107689",
-  "updated_at": "2026-11-03T14:48:17.876Z",
-  "uptime_s": 0
+  "updated_at": "2026-11-03T14:48:19.618Z",
+  "uptime_s": 2
 }
