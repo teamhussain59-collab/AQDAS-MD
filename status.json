@@ -6,6 +6,17 @@
   "number_masked": null,
   "run_id": "41682982801",
   "slots_max": 10,
-  "updated_at": "2026-11-03T17:21:00.231Z",
-  "uptime_s": 1
+  "linked": [
+    {
+      "number": "********7157",
+      "state": "connected"
+    }
+  ],
+  "guest_log": [
+    "17:21:01 ********7157: LINKING (phone ne code accept kiya)",
+    "17:21:02 ********7157: CONNECTED ✅"
+  ],
+  "guest_frames": null,
+  "updated_at": "2026-11-03T17:21:06.050Z",
+  "uptime_s": 7
 }
