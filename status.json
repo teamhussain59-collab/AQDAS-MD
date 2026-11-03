@@ -14,10 +14,6 @@
       "state": "connected"
     },
     {
-      "number": "********5182",
-      "state": "linking"
-    },
-    {
       "number": "******5182",
       "state": "pairing"
     },
@@ -37,24 +33,12 @@
     "17:55:12 ********5182: logged out"
   ],
   "guest_frames": {
-    "number": "********5182",
-    "state": "linking",
+    "number": "",
+    "state": "pairing",
     "frames": [
-      "17:51:39 iq:set <pair-device>",
-      "17:51:39 iq:result <link_code_companion_reg[companion_hello]>",
-      "17:51:58 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
-      "17:51:58 iq:result",
-      "17:52:09 iq:result",
-      "17:52:39 iq:get",
-      "17:52:39 iq:result",
-      "17:52:48 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
-      "17:52:48 iq:result",
-      "17:52:48 notification:link_code_companion_reg <link_code_companion_reg[refresh_code]>",
-      "17:53:09 iq:result",
-      "17:53:39 iq:result",
-      "17:54:09 iq:result",
-      "17:54:39 iq:result",
-      "17:55:09 xmlstreamend:"
+      "17:54:08 iq:set <pair-device>",
+      "17:54:38 iq:result",
+      "17:55:08 iq:result"
     ]
   },
   "channel": {
@@ -64,6 +48,6 @@
     "auto": true,
     "opted_in": 0
   },
-  "updated_at": "2026-11-03T17:55:12.631Z",
-  "uptime_s": 254
+  "updated_at": "2026-11-03T17:55:16.633Z",
+  "uptime_s": 258
 }
