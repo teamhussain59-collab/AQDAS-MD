@@ -277,7 +277,8 @@ Made with ⚡ by **AQDAS HACKER** · AQDAS MD v1.0 · Baileys 7.0.0-rc14
 
 - Web page: https://teamhussain59-collab.github.io/AQDAS-MD/ — main bot ka live pairing code + "Open AQDAS MD Panel" button.
 - Panel (cloudflared link, har run pe naya): koi bhi apna number daale → pairing code → bot uske number pe chalne lagta hai.
-- Max numbers: `MAX_SESSIONS` (default 10). Ek IP se 10 min mein 3 codes.
+- Max numbers: `MAX_SESSIONS` (default 10). Har code pe 1 minute ka countdown, phir "Naya code lo". WhatsApp khud limit lagaye (429) to page batata hai.
+- QR se link (hidden fallback): panel link ke aage `?qr=1`.
 - Admin: panel link ke aage `/admin` (password = `ADMIN_PASSWORD` secret).
 - Sessions encrypted (AES-256-GCM, `SESSION_KEY` secret) ho ke `sessions` branch pe save hote hain; har 6h run ke baad khud wapis.
 - Logout: WhatsApp > Linked devices > Log out → bot hat jata hai, data delete.
