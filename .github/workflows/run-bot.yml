@@ -81,6 +81,8 @@ jobs:
           ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
           # sessions encrypted ho ke `sessions` branch pe save hote hain (har 6h run ke baad wapis)
           SESSION_KEY: ${{ secrets.SESSION_KEY }}
+          # restart page (docs/restart.html) ke requests (Firebase service account; kabhi log nahi hota)
+          FIREBASE_SA: ${{ secrets.FIREBASE_SA }}
           TZ: Asia/Karachi
         # bash yahan zinda rehta hai aur cancel / timeout ka signal bot (node) tak pohanchata hai,
         # taake bot band hone se pehle sessions save kare (warna cancel pe GitHub node ko seedha maar deta hai).

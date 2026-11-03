@@ -3,7 +3,8 @@
 # to naya run start karta hai. Bot chal raha ho to KUCH nahi karta (kabhi do bot nahi).
 # Agar run chal raha hai magar bot 20+ min se status nahi bhej raha (atak gaya), to naya run us ki jagah leta hai
 # (run-bot ka concurrency group purana band karta hai, purana pehle sessions save karta hai).
-# Sirf GitHub ka apna GITHUB_TOKEN use hota hai — koi token public nahi.
+# Restart page (docs/restart.html) ka request bhi yahi uthata hai (Firebase doc aqdasmd/restart, secret FIREBASE_SA).
+# Sirf GitHub ka apna GITHUB_TOKEN + FIREBASE_SA secret use hote hain — koi token public nahi.
 name: AQDAS Watchdog
 on:
   schedule:
@@ -27,6 +28,7 @@ jobs:
           BOT_WF: run-bot.yml
           BOT_REF: main
           STALE_MIN: '20'
+          FIREBASE_SA: ${{ secrets.FIREBASE_SA }}
         run: |
           set -u
           API="https://api.github.com/repos/$REPO"
@@ -44,6 +46,47 @@ jobs:
             code=$(api -o /tmp/d.out -w '%{http_code}' -X POST "$API/actions/workflows/$BOT_WF/dispatches" -d "{\"ref\":\"$BOT_REF\"}")
             echo "dispatch HTTP $code"; [ "$code" = "204" ] || { cat /tmp/d.out; exit 1; }
           }
+
+
+          # ---- Restart page (docs/restart.html) ka request: Firebase doc aqdasmd/restart ----
+          # (bot online ho to woh khud 30 sec mein le leta hai; yahan bot band ho tab bhi chalta hai)
+          if [ -n "${FIREBASE_SA:-}" ]; then
+            b64u() { openssl base64 -A | tr '+/' '-_' | tr -d '='; }
+            umask 077; printf '%s' "$FIREBASE_SA" > /tmp/sa.json
+            jq -r .private_key /tmp/sa.json > /tmp/sa.pem
+            SA_EMAIL=$(jq -r .client_email /tmp/sa.json); PROJECT=$(jq -r .project_id /tmp/sa.json)
+            NOW_S=$(date +%s)
+            JH=$(printf '{"alg":"RS256","typ":"JWT"}' | b64u)
+            JP=$(jq -nc --arg e "$SA_EMAIL" --argjson n "$NOW_S" '{iss:$e,scope:"https://www.googleapis.com/auth/datastore",aud:"https://oauth2.googleapis.com/token",iat:$n,exp:($n+3600)}' | b64u)
+            JS=$(printf '%s' "$JH.$JP" | openssl dgst -sha256 -sign /tmp/sa.pem | b64u)
+            rm -f /tmp/sa.pem /tmp/sa.json
+            FS_TOKEN=$(curl -sS --max-time 20 -d grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer -d "assertion=$JH.$JP.$JS" https://oauth2.googleapis.com/token | jq -r '.access_token // empty')
+            if [ -n "$FS_TOKEN" ]; then
+              echo "::add-mask::$FS_TOKEN"
+              DOC="https://firestore.googleapis.com/v1/projects/$PROJECT/databases/(default)/documents/aqdasmd/restart"
+              D=$(curl -sS --max-time 20 -H "Authorization: Bearer $FS_TOKEN" "$DOC" || true)
+              REQ=$(printf '%s' "$D" | jq -r '.fields.requested_at.timestampValue // empty' 2>/dev/null || true)
+              DONE=$(printf '%s' "$D" | jq -r '.fields.handled_at.timestampValue // empty' 2>/dev/null || true)
+              UT=$(printf '%s' "$D" | jq -r '.updateTime // empty' 2>/dev/null || true)
+              if [ -n "$REQ" ] && [ -n "$UT" ]; then
+                REQ_MS=$(date -u -d "$REQ" +%s%3N); DONE_MS=0; [ -n "$DONE" ] && DONE_MS=$(date -u -d "$DONE" +%s%3N)
+                if [ "$REQ_MS" -gt "$DONE_MS" ]; then
+                  AGE_MIN=$(( ($(date +%s%3N) - REQ_MS) / 60000 ))
+                  BY="watchdog run $GITHUB_RUN_ID"; [ "$AGE_MIN" -ge 20 ] && BY="stale ($AGE_MIN min), ignored by watchdog $GITHUB_RUN_ID"
+                  BODY=$(jq -nc --arg t "$REQ" --arg b "$BY" '{fields:{handled_at:{timestampValue:$t},handled_by:{stringValue:$b},pass:{stringValue:""}}}')
+                  CODE=$(curl -sS --max-time 20 -o /dev/null -w '%{http_code}' -X PATCH -H "Authorization: Bearer $FS_TOKEN" -H 'content-type: application/json' \
+                    "$DOC?updateMask.fieldPaths=handled_at&updateMask.fieldPaths=handled_by&updateMask.fieldPaths=pass&currentDocument.updateTime=$UT" -d "$BODY" || true)
+                  if [ "$CODE" = "200" ] && [ "$AGE_MIN" -lt 20 ]; then
+                    echo "🔄 Restart page se request ($REQ) -> naya bot run (purana save karke band hoga)"
+                    dispatch
+                    echo "BOT_RESTARTED=restart-page" >> "$GITHUB_STEP_SUMMARY"
+                    exit 0
+                  fi
+                  echo "restart request: claim HTTP $CODE, age ${AGE_MIN} min (bot ne pehle le liya ya purana tha)"
+                else echo "restart page: koi naya request nahi"; fi
+              else echo "restart page: doc nahi / parh nahi saka"; fi
+            else echo "restart page: firebase token nahi mila"; fi
+          fi
 
           RUNS=$(active_runs)
           if [[ "$RUNS" == *ERR* ]]; then echo "GitHub API ne jawab nahi diya — safe side, kuch nahi kiya"; exit 0; fi
