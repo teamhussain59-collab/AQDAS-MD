@@ -15,22 +15,25 @@
     },
     {
       "number": "********5182",
-      "state": "pairing"
+      "state": "linking"
     }
   ],
   "guest_log": [
     "17:51:00 ********7157: LINKING (phone ne code accept kiya)",
     "17:51:00 ********7157: CONNECTED ✅",
-    "17:51:44 ********5182: code bana"
+    "17:51:44 ********5182: code bana",
+    "17:51:58 ********5182: LINKING (phone ne code accept kiya)"
   ],
   "guest_frames": {
     "number": "********5182",
-    "state": "pairing",
+    "state": "linking",
     "frames": [
       "17:51:39 iq:set <pair-device>",
-      "17:51:39 iq:result <link_code_companion_reg[companion_hello]>"
+      "17:51:39 iq:result <link_code_companion_reg[companion_hello]>",
+      "17:51:58 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
+      "17:51:58 iq:result"
     ]
   },
-  "updated_at": "2026-11-03T17:51:48.205Z",
-  "uptime_s": 50
+  "updated_at": "2026-11-03T17:52:02.407Z",
+  "uptime_s": 64
 }
