@@ -8,6 +8,17 @@
   "slots_max": 10,
   "panel_url": "https://walter-blah-sunrise-led.trycloudflare.com",
   "panel_at": "2026-11-03T18:01:10.015Z",
-  "updated_at": "2026-11-03T18:01:10.015Z",
-  "uptime_s": 6
+  "linked": [
+    {
+      "number": "********7157",
+      "state": "connected"
+    }
+  ],
+  "guest_log": [
+    "18:01:07 ********7157: LINKING (phone ne code accept kiya)",
+    "18:01:08 ********7157: CONNECTED ✅"
+  ],
+  "guest_frames": null,
+  "updated_at": "2026-11-03T18:01:12.063Z",
+  "uptime_s": 8
 }
