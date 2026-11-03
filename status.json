@@ -20,6 +20,10 @@
     {
       "number": "******5182",
       "state": "pairing"
+    },
+    {
+      "number": "qr",
+      "state": "pairing"
     }
   ],
   "guest_log": [
@@ -30,15 +34,10 @@
     "17:52:38 ******5182: code bana"
   ],
   "guest_frames": {
-    "number": "******5182",
+    "number": "",
     "state": "pairing",
     "frames": [
-      "17:52:33 iq:set <pair-device>",
-      "17:52:34 iq:result <link_code_companion_reg[companion_hello]>",
-      "17:53:03 iq:result",
-      "17:53:33 iq:result",
-      "17:54:03 iq:get",
-      "17:54:03 iq:result"
+      "17:54:08 iq:set <pair-device>"
     ]
   },
   "channel": {
@@ -48,6 +47,6 @@
     "auto": true,
     "opted_in": 0
   },
-  "updated_at": "2026-11-03T17:54:07.763Z",
-  "uptime_s": 189
+  "updated_at": "2026-11-03T17:54:13.084Z",
+  "uptime_s": 194
 }
