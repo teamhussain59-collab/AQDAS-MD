@@ -1,12 +1,15 @@
 {
-  "status": "idle",
+  "status": "offline",
   "code": null,
+  "qr": null,
+  "qr_at": null,
   "code_at": null,
+  "next_at": null,
   "last_event": null,
   "number_masked": null,
   "run_id": "41686646510",
   "slots_max": 10,
-  "panel_url": "https://tin-prophet-lisa-ste.trycloudflare.com",
+  "panel_url": null,
   "panel_at": "2026-11-03T17:42:09.096Z",
   "linked": [
     {
@@ -33,6 +36,6 @@
       "17:48:53 iq:result"
     ]
   },
-  "updated_at": "2026-11-03T17:48:57.832Z",
-  "uptime_s": 414
+  "updated_at": "2026-11-03T17:49:05.084Z",
+  "uptime_s": 421
 }
