@@ -124,9 +124,12 @@ export default [
       const rch = await import('../lib/rch.js')
       const p = ctx.prefix
       const use = `📢 *Channel post reaction*\nUse: ${p}rch https://whatsapp.com/channel/XXXX/123 🔥❤️\n(max ${rch.MAX_EMOJIS} emoji)`
-      const link = rch.parseLink(ctx.args[0])
-      if (!link) return ctx.reply(ctx.args[0] ? '❌ Link sahi nahi. Channel ki post ka link do, jaise https://whatsapp.com/channel/XXXX/123\n\n' + use : use)
-      const emojis = rch.parseEmojis(ctx.args.slice(1))
+      const full = ctx.args.join(' ')
+      let { link, rest } = rch.extractLink(full)
+      if (!link && ctx.quoted) { const q = ctx.quoted.message || {}; const qt = q.conversation || q.extendedTextMessage?.text || q.imageMessage?.caption || ''; link = rch.extractLink(qt).link }
+      if (!link) return ctx.reply(full.trim() ? '❌ Link sahi nahi. Channel ki post ka link do, jaise https://whatsapp.com/channel/XXXX/123\n\n' + use : use)
+      const emojis = rch.parseEmojis([rest])
+      if (!emojis.length) return ctx.reply('❌ Emoji bhi likho.\n\n' + use)
       if (!emojis.length) return ctx.reply('❌ Emoji bhi likho.\n\n' + use)
       if (emojis.length > rch.MAX_EMOJIS) return ctx.reply(`❌ Zyada se zyada ${rch.MAX_EMOJIS} emoji.`)
       const c = rch.check({ chat: ctx.jid })
