@@ -1,27 +1,11 @@
 {
-  "status": "offline",
+  "status": "idle",
   "code": null,
-  "qr": null,
-  "qr_at": null,
   "code_at": null,
-  "next_at": null,
   "last_event": null,
   "number_masked": null,
-  "run_id": "41682097719",
+  "run_id": "41682982801",
   "slots_max": 10,
-  "panel_url": null,
-  "panel_at": "2026-11-03T17:13:56.732Z",
-  "linked": [
-    {
-      "number": "********7157",
-      "state": "connected"
-    }
-  ],
-  "guest_log": [
-    "17:13:53 ********7157: LINKING (phone ne code accept kiya)",
-    "17:13:53 ********7157: CONNECTED ✅"
-  ],
-  "guest_frames": null,
-  "updated_at": "2026-11-03T17:19:40.455Z",
-  "uptime_s": 349
+  "updated_at": "2026-11-03T17:21:00.231Z",
+  "uptime_s": 1
 }
