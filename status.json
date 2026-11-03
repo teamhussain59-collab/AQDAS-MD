@@ -36,16 +36,25 @@
     "17:55:12 ********5182: connection close 401 Connection Failure",
     "17:55:12 ********5182: logged out",
     "17:55:36 ********5182: code bana",
-    "17:55:50 ********5182: LINKING (phone ne code accept kiya)"
+    "17:55:50 ********5182: LINKING (phone ne code accept kiya)",
+    "17:56:03 ******5182: connection close 428 Connection Terminated by Server",
+    "17:56:03 ******5182: expired / closed (code 428)"
   ],
   "guest_frames": {
-    "number": "********5182",
-    "state": "linking",
+    "number": "******5182",
+    "state": "expired",
     "frames": [
-      "17:55:31 iq:set <pair-device>",
-      "17:55:31 iq:result <link_code_companion_reg[companion_hello]>",
-      "17:55:49 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
-      "17:55:50 iq:result"
+      "17:52:33 iq:set <pair-device>",
+      "17:52:34 iq:result <link_code_companion_reg[companion_hello]>",
+      "17:53:03 iq:result",
+      "17:53:33 iq:result",
+      "17:54:03 iq:get",
+      "17:54:03 iq:result",
+      "17:54:33 iq:result",
+      "17:55:03 iq:result",
+      "17:55:33 iq:get",
+      "17:55:33 iq:result",
+      "17:56:03 xmlstreamend:"
     ]
   },
   "channel": {
@@ -55,6 +64,6 @@
     "auto": true,
     "opted_in": 0
   },
-  "updated_at": "2026-11-03T17:55:54.014Z",
-  "uptime_s": 295
+  "updated_at": "2026-11-03T17:56:03.914Z",
+  "uptime_s": 305
 }
