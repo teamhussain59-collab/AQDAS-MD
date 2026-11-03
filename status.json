@@ -37,6 +37,13 @@
       "17:52:34 iq:result <link_code_companion_reg[companion_hello]>"
     ]
   },
-  "updated_at": "2026-11-03T17:52:59.813Z",
-  "uptime_s": 121
+  "channel": {
+    "ok": true,
+    "name": "AQDAS TECH",
+    "latest_post": null,
+    "auto": true,
+    "opted_in": 0
+  },
+  "updated_at": "2026-11-03T17:53:00.796Z",
+  "uptime_s": 122
 }
