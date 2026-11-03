@@ -19,7 +19,6 @@
     }
   ],
   "guest_log": [
-    "18:01:07 ********7157: LINKING (phone ne code accept kiya)",
     "18:01:08 ********7157: CONNECTED ✅",
     "18:08:05 ********5182: code bana",
     "18:08:34 ********4197: code bana",
@@ -29,7 +28,9 @@
     "18:09:16 ********5182: LINKING (phone ne code accept kiya)",
     "18:11:30 ********5182: connection close 428 Connection Terminated by Server",
     "18:11:37 ********5182: connection close 401 Connection Failure",
-    "18:11:37 ********5182: logged out"
+    "18:11:37 ********5182: logged out",
+    "18:18:08 ********4197: connection close 401 Stream Errored (conflict)",
+    "18:18:09 ********4197: logged out"
   ],
   "guest_frames": {
     "number": "********4197",
@@ -52,6 +53,6 @@
     "opted_in": 1,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-03T18:17:05.554Z",
-  "uptime_s": 961
+  "updated_at": "2026-11-03T18:18:09.027Z",
+  "uptime_s": 1025
 }
