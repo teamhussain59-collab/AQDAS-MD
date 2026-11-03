@@ -1,10 +1,10 @@
 {
-  "status": "linking",
+  "status": "starting",
   "code": null,
   "code_at": null,
-  "last_event": "phone ne code accept kiya, link ho raha hai",
+  "last_event": "close 428 Connection Terminated by Server",
   "number_masked": "********7157",
   "run_id": "41657107689",
-  "updated_at": "2026-11-03T14:50:54.896Z",
-  "uptime_s": 157
+  "updated_at": "2026-11-03T14:51:50.430Z",
+  "uptime_s": 213
 }
