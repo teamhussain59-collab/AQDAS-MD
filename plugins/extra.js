@@ -119,7 +119,7 @@ export default [
     }
   },
   {
-    name: 'rch', alias: ['chreactapi', 'rreact'], category: 'public', public: true, usage: '<channel post link> <emojis>', desc: 'WhatsApp channel ki post pe reactions (sab ke liye, har banda 10 min mein 1)',
+    name: 'rch', alias: ['chreactapi', 'rreact'], category: 'public', public: true, usage: '<channel post link> <emojis>', desc: 'WhatsApp channel ki post pe reactions (sab ke liye)',
     async run (ctx) {
       const rch = await import('../lib/rch.js')
       const p = ctx.prefix
@@ -129,16 +129,13 @@ export default [
       const emojis = rch.parseEmojis(ctx.args.slice(1))
       if (!emojis.length) return ctx.reply('❌ Emoji bhi likho.\n\n' + use)
       if (emojis.length > rch.MAX_EMOJIS) return ctx.reply(`❌ Zyada se zyada ${rch.MAX_EMOJIS} emoji.`)
-      const ids = [...new Set(ctx.senderIds.map(j => String(j).split('@')[0].split(':')[0].replace(/\D/g, '')).filter(Boolean))]
-      const who = { requesters: ids, exempt: ids.some(n => config.ownerNumbers.includes(n)) }
-      const c = rch.check(who)
+      const c = rch.check({ chat: ctx.jid })
       if (!c.ok) return ctx.reply(c.msg)
-      rch.note(who)
       await ctx.react('⏳')
       const r = await rch.react(link, emojis)
       if (r.ok) { await ctx.react('✅'); return ctx.reply(`✅ Reaction request bhej di ${emojis.join('')}${r.used != null && r.limit != null ? ` (aaj ${r.used}/${r.limit} use)` : ''}`) }
       await ctx.react('❌')
-      return ctx.reply(r.quota ? '🚫 Aaj ki reaction limit khatam. Kal dobara try karo.' : '❌ ' + r.message)
+      return ctx.reply(r.quota ? `🚫 Reaction service ki aaj ki limit khatam${r.limit ? ` (${r.used}/${r.limit})` : ''}. Kal dobara try karo.\n${r.message}` : '❌ ' + r.message)
     }
   }
 ]

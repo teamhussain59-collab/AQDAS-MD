@@ -133,17 +133,17 @@ await t('react(): failure message shown briefly, keys scrubbed; timeout friendly
   const t2 = await rch.react('https://whatsapp.com/channel/0029Vb785rSBlHpWSitPY61i/1', ['🔥'], { fetchImpl: async () => { throw new Error('timeout') } })
   assert.ok(!t2.ok && t2.message.includes('30 sec'))
 })
-await t('per requester 10 min; owner exempt; quota (usage >= limit) stops everyone today', async () => {
+await t('no per-user limit or quota pre-block: only 5 s same-chat flood guard', async () => {
   rch._reset(); const now = Date.now()
-  rch.note({ requesters: ['923000000007'], now })
-  assert.equal(rch.check({ requesters: ['923000000007'], now: now + 9 * 60000 }).reason, 'user')
-  assert.ok(rch.check({ requesters: ['923000000007'], now: now + 10 * 60000 + 1 }).ok)
-  assert.ok(rch.check({ requesters: ['923000000007'], exempt: true, now: now + 1000 }).ok)
-  await rch.react('https://whatsapp.com/channel/0029Vb785rSBlHpWSitPY61i/1', ['🔥'], { now, fetchImpl: async () => fakeRes(200, { success: true, data: { ok: true, usage_today: 50, limit: 50 } }) })
-  const q = rch.check({ requesters: ['x'], exempt: true, now: now + 1000 })
-  assert.equal(q.reason, 'quota'); assert.ok(q.msg.includes('limit khatam'))
+  assert.ok(rch.check({ chat: 'A', now }).ok)
+  assert.equal(rch.check({ chat: 'A', now: now + 4000 }).reason, 'flood')
+  assert.ok(rch.check({ chat: 'B', now: now + 4000 }).ok)
+  assert.ok(rch.check({ chat: 'A', now: now + 5001 }).ok)
+  const r = await rch.react('https://whatsapp.com/channel/0029Vb785rSBlHpWSitPY61i/1', ['🔥'], { fetchImpl: async () => fakeRes(200, { success: true, data: { ok: false, message: 'Limit harian habis', usage_today: 50, limit: 50 } }) })
+  assert.ok(!r.ok && r.quota && r.message.includes('Limit harian'))
+  assert.ok(rch.check({ chat: 'C', now: now + 6000 }).ok, 'API limit must not pre-block next call')
 })
-await t('.rch is public, in PUBLIC menu section; bad input gets usage; cooldown via dispatch', async () => {
+await t('.rch is public, in PUBLIC menu section; bad input gets usage; flood guard via dispatch', async () => {
   const c = commands.get('rch'); assert.ok(c && c.public && !c.owner && c.category === 'public' && commands.get('chreactapi') && commands.get('rreact'))
   const m = menuText({ settings }); const pub = m.indexOf('PUBLIC (SAB KE LIYE)'); const own = m.indexOf('*OWNER*'); const p = m.indexOf('.rch')
   assert.ok(p > pub && p < own, '.rch not under PUBLIC')
@@ -152,8 +152,8 @@ await t('.rch is public, in PUBLIC menu section; bad input gets usage; cooldown 
   assert.ok((await send(pmsg('923000000007@s.whatsapp.net', '.rch https://x.com/a 🔥'))).includes('Link sahi nahi'))
   assert.ok((await send(pmsg('923000000007@s.whatsapp.net', '.rch https://whatsapp.com/channel/0029Vb785rSBlHpWSitPY61i/5'))).includes('Emoji bhi'))
   assert.ok((await send(pmsg('923000000007@s.whatsapp.net', '.rch https://whatsapp.com/channel/0029Vb785rSBlHpWSitPY61i/5 😀😁😂🤣😃😄'))).includes('Zyada se zyada 5'))
-  rch.note({ requesters: ['923000000007'] })
-  assert.ok((await send(pmsg('923000000007@s.whatsapp.net', '.rch https://whatsapp.com/channel/0029Vb785rSBlHpWSitPY61i/5 🔥'))).includes('10 min mein 1 dafa .rch'))
+  rch.check({ chat: '923000000007@s.whatsapp.net' }) // just used in this chat
+  assert.ok((await send(pmsg('923000000007@s.whatsapp.net', '.rch https://whatsapp.com/channel/0029Vb785rSBlHpWSitPY61i/5 🔥'))).includes('5 sec baad'))
 })
 
 fs.rmSync('./tmp-test-pair', { recursive: true, force: true }); fs.rmSync('./tmp-test-pair-session', { recursive: true, force: true })
