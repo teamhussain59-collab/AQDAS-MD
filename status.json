@@ -15,7 +15,7 @@
     },
     {
       "number": "********5182",
-      "state": "pairing"
+      "state": "linking"
     },
     {
       "number": "********4197",
@@ -29,7 +29,8 @@
     "18:08:34 ********4197: code bana",
     "18:08:49 ********4197: LINKING (phone ne code accept kiya)",
     "18:08:53 ********4197: connection close 515 Stream Errored (restart required)",
-    "18:08:58 ********4197: CONNECTED ✅"
+    "18:08:58 ********4197: CONNECTED ✅",
+    "18:09:16 ********5182: LINKING (phone ne code accept kiya)"
   ],
   "guest_frames": {
     "number": "********4197",
@@ -52,6 +53,6 @@
     "opted_in": 0,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-03T18:09:05.538Z",
-  "uptime_s": 481
+  "updated_at": "2026-11-03T18:09:20.049Z",
+  "uptime_s": 496
 }
