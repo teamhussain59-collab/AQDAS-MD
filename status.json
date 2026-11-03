@@ -16,6 +16,10 @@
     {
       "number": "********5182",
       "state": "linking"
+    },
+    {
+      "number": "******5182",
+      "state": "pairing"
     }
   ],
   "guest_log": [
@@ -25,16 +29,13 @@
     "17:51:58 ********5182: LINKING (phone ne code accept kiya)"
   ],
   "guest_frames": {
-    "number": "********5182",
-    "state": "linking",
+    "number": "******5182",
+    "state": "pairing",
     "frames": [
-      "17:51:39 iq:set <pair-device>",
-      "17:51:39 iq:result <link_code_companion_reg[companion_hello]>",
-      "17:51:58 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
-      "17:51:58 iq:result",
-      "17:52:09 iq:result"
+      "17:52:33 iq:set <pair-device>",
+      "17:52:34 iq:result <link_code_companion_reg[companion_hello]>"
     ]
   },
-  "updated_at": "2026-11-03T17:52:13.083Z",
-  "uptime_s": 74
+  "updated_at": "2026-11-03T17:52:38.044Z",
+  "uptime_s": 99
 }
