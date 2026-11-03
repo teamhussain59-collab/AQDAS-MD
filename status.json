@@ -14,10 +14,6 @@
       "state": "connected"
     },
     {
-      "number": "qr",
-      "state": "pairing"
-    },
-    {
       "number": "********5182",
       "state": "linking"
     }
@@ -37,19 +33,20 @@
     "17:57:38 qr: expired / closed (code 428)"
   ],
   "guest_frames": {
-    "number": "",
-    "state": "expired",
+    "number": "********5182",
+    "state": "linking",
     "frames": [
-      "17:54:08 iq:set <pair-device>",
-      "17:54:38 iq:result",
-      "17:55:08 iq:result",
-      "17:55:38 iq:result",
-      "17:56:08 iq:result",
-      "17:56:38 iq:get",
-      "17:56:38 iq:result",
-      "17:57:08 iq:get",
-      "17:57:08 iq:result",
-      "17:57:38 xmlstreamend:"
+      "17:55:31 iq:set <pair-device>",
+      "17:55:31 iq:result <link_code_companion_reg[companion_hello]>",
+      "17:55:49 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
+      "17:55:50 iq:result",
+      "17:56:00 iq:result",
+      "17:56:15 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
+      "17:56:15 iq:result",
+      "17:56:30 iq:result",
+      "17:57:00 iq:result",
+      "17:57:30 iq:get",
+      "17:57:30 iq:result"
     ]
   },
   "channel": {
@@ -59,6 +56,6 @@
     "auto": true,
     "opted_in": 0
   },
-  "updated_at": "2026-11-03T17:57:38.348Z",
-  "uptime_s": 400
+  "updated_at": "2026-11-03T17:57:42.351Z",
+  "uptime_s": 404
 }
