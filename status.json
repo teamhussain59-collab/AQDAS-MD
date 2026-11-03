@@ -26,7 +26,8 @@
     "17:51:00 ********7157: LINKING (phone ne code accept kiya)",
     "17:51:00 ********7157: CONNECTED ✅",
     "17:51:44 ********5182: code bana",
-    "17:51:58 ********5182: LINKING (phone ne code accept kiya)"
+    "17:51:58 ********5182: LINKING (phone ne code accept kiya)",
+    "17:52:38 ******5182: code bana"
   ],
   "guest_frames": {
     "number": "******5182",
@@ -36,6 +37,6 @@
       "17:52:34 iq:result <link_code_companion_reg[companion_hello]>"
     ]
   },
-  "updated_at": "2026-11-03T17:52:38.044Z",
-  "uptime_s": 99
+  "updated_at": "2026-11-03T17:52:43.084Z",
+  "uptime_s": 104
 }
