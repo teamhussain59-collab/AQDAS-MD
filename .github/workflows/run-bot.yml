@@ -1,0 +1,59 @@
+# AQDAS MD on GitHub Actions
+# ⚠️ GitHub ki terms Actions ko 24/7 bot hosting ke liye allow nahi karti. Account suspend ho sakta hai.
+# Har run max 6 ghante (yahan ~5h50m), phir naya run. Beech mein kuch minute bot off rahega.
+# Secrets (repo > Settings > Secrets and variables > Actions > New repository secret):
+#   SESSION_B64        = bot ka SESSION_ID (pehli pairing ke baad bot apni chat mein bhejta hai)
+#   OWNER_NUMBER       = 923001234567
+#   PAIR_NUMBER        = sirf pehli dafa: bot wala number (code log mein aayega). Session ke baad delete kar do
+#   OPENROUTER_API_KEY = (optional) AI ke liye  (purana naam OPENROUTER_KEY bhi chalta hai)
+# Session / keys kabhi log mein print nahi hote. Log mein sirf pairing code aata hai.
+# Jab tak SESSION_B64 ya PAIR_NUMBER secret nahi hai, run khud skip ho jata hai.
+name: AQDAS MD Bot
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 */6 * * *'
+concurrency:
+  group: aqdas-md-bot
+  cancel-in-progress: true
+jobs:
+  bot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 358
+    steps:
+      - name: Check secrets
+        id: check
+        env:
+          SESSION_ID: ${{ secrets.SESSION_B64 }}
+          PAIR_NUMBER: ${{ secrets.PAIR_NUMBER }}
+        run: |
+          if [ -n "$SESSION_ID" ] || [ -n "$PAIR_NUMBER" ]; then
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "SESSION_B64 ya PAIR_NUMBER secret abhi set nahi hai. Run skip kar diya."
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/checkout@v4
+        if: steps.check.outputs.ready == 'true'
+      - uses: actions/setup-node@v4
+        if: steps.check.outputs.ready == 'true'
+        with:
+          node-version: 20
+      - name: Install ffmpeg + yt-dlp
+        if: steps.check.outputs.ready == 'true'
+        run: |
+          sudo apt-get update -y && sudo apt-get install -y ffmpeg
+          pip install -U yt-dlp
+      - name: Install packages
+        if: steps.check.outputs.ready == 'true'
+        run: npm install --omit=dev
+      - name: Run AQDAS MD (~5h50m)
+        if: steps.check.outputs.ready == 'true'
+        env:
+          SESSION_ID: ${{ secrets.SESSION_B64 }}
+          OWNER_NUMBER: ${{ secrets.OWNER_NUMBER }}
+          PAIR_NUMBER: ${{ secrets.PAIR_NUMBER }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY || secrets.OPENROUTER_KEY }}
+          WEB: 'false'
+          TZ: Asia/Karachi
+        run: timeout -k 20 21000 node main.js || echo "run khatam, agla run cron se"
