@@ -12,13 +12,24 @@
     {
       "number": "********7157",
       "state": "connected"
+    },
+    {
+      "number": "********5182",
+      "state": "pairing"
     }
   ],
   "guest_log": [
     "17:51:00 ********7157: LINKING (phone ne code accept kiya)",
     "17:51:00 ********7157: CONNECTED ✅"
   ],
-  "guest_frames": null,
-  "updated_at": "2026-11-03T17:51:04.771Z",
-  "uptime_s": 6
+  "guest_frames": {
+    "number": "********5182",
+    "state": "pairing",
+    "frames": [
+      "17:51:39 iq:set <pair-device>",
+      "17:51:39 iq:result <link_code_companion_reg[companion_hello]>"
+    ]
+  },
+  "updated_at": "2026-11-03T17:51:43.359Z",
+  "uptime_s": 45
 }
