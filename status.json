@@ -1,13 +1,13 @@
 {
-  "status": "starting",
+  "status": "rate_limited",
   "code": null,
   "qr": null,
   "qr_at": null,
   "code_at": null,
-  "next_at": null,
-  "last_event": null,
+  "next_at": "2026-11-03T15:25:30.732Z",
+  "last_event": "WhatsApp ne bohat codes ki wajah se 20 min ke liye rok diya (rate-overlimit)",
   "number_masked": "********7157",
   "run_id": "41659920592",
-  "updated_at": "2026-11-03T15:05:30.444Z",
-  "uptime_s": 0
+  "updated_at": "2026-11-03T15:05:31.915Z",
+  "uptime_s": 2
 }
