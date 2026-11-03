@@ -36,7 +36,9 @@
       "17:52:33 iq:set <pair-device>",
       "17:52:34 iq:result <link_code_companion_reg[companion_hello]>",
       "17:53:03 iq:result",
-      "17:53:33 iq:result"
+      "17:53:33 iq:result",
+      "17:54:03 iq:get",
+      "17:54:03 iq:result"
     ]
   },
   "channel": {
@@ -46,6 +48,6 @@
     "auto": true,
     "opted_in": 0
   },
-  "updated_at": "2026-11-03T17:53:37.760Z",
-  "uptime_s": 159
+  "updated_at": "2026-11-03T17:54:07.763Z",
+  "uptime_s": 189
 }
