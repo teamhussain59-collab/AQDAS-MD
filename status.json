@@ -8,6 +8,17 @@
   "slots_max": 10,
   "panel_url": "https://reality-contracts-technologies-quoted.trycloudflare.com",
   "panel_at": "2026-11-03T16:16:30.571Z",
-  "updated_at": "2026-11-03T16:16:30.571Z",
-  "uptime_s": 4
+  "linked": [
+    {
+      "number": "********7157",
+      "state": "connected"
+    }
+  ],
+  "guest_log": [
+    "16:16:28 ********7157: LINKING (phone ne code accept kiya)",
+    "16:16:29 ********7157: CONNECTED ✅"
+  ],
+  "guest_frames": null,
+  "updated_at": "2026-11-03T16:16:33.569Z",
+  "uptime_s": 7
 }
