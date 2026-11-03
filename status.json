@@ -8,6 +8,17 @@
   "slots_max": 10,
   "panel_url": "https://ultra-capacity-sometimes-fill.trycloudflare.com",
   "panel_at": "2026-11-03T17:49:30.670Z",
-  "updated_at": "2026-11-03T17:49:30.670Z",
-  "uptime_s": 5
+  "linked": [
+    {
+      "number": "********7157",
+      "state": "connected"
+    }
+  ],
+  "guest_log": [
+    "17:49:28 ********7157: LINKING (phone ne code accept kiya)",
+    "17:49:28 ********7157: CONNECTED ✅"
+  ],
+  "guest_frames": null,
+  "updated_at": "2026-11-03T17:49:32.831Z",
+  "uptime_s": 7
 }
