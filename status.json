@@ -30,7 +30,8 @@
     "18:08:49 ********4197: LINKING (phone ne code accept kiya)",
     "18:08:53 ********4197: connection close 515 Stream Errored (restart required)",
     "18:08:58 ********4197: CONNECTED ✅",
-    "18:09:16 ********5182: LINKING (phone ne code accept kiya)"
+    "18:09:16 ********5182: LINKING (phone ne code accept kiya)",
+    "18:11:30 ********5182: connection close 428 Connection Terminated by Server"
   ],
   "guest_frames": {
     "number": "********4197",
@@ -53,6 +54,6 @@
     "opted_in": 1,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-03T18:11:05.539Z",
-  "uptime_s": 601
+  "updated_at": "2026-11-03T18:11:34.535Z",
+  "uptime_s": 630
 }
