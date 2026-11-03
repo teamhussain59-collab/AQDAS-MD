@@ -13,6 +13,8 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '0 */6 * * *'
+permissions:
+  contents: write
 concurrency:
   group: aqdas-md-bot
   cancel-in-progress: true
@@ -55,5 +57,6 @@ jobs:
           PAIR_NUMBER: ${{ secrets.PAIR_NUMBER }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY || secrets.OPENROUTER_KEY }}
           WEB: 'false'
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TZ: Asia/Karachi
         run: timeout -k 20 21000 node main.js || echo "run khatam, agla run cron se"

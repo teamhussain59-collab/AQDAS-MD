@@ -1,0 +1,71 @@
+<!doctype html><html lang="ur"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AQDAS MD • Pairing</title>
+<meta name="description" content="AQDAS MD WhatsApp bot — live pairing code">
+<link rel="icon" href="https://raw.githubusercontent.com/teamhussain59-collab/AQDAS-MD/main/media/dp.jpg">
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;font-family:ui-monospace,Menlo,Consolas,monospace;background:#020805;color:#b7ffcf;display:flex;align-items:center;justify-content:center;padding:18px;
+background-image:radial-gradient(circle at 50% 0,#063d1d55,transparent 60%),repeating-linear-gradient(0deg,#00ff6608 0 1px,transparent 1px 4px)}
+.card{width:100%;max-width:440px;background:#04130bdd;border:1px solid #1aff7a55;border-radius:18px;padding:24px;box-shadow:0 0 40px #00ff6626}
+.logo{width:110px;height:110px;border-radius:50%;display:block;margin:0 auto 10px;border:2px solid #22ff88;box-shadow:0 0 25px #22ff8866;object-fit:cover}
+h1{text-align:center;margin:4px 0 2px;color:#39ff8e;letter-spacing:3px;text-shadow:0 0 12px #39ff8e}
+.sub{text-align:center;color:#6fdc9c;font-size:12px;margin-bottom:18px;letter-spacing:2px}
+button{width:100%;padding:14px;border:0;border-radius:10px;background:linear-gradient(90deg,#00e676,#00b0ff);color:#00140a;font-weight:700;font-size:16px;cursor:pointer;font-family:inherit}
+.code{font-size:38px;text-align:center;letter-spacing:6px;color:#fff;background:#00150a;border:1px dashed #39ff8e;border-radius:12px;padding:18px 8px;margin:14px 0;text-shadow:0 0 10px #39ff8e;user-select:all;word-break:break-all}
+.st{text-align:center;padding:12px;border-radius:10px;margin:12px 0;font-size:15px}.on{background:#00391a;color:#5cff9d;font-size:20px;font-weight:700}.off{background:#2a1a00;color:#ffc65c}.wait{background:#002a33;color:#7fe7ff}
+.steps{font-size:13px;color:#9fe9bd;line-height:1.7;margin-top:12px}.hide{display:none}
+.meta{font-size:11.5px;color:#5fb887;text-align:center;margin-top:14px}.meta a{color:#39ff8e}
+.hint{font-size:13px;color:#ffd38a;line-height:1.6;text-align:center}
+.blink{animation:b 1.2s infinite}@keyframes b{50%{opacity:.35}}
+</style></head><body><div class="card">
+<img class="logo" src="https://raw.githubusercontent.com/teamhussain59-collab/AQDAS-MD/main/media/dp.jpg" alt="" onerror="this.style.display='none'">
+<h1>AQDAS MD</h1><div class="sub">BY AQDAS HACKER</div>
+<div id="st" class="st wait blink">⏳ Status check ho raha hai...</div>
+
+<div id="pairBox" class="hide">
+ <div style="text-align:center;font-size:13px">Bot number <b id="num">—</b> ka PAIRING CODE:</div>
+ <div class="code" id="code">----</div>
+ <button id="copy" onclick="copyCode()">📋 Copy Code</button>
+ <div class="steps">1) Bot wale phone pe WhatsApp kholo<br>2) ⋮ / Settings &gt; <b>Linked devices</b> &gt; <b>Link a device</b><br>3) <b>Link with phone number instead</b> dabao<br>4) Upar wala code daal do ✅<br>Code ~1-2 minute mein badal jata hai. Naya code yahin khud aa jayega, page band mat karo.</div>
+</div>
+
+<div id="onBox" class="hide hint" style="color:#9fe9bd">Bot chal raha hai 🚀 Kisi bhi chat mein <b>.menu</b> likho.<br>SESSION_ID bot ki apni chat (Message yourself) mein aaya hoga — usay GitHub secret <b>SESSION_B64</b> mein daal do, phir dobara pair nahi karna padega.</div>
+
+<div id="offBox" class="hide hint">Bot abhi band hai 😴<br>GitHub repo &gt; <b>Actions</b> &gt; <b>AQDAS MD Bot</b> &gt; <b>Run workflow</b> dabao.<br>1-2 minute baad code yahin aa jayega.<br><br><a style="color:#39ff8e" href="https://github.com/teamhussain59-collab/AQDAS-MD/actions/workflows/run-bot.yml" target="_blank">▶ Actions page kholo</a></div>
+
+<div class="meta" id="meta"></div>
+</div>
+<script>
+const OWNER='teamhussain59-collab',REPO='AQDAS-MD';
+const API='https://api.github.com/repos/'+OWNER+'/'+REPO+'/contents/status.json?ref=status';
+const RAW='https://raw.githubusercontent.com/'+OWNER+'/'+REPO+'/status/status.json';
+const $=i=>document.getElementById(i);let CODE='';
+function dec(b64){const bin=atob(String(b64).replace(/\s/g,''));const u=new Uint8Array([...bin].map(c=>c.charCodeAt(0)));return new TextDecoder().decode(u)}
+async function load(){
+  try{const r=await fetch(API,{cache:'no-cache',headers:{Accept:'application/vnd.github+json'}});
+    if(r.status===404)return null;
+    if(r.ok){const j=await r.json();return JSON.parse(dec(j.content))}
+  }catch(e){}
+  const r2=await fetch(RAW+'?t='+Date.now(),{cache:'no-store'});
+  if(r2.status===404)return null;if(!r2.ok)throw new Error('HTTP '+r2.status);return r2.json()
+}
+function ago(t){const s=Math.max(0,Math.round((Date.now()-new Date(t))/1000));return s<60?s+' sec pehle':s<3600?Math.round(s/60)+' min pehle':Math.round(s/3600)+' ghante pehle'}
+function show(which){for(const id of ['pairBox','onBox','offBox'])$(id).classList.toggle('hide',id!==which)}
+function setSt(cls,txt){$('st').className='st '+cls;$('st').textContent=txt}
+async function tick(){
+  try{const s=await load();
+    if(!s){setSt('off','😴 Bot band hai');show('offBox');$('meta').textContent='';return}
+    const age=(Date.now()-new Date(s.updated_at))/1000;
+    const stale=age>25*60; // 10 min heartbeat; 25 min se purana = run band
+    $('meta').innerHTML='Last update: '+ago(s.updated_at)+(s.run_id?' • <a target="_blank" href="https://github.com/'+OWNER+'/'+REPO+'/actions/runs/'+s.run_id+'">run log</a>':'');
+    if(s.status==='offline'||stale){setSt('off','😴 Bot band hai');show('offBox');return}
+    if(s.status==='connected'){setSt('on','✅ CONNECTED');show('onBox');return}
+    if(s.status==='waiting_pair'&&s.code){setSt('wait','🔑 Pairing code ready — jaldi daalo!');$('num').textContent=s.number_masked?'+'+s.number_masked:'—';
+      if(s.code!==CODE){CODE=s.code;$('code').textContent=s.code;$('copy').textContent='📋 Copy Code'}show('pairBox');return}
+    if(s.status==='logged_out'){setSt('off','⚠️ Code expire / logout — naya code aa raha hai...');show(null);return}
+    setSt('wait blink',s.status==='reconnecting'?'🔄 Reconnect ho raha hai...':'⏳ Bot start ho raha hai, code aa raha hai...');show(null)
+  }catch(e){setSt('off','⚠️ Status nahi mila ('+e.message+'), dobara try...')}
+  finally{setTimeout(tick,5000)}
+}
+async function copyCode(){const raw=CODE.replace(/[^A-Za-z0-9]/g,'');try{await navigator.clipboard.writeText(raw)}catch(e){const t=document.createElement('textarea');t.value=raw;document.body.appendChild(t);t.select();document.execCommand('copy');t.remove()}$('copy').textContent='✅ Copied: '+raw}
+tick();
+</script></body></html>
