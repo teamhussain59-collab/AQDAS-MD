@@ -1,10 +1,12 @@
 {
-  "status": "waiting_pair",
-  "code": "X6PB-T7R4",
-  "code_at": "2026-11-03T14:56:02.230Z",
+  "status": "starting",
+  "code": null,
+  "qr": null,
+  "qr_at": null,
+  "code_at": null,
   "last_event": null,
   "number_masked": "********7157",
-  "run_id": "41658422693",
-  "updated_at": "2026-11-03T14:56:03.497Z",
-  "uptime_s": 2
+  "run_id": "41658858081",
+  "updated_at": "2026-11-03T14:58:46.528Z",
+  "uptime_s": 0
 }
