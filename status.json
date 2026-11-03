@@ -1,12 +1,12 @@
 {
-  "status": "starting",
+  "status": "waiting_qr",
   "code": null,
-  "qr": null,
-  "qr_at": null,
+  "qr": "https://wa.me/settings/linked_devices#2@cHRd0j2rA7F+HrS+7L4M8oQBX+sjaIEhmu+cj6LQxUzwmSkNFCCxdHwcuqPIL79KO8IhULbAJClGffDu+7FkfXBolIVzc8rggMI=,RPWh+RGmRE2UzY9sUYqDbt2kIWQt8BS8lGZ3JqhIg20=,QQf8gN6JwCeFwEpZbK7FpZUGyhfEwNHlA6LcN5WZj1w=,2oDMO1HxDxkl9GTYsMJc8STgl9ORfD2WiIKhKhQ/cjE=,1",
+  "qr_at": "2026-11-03T15:02:20.630Z",
   "code_at": null,
   "last_event": "close 428 Connection Terminated by Server",
   "number_masked": "********7157",
   "run_id": "41658858081",
-  "updated_at": "2026-11-03T15:02:19.833Z",
-  "uptime_s": 214
+  "updated_at": "2026-11-03T15:02:21.288Z",
+  "uptime_s": 215
 }
