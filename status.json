@@ -1,10 +1,10 @@
 {
-  "status": "waiting_pair",
-  "code": "A7RK-16WX",
-  "code_at": "2026-11-03T14:48:18.346Z",
-  "last_event": null,
+  "status": "linking",
+  "code": null,
+  "code_at": null,
+  "last_event": "phone ne code accept kiya, link ho raha hai",
   "number_masked": "********7157",
   "run_id": "41657107689",
-  "updated_at": "2026-11-03T14:48:19.618Z",
-  "uptime_s": 2
+  "updated_at": "2026-11-03T14:50:54.896Z",
+  "uptime_s": 157
 }
