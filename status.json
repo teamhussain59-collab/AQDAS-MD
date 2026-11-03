@@ -1,16 +1,16 @@
 {
-  "status": "waiting_qr",
+  "status": "starting",
   "code": null,
-  "qr": "https://wa.me/settings/linked_devices#2@0sZCiBH6KC3fmEEwqwOmiw3oaoNYdAmM4LljBwq99LMFerZCuJ1Qi8DKgQSdu0Zx5SFTbeNCZFF/IktNr/69seaFeBtr+uavJF0=,0MjrNQpwt+cTDGQ7tJixuLvTYbJ19ZPLJDfXZQk7Dno=,mzmryWgPv78UVK5hRntsn12+MbuToLeSFvNtwO1uCyI=,QIq3WidpbgC+L/rwArhS15ay0TzBiPLPKYfPvPa9vIQ=,1",
-  "qr_at": "2026-11-03T15:35:44.662Z",
+  "qr": null,
+  "qr_at": null,
   "code_at": null,
   "next_at": null,
-  "last_event": null,
+  "last_event": "close 428 Connection Terminated by Server",
   "number_masked": "********7157",
   "run_id": "41664792826",
   "slots_max": 10,
   "panel_url": "https://shannon-foto-lotus-functionality.trycloudflare.com",
   "panel_at": "2026-11-03T15:32:28.602Z",
-  "updated_at": "2026-11-03T15:35:44.662Z",
-  "uptime_s": 201
+  "updated_at": "2026-11-03T15:35:57.051Z",
+  "uptime_s": 214
 }
