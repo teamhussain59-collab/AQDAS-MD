@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node index.js",
-    "test": "node test/run.js && node test/store.js",
+    "test": "node test/run.js && node test/store.js && node test/pair.js",
     "check": "node test/syntax.js",
     "postinstall": "node scripts/patch-baileys.mjs"
   },

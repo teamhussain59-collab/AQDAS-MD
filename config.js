@@ -25,6 +25,7 @@ const config = {
   ytdlp: process.env.YTDLP_PATH || 'yt-dlp',
   ffmpeg: process.env.FFMPEG_PATH || 'ffmpeg',
   maxDownloadMB: Number(process.env.MAX_DOWNLOAD_MB || 100),
+  rchApiUrl: process.env.RCH_API_URL || 'https://api.omegatech.app/api/Fun/Rch',
   defaults: {
     autoReact: bool(process.env.AUTO_REACT, true),
     reactEmojis: list(process.env.AUTO_REACT_EMOJIS, ['❤️', '🔥', '😂', '😍', '👍', '💯', '😎', '🥰', '🤖', '⚡']),
