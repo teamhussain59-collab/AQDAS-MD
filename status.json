@@ -48,7 +48,9 @@
       "17:56:15 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
       "17:56:15 iq:result",
       "17:56:30 iq:result",
-      "17:57:00 iq:result"
+      "17:57:00 iq:result",
+      "17:57:30 iq:get",
+      "17:57:30 iq:result"
     ]
   },
   "channel": {
@@ -58,6 +60,6 @@
     "auto": true,
     "opted_in": 0
   },
-  "updated_at": "2026-11-03T17:57:04.925Z",
-  "uptime_s": 366
+  "updated_at": "2026-11-03T17:57:34.927Z",
+  "uptime_s": 396
 }
