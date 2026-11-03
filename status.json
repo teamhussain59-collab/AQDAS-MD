@@ -8,6 +8,17 @@
   "slots_max": 10,
   "panel_url": "https://oct-mileage-facing-posted.trycloudflare.com",
   "panel_at": "2026-11-03T17:51:02.603Z",
-  "updated_at": "2026-11-03T17:51:02.603Z",
-  "uptime_s": 4
+  "linked": [
+    {
+      "number": "********7157",
+      "state": "connected"
+    }
+  ],
+  "guest_log": [
+    "17:51:00 ********7157: LINKING (phone ne code accept kiya)",
+    "17:51:00 ********7157: CONNECTED ✅"
+  ],
+  "guest_frames": null,
+  "updated_at": "2026-11-03T17:51:04.771Z",
+  "uptime_s": 6
 }
