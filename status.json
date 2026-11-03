@@ -8,6 +8,15 @@
   "slots_max": 10,
   "panel_url": "https://billy-poor-managing-sudden.trycloudflare.com",
   "panel_at": "2026-11-03T15:47:12.341Z",
-  "updated_at": "2026-11-03T15:47:12.341Z",
-  "uptime_s": 5
+  "guest_log": [],
+  "guest_frames": {
+    "number": "********7157",
+    "state": "pairing",
+    "frames": [
+      "15:52:52 iq:set <pair-device>",
+      "15:52:52 iq:result <link_code_companion_reg[companion_hello]>"
+    ]
+  },
+  "updated_at": "2026-11-03T15:52:56.889Z",
+  "uptime_s": 350
 }
