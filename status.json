@@ -29,9 +29,10 @@
     "frames": [
       "17:47:54 iq:set <pair-device>",
       "17:47:54 iq:result <link_code_companion_reg[companion_hello]>",
-      "17:48:23 iq:result"
+      "17:48:23 iq:result",
+      "17:48:53 iq:result"
     ]
   },
-  "updated_at": "2026-11-03T17:48:27.832Z",
-  "uptime_s": 384
+  "updated_at": "2026-11-03T17:48:57.832Z",
+  "uptime_s": 414
 }
