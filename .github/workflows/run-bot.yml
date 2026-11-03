@@ -95,14 +95,26 @@ jobs:
         # taake bot band hone se pehle sessions save kare (warna cancel pe GitHub node ko seedha maar deta hai).
         run: |
           set +e
+          START=$(date +%s)
           node main.js &
           BOT=$!
           STOP=''
           stop() { if [ -z "$STOP" ]; then STOP=1; echo "stop signal -> bot sessions save kar ke band hoga"; kill -TERM "$BOT" 2>/dev/null; fi; }
           trap stop INT TERM
-          ( sleep 21000; echo "~5h50m pure, run khatam"; kill -TERM "$BOT" 2>/dev/null ) &
+          ( sleep 21000; echo "~5h50m pure, run khatam"; touch /tmp/aqdas_timeup; kill -TERM "$BOT" 2>/dev/null ) &
           TIMER=$!
           while kill -0 "$BOT" 2>/dev/null; do wait "$BOT"; done
           pkill -P "$TIMER" 2>/dev/null; kill "$TIMER" 2>/dev/null
-          echo "run khatam, agla run cron / watchdog se"
+          # cancel nahi hua (run ka time pura / bot khud band hua): agla run KHUD start — cron / watchdog ka intezar nahi
+          if [ -z "$STOP" ]; then
+            RAN=$(( $(date +%s) - START ))
+            if [ -f /tmp/aqdas_timeup ] || [ "$RAN" -ge 600 ]; then
+              echo "agla run khud start ho raha hai (self-chain)"
+              curl -sS -o /dev/null -w "dispatch HTTP %{http_code}\n" -X POST -H "Authorization: Bearer $GITHUB_TOKEN" -H "Accept: application/vnd.github+json" \
+                "https://api.github.com/repos/$GITHUB_REPOSITORY/actions/workflows/run-bot.yml/dispatches" -d '{"ref":"main"}' || true
+            else
+              echo "bot ${RAN}s mein band hua (crash?) — watchdog 5-15 min mein wapas layega"
+            fi
+          fi
+          echo "run khatam"
           exit 0
