@@ -1,12 +1,12 @@
 {
   "status": "waiting_qr",
   "code": null,
-  "qr": "https://wa.me/settings/linked_devices#2@lAkSO3pNoTEfmFiI01fS03tMiBAJUqLpxqiy/vCS26Z9U7KIFC1OMK7YXhFPYJSPyvoaBI6peAZM7TR6DelXXuOrzNptXeTalFQ=,RPWh+RGmRE2UzY9sUYqDbt2kIWQt8BS8lGZ3JqhIg20=,QQf8gN6JwCeFwEpZbK7FpZUGyhfEwNHlA6LcN5WZj1w=,2oDMO1HxDxkl9GTYsMJc8STgl9ORfD2WiIKhKhQ/cjE=,1",
-  "qr_at": "2026-11-03T15:03:00.641Z",
+  "qr": "https://wa.me/settings/linked_devices#2@yn/BZqhl1Kla1j+87zeMLC5AAKH/nknFAJIhZEr9DFYVxRSUEcDe2yWwl1nMim5tmzKJRSAMQBX+o6cygHa2rvdYT9/Lt2AdTBU=,RPWh+RGmRE2UzY9sUYqDbt2kIWQt8BS8lGZ3JqhIg20=,QQf8gN6JwCeFwEpZbK7FpZUGyhfEwNHlA6LcN5WZj1w=,2oDMO1HxDxkl9GTYsMJc8STgl9ORfD2WiIKhKhQ/cjE=,1",
+  "qr_at": "2026-11-03T15:03:40.663Z",
   "code_at": null,
   "last_event": "close 428 Connection Terminated by Server",
   "number_masked": "********7157",
   "run_id": "41658858081",
-  "updated_at": "2026-11-03T15:03:00.641Z",
-  "uptime_s": 255
+  "updated_at": "2026-11-03T15:03:40.663Z",
+  "uptime_s": 295
 }
