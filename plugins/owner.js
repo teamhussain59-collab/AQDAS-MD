@@ -83,8 +83,8 @@ export default [
     name: 'setdp', alias: ['setpp'], category: 'owner', owner: true, usage: '(photo pe reply) / reset', desc: 'Bot ka DP + menu photo badlo',
     async run (ctx) {
       let buf
-      if (ctx.args[0] === 'reset') { resetDp(); buf = fs.readFileSync(ORIGINAL_DP) } else if (ctx.targetType === 'imageMessage') {
-        buf = await ctx.download(); saveDp(buf)
+      if (ctx.args[0] === 'reset') { await resetDp(); buf = fs.readFileSync(ORIGINAL_DP) } else if (ctx.targetType === 'imageMessage') {
+        buf = await ctx.download(); await saveDp(buf)
       } else if (ctx.args[0] === 'default') buf = fs.readFileSync(ORIGINAL_DP)
       else return ctx.reply(`📸 Kisi photo pe reply karo *${ctx.prefix}setdp*\nOriginal AQDAS DP wapas: *${ctx.prefix}setdp reset*`)
       await ctx.sock.updateProfilePicture(ctx.sock.user.id.split(':')[0] + '@s.whatsapp.net', buf)
@@ -94,7 +94,7 @@ export default [
   {
     name: 'setsong', alias: ['setmenusong'], category: 'owner', owner: true, usage: '(audio pe reply) / naam / link / reset', desc: 'Menu ka song badlo (pehle 30 sec)',
     async run (ctx) {
-      if (ctx.args[0] === 'reset') { resetSong(); return ctx.reply('✅ Original AQDAS MD theme wapas lag gaya') }
+      if (ctx.args[0] === 'reset') { await resetSong(); return ctx.reply('✅ Original AQDAS MD theme wapas lag gaya') }
       let src
       if (['audioMessage', 'videoMessage', 'documentMessage'].includes(ctx.targetType)) src = await ctx.download()
       else if (ctx.text) {
@@ -104,7 +104,7 @@ export default [
       } else return ctx.reply(`🎵 Kisi audio/voice note pe reply karo *${ctx.prefix}setsong*\nYa: *${ctx.prefix}setsong song ka naam / YouTube link*\nOriginal wapas: *${ctx.prefix}setsong reset*`)
       await ctx.react('⏳')
       const mp3 = await trimTo30(src)
-      saveSong(mp3)
+      await saveSong(mp3)
       await ctx.reply({ audio: mp3, mimetype: 'audio/mpeg', ptt: false })
       await ctx.reply('✅ Naya menu song save (30 sec). Ab .menu pe yahi bajega.')
     }
