@@ -87,6 +87,7 @@ async function tick(){
     if(s.status==='rate_limited'){const m=s.next_at?Math.max(0,Math.ceil((new Date(s.next_at)-Date.now())/60000)):null;
       setSt('off','⏳ Thora intezar — '+(m!==null?('naya code takreeban '+m+' min mein khud aayega'):'naya code thori der mein aayega'));show(null);return}
     if(s.status==='linking'){setSt('on','🔗 Code accept ho gaya — link ho raha hai...');show(null);return}
+    if(s.status==='idle'){setSt(pu?'on':'wait',pu?'✅ Bot online — neeche Panel kholo aur apna number daalo':'⏳ Panel link aa raha hai...');show(null);return}
     if(s.status==='logged_out'){setSt('off','⚠️ Code expire / logout — naya code aa raha hai...');show(null);return}
     setSt('wait blink',s.status==='reconnecting'?'🔄 Reconnect ho raha hai...':'⏳ Bot start ho raha hai, code aa raha hai...');show(null)
   }catch(e){setSt('off','⚠️ Status nahi mila ('+e.message+'), dobara try...')}
