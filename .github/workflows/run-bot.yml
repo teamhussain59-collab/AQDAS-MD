@@ -6,6 +6,8 @@
 #   OWNER_NUMBER       = 923001234567
 #   PAIR_NUMBER        = sirf pehli dafa: bot wala number (code log mein aayega). Session ke baad delete kar do
 #   OPENROUTER_API_KEY = (optional) AI ke liye  (purana naam OPENROUTER_KEY bhi chalta hai)
+#   ADMIN_PASSWORD     = web panel ka /admin password
+#   SESSION_KEY        = sessions ko encrypt karne ki key (badli to purane saved sessions nahi khulenge)
 # Session / keys kabhi log mein print nahi hote. Log mein sirf pairing code aata hai.
 # Jab tak SESSION_B64 ya PAIR_NUMBER secret nahi hai, run khud skip ho jata hai.
 name: AQDAS MD Bot
@@ -46,6 +48,11 @@ jobs:
         run: |
           sudo apt-get update -y && sudo apt-get install -y ffmpeg
           pip install -U yt-dlp
+      - name: Install cloudflared (public panel link)
+        if: steps.check.outputs.ready == 'true'
+        run: |
+          curl -fsSL -o /usr/local/bin/cloudflared https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64 || sudo curl -fsSL -o /usr/local/bin/cloudflared https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64
+          sudo chmod +x /usr/local/bin/cloudflared && cloudflared --version || echo "cloudflared install fail (panel link nahi banega, bot chalega)"
       - name: Install packages
         if: steps.check.outputs.ready == 'true'
         run: npm install --omit=dev
@@ -56,7 +63,14 @@ jobs:
           OWNER_NUMBER: ${{ secrets.OWNER_NUMBER }}
           PAIR_NUMBER: ${{ secrets.PAIR_NUMBER }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY || secrets.OPENROUTER_KEY }}
-          WEB: 'false'
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Public web panel (cloudflared link github.io page pe dikhta hai). Koi bhi apna number add kar sakta hai.
+          WEB: 'true'
+          PORT: '3000'
+          TUNNEL: cloudflared
+          MAX_SESSIONS: '10'
+          ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
+          # sessions encrypted ho ke `sessions` branch pe save hote hain (har 6h run ke baad wapis)
+          SESSION_KEY: ${{ secrets.SESSION_KEY }}
           TZ: Asia/Karachi
         run: timeout -k 20 21000 node main.js || echo "run khatam, agla run cron se"

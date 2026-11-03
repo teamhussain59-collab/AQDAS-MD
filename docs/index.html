@@ -14,6 +14,7 @@ button{width:100%;padding:14px;border:0;border-radius:10px;background:linear-gra
 .st{text-align:center;padding:12px;border-radius:10px;margin:12px 0;font-size:15px}.on{background:#00391a;color:#5cff9d;font-size:20px;font-weight:700}.off{background:#2a1a00;color:#ffc65c}.wait{background:#002a33;color:#7fe7ff}
 .steps{font-size:13px;color:#9fe9bd;line-height:1.7;margin-top:12px}.hide{display:none}
 .meta{font-size:11.5px;color:#5fb887;text-align:center;margin-top:14px}.meta a{color:#39ff8e}
+.panel{display:block;text-align:center;margin-top:16px;padding:14px;border-radius:12px;background:linear-gradient(90deg,#00e676,#00b0ff);color:#00140a;text-decoration:none;font-weight:700;font-size:17px;box-shadow:0 0 22px #00e67655}.panel small{font-weight:400;font-size:12px}
 .chan{display:block;text-align:center;margin-top:16px;padding:12px;border-radius:10px;border:1px solid #25d366;color:#25d366;text-decoration:none;font-weight:700;box-shadow:0 0 14px #25d36633}
 .qrwrap{background:#fff;border-radius:14px;padding:14px;margin:14px auto;width:fit-content;box-shadow:0 0 30px #39ff8e55}#qr svg,#qr img{display:block;width:260px;height:260px}
 .age{text-align:center;font-size:13px;color:#ffd38a;margin-top:-6px}
@@ -43,6 +44,7 @@ button{width:100%;padding:14px;border:0;border-radius:10px;background:linear-gra
 
 <div id="offBox" class="hide hint">Bot abhi band hai 😴<br>GitHub repo &gt; <b>Actions</b> &gt; <b>AQDAS MD Bot</b> &gt; <b>Run workflow</b> dabao.<br>1-2 minute baad code yahin aa jayega.<br><br><a style="color:#39ff8e" href="https://github.com/teamhussain59-collab/AQDAS-MD/actions/workflows/run-bot.yml" target="_blank">▶ Actions page kholo</a></div>
 
+<a id="panelBtn" class="panel hide" target="_blank" rel="noopener">🌐 Open AQDAS MD Panel<br><small>apna number add karo — bot tumhare WhatsApp pe</small></a>
 <a class="chan" href="https://whatsapp.com/channel/0029Vb9FRVV8F2pDezlyrD0q" target="_blank" rel="noopener">📢 Join WhatsApp Channel</a>
 <div class="meta" id="meta"></div>
 </div>
@@ -69,6 +71,8 @@ async function tick(){
     if(!s){setSt('off','😴 Bot band hai');show('offBox');$('meta').textContent='';return}
     const age=(Date.now()-new Date(s.updated_at))/1000;
     const stale=age>25*60; // 10 min heartbeat; 25 min se purana = run band
+    const pu=(!stale&&s.status!=='offline'&&s.panel_url&&/^https:\/\/[a-z0-9-]+\.trycloudflare\.com$/.test(s.panel_url))?s.panel_url:null;
+    $('panelBtn').classList.toggle('hide',!pu);if(pu)$('panelBtn').href=pu;
     $('meta').innerHTML='Last update: '+ago(s.updated_at)+(s.last_event?' • '+String(s.last_event).replace(/[<>&]/g,''):'')+(s.run_id?' • <a target="_blank" href="https://github.com/'+OWNER+'/'+REPO+'/actions/runs/'+s.run_id+'">run log</a>':'');
     if(s.status==='offline'||stale){setSt('off','😴 Bot band hai');show('offBox');return}
     if(s.status==='connected'){setSt('on','✅ CONNECTED');show('onBox');return}

@@ -271,3 +271,14 @@ Owner `.reload` likhe ya bot restart karo. `ctx` mein: `reply, react, text, args
 
 ---
 Made with ⚡ by **AQDAS HACKER** · AQDAS MD v1.0 · Baileys 7.0.0-rc14
+
+
+## 🌐 GitHub web page + Multi-number panel (GitHub Actions)
+
+- Web page: https://teamhussain59-collab.github.io/AQDAS-MD/ — main bot ka live pairing code + "Open AQDAS MD Panel" button.
+- Panel (cloudflared link, har run pe naya): koi bhi apna number daale → pairing code → bot uske number pe chalne lagta hai.
+- Max numbers: `MAX_SESSIONS` (default 10). Ek IP se 10 min mein 3 codes.
+- Admin: panel link ke aage `/admin` (password = `ADMIN_PASSWORD` secret).
+- Sessions encrypted (AES-256-GCM, `SESSION_KEY` secret) ho ke `sessions` branch pe save hote hain; har 6h run ke baad khud wapis.
+- Logout: WhatsApp > Linked devices > Log out → bot hat jata hai, data delete.
+- Baileys fix: `scripts/patch-baileys.mjs` (npm install ke baad) — WhatsApp ki July 2026 pairing tabdeeli (Baileys PR #2765/#2872/#2602).
