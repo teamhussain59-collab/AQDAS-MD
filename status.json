@@ -4,21 +4,8 @@
   "code_at": null,
   "last_event": null,
   "number_masked": null,
-  "run_id": "41672181311",
+  "run_id": "41679989779",
   "slots_max": 10,
-  "panel_url": "https://reality-contracts-technologies-quoted.trycloudflare.com",
-  "panel_at": "2026-11-03T16:16:30.571Z",
-  "linked": [
-    {
-      "number": "********7157",
-      "state": "connected"
-    }
-  ],
-  "guest_log": [
-    "16:16:28 ********7157: LINKING (phone ne code accept kiya)",
-    "16:16:29 ********7157: CONNECTED ✅"
-  ],
-  "guest_frames": null,
-  "updated_at": "2026-11-03T17:00:27.849Z",
-  "uptime_s": 2642
+  "updated_at": "2026-11-03T17:02:47.114Z",
+  "uptime_s": 1
 }
