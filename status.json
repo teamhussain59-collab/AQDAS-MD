@@ -1,7 +1,7 @@
 {
-  "status": "starting",
-  "code": null,
+  "status": "waiting_pair",
+  "code": "T4Q3-JSKA",
   "number_masked": "********7157",
   "run_id": "41655879723",
-  "updated_at": "2026-11-03T14:43:10.798Z"
+  "updated_at": "2026-11-03T14:43:12.995Z"
 }
