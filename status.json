@@ -8,6 +8,17 @@
   "slots_max": 10,
   "panel_url": "https://continuity-expansys-principle-sorted.trycloudflare.com",
   "panel_at": "2026-11-03T17:13:56.732Z",
-  "updated_at": "2026-11-03T17:13:56.732Z",
-  "uptime_s": 5
+  "linked": [
+    {
+      "number": "********7157",
+      "state": "connected"
+    }
+  ],
+  "guest_log": [
+    "17:13:53 ********7157: LINKING (phone ne code accept kiya)",
+    "17:13:53 ********7157: CONNECTED ✅"
+  ],
+  "guest_frames": null,
+  "updated_at": "2026-11-03T17:13:57.752Z",
+  "uptime_s": 6
 }
