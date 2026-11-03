@@ -121,11 +121,11 @@ export default [
     }
   },
   {
-    name: 'restart', category: 'owner', owner: true, desc: 'Bot restart',
+    name: 'restart', category: 'owner', owner: true, superOwner: true, desc: 'Bot restart',
     async run (ctx) { await ctx.reply('♻️ Restart ho raha hai...'); setTimeout(() => process.exit(0), 1000) }
   },
   {
-    name: 'reload', category: 'owner', owner: true, desc: 'Naye plugins load karo (restart ke baghair)',
+    name: 'reload', category: 'owner', owner: true, superOwner: true, desc: 'Naye plugins load karo (restart ke baghair)',
     async run (ctx) { const { loadPlugins } = await import('../lib/plugins.js'); const l = await loadPlugins(true); await ctx.reply(`✅ ${l.length} commands reload`) }
   }
 ]
