@@ -1,11 +1,14 @@
 {
-  "status": "idle",
+  "status": "waiting_qr",
   "code": null,
+  "qr": "https://wa.me/settings/linked_devices#2@UZvFLp+jvV6a+ISHZUQFmOFAje8OyDZy5JbjJH00NZtfxfhy+Ijkc65w3OQUkfZgq9iG5fXWu4R0tX++EYnfTIh9d86805KpjV0=,0MjrNQpwt+cTDGQ7tJixuLvTYbJ19ZPLJDfXZQk7Dno=,mzmryWgPv78UVK5hRntsn12+MbuToLeSFvNtwO1uCyI=,QIq3WidpbgC+L/rwArhS15ay0TzBiPLPKYfPvPa9vIQ=,1",
+  "qr_at": "2026-11-03T15:32:24.535Z",
   "code_at": null,
+  "next_at": null,
   "last_event": null,
-  "number_masked": null,
+  "number_masked": "********7157",
   "run_id": "41664792826",
   "slots_max": 10,
-  "updated_at": "2026-11-03T15:32:23.979Z",
-  "uptime_s": 1
+  "updated_at": "2026-11-03T15:32:25.365Z",
+  "uptime_s": 2
 }
