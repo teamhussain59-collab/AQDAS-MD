@@ -19,8 +19,6 @@
     }
   ],
   "guest_log": [
-    "17:51:58 ********5182: LINKING (phone ne code accept kiya)",
-    "17:52:38 ******5182: code bana",
     "17:55:09 ********5182: connection close 428 Connection Terminated by Server",
     "17:55:12 ********5182: connection close 401 Connection Failure",
     "17:55:12 ********5182: logged out",
@@ -30,7 +28,9 @@
     "17:56:03 ******5182: expired / closed (code 428)",
     "17:57:38 qr: connection close 428 Connection Terminated by Server",
     "17:57:38 qr: expired / closed (code 428)",
-    "17:59:01 ********5182: connection close 428 Connection Terminated by Server"
+    "17:59:01 ********5182: connection close 428 Connection Terminated by Server",
+    "17:59:05 ********5182: connection close 401 Connection Failure",
+    "17:59:05 ********5182: logged out"
   ],
   "guest_frames": {
     "number": "********5182",
@@ -59,6 +59,6 @@
     "auto": true,
     "opted_in": 0
   },
-  "updated_at": "2026-11-03T17:59:05.088Z",
-  "uptime_s": 486
+  "updated_at": "2026-11-03T17:59:06.068Z",
+  "uptime_s": 487
 }
