@@ -1,8 +1,8 @@
 {
   "status": "waiting_qr",
   "code": null,
-  "qr": "https://wa.me/settings/linked_devices#2@cH+Ai2iwJNWpZhDTfsMChKhvMaZQnYR2nZ0eEpagYnTV3X5MzlrempsZTdhYqxnWK7/nnIYgN7m9YkLdtBGK/J1bn+hC79Ons5s=,FFEe6plYIKOgq2UJ4qfTlmibrPKAZrJqCjlHWCD70x8=,vWS+h6h5AGrf2QriuUhM19NWmfprs7h7c3nP1j9oyHo=,FCg7bj2WDO9ilKyA29AZJXA2HGHWEfQi/9/hZrzQGIU=,1",
-  "qr_at": "2026-11-03T15:35:57.337Z",
+  "qr": "https://wa.me/settings/linked_devices#2@IbSvt+nH+q51+34j3e9fN0uOlUJqn1WTrtGLV1as+Hi2Lw3f4F7XzseCnjriifA+KtHlS3ztPjKcD7bGj5RgWfTa52f49bJIBCM=,FFEe6plYIKOgq2UJ4qfTlmibrPKAZrJqCjlHWCD70x8=,vWS+h6h5AGrf2QriuUhM19NWmfprs7h7c3nP1j9oyHo=,FCg7bj2WDO9ilKyA29AZJXA2HGHWEfQi/9/hZrzQGIU=,1",
+  "qr_at": "2026-11-03T15:36:37.354Z",
   "code_at": null,
   "next_at": null,
   "last_event": "close 428 Connection Terminated by Server",
@@ -11,6 +11,6 @@
   "slots_max": 10,
   "panel_url": "https://shannon-foto-lotus-functionality.trycloudflare.com",
   "panel_at": "2026-11-03T15:32:28.602Z",
-  "updated_at": "2026-11-03T15:35:58.467Z",
-  "uptime_s": 215
+  "updated_at": "2026-11-03T15:36:37.354Z",
+  "uptime_s": 254
 }
