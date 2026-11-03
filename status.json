@@ -4,29 +4,8 @@
   "code_at": null,
   "last_event": null,
   "number_masked": null,
-  "run_id": "41667141426",
+  "run_id": "41670404731",
   "slots_max": 10,
-  "panel_url": "https://billy-poor-managing-sudden.trycloudflare.com",
-  "panel_at": "2026-11-03T15:47:12.341Z",
-  "guest_log": [
-    "15:52:57 ********7157: code bana",
-    "15:53:13 ********7157: LINKING (phone ne code accept kiya)",
-    "15:53:15 ********7157: connection close 515 Stream Errored (restart required)",
-    "15:53:19 ********7157: CONNECTED ✅"
-  ],
-  "guest_frames": {
-    "number": "********7157",
-    "state": "connected",
-    "frames": [
-      "15:52:52 iq:set <pair-device>",
-      "15:52:52 iq:result <link_code_companion_reg[companion_hello]>",
-      "15:53:13 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
-      "15:53:13 iq:result",
-      "15:53:14 iq:set <pair-success>",
-      "15:53:15 stream:error: code=515",
-      "15:53:15 xmlstreamend:"
-    ]
-  },
-  "updated_at": "2026-11-03T15:57:08.080Z",
-  "uptime_s": 601
+  "updated_at": "2026-11-03T16:06:05.803Z",
+  "uptime_s": 1
 }
