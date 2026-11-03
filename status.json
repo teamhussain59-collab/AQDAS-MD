@@ -1,12 +1,15 @@
 {
-  "status": "idle",
+  "status": "offline",
   "code": null,
+  "qr": null,
+  "qr_at": null,
   "code_at": null,
+  "next_at": null,
   "last_event": null,
   "number_masked": null,
   "run_id": "41687942502",
   "slots_max": 10,
-  "panel_url": "https://oct-mileage-facing-posted.trycloudflare.com",
+  "panel_url": null,
   "panel_at": "2026-11-03T17:51:02.603Z",
   "linked": [
     {
@@ -36,6 +39,6 @@
     "auto": true,
     "opted_in": 0
   },
-  "updated_at": "2026-11-03T17:59:09.417Z",
-  "uptime_s": 491
+  "updated_at": "2026-11-03T18:00:35.613Z",
+  "uptime_s": 577
 }
