@@ -12,10 +12,6 @@
     {
       "number": "********7157",
       "state": "connected"
-    },
-    {
-      "number": "********5182",
-      "state": "linking"
     }
   ],
   "guest_log": [
@@ -32,26 +28,7 @@
     "17:59:05 ********5182: connection close 401 Connection Failure",
     "17:59:05 ********5182: logged out"
   ],
-  "guest_frames": {
-    "number": "********5182",
-    "state": "linking",
-    "frames": [
-      "17:55:31 iq:set <pair-device>",
-      "17:55:31 iq:result <link_code_companion_reg[companion_hello]>",
-      "17:55:49 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
-      "17:55:50 iq:result",
-      "17:56:00 iq:result",
-      "17:56:15 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
-      "17:56:15 iq:result",
-      "17:56:30 iq:result",
-      "17:57:00 iq:result",
-      "17:57:30 iq:get",
-      "17:57:30 iq:result",
-      "17:58:00 iq:result",
-      "17:58:30 iq:result",
-      "17:59:00 xmlstreamend:"
-    ]
-  },
+  "guest_frames": null,
   "channel": {
     "ok": true,
     "name": "AQDAS TECH",
@@ -59,6 +36,6 @@
     "auto": true,
     "opted_in": 0
   },
-  "updated_at": "2026-11-03T17:59:06.068Z",
-  "uptime_s": 487
+  "updated_at": "2026-11-03T17:59:09.417Z",
+  "uptime_s": 491
 }
