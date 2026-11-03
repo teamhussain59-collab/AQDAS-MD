@@ -1,8 +1,8 @@
 {
   "status": "waiting_qr",
   "code": null,
-  "qr": "https://wa.me/settings/linked_devices#2@gSBo/fAYCkLZUCzzOw4LOGFB3RUu32IFHtXqKul0SSH/RB80RrI5mAAeN1wESeCLd5yr1lNMZkWh1RrO2sA6ypD2Au3OBI2RKgg=,0MjrNQpwt+cTDGQ7tJixuLvTYbJ19ZPLJDfXZQk7Dno=,mzmryWgPv78UVK5hRntsn12+MbuToLeSFvNtwO1uCyI=,QIq3WidpbgC+L/rwArhS15ay0TzBiPLPKYfPvPa9vIQ=,1",
-  "qr_at": "2026-11-03T15:35:04.636Z",
+  "qr": "https://wa.me/settings/linked_devices#2@0sZCiBH6KC3fmEEwqwOmiw3oaoNYdAmM4LljBwq99LMFerZCuJ1Qi8DKgQSdu0Zx5SFTbeNCZFF/IktNr/69seaFeBtr+uavJF0=,0MjrNQpwt+cTDGQ7tJixuLvTYbJ19ZPLJDfXZQk7Dno=,mzmryWgPv78UVK5hRntsn12+MbuToLeSFvNtwO1uCyI=,QIq3WidpbgC+L/rwArhS15ay0TzBiPLPKYfPvPa9vIQ=,1",
+  "qr_at": "2026-11-03T15:35:44.662Z",
   "code_at": null,
   "next_at": null,
   "last_event": null,
@@ -11,6 +11,6 @@
   "slots_max": 10,
   "panel_url": "https://shannon-foto-lotus-functionality.trycloudflare.com",
   "panel_at": "2026-11-03T15:32:28.602Z",
-  "updated_at": "2026-11-03T15:35:04.636Z",
-  "uptime_s": 161
+  "updated_at": "2026-11-03T15:35:44.662Z",
+  "uptime_s": 201
 }
