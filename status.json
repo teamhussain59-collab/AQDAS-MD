@@ -1,12 +1,12 @@
 {
   "status": "waiting_qr",
   "code": null,
-  "qr": "https://wa.me/settings/linked_devices#2@v+3eRYn7Ac0MDS17w3Yj4bAwygLeU1Y5MB6TDzAYEcX4nddEJBl/kJtP9klL5D+Wc3qaYM+H7nyH+7lYfte2I/h+W9vJpzDmoI8=,Ee3O3z264mL6z4o1c9aV6tx4jHFES9S5H34WeFYfTi4=,eSY0AW4ghT+4f0nDLIPaO41hwfH1r5ko4uU55OZLUQU=,z2IotDIgOuvQYCjmd4Ad9PYHp4ebDbEBd0az5JYTK70=,1",
-  "qr_at": "2026-11-03T15:00:47.280Z",
+  "qr": "https://wa.me/settings/linked_devices#2@qgbfmwYm/8RWCUM/y97fogew61jHUzfzXGmzJ7nAdEh7uok8jhfeM5a7IncKQccb8nmBQOsCursRyPMYBnb83v/PDXJnHsCgD/s=,Ee3O3z264mL6z4o1c9aV6tx4jHFES9S5H34WeFYfTi4=,eSY0AW4ghT+4f0nDLIPaO41hwfH1r5ko4uU55OZLUQU=,z2IotDIgOuvQYCjmd4Ad9PYHp4ebDbEBd0az5JYTK70=,1",
+  "qr_at": "2026-11-03T15:01:27.291Z",
   "code_at": null,
   "last_event": null,
   "number_masked": "********7157",
   "run_id": "41658858081",
-  "updated_at": "2026-11-03T15:00:47.280Z",
-  "uptime_s": 121
+  "updated_at": "2026-11-03T15:01:27.292Z",
+  "uptime_s": 161
 }
