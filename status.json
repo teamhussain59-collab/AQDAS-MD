@@ -1,12 +1,15 @@
 {
-  "status": "idle",
+  "status": "offline",
   "code": null,
+  "qr": null,
+  "qr_at": null,
   "code_at": null,
+  "next_at": null,
   "last_event": null,
   "number_masked": null,
   "run_id": "41679989779",
   "slots_max": 10,
-  "panel_url": "https://belfast-valium-airfare-smith.trycloudflare.com",
+  "panel_url": null,
   "panel_at": "2026-11-03T17:02:50.590Z",
   "linked": [
     {
@@ -19,6 +22,6 @@
     "17:02:48 ********7157: CONNECTED ✅"
   ],
   "guest_frames": null,
-  "updated_at": "2026-11-03T17:08:47.115Z",
-  "uptime_s": 361
+  "updated_at": "2026-11-03T17:08:54.602Z",
+  "uptime_s": 369
 }
