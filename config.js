@@ -8,6 +8,7 @@ const digits = v => String(v || '').replace(/[^0-9]/g, '')
 const config = {
   botName: process.env.BOT_NAME || 'AQDAS MD',
   ownerName: process.env.OWNER_NAME || 'AQDAS HACKER',
+  channel: process.env.CHANNEL_LINK || 'https://whatsapp.com/channel/0029Vb9FRVV8F2pDezlyrD0q',
   ownerNumbers: list(process.env.OWNER_NUMBER, []).map(digits).filter(Boolean),
   prefix: process.env.PREFIX || '.',
   mode: (process.env.MODE || 'public').toLowerCase(),

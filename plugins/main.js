@@ -15,7 +15,9 @@ export function menuText (ctx) {
   const s = ctx.settings.load()
   let t = `╭━━━〔 *${config.botName}* 〕━━━⬣\n`
   t += `┃ 👑 Owner: ${config.ownerName}\n┃ 🔣 Prefix: [ ${p} ]\n┃ 🌐 Mode: ${s.mode}\n┃ ⏱️ Uptime: ${runtime(process.uptime())}\n┃ 📜 Commands: ${list.length}\n`
-  t += `┃ ❤️ AutoReact: ${on(s.autoReact)} | 👀 Status: ${on(s.autoStatusView)}\n╰━━━━━━━━━━━━━━━━⬣\n`
+  t += `┃ ❤️ AutoReact: ${on(s.autoReact)} | 👀 Status: ${on(s.autoStatusView)}\n`
+  if (config.channel) t += `┃ 📢 Channel: ${config.channel}\n`
+  t += '╰━━━━━━━━━━━━━━━━⬣\n'
   const cats = {}
   for (const c of list) (cats[c.category] = cats[c.category] || []).push(c)
   for (const cat of ORDER.filter(k => cats[k]).concat(Object.keys(cats).filter(k => !ORDER.includes(k)))) {
