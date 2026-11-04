@@ -23,7 +23,7 @@
     {
       "number": "********8574",
       "state": "connected",
-      "autostatus": "off"
+      "autostatus": "view+react"
     },
     {
       "number": "********6325",
@@ -57,7 +57,8 @@
     "18:08:46 qr: connection close 515 Stream Errored (restart required)",
     "18:08:49 ********8801: CONNECTED ✅",
     "18:10:10 ********8801: connection close 401 Stream Errored (conflict)",
-    "18:10:11 ********8801: logged out"
+    "18:10:11 ********8801: logged out",
+    "18:11:49 ********8574: status **********7533: seen ✅, react 💋 ✅"
   ],
   "guest_frames": null,
   "mem": {
@@ -78,6 +79,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-04T18:10:32.472Z",
-  "uptime_s": 606
+  "updated_at": "2026-11-04T18:11:53.111Z",
+  "uptime_s": 686
 }
