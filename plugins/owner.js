@@ -1,3 +1,4 @@
+import { currentSid } from '../lib/ctx.js'
 import fs from 'fs'
 import config from '../config.js'
 import { ORIGINAL_DP, trimTo30, saveSong, resetSong, saveDp, resetDp } from '../lib/assets.js'
@@ -66,12 +67,27 @@ export default [
     }
   },
   {
-    name: 'mode', category: 'owner', owner: true, usage: 'public/private', desc: 'Public = sab use karein, Private = sirf owner',
+    name: 'mode', category: 'owner', owner: true, usage: 'public/private [all]', desc: 'Public = sab use karein, Private = sirf owner (is number pe). "all" = sab linked numbers pe',
     async run (ctx) {
       const v = (ctx.args[0] || '').toLowerCase()
-      if (!['public', 'private'].includes(v)) return ctx.reply(`Mode abhi: ${ctx.settings.get('mode')}\nUse: ${ctx.prefix}mode public / private`)
+      const all = (ctx.args[1] || '').toLowerCase() === 'all'
+      const me = String(ctx.sock?.user?.id || '').split(':')[0].split('@')[0]
+      const tag = me ? ' (…' + me.slice(-4) + ')' : ''
+      let others = []
+      try { others = (await import('../lib/sessions.js')).allSids().filter(x => x.sid !== currentSid()) } catch {}
+      if (!['public', 'private'].includes(v)) {
+        const rest = others.map(x => `…${String(x.number || '').slice(-4) || x.sid}: ${ctx.settings.load(x.sid).mode}`).join('\n')
+        return ctx.reply(`Mode abhi${tag}: ${ctx.settings.get('mode')}${rest ? '\n\nBaqi numbers:\n' + rest : ''}\n\nUse: ${ctx.prefix}mode public / private\nSab numbers pe: ${ctx.prefix}mode private all`)
+      }
       ctx.settings.set('mode', v)
-      await ctx.reply(`✅ Mode: *${v}*`)
+      if (all) {
+        if (!ctx.superOwner) return ctx.reply(`✅ Mode${tag}: *${v}*\n❌ "all" sirf AQDAS MD ke asli owner ke liye hai.`)
+        for (const x of others) { const st = ctx.settings.load(x.sid); st.mode = v; ctx.settings.save(x.sid) }
+        return ctx.reply(`✅ Mode: *${v}* — sab ${others.length + 1} numbers pe`)
+      }
+      const diff = others.filter(x => ctx.settings.load(x.sid).mode !== v)
+      const note = diff.length ? `\n\nℹ️ Ye sirf is number pe laga. ${diff.map(x => '…' + String(x.number || '').slice(-4)).join(', ')} abhi *${v === 'private' ? 'public' : 'private'}* hai.${ctx.superOwner ? ` Sab pe: ${ctx.prefix}mode ${v} all` : ''}` : ''
+      await ctx.reply(`✅ Mode${tag}: *${v}*${v === 'private' ? '\nAb is number pe sirf owner ko jawab milega.' : ''}${note}`)
     }
   },
   {
