@@ -14,10 +14,6 @@
     {
       "number": "********7157",
       "state": "connected"
-    },
-    {
-      "number": "********4197",
-      "state": "connected"
     }
   ],
   "guest_log": [
@@ -32,23 +28,7 @@
     "04:59:09 ********4197: connection close 401 Stream Errored (conflict)",
     "04:59:09 ********4197: logged out"
   ],
-  "guest_frames": {
-    "number": "********4197",
-    "state": "connected",
-    "frames": [
-      "04:50:29 iq:set <pair-device>",
-      "04:50:29 iq:result <link_code_companion_reg[companion_hello]>",
-      "04:50:59 iq:result",
-      "04:51:29 iq:get",
-      "04:51:29 iq:result",
-      "04:51:59 iq:result",
-      "04:52:21 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
-      "04:52:21 iq:result",
-      "04:52:24 iq:set <pair-success>",
-      "04:52:25 stream:error: code=515",
-      "04:52:25 xmlstreamend:"
-    ]
-  },
+  "guest_frames": null,
   "panel_url": "https://columbus-auburn-directive-pts.trycloudflare.com",
   "panel_at": "2026-11-04T04:09:39.649Z",
   "channel": {
@@ -59,6 +39,6 @@
     "opted_in": 1,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-04T04:59:09.756Z",
-  "uptime_s": 2977
+  "updated_at": "2026-11-04T04:59:13.758Z",
+  "uptime_s": 2981
 }
