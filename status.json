@@ -47,8 +47,6 @@
     }
   ],
   "guest_log": [
-    "23:03:00 ********1805: LINKING (phone ne code accept kiya)",
-    "23:03:01 ********7157: LINKING (phone ne code accept kiya)",
     "23:03:01 ********6325: LINKING (phone ne code accept kiya)",
     "23:03:01 ********8574: LINKING (phone ne code accept kiya)",
     "23:03:01 ********1805: CONNECTED ✅",
@@ -66,7 +64,9 @@
     "23:41:01 ********8574: connection close 503 Stream Errored (unknown)",
     "23:41:05 ********8574: CONNECTED ✅",
     "23:41:16 ********2128: connection close 503 Stream Errored (unknown)",
-    "23:41:18 ********2128: CONNECTED ✅"
+    "23:41:18 ********2128: CONNECTED ✅",
+    "23:46:13 ********6325: connection close 428 Connection Terminated",
+    "23:46:16 ********6325: CONNECTED ✅"
   ],
   "guest_frames": null,
   "mem": {
@@ -87,6 +87,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-04T23:44:59.196Z",
-  "uptime_s": 2525
+  "updated_at": "2026-11-04T23:46:20.213Z",
+  "uptime_s": 2606
 }
