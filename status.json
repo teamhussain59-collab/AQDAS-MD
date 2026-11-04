@@ -22,7 +22,7 @@
     },
     {
       "number": "********7324",
-      "state": "pairing",
+      "state": "linking",
       "autostatus": "off"
     },
     {
@@ -37,7 +37,8 @@
     "13:33:25 ********7157: LINKING (phone ne code accept kiya)",
     "13:33:26 ********7157: CONNECTED ✅",
     "13:49:12 ********7324: code bana",
-    "13:49:29 ********4275: code bana"
+    "13:49:29 ********4275: code bana",
+    "13:49:40 ********7324: LINKING (phone ne code accept kiya)"
   ],
   "guest_frames": {
     "number": "********4275",
@@ -65,6 +66,6 @@
     "opted_in": 1,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-04T13:49:33.544Z",
-  "uptime_s": 971
+  "updated_at": "2026-11-04T13:49:44.833Z",
+  "uptime_s": 982
 }
