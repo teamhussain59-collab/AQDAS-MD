@@ -19,7 +19,6 @@
     }
   ],
   "guest_log": [
-    "23:03:33 ********7157: CONNECTED ✅",
     "02:37:27 ********7157: connection close 401 Stream Errored (conflict)",
     "02:37:27 ********7157: logged out",
     "02:40:04 ********7157: code bana",
@@ -30,7 +29,8 @@
     "02:49:06 ********4197: connection close 428 Connection Terminated by Server",
     "02:49:06 ********4197: expired / closed (code 428)",
     "03:24:55 ********5182: code bana",
-    "03:25:25 ********5182: LINKING (phone ne code accept kiya)"
+    "03:25:25 ********5182: LINKING (phone ne code accept kiya)",
+    "03:25:32 ********5182: connection close 515 Stream Errored (restart required)"
   ],
   "guest_frames": {
     "number": "********5182",
@@ -40,7 +40,10 @@
       "03:24:50 iq:result <link_code_companion_reg[companion_hello]>",
       "03:25:19 iq:result",
       "03:25:25 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
-      "03:25:25 iq:result"
+      "03:25:25 iq:result",
+      "03:25:31 iq:set <pair-success>",
+      "03:25:32 stream:error: code=515",
+      "03:25:32 xmlstreamend:"
     ]
   },
   "channel": {
@@ -51,6 +54,6 @@
     "opted_in": 0,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-04T03:25:29.424Z",
-  "uptime_s": 16816
+  "updated_at": "2026-11-04T03:25:36.168Z",
+  "uptime_s": 16823
 }
