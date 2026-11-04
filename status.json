@@ -19,11 +19,6 @@
       "number": "********7157",
       "state": "connected",
       "autostatus": "off"
-    },
-    {
-      "number": "********7324",
-      "state": "linking",
-      "autostatus": "off"
     }
   ],
   "guest_log": [
@@ -49,21 +44,16 @@
     "13:56:11 ********7324: expired / closed (code 428)"
   ],
   "guest_frames": {
-    "number": "********7324",
-    "state": "expired",
+    "number": "********7157",
+    "state": "connected",
     "frames": [
-      "13:52:41 iq:set <pair-device>",
-      "13:52:41 iq:result <link_code_companion_reg[companion_hello]>",
-      "13:53:08 notification:link_code_companion_reg <link_code_companion_reg[refresh_code]>",
-      "13:53:11 iq:result",
-      "13:53:41 iq:get",
-      "13:53:41 iq:result",
-      "13:54:11 iq:result",
-      "13:54:41 iq:result",
-      "13:55:11 iq:result",
-      "13:55:41 iq:get",
-      "13:55:41 iq:result",
-      "13:56:11 xmlstreamend:"
+      "13:51:47 iq:set <pair-device>",
+      "13:51:48 iq:result <link_code_companion_reg[companion_hello]>",
+      "13:52:04 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
+      "13:52:04 iq:result",
+      "13:52:07 iq:set <pair-success>",
+      "13:52:08 stream:error: code=515",
+      "13:52:08 xmlstreamend:"
     ]
   },
   "mem": {
@@ -84,6 +74,6 @@
     "opted_in": 1,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-04T13:56:11.590Z",
-  "uptime_s": 1369
+  "updated_at": "2026-11-04T13:56:15.589Z",
+  "uptime_s": 1373
 }
