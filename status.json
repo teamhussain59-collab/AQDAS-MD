@@ -39,6 +39,11 @@
       "number": "********7157",
       "state": "connected",
       "autostatus": "off"
+    },
+    {
+      "number": "qr",
+      "state": "pairing",
+      "autostatus": "off"
     }
   ],
   "guest_log": [
@@ -55,7 +60,13 @@
     "18:00:33 ********7157: CONNECTED ✅",
     "18:00:33 ********6325: CONNECTED ✅"
   ],
-  "guest_frames": null,
+  "guest_frames": {
+    "number": "",
+    "state": "pairing",
+    "frames": [
+      "18:07:29 iq:set <pair-device>"
+    ]
+  },
   "mem": {
     "sessions": 6,
     "free_mb": 14923,
@@ -74,6 +85,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-04T18:06:31.129Z",
-  "uptime_s": 364
+  "updated_at": "2026-11-04T18:07:33.070Z",
+  "uptime_s": 426
 }
