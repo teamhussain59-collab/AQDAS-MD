@@ -39,7 +39,7 @@ h1{text-align:center;margin:4px 0 2px;color:#39ff8e;letter-spacing:3px;text-shad
 <div id="when" class="when">&nbsp;</div>
 <div id="why" class="small hide"></div>
 
-<div class="box"><h3>📱 LINKED NUMBERS</h3><div id="nums" class="small">—</div></div>
+<div class="box"><h3>📱 LINKED NUMBERS</h3><div id="nums" class="small">—</div><div id="slots" class="small" style="margin-top:8px;color:#6fdc9c">Slots: unlimited</div></div>
 
 <div class="box auto"><h3>🛡️ AUTO-RESTART ON</h3>
 <div class="small">Bot khud restart hota hai: agar band ho jaye to <b>5-15 min</b> mein khud wapas aa jata hai (GitHub ka timer kabhi thora late hota hai).<br>Number save rehta hai, dobara pair nahi karna. Tumhe kuch nahi karna ✅</div>
@@ -122,6 +122,7 @@ async function tick(){
     const L=Array.isArray(s.linked)?s.linked:[];
     if(!L.length)$('nums').textContent='Koi number linked nahi';
     else $('nums').innerHTML=L.map(x=>{const m=STATE[x.state]||[esc(x.state||'?'),'mid'];const sh=online?m:['⚪ bot band','bad'];return '<div class="row"><span>'+esc(x.number)+'</span><span class="'+sh[1]+'">'+sh[0]+'</span></div>'}).join('');
+    {const M=s.mem;$('slots').textContent='Slots: unlimited • '+L.length+' linked'+(M?(' • RAM khali '+(M.free_mb/1024).toFixed(1)+' GB'+(M.per_session_mb?(' • ~'+M.per_session_mb+' MB/number'):'')+' • ~'+M.room_for+' aur numbers ki jagah'):'')}
   }catch(e){badge('wait','⚠️ Status nahi mila, dobara try...')}
   finally{setTimeout(tick,10000)}
 }

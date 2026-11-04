@@ -50,7 +50,7 @@ if (GH_ON) {
 
 if (config.web) await startWeb(bot, config.port, multi ? manager : null)
 if (process.env.TUNNEL === 'cloudflared' && config.web) startTunnel(config.port)
-if (multi) setExtra({ slots_max: manager.MAX_SESSIONS })
+if (multi) setExtra({ slots_max: 'unlimited' })
 
 // main bot: tab hi chalao jab number / session ho (warna sirf extra numbers)
 const hasMain = !!(config.pairNumber || config.sessionId || saved.some(s => s.sid === 'main'))

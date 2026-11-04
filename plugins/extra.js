@@ -82,7 +82,7 @@ export default [
     }
   },
   {
-    name: 'pair', alias: ['getcode', 'paircode'], category: 'public', public: true, usage: '<number>', desc: 'Apna (ya kisi ka) number bot se jodo: pairing code yahin chat mein (sab ke liye, 10 slots)',
+    name: 'pair', alias: ['getcode', 'paircode'], category: 'public', public: true, usage: '<number>', desc: 'Apna (ya kisi ka) number bot se jodo: pairing code yahin chat mein (sab ke liye, unlimited slots)',
     async run (ctx) {
       const idOf = j => String(j).split('@')[0].split(':')[0].replace(/\D/g, '')
       const ids = [...new Set(ctx.senderIds.map(idOf).filter(Boolean))]
@@ -95,7 +95,7 @@ export default [
       const st0 = manager.numberState(n)
       if (st0 === 'main' || st0 === 'connected' || st0 === 'restoring') return ctx.reply(`✅ ${m} pehle se bot se juda hua hai, dobara code ki zaroorat nahi.`)
       if (st0 === 'linking') return ctx.reply(`⏳ ${m} abhi jud raha hai, 1 minute ruko.`)
-      if (!manager.accepting()) return ctx.reply(`😔 Bot ke saare slots full hain (${manager.MAX_SESSIONS}/${manager.MAX_SESSIONS}). Thori der baad try karo.`)
+      if (!manager.accepting()) return ctx.reply('😔 ' + (manager.busyReason() || 'Abhi naya number nahi jud sakta, thori der baad try karo.'))
       const lim = await import('../lib/pairlimit.js')
       const who = { requesters: ids, target: n, exempt: boss }
       const c = lim.check(who)
