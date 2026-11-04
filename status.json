@@ -24,11 +24,6 @@
       "number": "********2128",
       "state": "connected",
       "autostatus": "off"
-    },
-    {
-      "number": "qr",
-      "state": "pairing",
-      "autostatus": "off"
     }
   ],
   "guest_log": [
@@ -54,18 +49,16 @@
     "14:25:40 qr: expired / closed (code 428)"
   ],
   "guest_frames": {
-    "number": "",
-    "state": "expired",
+    "number": "********2128",
+    "state": "connected",
     "frames": [
-      "14:22:10 iq:set <pair-device>",
-      "14:22:39 iq:result",
-      "14:23:09 iq:result",
-      "14:23:39 iq:result",
-      "14:24:09 iq:result",
-      "14:24:39 iq:result",
-      "14:25:09 iq:get",
-      "14:25:09 iq:result",
-      "14:25:39 xmlstreamend:"
+      "14:00:20 iq:set <pair-device>",
+      "14:00:20 iq:result <link_code_companion_reg[companion_hello]>",
+      "14:00:46 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
+      "14:00:46 iq:result",
+      "14:00:49 iq:set <pair-success>",
+      "14:00:49 stream:error: code=515",
+      "14:00:49 xmlstreamend:"
     ]
   },
   "mem": {
@@ -86,6 +79,6 @@
     "opted_in": 1,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-04T14:25:40.169Z",
-  "uptime_s": 3138
+  "updated_at": "2026-11-04T14:25:44.169Z",
+  "uptime_s": 3142
 }
