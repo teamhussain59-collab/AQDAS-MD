@@ -1,61 +1,11 @@
 {
-  "status": "offline",
+  "status": "idle",
   "code": null,
-  "qr": null,
-  "qr_at": null,
   "code_at": null,
-  "next_at": null,
   "last_event": null,
   "number_masked": null,
-  "run_id": "41793358195",
+  "run_id": "41807670402",
   "slots_max": 10,
-  "panel_url": null,
-  "panel_at": "2026-11-04T07:36:38.036Z",
-  "linked": [
-    {
-      "number": "********5182",
-      "state": "connected"
-    },
-    {
-      "number": "********7157",
-      "state": "connected"
-    },
-    {
-      "number": "********4197",
-      "state": "connected"
-    }
-  ],
-  "guest_log": [
-    "07:36:35 ********5182: LINKING (phone ne code accept kiya)",
-    "07:36:35 ********5182: CONNECTED ✅",
-    "07:36:36 ********7157: LINKING (phone ne code accept kiya)",
-    "07:36:36 ********7157: CONNECTED ✅",
-    "09:24:43 ********4197: code bana",
-    "09:24:57 ********4197: LINKING (phone ne code accept kiya)",
-    "09:25:00 ********4197: connection close 515 Stream Errored (restart required)",
-    "09:25:03 ********4197: CONNECTED ✅"
-  ],
-  "guest_frames": {
-    "number": "********4197",
-    "state": "connected",
-    "frames": [
-      "09:24:38 iq:set <pair-device>",
-      "09:24:38 iq:result <link_code_companion_reg[companion_hello]>",
-      "09:24:57 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
-      "09:24:57 iq:result",
-      "09:24:59 iq:set <pair-success>",
-      "09:25:00 stream:error: code=515",
-      "09:25:00 xmlstreamend:"
-    ]
-  },
-  "channel": {
-    "ok": true,
-    "name": "AQDAS TECH",
-    "latest_post": 110,
-    "auto": true,
-    "opted_in": 1,
-    "fetch": "updates err channel posts timeout | messages:messages:10"
-  },
-  "updated_at": "2026-11-04T09:27:53.217Z",
-  "uptime_s": 6680
+  "updated_at": "2026-11-04T09:28:16.477Z",
+  "uptime_s": 3
 }
