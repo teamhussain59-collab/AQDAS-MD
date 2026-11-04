@@ -8,6 +8,25 @@
   "slots_max": 10,
   "panel_url": "https://rpm-she-valium-locking.trycloudflare.com",
   "panel_at": "2026-11-04T10:37:01.935Z",
-  "updated_at": "2026-11-04T10:37:01.935Z",
-  "uptime_s": 6
+  "linked": [
+    {
+      "number": "********5182",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********7157",
+      "state": "connected",
+      "autostatus": "view+react"
+    }
+  ],
+  "guest_log": [
+    "10:36:59 ********7157: LINKING (phone ne code accept kiya)",
+    "10:36:59 ********5182: LINKING (phone ne code accept kiya)",
+    "10:36:59 ********7157: CONNECTED ✅",
+    "10:37:00 ********5182: CONNECTED ✅"
+  ],
+  "guest_frames": null,
+  "updated_at": "2026-11-04T10:37:04.326Z",
+  "uptime_s": 8
 }
