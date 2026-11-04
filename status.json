@@ -25,6 +25,14 @@
   "guest_frames": null,
   "panel_url": "https://columbus-auburn-directive-pts.trycloudflare.com",
   "panel_at": "2026-11-04T04:09:39.649Z",
-  "updated_at": "2026-11-04T04:09:39.737Z",
-  "uptime_s": 7
+  "channel": {
+    "ok": true,
+    "name": "AQDAS TECH",
+    "latest_post": 110,
+    "auto": true,
+    "opted_in": 1,
+    "fetch": "updates err channel posts timeout | messages:messages:10"
+  },
+  "updated_at": "2026-11-04T04:10:54.477Z",
+  "uptime_s": 82
 }
