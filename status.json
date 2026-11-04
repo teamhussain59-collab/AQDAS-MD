@@ -4,39 +4,8 @@
   "code_at": null,
   "last_event": null,
   "number_masked": null,
-  "run_id": "41817083679",
+  "run_id": "41818954839",
   "slots_max": 10,
-  "commands": 199,
-  "panel_url": "https://sandwich-empty-tickets-indianapolis.trycloudflare.com",
-  "panel_at": "2026-11-04T10:53:25.891Z",
-  "linked": [
-    {
-      "number": "********5182",
-      "state": "connected",
-      "autostatus": "off"
-    },
-    {
-      "number": "********7157",
-      "state": "connected",
-      "autostatus": "view+react"
-    }
-  ],
-  "guest_log": [
-    "10:53:23 ********5182: LINKING (phone ne code accept kiya)",
-    "10:53:23 ********7157: LINKING (phone ne code accept kiya)",
-    "10:53:23 ********5182: CONNECTED ✅",
-    "10:53:23 ********7157: CONNECTED ✅",
-    "11:01:08 ********7157: status ***********0468: seen ✅, react 🥰 ✅"
-  ],
-  "guest_frames": null,
-  "channel": {
-    "ok": true,
-    "name": "AQDAS TECH",
-    "latest_post": 110,
-    "auto": true,
-    "opted_in": 1,
-    "fetch": "updates err channel posts timeout | messages:messages:10"
-  },
-  "updated_at": "2026-11-04T11:09:22.591Z",
-  "uptime_s": 962
+  "updated_at": "2026-11-04T11:09:54.818Z",
+  "uptime_s": 2
 }
