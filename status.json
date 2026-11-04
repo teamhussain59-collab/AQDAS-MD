@@ -19,7 +19,6 @@
     }
   ],
   "guest_log": [
-    "22:45:16 ********7157: CONNECTED ✅",
     "23:03:30 ********7157: connection close 503 Stream Errored (unknown)",
     "23:03:33 ********7157: CONNECTED ✅",
     "02:37:27 ********7157: connection close 401 Stream Errored (conflict)",
@@ -30,7 +29,8 @@
     "02:40:31 ********7157: CONNECTED ✅",
     "02:45:41 ********4197: code bana",
     "02:49:06 ********4197: connection close 428 Connection Terminated by Server",
-    "02:49:06 ********4197: expired / closed (code 428)"
+    "02:49:06 ********4197: expired / closed (code 428)",
+    "03:24:55 ********5182: code bana"
   ],
   "guest_frames": {
     "number": "********5182",
@@ -48,6 +48,6 @@
     "opted_in": 0,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-04T03:24:54.192Z",
-  "uptime_s": 16781
+  "updated_at": "2026-11-04T03:24:59.061Z",
+  "uptime_s": 16786
 }
