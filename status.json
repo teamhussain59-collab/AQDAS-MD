@@ -1,13 +1,16 @@
 {
-  "status": "idle",
+  "status": "offline",
   "code": null,
+  "qr": null,
+  "qr_at": null,
   "code_at": null,
+  "next_at": null,
   "last_event": null,
   "number_masked": null,
   "run_id": "41839020060",
   "slots_max": "unlimited",
   "commands": 563,
-  "panel_url": "https://shape-loose-preliminary-sign.trycloudflare.com",
+  "panel_url": null,
   "panel_at": "2026-11-04T13:33:28.116Z",
   "linked": [
     {
@@ -91,6 +94,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-04T17:01:24.493Z",
-  "uptime_s": 12482
+  "updated_at": "2026-11-04T17:01:38.549Z",
+  "uptime_s": 12496
 }
