@@ -1,41 +1,11 @@
 {
-  "status": "offline",
+  "status": "idle",
   "code": null,
-  "qr": null,
-  "qr_at": null,
   "code_at": null,
-  "next_at": null,
   "last_event": null,
   "number_masked": null,
-  "run_id": "41784001151",
+  "run_id": "41789100771",
   "slots_max": 10,
-  "panel_url": null,
-  "panel_at": "2026-11-04T06:13:33.096Z",
-  "linked": [
-    {
-      "number": "********5182",
-      "state": "connected"
-    },
-    {
-      "number": "********7157",
-      "state": "connected"
-    }
-  ],
-  "guest_log": [
-    "06:13:30 ********5182: LINKING (phone ne code accept kiya)",
-    "06:13:30 ********5182: CONNECTED ✅",
-    "06:13:30 ********7157: LINKING (phone ne code accept kiya)",
-    "06:13:31 ********7157: CONNECTED ✅"
-  ],
-  "guest_frames": null,
-  "channel": {
-    "ok": true,
-    "name": "AQDAS TECH",
-    "latest_post": 110,
-    "auto": true,
-    "opted_in": 1,
-    "fetch": "updates err channel posts timeout | messages:messages:10"
-  },
-  "updated_at": "2026-11-04T06:59:50.306Z",
-  "uptime_s": 2782
+  "updated_at": "2026-11-04T07:00:08.835Z",
+  "uptime_s": 2
 }
