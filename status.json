@@ -9,6 +9,53 @@
   "commands": 569,
   "panel_url": "https://reef-provide-exceptions-perceived.trycloudflare.com",
   "panel_at": "2026-11-04T18:15:51.130Z",
-  "updated_at": "2026-11-04T18:15:51.130Z",
-  "uptime_s": 8
+  "linked": [
+    {
+      "number": "********7324",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********5182",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********8574",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********6325",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********2128",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********7157",
+      "state": "connected",
+      "autostatus": "off"
+    }
+  ],
+  "guest_log": [
+    "18:15:48 ********5182: LINKING (phone ne code accept kiya)",
+    "18:15:48 ********2128: LINKING (phone ne code accept kiya)",
+    "18:15:48 ********5182: CONNECTED ✅",
+    "18:15:48 ********2128: CONNECTED ✅",
+    "18:15:49 ********7324: LINKING (phone ne code accept kiya)",
+    "18:15:49 ********7157: LINKING (phone ne code accept kiya)",
+    "18:15:49 ********8574: LINKING (phone ne code accept kiya)",
+    "18:15:49 ********6325: LINKING (phone ne code accept kiya)",
+    "18:15:49 ********7324: CONNECTED ✅",
+    "18:15:49 ********8574: CONNECTED ✅",
+    "18:15:49 ********7157: CONNECTED ✅",
+    "18:15:50 ********6325: CONNECTED ✅"
+  ],
+  "guest_frames": null,
+  "updated_at": "2026-11-04T18:15:54.002Z",
+  "uptime_s": 11
 }
