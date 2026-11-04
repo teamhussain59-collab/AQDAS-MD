@@ -60,15 +60,14 @@
     "18:00:33 ********7157: CONNECTED ✅",
     "18:00:33 ********6325: CONNECTED ✅",
     "18:08:46 qr: connection close 515 Stream Errored (restart required)",
-    "18:08:49 ********8801: CONNECTED ✅"
+    "18:08:49 ********8801: CONNECTED ✅",
+    "18:10:10 ********8801: connection close 401 Stream Errored (conflict)",
+    "18:10:11 ********8801: logged out"
   ],
   "guest_frames": {
     "number": "********8801",
     "state": "connected",
     "frames": [
-      "18:08:48 success:",
-      "18:08:48 ib: <edge_routing>",
-      "18:08:48 ib: <dirty>",
       "18:08:48 iq:result <count+pq_count>",
       "18:08:49 iq:result",
       "18:08:49 iq:result <active>",
@@ -89,7 +88,11 @@
       "18:08:57 notification:server_sync <collection+collection+collection>",
       "18:08:57 iq:result <sync>",
       "18:09:17 iq:result",
-      "18:09:47 iq:result"
+      "18:09:47 iq:result",
+      "18:10:09 notification:server_sync <collection+collection+collection+collection+collection>",
+      "18:10:09 iq:result <sync>",
+      "18:10:10 stream:error: <conflict> code=401",
+      "18:10:10 xmlstreamend:"
     ]
   },
   "mem": {
@@ -110,6 +113,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-04T18:09:51.988Z",
-  "uptime_s": 565
+  "updated_at": "2026-11-04T18:10:11.521Z",
+  "uptime_s": 585
 }
