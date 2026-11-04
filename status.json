@@ -39,11 +39,6 @@
       "number": "********7157",
       "state": "connected",
       "autostatus": "off"
-    },
-    {
-      "number": "********8801",
-      "state": "connected",
-      "autostatus": "off"
     }
   ],
   "guest_log": [
@@ -64,37 +59,7 @@
     "18:10:10 ********8801: connection close 401 Stream Errored (conflict)",
     "18:10:11 ********8801: logged out"
   ],
-  "guest_frames": {
-    "number": "********8801",
-    "state": "connected",
-    "frames": [
-      "18:08:48 iq:result <count+pq_count>",
-      "18:08:49 iq:result",
-      "18:08:49 iq:result <active>",
-      "18:08:49 ib: <offline>",
-      "18:08:49 notification:account_sync <devices>",
-      "18:08:49 iq:result <digest>",
-      "18:08:49 iq:result <list>",
-      "18:08:49 iq:result <props+erid>",
-      "18:08:49 iq:result <privacy>",
-      "18:08:49 iq:result <usync>",
-      "18:08:50 iq:result <list>",
-      "18:08:50 notification:privacy_token <tokens>",
-      "18:08:50 iq:result",
-      "18:08:50 notification:privacy_token <tokens>",
-      "18:08:53 iq:result <sync>",
-      "18:08:54 notification:server_sync <collection+collection>",
-      "18:08:54 iq:result <sync>",
-      "18:08:57 notification:server_sync <collection+collection+collection>",
-      "18:08:57 iq:result <sync>",
-      "18:09:17 iq:result",
-      "18:09:47 iq:result",
-      "18:10:09 notification:server_sync <collection+collection+collection+collection+collection>",
-      "18:10:09 iq:result <sync>",
-      "18:10:10 stream:error: <conflict> code=401",
-      "18:10:10 xmlstreamend:"
-    ]
-  },
+  "guest_frames": null,
   "mem": {
     "sessions": 6,
     "free_mb": 14923,
@@ -113,6 +78,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-04T18:10:11.521Z",
-  "uptime_s": 585
+  "updated_at": "2026-11-04T18:10:15.523Z",
+  "uptime_s": 589
 }
