@@ -6,6 +6,23 @@
   "number_masked": null,
   "run_id": "41771358249",
   "slots_max": 10,
-  "updated_at": "2026-11-04T04:09:33.892Z",
-  "uptime_s": 1
+  "linked": [
+    {
+      "number": "********5182",
+      "state": "connected"
+    },
+    {
+      "number": "********7157",
+      "state": "connected"
+    }
+  ],
+  "guest_log": [
+    "04:09:34 ********5182: LINKING (phone ne code accept kiya)",
+    "04:09:34 ********7157: LINKING (phone ne code accept kiya)",
+    "04:09:34 ********5182: CONNECTED ✅",
+    "04:09:34 ********7157: CONNECTED ✅"
+  ],
+  "guest_frames": null,
+  "updated_at": "2026-11-04T04:09:38.741Z",
+  "uptime_s": 6
 }
