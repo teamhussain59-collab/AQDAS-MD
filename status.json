@@ -25,6 +25,14 @@
     "06:13:31 ********7157: CONNECTED ✅"
   ],
   "guest_frames": null,
-  "updated_at": "2026-11-04T06:13:35.227Z",
-  "uptime_s": 7
+  "channel": {
+    "ok": true,
+    "name": "AQDAS TECH",
+    "latest_post": 110,
+    "auto": true,
+    "opted_in": 1,
+    "fetch": "updates err channel posts timeout | messages:messages:10"
+  },
+  "updated_at": "2026-11-04T06:14:49.846Z",
+  "uptime_s": 82
 }
