@@ -1,80 +1,11 @@
 {
-  "status": "offline",
+  "status": "idle",
   "code": null,
-  "qr": null,
-  "qr_at": null,
   "code_at": null,
-  "next_at": null,
   "last_event": null,
   "number_masked": null,
-  "run_id": "41821928452",
+  "run_id": "41829072970",
   "slots_max": "unlimited",
-  "commands": 563,
-  "panel_url": null,
-  "panel_at": "2026-11-04T11:35:28.385Z",
-  "linked": [
-    {
-      "number": "********5182",
-      "state": "connected",
-      "autostatus": "off"
-    },
-    {
-      "number": "********7157",
-      "state": "connected",
-      "autostatus": "view+react"
-    },
-    {
-      "number": "********4197",
-      "state": "connected",
-      "autostatus": "view+react"
-    }
-  ],
-  "guest_log": [
-    "11:35:25 ********5182: LINKING (phone ne code accept kiya)",
-    "11:35:26 ********5182: CONNECTED ✅",
-    "11:35:26 ********7157: LINKING (phone ne code accept kiya)",
-    "11:35:27 ********7157: CONNECTED ✅",
-    "11:40:06 ********7324: code bana",
-    "11:43:31 ********7324: connection close 428 Connection Terminated by Server",
-    "11:43:31 ********7324: expired / closed (code 428)",
-    "12:20:00 ********4197: code bana",
-    "12:20:10 ********4197: LINKING (phone ne code accept kiya)",
-    "12:20:13 ********4197: connection close 515 Stream Errored (restart required)",
-    "12:20:16 ********4197: CONNECTED ✅",
-    "12:21:30 ********7157: status *********6233: seen ✅, react 🤤 ✅",
-    "12:21:30 ********4197: status *********6233: seen (read receipts OFF: saamne wale ko view nahi dikhega), react 😢 ✅"
-  ],
-  "guest_frames": {
-    "number": "********4197",
-    "state": "connected",
-    "frames": [
-      "12:19:55 iq:set <pair-device>",
-      "12:19:55 iq:result <link_code_companion_reg[companion_hello]>",
-      "12:20:10 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
-      "12:20:10 iq:result",
-      "12:20:13 iq:set <pair-success>",
-      "12:20:13 stream:error: code=515",
-      "12:20:13 xmlstreamend:"
-    ]
-  },
-  "mem": {
-    "sessions": 3,
-    "free_mb": 14923,
-    "total_mb": 15983,
-    "rss_mb": 179,
-    "heap_mb": 60,
-    "heap_limit_mb": 4144,
-    "per_session_mb": 15,
-    "room_for": 346
-  },
-  "channel": {
-    "ok": true,
-    "name": "AQDAS TECH",
-    "latest_post": 110,
-    "auto": true,
-    "opted_in": 1,
-    "fetch": "updates err channel posts timeout | messages:messages:10"
-  },
-  "updated_at": "2026-11-04T12:25:16.323Z",
-  "uptime_s": 2993
+  "updated_at": "2026-11-04T12:25:43.851Z",
+  "uptime_s": 3
 }
