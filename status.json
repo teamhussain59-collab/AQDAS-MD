@@ -6,6 +6,8 @@
   "number_masked": null,
   "run_id": "41789100771",
   "slots_max": 10,
-  "updated_at": "2026-11-04T07:00:08.835Z",
-  "uptime_s": 2
+  "panel_url": "https://hosted-cowboy-lower-adams.trycloudflare.com",
+  "panel_at": "2026-11-04T07:00:12.795Z",
+  "updated_at": "2026-11-04T07:00:12.795Z",
+  "uptime_s": 6
 }
