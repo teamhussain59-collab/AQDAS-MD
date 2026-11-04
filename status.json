@@ -37,7 +37,7 @@
     },
     {
       "number": "********4197",
-      "state": "pairing",
+      "state": "connected",
       "autostatus": "off"
     }
   ],
@@ -52,14 +52,22 @@
     "17:19:50 ********6325: CONNECTED ✅",
     "17:19:50 ********2128: LINKING (phone ne code accept kiya)",
     "17:19:51 ********2128: CONNECTED ✅",
-    "17:22:43 ********4197: code bana"
+    "17:22:43 ********4197: code bana",
+    "17:22:56 ********4197: LINKING (phone ne code accept kiya)",
+    "17:22:59 ********4197: connection close 515 Stream Errored (restart required)",
+    "17:23:02 ********4197: CONNECTED ✅"
   ],
   "guest_frames": {
     "number": "********4197",
-    "state": "pairing",
+    "state": "connected",
     "frames": [
       "17:22:38 iq:set <pair-device>",
-      "17:22:39 iq:result <link_code_companion_reg[companion_hello]>"
+      "17:22:39 iq:result <link_code_companion_reg[companion_hello]>",
+      "17:22:56 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
+      "17:22:56 iq:result",
+      "17:22:58 iq:set <pair-success>",
+      "17:22:59 stream:error: code=515",
+      "17:22:59 xmlstreamend:"
     ]
   },
   "mem": {
@@ -80,6 +88,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-04T17:22:47.662Z",
-  "uptime_s": 181
+  "updated_at": "2026-11-04T17:23:06.977Z",
+  "uptime_s": 201
 }
