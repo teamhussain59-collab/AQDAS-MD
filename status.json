@@ -1,88 +1,11 @@
 {
-  "status": "offline",
+  "status": "idle",
   "code": null,
-  "qr": null,
-  "qr_at": null,
   "code_at": null,
-  "next_at": null,
   "last_event": null,
   "number_masked": null,
-  "run_id": "41882412660",
+  "run_id": "41885298363",
   "slots_max": "unlimited",
-  "commands": 569,
-  "panel_url": null,
-  "panel_at": "2026-11-04T18:00:35.459Z",
-  "linked": [
-    {
-      "number": "********7324",
-      "state": "connected",
-      "autostatus": "off"
-    },
-    {
-      "number": "********5182",
-      "state": "connected",
-      "autostatus": "off"
-    },
-    {
-      "number": "********8574",
-      "state": "connected",
-      "autostatus": "view+react"
-    },
-    {
-      "number": "********6325",
-      "state": "connected",
-      "autostatus": "view+react"
-    },
-    {
-      "number": "********2128",
-      "state": "connected",
-      "autostatus": "off"
-    },
-    {
-      "number": "********7157",
-      "state": "connected",
-      "autostatus": "off"
-    }
-  ],
-  "guest_log": [
-    "18:00:31 ********8574: LINKING (phone ne code accept kiya)",
-    "18:00:31 ********5182: LINKING (phone ne code accept kiya)",
-    "18:00:32 ********2128: LINKING (phone ne code accept kiya)",
-    "18:00:32 ********8574: CONNECTED ✅",
-    "18:00:32 ********5182: CONNECTED ✅",
-    "18:00:32 ********7324: LINKING (phone ne code accept kiya)",
-    "18:00:32 ********2128: CONNECTED ✅",
-    "18:00:32 ********7324: CONNECTED ✅",
-    "18:00:32 ********7157: LINKING (phone ne code accept kiya)",
-    "18:00:32 ********6325: LINKING (phone ne code accept kiya)",
-    "18:00:33 ********7157: CONNECTED ✅",
-    "18:00:33 ********6325: CONNECTED ✅",
-    "18:08:46 qr: connection close 515 Stream Errored (restart required)",
-    "18:08:49 ********8801: CONNECTED ✅",
-    "18:10:10 ********8801: connection close 401 Stream Errored (conflict)",
-    "18:10:11 ********8801: logged out",
-    "18:11:49 ********8574: status **********7533: seen ✅, react 💋 ✅",
-    "18:12:06 ********8574: status ***********9024: seen ✅, react 💋 ✅"
-  ],
-  "guest_frames": null,
-  "mem": {
-    "sessions": 6,
-    "free_mb": 14858,
-    "total_mb": 15982,
-    "rss_mb": 189,
-    "heap_mb": 51,
-    "heap_limit_mb": 4144,
-    "per_session_mb": 15,
-    "room_for": 347
-  },
-  "channel": {
-    "ok": true,
-    "name": "AQDAS TECH",
-    "latest_post": 110,
-    "auto": true,
-    "opted_in": 3,
-    "fetch": "updates err channel posts timeout | messages:messages:10"
-  },
-  "updated_at": "2026-11-04T18:15:21.279Z",
-  "uptime_s": 895
+  "updated_at": "2026-11-04T18:15:47.486Z",
+  "uptime_s": 4
 }
