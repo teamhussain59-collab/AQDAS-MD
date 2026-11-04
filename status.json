@@ -28,7 +28,9 @@
     "04:50:34 ********4197: code bana",
     "04:52:21 ********4197: LINKING (phone ne code accept kiya)",
     "04:52:25 ********4197: connection close 515 Stream Errored (restart required)",
-    "04:52:28 ********4197: CONNECTED ✅"
+    "04:52:28 ********4197: CONNECTED ✅",
+    "04:59:09 ********4197: connection close 401 Stream Errored (conflict)",
+    "04:59:09 ********4197: logged out"
   ],
   "guest_frames": {
     "number": "********4197",
@@ -57,6 +59,6 @@
     "opted_in": 1,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-04T04:57:34.048Z",
-  "uptime_s": 2882
+  "updated_at": "2026-11-04T04:59:09.756Z",
+  "uptime_s": 2977
 }
