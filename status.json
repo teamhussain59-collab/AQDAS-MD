@@ -27,12 +27,11 @@
     },
     {
       "number": "********7324",
-      "state": "pairing",
+      "state": "linking",
       "autostatus": "off"
     }
   ],
   "guest_log": [
-    "13:52:40 ********7324: logged out",
     "13:52:46 ********7324: code bana",
     "13:52:54 ********4275: connection close 428 Connection Terminated by Server",
     "13:52:54 ********4275: expired / closed (code 428)",
@@ -51,17 +50,20 @@
     "14:02:33 ********7324: logged out",
     "14:04:39 qr: connection close 428 Connection Terminated by Server",
     "14:04:39 qr: expired / closed (code 428)",
-    "14:10:33 ********7324: code bana"
+    "14:10:33 ********7324: code bana",
+    "14:11:35 ********7324: LINKING (phone ne code accept kiya)"
   ],
   "guest_frames": {
     "number": "********7324",
-    "state": "pairing",
+    "state": "linking",
     "frames": [
       "14:10:28 iq:set <pair-device>",
       "14:10:28 iq:result <link_code_companion_reg[companion_hello]>",
       "14:10:58 iq:result",
       "14:11:28 iq:get",
-      "14:11:28 iq:result"
+      "14:11:28 iq:result",
+      "14:11:35 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
+      "14:11:35 iq:result"
     ]
   },
   "mem": {
@@ -82,6 +84,6 @@
     "opted_in": 1,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-04T14:11:32.454Z",
-  "uptime_s": 2290
+  "updated_at": "2026-11-04T14:11:39.649Z",
+  "uptime_s": 2297
 }
