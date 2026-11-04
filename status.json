@@ -8,6 +8,23 @@
   "slots_max": 10,
   "panel_url": "https://weather-trunk-tear-crimes.trycloudflare.com",
   "panel_at": "2026-11-04T06:13:33.096Z",
-  "updated_at": "2026-11-04T06:13:33.096Z",
-  "uptime_s": 5
+  "linked": [
+    {
+      "number": "********5182",
+      "state": "connected"
+    },
+    {
+      "number": "********7157",
+      "state": "connected"
+    }
+  ],
+  "guest_log": [
+    "06:13:30 ********5182: LINKING (phone ne code accept kiya)",
+    "06:13:30 ********5182: CONNECTED ✅",
+    "06:13:30 ********7157: LINKING (phone ne code accept kiya)",
+    "06:13:31 ********7157: CONNECTED ✅"
+  ],
+  "guest_frames": null,
+  "updated_at": "2026-11-04T06:13:35.227Z",
+  "uptime_s": 7
 }
