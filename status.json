@@ -1,75 +1,11 @@
 {
-  "status": "offline",
+  "status": "idle",
   "code": null,
-  "qr": null,
-  "qr_at": null,
   "code_at": null,
-  "next_at": null,
   "last_event": null,
   "number_masked": null,
-  "run_id": "41873188241",
+  "run_id": "41876403873",
   "slots_max": "unlimited",
-  "commands": 564,
-  "panel_url": null,
-  "panel_at": "2026-11-04T17:02:04.908Z",
-  "linked": [
-    {
-      "number": "********7324",
-      "state": "connected",
-      "autostatus": "off"
-    },
-    {
-      "number": "********5182",
-      "state": "connected",
-      "autostatus": "off"
-    },
-    {
-      "number": "********6325",
-      "state": "connected",
-      "autostatus": "view+react"
-    },
-    {
-      "number": "********2128",
-      "state": "connected",
-      "autostatus": "off"
-    },
-    {
-      "number": "********7157",
-      "state": "connected",
-      "autostatus": "off"
-    }
-  ],
-  "guest_log": [
-    "17:02:01 ********7157: LINKING (phone ne code accept kiya)",
-    "17:02:01 ********7157: CONNECTED ✅",
-    "17:02:01 ********2128: LINKING (phone ne code accept kiya)",
-    "17:02:01 ********2128: CONNECTED ✅",
-    "17:02:01 ********7324: LINKING (phone ne code accept kiya)",
-    "17:02:01 ********5182: LINKING (phone ne code accept kiya)",
-    "17:02:02 ********6325: LINKING (phone ne code accept kiya)",
-    "17:02:02 ********7324: CONNECTED ✅",
-    "17:02:02 ********6325: CONNECTED ✅",
-    "17:02:02 ********5182: CONNECTED ✅"
-  ],
-  "guest_frames": null,
-  "mem": {
-    "sessions": 5,
-    "free_mb": 14876,
-    "total_mb": 15982,
-    "rss_mb": 180,
-    "heap_mb": 45,
-    "heap_limit_mb": 4144,
-    "per_session_mb": 15,
-    "room_for": 347
-  },
-  "channel": {
-    "ok": true,
-    "name": "AQDAS TECH",
-    "latest_post": 110,
-    "auto": true,
-    "opted_in": 3,
-    "fetch": "updates err channel posts timeout | messages:messages:10"
-  },
-  "updated_at": "2026-11-04T17:19:25.282Z",
-  "uptime_s": 1047
+  "updated_at": "2026-11-04T17:19:49.053Z",
+  "uptime_s": 3
 }
