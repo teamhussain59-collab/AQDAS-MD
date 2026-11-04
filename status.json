@@ -22,7 +22,8 @@
     "02:37:27 ********7157: connection close 401 Stream Errored (conflict)",
     "02:37:27 ********7157: logged out",
     "02:40:04 ********7157: code bana",
-    "02:40:16 ********7157: LINKING (phone ne code accept kiya)"
+    "02:40:16 ********7157: LINKING (phone ne code accept kiya)",
+    "02:40:26 ********7157: connection close 515 Stream Errored (restart required)"
   ],
   "guest_frames": {
     "number": "********7157",
@@ -31,13 +32,16 @@
       "02:39:59 iq:set <pair-device>",
       "02:39:59 iq:result <link_code_companion_reg[companion_hello]>",
       "02:40:15 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
-      "02:40:16 iq:result"
+      "02:40:16 iq:result",
+      "02:40:25 iq:set <pair-success>",
+      "02:40:26 stream:error: code=515",
+      "02:40:26 xmlstreamend:"
     ]
   },
   "channel": {
     "ok": false,
     "error": "koi connected number nahi"
   },
-  "updated_at": "2026-11-04T02:40:20.068Z",
-  "uptime_s": 14107
+  "updated_at": "2026-11-04T02:40:30.611Z",
+  "uptime_s": 14117
 }
