@@ -7,9 +7,9 @@ import { dpPath, songPath, songMime, menuMedia } from '../lib/assets.js'
 import { log } from '../lib/logger.js'
 import { customList } from '../lib/customcmds.js'
 
-const ICON = { main: '🏠', public: '🔗', owner: '👑', auto: '⚙️', group: '👥', sticker: '🖼️', ai: '🤖', download: '📥', fun: '😂', tools: '🛠️', islamic: '🕌', logo: '🎨', anime: '🌸', image: '🖌️', fancy: '🔤', text: '📝', games: '🎮', random: '🎲', animals: '🐾', info: '🔎', other: '✨' }
-const TITLE = { main: 'MAIN', public: 'PUBLIC (SAB KE LIYE)', owner: 'OWNER', auto: 'AUTO (ON/OFF)', group: 'GROUP', sticker: 'STICKER', ai: 'AI', download: 'DOWNLOAD', fun: 'FUN', tools: 'TOOLS', islamic: 'ISLAMIC', logo: 'LOGO MAKER', anime: 'ANIME STICKERS', image: 'PHOTO EFFECTS (reply)', fancy: 'FANCY FONTS', text: 'TEXT TOOLS', games: 'GAMES', random: 'RANDOM / API', animals: 'ANIMALS', info: 'SEARCH / INFO', other: 'OTHER' }
-const ORDER = ['main', 'public', 'islamic', 'ai', 'download', 'sticker', 'anime', 'logo', 'image', 'tools', 'info', 'fancy', 'text', 'fun', 'games', 'random', 'animals', 'group', 'auto', 'owner', 'other']
+const ICON = { main: '🏠', public: '🔗', owner: '👑', auto: '⚙️', group: '👥', sticker: '🖼️', ai: '🤖', download: '📥', fun: '😂', tools: '🛠️', islamic: '🕌', logo: '🎨', voice: '🎙️', anime: '🌸', image: '🖌️', fancy: '🔤', text: '📝', games: '🎮', random: '🎲', animals: '🐾', info: '🔎', other: '✨' }
+const TITLE = { main: 'MAIN', public: 'PUBLIC (SAB KE LIYE)', owner: 'OWNER', auto: 'AUTO (ON/OFF)', group: 'GROUP', sticker: 'STICKER', ai: 'AI', download: 'DOWNLOAD', fun: 'FUN', tools: 'TOOLS', islamic: 'ISLAMIC', logo: 'LOGO MAKER', voice: 'VOICE CHANGER (reply)', anime: 'ANIME STICKERS', image: 'PHOTO EFFECTS (reply)', fancy: 'FANCY FONTS', text: 'TEXT TOOLS', games: 'GAMES', random: 'RANDOM / API', animals: 'ANIMALS', info: 'SEARCH / INFO', other: 'OTHER' }
+const ORDER = ['main', 'public', 'islamic', 'ai', 'download', 'sticker', 'anime', 'logo', 'voice', 'image', 'tools', 'info', 'fancy', 'text', 'fun', 'games', 'random', 'animals', 'group', 'auto', 'owner', 'other']
 
 export function menuText (ctx) {
   const p = ctx.settings.get('prefix')

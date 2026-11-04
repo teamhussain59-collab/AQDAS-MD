@@ -47,8 +47,8 @@ await t('custom command loads and runs (reply ok)', async () => {
 })
 
 await t('args / text / sender / isOwner reach the code', async () => {
-  cc.applyData({ cmds: [{ name: 'echo', code: "await ctx.reply(ctx.args.join('|') + ' ' + ctx.text + ' ' + ctx.sender + ' ' + ctx.isOwner)" }] })
-  const { sock } = await run(OWNER, '.echo a b')
+  cc.applyData({ cmds: [{ name: 'echox', code: "await ctx.reply(ctx.args.join('|') + ' ' + ctx.text + ' ' + ctx.sender + ' ' + ctx.isOwner)" }] })
+  const { sock } = await run(OWNER, '.echox a b')
   assert.deepEqual(texts(sock), ['a|b a b 923000000001 true'])
 })
 
@@ -266,8 +266,8 @@ cc._setTransport(async (u, opts) => { webCalls.push(opts.method + ' ' + u.href);
 
 await t('runner: sleep / setTimeout / delay chalte hain (15 sec limit ke andar)', async () => {
   assert.equal(cc.WALL_MS, 15000)
-  cc.applyData({ cmds: [{ name: 'slow', code: "const t0 = Date.now(); await sleep(1200); await delay(100); setTimeout(() => m.reply('late'), 300); await new Promise(r => setTimeout(r, 50)); await ctx.reply('slept ' + (Date.now() - t0 >= 1300))" }] })
-  const { sock } = await run(OWNER, '.slow')
+  cc.applyData({ cmds: [{ name: 'slowx', code: "const t0 = Date.now(); await sleep(1200); await delay(100); setTimeout(() => m.reply('late'), 300); await new Promise(r => setTimeout(r, 50)); await ctx.reply('slept ' + (Date.now() - t0 >= 1300))" }] })
+  const { sock } = await run(OWNER, '.slowx')
   assert.deepEqual(texts(sock), ['slept true', 'late'])
 })
 
