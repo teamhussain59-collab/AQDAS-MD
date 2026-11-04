@@ -9,6 +9,25 @@
   "commands": 199,
   "panel_url": "https://sandwich-empty-tickets-indianapolis.trycloudflare.com",
   "panel_at": "2026-11-04T10:53:25.891Z",
-  "updated_at": "2026-11-04T10:53:26.378Z",
-  "uptime_s": 6
+  "linked": [
+    {
+      "number": "********5182",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********7157",
+      "state": "connected",
+      "autostatus": "view+react"
+    }
+  ],
+  "guest_log": [
+    "10:53:23 ********5182: LINKING (phone ne code accept kiya)",
+    "10:53:23 ********7157: LINKING (phone ne code accept kiya)",
+    "10:53:23 ********5182: CONNECTED ✅",
+    "10:53:23 ********7157: CONNECTED ✅"
+  ],
+  "guest_frames": null,
+  "updated_at": "2026-11-04T10:53:40.162Z",
+  "uptime_s": 19
 }
