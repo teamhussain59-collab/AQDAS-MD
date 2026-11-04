@@ -1,0 +1,248 @@
+<!doctype html><html lang="ur"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AQDAS MD • Commands Panel</title>
+<meta name="description" content="AQDAS MD — custom commands panel">
+<meta name="robots" content="noindex">
+<link rel="icon" href="https://raw.githubusercontent.com/teamhussain59-collab/AQDAS-MD/main/media/dp.jpg">
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;font-family:ui-monospace,Menlo,Consolas,monospace;background:#020805;color:#b7ffcf;display:flex;justify-content:center;padding:18px;
+background-image:radial-gradient(circle at 50% 0,#063d1d55,transparent 60%),repeating-linear-gradient(0deg,#00ff6608 0 1px,transparent 1px 4px)}
+.card{width:100%;max-width:560px;background:#04130bdd;border:1px solid #1aff7a55;border-radius:18px;padding:22px;box-shadow:0 0 40px #00ff6626}
+.logo{width:84px;height:84px;border-radius:50%;display:block;margin:0 auto 10px;border:2px solid #22ff88;box-shadow:0 0 25px #22ff8866;object-fit:cover}
+h1{text-align:center;margin:4px 0 2px;color:#39ff8e;letter-spacing:3px;text-shadow:0 0 12px #39ff8e}
+.sub{text-align:center;color:#6fdc9c;font-size:12px;margin-bottom:16px;letter-spacing:2px}
+.box{border:1px solid #1aff7a33;border-radius:12px;padding:12px;margin:12px 0;background:#00150a}
+.box h3{margin:0 0 10px;font-size:14px;color:#39ff8e;letter-spacing:1px}
+input,textarea,select{width:100%;padding:12px;border-radius:10px;border:1px solid #1aff7a66;background:#00100a;color:#b7ffcf;font-size:15px;font-family:inherit;margin:5px 0 8px;outline:none}
+textarea{min-height:190px;font-size:13.5px;line-height:1.45;resize:vertical;white-space:pre;tab-size:2}
+input:focus,textarea:focus{border-color:#39ff8e;box-shadow:0 0 12px #39ff8e44}
+label{font-size:13px;color:#6fdc9c}
+.btn{display:block;width:100%;border:0;cursor:pointer;font-family:inherit;text-align:center;margin:8px 0;padding:14px 10px;border-radius:12px;background:linear-gradient(90deg,#00e676,#00b0ff);color:#00140a;font-weight:800;font-size:17px;box-shadow:0 0 20px #00e67655}
+.btn:disabled{opacity:.5}.btn.s{font-size:14px;padding:10px;background:#00391a;color:#5cff9d;box-shadow:none;border:1px solid #1aff7a55}
+.btn.red{background:#3a0d0d;color:#ff9090;border:1px solid #ff404066;box-shadow:none}
+.row2{display:flex;gap:8px}.row2>*{flex:1}
+.chk{display:flex;align-items:center;gap:8px;font-size:13px;color:#9fe9bd;margin:4px 0 8px}.chk input{width:auto;margin:0}
+.msg{text-align:center;font-size:14.5px;font-weight:700;margin:8px 0;min-height:20px;line-height:1.5;white-space:pre-line}
+.ok{color:#5cff9d}.bad{color:#ff8080}.mid{color:#ffd38a}
+.item{border:1px solid #1aff7a33;border-radius:10px;padding:10px;margin:8px 0;background:#001a0c}
+.item .top{display:flex;justify-content:space-between;align-items:center;gap:6px;flex-wrap:wrap}
+.item b{color:#cfffe0;font-size:16px}.tag{font-size:11px;padding:2px 7px;border-radius:20px;border:1px solid #1aff7a55;margin-left:4px}
+.item .acts{display:flex;gap:6px;margin-top:8px}.item .acts button{flex:1;padding:9px 4px;border-radius:9px;font-family:inherit;font-weight:700;cursor:pointer;font-size:13px;border:1px solid #1aff7a55;background:#00391a;color:#5cff9d}
+.item .acts .del{background:#3a0d0d;color:#ff9090;border-color:#ff404066}.item .acts .off{background:#2a2400;color:#ffd38a;border-color:#ffd38a55}
+.help{font-size:13px;line-height:1.7;color:#cfffe0}.help b{color:#39ff8e}
+pre{background:#000c06;border:1px solid #1aff7a33;border-radius:9px;padding:10px;overflow-x:auto;font-size:12.5px;color:#a8ffcb;margin:6px 0 10px}
+code{color:#7fe7ff}
+.meta{font-size:11.5px;color:#5fb887;text-align:center;margin-top:14px;line-height:1.6}.meta a{color:#39ff8e}
+.hide{display:none}.small{font-size:12px;color:#8fdcb0;line-height:1.6}
+#preview img,#preview video{max-width:100%;max-height:220px;border-radius:10px;display:block;margin:6px auto}
+</style></head>
+<body><div class="card">
+<img class="logo" src="https://raw.githubusercontent.com/teamhussain59-collab/AQDAS-MD/main/media/dp.jpg" alt="" onerror="this.style.display='none'">
+<h1>AQDAS MD</h1><div class="sub">🧩 COMMANDS PANEL • AQDAS HACKER</div>
+
+<div id="login" class="box">
+<h3>🔑 ADMIN PASSWORD</h3>
+<div class="small">Wahi password jo Restart Panel ka hai.</div>
+<input id="pw" type="password" autocomplete="current-password" placeholder="Password">
+<label class="chk"><input id="remember" type="checkbox"> Is phone pe yaad rakho</label>
+<button class="btn" id="go">🔓 Kholo</button>
+<div id="lmsg" class="msg"></div>
+</div>
+
+<div id="app" class="hide">
+<div class="box">
+<h3 id="formTitle">➕ NAYI COMMAND</h3>
+<label for="name">Command ka naam (bina dot ke, sirf a-z 0-9)</label>
+<input id="name" maxlength="30" placeholder="misal: tech" autocapitalize="off" autocomplete="off" spellcheck="false">
+<label for="code">Code (neeche wale examples dekho)</label>
+<textarea id="code" spellcheck="false" autocapitalize="off" placeholder="await ctx.reply('Assalam o Alaikum ' + ctx.pushName)"></textarea>
+<label for="desc">Short detail (menu help mein, optional)</label>
+<input id="desc" maxlength="80" placeholder="misal: tech news bhejta hai">
+<label class="chk"><input id="pub" type="checkbox"> Sab ke liye (public) — warna sirf owner. Private mode mein hamesha sirf owner.</label>
+<div class="row2">
+<label class="btn s" style="margin:0">📂 File upload (.js / .txt)<input id="file" type="file" accept=".js,.txt,text/plain,application/javascript" class="hide"></label>
+<button class="btn s" id="clear" style="margin:0">🧹 Form khaali</button>
+</div>
+<button class="btn" id="save">💾 Save (bot khud utha lega)</button>
+<div id="msg" class="msg"></div>
+</div>
+
+<div class="box">
+<h3>📜 MERI COMMANDS <span id="count" class="small"></span></h3>
+<div id="list" class="small">—</div>
+<div id="botst" class="small"></div>
+</div>
+
+<div class="box">
+<h3>🎬 MENU PHOTO / VIDEO</h3>
+<div class="small">Photo (jpg/png) ya chhoti video/GIF (mp4/gif), max 2 MB. Video GIF ki tarah chalegi. Bot ~10 sec mein laga dega (video ho to convert mein 1 min tak).</div>
+<label for="target">Kis number pe? (number ke last 4 digit, khaali = sab numbers)</label>
+<input id="target" value="7157" maxlength="15" inputmode="numeric">
+<input id="media" type="file" accept="image/jpeg,image/png,image/webp,image/gif,video/mp4">
+<div id="preview"></div>
+<div class="row2">
+<button class="btn" id="msave" style="margin:0">⬆️ Menu pe lagao</button>
+<button class="btn red" id="mreset" style="margin:0">↩️ Original</button>
+</div>
+<div id="mmsg" class="msg"></div>
+</div>
+
+<div class="box help">
+<h3>📘 CODE KAISE LIKHEIN (sirf ye format chalta hai)</h3>
+Code seedha likho — function / <code>module.exports</code> ki zaroorat nahi. Bot tumhe <b>ctx</b> deta hai:<br>
+• <code>await ctx.reply('text')</code> — jawab bhejo<br>
+• <code>await ctx.sendImage('https://...jpg', 'caption')</code> — photo bhejo (https link ya base64)<br>
+• <code>await ctx.react('🔥')</code> — message pe react<br>
+• <code>ctx.args</code> (words ki list), <code>ctx.text</code> (command ke baad poora text), <code>ctx.sender</code> (bhejne wale ka number), <code>ctx.pushName</code>, <code>ctx.isOwner</code>, <code>ctx.isGroup</code>, <code>ctx.quotedText</code><br>
+• <code>await ctx.get('https://...')</code> / <code>await ctx.getJson('https://...')</code> — kisi API se data (sirf https, 5 sec, 1 MB)<br>
+<b>Example 1 — simple reply</b> (.salam)
+<pre>await ctx.reply('Wa Alaikum Assalam ' + ctx.pushName + ' ❤️')</pre>
+<b>Example 2 — args ke saath</b> (.tech Hussain)
+<pre>const naam = ctx.text || 'Bhai'
+await ctx.react('💻')
+await ctx.reply('👨‍💻 ' + naam + ' is a TECH KING!\nArgs: ' + ctx.args.length)</pre>
+<b>Example 3 — photo bhejo</b> (.cat)
+<pre>const data = await ctx.getJson('https://api.thecatapi.com/v1/images/search')
+await ctx.sendImage(data[0].url, '🐱 Ye lo billi')</pre>
+<b>Yaad rakho:</b><br>
+• <code>require</code>, <code>import</code>, <code>fs</code>, <code>process</code>, <code>axios</code>, <code>setTimeout</code> NAHI chalte (safety). Doosre bots ki plugin files (<code>cmd({pattern...})</code>, <code>conn.sendMessage</code>, <code>m.reply</code>) is format mein badalni padengi: <code>m.reply(x)</code> → <code>await ctx.reply(x)</code>.<br>
+• Command 3 sec CPU / 10 sec total mein khatam honi chahiye, ek command max 5 messages.<br>
+• Built-in command (menu, ping, song...) ke naam pe nayi command nahi banti.<br>
+• Error aaye to owner ko <b>❌ Command error</b> aata hai, bot kabhi band nahi hota.<br>
+• Save ke ~5-10 sec baad WhatsApp pe <b>.naam</b> likh ke try karo. <b>.menu</b> mein CUSTOM section mein dikhegi (👑 = sirf owner).
+</div>
+
+<button class="btn s" id="logout">🔒 Logout</button>
+</div>
+
+<div class="meta"><a href="owner.html">👑 Owner page</a> • <a href="restart.html">🔄 Restart</a> • <a href="./">⬅ Main page</a></div>
+</div>
+<script>
+const PROJECT='aqdas-hacker',COL='aqdasmdcmd';
+const FS='https://firestore.googleapis.com/v1/projects/'+PROJECT+'/databases/(default)/documents';
+const DOCN=id=>'projects/'+PROJECT+'/databases/(default)/documents/'+COL+'/'+id;
+const BUILTIN=["ai", "aichat", "aireset", "alive", "all", "allmenu", "alwaysonline", "antiban", "antidel", "antidelete", "antilink", "areact", "ask", "autoai", "autochat", "autoreact", "autoreactstatus", "autoread", "autostatus", "autostatusreact", "autotyping", "autoupdate", "autoview", "ayat", "battery", "bgm", "bol", "bot", "bye", "calc", "calculate", "channelfollow", "channelreact", "channelvote", "charge", "charging", "chauto", "chautoreact", "chfollow", "chjoin", "chleave", "chreact", "chreactall", "chreactapi", "chstatus", "chvote", "close", "cmd", "config", "convert", "country", "creator", "currency", "define", "demote", "dice", "dict", "ejoke", "enhance", "everyone", "facebook", "fact", "facts", "fb", "flip", "gcinfo", "getcode", "gh", "ginfo", "github", "gitstalk", "goodbye", "gpt", "groupinfo", "grouplink", "hack", "hacker", "hd", "help", "hidetag", "htag", "ig", "image", "img", "insta", "instagram", "invite", "iquote", "jid", "joke", "jokeapi", "kick", "link", "list", "lock", "lyric", "lyrics", "mazak", "meaning", "meme", "menu", "menusong", "mode", "mosam", "motivation", "mulk", "music", "mute", "namaz", "online", "open", "owner", "pair", "paircode", "photo", "pic", "ping", "play", "prankhack", "prayer", "promote", "qoute", "qr", "qrcode", "quote", "quran", "rate", "rch", "reactemoji", "reactscope", "readviewonce", "reel", "reload", "remini", "remove", "restart", "roll", "rreact", "runtime", "s", "safemode", "salah", "say", "session", "sessionid", "setdp", "setemoji", "setgoodbye", "setmenu", "setmenupic", "setmenusong", "setmenuvideo", "setpp", "setprefix", "setsong", "settings", "setwelcome", "short", "shorturl", "song", "speed", "status", "statusemoji", "statusreact", "statusview", "steal", "sticker", "stiker", "surah", "tagall", "take", "tarjuma", "theme", "tiktok", "tiktokdl", "tiktokmp3", "tinyurl", "toimage", "toimg", "toss", "tr", "translate", "tt", "ttmp3", "tts", "typing", "unlock", "unmute", "update", "upscale", "uptime", "vid", "video", "viewonce", "vv", "weather", "welcome", "wether", "wiki", "wikipedia", "wm", "yta", "ytmp3", "ytmp4", "ytv", "zenquote"];
+const MAX_MEDIA=2*1024*1024,CHUNK=900000;
+const $=i=>document.getElementById(i);
+const esc=s=>String(s==null?'':s).replace(/[<>&"]/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c]));
+let H=null,cmds=[],mediaV='',editing=null;
+function say(id,cls,t){$(id).className='msg '+cls;$(id).textContent=t}
+async function sha(s){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
+const sv=f=>f?(f.stringValue!=null?f.stringValue:(f.integerValue!=null?String(f.integerValue):'')):'';
+async function getDoc(id){const r=await fetch(FS+'/'+COL+'/'+id,{cache:'no-store'});if(r.status===404)return null;if(r.status===403)throw Object.assign(new Error('403'),{code:403});if(!r.ok)throw new Error('HTTP '+r.status);return r.json()}
+async function commit(writes){const r=await fetch(FS+':commit',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({writes})});if(!r.ok){let t='';try{t=(await r.json()).error.message}catch(e){}throw new Error((r.status===403?'Permission nahi (password?)':'HTTP '+r.status)+(t?' — '+t.slice(0,120):''))}return r.json()}
+const S=v=>({stringValue:String(v)});
+function mainWrite(){return {update:{name:DOCN(H),fields:{data:S(JSON.stringify({v:1,cmds})),media_v:S(mediaV)}},updateTransforms:[{fieldPath:'updated_at',setToServerValue:'REQUEST_TIME'}]}}
+
+async function login(){
+  const pw=$('pw').value.trim();if(!pw){say('lmsg','bad','Pehle password daalo');return}
+  $('go').disabled=true;say('lmsg','mid','⏳ Check ho raha hai...');
+  try{
+    const h=await sha('aqdasmd-cmds:'+pw);
+    const d=await getDoc(h);H=h;
+    if($('remember').checked)localStorage.setItem('aqdas_pw',pw);else localStorage.removeItem('aqdas_pw');
+    load(d);$('login').classList.add('hide');$('app').classList.remove('hide');refreshStatus();
+  }catch(e){if(e.code===403)say('lmsg','bad','❌ Galat password');else say('lmsg','bad','⚠️ Internet check karo, dobara try karo')}
+  $('go').disabled=false;
+}
+function load(d){
+  cmds=[];mediaV='';
+  if(d&&d.fields){try{const j=JSON.parse(sv(d.fields.data)||'{}');if(Array.isArray(j.cmds))cmds=j.cmds}catch(e){}mediaV=sv(d.fields.media_v)}
+  render();
+}
+async function reload(){try{load(await getDoc(H))}catch(e){}}
+function render(){
+  $('count').textContent='('+cmds.length+')';
+  if(!cmds.length){$('list').innerHTML='Abhi koi custom command nahi. Upar se banao 👆';return}
+  $('list').innerHTML=cmds.map((c,i)=>'<div class="item"><div class="top"><span><b>.'+esc(c.name)+'</b>'+
+    '<span class="tag '+(c.enabled===false?'bad':'ok')+'">'+(c.enabled===false?'OFF':'ON')+'</span>'+
+    '<span class="tag">'+(c.public?'🌐 public':'👑 owner')+'</span></span></div>'+
+    (c.desc?'<div class="small">'+esc(c.desc)+'</div>':'')+
+    '<div class="acts"><button data-a="edit" data-i="'+i+'">✏️ Edit</button>'+
+    '<button class="off" data-a="toggle" data-i="'+i+'">'+(c.enabled===false?'▶️ On':'⏸️ Off')+'</button>'+
+    '<button class="del" data-a="del" data-i="'+i+'">🗑️ Delete</button></div></div>').join('');
+}
+$('list').addEventListener('click',async e=>{
+  const b=e.target.closest('button');if(!b)return;const i=+b.dataset.i,c=cmds[i];if(!c)return;
+  if(b.dataset.a==='edit'){editing=c.name;$('name').value=c.name;$('code').value=c.code||'';$('desc').value=c.desc||'';$('pub').checked=!!c.public;$('formTitle').textContent='✏️ EDIT: .'+c.name;say('msg','mid','Badlo aur Save dabao');window.scrollTo({top:0,behavior:'smooth'});return}
+  if(b.dataset.a==='del'){if(!confirm('.'+c.name+' delete karni hai?'))return;const old=cmds.slice();cmds.splice(i,1);
+    try{await commit([mainWrite()]);say('msg','ok','🗑️ .'+c.name+' delete ho gayi — bot ~5 sec mein hata dega');if(editing===c.name)clearForm(true)}catch(err){cmds=old;say('msg','bad','⚠️ '+err.message)}render();return}
+  if(b.dataset.a==='toggle'){const old=c.enabled;c.enabled=c.enabled===false;try{await commit([mainWrite()]);say('msg','ok','.'+c.name+' ab '+(c.enabled?'ON ✅':'OFF ⏸️'))}catch(err){c.enabled=old;say('msg','bad','⚠️ '+err.message)}render()}
+});
+function cleanName(s){return String(s||'').toLowerCase().replace(/\.(js|txt|cjs|mjs)$/,'').replace(/[^a-z0-9]/g,'').slice(0,30)}
+function clearForm(quiet){editing=null;$('name').value='';$('code').value='';$('desc').value='';$('pub').checked=false;$('formTitle').textContent='➕ NAYI COMMAND';if(!quiet)say('msg','','')}
+$('clear').onclick=()=>clearForm();
+$('file').onchange=async()=>{const f=$('file').files[0];if(!f)return;if(f.size>60000){say('msg','bad','File bohat bari (max 60 KB)');return}
+  $('code').value=await f.text();$('name').value=cleanName(f.name);say('msg','mid','📂 '+f.name+' load ho gayi → naam: .'+$('name').value+'\nCheck karo phir Save dabao');$('file').value=''};
+async function save(){
+  const name=cleanName($('name').value),code=$('code').value;
+  if(!name){say('msg','bad','Naam likho (sirf a-z 0-9)');return}
+  $('name').value=name;
+  if(BUILTIN.includes(name)){say('msg','bad','❌ .'+name+' bot ki built-in command hai. Koi aur naam rakho.');return}
+  if(!code.trim()){say('msg','bad','Code khaali hai');return}
+  if(code.length>60000){say('msg','bad','Code bohat lamba (max 60 KB)');return}
+  try{const AF=Object.getPrototypeOf(async function(){}).constructor;new AF('ctx','module','exports',code)}catch(e){say('msg','bad','❌ Code mein ghalti: '+e.message);return}
+  if(/\brequire\s*\(|^\s*import\s/m.test(code)){if(!confirm('Code mein require/import hai — ye bot pe NAHI chalega. Phir bhi save karun?'))return}
+  const old=cmds.slice();const at=new Date().toISOString();
+  const entry={name,code,desc:$('desc').value.trim().slice(0,80),public:$('pub').checked,enabled:true,updated:at};
+  const ex=cmds.findIndex(c=>c.name===name);
+  if(editing&&editing!==name){const oi=cmds.findIndex(c=>c.name===editing);if(oi>=0)cmds.splice(oi,1)}
+  const ix=cmds.findIndex(c=>c.name===name);
+  if(ix>=0){if(!editing&&ex>=0&&!confirm('.'+name+' pehle se hai. Replace karun?')){cmds=old;return}entry.enabled=cmds[ix].enabled!==false;cmds[ix]=entry}else cmds.push(entry);
+  if(JSON.stringify({cmds}).length>780000){cmds=old;say('msg','bad','Sab commands mila ke bohat bari ho gayi');return}
+  $('save').disabled=true;say('msg','mid','⏳ Save ho raha hai...');
+  try{await commit([mainWrite()]);say('msg','ok','✅ .'+name+' save! ~5-10 sec mein WhatsApp pe .'+name+' try karo');clearForm(true);render();setTimeout(refreshStatus,12000)}
+  catch(e){cmds=old;render();say('msg','bad','⚠️ '+e.message)}
+  $('save').disabled=false;
+}
+$('save').onclick=save;
+
+// ---- bot ka status (bot khud likhta hai: kaun si commands load hui / reject) ----
+async function refreshStatus(){
+  try{const d=await getDoc(H+'_status');if(!d||!d.fields){$('botst').textContent='';return}
+    const f=d.fields,at=f.at&&f.at.timestampValue?new Date(f.at.timestampValue).toLocaleString('en-GB',{timeZone:'Asia/Karachi',hour:'2-digit',minute:'2-digit',second:'2-digit',day:'2-digit',month:'short'}):'';
+    let rej=[];try{rej=JSON.parse(sv(f.rejected)||'[]')}catch(e){}
+    $('botst').innerHTML='🤖 Bot ne load ki ('+esc(at)+' PKT): '+(esc(sv(f.loaded))||'koi nahi')+(rej.length?'<br><span class="bad">Reject: '+rej.map(r=>'.'+esc(r.name)+' ('+esc(r.why)+')').join(', ')+'</span>':'');
+  }catch(e){}
+}
+setInterval(()=>{if(H)refreshStatus()},20000);
+
+// ---- menu media ----
+let pending=null;
+$('media').onchange=async()=>{
+  const f=$('media').files[0];pending=null;$('preview').innerHTML='';say('mmsg','','');if(!f)return;
+  try{
+    let blob=f,mime=f.type||'';
+    if(/^image\/(jpeg|png|webp)$/.test(mime)){blob=await toJpeg(f);mime='image/jpeg'}
+    else if(!(mime==='image/gif'||mime==='video/mp4')){say('mmsg','bad','Sirf jpg/png/gif/mp4');return}
+    if(blob.size>MAX_MEDIA){say('mmsg','bad','File '+(blob.size/1048576).toFixed(1)+' MB hai — max 2 MB. Chhoti video bhejo.');return}
+    pending={blob,mime,name:f.name};
+    const u=URL.createObjectURL(blob);
+    $('preview').innerHTML=mime.startsWith('video/')?'<video src="'+u+'" autoplay loop muted playsinline></video>':'<img src="'+u+'">';
+    say('mmsg','mid',(blob.size/1024).toFixed(0)+' KB ready — "Menu pe lagao" dabao');
+  }catch(e){say('mmsg','bad','File nahi khuli')}
+};
+function toJpeg(file){return new Promise((res,rej)=>{const img=new Image();img.onload=()=>{const m=1280,s=Math.min(1,m/Math.max(img.width,img.height));const c=document.createElement('canvas');c.width=Math.round(img.width*s);c.height=Math.round(img.height*s);c.getContext('2d').drawImage(img,0,0,c.width,c.height);c.toBlob(b=>b?res(b):rej(new Error('jpg')),'image/jpeg',0.9)};img.onerror=rej;img.src=URL.createObjectURL(file)})}
+function b64(blob){return new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(String(r.result).split(',')[1]||'');r.onerror=rej;r.readAsDataURL(blob)})}
+async function setMedia(reset){
+  if(!reset&&!pending){say('mmsg','bad','Pehle photo/video chuno');return}
+  const target=$('target').value.replace(/\D/g,'');
+  const v=Date.now().toString(36)+Math.random().toString(36).slice(2,8);
+  $('msave').disabled=$('mreset').disabled=true;say('mmsg','mid','⏳ Upload ho raha hai...');
+  try{
+    const data=reset?'':await b64(pending.blob);
+    const parts=[];for(let i=0;i<data.length;i+=CHUNK)parts.push(data.slice(i,i+CHUNK));
+    if(parts.length>4)throw new Error('File bohat bari');
+    const writes=[{update:{name:DOCN(H+'_media'),fields:{mime:S(reset?'':pending.mime),name:S(reset?'':pending.name.slice(0,80)),size:{integerValue:String(reset?0:pending.blob.size)},chunks:{integerValue:String(parts.length)},v:S(v),target:S(target)}},updateTransforms:[{fieldPath:'updated_at',setToServerValue:'REQUEST_TIME'}]}];
+    for(let i=0;i<4;i++){if(i<parts.length)writes.push({update:{name:DOCN(H+'_m'+i),fields:{b64:S(parts[i]),v:S(v)}}});else writes.push({delete:DOCN(H+'_m'+i)})}
+    const oldV=mediaV;mediaV=v;writes.push(mainWrite());
+    try{await commit(writes)}catch(e){mediaV=oldV;throw e}
+    say('mmsg','ok',reset?'↩️ Original menu wapas — bot ~10 sec mein laga dega':'✅ Upload ho gaya! Bot ~10 sec mein (video ho to 1 min tak) '+(target?'…'+target:'sab numbers')+' ka menu badal dega. Phir .menu try karo');
+  }catch(e){say('mmsg','bad','⚠️ '+e.message)}
+  $('msave').disabled=$('mreset').disabled=false;
+}
+$('msave').onclick=()=>setMedia(false);
+$('mreset').onclick=()=>{if(confirm('Original AQDAS MD menu wapas lagana hai?'))setMedia(true)};
+$('logout').onclick=()=>{localStorage.removeItem('aqdas_pw');location.reload()};
+$('go').onclick=login;$('pw').addEventListener('keydown',e=>{if(e.key==='Enter')login()});
+(function(){const p=localStorage.getItem('aqdas_pw');if(p){$('pw').value=p;$('remember').checked=true;login()}})();
+</script></body></html>

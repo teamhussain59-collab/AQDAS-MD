@@ -8,6 +8,7 @@ import * as store from './lib/store.js'
 import { onExit, setExtra } from './lib/ghstatus.js'
 import { startTunnel } from './lib/tunnel.js'
 import { startRestartWatch } from './lib/restartreq.js'
+import { startCustomWatch } from './lib/customcmds.js'
 import { startChannelWatch } from './lib/chgroup.js'
 import { GH_ON, getRaw } from './lib/github.js'
 
@@ -62,3 +63,6 @@ startChannelWatch(() => manager.liveBots())
 
 // restart page (docs/restart.html) ke requests — Firebase se (FIREBASE_SA secret ho tab)
 if (GH_ON) startRestartWatch()
+
+// admin panel (docs/commands.html) ki custom commands + menu media — Firebase se, bina restart (FIREBASE_SA ho tab)
+startCustomWatch()

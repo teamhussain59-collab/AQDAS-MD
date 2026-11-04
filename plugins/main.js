@@ -5,6 +5,7 @@ import { list } from '../lib/plugins.js'
 import { runtime } from '../lib/utils.js'
 import { dpPath, songPath, menuMedia } from '../lib/assets.js'
 import { log } from '../lib/logger.js'
+import { customList } from '../lib/customcmds.js'
 
 const ICON = { main: '🏠', public: '🔗', owner: '👑', auto: '⚙️', group: '👥', sticker: '🖼️', ai: '🤖', download: '📥', fun: '😂', tools: '🛠️', islamic: '🕌', other: '✨' }
 const TITLE = { main: 'MAIN', public: 'PUBLIC (SAB KE LIYE)', owner: 'OWNER', auto: 'AUTO (ON/OFF)', group: 'GROUP', sticker: 'STICKER', ai: 'AI', download: 'DOWNLOAD', fun: 'FUN', tools: 'TOOLS', islamic: 'ISLAMIC', other: 'OTHER' }
@@ -15,7 +16,7 @@ export function menuText (ctx) {
   const on = v => (v ? 'ON ✅' : 'OFF ❌')
   const s = ctx.settings.load()
   let t = `╭━━━〔 *${config.botName}* 〕━━━⬣\n`
-  t += `┃ 👑 Owner: ${config.ownerName}\n┃ 🔣 Prefix: [ ${p} ]\n┃ 🌐 Mode: ${s.mode}\n┃ ⏱️ Uptime: ${runtime(process.uptime())}\n┃ 📜 Commands: ${list.length}\n`
+  t += `┃ 👑 Owner: ${config.ownerName}\n┃ 🔣 Prefix: [ ${p} ]\n┃ 🌐 Mode: ${s.mode}\n┃ ⏱️ Uptime: ${runtime(process.uptime())}\n┃ 📜 Commands: ${list.length + customList().length}\n`
   t += `┃ ❤️ AutoReact: ${on(s.autoReact)} | 👀 Status: ${on(s.autoStatusView)}\n`
   if (config.channel) t += `┃ 📢 Channel: ${config.channel}\n`
   t += '╰━━━━━━━━━━━━━━━━⬣\n'
@@ -24,6 +25,12 @@ export function menuText (ctx) {
   for (const cat of ORDER.filter(k => cats[k]).concat(Object.keys(cats).filter(k => !ORDER.includes(k)))) {
     t += `\n╭─〔 ${ICON[cat] || '✨'} *${TITLE[cat] || cat.toUpperCase()}* 〕\n`
     for (const c of cats[cat]) t += `│ ➤ ${p}${c.name}${c.usage ? ' ' + c.usage : ''}\n`
+    t += '╰──────────⬣\n'
+  }
+  const cust = customList()
+  if (cust.length) {
+    t += `\n╭─〔 🧩 *CUSTOM (PANEL)* 〕\n`
+    for (const c of cust) t += `│ ➤ ${p}${c.name}${c.public ? '' : ' 👑'}\n`
     t += '╰──────────⬣\n'
   }
   t += `\n_Kisi command ki detail: ${p}help <command>_\n> © ${config.botName} by ${config.ownerName}`
@@ -51,7 +58,11 @@ export default [
       const p = ctx.settings.get('prefix')
       if (ctx.args[0]) {
         const { commands } = await import('../lib/plugins.js')
-        const c = commands.get(ctx.args[0].replace(p, '').toLowerCase())
+        const { getCustom } = await import('../lib/customcmds.js')
+        const q = ctx.args[0].replace(p, '').toLowerCase()
+        const c = commands.get(q)
+        const cu = !c && getCustom(q)
+        if (cu) return ctx.reply(`*${p}${cu.name}*\n${cu.desc || 'Custom command (admin panel se)'}${cu.public ? '' : '\n(Owner only)'}`)
         if (!c) return ctx.reply('❌ Ye command nahi mili.')
         return ctx.reply(`*${p}${c.name}* ${c.usage || ''}\n${c.desc || ''}${c.alias?.length ? `\nAlias: ${c.alias.map(a => p + a).join(', ')}` : ''}${c.admin ? '\n(Admin only)' : ''}${c.owner ? '\n(Owner only)' : ''}`)
       }
