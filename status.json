@@ -11,7 +11,7 @@
   "linked": [
     {
       "number": "********7157",
-      "state": "linking"
+      "state": "connected"
     }
   ],
   "guest_log": [
@@ -23,11 +23,12 @@
     "02:37:27 ********7157: logged out",
     "02:40:04 ********7157: code bana",
     "02:40:16 ********7157: LINKING (phone ne code accept kiya)",
-    "02:40:26 ********7157: connection close 515 Stream Errored (restart required)"
+    "02:40:26 ********7157: connection close 515 Stream Errored (restart required)",
+    "02:40:31 ********7157: CONNECTED ✅"
   ],
   "guest_frames": {
     "number": "********7157",
-    "state": "linking",
+    "state": "connected",
     "frames": [
       "02:39:59 iq:set <pair-device>",
       "02:39:59 iq:result <link_code_companion_reg[companion_hello]>",
@@ -42,6 +43,6 @@
     "ok": false,
     "error": "koi connected number nahi"
   },
-  "updated_at": "2026-11-04T02:40:30.611Z",
-  "uptime_s": 14117
+  "updated_at": "2026-11-04T02:40:35.066Z",
+  "uptime_s": 14122
 }
