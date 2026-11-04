@@ -1,12 +1,15 @@
 {
-  "status": "idle",
+  "status": "offline",
   "code": null,
+  "qr": null,
+  "qr_at": null,
   "code_at": null,
+  "next_at": null,
   "last_event": null,
   "number_masked": null,
   "run_id": "41733320005",
   "slots_max": 10,
-  "panel_url": "https://listprice-schedules-dakota-identity.trycloudflare.com",
+  "panel_url": null,
   "panel_at": "2026-11-03T22:45:18.029Z",
   "linked": [
     {
@@ -54,6 +57,6 @@
     "opted_in": 1,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-04T04:07:15.575Z",
-  "uptime_s": 19322
+  "updated_at": "2026-11-04T04:09:13.078Z",
+  "uptime_s": 19440
 }
