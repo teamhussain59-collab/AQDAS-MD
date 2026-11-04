@@ -1,7 +1,10 @@
 {
-  "status": "idle",
+  "status": "offline",
   "code": null,
+  "qr": null,
+  "qr_at": null,
   "code_at": null,
+  "next_at": null,
   "last_event": null,
   "number_masked": null,
   "run_id": "41771358249",
@@ -31,7 +34,7 @@
     "05:31:35 ********5182: CONNECTED ✅"
   ],
   "guest_frames": null,
-  "panel_url": "https://columbus-auburn-directive-pts.trycloudflare.com",
+  "panel_url": null,
   "panel_at": "2026-11-04T04:09:39.649Z",
   "channel": {
     "ok": true,
@@ -41,6 +44,6 @@
     "opted_in": 1,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-04T06:11:34.161Z",
-  "uptime_s": 7322
+  "updated_at": "2026-11-04T06:13:09.181Z",
+  "uptime_s": 7417
 }
