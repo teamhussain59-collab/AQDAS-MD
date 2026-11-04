@@ -16,18 +16,17 @@
       "autostatus": "off"
     },
     {
-      "number": "********4275",
-      "state": "pairing",
+      "number": "********7157",
+      "state": "connected",
       "autostatus": "off"
     },
     {
-      "number": "********7157",
-      "state": "connected",
+      "number": "********7324",
+      "state": "pairing",
       "autostatus": "off"
     }
   ],
   "guest_log": [
-    "13:49:29 ********4275: code bana",
     "13:49:40 ********7324: LINKING (phone ne code accept kiya)",
     "13:51:01 ********4197: code bana",
     "13:51:12 ********4197: LINKING (phone ne code accept kiya)",
@@ -46,22 +45,15 @@
     "13:52:40 ********7324: logged out",
     "13:52:46 ********7324: code bana",
     "13:52:54 ********4275: connection close 428 Connection Terminated by Server",
-    "13:52:54 ********4275: expired / closed (code 428)"
+    "13:52:54 ********4275: expired / closed (code 428)",
+    "13:52:56 ********7324: code bana"
   ],
   "guest_frames": {
-    "number": "********4275",
-    "state": "expired",
+    "number": "********7324",
+    "state": "pairing",
     "frames": [
-      "13:49:24 iq:set <pair-device>",
-      "13:49:24 iq:result <link_code_companion_reg[companion_hello]>",
-      "13:49:54 iq:result",
-      "13:50:24 iq:get",
-      "13:50:24 iq:result",
-      "13:50:54 iq:result",
-      "13:51:24 iq:result",
-      "13:51:54 iq:result",
-      "13:52:24 iq:result",
-      "13:52:54 xmlstreamend:"
+      "13:52:51 iq:set <pair-device>",
+      "13:52:51 iq:result <link_code_companion_reg[companion_hello]>"
     ]
   },
   "mem": {
@@ -82,6 +74,6 @@
     "opted_in": 1,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-04T13:52:54.548Z",
-  "uptime_s": 1172
+  "updated_at": "2026-11-04T13:53:00.490Z",
+  "uptime_s": 1178
 }
