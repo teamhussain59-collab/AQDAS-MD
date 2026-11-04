@@ -1,0 +1,60 @@
+name: Railway setup (secrets -> Railway variables)
+# Ek dafa chalao (Actions -> Railway setup -> Run workflow). GitHub secrets ko Railway service ke variables mein daalta hai.
+# Koi secret log mein print nahi hota.
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Push variables to Railway
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+          V_FIREBASE_SA: ${{ secrets.FIREBASE_SA }}
+          V_SESSION_KEY: ${{ secrets.SESSION_KEY }}
+          V_ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
+          V_OWNER_NUMBER: ${{ secrets.OWNER_NUMBER }}
+          V_PAIR_NUMBER: ${{ secrets.PAIR_NUMBER }}
+          V_OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY || secrets.OPENROUTER_KEY }}
+          V_GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+          V_GITHUB_REPOSITORY: ${{ github.repository }}
+        run: |
+          python3 - <<'PY'
+          import os, json, urllib.request
+          tok = os.environ.get('RAILWAY_TOKEN','')
+          if not tok: raise SystemExit('RAILWAY_TOKEN secret nahi mila')
+          if not os.environ.get('V_GITHUB_TOKEN'): raise SystemExit('GH_PAT secret nahi mila')
+          if not os.environ.get('V_FIREBASE_SA'): raise SystemExit('FIREBASE_SA secret nahi mila')
+          def gql(q, v=None):
+              req = urllib.request.Request('https://backboard.railway.com/graphql/v2', data=json.dumps({'query': q, 'variables': v or {}}).encode(),
+                  headers={'Authorization': 'Bearer ' + tok, 'Content-Type': 'application/json', 'User-Agent': 'aqdas-md'})
+              j = json.loads(urllib.request.urlopen(req, timeout=30).read())
+              if j.get('errors'): raise SystemExit('Railway API error: ' + '; '.join(e.get('message','') for e in j['errors']))
+              return j['data']
+          d = gql('{ projects { edges { node { id name services { edges { node { id name } } } environments { edges { node { id name } } } } } } }')
+          best = None
+          for e in d['projects']['edges']:
+              p = e['node']
+              for s in p['services']['edges']:
+                  sv = s['node']
+                  score = 2 if 'aqdas' in (sv['name'] + p['name']).lower() else 1
+                  if not best or score > best[0]: best = (score, p, sv)
+          if not best: raise SystemExit('Railway pe koi project/service nahi mila — pehle repo deploy karo')
+          _, p, sv = best
+          envs = [x['node'] for x in p['environments']['edges']]
+          env = next((x for x in envs if x['name'] == 'production'), envs[0])
+          print('Project:', p['name'], '| Service:', sv['name'], '| Env:', env['name'])
+          vals = {
+            'HOST_NAME': 'railway', 'WEB': 'true', 'TZ': 'Asia/Karachi', 'NODE_ENV': 'production',
+            'FIREBASE_SA': os.environ['V_FIREBASE_SA'], 'SESSION_KEY': os.environ.get('V_SESSION_KEY',''),
+            'ADMIN_PASSWORD': os.environ.get('V_ADMIN_PASSWORD',''), 'OWNER_NUMBER': os.environ.get('V_OWNER_NUMBER',''),
+            'PAIR_NUMBER': os.environ.get('V_PAIR_NUMBER',''), 'OPENROUTER_API_KEY': os.environ.get('V_OPENROUTER_API_KEY',''),
+            'GITHUB_TOKEN': os.environ['V_GITHUB_TOKEN'], 'GITHUB_REPOSITORY': os.environ['V_GITHUB_REPOSITORY'],
+          }
+          vals = {k: v for k, v in vals.items() if v}
+          gql('mutation($i: VariableCollectionUpsertInput!) { variableCollectionUpsert(input: $i) }',
+              {'i': {'projectId': p['id'], 'environmentId': env['id'], 'serviceId': sv['id'], 'variables': vals}})
+          print('Variables set:', ', '.join(sorted(vals.keys())))
+          PY
