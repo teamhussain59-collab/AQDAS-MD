@@ -1,13 +1,16 @@
 {
-  "status": "idle",
+  "status": "offline",
   "code": null,
+  "qr": null,
+  "qr_at": null,
   "code_at": null,
+  "next_at": null,
   "last_event": null,
   "number_masked": null,
   "run_id": "41821436816",
   "slots_max": 10,
   "commands": 563,
-  "panel_url": "https://fisher-laptop-characters-understanding.trycloudflare.com",
+  "panel_url": null,
   "panel_at": "2026-11-04T11:31:43.498Z",
   "linked": [
     {
@@ -36,6 +39,6 @@
     "opted_in": 1,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-04T11:33:39.927Z",
-  "uptime_s": 122
+  "updated_at": "2026-11-04T11:35:03.376Z",
+  "uptime_s": 205
 }
