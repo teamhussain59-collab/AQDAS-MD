@@ -1,7 +1,10 @@
 {
-  "status": "idle",
+  "status": "offline",
   "code": null,
+  "qr": null,
+  "qr_at": null,
   "code_at": null,
+  "next_at": null,
   "last_event": null,
   "number_masked": null,
   "run_id": "41812741001",
@@ -25,7 +28,7 @@
     "10:14:16 ********7157: CONNECTED ✅"
   ],
   "guest_frames": null,
-  "panel_url": "https://bent-european-series-maternity.trycloudflare.com",
+  "panel_url": null,
   "panel_at": "2026-11-04T10:14:20.712Z",
   "channel": {
     "ok": true,
@@ -35,6 +38,6 @@
     "opted_in": 1,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-04T10:36:14.384Z",
-  "uptime_s": 1321
+  "updated_at": "2026-11-04T10:36:35.264Z",
+  "uptime_s": 1342
 }
