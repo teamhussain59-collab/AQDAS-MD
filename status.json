@@ -9,6 +9,61 @@
   "commands": 569,
   "panel_url": "https://ontario-loading-cover-became.trycloudflare.com",
   "panel_at": "2026-11-04T23:03:02.425Z",
-  "updated_at": "2026-11-04T23:03:02.426Z",
-  "uptime_s": 9
+  "linked": [
+    {
+      "number": "********7324",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********5182",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********8574",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********1805",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********6325",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********2128",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********7157",
+      "state": "connected",
+      "autostatus": "off"
+    }
+  ],
+  "guest_log": [
+    "23:03:00 ********1805: LINKING (phone ne code accept kiya)",
+    "23:03:01 ********7157: LINKING (phone ne code accept kiya)",
+    "23:03:01 ********6325: LINKING (phone ne code accept kiya)",
+    "23:03:01 ********8574: LINKING (phone ne code accept kiya)",
+    "23:03:01 ********1805: CONNECTED ✅",
+    "23:03:01 ********2128: LINKING (phone ne code accept kiya)",
+    "23:03:01 ********6325: CONNECTED ✅",
+    "23:03:01 ********5182: LINKING (phone ne code accept kiya)",
+    "23:03:01 ********7157: CONNECTED ✅",
+    "23:03:01 ********7324: LINKING (phone ne code accept kiya)",
+    "23:03:01 ********8574: CONNECTED ✅",
+    "23:03:01 ********2128: CONNECTED ✅",
+    "23:03:02 ********7324: CONNECTED ✅",
+    "23:03:02 ********5182: CONNECTED ✅",
+    "23:03:04 ********8574: status ***********1986: seen ✅, react 💋 ✅"
+  ],
+  "guest_frames": null,
+  "updated_at": "2026-11-04T23:03:08.477Z",
+  "uptime_s": 15
 }
