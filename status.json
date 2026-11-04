@@ -32,7 +32,6 @@
     }
   ],
   "guest_log": [
-    "14:02:30 ********7324: connection close 428 Connection Terminated by Server",
     "14:02:33 ********7324: connection close 401 Connection Failure",
     "14:02:33 ********7324: logged out",
     "14:04:39 qr: connection close 428 Connection Terminated by Server",
@@ -51,7 +50,8 @@
     "14:23:11 ********7324: logged out",
     "14:25:40 qr: connection close 428 Connection Terminated by Server",
     "14:25:40 qr: expired / closed (code 428)",
-    "14:49:08 ********6325: code bana"
+    "14:49:08 ********6325: code bana",
+    "14:49:52 ********6325: code bana"
   ],
   "guest_frames": {
     "number": "********6325",
@@ -79,6 +79,6 @@
     "opted_in": 1,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-04T14:49:51.662Z",
-  "uptime_s": 4589
+  "updated_at": "2026-11-04T14:49:56.413Z",
+  "uptime_s": 4594
 }
