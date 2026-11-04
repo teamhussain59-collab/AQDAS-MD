@@ -1,99 +1,11 @@
 {
-  "status": "offline",
+  "status": "idle",
   "code": null,
-  "qr": null,
-  "qr_at": null,
   "code_at": null,
-  "next_at": null,
   "last_event": null,
   "number_masked": null,
-  "run_id": "41839020060",
+  "run_id": "41873188241",
   "slots_max": "unlimited",
-  "commands": 563,
-  "panel_url": null,
-  "panel_at": "2026-11-04T13:33:28.116Z",
-  "linked": [
-    {
-      "number": "********5182",
-      "state": "connected",
-      "autostatus": "off"
-    },
-    {
-      "number": "********7157",
-      "state": "connected",
-      "autostatus": "off"
-    },
-    {
-      "number": "********2128",
-      "state": "connected",
-      "autostatus": "off"
-    },
-    {
-      "number": "********6325",
-      "state": "connected",
-      "autostatus": "view+react"
-    },
-    {
-      "number": "********7324",
-      "state": "connected",
-      "autostatus": "off"
-    }
-  ],
-  "guest_log": [
-    "14:25:40 qr: connection close 428 Connection Terminated by Server",
-    "14:25:40 qr: expired / closed (code 428)",
-    "14:49:08 ********6325: code bana",
-    "14:49:52 ********6325: code bana",
-    "14:50:44 ********6325: code bana",
-    "14:51:42 ********6325: LINKING (phone ne code accept kiya)",
-    "14:51:45 ********6325: connection close 515 Stream Errored (restart required)",
-    "14:51:48 ********6325: CONNECTED ✅",
-    "15:21:49 ********8589: code bana",
-    "15:24:40 ********7324: code bana",
-    "15:25:14 ********8589: connection close 428 Connection Terminated by Server",
-    "15:25:14 ********8589: expired / closed (code 428)",
-    "15:25:48 ********7324: LINKING (phone ne code accept kiya)",
-    "15:25:51 ********7324: connection close 515 Stream Errored (restart required)",
-    "15:25:54 ********7324: CONNECTED ✅",
-    "16:24:03 ********7324: connection close 428 Connection Terminated",
-    "16:24:06 ********7324: CONNECTED ✅",
-    "16:48:59 ********3032: code bana",
-    "16:52:24 ********3032: connection close 428 Connection Terminated by Server",
-    "16:52:24 ********3032: expired / closed (code 428)"
-  ],
-  "guest_frames": {
-    "number": "********7324",
-    "state": "connected",
-    "frames": [
-      "15:24:35 iq:set <pair-device>",
-      "15:24:35 iq:result <link_code_companion_reg[companion_hello]>",
-      "15:25:05 iq:result",
-      "15:25:35 iq:result",
-      "15:25:48 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
-      "15:25:48 iq:result",
-      "15:25:50 iq:set <pair-success>",
-      "15:25:51 stream:error: code=515",
-      "15:25:51 xmlstreamend:"
-    ]
-  },
-  "mem": {
-    "sessions": 5,
-    "free_mb": 14773,
-    "total_mb": 15982,
-    "rss_mb": 270,
-    "heap_mb": 63,
-    "heap_limit_mb": 4144,
-    "per_session_mb": 23,
-    "room_for": 250
-  },
-  "channel": {
-    "ok": true,
-    "name": "AQDAS TECH",
-    "latest_post": 110,
-    "auto": true,
-    "opted_in": 3,
-    "fetch": "updates err channel posts timeout | messages:messages:10"
-  },
-  "updated_at": "2026-11-04T17:01:38.549Z",
-  "uptime_s": 12496
+  "updated_at": "2026-11-04T17:02:00.463Z",
+  "uptime_s": 2
 }
