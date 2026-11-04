@@ -14,6 +14,10 @@
     {
       "number": "********7157",
       "state": "connected"
+    },
+    {
+      "number": "********4197",
+      "state": "pairing"
     }
   ],
   "guest_log": [
@@ -22,7 +26,14 @@
     "04:09:34 ********5182: CONNECTED ✅",
     "04:09:34 ********7157: CONNECTED ✅"
   ],
-  "guest_frames": null,
+  "guest_frames": {
+    "number": "********4197",
+    "state": "pairing",
+    "frames": [
+      "04:50:29 iq:set <pair-device>",
+      "04:50:29 iq:result <link_code_companion_reg[companion_hello]>"
+    ]
+  },
   "panel_url": "https://columbus-auburn-directive-pts.trycloudflare.com",
   "panel_at": "2026-11-04T04:09:39.649Z",
   "channel": {
@@ -33,6 +44,6 @@
     "opted_in": 1,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-04T04:49:34.038Z",
-  "uptime_s": 2402
+  "updated_at": "2026-11-04T04:50:33.834Z",
+  "uptime_s": 2461
 }
