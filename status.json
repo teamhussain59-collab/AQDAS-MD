@@ -37,7 +37,8 @@
     "state": "pairing",
     "frames": [
       "03:24:50 iq:set <pair-device>",
-      "03:24:50 iq:result <link_code_companion_reg[companion_hello]>"
+      "03:24:50 iq:result <link_code_companion_reg[companion_hello]>",
+      "03:25:19 iq:result"
     ]
   },
   "channel": {
@@ -48,6 +49,6 @@
     "opted_in": 0,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-04T03:25:15.500Z",
-  "uptime_s": 16802
+  "updated_at": "2026-11-04T03:25:23.903Z",
+  "uptime_s": 16811
 }
