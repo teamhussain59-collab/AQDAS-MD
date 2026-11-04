@@ -11,6 +11,7 @@ import { startRestartWatch } from './lib/restartreq.js'
 import { startCustomWatch } from './lib/customcmds.js'
 import { startChannelWatch } from './lib/chgroup.js'
 import { GH_ON, getRaw } from './lib/github.js'
+import { loadPlugins } from './lib/plugins.js'
 
 console.log(`\x1b[32m
    ___   ____  ____   ___   _____   __  __ ____
@@ -57,6 +58,9 @@ if (hasMain || !multi) await bot.start()
 else log.info('Main bot ka number / session nahi — sirf web page wale numbers chalenge')
 
 if (multi) await manager.restoreGuests(saved)
+
+// status.json mein built-in commands ki ginti (menu ka "Commands" isi + panel wali custom)
+loadPlugins().then(l => setExtra({ commands: l.length })).catch(() => {})
 
 // channel react group: naye post pe opt-in numbers ka auto react (har 3 min check)
 startChannelWatch(() => manager.liveBots())
