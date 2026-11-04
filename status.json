@@ -9,6 +9,32 @@
   "commands": 563,
   "panel_url": "https://highway-beginner-hockey-operators.trycloudflare.com",
   "panel_at": "2026-11-04T12:25:47.355Z",
-  "updated_at": "2026-11-04T12:25:47.355Z",
-  "uptime_s": 7
+  "linked": [
+    {
+      "number": "********4197",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********5182",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********7157",
+      "state": "connected",
+      "autostatus": "view+react"
+    }
+  ],
+  "guest_log": [
+    "12:25:45 ********7157: LINKING (phone ne code accept kiya)",
+    "12:25:45 ********4197: LINKING (phone ne code accept kiya)",
+    "12:25:45 ********4197: CONNECTED ✅",
+    "12:25:45 ********7157: CONNECTED ✅",
+    "12:25:45 ********5182: LINKING (phone ne code accept kiya)",
+    "12:25:46 ********5182: CONNECTED ✅"
+  ],
+  "guest_frames": null,
+  "updated_at": "2026-11-04T12:25:50.309Z",
+  "uptime_s": 10
 }
