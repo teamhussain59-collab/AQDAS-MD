@@ -9,6 +9,25 @@
   "commands": 563,
   "panel_url": "https://fisher-laptop-characters-understanding.trycloudflare.com",
   "panel_at": "2026-11-04T11:31:43.498Z",
-  "updated_at": "2026-11-04T11:31:43.498Z",
-  "uptime_s": 5
+  "linked": [
+    {
+      "number": "********5182",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********7157",
+      "state": "connected",
+      "autostatus": "view+react"
+    }
+  ],
+  "guest_log": [
+    "11:31:40 ********7157: LINKING (phone ne code accept kiya)",
+    "11:31:40 ********5182: LINKING (phone ne code accept kiya)",
+    "11:31:41 ********7157: CONNECTED ✅",
+    "11:31:41 ********5182: CONNECTED ✅"
+  ],
+  "guest_frames": null,
+  "updated_at": "2026-11-04T11:31:45.405Z",
+  "uptime_s": 7
 }
