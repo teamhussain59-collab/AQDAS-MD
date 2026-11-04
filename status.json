@@ -8,17 +8,14 @@
   "slots_max": 10,
   "panel_url": "https://listprice-schedules-dakota-identity.trycloudflare.com",
   "panel_at": "2026-11-03T22:45:18.029Z",
-  "linked": [
-    {
-      "number": "********7157",
-      "state": "connected"
-    }
-  ],
+  "linked": [],
   "guest_log": [
     "22:45:15 ********7157: LINKING (phone ne code accept kiya)",
     "22:45:16 ********7157: CONNECTED ✅",
     "23:03:30 ********7157: connection close 503 Stream Errored (unknown)",
-    "23:03:33 ********7157: CONNECTED ✅"
+    "23:03:33 ********7157: CONNECTED ✅",
+    "02:37:27 ********7157: connection close 401 Stream Errored (conflict)",
+    "02:37:27 ********7157: logged out"
   ],
   "guest_frames": null,
   "channel": {
@@ -29,6 +26,6 @@
     "opted_in": 0,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-04T02:37:15.381Z",
-  "uptime_s": 13922
+  "updated_at": "2026-11-04T02:37:31.205Z",
+  "uptime_s": 13938
 }
