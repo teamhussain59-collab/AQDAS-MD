@@ -29,6 +29,11 @@
       "number": "********4275",
       "state": "pairing",
       "autostatus": "off"
+    },
+    {
+      "number": "********4197",
+      "state": "pairing",
+      "autostatus": "off"
     }
   ],
   "guest_log": [
@@ -41,14 +46,11 @@
     "13:49:40 ********7324: LINKING (phone ne code accept kiya)"
   ],
   "guest_frames": {
-    "number": "********4275",
+    "number": "********4197",
     "state": "pairing",
     "frames": [
-      "13:49:24 iq:set <pair-device>",
-      "13:49:24 iq:result <link_code_companion_reg[companion_hello]>",
-      "13:49:54 iq:result",
-      "13:50:24 iq:get",
-      "13:50:24 iq:result"
+      "13:50:56 iq:set <pair-device>",
+      "13:50:57 iq:result <link_code_companion_reg[companion_hello]>"
     ]
   },
   "mem": {
@@ -69,6 +71,6 @@
     "opted_in": 1,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-04T13:50:28.411Z",
-  "uptime_s": 1026
+  "updated_at": "2026-11-04T13:51:01.124Z",
+  "uptime_s": 1058
 }
