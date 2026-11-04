@@ -32,9 +32,6 @@
     }
   ],
   "guest_log": [
-    "13:52:46 ********7324: code bana",
-    "13:52:54 ********4275: connection close 428 Connection Terminated by Server",
-    "13:52:54 ********4275: expired / closed (code 428)",
     "13:52:56 ********7324: code bana",
     "13:53:21 ********7324: LINKING (phone ne code accept kiya)",
     "13:56:11 ********7324: connection close 428 Connection Terminated by Server",
@@ -51,7 +48,10 @@
     "14:04:39 qr: connection close 428 Connection Terminated by Server",
     "14:04:39 qr: expired / closed (code 428)",
     "14:10:33 ********7324: code bana",
-    "14:11:35 ********7324: LINKING (phone ne code accept kiya)"
+    "14:11:35 ********7324: LINKING (phone ne code accept kiya)",
+    "14:13:58 ********7324: connection close 428 Connection Terminated by Server",
+    "14:14:02 ********7324: connection close 401 Connection Failure",
+    "14:14:02 ********7324: logged out"
   ],
   "guest_frames": {
     "number": "********7324",
@@ -69,7 +69,8 @@
       "14:12:28 iq:result",
       "14:12:58 iq:result",
       "14:13:28 iq:get",
-      "14:13:28 iq:result"
+      "14:13:28 iq:result",
+      "14:13:58 xmlstreamend:"
     ]
   },
   "mem": {
@@ -90,6 +91,6 @@
     "opted_in": 1,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-04T14:13:32.458Z",
-  "uptime_s": 2410
+  "updated_at": "2026-11-04T14:14:02.314Z",
+  "uptime_s": 2440
 }
