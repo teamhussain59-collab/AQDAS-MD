@@ -1,49 +1,11 @@
 {
-  "status": "offline",
+  "status": "idle",
   "code": null,
-  "qr": null,
-  "qr_at": null,
   "code_at": null,
-  "next_at": null,
   "last_event": null,
   "number_masked": null,
-  "run_id": "41771358249",
+  "run_id": "41784001151",
   "slots_max": 10,
-  "linked": [
-    {
-      "number": "********5182",
-      "state": "connected"
-    },
-    {
-      "number": "********7157",
-      "state": "connected"
-    }
-  ],
-  "guest_log": [
-    "04:09:34 ********5182: CONNECTED ✅",
-    "04:09:34 ********7157: CONNECTED ✅",
-    "04:50:34 ********4197: code bana",
-    "04:52:21 ********4197: LINKING (phone ne code accept kiya)",
-    "04:52:25 ********4197: connection close 515 Stream Errored (restart required)",
-    "04:52:28 ********4197: CONNECTED ✅",
-    "04:59:09 ********4197: connection close 401 Stream Errored (conflict)",
-    "04:59:09 ********4197: logged out",
-    "05:10:27 ********7157: connection close 503 Stream Errored (unknown)",
-    "05:10:30 ********7157: CONNECTED ✅",
-    "05:31:32 ********5182: connection close 428 Connection Terminated",
-    "05:31:35 ********5182: CONNECTED ✅"
-  ],
-  "guest_frames": null,
-  "panel_url": null,
-  "panel_at": "2026-11-04T04:09:39.649Z",
-  "channel": {
-    "ok": true,
-    "name": "AQDAS TECH",
-    "latest_post": 110,
-    "auto": true,
-    "opted_in": 1,
-    "fetch": "updates err channel posts timeout | messages:messages:10"
-  },
-  "updated_at": "2026-11-04T06:13:09.181Z",
-  "uptime_s": 7417
+  "updated_at": "2026-11-04T06:13:29.371Z",
+  "uptime_s": 1
 }
