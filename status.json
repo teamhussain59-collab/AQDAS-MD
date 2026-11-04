@@ -34,11 +34,6 @@
       "number": "qr",
       "state": "pairing",
       "autostatus": "off"
-    },
-    {
-      "number": "qr",
-      "state": "pairing",
-      "autostatus": "off"
     }
   ],
   "guest_log": [
@@ -65,17 +60,10 @@
   ],
   "guest_frames": {
     "number": "",
-    "state": "expired",
+    "state": "pairing",
     "frames": [
-      "14:19:34 iq:set <pair-device>",
-      "14:20:04 iq:result",
-      "14:20:34 iq:result",
-      "14:21:04 iq:result",
-      "14:21:34 iq:result",
-      "14:22:04 iq:result",
-      "14:22:34 iq:get",
-      "14:22:34 iq:result",
-      "14:23:04 xmlstreamend:"
+      "14:22:10 iq:set <pair-device>",
+      "14:22:39 iq:result"
     ]
   },
   "mem": {
@@ -96,6 +84,6 @@
     "opted_in": 1,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-04T14:23:04.529Z",
-  "uptime_s": 2982
+  "updated_at": "2026-11-04T14:23:08.529Z",
+  "uptime_s": 2986
 }
