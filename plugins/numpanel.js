@@ -35,6 +35,18 @@ function pickOtp (j) {
   if (!code && sms) { const m = String(sms).match(/\b(\d{3}[- ]?\d{3}|\d{4,8})\b/); if (m) code = m[1] }
   return code ? { code: String(code), sms: String(sms || '') } : null
 }
+
+async function pub (path) {
+  const ac = new AbortController(); const t = setTimeout(() => ac.abort(), 20000)
+  try { const r = await fetch(BASE + path, { signal: ac.signal, headers: { 'User-Agent': 'AQDAS-MD' } }); return await r.json() } finally { clearTimeout(t) }
+}
+async function liveList (svc) {
+  const [s, c] = await Promise.all([pub('/services').catch(() => ({})), pub('/countries?service=' + encodeURIComponent(svc)).catch(() => ({}))])
+  const services = (s.services || []).filter(x => (x.count || 0) > 0)
+  const countries = (c.countries || []).filter(x => (x.count || 0) > 0).sort((a, b) => b.count - a.count)
+  return { services, countries }
+}
+
 const dm = (ctx, text) => ctx.sock.sendMessage(ctx.sender, { text })
 const errText = (e, ctx) => e.message === 'NOKEY'
   ? `❌ API key set nahi. Owner bot ki chat mein likhe: *${ctx.prefix}setnumkey YOUR_KEY*`
@@ -65,9 +77,8 @@ async function release (ctx, rec) {
   try { await api(ctx, 'POST', '/release_number', { number: rec.number }) } catch {}
 }
 
-async function getNew (ctx) {
-  const country = (ctx.args[0] || 'random').trim()
-  const j = await api(ctx, 'POST', '/request_number', { service: 'whatsapp', country })
+async function getNew (ctx, svc = 'whatsapp', country = 'random') {
+  const j = await api(ctx, 'POST', '/request_number', { service: svc, country })
   const number = pickNum(j)
   if (!number) throw new Error('number nahi mila, dobara try karo')
   const rec = { number, at: Date.now(), timer: null, got: false, last: null }
@@ -89,15 +100,35 @@ export default [
     }
   },
   {
-    name: 'getnum', alias: ['tempnum', 'vnum'], category: 'tools', usage: '[country]', desc: 'Temp WhatsApp number + OTP (20 min)',
+    name: 'getnum', alias: ['tempnum', 'vnum', 'numlist'], category: 'tools', usage: '[service] <country>', desc: 'Temp number + OTP (sirf live countries)',
     async run (ctx) {
       const old = active.get(ctx.sender)
-      if (old) return ctx.reply(`⚠️ Tumhare paas pehle se number hai: *${old.number}*\nNaya chahiye to *${ctx.prefix}change*`)
+      if (old && ctx.args.length) return ctx.reply(`⚠️ Tumhare paas pehle se number hai: *${old.number}*\nNaya chahiye to *${ctx.prefix}change*`)
+      let args = [...ctx.args]
+      let svc = 'whatsapp'
+      let live
+      try { live = await liveList(svc) } catch { live = { services: [], countries: [] } }
+      if (args[0] && live.services.some(s => s.key === args[0].toLowerCase())) { svc = args.shift().toLowerCase(); live = await liveList(svc).catch(() => live) }
+      if (!args.length) {
+        if (!live.countries.length) return ctx.reply(`❌ Abhi koi live number nahi (${svc}). Thodi der baad try karo.`)
+        let t = `📱 *LIVE NUMBERS* (${svc})\n\n`
+        for (const c of live.countries.slice(0, 40)) t += `${c.flag || '🌍'} *${c.name}* — ${c.count}\n`
+        if (live.services.length > 1) t += `\n🧩 Services: ${live.services.map(s => s.key).join(', ')}`
+        t += `\n\nNumber lo: *${ctx.prefix}getnum ${live.countries[0].name}*\nKoi bhi: *${ctx.prefix}getnum random*`
+        return ctx.reply(t)
+      }
+      let country = args.join(' ').trim()
+      if (country.toLowerCase() !== 'random') {
+        const hit = live.countries.find(c => c.name.toLowerCase() === country.toLowerCase())
+        if (live.countries.length && !hit) return ctx.reply(`❌ *${country}* abhi live nahi. List dekho: *${ctx.prefix}getnum*`)
+        if (hit) country = hit.name
+      }
       await ctx.react('⏳')
       try {
-        const rec = await getNew(ctx)
+        const rec = await getNew(ctx, svc, country)
+        rec.svc = svc; rec.country = country
         await ctx.react('✅')
-        await ctx.reply(`📱 *Tumhara number:* ${rec.number}\n⏰ 20 min ke liye\n\nIs number pe WhatsApp ka code mangwao. OTP aate hi main *tumhe DM mein* bhej dunga (sirf tumhe).\n\n🔁 ${ctx.prefix}otp — khud check\n🔄 ${ctx.prefix}change — naya number\n❌ ${ctx.prefix}cancelnum — band`)
+        await ctx.reply(`📱 *Tumhara number:* ${rec.number}\n🌍 ${country} · ${svc}\n⏰ 20 min ke liye\n\nIs number pe code mangwao. OTP aate hi main *tumhe DM mein* bhej dunga (sirf tumhe).\n\n🔁 ${ctx.prefix}otp — khud check\n🔄 ${ctx.prefix}change — naya number\n❌ ${ctx.prefix}cancelnum — band`)
       } catch (e) { await ctx.react('❌'); await ctx.reply(errText(e, ctx)) }
     }
   },
@@ -120,9 +151,10 @@ export default [
     name: 'change', alias: ['changenum', 'newnum'], category: 'tools', usage: '[country]', desc: 'Number badlo (purana release)',
     async run (ctx) {
       await ctx.react('⏳')
-      await release(ctx, active.get(ctx.sender))
+      const prev = active.get(ctx.sender)
+      await release(ctx, prev)
       try {
-        const rec = await getNew(ctx)
+        const rec = await getNew(ctx, prev?.svc || 'whatsapp', ctx.args.join(' ').trim() || prev?.country || 'random')
         await ctx.react('✅')
         await ctx.reply(`🔄 *Naya number:* ${rec.number}\n⏰ 20 min. OTP aate hi DM mein aayega.`)
       } catch (e) { await ctx.react('❌'); await ctx.reply(errText(e, ctx)) }
