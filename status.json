@@ -41,8 +41,8 @@
       "autostatus": "off"
     },
     {
-      "number": "qr",
-      "state": "pairing",
+      "number": "********8801",
+      "state": "connected",
       "autostatus": "off"
     }
   ],
@@ -58,15 +58,36 @@
     "18:00:32 ********7157: LINKING (phone ne code accept kiya)",
     "18:00:32 ********6325: LINKING (phone ne code accept kiya)",
     "18:00:33 ********7157: CONNECTED ✅",
-    "18:00:33 ********6325: CONNECTED ✅"
+    "18:00:33 ********6325: CONNECTED ✅",
+    "18:08:46 qr: connection close 515 Stream Errored (restart required)",
+    "18:08:49 ********8801: CONNECTED ✅"
   ],
   "guest_frames": {
-    "number": "",
-    "state": "pairing",
+    "number": "********8801",
+    "state": "connected",
     "frames": [
-      "18:07:29 iq:set <pair-device>",
-      "18:07:58 iq:result",
-      "18:08:28 iq:result"
+      "18:08:48 success:",
+      "18:08:48 ib: <edge_routing>",
+      "18:08:48 ib: <dirty>",
+      "18:08:48 iq:result <count+pq_count>",
+      "18:08:49 iq:result",
+      "18:08:49 iq:result <active>",
+      "18:08:49 ib: <offline>",
+      "18:08:49 notification:account_sync <devices>",
+      "18:08:49 iq:result <digest>",
+      "18:08:49 iq:result <list>",
+      "18:08:49 iq:result <props+erid>",
+      "18:08:49 iq:result <privacy>",
+      "18:08:49 iq:result <usync>",
+      "18:08:50 iq:result <list>",
+      "18:08:50 notification:privacy_token <tokens>",
+      "18:08:50 iq:result",
+      "18:08:50 notification:privacy_token <tokens>",
+      "18:08:53 iq:result <sync>",
+      "18:08:54 notification:server_sync <collection+collection>",
+      "18:08:54 iq:result <sync>",
+      "18:08:57 notification:server_sync <collection+collection+collection>",
+      "18:08:57 iq:result <sync>"
     ]
   },
   "mem": {
@@ -87,6 +108,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-04T18:08:32.892Z",
-  "uptime_s": 486
+  "updated_at": "2026-11-04T18:09:01.827Z",
+  "uptime_s": 515
 }
