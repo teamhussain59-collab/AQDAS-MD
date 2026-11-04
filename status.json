@@ -1,13 +1,16 @@
 {
-  "status": "idle",
+  "status": "offline",
   "code": null,
+  "qr": null,
+  "qr_at": null,
   "code_at": null,
+  "next_at": null,
   "last_event": null,
   "number_masked": null,
   "run_id": "41829072970",
   "slots_max": "unlimited",
   "commands": 563,
-  "panel_url": "https://highway-beginner-hockey-operators.trycloudflare.com",
+  "panel_url": null,
   "panel_at": "2026-11-04T12:25:47.355Z",
   "linked": [
     {
@@ -50,6 +53,6 @@
     "opted_in": 1,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-04T13:31:43.878Z",
-  "uptime_s": 3963
+  "updated_at": "2026-11-04T13:33:02.872Z",
+  "uptime_s": 4042
 }
