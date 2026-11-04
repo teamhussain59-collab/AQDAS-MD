@@ -4,44 +4,8 @@
   "code_at": null,
   "last_event": null,
   "number_masked": null,
-  "run_id": "41807670402",
+  "run_id": "41809537179",
   "slots_max": 10,
-  "panel_url": "https://reveals-ridge-telephone-rays.trycloudflare.com",
-  "panel_at": "2026-11-04T09:28:20.010Z",
-  "linked": [
-    {
-      "number": "********4197",
-      "state": "connected",
-      "autostatus": "off"
-    },
-    {
-      "number": "********5182",
-      "state": "connected",
-      "autostatus": "off"
-    },
-    {
-      "number": "********7157",
-      "state": "connected",
-      "autostatus": "view+react"
-    }
-  ],
-  "guest_log": [
-    "09:28:17 ********4197: LINKING (phone ne code accept kiya)",
-    "09:28:17 ********5182: LINKING (phone ne code accept kiya)",
-    "09:28:17 ********4197: CONNECTED ✅",
-    "09:28:17 ********5182: CONNECTED ✅",
-    "09:28:17 ********7157: LINKING (phone ne code accept kiya)",
-    "09:28:18 ********7157: CONNECTED ✅"
-  ],
-  "guest_frames": null,
-  "channel": {
-    "ok": true,
-    "name": "AQDAS TECH",
-    "latest_post": 110,
-    "auto": true,
-    "opted_in": 1,
-    "fetch": "updates err channel posts timeout | messages:messages:10"
-  },
-  "updated_at": "2026-11-04T09:44:16.483Z",
-  "uptime_s": 963
+  "updated_at": "2026-11-04T09:44:53.944Z",
+  "uptime_s": 1
 }
