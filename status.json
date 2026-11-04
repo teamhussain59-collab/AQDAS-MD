@@ -39,6 +39,11 @@
       "number": "*******7398",
       "state": "pairing",
       "autostatus": "off"
+    },
+    {
+      "number": "********4197",
+      "state": "pairing",
+      "autostatus": "off"
     }
   ],
   "guest_log": [
@@ -55,14 +60,11 @@
     "17:32:48 *******7398: code bana"
   ],
   "guest_frames": {
-    "number": "*******7398",
+    "number": "********4197",
     "state": "pairing",
     "frames": [
-      "17:32:43 iq:set <pair-device>",
-      "17:32:43 iq:result <link_code_companion_reg[companion_hello]>",
-      "17:33:13 iq:result",
-      "17:33:43 iq:get",
-      "17:33:43 iq:result"
+      "17:33:58 iq:set <pair-device>",
+      "17:33:59 iq:result <link_code_companion_reg[companion_hello]>"
     ]
   },
   "mem": {
@@ -83,6 +85,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-04T17:33:47.024Z",
-  "uptime_s": 139
+  "updated_at": "2026-11-04T17:34:03.134Z",
+  "uptime_s": 155
 }
