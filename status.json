@@ -23,7 +23,7 @@
     {
       "number": "********4197",
       "state": "connected",
-      "autostatus": "off"
+      "autostatus": "view+react"
     }
   ],
   "guest_log": [
@@ -37,7 +37,9 @@
     "12:20:00 ********4197: code bana",
     "12:20:10 ********4197: LINKING (phone ne code accept kiya)",
     "12:20:13 ********4197: connection close 515 Stream Errored (restart required)",
-    "12:20:16 ********4197: CONNECTED ✅"
+    "12:20:16 ********4197: CONNECTED ✅",
+    "12:21:30 ********7157: status *********6233: seen ✅, react 🤤 ✅",
+    "12:21:30 ********4197: status *********6233: seen (read receipts OFF: saamne wale ko view nahi dikhega), react 😢 ✅"
   ],
   "guest_frames": {
     "number": "********4197",
@@ -70,6 +72,6 @@
     "opted_in": 1,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-04T12:21:24.777Z",
-  "uptime_s": 2762
+  "updated_at": "2026-11-04T12:21:34.624Z",
+  "uptime_s": 2772
 }
