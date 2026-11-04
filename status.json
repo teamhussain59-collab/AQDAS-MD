@@ -27,8 +27,6 @@
     }
   ],
   "guest_log": [
-    "13:51:01 ********4197: code bana",
-    "13:51:12 ********4197: LINKING (phone ne code accept kiya)",
     "13:51:15 ********4197: connection close 515 Stream Errored (restart required)",
     "13:51:18 ********4197: CONNECTED ✅",
     "13:51:34 ********7157: connection close 401 Stream Errored (conflict)",
@@ -46,26 +44,26 @@
     "13:52:54 ********4275: connection close 428 Connection Terminated by Server",
     "13:52:54 ********4275: expired / closed (code 428)",
     "13:52:56 ********7324: code bana",
-    "13:53:21 ********7324: LINKING (phone ne code accept kiya)"
+    "13:53:21 ********7324: LINKING (phone ne code accept kiya)",
+    "13:56:11 ********7324: connection close 428 Connection Terminated by Server",
+    "13:56:11 ********7324: expired / closed (code 428)"
   ],
   "guest_frames": {
     "number": "********7324",
-    "state": "linking",
+    "state": "expired",
     "frames": [
-      "13:52:51 iq:set <pair-device>",
-      "13:52:51 iq:result <link_code_companion_reg[companion_hello]>",
-      "13:53:21 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
-      "13:53:21 iq:result",
-      "13:53:21 iq:result",
-      "13:53:51 iq:get",
-      "13:53:51 iq:result",
-      "13:54:21 iq:result",
-      "13:54:51 iq:get",
-      "13:54:51 iq:result",
-      "13:55:21 iq:get",
-      "13:55:21 iq:result",
-      "13:55:51 iq:get",
-      "13:55:51 iq:result"
+      "13:52:41 iq:set <pair-device>",
+      "13:52:41 iq:result <link_code_companion_reg[companion_hello]>",
+      "13:53:08 notification:link_code_companion_reg <link_code_companion_reg[refresh_code]>",
+      "13:53:11 iq:result",
+      "13:53:41 iq:get",
+      "13:53:41 iq:result",
+      "13:54:11 iq:result",
+      "13:54:41 iq:result",
+      "13:55:11 iq:result",
+      "13:55:41 iq:get",
+      "13:55:41 iq:result",
+      "13:56:11 xmlstreamend:"
     ]
   },
   "mem": {
@@ -86,6 +84,6 @@
     "opted_in": 1,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-04T13:55:55.382Z",
-  "uptime_s": 1353
+  "updated_at": "2026-11-04T13:56:11.590Z",
+  "uptime_s": 1369
 }
