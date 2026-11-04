@@ -19,13 +19,9 @@
   ],
   "guest_frames": null,
   "channel": {
-    "ok": true,
-    "name": "AQDAS TECH",
-    "latest_post": 110,
-    "auto": true,
-    "opted_in": 0,
-    "fetch": "updates err channel posts timeout | messages:messages:10"
+    "ok": false,
+    "error": "koi connected number nahi"
   },
-  "updated_at": "2026-11-04T02:39:15.384Z",
-  "uptime_s": 14042
+  "updated_at": "2026-11-04T02:39:16.437Z",
+  "uptime_s": 14043
 }
