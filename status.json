@@ -1,12 +1,15 @@
 {
-  "status": "idle",
+  "status": "offline",
   "code": null,
+  "qr": null,
+  "qr_at": null,
   "code_at": null,
+  "next_at": null,
   "last_event": null,
   "number_masked": null,
   "run_id": "41811885461",
   "slots_max": 10,
-  "panel_url": "https://completed-inquire-modelling-signals.trycloudflare.com",
+  "panel_url": null,
   "panel_at": "2026-11-04T10:06:38.113Z",
   "linked": [
     {
@@ -35,6 +38,6 @@
     "opted_in": 1,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-04T10:12:34.694Z",
-  "uptime_s": 363
+  "updated_at": "2026-11-04T10:13:53.614Z",
+  "uptime_s": 441
 }
