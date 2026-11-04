@@ -9,6 +9,53 @@
   "commands": 569,
   "panel_url": "https://observer-coordination-starts-citizenship.trycloudflare.com",
   "panel_at": "2026-11-04T18:00:35.459Z",
-  "updated_at": "2026-11-04T18:00:35.459Z",
-  "uptime_s": 9
+  "linked": [
+    {
+      "number": "********7324",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********5182",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********8574",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********6325",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********2128",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********7157",
+      "state": "connected",
+      "autostatus": "off"
+    }
+  ],
+  "guest_log": [
+    "18:00:31 ********8574: LINKING (phone ne code accept kiya)",
+    "18:00:31 ********5182: LINKING (phone ne code accept kiya)",
+    "18:00:32 ********2128: LINKING (phone ne code accept kiya)",
+    "18:00:32 ********8574: CONNECTED ✅",
+    "18:00:32 ********5182: CONNECTED ✅",
+    "18:00:32 ********7324: LINKING (phone ne code accept kiya)",
+    "18:00:32 ********2128: CONNECTED ✅",
+    "18:00:32 ********7324: CONNECTED ✅",
+    "18:00:32 ********7157: LINKING (phone ne code accept kiya)",
+    "18:00:32 ********6325: LINKING (phone ne code accept kiya)",
+    "18:00:33 ********7157: CONNECTED ✅",
+    "18:00:33 ********6325: CONNECTED ✅"
+  ],
+  "guest_frames": null,
+  "updated_at": "2026-11-04T18:00:37.410Z",
+  "uptime_s": 11
 }
