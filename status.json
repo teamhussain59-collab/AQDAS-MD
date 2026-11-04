@@ -6,6 +6,27 @@
   "number_masked": null,
   "run_id": "41811885461",
   "slots_max": 10,
-  "updated_at": "2026-11-04T10:06:34.692Z",
-  "uptime_s": 3
+  "panel_url": "https://completed-inquire-modelling-signals.trycloudflare.com",
+  "panel_at": "2026-11-04T10:06:38.113Z",
+  "linked": [
+    {
+      "number": "********5182",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********7157",
+      "state": "connected",
+      "autostatus": "view+react"
+    }
+  ],
+  "guest_log": [
+    "10:06:35 ********5182: LINKING (phone ne code accept kiya)",
+    "10:06:35 ********7157: LINKING (phone ne code accept kiya)",
+    "10:06:35 ********7157: CONNECTED ✅",
+    "10:06:35 ********5182: CONNECTED ✅"
+  ],
+  "guest_frames": null,
+  "updated_at": "2026-11-04T10:06:48.680Z",
+  "uptime_s": 17
 }
