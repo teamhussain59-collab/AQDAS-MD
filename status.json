@@ -17,7 +17,7 @@
     },
     {
       "number": "********4197",
-      "state": "pairing"
+      "state": "connected"
     }
   ],
   "guest_log": [
@@ -25,18 +25,26 @@
     "04:09:34 ********7157: LINKING (phone ne code accept kiya)",
     "04:09:34 ********5182: CONNECTED ✅",
     "04:09:34 ********7157: CONNECTED ✅",
-    "04:50:34 ********4197: code bana"
+    "04:50:34 ********4197: code bana",
+    "04:52:21 ********4197: LINKING (phone ne code accept kiya)",
+    "04:52:25 ********4197: connection close 515 Stream Errored (restart required)",
+    "04:52:28 ********4197: CONNECTED ✅"
   ],
   "guest_frames": {
     "number": "********4197",
-    "state": "pairing",
+    "state": "connected",
     "frames": [
       "04:50:29 iq:set <pair-device>",
       "04:50:29 iq:result <link_code_companion_reg[companion_hello]>",
       "04:50:59 iq:result",
       "04:51:29 iq:get",
       "04:51:29 iq:result",
-      "04:51:59 iq:result"
+      "04:51:59 iq:result",
+      "04:52:21 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
+      "04:52:21 iq:result",
+      "04:52:24 iq:set <pair-success>",
+      "04:52:25 stream:error: code=515",
+      "04:52:25 xmlstreamend:"
     ]
   },
   "panel_url": "https://columbus-auburn-directive-pts.trycloudflare.com",
@@ -49,6 +57,6 @@
     "opted_in": 1,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-04T04:52:03.527Z",
-  "uptime_s": 2551
+  "updated_at": "2026-11-04T04:52:32.519Z",
+  "uptime_s": 2580
 }
