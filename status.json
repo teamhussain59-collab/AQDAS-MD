@@ -69,7 +69,9 @@
     "frames": [
       "16:48:54 iq:set <pair-device>",
       "16:48:54 iq:result <link_code_companion_reg[companion_hello]>",
-      "16:49:23 iq:result"
+      "16:49:23 iq:result",
+      "16:49:53 iq:get",
+      "16:49:53 iq:result"
     ]
   },
   "mem": {
@@ -90,6 +92,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-04T16:49:27.986Z",
-  "uptime_s": 11765
+  "updated_at": "2026-11-04T16:49:57.988Z",
+  "uptime_s": 11795
 }
