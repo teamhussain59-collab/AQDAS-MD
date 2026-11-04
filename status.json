@@ -8,6 +8,32 @@
   "slots_max": 10,
   "panel_url": "https://reveals-ridge-telephone-rays.trycloudflare.com",
   "panel_at": "2026-11-04T09:28:20.010Z",
-  "updated_at": "2026-11-04T09:28:20.010Z",
-  "uptime_s": 6
+  "linked": [
+    {
+      "number": "********4197",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********5182",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********7157",
+      "state": "connected",
+      "autostatus": "view+react"
+    }
+  ],
+  "guest_log": [
+    "09:28:17 ********4197: LINKING (phone ne code accept kiya)",
+    "09:28:17 ********5182: LINKING (phone ne code accept kiya)",
+    "09:28:17 ********4197: CONNECTED ✅",
+    "09:28:17 ********5182: CONNECTED ✅",
+    "09:28:17 ********7157: LINKING (phone ne code accept kiya)",
+    "09:28:18 ********7157: CONNECTED ✅"
+  ],
+  "guest_frames": null,
+  "updated_at": "2026-11-04T09:28:22.542Z",
+  "uptime_s": 9
 }
