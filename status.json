@@ -47,8 +47,6 @@
     }
   ],
   "guest_log": [
-    "18:15:49 ********8574: LINKING (phone ne code accept kiya)",
-    "18:15:49 ********6325: LINKING (phone ne code accept kiya)",
     "18:15:49 ********7324: CONNECTED ✅",
     "18:15:49 ********8574: CONNECTED ✅",
     "18:15:49 ********7157: CONNECTED ✅",
@@ -66,11 +64,13 @@
     "19:16:16 ********8574: status **********5249: seen ✅, react 💋 ✅",
     "19:17:05 ********8574: status ***********1986: seen ✅, react 🥵 ✅",
     "19:27:46 ********6356: code bana",
-    "19:28:55 ********8574: status ***********3164: seen ✅, react 🤤 ✅"
+    "19:28:55 ********8574: status ***********3164: seen ✅, react 🤤 ✅",
+    "19:31:11 ********6356: connection close 428 Connection Terminated by Server",
+    "19:31:11 ********6356: expired / closed (code 428)"
   ],
   "guest_frames": {
     "number": "********6356",
-    "state": "pairing",
+    "state": "expired",
     "frames": [
       "19:27:41 iq:set <pair-device>",
       "19:27:42 iq:result <link_code_companion_reg[companion_hello]>",
@@ -81,7 +81,8 @@
       "19:29:41 iq:result",
       "19:30:11 iq:get",
       "19:30:11 iq:result",
-      "19:30:41 iq:result"
+      "19:30:41 iq:result",
+      "19:31:11 xmlstreamend:"
     ]
   },
   "mem": {
@@ -102,6 +103,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-04T19:30:47.496Z",
-  "uptime_s": 4504
+  "updated_at": "2026-11-04T19:31:11.659Z",
+  "uptime_s": 4529
 }
