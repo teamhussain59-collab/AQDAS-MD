@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node index.js",
-    "test": "node test/run.js && node test/status.js && node test/store.js && node test/pair.js && node test/customcmds.js && node test/menu.js && node test/ai.js && node test/screenshot.js && node test/logo.js && node test/anime.js && node test/voice.js",
+    "test": "node test/run.js && node test/status.js && node test/store.js && node test/pair.js && node test/customcmds.js && node test/menu.js && node test/ai.js && node test/screenshot.js && node test/logo.js && node test/anime.js && node test/voice.js && node test/commands.js",
     "check": "node test/syntax.js",
     "postinstall": "node scripts/patch-baileys.mjs"
   },
