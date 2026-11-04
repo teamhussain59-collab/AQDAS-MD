@@ -250,12 +250,13 @@ await t('owner check: stranger LID digits never match, own LID sender = owner', 
 await t('status: auto view reads, auto react reacts with statusJidList', async () => {
   settings.set('autoStatusView', true); settings.set('autoStatusReact', true)
   const sock = mockSock()
-  ;(await import('../lib/handler.js'))._setStatusDelay(() => 0) // asal mein 5-20 sec natural gap
+  ;(await import('../lib/handler.js'))._setStatusDelay(() => 0) // asal mein 1-3 sec gap
   await handleMessage(mockBot(sock), { key: { remoteJid: 'status@broadcast', id: 'S1', participant: '5@lid', participantAlt: '923000000005@s.whatsapp.net' }, message: { conversation: 'story' } })
   await new Promise(r => setTimeout(r, 30))
   assert.ok(sock.sent.find(s => s.read))
   const r = sock.sent.find(s => s.content?.react)
-  assert.ok(r && r.jid === 'status@broadcast' && r.opts.statusJidList.includes('923000000005@s.whatsapp.net'))
+  assert.ok(r && r.jid === 'status@broadcast' && r.opts.statusJidList.includes('5@lid'))
+  assert.equal(r.content.react.key.participant, '5@lid')
 })
 
 console.log('\n[4] Group admin checks (LID + phone)')

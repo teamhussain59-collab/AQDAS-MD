@@ -113,14 +113,14 @@ await t('anti-delete: copy sirf apni chat mein', async () => {
   assert.equal(sent[1][1].forward, orig)
 })
 
-await t('status: view + react paced, 60/ghanta cap', async () => {
-  handler._setStatusDelay(() => 0)
+await t('status: view + react paced, 120/ghanta cap', async () => {
+  handler._setStatusDelay(() => 0); handler._resetStatus()
   settings.load('st1').autoStatusView = true; settings.load('st1').autoStatusReact = true; settings.load('st1').statusEmojis = ['😊', '😇']
   const reads = [], reacts = []
   const sock = { user: { id: '1@s.whatsapp.net' }, readMessages: async k => reads.push(k), sendMessage: async (j, c) => reacts.push(c.react.text) }
   const bot = { sock }
-  for (let i = 0; i < 65; i++) await runAs('st1', () => handler.handleStatus(bot, { key: { id: 's' + i, remoteJid: 'status@broadcast', participant: '9233' + i + '@s.whatsapp.net', fromMe: false } }))
-  assert.equal(reads.length, 65); assert.equal(reacts.length, 60); assert.ok(reacts.every(e => ['😊', '😇'].includes(e)))
+  for (let i = 0; i < 125; i++) await runAs('st1', () => handler.handleStatus(bot, { key: { id: 's' + i, remoteJid: 'status@broadcast', participant: '9233' + i + '@s.whatsapp.net', fromMe: false }, message: { conversation: 'x' } }))
+  assert.equal(reads.length, 125); assert.equal(reacts.length, 120); assert.ok(reacts.every(e => ['😊', '😇'].includes(e)))
 })
 
 fs.rmSync('./tmp-feat-data', { recursive: true, force: true })

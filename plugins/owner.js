@@ -25,13 +25,13 @@ export default [
   toggle('autoreact', 'autoReact', 'Auto React', ['areact']),
   toggle('autoread', 'autoRead', 'Auto Read (blue tick)'),
   {
-    name: 'autostatus', alias: ['autoview'], category: 'auto', owner: true, usage: 'on/off', desc: 'Status auto view + react (5-20 sec natural gap, max 60/ghanta)',
+    name: 'autostatus', alias: ['autoview'], category: 'auto', owner: true, usage: 'on/off', desc: 'Status auto view + react (foran seen, 1-3 sec baad react, max 120/ghanta)',
     async run (ctx) {
       const v = onoff(ctx.args[0])
       const s = ctx.settings.load()
       if (v === null) return ctx.reply(`*Auto Status (view + react)* abhi: ${s.autoStatusView && s.autoStatusReact ? 'ON ✅' : 'OFF ❌'}\nEmojis: ${s.statusEmojis.join(' ')}\nUse: ${ctx.prefix}autostatus on / off\nEmojis badlo: ${ctx.prefix}statusemoji 😊😇🙂`)
       s.autoStatusView = v; s.autoStatusReact = v; ctx.settings.save()
-      await ctx.reply(`✅ *Auto Status* ${v ? 'ON — status dekh ke react karega (5-20 sec baad, max 60/ghanta)' : 'OFF'}`)
+      await ctx.reply(`✅ *Auto Status* ${v ? 'ON — status foran seen + 1-3 sec baad react (max 120/ghanta)' : 'OFF'}`)
     }
   },
   toggle('statusview', 'autoStatusView', 'Auto Status View (sirf dekhna)'),
