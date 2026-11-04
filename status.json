@@ -27,7 +27,7 @@
     },
     {
       "number": "********7324",
-      "state": "pairing",
+      "state": "linking",
       "autostatus": "off"
     },
     {
@@ -37,7 +37,6 @@
     }
   ],
   "guest_log": [
-    "13:53:21 ********7324: LINKING (phone ne code accept kiya)",
     "13:56:11 ********7324: connection close 428 Connection Terminated by Server",
     "13:56:11 ********7324: expired / closed (code 428)",
     "13:59:05 ********7324: code bana",
@@ -56,7 +55,8 @@
     "14:13:58 ********7324: connection close 428 Connection Terminated by Server",
     "14:14:02 ********7324: connection close 401 Connection Failure",
     "14:14:02 ********7324: logged out",
-    "14:19:39 ********7324: code bana"
+    "14:19:39 ********7324: code bana",
+    "14:19:59 ********7324: LINKING (phone ne code accept kiya)"
   ],
   "guest_frames": {
     "number": "",
@@ -83,6 +83,6 @@
     "opted_in": 1,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-04T14:19:43.205Z",
-  "uptime_s": 2781
+  "updated_at": "2026-11-04T14:20:03.856Z",
+  "uptime_s": 2801
 }
