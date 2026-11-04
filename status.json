@@ -1,13 +1,16 @@
 {
-  "status": "idle",
+  "status": "offline",
   "code": null,
+  "qr": null,
+  "qr_at": null,
   "code_at": null,
+  "next_at": null,
   "last_event": null,
   "number_masked": null,
   "run_id": "41882412660",
   "slots_max": "unlimited",
   "commands": 569,
-  "panel_url": "https://observer-coordination-starts-citizenship.trycloudflare.com",
+  "panel_url": null,
   "panel_at": "2026-11-04T18:00:35.459Z",
   "linked": [
     {
@@ -80,6 +83,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-04T18:14:31.133Z",
-  "uptime_s": 844
+  "updated_at": "2026-11-04T18:15:21.279Z",
+  "uptime_s": 895
 }
