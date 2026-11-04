@@ -16,11 +16,6 @@
       "autostatus": "off"
     },
     {
-      "number": "********7157",
-      "state": "connected",
-      "autostatus": "view+react"
-    },
-    {
       "number": "********7324",
       "state": "linking",
       "autostatus": "off"
@@ -47,7 +42,9 @@
     "13:51:01 ********4197: code bana",
     "13:51:12 ********4197: LINKING (phone ne code accept kiya)",
     "13:51:15 ********4197: connection close 515 Stream Errored (restart required)",
-    "13:51:18 ********4197: CONNECTED ✅"
+    "13:51:18 ********4197: CONNECTED ✅",
+    "13:51:34 ********7157: connection close 401 Stream Errored (conflict)",
+    "13:51:34 ********7157: logged out"
   ],
   "guest_frames": {
     "number": "********4197",
@@ -80,6 +77,6 @@
     "opted_in": 1,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-04T13:51:24.426Z",
-  "uptime_s": 1082
+  "updated_at": "2026-11-04T13:51:41.126Z",
+  "uptime_s": 1098
 }
