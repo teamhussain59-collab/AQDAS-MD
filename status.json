@@ -1,13 +1,16 @@
 {
-  "status": "idle",
+  "status": "offline",
   "code": null,
+  "qr": null,
+  "qr_at": null,
   "code_at": null,
+  "next_at": null,
   "last_event": null,
   "number_masked": null,
   "run_id": "41878178032",
   "slots_max": "unlimited",
   "commands": 569,
-  "panel_url": "https://hired-portions-heated-shipped.trycloudflare.com",
+  "panel_url": null,
   "panel_at": "2026-11-04T17:31:33.681Z",
   "linked": [
     {
@@ -95,6 +98,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-04T17:59:30.497Z",
-  "uptime_s": 1682
+  "updated_at": "2026-11-04T18:00:07.293Z",
+  "uptime_s": 1719
 }
