@@ -8,6 +8,32 @@
   "slots_max": 10,
   "panel_url": "https://address-venues-silicon-genealogy.trycloudflare.com",
   "panel_at": "2026-11-04T09:44:57.258Z",
-  "updated_at": "2026-11-04T09:44:57.258Z",
-  "uptime_s": 5
+  "linked": [
+    {
+      "number": "********4197",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********5182",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********7157",
+      "state": "connected",
+      "autostatus": "view+react"
+    }
+  ],
+  "guest_log": [
+    "09:44:54 ********4197: LINKING (phone ne code accept kiya)",
+    "09:44:54 ********7157: LINKING (phone ne code accept kiya)",
+    "09:44:55 ********4197: CONNECTED ✅",
+    "09:44:55 ********5182: LINKING (phone ne code accept kiya)",
+    "09:44:55 ********7157: CONNECTED ✅",
+    "09:44:55 ********5182: CONNECTED ✅"
+  ],
+  "guest_frames": null,
+  "updated_at": "2026-11-04T09:45:00.704Z",
+  "uptime_s": 8
 }
