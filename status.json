@@ -9,6 +9,46 @@
   "commands": 569,
   "panel_url": "https://hired-portions-heated-shipped.trycloudflare.com",
   "panel_at": "2026-11-04T17:31:33.681Z",
-  "updated_at": "2026-11-04T17:31:33.681Z",
-  "uptime_s": 6
+  "linked": [
+    {
+      "number": "********7324",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********5182",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********6325",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********2128",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********7157",
+      "state": "connected",
+      "autostatus": "off"
+    }
+  ],
+  "guest_log": [
+    "17:31:31 ********7157: LINKING (phone ne code accept kiya)",
+    "17:31:31 ********7157: CONNECTED ✅",
+    "17:31:31 ********6325: LINKING (phone ne code accept kiya)",
+    "17:31:31 ********2128: LINKING (phone ne code accept kiya)",
+    "17:31:31 ********5182: LINKING (phone ne code accept kiya)",
+    "17:31:31 ********7324: LINKING (phone ne code accept kiya)",
+    "17:31:32 ********6325: CONNECTED ✅",
+    "17:31:32 ********2128: CONNECTED ✅",
+    "17:31:32 ********7324: CONNECTED ✅",
+    "17:31:32 ********5182: CONNECTED ✅"
+  ],
+  "guest_frames": null,
+  "updated_at": "2026-11-04T17:31:36.570Z",
+  "uptime_s": 9
 }
