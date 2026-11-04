@@ -4,11 +4,26 @@
 // .otp              → tumhare number ka latest OTP (sirf tumhe, DM mein)
 // .change           → purana number release, naya number
 // .cancelnum        → number release
+import fs from 'fs'
+import path from 'path'
+import config from '../config.js'
+import * as settingsMod from '../lib/settings.js'
 const BASE = 'https://numberpanel.tech/api'
 const active = new Map() // senderJid -> { number, at, timer }
 const TTL = 20 * 60 * 1000
 
-const keyOf = (ctx) => ctx.settings.get('npKey')
+// Key ek dafa kisi bhi owner number pe daalo -> sab linked numbers (sab users) ke liye chalegi
+function keyOf (ctx) {
+  try { const k = ctx.settings.get('npKey'); if (k) return k } catch {}
+  try { const k = settingsMod.load('main').npKey; if (k) return k } catch {}
+  try {
+    const base = path.join(config.dataDir, 's')
+    for (const d of fs.readdirSync(base)) {
+      try { const j = JSON.parse(fs.readFileSync(path.join(base, d, 'settings.json'), 'utf8')); if (j.npKey) return j.npKey } catch {}
+    }
+  } catch {}
+  return process.env.NUMPANEL_KEY || null
+}
 const hide = s => String(s || '').replace(/[A-Za-z0-9_\-]{24,}/g, '***').slice(0, 200)
 
 async function api (ctx, method, path, body) {
@@ -49,7 +64,7 @@ async function liveList (svc) {
 
 const dm = (ctx, text) => ctx.sock.sendMessage(ctx.sender, { text })
 const errText = (e, ctx) => e.message === 'NOKEY'
-  ? `❌ API key set nahi. Owner bot ki chat mein likhe: *${ctx.prefix}setnumkey YOUR_KEY*`
+  ? `❌ Number service abhi band hai (owner ne key nahi lagayi). Owner: *${ctx.prefix}setnumkey YOUR_KEY*`
   : `❌ Number Panel error: ${hide(e.message)}`
 
 function startPoll (ctx, rec) {
@@ -95,8 +110,9 @@ export default [
       const k = (ctx.args[0] || '').trim()
       if (!k) return ctx.reply(`Likho: *${ctx.prefix}setnumkey YOUR_KEY*`)
       ctx.settings.set('npKey', k)
+      try { const m = settingsMod.load('main'); m.npKey = k; settingsMod.save('main') } catch {}
       try { await ctx.sock.sendMessage(ctx.jid, { delete: ctx.msg.key }) } catch {}
-      await ctx.reply('✅ Number Panel API key save ho gayi (message delete kar diya).')
+      await ctx.reply('✅ Number Panel API key save ho gayi (message delete kar diya). Ab sab numbers pe .getnum chalega.')
     }
   },
   {
