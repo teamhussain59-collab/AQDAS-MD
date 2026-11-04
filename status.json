@@ -33,7 +33,9 @@
     "frames": [
       "04:50:29 iq:set <pair-device>",
       "04:50:29 iq:result <link_code_companion_reg[companion_hello]>",
-      "04:50:59 iq:result"
+      "04:50:59 iq:result",
+      "04:51:29 iq:get",
+      "04:51:29 iq:result"
     ]
   },
   "panel_url": "https://columbus-auburn-directive-pts.trycloudflare.com",
@@ -46,6 +48,6 @@
     "opted_in": 1,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-04T04:51:03.528Z",
-  "uptime_s": 2491
+  "updated_at": "2026-11-04T04:51:33.526Z",
+  "uptime_s": 2521
 }
