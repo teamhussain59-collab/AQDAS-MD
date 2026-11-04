@@ -27,6 +27,14 @@
   "guest_frames": null,
   "panel_url": "https://bent-european-series-maternity.trycloudflare.com",
   "panel_at": "2026-11-04T10:14:20.712Z",
-  "updated_at": "2026-11-04T10:14:29.088Z",
-  "uptime_s": 16
+  "channel": {
+    "ok": true,
+    "name": "AQDAS TECH",
+    "latest_post": 110,
+    "auto": true,
+    "opted_in": 1,
+    "fetch": "updates err channel posts timeout | messages:messages:10"
+  },
+  "updated_at": "2026-11-04T10:15:35.066Z",
+  "uptime_s": 82
 }
