@@ -1,12 +1,15 @@
 {
-  "status": "idle",
+  "status": "offline",
   "code": null,
+  "qr": null,
+  "qr_at": null,
   "code_at": null,
+  "next_at": null,
   "last_event": null,
   "number_masked": null,
   "run_id": "41793358195",
   "slots_max": 10,
-  "panel_url": "https://union-favorite-orientation-tub.trycloudflare.com",
+  "panel_url": null,
   "panel_at": "2026-11-04T07:36:38.036Z",
   "linked": [
     {
@@ -53,6 +56,6 @@
     "opted_in": 1,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-04T09:26:34.989Z",
-  "uptime_s": 6601
+  "updated_at": "2026-11-04T09:27:53.217Z",
+  "uptime_s": 6680
 }
