@@ -101,25 +101,48 @@ code{color:#7fe7ff}
 </div>
 
 <div class="box help">
-<h3>📘 CODE KAISE LIKHEIN (sirf ye format chalta hai)</h3>
-Code seedha likho — function / <code>module.exports</code> ki zaroorat nahi. Bot tumhe <b>ctx</b> deta hai:<br>
-• <code>await ctx.reply('text')</code> — jawab bhejo<br>
-• <code>await ctx.sendImage('https://...jpg', 'caption')</code> — photo bhejo (https link ya base64)<br>
-• <code>await ctx.react('🔥')</code> — message pe react<br>
-• <code>ctx.args</code> (words ki list), <code>ctx.text</code> (command ke baad poora text), <code>ctx.sender</code> (bhejne wale ka number), <code>ctx.pushName</code>, <code>ctx.isOwner</code>, <code>ctx.isGroup</code>, <code>ctx.quotedText</code><br>
-• <code>await ctx.get('https://...')</code> / <code>await ctx.getJson('https://...')</code> — kisi API se data (sirf https, 5 sec, 1 MB)<br>
-<b>Example 1 — simple reply</b> (.salam)
-<pre>await ctx.reply('Wa Alaikum Assalam ' + ctx.pushName + ' ❤️')</pre>
-<b>Example 2 — args ke saath</b> (.tech Hussain)
-<pre>const naam = ctx.text || 'Bhai'
-await ctx.react('💻')
-await ctx.reply('👨‍💻 ' + naam + ' is a TECH KING!\nArgs: ' + ctx.args.length)</pre>
-<b>Example 3 — photo bhejo</b> (.cat)
+<h3>📘 CODE KAISE LIKHEIN / HOW TO WRITE CODE</h3>
+Code seedha paste karo — function / <code>module.exports</code> ki zaroorat nahi (woh bhi chalta hai). Do style chalte hain:<br>
+<b>Bot style (doosre bots jaisa):</b><br>
+• <code>text</code> — poora message (misal <code>.sendchannel 1203… Salam</code>; prefix kuch bhi ho, <code>text</code> hamesha <code>.</code> se shuru), <code>args</code> (command ke baad words), <code>command</code>, <code>sender</code>, <code>isOwner</code>, <code>isGroup</code><br>
+• <code>m.reply('text')</code>, <code>m.react('🔥')</code>, <code>m.chat</code> (yehi chat), <code>m.sender</code>, <code>m.quoted.text</code><br>
+• <code>sock.sendMessage(jid, { text })</code> — sirf: <b>yehi chat</b>, <b>bot ka apna number</b>, ya <b>channel</b> (jid <code>…@newsletter</code>). Content: text / image / video / audio (https link) + caption, react. Ek command max <b>5</b> sendMessage, har number max 20 / minute. Koi aur jid → <code>❌ Ye jid allowed nahi</code><br>
+<b>Purana style:</b> <code>ctx.reply</code>, <code>ctx.sendImage(link, caption)</code>, <code>ctx.react</code>, <code>ctx.args</code>, <code>ctx.text</code>, <code>ctx.get(url)</code>, <code>ctx.getJson(url)</code><br>
+<b>Aur ye bhi chalta hai / Also allowed:</b><br>
+• Delay: <code>await sleep(2000)</code>, <code>await delay(2000)</code>, <code>setTimeout(fn, ms)</code> — poori command max 15 sec<br>
+• Web: <code>axios.get / axios.post</code>, <code>fetch</code> — sirf <b>https</b>, 5 sec, jawab max 1 MB, local / private IP band, ek command max 5 requests<br>
+• <code>require('axios')</code>, <code>require('path')</code>, <code>require('fs')</code> (fs sirf is command ka apna temp folder, max 5 MB)<br>
+<b>Example 1 — channel pe message</b> (naam: <b>sendchannel</b>, use: <code>.sendchannel 120363xxx@newsletter Salam doston!</code>)
+<pre>if (text.startsWith('.sendchannel ')) {
+  const args = text.split(' ')
+  const channelJid = args[1]
+  const messageText = args.slice(2).join(' ')
+  if (!channelJid || !messageText) {
+    return m.reply('❌ Tareeqa: .sendchannel 120363xxx@newsletter Salam doston!')
+  }
+  try {
+    await sock.sendMessage(channelJid, { text: messageText })
+    m.reply('✅ Message channel mein bhej diya gaya!')
+  } catch (e) {
+    m.reply('❌ Error: Bot channel ka admin hai? JID sahi hai?')
+  }
+}</pre>
+<b>Example 2 — API se data (axios)</b> (naam: <b>dua</b>)
+<pre>const axios = require('axios')
+await m.react('⏳')
+const r = await axios.get('https://api.github.com/zen', { responseType: 'text' })
+await sleep(1000)
+await m.reply('💬 ' + r.data)</pre>
+<b>Example 3 — simple reply + args</b> (.tech Hussain)
+<pre>const naam = args.join(' ') || 'Bhai'
+await m.react('💻')
+await m.reply('👨‍💻 ' + naam + ' is a TECH KING!')</pre>
+<b>Example 4 — photo bhejo</b> (.cat)
 <pre>const data = await ctx.getJson('https://api.thecatapi.com/v1/images/search')
 await ctx.sendImage(data[0].url, '🐱 Ye lo billi')</pre>
-<b>Yaad rakho:</b><br>
-• <code>require</code>, <code>import</code>, <code>fs</code>, <code>process</code>, <code>axios</code>, <code>setTimeout</code> NAHI chalte (safety). Doosre bots ki plugin files (<code>cmd({pattern...})</code>, <code>conn.sendMessage</code>, <code>m.reply</code>) is format mein badalni padengi: <code>m.reply(x)</code> → <code>await ctx.reply(x)</code>.<br>
-• Command 3 sec CPU / 10 sec total mein khatam honi chahiye, ek command max 5 messages.<br>
+<b>Yaad rakho / Not allowed:</b><br>
+• <code>process</code>, <code>child_process</code>, bot ki files / settings / session, asli fs (temp folder ke bahar), <code>eval</code>, baaki modules — safety ke liye band.<br>
+• Command 3 sec CPU / 15 sec total mein khatam honi chahiye, ek command max 5 messages.<br>
 • Built-in command (menu, ping, song...) ke naam pe nayi command nahi banti.<br>
 • Error aaye to owner ko <b>❌ Command error</b> aata hai, bot kabhi band nahi hota.<br>
 • Save ke ~5-10 sec baad WhatsApp pe <b>.naam</b> likh ke try karo. <b>.menu</b> mein CUSTOM section mein dikhegi (👑 = sirf owner).
@@ -195,7 +218,7 @@ async function save(){
   if(!code.trim()){say('msg','bad','Code khaali hai');return}
   if(code.length>60000){say('msg','bad','Code bohat lamba (max 60 KB)');return}
   try{const AF=Object.getPrototypeOf(async function(){}).constructor;new AF('ctx','module','exports',code)}catch(e){say('msg','bad','❌ Code mein ghalti: '+e.message);return}
-  if(/\brequire\s*\(|^\s*import\s/m.test(code)){if(!confirm('Code mein require/import hai — ye bot pe NAHI chalega. Phir bhi save karun?'))return}
+  const badReq=[...code.matchAll(/\brequire\s*\(\s*['"`]([^'"`]+)['"`]\s*\)/g)].map(x=>x[1]).filter(n=>!['axios','path','node:path','fs','node:fs','fs/promises','node:fs/promises'].includes(n));if(badReq.length||/^\s*import\s/m.test(code)){if(!confirm((badReq.length?'require(\''+badReq[0]+'\')':'import')+' bot pe NAHI chalega (sirf axios, path, fs temp). Phir bhi save karun?'))return}
   const old=cmds.slice();const at=new Date().toISOString();
   const entry={name,code,desc:$('desc').value.trim().slice(0,80),public:$('pub').checked,enabled:true,updated:at};
   const ex=cmds.findIndex(c=>c.name===name);

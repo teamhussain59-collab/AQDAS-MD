@@ -93,7 +93,8 @@ await t('async infinite loop is killed by the wall timeout', async () => {
 await t('code cannot reach process / require / fs / env / Buffer', async () => {
   cc.applyData({ cmds: [{ name: 'peek', code: "await ctx.reply([typeof process, typeof require, typeof module.require, typeof globalThis.process, typeof Buffer, typeof fetch, typeof setTimeout].join(','))" }] })
   const { sock } = await run(OWNER, '.peek')
-  assert.deepEqual(texts(sock), ['undefined,undefined,undefined,undefined,undefined,undefined,undefined'])
+  // require / fetch / setTimeout ab jaan boojh kar hain (sirf sandbox wale: axios/path/temp-fs, https-only fetch, wall-limited timer)
+  assert.deepEqual(texts(sock), ['undefined,function,undefined,undefined,undefined,function,function'])
 })
 
 await t('constructor escape tricks fail (no host Function, no eval)', async () => {
@@ -253,6 +254,85 @@ await t('panel menu media: chunks joined, applied only to chosen number, once', 
   await cc.check()
   assert.deepEqual(applied.slice(1).map(a => a.sid + ':' + a.kind), ['main:reset', 'n1:reset', 'n2:reset'])
   cc._setMediaHook(null); cc._setSidsHook(null)
+})
+
+// ===== Panel runner: delay, web, require, fs, bot-style m / sock =====
+const SNIPPET = "// Command: .sendchannel <channel_jid> <text>\nif (text.startsWith('.sendchannel ')) {\n    const args = text.split(' ');\n    const channelJid = args[1]; // Example: 120363XXXXXX@newsletter\n    const messageText = args.slice(2).join(' ');\n\n    if (!channelJid || !messageText) {\n        return m.reply('\u274c Tareeqa: .sendchannel 120363xxx@newsletter Salam doston!');\n    }\n\n    try {\n        await sock.sendMessage(channelJid, { text: messageText });\n        m.reply('\u2705 Message channel mein bhej diya gaya!');\n    } catch (e) {\n        m.reply('\u274c Error: Bot channel ka admin hai? JID sahi hai?');\n    }\n}"
+const NL = '120363000000000001@newsletter'
+const sentTo = (sock, jid) => sock.sent.filter(s => s.jid === jid && s.content?.text).map(s => s.content.text)
+cc._setResolver(async (host) => host === 'evil.example' ? [{ address: '10.1.2.3', family: 4 }] : [{ address: '93.184.216.34', family: 4 }])
+const webCalls = []
+cc._setTransport(async (u, opts) => { webCalls.push(opts.method + ' ' + u.href); return { status: 200, statusText: 'OK', headers: { 'content-type': 'application/json' }, body: Buffer.from(JSON.stringify({ content: 'Sabr karo', path: u.pathname })) } })
+
+await t('runner: sleep / setTimeout / delay chalte hain (15 sec limit ke andar)', async () => {
+  assert.equal(cc.WALL_MS, 15000)
+  cc.applyData({ cmds: [{ name: 'slow', code: "const t0 = Date.now(); await sleep(1200); await delay(100); setTimeout(() => m.reply('late'), 300); await new Promise(r => setTimeout(r, 50)); await ctx.reply('slept ' + (Date.now() - t0 >= 1300))" }] })
+  const { sock } = await run(OWNER, '.slow')
+  assert.deepEqual(texts(sock), ['slept true', 'late'])
+})
+
+await t('runner: axios.get / axios.post / fetch https (parent karta hai, mock)', async () => {
+  webCalls.length = 0
+  cc.applyData({ cmds: [{ name: 'quoteapi', code: "const axios = require('axios'); const r = await axios.get('https://api.quotable.io/random'); const p = await axios.post('https://api.example.com/x', { a: 1 }); const f = await (await fetch('https://api.example.com/f')).json(); await m.reply('💬 ' + r.data.content + ' | ' + p.status + ' | ' + f.path)" }] })
+  const { sock } = await run(OWNER, '.quoteapi')
+  assert.deepEqual(texts(sock), ['💬 Sabr karo | 200 | /f'])
+  assert.deepEqual(webCalls, ['GET https://api.quotable.io/random', 'POST https://api.example.com/x', 'GET https://api.example.com/f'])
+})
+
+await t('runner: http, localhost, private IP (seedha ya DNS se) blocked', async () => {
+  webCalls.length = 0
+  cc.applyData({ cmds: [{ name: 'web', code: "const out = []; for (const u of ['http://example.com/', 'https://127.0.0.1/', 'https://10.0.0.5/x', 'https://localhost/', 'https://evil.example/', 'https://[::1]/', 'https://169.254.169.254/latest']) { try { await axios.get(u); out.push('OK') } catch (e) { out.push('X') } } await m.reply(out.join(''))" }] })
+  const { sock } = await run(OWNER, '.web')
+  assert.deepEqual(texts(sock), ['XXXXXXX'])
+  assert.deepEqual(webCalls, [], 'koi request bahar nahi gayi')
+})
+
+await t('runner: require sirf axios / path / temp fs; child_process, process, os, net nahi', async () => {
+  cc.applyData({ cmds: [{ name: 'req', code: "const out = [typeof require('axios').get, require('path').join('a', '..', 'b.txt')]; for (const n of ['child_process', 'process', 'os', 'net', 'http', 'vm', 'worker_threads', 'moment']) { try { require(n); out.push(n + ':OK') } catch (e) { out.push(n + ':X') } } out.push(typeof process); await m.reply(out.join(' '))" }] })
+  const { sock } = await run(OWNER, '.req')
+  assert.deepEqual(texts(sock), ['function b.txt child_process:X process:X os:X net:X http:X vm:X worker_threads:X moment:X undefined'])
+})
+
+await t('runner: fs sirf apna temp folder — bahar ka path / escape blocked', async () => {
+  cc.applyData({ cmds: [{ name: 'files', code: "const fs = require('fs'); fs.writeFileSync('note.txt', 'salam'); const out = [fs.readFileSync('note.txt', 'utf8'), String(fs.existsSync('note.txt'))]; for (const p of ['../x.txt', '/etc/passwd', 'a/b.txt', '../../config.js', '/home/runner/.env']) { try { fs.readFileSync(p, 'utf8'); out.push('READ') } catch (e) { out.push('X') } try { fs.writeFileSync(p, 'x'); out.push('WROTE') } catch (e) { out.push('X') } } fs.unlinkSync('note.txt'); out.push(String(fs.existsSync('note.txt'))); await m.reply(out.join(' '))" }] })
+  const { sock } = await run(OWNER, '.files')
+  assert.deepEqual(texts(sock), ['salam true X X X X X X X X X X false'])
+})
+
+await t('runner: pasted .sendchannel snippet — channel pe jata hai, bot apna number theek, random jid nahi', async () => {
+  cc._resetSockRate()
+  cc.applyData({ cmds: [{ name: 'sendchannel', code: SNIPPET }] })
+  const a = await run(OWNER, `.sendchannel ${NL} Salam doston aaj live hai`)
+  assert.deepEqual(sentTo(a.sock, NL), ['Salam doston aaj live hai'])
+  assert.ok(texts(a.sock).includes('✅ Message channel mein bhej diya gaya!'), texts(a.sock).join(' / '))
+  const b = await run(OWNER, '.sendchannel 923009999999@s.whatsapp.net hello')
+  assert.deepEqual(sentTo(b.sock, '923009999999@s.whatsapp.net'), [], 'random jid pe kuch nahi gaya')
+  assert.ok(texts(b.sock).includes('❌ Error: Bot channel ka admin hai? JID sahi hai?'))
+  const c = await run(OWNER, `.sendchannel ${NL}`)
+  assert.deepEqual(texts(c.sock), ['❌ Tareeqa: .sendchannel 120363xxx@newsletter Salam doston!'])
+  cc.applyData({ cmds: [{ name: 'me', code: "await sock.sendMessage('923111111111@s.whatsapp.net', { text: 'apne number pe' }); await sock.sendMessage(m.chat, { text: 'isi chat mein' }); try { await sock.sendMessage('923000000777@s.whatsapp.net', { text: 'x' }) } catch (e) { await m.reply(e.message) }" }] })
+  const d = await run(OWNER, '.me')
+  assert.deepEqual(sentTo(d.sock, '923111111111@s.whatsapp.net'), ['apne number pe'])
+  assert.ok(texts(d.sock).includes('isi chat mein'))
+  assert.ok(texts(d.sock).includes('❌ Ye jid allowed nahi'))
+})
+
+await t('runner: ek run mein 6th sock.sendMessage blocked', async () => {
+  cc._resetSockRate()
+  cc.applyData({ cmds: [{ name: 'spam', code: `let ok = 0, err = ''; for (let i = 1; i <= 6; i++) { try { await sock.sendMessage('${NL}', { text: 'post ' + i }); ok++ } catch (e) { err = e.message } } await m.reply(ok + ' | ' + err)` }] })
+  const { sock } = await run(OWNER, '.spam')
+  assert.equal(sentTo(sock, NL).length, 5)
+  assert.ok(/^5 \| ❌ ek command max 5 sendMessage/.test(texts(sock).find(x => x.startsWith('5 |')) || ''), texts(sock).join(' / '))
+})
+
+await t('runner: prefix "!" ho tab bhi text.startsWith(".sendchannel ") sach', async () => {
+  cc._resetSockRate()
+  cc.applyData({ cmds: [{ name: 'sendchannel', code: SNIPPET }] })
+  settings.load().prefix = '!'
+  try {
+    const a = await run(OWNER, `!sendchannel ${NL} Prefix test`)
+    assert.deepEqual(sentTo(a.sock, NL), ['Prefix test'], JSON.stringify({ handled: a.handled, sent: a.sock.sent.map(s => [s.jid, s.content?.text]) }))
+  } finally { settings.load().prefix = '.' }
 })
 
 await t('panel menu song: chunks joined once, remove, half-written upload waits, bad type rejected', async () => {
