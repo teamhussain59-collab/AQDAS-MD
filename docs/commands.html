@@ -86,6 +86,20 @@ code{color:#7fe7ff}
 <div id="mmsg" class="msg"></div>
 </div>
 
+<div class="box">
+<h3>🎵 MENU SONG</h3>
+<div class="small">mp3 / m4a / ogg, max 2 MB. Ye song <b>sab numbers</b> pe .menu ke sath bajega (~5-10 sec mein, restart ki zaroorat nahi). Jis number pe kisi ne <code>.setsong</code> se apna song lagaya hai, wahan wahi bajega — wahan panel wala chahiye to us number pe <code>.setsong reset</code> likho.</div>
+<div id="songnow" class="small">Abhi: —</div>
+<div id="songbot" class="small"></div>
+<input id="song" type="file" accept="audio/mpeg,audio/mp3,audio/mp4,audio/x-m4a,audio/m4a,audio/aac,audio/ogg,.mp3,.m4a,.ogg,.aac">
+<div id="spreview"></div>
+<div class="row2">
+<button class="btn" id="ssave" style="margin:0">⬆️ Song lagao</button>
+<button class="btn red" id="sremove" style="margin:0">🗑️ Remove</button>
+</div>
+<div id="smsg" class="msg"></div>
+</div>
+
 <div class="box help">
 <h3>📘 CODE KAISE LIKHEIN (sirf ye format chalta hai)</h3>
 Code seedha likho — function / <code>module.exports</code> ki zaroorat nahi. Bot tumhe <b>ctx</b> deta hai:<br>
@@ -140,7 +154,7 @@ async function login(){
     const h=await sha('aqdasmd-cmds:'+pw);
     const d=await getDoc(h);H=h;
     if($('remember').checked)localStorage.setItem('aqdas_pw',pw);else localStorage.removeItem('aqdas_pw');
-    load(d);$('login').classList.add('hide');$('app').classList.remove('hide');refreshStatus();
+    load(d);$('login').classList.add('hide');$('app').classList.remove('hide');showSong().then(refreshStatus);
   }catch(e){if(e.code===403)say('lmsg','bad','❌ Galat password');else say('lmsg','bad','⚠️ Internet check karo, dobara try karo')}
   $('go').disabled=false;
 }
@@ -201,6 +215,7 @@ async function refreshStatus(){
   try{const d=await getDoc(H+'_status');if(!d||!d.fields){$('botst').textContent='';return}
     const f=d.fields,at=f.at&&f.at.timestampValue?new Date(f.at.timestampValue).toLocaleString('en-GB',{timeZone:'Asia/Karachi',hour:'2-digit',minute:'2-digit',second:'2-digit',day:'2-digit',month:'short'}):'';
     let rej=[];try{rej=JSON.parse(sv(f.rejected)||'[]')}catch(e){}
+    if(songV!==null){const bs=sv(f.song);$('songbot').textContent=!songV?(bs?'⏳ Bot se song hat raha hai…':''):(bs===songV?'🤖 Bot pe laga hua ✅ — .menu try karo':'⏳ Bot abhi utha raha hai (5-10 sec)…')}
     $('botst').innerHTML='🤖 Bot ne load ki ('+esc(at)+' PKT): '+(esc(sv(f.loaded))||'koi nahi')+(rej.length?'<br><span class="bad">Reject: '+rej.map(r=>'.'+esc(r.name)+' ('+esc(r.why)+')').join(', ')+'</span>':'');
   }catch(e){}
 }
@@ -242,6 +257,41 @@ async function setMedia(reset){
 }
 $('msave').onclick=()=>setMedia(false);
 $('mreset').onclick=()=>{if(confirm('Original AQDAS MD menu wapas lagana hai?'))setMedia(true)};
+// ===== Menu song (sab numbers): <doc>_song + <doc>_s0.._s3 (base64 tukre); main doc bhi likhte hain taake bot ~5 sec mein dekh le =====
+const MAX_SONG=2*1024*1024,SONG_TYPES={'mp3':'audio/mpeg','m4a':'audio/mp4','mp4':'audio/mp4','aac':'audio/aac','ogg':'audio/ogg','oga':'audio/ogg','opus':'audio/ogg'};
+let spending=null,songV=null;
+function songMimeOf(f){const t=(f.type||'').toLowerCase();if(/^audio\/(mpeg|mp3|mp4|x-m4a|m4a|aac|ogg|opus)$/.test(t))return t==='audio/mp3'?'audio/mpeg':(t==='audio/opus'?'audio/ogg':t);const ext=(f.name.split('.').pop()||'').toLowerCase();return SONG_TYPES[ext]||''}
+async function showSong(){try{const d=await getDoc(H+'_song');const f=d&&d.fields||{};const n=+sv(f.chunks)||0;songV=n?sv(f.v):'';
+  $('songnow').textContent=n?('Abhi: 🎵 '+(sv(f.name)||'song')+' ('+Math.round((+sv(f.size)||0)/1024)+' KB) — sab numbers pe'):'Abhi: panel ka koi song nahi (har number ka apna / original AQDAS MD theme)'}catch(e){$('songnow').textContent='Abhi: —'}}
+$('song').onchange=()=>{
+  const f=$('song').files[0];spending=null;$('spreview').innerHTML='';say('smsg','','');if(!f)return;
+  const mime=songMimeOf(f);
+  if(!mime){say('smsg','bad','Sirf mp3 / m4a / ogg');return}
+  if(f.size>MAX_SONG){say('smsg','bad','Song '+(f.size/1048576).toFixed(1)+' MB hai — max 2 MB. Chhota (ya kam quality) song chuno.');return}
+  spending={blob:f,mime,name:f.name};
+  $('spreview').innerHTML='<audio controls src="'+URL.createObjectURL(f)+'" style="width:100%;margin-top:8px"></audio>';
+  say('smsg','mid',(f.size/1024).toFixed(0)+' KB ready — "Song lagao" dabao');
+};
+async function setSong(remove){
+  if(!remove&&!spending){say('smsg','bad','Pehle song chuno');return}
+  const v=Date.now().toString(36)+Math.random().toString(36).slice(2,8);
+  $('ssave').disabled=$('sremove').disabled=true;say('smsg','mid',remove?'⏳ Hata raha hoon...':'⏳ Upload ho raha hai...');
+  try{
+    const data=remove?'':await b64(spending.blob);
+    const parts=[];for(let i=0;i<data.length;i+=CHUNK)parts.push(data.slice(i,i+CHUNK));
+    if(parts.length>4)throw new Error('Song bohat bara');
+    const writes=[{update:{name:DOCN(H+'_song'),fields:{mime:S(remove?'':spending.mime),name:S(remove?'':spending.name.slice(0,80)),size:{integerValue:String(remove?0:spending.blob.size)},chunks:{integerValue:String(parts.length)},v:S(v)}},updateTransforms:[{fieldPath:'updated_at',setToServerValue:'REQUEST_TIME'}]}];
+    for(let i=0;i<4;i++){if(i<parts.length)writes.push({update:{name:DOCN(H+'_s'+i),fields:{b64:S(parts[i]),v:S(v)}}});else writes.push({delete:DOCN(H+'_s'+i)})}
+    writes.push(mainWrite());
+    await commit(writes);
+    say('smsg','ok',remove?'🗑️ Panel song hata diya — bot ~10 sec mein har number ka apna / original song wapas laga dega':'✅ Song lag gaya! ~10 sec baad bot pe .menu try karo (sab numbers; jahan .setsong wala apna song hai wahan wahi)');
+    if(!remove){spending=null;$('song').value=''}
+    await showSong();for(let k=1;k<=6;k++)setTimeout(refreshStatus,k*4000);
+  }catch(e){say('smsg','bad','⚠️ '+e.message)}
+  $('ssave').disabled=$('sremove').disabled=false;
+}
+$('ssave').onclick=()=>setSong(false);
+$('sremove').onclick=()=>{if(confirm('Panel wala menu song hatana hai?'))setSong(true)};
 $('logout').onclick=()=>{localStorage.removeItem('aqdas_pw');location.reload()};
 $('go').onclick=login;$('pw').addEventListener('keydown',e=>{if(e.key==='Enter')login()});
 (function(){const p=localStorage.getItem('aqdas_pw');if(p){$('pw').value=p;$('remember').checked=true;login()}})();

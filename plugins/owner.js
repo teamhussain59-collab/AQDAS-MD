@@ -147,7 +147,7 @@ export default [
   {
     name: 'setsong', alias: ['setmenusong'], category: 'owner', owner: true, usage: '(audio pe reply) / naam / link / reset', desc: 'Menu ka song badlo (pehle 30 sec)',
     async run (ctx) {
-      if (ctx.args[0] === 'reset') { await resetSong(); return ctx.reply('✅ Original AQDAS MD theme wapas lag gaya') }
+      if (ctx.args[0] === 'reset') { await resetSong(); return ctx.reply((await import('../lib/assets.js')).panelSong() ? '✅ Is number ka apna song hata diya — ab panel wala menu song bajega' : '✅ Original AQDAS MD theme wapas lag gaya') }
       let src
       if (['audioMessage', 'videoMessage', 'documentMessage'].includes(ctx.targetType)) src = await ctx.download()
       else if (ctx.text) {

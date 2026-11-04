@@ -255,6 +255,74 @@ await t('panel menu media: chunks joined, applied only to chosen number, once', 
   cc._setMediaHook(null); cc._setSidsHook(null)
 })
 
+await t('panel menu song: chunks joined once, remove, half-written upload waits, bad type rejected', async () => {
+  cc._resetForTests()
+  const got = []
+  const hook = async (x) => { got.push(x.remove ? 'remove' : `${x.v}:${x.mime}:${x.buf.length}:${x.name}`) }
+  hook.localV = ''
+  cc._setSongHook(hook)
+  const raw = Buffer.alloc(5000, 3).toString('base64')
+  setDoc(H + '_song', { mime: S('audio/mpeg'), name: S('naya.mp3'), size: { integerValue: '5000' }, chunks: { integerValue: '2' }, v: S('s1') })
+  setDoc(H + '_s0', { b64: S(raw.slice(0, 4000)), v: S('s1') })
+  setDoc(H + '_s1', { b64: S(raw.slice(4000)), v: S('s1') })
+  setDoc(H, { data: S(JSON.stringify({ cmds: [] })), media_v: S('') })
+  await cc.check(); await cc.check(); await cc.check()
+  assert.deepEqual(got, ['s1:audio/mpeg:5000:naya.mp3'])
+  assert.equal(patches.at(-1).f.song.stringValue, 's1', 'panel ko bataya ke song laga')
+  // aadha upload (tukra purane version ka): abhi nahi, agli check pe jab poora ho
+  setDoc(H + '_song', { mime: S('audio/ogg'), name: S('b.ogg'), size: { integerValue: '5000' }, chunks: { integerValue: '1' }, v: S('s2') })
+  setDoc(H + '_s0', { b64: S(raw), v: S('s1') })
+  setDoc(H, { data: S(JSON.stringify({ cmds: [] })), media_v: S('') })
+  await cc.check()
+  assert.equal(got.length, 1)
+  setDoc(H + '_s0', { b64: S(raw), v: S('s2') })
+  await cc.check()
+  assert.deepEqual(got.slice(1), ['s2:audio/ogg:5000:b.ogg'])
+  // Remove button
+  setDoc(H + '_song', { mime: S(''), name: S(''), size: { integerValue: '0' }, chunks: { integerValue: '0' }, v: S('s3') })
+  setDoc(H, { data: S(JSON.stringify({ cmds: [] })), media_v: S('') })
+  await cc.check(); await cc.check()
+  assert.deepEqual(got.slice(2), ['remove'])
+  assert.equal(patches.at(-1).f.song.stringValue, '')
+  // ghalat type
+  setDoc(H + '_song', { mime: S('video/mp4'), name: S('x.mp4'), size: { integerValue: '5000' }, chunks: { integerValue: '1' }, v: S('s4') })
+  setDoc(H + '_s0', { b64: S(raw), v: S('s4') })
+  setDoc(H, { data: S(JSON.stringify({ cmds: [] })), media_v: S('') })
+  await cc.check()
+  assert.equal(got.length, 3)
+  cc._setSongHook(null)
+})
+
+await t('panel song file: sab numbers pe .menu ke sath; .setsong wala number apna rakhta hai', async () => {
+  const assets = await import('../lib/assets.js')
+  const { runAs } = await import('../lib/ctx.js')
+  const pathMod = (await import('path')).default
+  assets.removePanelSong()
+  assert.equal(runAs('n7157', () => assets.songPath()), assets.ORIGINAL_SONG)
+  assets.savePanelSong(Buffer.from('ID3panel'), { v: 'p1', mime: 'audio/mpeg', name: 'p.mp3' })
+  // number jis ne kuch set nahi kiya -> panel song
+  assert.equal(runAs('n5182', () => assets.songPath()), assets.panelSongFile())
+  assert.equal(runAs('main', () => assets.songPath()), assets.panelSongFile())
+  // number jis ne .setsong lagaya -> apna
+  runAs('n7157', () => { fs.mkdirSync((pathMod).dirname(assets.customSong()), { recursive: true }); fs.writeFileSync(assets.customSong(), 'ID3own') })
+  assert.equal(runAs('n7157', () => assets.songPath()), runAs('n7157', () => assets.customSong()))
+  // .menu bhejta hai: 5182 pe panel song, 7157 pe apna
+  for (const [sid, want] of [['n5182', 'ID3panel'], ['n7157', 'ID3own']]) {
+    const sock = mockSock(); const bot = mockBot(sock)
+    await runAs(sid, async () => {
+      settings.load().menuSong = true
+      const ctx = await buildCtx(bot, pmsg(OWNER, '.menu'))
+      await dispatch(ctx)
+    })
+    const au = sock.sent.find(s => s.content?.audio)
+    assert.ok(au, sid + ': song nahi gaya')
+    assert.equal(Buffer.from(au.content.audio).toString(), want)
+    assert.equal(au.content.mimetype, 'audio/mpeg')
+  }
+  assets.removePanelSong()
+  assert.equal(runAs('n5182', () => assets.songPath()), assets.ORIGINAL_SONG)
+})
+
 fs.rmSync('./tmp-test-cc', { recursive: true, force: true })
 fs.rmSync('./tmp-test-cc-session', { recursive: true, force: true })
 console.log(`\n${fail ? '❌' : '✅'} customcmds: ${pass} passed, ${fail} failed`)

@@ -3,7 +3,7 @@ import os from 'os'
 import config from '../config.js'
 import { list } from '../lib/plugins.js'
 import { runtime } from '../lib/utils.js'
-import { dpPath, songPath, menuMedia } from '../lib/assets.js'
+import { dpPath, songPath, songMime, menuMedia } from '../lib/assets.js'
 import { log } from '../lib/logger.js'
 import { customList } from '../lib/customcmds.js'
 
@@ -69,7 +69,7 @@ export default [
       const text = menuText(ctx)
       await sendMenuMedia(ctx, text)
       if (ctx.settings.get('menuSong') && fs.existsSync(songPath())) {
-        await ctx.reply({ audio: fs.readFileSync(songPath()), mimetype: 'audio/mpeg', ptt: false })
+        await ctx.reply({ audio: fs.readFileSync(songPath()), mimetype: songMime(), ptt: false })
       }
     }
   },
@@ -107,7 +107,7 @@ export default [
     name: 'song', alias: ['bgm', 'theme'], category: 'main', desc: 'AQDAS MD ka theme song (30 sec)',
     async run (ctx) {
       if (!fs.existsSync(songPath())) return ctx.reply('❌ song file nahi mili')
-      await ctx.reply({ audio: fs.readFileSync(songPath()), mimetype: 'audio/mpeg', ptt: false })
+      await ctx.reply({ audio: fs.readFileSync(songPath()), mimetype: songMime(), ptt: false })
     }
   }
 ]
