@@ -11,7 +11,7 @@
   "linked": [
     {
       "number": "********7157",
-      "state": "pairing"
+      "state": "linking"
     }
   ],
   "guest_log": [
@@ -21,20 +21,23 @@
     "23:03:33 ********7157: CONNECTED ✅",
     "02:37:27 ********7157: connection close 401 Stream Errored (conflict)",
     "02:37:27 ********7157: logged out",
-    "02:40:04 ********7157: code bana"
+    "02:40:04 ********7157: code bana",
+    "02:40:16 ********7157: LINKING (phone ne code accept kiya)"
   ],
   "guest_frames": {
     "number": "********7157",
-    "state": "pairing",
+    "state": "linking",
     "frames": [
       "02:39:59 iq:set <pair-device>",
-      "02:39:59 iq:result <link_code_companion_reg[companion_hello]>"
+      "02:39:59 iq:result <link_code_companion_reg[companion_hello]>",
+      "02:40:15 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
+      "02:40:16 iq:result"
     ]
   },
   "channel": {
     "ok": false,
     "error": "koi connected number nahi"
   },
-  "updated_at": "2026-11-04T02:40:08.281Z",
-  "uptime_s": 14095
+  "updated_at": "2026-11-04T02:40:20.068Z",
+  "uptime_s": 14107
 }
