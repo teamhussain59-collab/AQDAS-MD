@@ -47,8 +47,6 @@
     }
   ],
   "guest_log": [
-    "20:21:39 ********8574: status ***********6484: seen ✅, react 🥵 ✅",
-    "20:26:54 ********8574: status ***********6484: seen ✅, react 🤤 ✅",
     "20:46:29 ********8574: status **********5249: seen ✅, react 💋 ✅",
     "20:51:34 ********1805: code bana",
     "20:51:55 ********1805: LINKING (phone ne code accept kiya)",
@@ -66,7 +64,9 @@
     "22:49:14 ********1805: connection close 503 Stream Errored (unknown)",
     "22:49:17 ********1805: CONNECTED ✅",
     "22:52:43 ********8574: connection close 428 Connection Terminated",
-    "22:52:46 ********8574: CONNECTED ✅"
+    "22:52:46 ********8574: CONNECTED ✅",
+    "22:56:14 ********7157: connection close 428 Connection Terminated",
+    "22:56:17 ********7157: CONNECTED ✅"
   ],
   "guest_frames": {
     "number": "********1805",
@@ -99,6 +99,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-04T22:55:48.470Z",
-  "uptime_s": 16805
+  "updated_at": "2026-11-04T22:56:21.046Z",
+  "uptime_s": 16838
 }
