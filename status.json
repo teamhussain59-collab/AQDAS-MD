@@ -32,8 +32,6 @@
     }
   ],
   "guest_log": [
-    "13:33:25 ********5182: LINKING (phone ne code accept kiya)",
-    "13:33:25 ********5182: CONNECTED ✅",
     "13:33:25 ********7157: LINKING (phone ne code accept kiya)",
     "13:33:26 ********7157: CONNECTED ✅",
     "13:49:12 ********7324: code bana",
@@ -50,19 +48,28 @@
     "13:52:08 ********7157: connection close 515 Stream Errored (restart required)",
     "13:52:11 ********7157: CONNECTED ✅",
     "13:52:27 ********4197: connection close 401 Stream Errored (conflict)",
-    "13:52:27 ********4197: logged out"
+    "13:52:27 ********4197: logged out",
+    "13:52:37 ********7324: connection close 428 Connection Terminated by Server",
+    "13:52:40 ********7324: connection close 401 Connection Failure",
+    "13:52:40 ********7324: logged out"
   ],
   "guest_frames": {
-    "number": "********7157",
-    "state": "connected",
+    "number": "********7324",
+    "state": "linking",
     "frames": [
-      "13:51:47 iq:set <pair-device>",
-      "13:51:48 iq:result <link_code_companion_reg[companion_hello]>",
-      "13:52:04 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
-      "13:52:04 iq:result",
-      "13:52:07 iq:set <pair-success>",
-      "13:52:08 stream:error: code=515",
-      "13:52:08 xmlstreamend:"
+      "13:49:07 iq:set <pair-device>",
+      "13:49:07 iq:result <link_code_companion_reg[companion_hello]>",
+      "13:49:37 iq:result",
+      "13:49:40 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
+      "13:49:40 iq:result",
+      "13:49:47 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
+      "13:49:47 iq:result",
+      "13:50:07 iq:result",
+      "13:50:37 iq:result",
+      "13:51:07 iq:result",
+      "13:51:37 iq:result",
+      "13:52:07 iq:result",
+      "13:52:37 xmlstreamend:"
     ]
   },
   "mem": {
@@ -83,6 +90,6 @@
     "opted_in": 1,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-04T13:52:31.143Z",
-  "uptime_s": 1148
+  "updated_at": "2026-11-04T13:52:40.990Z",
+  "uptime_s": 1158
 }
