@@ -58,7 +58,9 @@
     "17:34:17 ********4197: connection close 515 Stream Errored (restart required)",
     "17:34:22 ********4197: CONNECTED ✅",
     "17:36:13 *******7398: connection close 428 Connection Terminated by Server",
-    "17:36:13 *******7398: expired / closed (code 428)"
+    "17:36:13 *******7398: expired / closed (code 428)",
+    "17:36:55 ********4197: connection close 401 Stream Errored (conflict)",
+    "17:36:55 ********4197: logged out"
   ],
   "guest_frames": {
     "number": "********4197",
@@ -91,6 +93,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-04T17:36:30.489Z",
-  "uptime_s": 302
+  "updated_at": "2026-11-04T17:36:55.738Z",
+  "uptime_s": 328
 }
