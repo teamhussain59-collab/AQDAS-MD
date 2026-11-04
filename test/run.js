@@ -154,6 +154,88 @@ await t('private mode: strangers ignored, owner works', async () => {
   assert.ok(sock.sent.some(s => /😂/.test(s.content?.text || '')))
   settings.set('mode', 'public')
 })
+// ---- private mode (Hussain bug 2026-11-04: private mein bhi dusre bande ko .menu ka jawab) ----
+const { runAs } = await import('../lib/ctx.js')
+const anyOut = sock => sock.sent.filter(s => s.content && !s.content.react && s.jid !== 'status@broadcast')
+const lidDm = (lid, pn, text) => ({ key: { remoteJid: lid, remoteJidAlt: pn, id: 'L' + Math.random(), fromMe: false }, pushName: 'x', message: { conversation: text } })
+await t('private (main): stranger .menu gets NOTHING (PN dm, LID dm, group, list reply, button reply)', async () => {
+  settings.set('mode', 'private')
+  const sock = mockSock(META); const bot = mockBot(sock)
+  await handleMessage(bot, pmsg('923000000009@s.whatsapp.net', '.menu'))
+  await handleMessage(bot, lidDm('299999999999@lid', '923000000009@s.whatsapp.net', '.menu'))
+  await handleMessage(bot, lidDm('299999999998@lid', undefined, '.menu'))
+  await handleMessage(bot, gmsg('200000000003@lid', '.menu', { participantAlt: '923000000003@s.whatsapp.net' }))
+  await handleMessage(bot, { key: { remoteJid: '923000000009@s.whatsapp.net', id: 'Q1', fromMe: false }, message: { listResponseMessage: { singleSelectReply: { selectedRowId: '.menu' } } } })
+  await handleMessage(bot, { key: { remoteJid: '923000000009@s.whatsapp.net', id: 'Q2', fromMe: false }, message: { buttonsResponseMessage: { selectedButtonId: '.menu' } } })
+  await handleMessage(bot, pmsg('923000000009@s.whatsapp.net', '.help'))
+  assert.equal(anyOut(sock).length, 0, JSON.stringify(anyOut(sock).map(x => Object.keys(x.content))))
+  settings.set('mode', 'public')
+})
+await t('private (main): owner number, owner via LID+Alt, and own number (fromMe) still get menu', async () => {
+  settings.set('mode', 'private')
+  for (const m of [pmsg('923000000001@s.whatsapp.net', '.menu'), lidDm('288888888888@lid', '923000000001@s.whatsapp.net', '.menu'),
+    { key: { remoteJid: '923000000009@s.whatsapp.net', id: 'F1', fromMe: true }, message: { conversation: '.menu' } }]) {
+    const sock = mockSock(); const bot = mockBot(sock)
+    await handleMessage(bot, m)
+    assert.ok(sock.sent.some(s => s.content?.image), 'owner got no menu: ' + JSON.stringify(m.key))
+  }
+  settings.set('mode', 'public')
+})
+await t('private: public:true commands (.pair) still answer strangers; owner-only cmd silent to strangers', async () => {
+  settings.set('mode', 'private')
+  const sock = mockSock(); const bot = mockBot(sock)
+  await handleMessage(bot, pmsg('923000000009@s.whatsapp.net', '.pair'))
+  assert.ok(anyOut(sock).length >= 1, '.pair should answer')
+  const sock2 = mockSock(); const bot2 = mockBot(sock2)
+  await handleMessage(bot2, pmsg('923000000009@s.whatsapp.net', '.mode public'))
+  assert.equal(anyOut(sock2).length, 0)
+  assert.equal(settings.get('mode'), 'private')
+  settings.set('mode', 'public')
+})
+await t('private on EXTRA number (sid): stranger gets nothing there, own number fromMe works; main stays public (per-number)', async () => {
+  const SID = 'ntest00000000abcd'
+  await runAs(SID, async () => {
+    const sock = mockSock(); const bot = mockBot(sock)
+    await handleMessage(bot, { key: { remoteJid: '923111111111@s.whatsapp.net', id: 'F2', fromMe: true }, message: { conversation: '.mode private' } })
+    assert.equal(settings.get('mode'), 'private')
+    assert.ok(sock.sent.some(s => /Mode.*private/.test(s.content?.text || '')), 'no mode reply')
+    sock.sent.length = 0
+    await handleMessage(bot, pmsg('923000000009@s.whatsapp.net', '.menu'))
+    await handleMessage(bot, lidDm('299999999999@lid', '923000000009@s.whatsapp.net', '.menu'))
+    assert.equal(anyOut(sock).length, 0)
+    await handleMessage(bot, pmsg('923000000001@s.whatsapp.net', '.menu')) // asli owner har number pe owner
+    assert.ok(sock.sent.some(s => s.content?.image))
+  })
+  assert.equal(settings.get('mode'), 'public') // main alag
+  const sock = mockSock(); const bot = mockBot(sock)
+  await handleMessage(bot, pmsg('923000000009@s.whatsapp.net', '.menu'))
+  assert.ok(sock.sent.some(s => s.content?.image), 'main public should answer')
+})
+await t('mode survives settings reload + session restore (main and extra sid)', async () => {
+  const SID = 'ntest00000000abcd'
+  settings.set('mode', 'private')
+  settings._reset() // cache khali: disk se dobara parho (restart jaisa)
+  assert.equal(settings.get('mode'), 'private')
+  assert.equal(settings.load(SID).mode, 'private')
+  // restart: encrypted store se wapis (exportFor -> importFor), data folder khali ho chuka ho
+  const blobMain = settings.exportFor('main'), blobSid = settings.exportFor(SID)
+  fs.rmSync('./tmp-test-data', { recursive: true, force: true }); settings._reset()
+  assert.equal(settings.get('mode'), 'public') // bina restore default
+  settings.importFor('main', blobMain); settings.importFor(SID, blobSid)
+  assert.equal(settings.get('mode'), 'private'); assert.equal(settings.load(SID).mode, 'private')
+  const sock = mockSock(); const bot = mockBot(sock)
+  await handleMessage(bot, pmsg('923000000009@s.whatsapp.net', '.menu'))
+  await runAs(SID, () => handleMessage(bot, pmsg('923000000009@s.whatsapp.net', '.menu')))
+  assert.equal(anyOut(sock).length, 0)
+  settings.set('mode', 'public'); runAs(SID, () => settings.set('mode', 'public'))
+})
+await t('owner check: stranger LID digits never match, own LID sender = owner', async () => {
+  const { isOwner } = await import('../lib/handler.js')
+  const sock = mockSock(); const bot = mockBot(sock)
+  assert.equal(isOwner(bot, { key: { remoteJid: '923000000001@lid', fromMe: false } }), false) // LID jo owner number jaisa dikhe
+  assert.equal(isOwner(bot, gmsg(BOT_LID, 'x')), true)
+  assert.equal(isOwner(bot, gmsg('200000000003@lid', 'x', { participantAlt: '923000000003@s.whatsapp.net' })), false)
+})
 await t('status: auto view reads, auto react reacts with statusJidList', async () => {
   settings.set('autoStatusView', true); settings.set('autoStatusReact', true)
   const sock = mockSock()
