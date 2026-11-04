@@ -42,9 +42,6 @@
     }
   ],
   "guest_log": [
-    "13:56:11 ********7324: connection close 428 Connection Terminated by Server",
-    "13:56:11 ********7324: expired / closed (code 428)",
-    "13:59:05 ********7324: code bana",
     "13:59:23 ********7324: LINKING (phone ne code accept kiya)",
     "14:00:25 ********2128: code bana",
     "14:00:46 ********2128: LINKING (phone ne code accept kiya)",
@@ -61,14 +58,24 @@
     "14:14:02 ********7324: connection close 401 Connection Failure",
     "14:14:02 ********7324: logged out",
     "14:19:39 ********7324: code bana",
-    "14:19:59 ********7324: LINKING (phone ne code accept kiya)"
+    "14:19:59 ********7324: LINKING (phone ne code accept kiya)",
+    "14:23:04 ********7324: connection close 428 Connection Terminated by Server",
+    "14:23:04 qr: connection close 428 Connection Terminated by Server",
+    "14:23:04 qr: expired / closed (code 428)"
   ],
   "guest_frames": {
     "number": "",
-    "state": "pairing",
+    "state": "expired",
     "frames": [
-      "14:22:10 iq:set <pair-device>",
-      "14:22:39 iq:result"
+      "14:19:34 iq:set <pair-device>",
+      "14:20:04 iq:result",
+      "14:20:34 iq:result",
+      "14:21:04 iq:result",
+      "14:21:34 iq:result",
+      "14:22:04 iq:result",
+      "14:22:34 iq:get",
+      "14:22:34 iq:result",
+      "14:23:04 xmlstreamend:"
     ]
   },
   "mem": {
@@ -89,6 +96,6 @@
     "opted_in": 1,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-04T14:22:43.990Z",
-  "uptime_s": 2961
+  "updated_at": "2026-11-04T14:23:04.529Z",
+  "uptime_s": 2982
 }
