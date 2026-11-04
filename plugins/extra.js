@@ -2,6 +2,7 @@
 import { downloadMediaMessage, normalizeMessageContent, getContentType, jidNormalizedUser } from '@whiskeysockets/baileys'
 import config from '../config.js'
 import { waLogger } from '../lib/logger.js'
+import { aiKey } from '../lib/ai.js'
 import { GH_ON, gh } from '../lib/github.js'
 
 const onoff = a => { a = String(a || '').toLowerCase(); return ['on', 'enable', '1'].includes(a) ? true : ['off', 'disable', '0'].includes(a) ? false : null }
@@ -19,9 +20,10 @@ export default [
         return ctx.reply(`✅ Groups mein Auto AI ${v ? 'ON (bot ko tag / reply karne pe jawab)' : 'OFF'}`)
       }
       const v = onoff(ctx.args[0])
-      if (v === null) return ctx.reply(`🤖 *Auto AI* (AQDAS AI)\nInbox: ${st(s.autoAI)}\nGroups: ${st(s.autoAIGroup)}${config.openrouterKey ? '' : '\n⚠️ Server pe OPENROUTER_API_KEY nahi'}\n\n${ctx.prefix}autoai on / off\n${ctx.prefix}autoai group on / off`)
+      const own = '\n\nℹ️ Ye is number pe *doosron* ke DM ka jawab deta hai. Is number se *khud* bheje gaye messages ka jawab nahi aata — khud try karna ho to kisi aur number se is number ko message karo. Seedha sawal: ' + ctx.prefix + 'ai <sawal>'
+      if (v === null) return ctx.reply(`🤖 *Auto AI* (AQDAS AI)\nInbox: ${st(s.autoAI)}\nGroups: ${st(s.autoAIGroup)}${(await aiKey()) ? '' : '\n⚠️ AI key nahi mili (GitHub secret OPENROUTER_API_KEY ya website admin)'}\n\n${ctx.prefix}autoai on / off\n${ctx.prefix}autoai group on / off` + own)
       s.autoAI = v; ctx.settings.save()
-      await ctx.reply(v ? '✅ *Auto AI ON* — ab inbox mein har message ka AQDAS AI jawab dega (user ki zaban mein). Band: ' + ctx.prefix + 'autoai off' : '✅ Auto AI OFF')
+      await ctx.reply(v ? '✅ *Auto AI ON* — ab inbox mein har message ka AQDAS AI jawab dega (user ki zaban mein). Band: ' + ctx.prefix + 'autoai off' + ((await aiKey()) ? '' : '\n⚠️ Lekin AI key nahi mili, jawab nahi jayega') + own : '✅ Auto AI OFF')
     }
   },
   {

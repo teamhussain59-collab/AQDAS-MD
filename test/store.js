@@ -14,6 +14,7 @@ const assert = (await import('assert')).default
 
 // ---- in-memory GitHub contents API (sirf jo store.js / github.js use karte hain) ----
 const repo = new Map() // "branch:path" -> Buffer
+let fail500 = 0 // agle itne PUT pe GitHub 500 de
 const calls = []
 const sha = b => crypto.createHash('sha1').update(b).digest('hex')
 globalThis.fetch = async (url, o = {}) => {
@@ -36,6 +37,7 @@ globalThis.fetch = async (url, o = {}) => {
     }
     const body = JSON.parse(o.body)
     const key = body.branch + ':' + p; const cur = repo.get(key)
+    if (m === 'PUT' && fail500 > 0) { fail500--; return res(500, { message: 'Server Error' }) }
     if (m === 'PUT') {
       if (cur && body.sha !== sha(cur)) return res(409, { message: 'sha mismatch' })
       if (!cur && body.sha) return res(422, { message: 'no file' })
@@ -223,5 +225,16 @@ await t('logout/remove deletes session + assets', async () => {
 })
 
 wipe()
+await t('GitHub 500 pe session/settings write dobara try (pehle seedha fail ho kar setting gum hoti thi)', async () => {
+  const gh = await import('../lib/github.js')
+  fail500 = 2
+  await gh.putFile('sessions', 'retry-test.enc', 'hello', 'test')
+  assert.equal(repo.get('sessions:retry-test.enc')?.toString(), 'hello')
+  fail500 = 5
+  await assert.rejects(() => gh.putFile('sessions', 'retry-test.enc', 'again', 'test'), /500/)
+  fail500 = 0
+  repo.delete('sessions:retry-test.enc')
+})
+
 console.log(`\n${fail ? '❌' : '✅'} store: ${pass} passed, ${fail} failed`)
 process.exit(fail ? 1 : 0)
