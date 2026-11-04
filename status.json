@@ -9,6 +9,46 @@
   "commands": 569,
   "panel_url": "https://butterfly-governing-teaching-evening.trycloudflare.com",
   "panel_at": "2026-11-04T17:28:51.789Z",
-  "updated_at": "2026-11-04T17:28:51.789Z",
-  "uptime_s": 5
+  "linked": [
+    {
+      "number": "********7324",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********5182",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********6325",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********2128",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********7157",
+      "state": "connected",
+      "autostatus": "off"
+    }
+  ],
+  "guest_log": [
+    "17:28:50 ********7324: LINKING (phone ne code accept kiya)",
+    "17:28:50 ********7324: CONNECTED ✅",
+    "17:28:50 ********5182: LINKING (phone ne code accept kiya)",
+    "17:28:50 ********7157: LINKING (phone ne code accept kiya)",
+    "17:28:50 ********6325: LINKING (phone ne code accept kiya)",
+    "17:28:50 ********2128: LINKING (phone ne code accept kiya)",
+    "17:28:51 ********7157: CONNECTED ✅",
+    "17:28:51 ********2128: CONNECTED ✅",
+    "17:28:51 ********5182: CONNECTED ✅",
+    "17:28:51 ********6325: CONNECTED ✅"
+  ],
+  "guest_frames": null,
+  "updated_at": "2026-11-04T17:28:55.525Z",
+  "uptime_s": 9
 }
