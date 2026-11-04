@@ -8,6 +8,23 @@
   "slots_max": 10,
   "panel_url": "https://union-favorite-orientation-tub.trycloudflare.com",
   "panel_at": "2026-11-04T07:36:38.036Z",
-  "updated_at": "2026-11-04T07:36:38.036Z",
-  "uptime_s": 4
+  "linked": [
+    {
+      "number": "********5182",
+      "state": "connected"
+    },
+    {
+      "number": "********7157",
+      "state": "connected"
+    }
+  ],
+  "guest_log": [
+    "07:36:35 ********5182: LINKING (phone ne code accept kiya)",
+    "07:36:35 ********5182: CONNECTED ✅",
+    "07:36:36 ********7157: LINKING (phone ne code accept kiya)",
+    "07:36:36 ********7157: CONNECTED ✅"
+  ],
+  "guest_frames": null,
+  "updated_at": "2026-11-04T07:36:40.777Z",
+  "uptime_s": 7
 }
