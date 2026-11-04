@@ -12,6 +12,7 @@ import { startCustomWatch } from './lib/customcmds.js'
 import { startChannelWatch } from './lib/chgroup.js'
 import { GH_ON, getRaw } from './lib/github.js'
 import { loadPlugins } from './lib/plugins.js'
+import { hostGate } from './lib/hostlock.js'
 
 console.log(`\x1b[32m
    ___   ____  ____   ___   _____   __  __ ____
@@ -27,6 +28,9 @@ process.on('uncaughtException', e => log.err('uncaught:', e?.message || e))
 
 // Multi-number: web page se koi bhi apna number add kare (MULTI=false se band)
 const multi = config.web && process.env.MULTI !== 'false'
+
+// Railway / GitHub: ek waqt mein sirf ek jagah (lib/hostlock.js)
+await hostGate()
 
 let saved = []
 if (store.storeEnabled) {
