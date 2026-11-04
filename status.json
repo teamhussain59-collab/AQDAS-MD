@@ -8,6 +8,23 @@
   "slots_max": 10,
   "panel_url": "https://hosted-cowboy-lower-adams.trycloudflare.com",
   "panel_at": "2026-11-04T07:00:12.795Z",
-  "updated_at": "2026-11-04T07:00:12.795Z",
-  "uptime_s": 6
+  "linked": [
+    {
+      "number": "********5182",
+      "state": "connected"
+    },
+    {
+      "number": "********7157",
+      "state": "connected"
+    }
+  ],
+  "guest_log": [
+    "07:00:09 ********7157: LINKING (phone ne code accept kiya)",
+    "07:00:09 ********5182: LINKING (phone ne code accept kiya)",
+    "07:00:09 ********7157: CONNECTED ✅",
+    "07:00:09 ********5182: CONNECTED ✅"
+  ],
+  "guest_frames": null,
+  "updated_at": "2026-11-04T07:00:13.768Z",
+  "uptime_s": 7
 }
