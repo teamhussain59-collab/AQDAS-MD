@@ -8,6 +8,25 @@
   "slots_max": 10,
   "panel_url": "https://emotional-hobby-refused-mounts.trycloudflare.com",
   "panel_at": "2026-11-04T09:58:50.293Z",
-  "updated_at": "2026-11-04T09:58:50.293Z",
-  "uptime_s": 5
+  "linked": [
+    {
+      "number": "********5182",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********7157",
+      "state": "connected",
+      "autostatus": "view+react"
+    }
+  ],
+  "guest_log": [
+    "09:58:47 ********5182: LINKING (phone ne code accept kiya)",
+    "09:58:48 ********7157: LINKING (phone ne code accept kiya)",
+    "09:58:48 ********7157: CONNECTED ✅",
+    "09:58:48 ********5182: CONNECTED ✅"
+  ],
+  "guest_frames": null,
+  "updated_at": "2026-11-04T09:58:52.271Z",
+  "uptime_s": 7
 }
