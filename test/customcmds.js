@@ -91,8 +91,8 @@ await t('async infinite loop is killed by the wall timeout', async () => {
 })
 
 await t('code cannot reach process / require / fs / env / Buffer', async () => {
-  cc.applyData({ cmds: [{ name: 'peek', code: "await ctx.reply([typeof process, typeof require, typeof module.require, typeof globalThis.process, typeof Buffer, typeof fetch, typeof setTimeout].join(','))" }] })
-  const { sock } = await run(OWNER, '.peek')
+  cc.applyData({ cmds: [{ name: 'peekx', code: "await ctx.reply([typeof process, typeof require, typeof module.require, typeof globalThis.process, typeof Buffer, typeof fetch, typeof setTimeout].join(','))" }] })
+  const { sock } = await run(OWNER, '.peekx')
   // require / fetch / setTimeout ab jaan boojh kar hain (sirf sandbox wale: axios/path/temp-fs, https-only fetch, wall-limited timer)
   assert.deepEqual(texts(sock), ['undefined,function,undefined,undefined,undefined,function,function'])
 })
