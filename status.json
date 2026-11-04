@@ -1,58 +1,11 @@
 {
-  "status": "offline",
+  "status": "idle",
   "code": null,
-  "qr": null,
-  "qr_at": null,
   "code_at": null,
-  "next_at": null,
   "last_event": null,
   "number_masked": null,
-  "run_id": "41829072970",
+  "run_id": "41839020060",
   "slots_max": "unlimited",
-  "commands": 563,
-  "panel_url": null,
-  "panel_at": "2026-11-04T12:25:47.355Z",
-  "linked": [
-    {
-      "number": "********5182",
-      "state": "connected",
-      "autostatus": "off"
-    },
-    {
-      "number": "********7157",
-      "state": "connected",
-      "autostatus": "view+react"
-    }
-  ],
-  "guest_log": [
-    "12:25:45 ********7157: LINKING (phone ne code accept kiya)",
-    "12:25:45 ********4197: LINKING (phone ne code accept kiya)",
-    "12:25:45 ********4197: CONNECTED ✅",
-    "12:25:45 ********7157: CONNECTED ✅",
-    "12:25:45 ********5182: LINKING (phone ne code accept kiya)",
-    "12:25:46 ********5182: CONNECTED ✅",
-    "12:30:07 ********4197: connection close 401 Stream Errored (conflict)",
-    "12:30:07 ********4197: logged out"
-  ],
-  "guest_frames": null,
-  "mem": {
-    "sessions": 2,
-    "free_mb": 14885,
-    "total_mb": 15983,
-    "rss_mb": 183,
-    "heap_mb": 41,
-    "heap_limit_mb": 4144,
-    "per_session_mb": 15,
-    "room_for": 348
-  },
-  "channel": {
-    "ok": true,
-    "name": "AQDAS TECH",
-    "latest_post": 110,
-    "auto": true,
-    "opted_in": 1,
-    "fetch": "updates err channel posts timeout | messages:messages:10"
-  },
-  "updated_at": "2026-11-04T13:33:02.872Z",
-  "uptime_s": 4042
+  "updated_at": "2026-11-04T13:33:24.419Z",
+  "uptime_s": 2
 }
