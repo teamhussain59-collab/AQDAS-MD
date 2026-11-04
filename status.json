@@ -9,6 +9,25 @@
   "commands": 328,
   "panel_url": "https://tan-desired-bird-output.trycloudflare.com",
   "panel_at": "2026-11-04T11:15:09.112Z",
-  "updated_at": "2026-11-04T11:15:10.440Z",
-  "uptime_s": 7
+  "linked": [
+    {
+      "number": "********5182",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********7157",
+      "state": "connected",
+      "autostatus": "view+react"
+    }
+  ],
+  "guest_log": [
+    "11:15:06 ********5182: LINKING (phone ne code accept kiya)",
+    "11:15:06 ********7157: LINKING (phone ne code accept kiya)",
+    "11:15:07 ********5182: CONNECTED ✅",
+    "11:15:07 ********7157: CONNECTED ✅"
+  ],
+  "guest_frames": null,
+  "updated_at": "2026-11-04T11:15:14.312Z",
+  "uptime_s": 11
 }
