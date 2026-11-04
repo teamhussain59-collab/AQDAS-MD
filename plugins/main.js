@@ -3,7 +3,8 @@ import os from 'os'
 import config from '../config.js'
 import { list } from '../lib/plugins.js'
 import { runtime } from '../lib/utils.js'
-import { dpPath, songPath } from '../lib/assets.js'
+import { dpPath, songPath, menuMedia } from '../lib/assets.js'
+import { log } from '../lib/logger.js'
 
 const ICON = { main: '🏠', public: '🔗', owner: '👑', auto: '⚙️', group: '👥', sticker: '🖼️', ai: '🤖', download: '📥', fun: '😂', tools: '🛠️', islamic: '🕌', other: '✨' }
 const TITLE = { main: 'MAIN', public: 'PUBLIC (SAB KE LIYE)', owner: 'OWNER', auto: 'AUTO (ON/OFF)', group: 'GROUP', sticker: 'STICKER', ai: 'AI', download: 'DOWNLOAD', fun: 'FUN', tools: 'TOOLS', islamic: 'ISLAMIC', other: 'OTHER' }
@@ -29,6 +30,20 @@ export function menuText (ctx) {
   return t
 }
 
+// motion clip (GIF jaisa) + menu caption; video fail ho to DP photo, woh bhi fail ho to sirf text
+export async function sendMenuMedia (ctx, text) {
+  const m = menuMedia(!!ctx.settings.get('menuDp'))
+  if (m?.type === 'video') {
+    try { return await ctx.reply({ video: fs.readFileSync(m.path), gifPlayback: true, mimetype: 'video/mp4', caption: text }) } catch (e) { log.warn('menu video nahi gayi, photo bhej raha hoon:', e.message) }
+  } else if (m?.type === 'image') {
+    try { return await ctx.reply({ image: fs.readFileSync(m.path), caption: text }) } catch (e) { log.warn('menu photo nahi gayi:', e.message) }
+  }
+  if (m?.type === 'video' && fs.existsSync(dpPath())) {
+    try { return await ctx.reply({ image: fs.readFileSync(dpPath()), caption: text }) } catch (e) { log.warn('menu DP bhi nahi gayi:', e.message) }
+  }
+  return ctx.reply(text)
+}
+
 export default [
   {
     name: 'menu', alias: ['help', 'list', 'allmenu', 'cmd'], category: 'main', desc: 'Sab commands ki list',
@@ -41,8 +56,7 @@ export default [
         return ctx.reply(`*${p}${c.name}* ${c.usage || ''}\n${c.desc || ''}${c.alias?.length ? `\nAlias: ${c.alias.map(a => p + a).join(', ')}` : ''}${c.admin ? '\n(Admin only)' : ''}${c.owner ? '\n(Owner only)' : ''}`)
       }
       const text = menuText(ctx)
-      if (fs.existsSync(dpPath())) await ctx.reply({ image: fs.readFileSync(dpPath()), caption: text })
-      else await ctx.reply(text)
+      await sendMenuMedia(ctx, text)
       if (ctx.settings.get('menuSong') && fs.existsSync(songPath())) {
         await ctx.reply({ audio: fs.readFileSync(songPath()), mimetype: 'audio/mpeg', ptt: false })
       }

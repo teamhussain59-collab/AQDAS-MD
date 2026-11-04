@@ -1,9 +1,26 @@
 import { tts } from '../lib/tts.js'
-import { toVoiceNote } from '../lib/media.js'
+import { toVoiceNote, stickerToImage } from '../lib/media.js'
+import { enhanceImage } from '../lib/assets.js'
 
 const LANGS = ['ur', 'en', 'hi', 'ar', 'pa', 'tr', 'fr', 'es', 'de', 'ru', 'zh', 'ja', 'ko', 'id', 'bn', 'fa']
 
 export default [
+  {
+    name: 'enhance', alias: ['hd', 'remini', 'upscale'], category: 'tools', usage: '(photo pe reply) [doc]', desc: 'Photo HD karo (2x bari + sharp + saaf)',
+    async run (ctx) {
+      const t = ctx.targetType
+      if (!['imageMessage', 'stickerMessage', 'documentMessage'].includes(t)) return ctx.reply(`📸 Kisi photo pe reply karo *${ctx.prefix}enhance*\nFull quality file chahiye: *${ctx.prefix}enhance doc*`)
+      await ctx.react('⏳')
+      let buf = await ctx.download()
+      if (!buf) return ctx.reply('❌ Photo download nahi hui, dobara bhejo.')
+      if (t === 'stickerMessage') buf = await stickerToImage(buf)
+      let out
+      try { out = await enhanceImage(buf) } catch (e) { return ctx.reply('❌ Ye photo HD nahi ho saki (shayad photo nahi hai).') }
+      await ctx.react('✅')
+      if ((ctx.args[0] || '').toLowerCase() === 'doc') return ctx.reply({ document: out, mimetype: 'image/jpeg', fileName: 'AQDAS-MD-HD.jpg', caption: '✨ HD photo (full quality)' })
+      return ctx.reply({ image: out, caption: `✨ *HD ho gayi* — ${ctx.prefix}enhance doc se full quality file` })
+    }
+  },
   {
     name: 'tts', alias: ['say', 'bol'], category: 'tools', usage: '[ur/en] <text>', desc: 'Text ko awaz (voice note) mein badlo',
     async run (ctx) {

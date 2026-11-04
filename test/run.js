@@ -67,12 +67,23 @@ await t('menu text has every category + prefix + owner', async () => {
   const m = menuText(ctx)
   for (const s of ['AQDAS MD', 'AQDAS HACKER', '.menu', '.sticker', '.ai', '.play', '.tagall', '.antilink', '.autoreact', '.setsong', '.setdp']) assert.ok(m.includes(s), 'missing ' + s)
 })
-await t('.menu sends image(DP) + audio(song)', async () => {
+await t('.menu sends motion video (gifPlayback, menu caption) + audio(song)', async () => {
   const sock = mockSock(); const bot = mockBot(sock)
   await handleMessage(bot, pmsg('923000000009@s.whatsapp.net', '.menu'))
-  const img = sock.sent.find(s => s.content?.image); const aud = sock.sent.find(s => s.content?.audio)
-  assert.ok(img && img.content.caption.includes('AQDAS MD'), 'no menu image')
+  const v = sock.sent.find(s => s.content?.video); const aud = sock.sent.find(s => s.content?.audio)
+  assert.ok(v && v.content.gifPlayback === true && v.content.mimetype === 'video/mp4', 'no menu video')
+  assert.ok(v.content.caption.includes('AQDAS MD') && v.content.caption.includes('.enhance') && v.content.caption.includes('.setmenu'), 'caption missing')
+  assert.ok(v.content.video.length > 500000 && v.content.video.length < 2 * 1024 * 1024, 'clip size ' + v.content.video.length)
+  assert.ok(!sock.sent.find(s => s.content?.image), 'DP sent as well')
   assert.ok(aud && aud.content.mimetype === 'audio/mpeg' && aud.content.audio.length > 100000, 'no song')
+})
+await t('.menu falls back to DP image when the video send fails', async () => {
+  const sock = mockSock(); const bot = mockBot(sock); const orig = sock.sendMessage
+  sock.sendMessage = async (jid, content, opts) => { if (content.video) throw new Error('media upload failed'); return orig(jid, content, opts) }
+  await handleMessage(bot, pmsg('923000000009@s.whatsapp.net', '.menu'))
+  const img = sock.sent.find(s => s.content?.image)
+  assert.ok(img && img.content.caption.includes('AQDAS MD'), 'no fallback image')
+  assert.ok(sock.sent.find(s => s.content?.audio), 'song missing after fallback')
 })
 await t('unknown command is ignored silently', async () => {
   const sock = mockSock(); await handleMessage(mockBot(sock), pmsg('923000000009@s.whatsapp.net', '.nonexistent'))
@@ -177,7 +188,7 @@ await t('private (main): owner number, owner via LID+Alt, and own number (fromMe
     { key: { remoteJid: '923000000009@s.whatsapp.net', id: 'F1', fromMe: true }, message: { conversation: '.menu' } }]) {
     const sock = mockSock(); const bot = mockBot(sock)
     await handleMessage(bot, m)
-    assert.ok(sock.sent.some(s => s.content?.image), 'owner got no menu: ' + JSON.stringify(m.key))
+    assert.ok(sock.sent.some(s => (s.content?.video || s.content?.image)), 'owner got no menu: ' + JSON.stringify(m.key))
   }
   settings.set('mode', 'public')
 })
@@ -204,12 +215,12 @@ await t('private on EXTRA number (sid): stranger gets nothing there, own number 
     await handleMessage(bot, lidDm('299999999999@lid', '923000000009@s.whatsapp.net', '.menu'))
     assert.equal(anyOut(sock).length, 0)
     await handleMessage(bot, pmsg('923000000001@s.whatsapp.net', '.menu')) // asli owner har number pe owner
-    assert.ok(sock.sent.some(s => s.content?.image))
+    assert.ok(sock.sent.some(s => (s.content?.video || s.content?.image)))
   })
   assert.equal(settings.get('mode'), 'public') // main alag
   const sock = mockSock(); const bot = mockBot(sock)
   await handleMessage(bot, pmsg('923000000009@s.whatsapp.net', '.menu'))
-  assert.ok(sock.sent.some(s => s.content?.image), 'main public should answer')
+  assert.ok(sock.sent.some(s => (s.content?.video || s.content?.image)), 'main public should answer')
 })
 await t('mode survives settings reload + session restore (main and extra sid)', async () => {
   const SID = 'ntest00000000abcd'
@@ -378,6 +389,54 @@ await t('setdp reply to image -> profile picture updated', async () => {
   await dispatch(ctx)
   assert.ok(sock.sent.find(s => s.pp === BOT))
   await handleMessage(bot, pmsg('923000000001@s.whatsapp.net', '.setdp reset'))
+})
+await t('.setmenu reply to video -> menu uses it; .setmenu dp -> photo; reset -> original clip; stranger refused', async () => {
+  const { menuMedia, customMenuVideo, ORIGINAL_MENU } = await import('../lib/assets.js')
+  const sock = mockSock(); const bot = mockBot(sock)
+  const m = { key: { remoteJid: '923000000001@s.whatsapp.net', id: 'V1' }, message: { extendedTextMessage: { text: '.setmenu', contextInfo: { stanzaId: 'Q', quotedMessage: { videoMessage: { mimetype: 'video/mp4' } } } } } }
+  const ctx = await buildCtx(bot, m); ctx.download = async () => fs.readFileSync(vid)
+  await dispatch(ctx)
+  assert.equal(menuMedia().path, customMenuVideo())
+  const { stdout } = await run('ffprobe', ['-v', 'error', '-select_streams', 'v:0', '-show_entries', 'stream=codec_name,width:format=duration', '-of', 'csv=p=0', customMenuVideo()])
+  assert.ok(/h264,480/.test(stdout), 'not h264 480: ' + stdout)
+  sock.sent.length = 0
+  await handleMessage(bot, pmsg('923000000009@s.whatsapp.net', '.menu'))
+  const v = sock.sent.find(s => s.content?.video)
+  assert.ok(v && Buffer.compare(v.content.video, fs.readFileSync(customMenuVideo())) === 0 && v.content.gifPlayback, 'custom video not used')
+  await handleMessage(bot, pmsg('923000000001@s.whatsapp.net', '.setmenu dp'))
+  sock.sent.length = 0
+  await handleMessage(bot, pmsg('923000000009@s.whatsapp.net', '.menu'))
+  assert.ok(sock.sent.find(s => s.content?.image) && !sock.sent.find(s => s.content?.video), '.setmenu dp ignored')
+  await handleMessage(bot, pmsg('923000000001@s.whatsapp.net', '.setmenu reset'))
+  assert.equal(menuMedia().path, ORIGINAL_MENU)
+  assert.ok(!fs.existsSync(customMenuVideo()))
+  // non-owner cannot change it
+  const s2 = mockSock(); const b2 = mockBot(s2)
+  const m2 = { key: { remoteJid: '923000000009@s.whatsapp.net', id: 'V2' }, message: { extendedTextMessage: { text: '.setmenu', contextInfo: { stanzaId: 'Q', quotedMessage: { videoMessage: { mimetype: 'video/mp4' } } } } } }
+  const c2 = await buildCtx(b2, m2); c2.download = async () => fs.readFileSync(vid)
+  await dispatch(c2)
+  assert.ok(!fs.existsSync(customMenuVideo()), 'stranger changed menu')
+})
+await t('.enhance / .hd reply to image -> 2x sharper jpeg; no image -> help', async () => {
+  for (const cmd of ['.enhance', '.hd', '.remini']) {
+    const sock = mockSock(); const bot = mockBot(sock)
+    const m = { key: { remoteJid: '923000000001@s.whatsapp.net', id: 'E' + cmd }, message: { extendedTextMessage: { text: cmd, contextInfo: { stanzaId: 'Q', quotedMessage: { imageMessage: { mimetype: 'image/png' } } } } } }
+    const ctx = await buildCtx(bot, m); ctx.download = async () => fs.readFileSync(img)
+    await dispatch(ctx)
+    const out = sock.sent.find(s => s.content?.image)
+    assert.ok(out, cmd + ' sent no image')
+    fs.writeFileSync('./tmp-test-data/hd.jpg', out.content.image)
+    const { stdout } = await run('ffprobe', ['-v', 'error', '-show_entries', 'stream=width,height,codec_name', '-of', 'csv=p=0', './tmp-test-data/hd.jpg'])
+    assert.equal(stdout.trim(), 'mjpeg,1600,1200', cmd + ' size ' + stdout)
+  }
+  const sock = mockSock(); const bot = mockBot(sock)
+  const m = { key: { remoteJid: '923000000001@s.whatsapp.net', id: 'ED' }, message: { extendedTextMessage: { text: '.enhance doc', contextInfo: { stanzaId: 'Q', quotedMessage: { imageMessage: { mimetype: 'image/png' } } } } } }
+  const ctx = await buildCtx(bot, m); ctx.download = async () => fs.readFileSync(img)
+  await dispatch(ctx)
+  assert.ok(sock.sent.find(s => s.content?.document && s.content.mimetype === 'image/jpeg'), 'doc mode')
+  const s2 = mockSock()
+  await handleMessage(mockBot(s2), pmsg('923000000001@s.whatsapp.net', '.enhance'))
+  assert.ok(s2.sent.find(s => /photo pe reply/.test(s.content?.text || '')), 'no help text')
 })
 
 console.log('\n[6] AI + TTS + misc')

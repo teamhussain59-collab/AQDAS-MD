@@ -1,7 +1,7 @@
 import { currentSid } from '../lib/ctx.js'
 import fs from 'fs'
 import config from '../config.js'
-import { ORIGINAL_DP, trimTo30, saveSong, resetSong, saveDp, resetDp } from '../lib/assets.js'
+import { ORIGINAL_DP, trimTo30, saveSong, resetSong, saveDp, resetDp, toMenuVideo, saveMenuVideo, saveMenuImage, resetMenu } from '../lib/assets.js'
 import { download, ytdlpAvailable } from '../lib/download.js'
 import { splitEmojis } from '../lib/chgroup.js'
 
@@ -116,6 +116,32 @@ export default [
       else return ctx.reply(`📸 Kisi photo pe reply karo *${ctx.prefix}setdp*\nOriginal AQDAS DP wapas: *${ctx.prefix}setdp reset*`)
       await ctx.sock.updateProfilePicture(ctx.sock.user.id.split(':')[0] + '@s.whatsapp.net', buf)
       await ctx.reply('✅ Bot ka DP + menu photo update ho gaya')
+    }
+  },
+  {
+    name: 'setmenu', alias: ['setmenuvideo', 'setmenupic'], category: 'owner', owner: true, usage: '(video/gif/photo pe reply) / reset / dp', desc: 'Menu ki video (motion) ya photo badlo',
+    async run (ctx) {
+      const a = (ctx.args[0] || '').toLowerCase()
+      if (a === 'reset') { await resetMenu(); ctx.settings.set('menuDp', false); return ctx.reply('✅ Original AQDAS MD motion menu wapas lag gaya') }
+      if (a === 'dp' || a === 'photo') { ctx.settings.set('menuDp', true); return ctx.reply(`✅ Ab menu pe DP photo aayegi. Motion wapas: *${ctx.prefix}setmenu reset*`) }
+      const isGifDoc = ctx.targetType === 'documentMessage'
+      if (ctx.targetType === 'videoMessage' || isGifDoc) {
+        await ctx.react('⏳')
+        const src = await ctx.download()
+        let mp4
+        try { mp4 = await toMenuVideo(src) } catch (e) { return ctx.reply('❌ Ye video convert nahi hui. Koi aur video/GIF try karo.') }
+        await saveMenuVideo(mp4)
+        ctx.settings.set('menuDp', false)
+        await ctx.reply({ video: mp4, gifPlayback: true, mimetype: 'video/mp4', caption: '✅ Naya menu motion save. Ab .menu pe yahi chalega.' })
+        return
+      }
+      if (ctx.targetType === 'imageMessage') {
+        const jpg = await ctx.download()
+        await saveMenuImage(jpg)
+        ctx.settings.set('menuDp', false)
+        return ctx.reply('✅ Naya menu photo save. Ab .menu pe yahi aayegi.')
+      }
+      return ctx.reply(`🎬 Kisi video/GIF ya photo pe reply karo *${ctx.prefix}setmenu*\nOriginal motion wapas: *${ctx.prefix}setmenu reset*\nSirf DP photo: *${ctx.prefix}setmenu dp*`)
     }
   },
   {

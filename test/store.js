@@ -174,6 +174,35 @@ await t('.setsong reset / .setdp reset -> removed from branch, stays reset after
   assert.equal(runAs(GSID, () => dpPath()), ORIGINAL_DP)
 })
 
+await t('.setmenu video on panel number -> pushed encrypted, survives RESTART, .menu sends it as gif; reset removes it', async () => {
+  fs.mkdirSync('./tmp-store-data', { recursive: true })
+  await run('ffmpeg', ['-y', '-f', 'lavfi', '-i', 'testsrc2=size=640x360:rate=25', '-t', '5', '-pix_fmt', 'yuv420p', './tmp-store-data/v.mp4'])
+  const VID = fs.readFileSync('./tmp-store-data/v.mp4'); fs.rmSync('./tmp-store-data/v.mp4')
+  const sock = mockSock(); const bot = mockBot(sock, GSID)
+  const n = repo.size
+  await runAs(GSID, async () => { const ctx = await buildCtx(bot, reply('.setmenu', { videoMessage: { mimetype: 'video/mp4' } })); ctx.download = async () => VID; await dispatch(ctx) })
+  assert.ok(fs.existsSync(path.join(guestDir, 'menu_media.mp4')), 'menu video not in guest dir')
+  assert.ok(!fs.existsSync(path.join(settings.dir('main'), 'menu_media.mp4')), 'leaked into main')
+  assert.equal(repo.size, n + 1, 'asset file not pushed')
+  const mine = fs.readFileSync(path.join(guestDir, 'menu_media.mp4'))
+  for (const [, b] of repo) assert.ok(!b.includes(mine.subarray(2000, 2040).toString('base64')), 'plaintext video on branch')
+  wipe(); settings._reset() // 6h restart
+  const saved = await store.loadAll()
+  const g = saved.find(s => s.sid === GSID)
+  assert.ok(g.assets && g.assets['menu_media.mp4'], 'menu video not in store')
+  manager.restoreAssets(GSID, g.assets)
+  assert.ok(Buffer.compare(fs.readFileSync(path.join(guestDir, 'menu_media.mp4')), mine) === 0, 'restored bytes differ')
+  const s2 = mockSock(); const b2 = mockBot(s2, GSID)
+  await runAs(GSID, async () => { await handleMessage(b2, { key: { remoteJid: OWNER, id: 'MV' }, message: { conversation: '.menu' } }) })
+  const v = s2.sent.find(s => s.content?.video)
+  assert.ok(v && v.content.gifPlayback && Buffer.compare(v.content.video, mine) === 0, '.menu did not send custom video after restart')
+  await runAs(GSID, async () => { await handleMessage(b2, { key: { remoteJid: OWNER, id: 'MR' }, message: { conversation: '.setmenu reset' } }) })
+  assert.equal(repo.size, n, 'asset file not deleted after reset')
+  wipe(); settings._reset()
+  const again = (await store.loadAll()).find(s => s.sid === GSID)
+  assert.ok(!again.assets, 'reset did not stick')
+})
+
 await t('settings toggle -> session file re-saved soon (touch)', async () => {
   const before = sha(repo.get([...repo.keys()].find(k => repo.get(k).length < 10000)))
   store.scheduleSave(GSID, () => ({ number: GUEST_NUMBER, files: { 'creds.json': 'e30=' }, settings: settings.exportFor(GSID) }), 60000)
