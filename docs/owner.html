@@ -113,7 +113,7 @@ async function tick(){
     const age=(Date.now()-new Date(s.updated_at))/1000;
     const online=s.status!=='offline'&&age<STALE_S;
     $('when').textContent='Last update: '+pkt(s.updated_at)+' ('+ago(s.updated_at)+')';
-    const pu=(online&&s.panel_url&&/^https:\/\/[a-z0-9-]+\.trycloudflare\.com$/.test(s.panel_url))?s.panel_url:null;
+    const pu=(online&&s.panel_url&&/^https:\/\/([a-z0-9-]+\.trycloudflare\.com|[a-z0-9-]+\.up\.railway\.app)$/.test(s.panel_url))?s.panel_url:null;
     $('panelBtn').classList.toggle('hide',!pu);if(pu)$('panelBtn').href=pu;
     $('fastPanel').classList.toggle('hide',!pu);$('fastHint').classList.toggle('hide',!pu);if(pu)$('fastPanel').href=pu+'/admin';
     if(online){badge('on','🟢 ONLINE');$('why').classList.add('hide')}

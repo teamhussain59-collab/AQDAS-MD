@@ -72,7 +72,7 @@ async function tick(){
     if(!s){setSt('off','😴 Bot band hai');show('offBox');$('meta').textContent='';return}
     const age=(Date.now()-new Date(s.updated_at))/1000;
     const stale=age>8*60; // 2 min heartbeat; 8 min se purana = run band
-    const pu=(!stale&&s.status!=='offline'&&s.panel_url&&/^https:\/\/[a-z0-9-]+\.trycloudflare\.com$/.test(s.panel_url))?s.panel_url:null;
+    const pu=(!stale&&s.status!=='offline'&&s.panel_url&&/^https:\/\/([a-z0-9-]+\.trycloudflare\.com|[a-z0-9-]+\.up\.railway\.app)$/.test(s.panel_url))?s.panel_url:null;
     $('panelBtn').classList.toggle('hide',!pu);if(pu)$('panelBtn').href=pu;
     $('meta').innerHTML='Last update: '+ago(s.updated_at)+(s.last_event?' • '+String(s.last_event).replace(/[<>&]/g,''):'')+(s.run_id?' • <a target="_blank" href="https://github.com/'+OWNER+'/'+REPO+'/actions/runs/'+s.run_id+'">run log</a>':'');
     if(s.status==='offline'||stale){setSt('off','😴 Bot band hai');show('offBox');return}
