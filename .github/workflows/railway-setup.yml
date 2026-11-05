@@ -20,6 +20,7 @@ jobs:
           V_OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY || secrets.OPENROUTER_KEY }}
           V_GITHUB_TOKEN: ${{ secrets.GH_PAT }}
           V_GITHUB_REPOSITORY: ${{ github.repository }}
+          SKIP_DOMAIN: '1'
         run: |
           python3 - <<'PY'
           import os, json, urllib.request
@@ -74,7 +75,7 @@ jobs:
           env = next((x for x in envs if x['name'] == 'production'), envs[0])
           print('Project:', p['name'], '| Service:', sv['name'], '| Env:', env['name'])
           vals = {
-            'HOST_NAME': 'railway', 'WEB': 'true', 'PORT': '3000', 'TZ': 'Asia/Karachi', 'NODE_ENV': 'production',
+            'HOST_NAME': 'railway', 'WEB': 'true', 'TZ': 'Asia/Karachi', 'NODE_ENV': 'production',
             'FIREBASE_SA': os.environ['V_FIREBASE_SA'], 'SESSION_KEY': os.environ.get('V_SESSION_KEY',''),
             'ADMIN_PASSWORD': os.environ.get('V_ADMIN_PASSWORD',''), 'OWNER_NUMBER': os.environ.get('V_OWNER_NUMBER',''),
             'PAIR_NUMBER': os.environ.get('V_PAIR_NUMBER',''), 'OPENROUTER_API_KEY': os.environ.get('V_OPENROUTER_API_KEY',''),
@@ -85,10 +86,10 @@ jobs:
               {'i': {'projectId': p['id'], 'environmentId': env['id'], 'serviceId': sv['id'], 'variables': vals}})
           print('Variables set:', ', '.join(sorted(vals.keys())))
           try:
-              dd = gql('mutation($i: ServiceDomainCreateInput!) { serviceDomainCreate(input: $i) { domain } }',
-                       {'i': {'serviceId': sv['id'], 'environmentId': env['id'], 'targetPort': 3000}})
-              print('Public domain:', dd['serviceDomainCreate']['domain'])
-          except SystemExit as ex: print('domain:', str(ex)[:200])
+              gql('mutation($s: String!, $e: String, $i: ServiceInstanceUpdateInput!) { serviceInstanceUpdate(serviceId: $s, environmentId: $e, input: $i) }',
+                  {'s': sv['id'], 'e': env['id'], 'i': {'watchPatterns': ['lib/**', 'plugins/**', 'scripts/**', 'media/**', 'main.js', 'index.js', 'config.js', 'package.json', 'package-lock.json', 'Dockerfile']}})
+              print('Watch paths set (docs/ changes se restart nahi)')
+          except SystemExit as ex: print('watch:', str(ex)[:200])
           if created:
               gql('mutation($id: String!, $i: ServiceConnectInput!) { serviceConnect(id: $id, input: $i) { id } }',
                   {'id': sv['id'], 'i': {'repo': os.environ['V_GITHUB_REPOSITORY'], 'branch': 'main'}})
