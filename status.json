@@ -34,6 +34,11 @@
       "number": "********7157",
       "state": "connected",
       "autostatus": "off"
+    },
+    {
+      "number": "********2128",
+      "state": "pairing",
+      "autostatus": "off"
     }
   ],
   "guest_log": [
@@ -58,7 +63,14 @@
     "11:43:14 ********2128: connection close 401 Stream Errored (conflict)",
     "11:43:14 ********2128: logged out"
   ],
-  "guest_frames": null,
+  "guest_frames": {
+    "number": "********2128",
+    "state": "pairing",
+    "frames": [
+      "11:45:15 iq:set <pair-device>",
+      "11:45:15 iq:result <link_code_companion_reg[companion_hello]>"
+    ]
+  },
   "mem": {
     "sessions": 6,
     "free_mb": 112509,
@@ -77,6 +89,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-05T11:43:53.908Z",
-  "uptime_s": 3606
+  "updated_at": "2026-11-05T11:45:19.720Z",
+  "uptime_s": 3691
 }
