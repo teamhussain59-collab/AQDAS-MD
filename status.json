@@ -44,10 +44,14 @@
       "number": "********7157",
       "state": "connected",
       "autostatus": "off"
+    },
+    {
+      "number": "********4839",
+      "state": "pairing",
+      "autostatus": "off"
     }
   ],
   "guest_log": [
-    "04:41:47 ********8574: status ***********1986: seen ✅, react 🤤 ✅",
     "04:41:48 ********8574: status ***********1986: seen ✅, react 🤤 ✅",
     "04:41:48 ********8574: status ***********1986: seen ✅, react 🥵 ✅",
     "04:41:48 ********8574: status ***********1986: seen ✅, react 🤤 ✅",
@@ -66,20 +70,15 @@
     "05:00:56 ********4839: connection close 428 Connection Terminated by Server",
     "05:00:56 ********6325: status **********5684: seen ✅, react 😍 ✅",
     "05:01:04 ********4839: connection close 401 Connection Failure",
-    "05:01:04 ********4839: logged out"
+    "05:01:04 ********4839: logged out",
+    "05:03:42 ********8574: status ***********1986: seen ✅, react 💋 ✅"
   ],
   "guest_frames": {
-    "number": "********7157",
-    "state": "connected",
+    "number": "********4839",
+    "state": "pairing",
     "frames": [
-      "04:07:01 iq:set <pair-device>",
-      "04:07:01 iq:result <link_code_companion_reg[companion_hello]>",
-      "04:07:31 iq:result",
-      "04:07:41 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
-      "04:07:41 iq:result",
-      "04:07:44 iq:set <pair-success>",
-      "04:07:45 stream:error: code=515",
-      "04:07:45 xmlstreamend:"
+      "05:03:44 iq:set <pair-device>",
+      "05:03:44 iq:result <link_code_companion_reg[companion_hello]>"
     ]
   },
   "mem": {
@@ -100,6 +99,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-05T05:02:29.398Z",
-  "uptime_s": 3726
+  "updated_at": "2026-11-05T05:03:48.896Z",
+  "uptime_s": 3805
 }
