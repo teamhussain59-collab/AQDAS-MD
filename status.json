@@ -47,7 +47,6 @@
     }
   ],
   "guest_log": [
-    "11:24:00 ********6325: CONNECTED ✅",
     "11:31:55 ********8919: code bana",
     "11:34:33 *******2140: code bana",
     "11:35:20 ********8919: connection close 428 Connection Terminated by Server",
@@ -66,14 +65,16 @@
     "11:45:20 ********2128: code bana",
     "11:45:36 ********2128: LINKING (phone ne code accept kiya)",
     "11:45:39 ********2128: connection close 515 Stream Errored (restart required)",
-    "11:45:44 ********2128: CONNECTED ✅"
+    "11:45:44 ********2128: CONNECTED ✅",
+    "11:46:26 ********8919: code bana"
   ],
   "guest_frames": {
     "number": "********8919",
     "state": "pairing",
     "frames": [
       "11:46:21 iq:set <pair-device>",
-      "11:46:21 iq:result <link_code_companion_reg[companion_hello]>"
+      "11:46:21 iq:result <link_code_companion_reg[companion_hello]>",
+      "11:46:25 notification:link_code_companion_reg <link_code_companion_reg[refresh_code]>"
     ]
   },
   "mem": {
@@ -94,6 +95,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-05T11:46:25.464Z",
-  "uptime_s": 3757
+  "updated_at": "2026-11-05T11:46:30.232Z",
+  "uptime_s": 3762
 }
