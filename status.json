@@ -47,7 +47,6 @@
     }
   ],
   "guest_log": [
-    "11:31:55 ********8919: code bana",
     "11:34:33 *******2140: code bana",
     "11:35:20 ********8919: connection close 428 Connection Terminated by Server",
     "11:35:20 ********8919: expired / closed (code 428)",
@@ -66,7 +65,8 @@
     "11:45:36 ********2128: LINKING (phone ne code accept kiya)",
     "11:45:39 ********2128: connection close 515 Stream Errored (restart required)",
     "11:45:44 ********2128: CONNECTED ✅",
-    "11:46:26 ********8919: code bana"
+    "11:46:26 ********8919: code bana",
+    "11:47:13 ********8574: status ***********4278: seen ✅, react 💋 ✅"
   ],
   "guest_frames": {
     "number": "********8919",
@@ -96,6 +96,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-05T11:46:55.121Z",
-  "uptime_s": 3787
+  "updated_at": "2026-11-05T11:47:17.899Z",
+  "uptime_s": 3810
 }
