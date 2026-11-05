@@ -58,7 +58,17 @@ jobs:
                   sv = s['node']
                   score = 2 if 'aqdas' in (sv['name'] + p['name']).lower() else 1
                   if not best or score > best[0]: best = (score, p, sv)
-          if not best: raise SystemExit('Railway pe koi project/service nahi mila — pehle repo deploy karo')
+          created = False
+          if not best:
+              if not edges: raise SystemExit('Railway pe koi project nahi mila — pehle repo deploy karo')
+              p = edges[0]['node']
+              print('Project mein service nahi — nayi service bana raha hoon:', p['name'])
+              envs0 = [x['node'] for x in p['environments']['edges']]
+              env0 = next((x for x in envs0 if x['name'] == 'production'), envs0[0])
+              sd = gql('mutation($i: ServiceCreateInput!) { serviceCreate(input: $i) { id name } }',
+                       {'i': {'projectId': p['id'], 'name': 'AQDAS-MD', 'environmentId': env0['id']}})
+              sv = sd['serviceCreate']; created = True
+              best = (1, p, sv)
           _, p, sv = best
           envs = [x['node'] for x in p['environments']['edges']]
           env = next((x for x in envs if x['name'] == 'production'), envs[0])
@@ -74,4 +84,13 @@ jobs:
           gql('mutation($i: VariableCollectionUpsertInput!) { variableCollectionUpsert(input: $i) }',
               {'i': {'projectId': p['id'], 'environmentId': env['id'], 'serviceId': sv['id'], 'variables': vals}})
           print('Variables set:', ', '.join(sorted(vals.keys())))
+          if created:
+              gql('mutation($id: String!, $i: ServiceConnectInput!) { serviceConnect(id: $id, input: $i) { id } }',
+                  {'id': sv['id'], 'i': {'repo': os.environ['V_GITHUB_REPOSITORY'], 'branch': 'main'}})
+              print('Repo connected — Railway deploy shuru')
+          else:
+              try:
+                  gql('mutation($s: String!, $e: String!) { serviceInstanceRedeploy(serviceId: $s, environmentId: $e) }', {'s': sv['id'], 'e': env['id']})
+                  print('Redeploy shuru')
+              except SystemExit as ex: print('redeploy:', str(ex)[:200])
           PY
