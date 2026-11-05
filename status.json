@@ -52,7 +52,6 @@
     }
   ],
   "guest_log": [
-    "04:57:31 ********4839: code bana",
     "04:57:53 ********4839: LINKING (phone ne code accept kiya)",
     "04:59:30 ********8574: status ***********8298: seen ✅, react 🤤 ✅",
     "05:00:56 ********4839: connection close 428 Connection Terminated by Server",
@@ -71,7 +70,8 @@
     "05:09:06 ********8574: status ***********9024: seen ✅, react 🤤 ✅",
     "05:10:14 ********8574: status ***********1525: seen ✅, react 🥵 ✅",
     "05:10:58 ********8574: status ***********9024: seen ✅, react 🥵 ✅",
-    "05:11:21 ********8574: status ***********9024: seen ✅, react 💋 ✅"
+    "05:11:21 ********8574: status ***********9024: seen ✅, react 💋 ✅",
+    "05:11:33 ********8574: status ***********9024: seen ✅, react 🥵 ✅"
   ],
   "guest_frames": {
     "number": "********4839",
@@ -105,6 +105,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-05T05:11:25.555Z",
-  "uptime_s": 4262
+  "updated_at": "2026-11-05T05:11:37.772Z",
+  "uptime_s": 4274
 }
