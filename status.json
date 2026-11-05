@@ -7,6 +7,8 @@
   "run_id": null,
   "panel_url": "https://aqdas-md-production.up.railway.app",
   "panel_at": "2026-11-05T03:43:09.330Z",
-  "updated_at": "2026-11-05T03:43:09.330Z",
-  "uptime_s": 125
+  "slots_max": "unlimited",
+  "commands": 569,
+  "updated_at": "2026-11-05T03:43:11.123Z",
+  "uptime_s": 127
 }
