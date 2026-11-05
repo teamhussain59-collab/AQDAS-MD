@@ -54,6 +54,8 @@ if (GH_ON) {
 
 if (config.web) await startWeb(bot, config.port, multi ? manager : null)
 if (process.env.TUNNEL === 'cloudflared' && config.web) startTunnel(config.port)
+// Railway: public domain hi panel link hai (tunnel ki zaroorat nahi)
+if (config.web && process.env.RAILWAY_PUBLIC_DOMAIN) setExtra({ panel_url: 'https://' + process.env.RAILWAY_PUBLIC_DOMAIN, panel_at: new Date().toISOString() })
 if (multi) setExtra({ slots_max: 'unlimited' })
 
 // main bot: tab hi chalao jab number / session ho (warna sirf extra numbers)
