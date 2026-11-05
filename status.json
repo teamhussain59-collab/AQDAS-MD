@@ -57,8 +57,6 @@
     }
   ],
   "guest_log": [
-    "11:03:45 ********8574: connection close 503 Stream Errored (unknown)",
-    "11:03:50 ********8574: CONNECTED ✅",
     "11:04:47 ********8574: status **********7533: seen ✅, react 🤤 ✅",
     "11:09:01 ********8574: status ***********1986: seen ✅, react 🤤 ✅",
     "11:10:43 ********8574: status **********7533: seen ✅, react 🤤 ✅",
@@ -76,17 +74,17 @@
     "11:36:46 ********8574: status ***********1986: seen ✅, react 🥵 ✅",
     "11:39:26 ********8574: status ***********4278: seen ✅, react 🤤 ✅",
     "11:39:30 *******2140: connection close 428 Connection Terminated by Server",
-    "11:39:30 *******2140: expired / closed (code 428)"
+    "11:39:30 *******2140: expired / closed (code 428)",
+    "11:39:31 qr: connection close 428 Connection Terminated by Server",
+    "11:39:31 qr: expired / closed (code 428)"
   ],
   "guest_frames": {
-    "number": "*******2140",
+    "number": "",
     "state": "expired",
     "frames": [
-      "11:36:00 iq:set <pair-device>",
-      "11:36:00 iq:result <link_code_companion_reg[companion_hello]>",
+      "11:36:01 iq:set <pair-device>",
       "11:36:30 iq:result",
       "11:37:00 iq:result",
-      "11:37:30 iq:get",
       "11:37:30 iq:result",
       "11:38:00 iq:result",
       "11:38:30 iq:result",
@@ -112,6 +110,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-05T11:39:30.169Z",
-  "uptime_s": 3342
+  "updated_at": "2026-11-05T11:39:31.075Z",
+  "uptime_s": 3343
 }
