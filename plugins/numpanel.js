@@ -1,3 +1,4 @@
+import { kvGet, kvSet } from '../lib/hostlock.js'
 // NumberPanel (numberpanel.tech) — temp number + OTP
 // .setnumkey <key>  (owner, apne bot ki chat mein)  → API key save
 // .getnum [country] → naya WhatsApp number (20 min)
@@ -13,7 +14,11 @@ const active = new Map() // senderJid -> { number, at, timer }
 const TTL = 20 * 60 * 1000
 
 // Key ek dafa kisi bhi owner number pe daalo -> sab linked numbers (sab users) ke liye chalegi
+let cloudKey = null
+kvGet('numpanel_key').then(v => { if (v) cloudKey = v }).catch(() => {})
+setInterval(() => kvGet('numpanel_key').then(v => { if (v) cloudKey = v }).catch(() => {}), 10 * 60000).unref?.()
 function keyOf (ctx) {
+  if (cloudKey) return cloudKey
   try { const k = ctx.settings.get('npKey'); if (k) return k } catch {}
   try { const k = settingsMod.load('main').npKey; if (k) return k } catch {}
   try {
@@ -110,6 +115,8 @@ export default [
       const k = (ctx.args[0] || '').trim()
       if (!k) return ctx.reply(`Likho: *${ctx.prefix}setnumkey YOUR_KEY*`)
       ctx.settings.set('npKey', k)
+      cloudKey = k
+      try { await kvSet('numpanel_key', k) } catch {}
       try { const m = settingsMod.load('main'); m.npKey = k; settingsMod.save('main') } catch {}
       try { await ctx.sock.sendMessage(ctx.jid, { delete: ctx.msg.key }) } catch {}
       await ctx.reply('✅ Number Panel API key save ho gayi (message delete kar diya). Ab sab numbers pe .getnum chalega.')
