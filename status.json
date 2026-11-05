@@ -42,7 +42,6 @@
     }
   ],
   "guest_log": [
-    "11:39:30 *******2140: connection close 428 Connection Terminated by Server",
     "11:39:30 *******2140: expired / closed (code 428)",
     "11:39:31 qr: connection close 428 Connection Terminated by Server",
     "11:39:31 qr: expired / closed (code 428)",
@@ -61,7 +60,8 @@
     "11:52:15 ********8574: status ***********1986: seen ✅, react 🥵 ✅",
     "11:55:34 ********8574: status ***********1525: seen ✅, react 🥵 ✅",
     "12:03:29 ********8574: status ***********9024: seen ✅, react 💋 ✅",
-    "12:04:38 ********8574: status ***********1986: seen ✅, react 🤤 ✅"
+    "12:04:38 ********8574: status ***********1986: seen ✅, react 🤤 ✅",
+    "12:06:43 ********8574: status **********7533: seen ✅, react 💋 ✅"
   ],
   "guest_frames": {
     "number": "********2128",
@@ -94,6 +94,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-05T12:05:54.849Z",
-  "uptime_s": 4927
+  "updated_at": "2026-11-05T12:06:47.466Z",
+  "uptime_s": 4979
 }
