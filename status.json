@@ -44,11 +44,6 @@
       "number": "********7157",
       "state": "connected",
       "autostatus": "off"
-    },
-    {
-      "number": "********7825",
-      "state": "pairing",
-      "autostatus": "off"
     }
   ],
   "guest_log": [
@@ -73,23 +68,7 @@
     "10:20:54 ********7825: connection close 428 Connection Terminated by Server",
     "10:20:54 ********7825: expired / closed (code 428)"
   ],
-  "guest_frames": {
-    "number": "********7825",
-    "state": "expired",
-    "frames": [
-      "10:17:24 iq:set <pair-device>",
-      "10:17:24 iq:result <link_code_companion_reg[companion_hello]>",
-      "10:17:54 iq:result",
-      "10:18:24 iq:result",
-      "10:18:54 iq:result",
-      "10:19:24 iq:result",
-      "10:19:54 iq:get",
-      "10:19:54 iq:result",
-      "10:20:24 iq:get",
-      "10:20:24 iq:result",
-      "10:20:54 xmlstreamend:"
-    ]
-  },
+  "guest_frames": null,
   "mem": {
     "sessions": 8,
     "free_mb": 101524,
@@ -108,6 +87,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-05T10:20:54.274Z",
-  "uptime_s": 10101
+  "updated_at": "2026-11-05T10:20:58.274Z",
+  "uptime_s": 10105
 }
