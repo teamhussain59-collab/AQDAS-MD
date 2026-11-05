@@ -47,15 +47,11 @@
     },
     {
       "number": "********4197",
-      "state": "pairing",
+      "state": "connected",
       "autostatus": "off"
     }
   ],
   "guest_log": [
-    "08:06:02 ********8574: status ***********1986: seen ✅, react 🤤 ✅",
-    "08:06:03 ********8574: status ***********1986: seen ✅, react 🤤 ✅",
-    "08:08:03 ********6325: status ***********1276: seen ✅, react 🥺 ✅",
-    "08:09:45 ********6325: status ***********1803: seen ✅, react 🙂 ✅",
     "08:10:15 ********8574: status ***********9024: seen ✅, react 🤤 ✅",
     "08:10:15 ********8574: status ***********1986: seen ✅, react 🥵 ✅",
     "08:10:15 ********8574: status ***********1986: seen ✅, react 🥵 ✅",
@@ -71,14 +67,23 @@
     "08:18:19 ********8574: status ***********1525: seen ✅, react 🥵 ✅",
     "08:18:19 ********8574: status ***********1525: seen ✅, react 💋 ✅",
     "08:18:28 ********8574: status ***********4661: seen ✅, react 🥵 ✅",
-    "08:21:10 ********4197: code bana"
+    "08:21:10 ********4197: code bana",
+    "08:21:21 ********4197: LINKING (phone ne code accept kiya)",
+    "08:21:21 ********6325: status ***********1276: seen ✅, react 😍 ✅",
+    "08:21:23 ********4197: connection close 515 Stream Errored (restart required)",
+    "08:21:27 ********4197: CONNECTED ✅"
   ],
   "guest_frames": {
     "number": "********4197",
-    "state": "pairing",
+    "state": "connected",
     "frames": [
       "08:21:05 iq:set <pair-device>",
-      "08:21:05 iq:result <link_code_companion_reg[companion_hello]>"
+      "08:21:05 iq:result <link_code_companion_reg[companion_hello]>",
+      "08:21:21 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
+      "08:21:21 iq:result",
+      "08:21:23 iq:set <pair-success>",
+      "08:21:23 stream:error: code=515",
+      "08:21:23 xmlstreamend:"
     ]
   },
   "mem": {
@@ -99,6 +104,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-05T08:21:14.582Z",
-  "uptime_s": 2922
+  "updated_at": "2026-11-05T08:21:31.658Z",
+  "uptime_s": 2939
 }
