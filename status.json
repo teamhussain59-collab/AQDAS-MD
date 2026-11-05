@@ -45,7 +45,6 @@
     }
   ],
   "guest_log": [
-    "03:09:14 ********1805: LINKING (phone ne code accept kiya)",
     "03:09:14 ********5182: LINKING (phone ne code accept kiya)",
     "03:09:14 ********1805: CONNECTED ✅",
     "03:09:14 ********7324: CONNECTED ✅",
@@ -64,7 +63,8 @@
     "03:16:22 ********8574: status **********2520: seen ✅, react 🤤 ✅",
     "03:16:24 ********4197: connection close 401 Stream Errored (conflict)",
     "03:16:24 ********4197: logged out",
-    "03:21:23 ********8574: status **********2520: seen ✅, react 🥵 ✅"
+    "03:21:23 ********8574: status **********2520: seen ✅, react 🥵 ✅",
+    "03:34:26 ********8574: status ***********1986: seen ✅, react 🥵 ✅"
   ],
   "guest_frames": null,
   "mem": {
@@ -85,6 +85,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-05T03:34:11.645Z",
-  "uptime_s": 1627
+  "updated_at": "2026-11-05T03:34:31.105Z",
+  "uptime_s": 1647
 }
