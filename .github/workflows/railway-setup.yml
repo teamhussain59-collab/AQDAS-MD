@@ -33,9 +33,26 @@ jobs:
               j = json.loads(urllib.request.urlopen(req, timeout=30).read())
               if j.get('errors'): raise SystemExit('Railway API error: ' + '; '.join(e.get('message','') for e in j['errors']))
               return j['data']
-          d = gql('{ projects { edges { node { id name services { edges { node { id name } } } environments { edges { node { id name } } } } } } }')
+          PQ = 'edges { node { id name services { edges { node { id name } } } environments { edges { node { id name } } } } }'
+          def tryq(q, v=None):
+              try: return gql(q, v)
+              except SystemExit as ex: print('try:', str(ex)[:160]); return None
+              except Exception as ex: print('try:', type(ex).__name__, str(ex)[:160]); return None
+          edges = []
+          d = tryq('{ projects { ' + PQ + ' } }')
+          if d: edges += d['projects']['edges']
+          ws = []
+          d = tryq('{ me { workspaces { id name } } }')
+          if d: ws += d['me'].get('workspaces') or []
+          d = tryq('{ me { teams { edges { node { id name } } } } }')
+          if d: ws += [x['node'] for x in d['me']['teams']['edges']]
+          print('workspaces found:', len(ws))
+          for w in ws:
+              d = tryq('query($w: String!) { projects(workspaceId: $w) { ' + PQ + ' } }', {'w': w['id']}) or tryq('query($w: String!) { projects(teamId: $w) { ' + PQ + ' } }', {'w': w['id']})
+              if d: edges += d['projects']['edges']
+          print('projects found:', [e['node']['name'] for e in edges])
           best = None
-          for e in d['projects']['edges']:
+          for e in edges:
               p = e['node']
               for s in p['services']['edges']:
                   sv = s['node']
