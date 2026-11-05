@@ -42,7 +42,6 @@
     }
   ],
   "guest_log": [
-    "11:17:48 ********5182: connection close 428 Connection Terminated",
     "11:17:52 ********5182: CONNECTED ✅",
     "11:23:46 ********8574: status **********2742: seen ✅, react 💋 ✅",
     "11:23:58 ********6325: connection close 428 Connection Terminated",
@@ -61,7 +60,8 @@
     "11:39:48 qr: connection close 428 Connection Terminated by Server",
     "11:39:48 qr: expired / closed (code 428)",
     "11:43:14 ********2128: connection close 401 Stream Errored (conflict)",
-    "11:43:14 ********2128: logged out"
+    "11:43:14 ********2128: logged out",
+    "11:45:20 ********2128: code bana"
   ],
   "guest_frames": {
     "number": "********2128",
@@ -89,6 +89,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-05T11:45:19.720Z",
-  "uptime_s": 3691
+  "updated_at": "2026-11-05T11:45:24.583Z",
+  "uptime_s": 3696
 }
