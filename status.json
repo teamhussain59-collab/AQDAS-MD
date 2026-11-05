@@ -1,102 +1,14 @@
 {
-  "status": "idle",
+  "status": "offline",
   "code": null,
+  "qr": null,
+  "qr_at": null,
   "code_at": null,
+  "next_at": null,
   "last_event": null,
   "number_masked": null,
   "run_id": null,
-  "slots_max": "unlimited",
-  "commands": 569,
-  "linked": [
-    {
-      "number": "********7324",
-      "state": "connected",
-      "autostatus": "off"
-    },
-    {
-      "number": "********5182",
-      "state": "connected",
-      "autostatus": "off"
-    },
-    {
-      "number": "********8574",
-      "state": "connected",
-      "autostatus": "view+react"
-    },
-    {
-      "number": "********1805",
-      "state": "connected",
-      "autostatus": "off"
-    },
-    {
-      "number": "********6325",
-      "state": "connected",
-      "autostatus": "view+react"
-    },
-    {
-      "number": "********2128",
-      "state": "connected",
-      "autostatus": "off"
-    },
-    {
-      "number": "********7157",
-      "state": "connected",
-      "autostatus": "off"
-    }
-  ],
-  "guest_log": [
-    "03:09:16 ********7157: CONNECTED ✅",
-    "03:11:49 ********8574: status **********2520: seen ✅, react 🤤 ✅",
-    "03:15:27 ********4197: code bana",
-    "03:15:38 ********4197: LINKING (phone ne code accept kiya)",
-    "03:15:42 ********4197: connection close 515 Stream Errored (restart required)",
-    "03:15:46 ********4197: CONNECTED ✅",
-    "03:16:22 ********8574: status **********2520: seen ✅, react 🤤 ✅",
-    "03:16:24 ********4197: connection close 401 Stream Errored (conflict)",
-    "03:16:24 ********4197: logged out",
-    "03:21:23 ********8574: status **********2520: seen ✅, react 🥵 ✅",
-    "03:34:26 ********8574: status ***********1986: seen ✅, react 🥵 ✅",
-    "03:35:08 ********7157: connection close 401 Stream Errored (conflict)",
-    "03:35:08 ********7157: logged out",
-    "03:38:10 ********7157: code bana",
-    "03:38:21 ********7157: LINKING (phone ne code accept kiya)",
-    "03:38:25 ********7157: connection close 515 Stream Errored (restart required)",
-    "03:38:30 ********7157: CONNECTED ✅",
-    "03:39:20 ********8574: status **********2520: seen ✅, react 💋 ✅",
-    "03:39:30 ********6325: connection close 428 Connection Terminated",
-    "03:39:32 ********6325: CONNECTED ✅"
-  ],
-  "guest_frames": {
-    "number": "********7157",
-    "state": "connected",
-    "frames": [
-      "03:38:05 iq:set <pair-device>",
-      "03:38:05 iq:result <link_code_companion_reg[companion_hello]>",
-      "03:38:21 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
-      "03:38:21 iq:result",
-      "03:38:23 iq:set <pair-success>",
-      "03:38:25 stream:error: code=515",
-      "03:38:25 xmlstreamend:"
-    ]
-  },
-  "mem": {
-    "sessions": 7,
-    "free_mb": 118909,
-    "total_mb": 393439,
-    "rss_mb": 247,
-    "heap_mb": 81,
-    "heap_limit_mb": 489,
-    "per_session_mb": 15,
-    "room_for": 33
-  },
-  "channel": {
-    "ok": true,
-    "name": "AQDAS TECH",
-    "latest_post": 110,
-    "auto": true,
-    "opted_in": 3,
-    "fetch": "updates err channel posts timeout | messages:messages:10"
-  },
-  "updated_at": "2026-11-05T03:39:36.899Z",
-  "uptime_s": 1952
+  "panel_url": null,
+  "updated_at": "2026-11-05T03:41:10.944Z",
+  "uptime_s": 2
 }
