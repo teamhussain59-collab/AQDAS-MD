@@ -44,6 +44,11 @@
       "number": "********8919",
       "state": "pairing",
       "autostatus": "off"
+    },
+    {
+      "number": "*******2140",
+      "state": "pairing",
+      "autostatus": "off"
     }
   ],
   "guest_log": [
@@ -69,17 +74,11 @@
     "11:31:55 ********8919: code bana"
   ],
   "guest_frames": {
-    "number": "********8919",
+    "number": "*******2140",
     "state": "pairing",
     "frames": [
-      "11:31:50 iq:set <pair-device>",
-      "11:31:50 iq:result <link_code_companion_reg[companion_hello]>",
-      "11:31:52 notification:link_code_companion_reg <link_code_companion_reg[refresh_code]>",
-      "11:32:20 iq:result",
-      "11:32:50 iq:result",
-      "11:33:20 iq:result",
-      "11:33:50 iq:result",
-      "11:34:20 iq:result"
+      "11:34:28 iq:set <pair-device>",
+      "11:34:29 iq:result <link_code_companion_reg[companion_hello]>"
     ]
   },
   "mem": {
@@ -100,6 +99,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-05T11:34:24.303Z",
-  "uptime_s": 3036
+  "updated_at": "2026-11-05T11:34:33.705Z",
+  "uptime_s": 3045
 }
