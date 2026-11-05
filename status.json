@@ -49,6 +49,11 @@
       "number": "qr",
       "state": "pairing",
       "autostatus": "off"
+    },
+    {
+      "number": "qr",
+      "state": "pairing",
+      "autostatus": "off"
     }
   ],
   "guest_log": [
@@ -77,7 +82,7 @@
     "number": "",
     "state": "pairing",
     "frames": [
-      "11:36:01 iq:set <pair-device>"
+      "11:36:18 iq:set <pair-device>"
     ]
   },
   "mem": {
@@ -98,6 +103,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-05T11:36:09.166Z",
-  "uptime_s": 3141
+  "updated_at": "2026-11-05T11:36:22.296Z",
+  "uptime_s": 3154
 }
