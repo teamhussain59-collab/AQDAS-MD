@@ -47,10 +47,6 @@
     }
   ],
   "guest_log": [
-    "22:53:39 ********7157: CONNECTED ✅",
-    "23:01:14 ********2128: connection close 428 Connection Terminated",
-    "23:01:17 ********2128: CONNECTED ✅",
-    "23:02:05 ********5182: connection close 503 Stream Errored (unknown)",
     "23:02:08 ********5182: CONNECTED ✅",
     "23:02:14 ********7324: connection close 503 Stream Errored (unknown)",
     "23:02:16 ********7324: CONNECTED ✅",
@@ -66,7 +62,11 @@
     "23:20:31 ********7324: connection close 428 Connection Terminated",
     "23:20:36 ********7324: CONNECTED ✅",
     "23:20:50 ********2128: connection close 503 Stream Errored (unknown)",
-    "23:20:52 ********2128: CONNECTED ✅"
+    "23:20:52 ********2128: CONNECTED ✅",
+    "23:22:48 ********5634: connection close 503 Stream Errored (unknown)",
+    "23:22:51 ********5634: CONNECTED ✅",
+    "23:24:53 ********5182: connection close 503 Stream Errored (unknown)",
+    "23:24:57 ********5182: CONNECTED ✅"
   ],
   "guest_frames": {
     "number": "********5634",
@@ -84,22 +84,22 @@
   },
   "mem": {
     "sessions": 7,
-    "free_mb": 106809,
+    "free_mb": 104903,
     "total_mb": 330438,
-    "rss_mb": 215,
-    "heap_mb": 78,
+    "rss_mb": 222,
+    "heap_mb": 75,
     "heap_limit_mb": 489,
     "per_session_mb": 15,
-    "room_for": 33
+    "room_for": 34
   },
   "channel": {
     "ok": true,
     "name": "AQDAS TECH",
     "latest_post": 110,
     "auto": true,
-    "opted_in": 3,
+    "opted_in": 2,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-05T23:20:56.741Z",
-  "uptime_s": 45428
+  "updated_at": "2026-11-05T23:25:54.024Z",
+  "uptime_s": 45726
 }
