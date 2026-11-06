@@ -53,9 +53,10 @@
     "09:52:50 ********6325: LINKING (phone ne code accept kiya)",
     "09:52:50 ********5634: CONNECTED ✅",
     "09:52:50 ********7157: CONNECTED ✅",
-    "09:52:50 ********6325: CONNECTED ✅"
+    "09:52:50 ********6325: CONNECTED ✅",
+    "09:52:57 ********8574: status **********7533: seen ✅, react 🥵 ✅"
   ],
   "guest_frames": null,
-  "updated_at": "2026-11-06T09:52:54.846Z",
-  "uptime_s": 133
+  "updated_at": "2026-11-06T09:53:01.419Z",
+  "uptime_s": 139
 }
