@@ -55,7 +55,8 @@
     "10:31:51 ********2128: LINKING (phone ne code accept kiya)",
     "10:31:51 ********2128: CONNECTED ✅",
     "10:31:52 ********8574: status ***********1986: seen ✅, react 🤤 ✅",
-    "10:31:54 ********8574: status ***********1986: seen ✅, react 🤤 ✅"
+    "10:31:54 ********8574: status ***********1986: seen ✅, react 🤤 ✅",
+    "10:32:54 ********8574: status ***********1986: seen ✅, react 🥵 ✅"
   ],
   "guest_frames": null,
   "mem": {
@@ -68,6 +69,6 @@
     "per_session_mb": 15,
     "room_for": 38
   },
-  "updated_at": "2026-11-06T10:32:47.976Z",
-  "uptime_s": 186
+  "updated_at": "2026-11-06T10:32:58.018Z",
+  "uptime_s": 196
 }
