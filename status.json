@@ -1,80 +1,14 @@
 {
-  "status": "idle",
+  "status": "offline",
   "code": null,
+  "qr": null,
+  "qr_at": null,
   "code_at": null,
+  "next_at": null,
   "last_event": null,
   "number_masked": null,
   "run_id": null,
-  "panel_url": "https://aqdas-md-production.up.railway.app",
-  "panel_at": "2026-11-06T09:15:23.173Z",
-  "slots_max": "unlimited",
-  "commands": 571,
-  "linked": [
-    {
-      "number": "********5634",
-      "state": "connected",
-      "autostatus": "off"
-    },
-    {
-      "number": "********7324",
-      "state": "connected",
-      "autostatus": "view+react"
-    },
-    {
-      "number": "********8574",
-      "state": "connected",
-      "autostatus": "view+react"
-    },
-    {
-      "number": "********6325",
-      "state": "connected",
-      "autostatus": "view+react"
-    },
-    {
-      "number": "********2128",
-      "state": "connected",
-      "autostatus": "off"
-    },
-    {
-      "number": "********7157",
-      "state": "connected",
-      "autostatus": "off"
-    }
-  ],
-  "guest_log": [
-    "09:15:24 ********8574: LINKING (phone ne code accept kiya)",
-    "09:15:24 ********5634: LINKING (phone ne code accept kiya)",
-    "09:15:24 ********5634: CONNECTED ✅",
-    "09:15:24 ********8574: CONNECTED ✅",
-    "09:15:24 ********2128: LINKING (phone ne code accept kiya)",
-    "09:15:24 ********7324: LINKING (phone ne code accept kiya)",
-    "09:15:24 ********6325: LINKING (phone ne code accept kiya)",
-    "09:15:24 ********7157: LINKING (phone ne code accept kiya)",
-    "09:15:25 ********2128: CONNECTED ✅",
-    "09:15:25 ********6325: CONNECTED ✅",
-    "09:15:25 ********7157: CONNECTED ✅",
-    "09:15:25 ********7324: CONNECTED ✅",
-    "09:18:04 ********6325: status ***********5176: seen ✅, react 😌 ✅"
-  ],
-  "guest_frames": null,
-  "mem": {
-    "sessions": 6,
-    "free_mb": 95496,
-    "total_mb": 330438,
-    "rss_mb": 146,
-    "heap_mb": 45,
-    "heap_limit_mb": 489,
-    "per_session_mb": 15,
-    "room_for": 37
-  },
-  "channel": {
-    "ok": true,
-    "name": "AQDAS TECH",
-    "latest_post": 110,
-    "auto": true,
-    "opted_in": 3,
-    "fetch": "updates err channel posts timeout | messages:messages:10"
-  },
-  "updated_at": "2026-11-06T09:21:23.174Z",
-  "uptime_s": 485
+  "panel_url": null,
+  "updated_at": "2026-11-06T09:22:07.041Z",
+  "uptime_s": 10
 }
