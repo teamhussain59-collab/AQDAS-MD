@@ -1,14 +1,12 @@
 {
-  "status": "offline",
+  "status": "idle",
   "code": null,
-  "qr": null,
-  "qr_at": null,
   "code_at": null,
-  "next_at": null,
   "last_event": null,
   "number_masked": null,
   "run_id": null,
-  "panel_url": null,
-  "updated_at": "2026-11-06T09:28:01.785Z",
-  "uptime_s": 18
+  "panel_url": "https://aqdas-md-production.up.railway.app",
+  "panel_at": "2026-11-06T09:30:00.645Z",
+  "updated_at": "2026-11-06T09:30:00.645Z",
+  "uptime_s": 124
 }
