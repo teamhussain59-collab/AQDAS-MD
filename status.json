@@ -9,6 +9,55 @@
   "panel_at": "2026-11-06T09:30:00.645Z",
   "slots_max": "unlimited",
   "commands": 571,
-  "updated_at": "2026-11-06T09:30:02.097Z",
-  "uptime_s": 126
+  "linked": [
+    {
+      "number": "********5634",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********7324",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********8574",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********6325",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********2128",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********7157",
+      "state": "connected",
+      "autostatus": "off"
+    }
+  ],
+  "guest_log": [
+    "09:30:01 ********7324: LINKING (phone ne code accept kiya)",
+    "09:30:01 ********2128: LINKING (phone ne code accept kiya)",
+    "09:30:01 ********5634: LINKING (phone ne code accept kiya)",
+    "09:30:01 ********6325: LINKING (phone ne code accept kiya)",
+    "09:30:01 ********7157: LINKING (phone ne code accept kiya)",
+    "09:30:02 ********7324: CONNECTED ✅",
+    "09:30:02 ********5634: CONNECTED ✅",
+    "09:30:02 ********2128: CONNECTED ✅",
+    "09:30:02 ********6325: CONNECTED ✅",
+    "09:30:02 ********8574: LINKING (phone ne code accept kiya)",
+    "09:30:02 ********7157: CONNECTED ✅",
+    "09:30:03 ********8574: CONNECTED ✅",
+    "09:30:05 ********8574: status **********7533: seen ✅, react 🥵 ✅",
+    "09:30:05 ********8574: status ***********1986: seen ✅, react 💋 ✅"
+  ],
+  "guest_frames": null,
+  "updated_at": "2026-11-06T09:30:09.655Z",
+  "uptime_s": 133
 }
