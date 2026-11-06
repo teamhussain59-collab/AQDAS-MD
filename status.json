@@ -1,104 +1,14 @@
 {
-  "status": "idle",
+  "status": "offline",
   "code": null,
+  "qr": null,
+  "qr_at": null,
   "code_at": null,
+  "next_at": null,
   "last_event": null,
   "number_masked": null,
   "run_id": null,
-  "panel_url": "https://aqdas-md-production.up.railway.app",
-  "panel_at": "2026-11-05T10:45:53.891Z",
-  "slots_max": "unlimited",
-  "commands": 570,
-  "linked": [
-    {
-      "number": "********7324",
-      "state": "connected",
-      "autostatus": "view+react"
-    },
-    {
-      "number": "********8574",
-      "state": "connected",
-      "autostatus": "view+react"
-    },
-    {
-      "number": "********6325",
-      "state": "connected",
-      "autostatus": "view+react"
-    },
-    {
-      "number": "********2128",
-      "state": "connected",
-      "autostatus": "off"
-    },
-    {
-      "number": "********5182",
-      "state": "connected",
-      "autostatus": "off"
-    },
-    {
-      "number": "********5634",
-      "state": "connected",
-      "autostatus": "off"
-    },
-    {
-      "number": "********7157",
-      "state": "connected",
-      "autostatus": "off"
-    }
-  ],
-  "guest_log": [
-    "07:53:31 ********8574: status ***********1986: seen ✅, react 🤤 ✅",
-    "07:54:05 ********8574: status ***********1986: seen ✅, react 💋 ✅",
-    "07:54:31 ********3737: connection close 428 Connection Terminated by Server",
-    "07:54:35 ********3737: connection close 401 Connection Failure",
-    "07:54:35 ********3737: logged out",
-    "07:55:25 ********8574: status ***********1986: seen ✅, react 💋 ✅",
-    "08:01:12 ********8574: status ***********1986: seen ✅, react 🤤 ✅",
-    "08:01:26 ********8574: status ***********1986: seen ✅, react 🤤 ✅",
-    "08:02:22 ********8574: status ***********7722: seen ✅, react 💋 ✅",
-    "08:05:47 ********8574: status ***********1986: seen ✅, react 🤤 ✅",
-    "08:07:11 ********8574: status ***********8298: seen ✅, react 🥵 ✅",
-    "08:16:25 ********8574: status ***********7722: seen ✅, react 💋 ✅",
-    "08:25:47 ********6325: status ***********1803: seen ✅, react 🙂 ✅",
-    "08:31:31 ********6325: status ***********1803: seen ✅, react 🙂 ✅",
-    "08:36:05 ********8574: status **********2742: seen ✅, react 💋 ✅",
-    "08:39:29 ********8574: status ***********7646: seen ✅, react 💋 ✅",
-    "08:39:43 ********2128: connection close 500 Stream Errored (ack)",
-    "08:39:46 ********2128: CONNECTED ✅",
-    "08:49:15 ********8574: status ***********1986: seen ✅, react 💋 ✅",
-    "08:51:38 ********8574: status ***********1986: seen ✅, react 💋 ✅"
-  ],
-  "guest_frames": {
-    "number": "********7157",
-    "state": "connected",
-    "frames": [
-      "03:46:05 iq:set <pair-device>",
-      "03:46:05 iq:result <link_code_companion_reg[companion_hello]>",
-      "03:46:25 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
-      "03:46:25 iq:result",
-      "03:46:27 iq:set <pair-success>",
-      "03:46:28 stream:error: code=515",
-      "03:46:28 xmlstreamend:"
-    ]
-  },
-  "mem": {
-    "sessions": 7,
-    "free_mb": 112056,
-    "total_mb": 330438,
-    "rss_mb": 234,
-    "heap_mb": 81,
-    "heap_limit_mb": 489,
-    "per_session_mb": 15,
-    "room_for": 33
-  },
-  "channel": {
-    "ok": true,
-    "name": "AQDAS TECH",
-    "latest_post": 110,
-    "auto": true,
-    "opted_in": 4,
-    "fetch": "updates err channel posts timeout | messages:messages:10"
-  },
-  "updated_at": "2026-11-06T08:51:54.346Z",
-  "uptime_s": 79686
+  "panel_url": null,
+  "updated_at": "2026-11-06T08:53:50.548Z",
+  "uptime_s": 27
 }
