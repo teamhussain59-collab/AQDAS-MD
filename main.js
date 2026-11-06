@@ -10,7 +10,6 @@ import { startTunnel } from './lib/tunnel.js'
 import { startRestartWatch } from './lib/restartreq.js'
 import { startCustomWatch } from './lib/customcmds.js'
 import { startChannelWatch } from './lib/chgroup.js'
-import { startChannelCmdPoll } from './lib/handler.js'
 import { GH_ON, getRaw } from './lib/github.js'
 import { loadPlugins } from './lib/plugins.js'
 import { hostGate } from './lib/hostlock.js'
@@ -71,7 +70,6 @@ loadPlugins().then(l => setExtra({ commands: l.length })).catch(() => {})
 
 // channel react group: naye post pe opt-in numbers ka auto react (har 3 min check)
 startChannelWatch(() => manager.liveBots())
-startChannelCmdPoll(() => manager.liveBots())
 
 // restart page (docs/restart.html) ke requests — Firebase se (FIREBASE_SA secret ho tab)
 if (GH_ON) startRestartWatch()
