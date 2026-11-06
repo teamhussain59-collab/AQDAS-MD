@@ -21,11 +21,6 @@
       "autostatus": "view+react"
     },
     {
-      "number": "********5182",
-      "state": "connected",
-      "autostatus": "off"
-    },
-    {
       "number": "********8574",
       "state": "connected",
       "autostatus": "view+react"
@@ -60,7 +55,9 @@
     "08:55:51 ********2128: CONNECTED ✅",
     "08:55:51 ********6325: LINKING (phone ne code accept kiya)",
     "08:55:51 ********5182: CONNECTED ✅",
-    "08:55:52 ********6325: CONNECTED ✅"
+    "08:55:52 ********6325: CONNECTED ✅",
+    "08:57:24 ********5182: connection close 401 Stream Errored (conflict)",
+    "08:57:25 ********5182: logged out"
   ],
   "guest_frames": null,
   "mem": {
@@ -81,6 +78,6 @@
     "opted_in": 4,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-06T08:57:10.435Z",
-  "uptime_s": 206
+  "updated_at": "2026-11-06T08:57:29.070Z",
+  "uptime_s": 225
 }
