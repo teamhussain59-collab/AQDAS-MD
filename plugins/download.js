@@ -1,4 +1,5 @@
 import { download, ytdlpAvailable, isUrl } from '../lib/download.js'
+import { playCard } from '../lib/playpick.js'
 
 async function guard (ctx, usage) {
   if (!ctx.text) { await ctx.reply(`Use: ${ctx.prefix}${ctx.command} ${usage}`); return false }
@@ -36,7 +37,8 @@ function cmd (name, alias, kind, usage, desc, needUrl = false) {
 }
 
 export default [
-  cmd('play', ['song', 'music'], 'audio', '<song ka naam ya link>', 'YouTube se song (mp3)'),
+  { name: 'play', alias: ['song', 'music'], category: 'download', usage: '<song ka naam ya link>', desc: 'Song: photo + info, phir 1 = MP3 / 2 = MP4', async run (ctx) { if (!(await guard(ctx, '<song ka naam ya link>'))) return; return playCard(ctx) } },
+  cmd('playmp3', ['songmp3'], 'audio', '<song ka naam>', 'Seedha song mp3 (bina sawal)'),
   cmd('video', ['ytv', 'vid'], 'video', '<naam ya link>', 'YouTube se video'),
   cmd('ytmp3', ['yta'], 'audio', '<youtube link>', 'YouTube link se mp3', true),
   cmd('ytmp4', [], 'video', '<youtube link>', 'YouTube link se mp4', true),
