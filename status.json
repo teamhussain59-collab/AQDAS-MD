@@ -47,8 +47,6 @@
     }
   ],
   "guest_log": [
-    "03:37:16 ********8574: CONNECTED ✅",
-    "03:41:51 ********8574: status ***********1986: seen ✅, react 💋 ✅",
     "03:41:59 ********7157: connection close 401 Stream Errored (conflict)",
     "03:41:59 ********7157: logged out",
     "03:42:44 ********8574: status ***********1986: seen ✅, react 💋 ✅",
@@ -66,7 +64,9 @@
     "04:34:39 ********6325: CONNECTED ✅",
     "04:38:37 ********8574: status **********7533: seen ✅, react 🥵 ✅",
     "04:40:37 ********8574: status **********7533: seen ✅, react 🤤 ✅",
-    "04:41:22 ********8574: status ***********1986: seen ✅, react 💋 ✅"
+    "04:41:22 ********8574: status ***********1986: seen ✅, react 💋 ✅",
+    "04:50:04 ********5182: connection close 428 Connection Terminated",
+    "04:50:07 ********5182: CONNECTED ✅"
   ],
   "guest_frames": {
     "number": "********7157",
@@ -99,6 +99,6 @@
     "opted_in": 4,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-06T04:49:54.267Z",
-  "uptime_s": 65166
+  "updated_at": "2026-11-06T04:50:11.150Z",
+  "uptime_s": 65183
 }
