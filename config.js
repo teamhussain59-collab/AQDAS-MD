@@ -6,9 +6,13 @@ const list = (v, d) => (v ? String(v).split(',').map(s => s.trim()).filter(Boole
 const digits = v => String(v || '').replace(/[^0-9]/g, '')
 
 const config = {
-  botName: process.env.BOT_NAME || 'AQDAS MD',
-  ownerName: process.env.OWNER_NAME || 'AQDAS HACKER',
-  channel: process.env.CHANNEL_LINK || 'https://whatsapp.com/channel/0029Vb9FRVV8F2pDezlyrD0q',
+  // Bot Maker: jis number ka apna brand ho (settings.brand) us ke liye naam / owner / channel wahi
+  _brand: () => null,
+  setBrandSource (fn) { this._brand = fn },
+  get botName () { return this._brand()?.botName || process.env.BOT_NAME || 'AQDAS MD' },
+  get ownerName () { return this._brand()?.ownerName || process.env.OWNER_NAME || 'AQDAS HACKER' },
+  get channel () { const b = this._brand(); return b ? (b.channel || '') : (process.env.CHANNEL_LINK || 'https://whatsapp.com/channel/0029Vb9FRVV8F2pDezlyrD0q') },
+  get mainChannel () { return process.env.CHANNEL_LINK || 'https://whatsapp.com/channel/0029Vb9FRVV8F2pDezlyrD0q' },
   ownerNumbers: list(process.env.OWNER_NUMBER, []).map(digits).filter(Boolean),
   prefix: process.env.PREFIX || '.',
   mode: (process.env.MODE || 'public').toLowerCase(),
@@ -39,8 +43,8 @@ const config = {
     menuSong: bool(process.env.MENU_SONG, true),
     setDpOnFirstConnect: bool(process.env.SET_DP_ON_FIRST_CONNECT, true)
   },
-  packname: process.env.STICKER_PACK || 'AQDAS MD',
-  author: process.env.STICKER_AUTHOR || 'AQDAS HACKER'
+  get packname () { return this._brand()?.botName || process.env.STICKER_PACK || 'AQDAS MD' },
+  get author () { return this._brand()?.ownerName || process.env.STICKER_AUTHOR || 'AQDAS HACKER' }
 }
 
 export default config
