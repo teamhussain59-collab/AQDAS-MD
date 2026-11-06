@@ -13,7 +13,7 @@
     {
       "number": "********5634",
       "state": "connected",
-      "autostatus": "view+react"
+      "autostatus": "off"
     },
     {
       "number": "********7324",
@@ -47,7 +47,6 @@
     }
   ],
   "guest_log": [
-    "12:55:00 ********8574: status ***********4661: seen ✅, react 💋 ✅",
     "12:55:03 ********8574: status ***********4661: seen ✅, react 🥵 ✅",
     "12:55:07 ********8574: status ***********4661: seen ✅, react 🤤 ✅",
     "12:55:09 ********8574: status ***********4661: seen ✅, react 🤤 ✅",
@@ -66,7 +65,8 @@
     "13:19:04 ********8574: status ***********4661: seen ✅, react 💋 ✅",
     "13:19:38 ********5634: status ***********0077: seen ✅, react 😌 ✅",
     "13:29:40 ********8574: status **********7533: seen ✅, react 🥵 ✅",
-    "13:30:44 ********8574: status **********7533: seen ✅, react 💋 ✅"
+    "13:30:44 ********8574: status **********7533: seen ✅, react 💋 ✅",
+    "13:35:49 ********8574: status ***********2669: seen ✅, react 💋 ✅"
   ],
   "guest_frames": null,
   "mem": {
@@ -87,6 +87,6 @@
     "opted_in": 4,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-06T13:35:35.482Z",
-  "uptime_s": 2885
+  "updated_at": "2026-11-06T13:35:53.144Z",
+  "uptime_s": 2902
 }
