@@ -73,6 +73,14 @@ export default [
     }
   },
   {
+    name: 'chcmd', category: 'owner', owner: true, usage: 'on/off', desc: 'Channel mein commands (bot wala number channel admin ho, channel mein .menu waghera post kare)',
+    async run (ctx) {
+      const a = (ctx.args[0] || '').toLowerCase()
+      if (a === 'on' || a === 'off') { ctx.settings.set('channelCmds', a === 'on'); return ctx.reply(`✅ Channel commands ${a === 'on' ? 'ON' : 'OFF'}`) }
+      await ctx.reply(`Channel commands: ${ctx.settings.get('channelCmds') === false ? 'OFF ❌' : 'ON ✅'}\nChannel mein (bot wale number se) .menu, .ai waghera post karo, bot wahin jawab dega.\n${ctx.prefix}chcmd on / off`)
+    }
+  },
+  {
     name: 'chautoreact', alias: ['chauto'], category: 'owner', owner: true, usage: 'on/off | emojis 🥰🔥', desc: 'Owner: channel ke naye post pe react group ka auto react',
     async run (ctx) {
       if (!isBoss(ctx)) return ctx.reply('❌ Ye sirf AQDAS MD ke owner ke liye hai.')
