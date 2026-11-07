@@ -42,7 +42,6 @@
     }
   ],
   "guest_log": [
-    "21:23:44 ********2876: logged out",
     "21:23:54 ********4254: status *********0043: seen ✅",
     "21:28:07 ********2128: connection close 428 Connection Terminated",
     "21:28:10 ********2128: CONNECTED ✅",
@@ -61,7 +60,8 @@
     "22:26:30 ********5182: connection close 428 Connection Terminated",
     "22:26:33 ********5182: CONNECTED ✅",
     "22:44:36 ********2128: connection close 428 Connection Terminated",
-    "22:44:39 ********2128: CONNECTED ✅"
+    "22:44:39 ********2128: CONNECTED ✅",
+    "23:50:45 ********4254: status ***********3253: seen ✅"
   ],
   "guest_frames": null,
   "mem": {
@@ -82,6 +82,6 @@
     "opted_in": 2,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-07T23:50:27.482Z",
-  "uptime_s": 18425
+  "updated_at": "2026-11-07T23:50:49.477Z",
+  "uptime_s": 18447
 }
