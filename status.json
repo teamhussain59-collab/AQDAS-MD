@@ -54,9 +54,12 @@
     "18:24:00 ********3254: CONNECTED ✅",
     "18:24:00 ********5182: CONNECTED ✅",
     "18:24:00 ********7324: CONNECTED ✅",
-    "18:24:20 ********7157: code error: WhatsApp ne code reject kiya (429 rate-overlimit)"
+    "18:24:20 ********7157: code error: WhatsApp ne code reject kiya (429 rate-overlimit)",
+    "18:24:29 ********7157: code error: WhatsApp ne code reject kiya (429 rate-overlimit)",
+    "18:24:31 ********7157: code error: WhatsApp ne code reject kiya (429 rate-overlimit)",
+    "18:24:33 ********7157: code error: WhatsApp ne code reject kiya (429 rate-overlimit)"
   ],
   "guest_frames": null,
-  "updated_at": "2026-11-07T18:24:24.388Z",
-  "uptime_s": 151
+  "updated_at": "2026-11-07T18:24:37.711Z",
+  "uptime_s": 164
 }
