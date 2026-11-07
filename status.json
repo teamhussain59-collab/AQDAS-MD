@@ -60,7 +60,8 @@
     "04:36:08 ********6165: code bana",
     "04:36:39 ********6165: LINKING (phone ne code accept kiya)",
     "04:36:48 ********6165: connection close 515 Stream Errored (restart required)",
-    "04:36:51 ********6165: CONNECTED ✅"
+    "04:36:51 ********6165: CONNECTED ✅",
+    "05:00:07 ********6325: status **********0819: seen ✅, react 😳 ✅"
   ],
   "guest_frames": {
     "number": "********6165",
@@ -94,6 +95,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-07T04:59:03.195Z",
-  "uptime_s": 2885
+  "updated_at": "2026-11-07T05:00:11.087Z",
+  "uptime_s": 2953
 }
