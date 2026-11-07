@@ -27,12 +27,11 @@
     },
     {
       "number": "********5182",
-      "state": "linking",
+      "state": "connected",
       "autostatus": "off"
     }
   ],
   "guest_log": [
-    "06:39:35 ********3523: expired / closed (code 428)",
     "06:39:40 qr: connection close 428 Connection Terminated by Server",
     "06:39:40 qr: expired / closed (code 428)",
     "06:50:34 ********7324: status ***********7505: seen ✅, react 😊 ✅",
@@ -51,11 +50,12 @@
     "10:30:43 ********3254: CONNECTED ✅",
     "12:21:59 ********5182: code bana",
     "12:22:21 ********5182: LINKING (phone ne code accept kiya)",
-    "12:22:23 ********5182: connection close 515 Stream Errored (restart required)"
+    "12:22:23 ********5182: connection close 515 Stream Errored (restart required)",
+    "12:22:29 ********5182: CONNECTED ✅"
   ],
   "guest_frames": {
     "number": "********5182",
-    "state": "linking",
+    "state": "connected",
     "frames": [
       "12:21:54 iq:set <pair-device>",
       "12:21:54 iq:result <link_code_companion_reg[companion_hello]>",
@@ -84,6 +84,6 @@
     "opted_in": 1,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-07T12:22:27.946Z",
-  "uptime_s": 29490
+  "updated_at": "2026-11-07T12:22:33.071Z",
+  "uptime_s": 29495
 }
