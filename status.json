@@ -42,7 +42,6 @@
     }
   ],
   "guest_log": [
-    "18:23:59 ********4254: CONNECTED ✅",
     "18:23:59 ********2128: CONNECTED ✅",
     "18:23:59 ********5182: LINKING (phone ne code accept kiya)",
     "18:23:59 ********2563: LINKING (phone ne code accept kiya)",
@@ -61,7 +60,8 @@
     "18:25:26 ********4197: connection close 515 Stream Errored (restart required)",
     "18:25:29 ********4197: CONNECTED ✅",
     "18:26:54 ********4197: connection close 401 Stream Errored (conflict)",
-    "18:26:54 ********4197: logged out"
+    "18:26:54 ********4197: logged out",
+    "18:36:12 ********7157: code error: WhatsApp ne code reject kiya (429 rate-overlimit)"
   ],
   "guest_frames": null,
   "mem": {
@@ -82,6 +82,6 @@
     "opted_in": 2,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-07T18:35:57.988Z",
-  "uptime_s": 844
+  "updated_at": "2026-11-07T18:36:16.224Z",
+  "uptime_s": 862
 }
