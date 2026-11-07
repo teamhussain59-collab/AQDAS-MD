@@ -28,7 +28,7 @@
     {
       "number": "********3254",
       "state": "connected",
-      "autostatus": "off"
+      "autostatus": "view+react"
     },
     {
       "number": "********0931",
@@ -37,7 +37,6 @@
     }
   ],
   "guest_log": [
-    "14:07:27 ********0931: connection close 515 Stream Errored (restart required)",
     "14:07:30 ********0931: CONNECTED ✅",
     "14:19:14 ********3254: connection close 401 Stream Errored (conflict)",
     "14:19:14 ********3254: logged out",
@@ -56,7 +55,8 @@
     "14:28:19 ********0931: code bana",
     "14:28:31 ********0931: LINKING (phone ne code accept kiya)",
     "14:28:36 ********0931: connection close 515 Stream Errored (restart required)",
-    "14:28:40 ********0931: CONNECTED ✅"
+    "14:28:40 ********0931: CONNECTED ✅",
+    "14:33:58 ********3254: status ***********8801: seen ✅, react 😊 ✅"
   ],
   "guest_frames": {
     "number": "********0931",
@@ -89,6 +89,6 @@
     "opted_in": 2,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-07T14:33:04.027Z",
-  "uptime_s": 37326
+  "updated_at": "2026-11-07T14:34:02.637Z",
+  "uptime_s": 37385
 }
