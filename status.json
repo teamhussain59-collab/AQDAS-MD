@@ -26,11 +26,6 @@
       "autostatus": "off"
     },
     {
-      "number": "********3523",
-      "state": "pairing",
-      "autostatus": "off"
-    },
-    {
       "number": "qr",
       "state": "pairing",
       "autostatus": "off"
@@ -59,20 +54,19 @@
     "06:39:35 ********3523: expired / closed (code 428)"
   ],
   "guest_frames": {
-    "number": "********3523",
-    "state": "expired",
+    "number": "",
+    "state": "pairing",
     "frames": [
-      "06:36:04 iq:set <pair-device>",
-      "06:36:05 iq:result <link_code_companion_reg[companion_hello]>",
-      "06:36:34 iq:result",
-      "06:37:04 iq:result",
-      "06:37:34 iq:result",
-      "06:38:04 iq:result",
-      "06:38:34 iq:result",
-      "06:39:04 iq:get",
-      "06:39:04 iq:result",
-      "06:39:34 iq:result",
-      "06:39:35 xmlstreamend:"
+      "06:36:10 iq:set <pair-device>",
+      "06:36:40 iq:result",
+      "06:37:10 iq:result",
+      "06:37:40 iq:result",
+      "06:38:10 iq:get",
+      "06:38:10 iq:result",
+      "06:38:40 iq:get",
+      "06:38:40 iq:result",
+      "06:39:10 iq:get",
+      "06:39:10 iq:result"
     ]
   },
   "mem": {
@@ -93,6 +87,6 @@
     "opted_in": 2,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-07T06:39:35.955Z",
-  "uptime_s": 8918
+  "updated_at": "2026-11-07T06:39:39.956Z",
+  "uptime_s": 8922
 }
