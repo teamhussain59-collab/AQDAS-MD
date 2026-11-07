@@ -42,10 +42,6 @@
     }
   ],
   "guest_log": [
-    "21:16:12 ********2876: LINKING (phone ne code accept kiya)",
-    "21:19:30 ********2876: connection close 428 Connection Terminated by Server",
-    "21:19:33 ********2876: connection close 401 Connection Failure",
-    "21:19:33 ********2876: logged out",
     "21:20:15 ********2876: code bana",
     "21:20:23 ********2876: LINKING (phone ne code accept kiya)",
     "21:23:40 ********2876: connection close 428 Connection Terminated by Server",
@@ -61,7 +57,11 @@
     "22:08:39 ********7324: connection close 428 Connection Terminated",
     "22:08:42 ********7324: CONNECTED ✅",
     "22:11:45 ********2563: connection close 428 Connection Terminated",
-    "22:11:48 ********2563: CONNECTED ✅"
+    "22:11:48 ********2563: CONNECTED ✅",
+    "22:24:09 ********2128: connection close 428 Connection Terminated",
+    "22:24:11 ********4254: connection close 428 Connection Terminated",
+    "22:24:13 ********2128: CONNECTED ✅",
+    "22:24:14 ********4254: CONNECTED ✅"
   ],
   "guest_frames": null,
   "mem": {
@@ -82,6 +82,6 @@
     "opted_in": 2,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-07T22:23:27.510Z",
-  "uptime_s": 13205
+  "updated_at": "2026-11-07T22:24:18.662Z",
+  "uptime_s": 13256
 }
