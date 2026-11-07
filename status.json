@@ -24,6 +24,11 @@
       "number": "********2128",
       "state": "connected",
       "autostatus": "off"
+    },
+    {
+      "number": "********3254",
+      "state": "pairing",
+      "autostatus": "off"
     }
   ],
   "guest_log": [
@@ -48,7 +53,14 @@
     "06:39:40 qr: expired / closed (code 428)",
     "06:50:34 ********7324: status ***********7505: seen ✅, react 😊 ✅"
   ],
-  "guest_frames": null,
+  "guest_frames": {
+    "number": "********3254",
+    "state": "pairing",
+    "frames": [
+      "07:03:31 iq:set <pair-device>",
+      "07:03:31 iq:result <link_code_companion_reg[companion_hello]>"
+    ]
+  },
   "mem": {
     "sessions": 3,
     "free_mb": 312912,
@@ -67,6 +79,6 @@
     "opted_in": 2,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-07T07:03:03.975Z",
-  "uptime_s": 10326
+  "updated_at": "2026-11-07T07:03:35.289Z",
+  "uptime_s": 10357
 }
