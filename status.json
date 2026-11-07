@@ -32,14 +32,11 @@
     },
     {
       "number": "********0931",
-      "state": "pairing",
+      "state": "connected",
       "autostatus": "off"
     }
   ],
   "guest_log": [
-    "07:04:04 ********3254: connection close 515 Stream Errored (restart required)",
-    "07:04:07 ********3254: CONNECTED ✅",
-    "07:24:03 ********5182: status ***********1784: seen ✅, react 🙂 ✅",
     "07:24:31 ********5182: status ***********1784: seen ✅, react 😢 ✅",
     "07:24:41 ********5182: status **********7027: seen ✅, react 😳 ✅",
     "07:26:01 ********5182: connection close 401 Stream Errored (conflict)",
@@ -56,14 +53,22 @@
     "13:49:18 ********4157: code bana",
     "13:52:43 ********4157: connection close 428 Connection Terminated by Server",
     "13:52:43 ********4157: expired / closed (code 428)",
-    "14:07:02 ********0931: code bana"
+    "14:07:02 ********0931: code bana",
+    "14:07:24 ********0931: LINKING (phone ne code accept kiya)",
+    "14:07:27 ********0931: connection close 515 Stream Errored (restart required)",
+    "14:07:30 ********0931: CONNECTED ✅"
   ],
   "guest_frames": {
     "number": "********0931",
-    "state": "pairing",
+    "state": "connected",
     "frames": [
       "14:06:57 iq:set <pair-device>",
-      "14:06:57 iq:result <link_code_companion_reg[companion_hello]>"
+      "14:06:57 iq:result <link_code_companion_reg[companion_hello]>",
+      "14:07:24 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
+      "14:07:24 iq:result",
+      "14:07:26 iq:set <pair-success>",
+      "14:07:27 stream:error: code=515",
+      "14:07:27 xmlstreamend:"
     ]
   },
   "mem": {
@@ -84,6 +89,6 @@
     "opted_in": 2,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-07T14:07:06.648Z",
-  "uptime_s": 35769
+  "updated_at": "2026-11-07T14:07:34.642Z",
+  "uptime_s": 35797
 }
