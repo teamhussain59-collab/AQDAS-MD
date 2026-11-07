@@ -39,6 +39,11 @@
       "number": "********4254",
       "state": "connected",
       "autostatus": "view"
+    },
+    {
+      "number": "********4197",
+      "state": "pairing",
+      "autostatus": "off"
     }
   ],
   "guest_log": [
@@ -59,7 +64,14 @@
     "18:24:31 ********7157: code error: WhatsApp ne code reject kiya (429 rate-overlimit)",
     "18:24:33 ********7157: code error: WhatsApp ne code reject kiya (429 rate-overlimit)"
   ],
-  "guest_frames": null,
+  "guest_frames": {
+    "number": "********4197",
+    "state": "pairing",
+    "frames": [
+      "18:24:54 iq:set <pair-device>",
+      "18:24:55 iq:result <link_code_companion_reg[companion_hello]>"
+    ]
+  },
   "mem": {
     "sessions": 7,
     "free_mb": 106016,
@@ -70,6 +82,6 @@
     "per_session_mb": 15,
     "room_for": 37
   },
-  "updated_at": "2026-11-07T18:24:57.985Z",
-  "uptime_s": 184
+  "updated_at": "2026-11-07T18:24:59.143Z",
+  "uptime_s": 185
 }
