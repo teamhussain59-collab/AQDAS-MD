@@ -42,7 +42,7 @@
     },
     {
       "number": "********4197",
-      "state": "pairing",
+      "state": "connected",
       "autostatus": "off"
     }
   ],
@@ -63,14 +63,23 @@
     "18:24:29 ********7157: code error: WhatsApp ne code reject kiya (429 rate-overlimit)",
     "18:24:31 ********7157: code error: WhatsApp ne code reject kiya (429 rate-overlimit)",
     "18:24:33 ********7157: code error: WhatsApp ne code reject kiya (429 rate-overlimit)",
-    "18:25:00 ********4197: code bana"
+    "18:25:00 ********4197: code bana",
+    "18:25:22 ********4197: LINKING (phone ne code accept kiya)",
+    "18:25:26 ********4197: connection close 515 Stream Errored (restart required)",
+    "18:25:29 ********4197: CONNECTED ✅"
   ],
   "guest_frames": {
     "number": "********4197",
-    "state": "pairing",
+    "state": "connected",
     "frames": [
       "18:24:54 iq:set <pair-device>",
-      "18:24:55 iq:result <link_code_companion_reg[companion_hello]>"
+      "18:24:55 iq:result <link_code_companion_reg[companion_hello]>",
+      "18:25:22 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
+      "18:25:22 iq:result",
+      "18:25:24 iq:result",
+      "18:25:25 iq:set <pair-success>",
+      "18:25:26 stream:error: code=515",
+      "18:25:26 xmlstreamend:"
     ]
   },
   "mem": {
@@ -91,6 +100,6 @@
     "opted_in": 2,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-07T18:25:19.316Z",
-  "uptime_s": 205
+  "updated_at": "2026-11-07T18:25:33.350Z",
+  "uptime_s": 220
 }
