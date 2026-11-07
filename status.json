@@ -42,12 +42,11 @@
     },
     {
       "number": "********2876",
-      "state": "pairing",
+      "state": "linking",
       "autostatus": "off"
     }
   ],
   "guest_log": [
-    "19:43:53 ********5182: CONNECTED ✅",
     "20:15:09 ********4254: status ***********4058: seen ✅",
     "20:17:32 ********4254: status ***********1057: seen ✅",
     "20:18:56 ********4254: status ***********8938: seen ✅",
@@ -66,14 +65,18 @@
     "21:12:41 ********2876: connection close 516 Stream Errored (unknown)",
     "21:12:45 ********2876: connection close 401 Connection Failure",
     "21:12:45 ********2876: logged out",
-    "21:16:05 ********2876: code bana"
+    "21:16:05 ********2876: code bana",
+    "21:16:12 ********2876: LINKING (phone ne code accept kiya)"
   ],
   "guest_frames": {
     "number": "********2876",
-    "state": "pairing",
+    "state": "linking",
     "frames": [
       "21:16:00 iq:set <pair-device>",
-      "21:16:01 iq:result <link_code_companion_reg[companion_hello]>"
+      "21:16:01 iq:result <link_code_companion_reg[companion_hello]>",
+      "21:16:12 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
+      "21:16:12 iq:result",
+      "21:16:15 notification:passkey_prologue_request <passkey_request_options+dbsc_registration>"
     ]
   },
   "mem": {
@@ -94,6 +97,6 @@
     "opted_in": 2,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-07T21:16:09.941Z",
-  "uptime_s": 9167
+  "updated_at": "2026-11-07T21:16:19.431Z",
+  "uptime_s": 9177
 }
