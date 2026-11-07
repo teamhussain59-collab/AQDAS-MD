@@ -29,10 +29,14 @@
       "number": "********3523",
       "state": "pairing",
       "autostatus": "off"
+    },
+    {
+      "number": "qr",
+      "state": "pairing",
+      "autostatus": "off"
     }
   ],
   "guest_log": [
-    "04:13:06 ********6325: CONNECTED ✅",
     "04:17:16 ********2634: connection close 401 Stream Errored (conflict)",
     "04:17:16 ********2634: logged out",
     "04:29:42 ********7324: status *********8568: seen ✅, react 😇 ✅",
@@ -51,14 +55,14 @@
     "05:27:08 ********5634: logged out",
     "05:29:53 ********5182: status ***********9524: seen ✅, react 😍 ✅",
     "05:43:41 ********7324: status ***********7220: seen ✅, react 🥺 ✅",
-    "06:07:17 ********5182: status ***********7880: seen ✅, react 😊 ✅"
+    "06:07:17 ********5182: status ***********7880: seen ✅, react 😊 ✅",
+    "06:36:09 ********3523: code bana"
   ],
   "guest_frames": {
-    "number": "********3523",
+    "number": "",
     "state": "pairing",
     "frames": [
-      "06:36:04 iq:set <pair-device>",
-      "06:36:05 iq:result <link_code_companion_reg[companion_hello]>"
+      "06:36:10 iq:set <pair-device>"
     ]
   },
   "mem": {
@@ -79,6 +83,6 @@
     "opted_in": 2,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-07T06:36:09.099Z",
-  "uptime_s": 8711
+  "updated_at": "2026-11-07T06:36:14.243Z",
+  "uptime_s": 8716
 }
