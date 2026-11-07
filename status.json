@@ -27,7 +27,6 @@
     }
   ],
   "guest_log": [
-    "04:36:39 ********6165: LINKING (phone ne code accept kiya)",
     "04:36:48 ********6165: connection close 515 Stream Errored (restart required)",
     "04:36:51 ********6165: CONNECTED ✅",
     "05:00:07 ********6325: status **********0819: seen ✅, react 😳 ✅",
@@ -46,7 +45,8 @@
     "06:39:35 ********3523: connection close 428 Connection Terminated by Server",
     "06:39:35 ********3523: expired / closed (code 428)",
     "06:39:40 qr: connection close 428 Connection Terminated by Server",
-    "06:39:40 qr: expired / closed (code 428)"
+    "06:39:40 qr: expired / closed (code 428)",
+    "06:50:34 ********7324: status ***********7505: seen ✅, react 😊 ✅"
   ],
   "guest_frames": null,
   "mem": {
@@ -67,6 +67,6 @@
     "opted_in": 2,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-07T06:49:03.233Z",
-  "uptime_s": 9485
+  "updated_at": "2026-11-07T06:50:38.115Z",
+  "uptime_s": 9580
 }
