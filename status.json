@@ -32,8 +32,6 @@
     }
   ],
   "guest_log": [
-    "07:26:01 ********5182: connection close 401 Stream Errored (conflict)",
-    "07:26:01 ********5182: logged out",
     "07:52:07 ********2128: connection close 428 Connection Terminated",
     "07:52:10 ********2128: CONNECTED ✅",
     "10:30:39 ********3254: connection close 428 Connection Terminated",
@@ -51,7 +49,9 @@
     "14:07:27 ********0931: connection close 515 Stream Errored (restart required)",
     "14:07:30 ********0931: CONNECTED ✅",
     "14:19:14 ********3254: connection close 401 Stream Errored (conflict)",
-    "14:19:14 ********3254: logged out"
+    "14:19:14 ********3254: logged out",
+    "14:19:21 ********0931: connection close 401 Stream Errored (conflict)",
+    "14:19:22 ********0931: logged out"
   ],
   "guest_frames": {
     "number": "********0931",
@@ -84,6 +84,6 @@
     "opted_in": 2,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-07T14:19:18.282Z",
-  "uptime_s": 36500
+  "updated_at": "2026-11-07T14:19:22.301Z",
+  "uptime_s": 36504
 }
