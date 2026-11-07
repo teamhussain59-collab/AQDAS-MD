@@ -39,11 +39,6 @@
       "number": "********4254",
       "state": "connected",
       "autostatus": "view"
-    },
-    {
-      "number": "********2876",
-      "state": "linking",
-      "autostatus": "off"
     }
   ],
   "guest_log": [
@@ -68,28 +63,7 @@
     "21:10:41 ********2876: connection close 401 Connection Failure",
     "21:10:41 ********2876: logged out"
   ],
-  "guest_frames": {
-    "number": "********2876",
-    "state": "linking",
-    "frames": [
-      "21:07:08 iq:set <pair-device>",
-      "21:07:08 iq:result <link_code_companion_reg[companion_hello]>",
-      "21:07:21 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
-      "21:07:21 iq:result",
-      "21:07:24 notification:passkey_prologue_request <passkey_request_options+dbsc_registration>",
-      "21:07:38 iq:result",
-      "21:07:39 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
-      "21:07:40 iq:result",
-      "21:07:42 notification:passkey_prologue_request <passkey_request_options+dbsc_registration>",
-      "21:08:08 iq:result",
-      "21:08:38 iq:result",
-      "21:09:08 iq:result",
-      "21:09:38 iq:result",
-      "21:10:08 iq:get",
-      "21:10:08 iq:result",
-      "21:10:38 xmlstreamend:"
-    ]
-  },
+  "guest_frames": null,
   "mem": {
     "sessions": 7,
     "free_mb": 103757,
@@ -108,6 +82,6 @@
     "opted_in": 2,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-07T21:10:41.161Z",
-  "uptime_s": 8838
+  "updated_at": "2026-11-07T21:10:45.162Z",
+  "uptime_s": 8842
 }
