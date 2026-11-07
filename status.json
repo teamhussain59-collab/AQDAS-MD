@@ -62,7 +62,8 @@
     "18:24:20 ********7157: code error: WhatsApp ne code reject kiya (429 rate-overlimit)",
     "18:24:29 ********7157: code error: WhatsApp ne code reject kiya (429 rate-overlimit)",
     "18:24:31 ********7157: code error: WhatsApp ne code reject kiya (429 rate-overlimit)",
-    "18:24:33 ********7157: code error: WhatsApp ne code reject kiya (429 rate-overlimit)"
+    "18:24:33 ********7157: code error: WhatsApp ne code reject kiya (429 rate-overlimit)",
+    "18:25:00 ********4197: code bana"
   ],
   "guest_frames": {
     "number": "********4197",
@@ -82,6 +83,6 @@
     "per_session_mb": 15,
     "room_for": 37
   },
-  "updated_at": "2026-11-07T18:24:59.143Z",
-  "uptime_s": 185
+  "updated_at": "2026-11-07T18:25:04.159Z",
+  "uptime_s": 190
 }
