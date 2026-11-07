@@ -42,12 +42,11 @@
     },
     {
       "number": "********2876",
-      "state": "pairing",
+      "state": "linking",
       "autostatus": "off"
     }
   ],
   "guest_log": [
-    "20:30:02 ********4254: status ***********1057: seen ✅",
     "20:34:47 ********4254: status ***********1057: seen ✅",
     "21:00:01 ********2128: connection close 428 Connection Terminated",
     "21:00:05 ********2128: CONNECTED ✅",
@@ -66,14 +65,18 @@
     "21:19:30 ********2876: connection close 428 Connection Terminated by Server",
     "21:19:33 ********2876: connection close 401 Connection Failure",
     "21:19:33 ********2876: logged out",
-    "21:20:15 ********2876: code bana"
+    "21:20:15 ********2876: code bana",
+    "21:20:23 ********2876: LINKING (phone ne code accept kiya)"
   ],
   "guest_frames": {
     "number": "********2876",
-    "state": "pairing",
+    "state": "linking",
     "frames": [
       "21:20:10 iq:set <pair-device>",
-      "21:20:10 iq:result <link_code_companion_reg[companion_hello]>"
+      "21:20:10 iq:result <link_code_companion_reg[companion_hello]>",
+      "21:20:23 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
+      "21:20:23 iq:result",
+      "21:20:26 notification:passkey_prologue_request <passkey_request_options+dbsc_registration>"
     ]
   },
   "mem": {
@@ -94,6 +97,6 @@
     "opted_in": 2,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-07T21:20:27.475Z",
-  "uptime_s": 9425
+  "updated_at": "2026-11-07T21:20:30.674Z",
+  "uptime_s": 9428
 }
