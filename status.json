@@ -42,7 +42,6 @@
     }
   ],
   "guest_log": [
-    "14:19:14 ********3254: connection close 401 Stream Errored (conflict)",
     "14:19:14 ********3254: logged out",
     "14:19:21 ********0931: connection close 401 Stream Errored (conflict)",
     "14:19:22 ********0931: logged out",
@@ -61,7 +60,8 @@
     "14:28:36 ********0931: connection close 515 Stream Errored (restart required)",
     "14:28:40 ********0931: CONNECTED ✅",
     "14:33:58 ********3254: status ***********8801: seen ✅, react 😊 ✅",
-    "14:34:10 ********3254: status ***********8801: seen ✅, react 😍 ✅"
+    "14:34:10 ********3254: status ***********8801: seen ✅, react 😍 ✅",
+    "14:34:38 ********2563: code bana"
   ],
   "guest_frames": {
     "number": "********2563",
@@ -89,6 +89,6 @@
     "opted_in": 2,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-07T14:34:37.247Z",
-  "uptime_s": 37419
+  "updated_at": "2026-11-07T14:34:42.115Z",
+  "uptime_s": 37424
 }
