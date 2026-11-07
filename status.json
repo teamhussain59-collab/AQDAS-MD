@@ -26,11 +26,6 @@
       "autostatus": "off"
     },
     {
-      "number": "********8574",
-      "state": "connected",
-      "autostatus": "view+react"
-    },
-    {
       "number": "********6325",
       "state": "connected",
       "autostatus": "view+react"
@@ -47,8 +42,6 @@
     }
   ],
   "guest_log": [
-    "02:40:54 ********8574: status ***********1986: seen ✅, react 🥵 ✅",
-    "02:43:37 ********8574: status ***********1981: seen ✅, react 🥵 ✅",
     "02:55:51 ********8574: status *********5791: seen ✅, react 🤤 ✅",
     "02:57:17 ********8574: status ***********3032: seen ✅, react 🤤 ✅",
     "02:57:54 ********7324: status ***********4120: seen ✅, react 🙂 ✅",
@@ -66,7 +59,9 @@
     "03:25:09 ********2634: CONNECTED ✅",
     "03:27:40 ********8574: status ***********7722: seen ✅, react 💋 ✅",
     "03:27:40 ********8574: status ***********1986: seen ✅, react 🥵 ✅",
-    "03:28:04 ********8574: status ***********7722: seen ✅, react 💋 ✅"
+    "03:28:04 ********8574: status ***********7722: seen ✅, react 💋 ✅",
+    "03:29:09 ********8574: connection close 401 Stream Errored (conflict)",
+    "03:29:10 ********8574: logged out"
   ],
   "guest_frames": {
     "number": "********2634",
@@ -100,6 +95,6 @@
     "opted_in": 4,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-07T03:28:08.637Z",
-  "uptime_s": 52838
+  "updated_at": "2026-11-07T03:29:14.219Z",
+  "uptime_s": 52903
 }
