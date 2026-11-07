@@ -37,7 +37,7 @@
     },
     {
       "number": "********6165",
-      "state": "pairing",
+      "state": "linking",
       "autostatus": "off"
     }
   ],
@@ -57,15 +57,18 @@
     "04:17:16 ********2634: connection close 401 Stream Errored (conflict)",
     "04:17:16 ********2634: logged out",
     "04:29:42 ********7324: status *********8568: seen ✅, react 😇 ✅",
-    "04:36:08 ********6165: code bana"
+    "04:36:08 ********6165: code bana",
+    "04:36:39 ********6165: LINKING (phone ne code accept kiya)"
   ],
   "guest_frames": {
     "number": "********6165",
-    "state": "pairing",
+    "state": "linking",
     "frames": [
       "04:36:03 iq:set <pair-device>",
       "04:36:03 iq:result <link_code_companion_reg[companion_hello]>",
-      "04:36:33 iq:result"
+      "04:36:33 iq:result",
+      "04:36:39 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
+      "04:36:39 iq:result"
     ]
   },
   "mem": {
@@ -86,6 +89,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-07T04:36:37.172Z",
-  "uptime_s": 1539
+  "updated_at": "2026-11-07T04:36:43.913Z",
+  "uptime_s": 1546
 }
