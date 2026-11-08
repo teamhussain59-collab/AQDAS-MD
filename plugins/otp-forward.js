@@ -1,14 +1,13 @@
 // ═══════════════════════════════════════════════════════════════════
-//  AQDAS MD — OTP Forward Plugin v3
-//  + Auto-delete keys
-//  + Service name (TikTok/Facebook/etc.)
-//  + File upload support for .add
+//  AQDAS MD — OTP Forward Plugin v4
+//  (Multiple Channels Support + .jd2 Auto-Detect)
 // ═══════════════════════════════════════════════════════════════════
 
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { downloadMediaMessage } from '@whiskeysockets/baileys';
+import { waLogger } from '../lib/logger.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -120,7 +119,6 @@ const U = {
     if (!k) return '❌ not set';
     return k.length <= 12 ? `✅ ${k.slice(0, 4)}...` : `✅ ${k.slice(0, 6)}...${k.slice(-4)}`;
   },
-  selfJid(sock) { return sock.user.id.split(':')[0] + '@s.whatsapp.net'; },
   isBotMsgId(id) { return /^(3EB0|BAE5)/.test(String(id || '')); },
   parseUrl(url) {
     const m = url.match(/channel\/([A-Za-z0-9@._-]+)\/([A-Za-z0-9_-]+)/);
@@ -132,8 +130,6 @@ const U = {
 function extractNumbersFromText(text) {
   if (!text) return [];
   const trimmed = text.trim();
-
-  // Try JSON
   if (trimmed.startsWith('[') || trimmed.startsWith('{')) {
     try {
       const data = JSON.parse(trimmed);
@@ -141,8 +137,6 @@ function extractNumbersFromText(text) {
       if (fromJson.length) return fromJson;
     } catch {}
   }
-
-  // Line by line
   const lines = text.split(/\r?\n/).map(l => l.trim()).filter(Boolean);
   const fromLines = [];
   for (const line of lines) {
@@ -150,12 +144,9 @@ function extractNumbersFromText(text) {
     if (m) fromLines.push(m[1]);
   }
   if (fromLines.length > 0) return [...new Set(fromLines)];
-
-  // Fallback: whole text
   const matches = text.match(/\b\d{8,15}\b/g) || [];
   return [...new Set(matches)];
 }
-
 function extractNumbersFromJson(obj) {
   const out = new Set();
   const walk = (v) => {
@@ -168,52 +159,37 @@ function extractNumbersFromJson(obj) {
   return [...out];
 }
 
-// ================= GET TEXT FROM MESSAGE (text OR file) =================
+// ================= GET TEXT (text/file) =================
 async function getTextFromMsg(sock, msg) {
-  // 1) Plain text
-  const direct = msg.message.conversation ||
-                 msg.message.extendedTextMessage?.text || '';
+  const direct = msg.message?.conversation || msg.message?.extendedTextMessage?.text || '';
   if (direct) return { text: direct, source: 'text' };
-
-  // 2) Caption
-  const cap = msg.message.imageMessage?.caption ||
-              msg.message.videoMessage?.caption || '';
+  const cap = msg.message?.imageMessage?.caption || msg.message?.videoMessage?.caption || '';
   if (cap) return { text: cap, source: 'caption' };
-
-  // 3) Document file
-  if (msg.message.documentMessage) {
+  if (msg.message?.documentMessage) {
     try {
-      const buffer = await downloadMediaMessage(msg, 'buffer', {}, {
-        reuploadRequest: sock.updateMediaMessage,
-      });
+      const buffer = await downloadMediaMessage(msg, 'buffer', {}, { logger: waLogger, reuploadRequest: sock.updateMediaMessage });
       const fileName = msg.message.documentMessage.fileName || 'file';
       return { text: buffer.toString('utf8'), source: 'file:' + fileName };
-    } catch (e) {
-      console.error('[OTP] file download fail:', e.message);
-      return { text: '', source: 'file-error' };
-    }
+    } catch (e) { return { text: '', source: 'file-error' }; }
   }
-
   return { text: '', source: 'none' };
 }
 
-// ================= STYLISH TEMPLATE =================
+// ================= STYLISH =================
 function stylishOtp({ code, source, rawText, sender }) {
   const time = new Date().toLocaleString('en-GB', {
-    day: '2-digit', month: 'short', year: 'numeric',
-    hour: '2-digit', minute: '2-digit', hour12: true,
+    day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit', hour12: true,
   });
   const L = ['╭━━━〔 🔐 *OTP RECEIVED* 〕━━━╮'];
   L.push(`┃ 💎 *Code* : ${code ? `*${code}*` : '_(auto-detect fail)_'}`);
   if (sender) L.push(`┃ 📨 *From* : ${sender}`);
   L.push(`┃ 📡 *Via*  : ${source}`);
   L.push(`┃ 🕐 *Time* : ${time}`);
-  L.push('╰━━━━━━━━━━━━━━━━━━━━━━━━╯', '', '📝 *Original Message:*',
-         '```' + String(rawText || '').trim().slice(0, CONFIG.MAX_OTP_TEXT_LENGTH) + '```');
+  L.push('╰━━━━━━━━━━━━━━━━━━━━━━━━╯', '', '📝 *Original Message:*', '```' + String(rawText || '').trim().slice(0, CONFIG.MAX_OTP_TEXT_LENGTH) + '```');
   return L.join('\n');
 }
 
-// ================= CHANNEL HELPERS =================
+// ================= CHANNEL =================
 async function resolveChannelJid(sock, input) {
   const t = input.trim();
   if (t.includes('@newsletter')) return t;
@@ -228,7 +204,7 @@ async function getRole(sock, jid) {
   catch { return null; }
 }
 
-// ================= FORWARD =================
+// ================= FORWARD & POLLERS =================
 function getAllNumbers() {
   const all = new Set();
   for (const [jid, o] of Object.entries(store)) {
@@ -250,12 +226,10 @@ async function forwardAll(sock, rawText, source, sender) {
       catch (e) { console.error('[OTP] fwd fail', num, e.message); }
       await new Promise(r => setTimeout(r, 300));
     }
-    console.log(`[OTP] ${source} → ${ok}/${all.size}`);
     return ok;
-  } catch (e) { console.error('[OTP] forward engine:', e.message); return 0; }
+  } catch (e) { return 0; }
 }
 
-// ================= POLLERS =================
 async function pollSmsPro(sock) {
   const key = store._keys?.smspro;
   if (!key) return;
@@ -270,7 +244,7 @@ async function pollSmsPro(sock) {
       await forwardAll(sock, raw, 'SMSPro API', U.smsSender(logs[i]));
       seenSmsIds.add(sid);
     }
-  } catch (e) { console.error('[OTP] SMSPro:', e.message); }
+  } catch (e) { }
 }
 
 async function pollRezSms(sock) {
@@ -280,8 +254,7 @@ async function pollRezSms(sock) {
     const now = new Date();
     const s1 = new Date(now); s1.setHours(0, 0, 0, 0);
     const s2 = new Date(now); s2.setHours(23, 59, 59, 0);
-    const url = `${CONFIG.REZSMS_BASE}?token=${encodeURIComponent(key)}` +
-                `&dt1=${encodeURIComponent(U.fmtDate(s1))}&dt2=${encodeURIComponent(U.fmtDate(s2))}`;
+    const url = `${CONFIG.REZSMS_BASE}?token=${encodeURIComponent(key)}&dt1=${encodeURIComponent(U.fmtDate(s1))}&dt2=${encodeURIComponent(U.fmtDate(s2))}`;
     const logs = U.pick(await U.json(url));
     for (let i = 0; i < logs.length; i++) {
       const sid = `rez_${U.smsId(logs[i], i)}`;
@@ -291,13 +264,12 @@ async function pollRezSms(sock) {
       await forwardAll(sock, raw, 'RezSMS API', U.smsSender(logs[i]));
       seenSmsIds.add(sid);
     }
-  } catch (e) { console.error('[OTP] RezSMS:', e.message); }
+  } catch (e) { }
 }
 
 async function pollTick() {
   if (!activeSock?.user) return;
-  try { await pollSmsPro(activeSock); await pollRezSms(activeSock); }
-  catch (e) { console.error('[OTP] poll:', e.message); }
+  try { await pollSmsPro(activeSock); await pollRezSms(activeSock); } catch (e) { }
 }
 
 function activate(sock) {
@@ -306,25 +278,17 @@ function activate(sock) {
     const keys = store._keys || {};
     if (keys.smspro || keys.rezsms) {
       pollingStarted = true;
-      console.log('[OTP] 🔁 API polling started');
       setTimeout(pollTick, 3000);
       setInterval(pollTick, CONFIG.SMS_POLL_INTERVAL_MS);
     }
   }
 }
 
-// ================= AUTO-DELETE =================
 async function autoDelete(sock, msgKey, jid) {
-  try {
-    await sock.sendMessage(jid, { delete: msgKey });
-    return true;
-  } catch (e) {
-    console.error('[OTP] auto-delete fail:', e.message);
-    return false;
-  }
+  try { await sock.sendMessage(jid, { delete: msgKey }); } catch (e) { }
 }
 
-// ================= MESSAGE UPSERT HOOK =================
+// ================= HOOK & STATE =================
 function markProcessed(id) {
   processedMsgIds.add(id);
   if (processedMsgIds.size > 5000) {
@@ -334,38 +298,34 @@ function markProcessed(id) {
 }
 
 async function handleChannelOtp(sock, msg) {
-  const self = U.selfJid(sock);
-  const s = store[self];
-  if (!s?.otpChannel) return;
-  if (msg.key.remoteJid !== s.otpChannel) return;
-  const raw = msg.message.conversation ||
-              msg.message.extendedTextMessage?.text ||
-              msg.message.imageMessage?.caption ||
-              msg.message.videoMessage?.caption || '';
+  const jid = msg.key.remoteJid;
+  let session = null;
+  for (const key of Object.keys(store)) {
+    if (key.startsWith('_')) continue;
+    const s = getSession(key);
+    if (s.otpChannels.includes(jid)) { session = s; break; }
+  }
+  if (!session) return;
+  const raw = msg.message.conversation || msg.message.extendedTextMessage?.text || msg.message.imageMessage?.caption || msg.message.videoMessage?.caption || '';
   if (!raw || !U.isOtp(raw)) return;
-  const sender = msg.key.participant || msg.pushName || s.otpChannel;
+  const sender = msg.key.participant || msg.pushName || jid;
   await forwardAll(sock, raw, 'OTP Channel', sender);
 }
 
-// ================= STATE MACHINE =================
 async function handleStateInput(sock, selfJid, text, opts = {}) {
   const s = store[selfJid];
   if (!s || !s.step || s.step === 'idle') return;
-  const chatId = selfJid;
-  const reply = (t) => sock.sendMessage(chatId, { text: t }).catch(() => {});
+  const reply = (t) => sock.sendMessage(selfJid, { text: t }).catch(() => {});
 
-  // ---- await_ch1 ----
   if (s.step === 'await_ch1') {
     try {
       s.ch1 = await resolveChannelJid(sock, text);
-      s.step = 'await_ch2';
-      saveStore();
+      s.step = 'await_ch2'; saveStore();
       await reply('✅ *Saved #1*\n\n📤 Ab *Channel link #2* bhejo:\n_(Numbers channel — jahan list post hogi)_');
     } catch (e) { await reply(`❌ Resolve fail: ${e.message}\n\nDobara bhejo:`); }
     return;
   }
 
-  // ---- await_ch2 ----
   if (s.step === 'await_ch2') {
     try {
       const jid2 = await resolveChannelJid(sock, text);
@@ -381,60 +341,77 @@ async function handleStateInput(sock, selfJid, text, opts = {}) {
         s.step = 'idle'; saveStore();
         return reply('⚠️ Bot ko dono channels mein add karein:\n• OTP → follower\n• Numbers → admin\n\nPhir *.jd* dobara.');
       }
-      s.otpChannel = otp; s.numbersChannel = num; s.step = 'idle'; saveStore();
+      s.otpChannels = [otp]; 
+      s.numbersChannels = [num];
+      s.step = 'idle'; saveStore();
       await reply(`✅ *Auto-detect!*\n\n📥 OTP: ${otp}\n📤 Numbers: ${num}\n\n_Ab *.range*._`);
     } catch (e) { await reply(`❌ Resolve fail: ${e.message}\n\nDobara bhejo:`); }
     return;
   }
 
-  // ---- await_name (now: SERVICE name) ----
+  // .jd2 -> Single channel auto-detect
+  if (s.step === 'await_ch_single') {
+    try {
+      const chJid = await resolveChannelJid(sock, text);
+      const role = await getRole(sock, chJid);
+      if (!role) {
+        s.step = 'idle'; saveStore();
+        return reply('⚠️ Bot is channel mein nahi hai (not admin, not follower).\nPehle join ya admin banayein.');
+      }
+      
+      const isAdmin = role === 'OWNER' || role === 'ADMIN';
+      const list = isAdmin ? s.numbersChannels : s.otpChannels;
+      const typeName = isAdmin ? 'Numbers Channel (Admin)' : 'OTP Channel (Follower)';
+      
+      if (list.includes(chJid)) {
+        await reply(`⚠️ Ye channel pehle se *${typeName}* list mein hai.`);
+      } else {
+        list.push(chJid);
+        saveStore();
+        await reply(`✅ *Channel Added!*\n\n📌 Type: *${typeName}*\n🆔 JID: \`${chJid}\`\n\n_Ab aap is channel se OTP receive karenge ya isme list post kar sakte hain._`);
+      }
+      s.step = 'idle'; saveStore();
+    } catch (e) {
+      await reply(`❌ Resolve fail: ${e.message}\n\nDobara bhejo:`);
+    }
+    return;
+  }
+
   if (s.step === 'await_name' || s.step === 'await_service') {
-    s.name = text;
-    s.step = 'await_country';
-    saveStore();
+    s.name = text; s.step = 'await_country'; saveStore();
     await reply('🌍 *Country?*\n_Example: Pakistan, India, USA, UK_');
     return;
   }
 
-  // ---- await_country ----
   if (s.step === 'await_country') {
-    s.country = text;
-    s.step = 'idle';
-    saveStore();
+    s.country = text; s.step = 'idle'; saveStore();
     await reply(`✅ *Saved!*\n\n📱 Service: ${s.name}\n🌍 Country: ${s.country}\n\n_Ab *.add* bhejein (text ya file)._`);
     return;
   }
 
-  // ---- await_numbers ----
   if (s.step === 'await_numbers') {
     const nums = extractNumbersFromText(text);
-    if (!nums.length) {
-      return reply('⚠️ Koi valid number nahi mila (8-15 digits).\n\n📝 Text ya file (txt/csv/json) bhejo:');
-    }
+    if (!nums.length) return reply('⚠️ Koi valid number nahi mila (8-15 digits).\n\n📝 Text ya file bhejo:');
+    
     const before = s.numbers.length;
     s.numbers = [...new Set([...s.numbers, ...nums])];
     const added = s.numbers.length - before;
-    s.step = 'idle';
-    saveStore();
+    s.step = 'idle'; saveStore();
 
     const source = opts.source ? ` _(${opts.source})_` : '';
-    const listText =
-      `📱 *Service*: ${s.name}\n` +
-      `🌍 *Country*: ${s.country}\n\n` +
-      `📞 *Numbers* (${s.numbers.length}):\n` +
-      s.numbers.map((n, i) => `${i + 1}. ${n}`).join('\n');
-
-    try {
-      await sock.sendMessage(s.numbersChannel, { text: listText });
-      await reply(`✅ *${added}* numbers add${source} + list channel mein post.`);
-    } catch (e) {
-      await reply(`⚠️ Numbers save (${added}), par post fail: ${e.message}`);
+    const listText = `📱 *Service*: ${s.name}\n🌍 *Country*: ${s.country}\n\n📞 *Numbers* (${s.numbers.length}):\n` + s.numbers.map((n, i) => `${i + 1}. ${n}`).join('\n');
+    
+    let posted = 0;
+    for (const ch of s.numbersChannels) {
+      try { await sock.sendMessage(ch, { text: listText }); posted++; } catch (e) { }
     }
+    
+    if (posted > 0) await reply(`✅ *${added}* numbers add${source} + list posted to ${posted} channel(s).`);
+    else await reply(`⚠️ Numbers save (${added}), par channel post fail. Bot admin hai?`);
     return;
   }
 }
 
-// ================= HOOK =================
 function ensureHook(ctx) {
   const sock = ctx.sock;
   if (!sock || hookedSocks.has(sock)) return;
@@ -445,256 +422,161 @@ function ensureHook(ctx) {
 
     for (const msg of messages) {
       try {
-        if (!msg?.message) continue;
-        if (!msg.key?.remoteJid) continue;
+        if (!msg?.message || !msg.key?.remoteJid) continue;
         if (processedMsgIds.has(msg.key.id)) continue;
-
         const jid = msg.key.remoteJid;
 
-        // ── OTP Channel ──
         if (jid.endsWith('@newsletter')) {
           await handleChannelOtp(sock, msg);
           markProcessed(msg.key.id);
           continue;
         }
 
-        // ── Self-chat ──
-        if (!sock.user?.id) continue;
-        const self = U.selfJid(sock);
-        if (jid !== self) continue;
+        if (!msg.key.fromMe || jid.endsWith('@g.us')) continue;
         if (U.isBotMsgId(msg.key.id)) continue;
-        if (msg.key.fromMe !== true) continue;
 
         const { text, source } = await getTextFromMsg(sock, msg);
         if (!text) continue;
-
         const isFile = source.startsWith('file:');
-
-        // Commands skip (only for text; files never start with .)
         if (!isFile && /^[./!#]/.test(text.trim())) continue;
 
-        const s = store[self];
-        const inState = s && s.step && s.step !== 'idle';
+        const s = getSession(jid);
+        const inState = s.step && s.step !== 'idle';
         if (!inState) continue;
+        if (isFile && s.step !== 'await_numbers') continue;
 
-        // Only accept files during await_numbers
-        if (isFile && s.step !== 'await_numbers') {
-          console.log('[OTP] file ignored (not await_numbers state)');
-          continue;
-        }
-
-        await handleStateInput(sock, self, text, { msg, source, isFile });
+        await handleStateInput(sock, jid, text, { msg, source, isFile });
         markProcessed(msg.key.id);
-      } catch (e) {
-        console.error('[OTP] hook:', e.message);
-      }
+      } catch (e) { console.error('[OTP] hook:', e.message); }
     }
   });
-
-  console.log('[OTP] 📡 Hook installed for', U.selfJid(sock));
 }
 
 // ================= COMMAND HANDLERS =================
 async function reply(ctx, text) {
-  try { return await ctx.reply(text); }
-  catch (e) { console.error('[OTP] reply:', e.message); }
+  try { return await ctx.reply(text); } catch (e) { }
 }
 
-function getSession(self) {
-  let s = store[self];
+function getSession(selfJid) {
+  let s = store[selfJid];
   if (!s) s = { step: 'idle', numbers: [], posted: [] };
   if (!s.posted) s.posted = [];
   if (!s.numbers) s.numbers = [];
-  store[self] = s;
+  
+  // Migrate single channels to arrays
+  if (s.otpChannel && !s.otpChannels) { s.otpChannels = [s.otpChannel]; delete s.otpChannel; }
+  if (s.numbersChannel && !s.numbersChannels) { s.numbersChannels = [s.numbersChannel]; delete s.numbersChannel; }
+  if (!s.otpChannels) s.otpChannels = [];
+  if (!s.numbersChannels) s.numbersChannels = [];
+  
+  store[selfJid] = s;
   return s;
 }
 
 function buildList(s) {
-  return `📱 *Service*: ${s.name || '—'}\n🌍 *Country*: ${s.country || '—'}\n\n` +
-         `📞 *Numbers* (${(s.numbers || []).length}):\n` +
-         ((s.numbers || []).map((n, i) => `${i + 1}. ${n}`).join('\n') || '_none_');
+  return `📱 *Service*: ${s.name || '—'}\n🌍 *Country*: ${s.country || '—'}\n\n📞 *Numbers* (${(s.numbers || []).length}):\n` + ((s.numbers || []).map((n, i) => `${i + 1}. ${n}`).join('\n') || '_none_');
 }
 
-// ═══════════════════════════════════════════════════════════════════
-//  COMMAND FACTORY
-// ═══════════════════════════════════════════════════════════════════
 function makeCmd(name, aliases = []) {
   return {
-    name,
-    alias: aliases,
-    category: 'otp',
+    name, alias: aliases, category: 'otp',
 
     async run(ctx) {
       ensureHook(ctx);
       activate(ctx.sock);
 
-      const self = U.selfJid(ctx.sock);
-      if (ctx.jid !== self) return; // sirf self-chat
+      if (!(ctx.msg.key.fromMe && !ctx.isGroup)) return;
 
+      const selfJid = ctx.jid;
       const rest = (ctx.text || '').trim();
-      const s = getSession(self);
+      const s = getSession(selfJid);
 
       switch (name) {
-        // ═══ .setkeypro — auto-delete key message ═══
         case 'setkeypro': {
           if (!rest) return reply(ctx, '📝 Use: *.setkeypro <key>*');
-          store._keys.smspro = rest;
-          saveStore();
-          activate(ctx.sock);
-          // Auto-delete user's message
+          store._keys.smspro = rest; saveStore(); activate(ctx.sock);
           await autoDelete(ctx.sock, ctx.msg.key, ctx.jid);
-          return reply(ctx, '✅ *SMSPro* key saved.\n\n🔒 _Key message auto-deleted for security._');
+          return ctx.sock.sendMessage(ctx.jid, { text: '✅ *SMSPro* key saved.\n\n🔒 _Key message auto-deleted._' });
         }
-
-        // ═══ .setkeyrez — auto-delete key message ═══
         case 'setkeyrez': {
           if (!rest) return reply(ctx, '📝 Use: *.setkeyrez <key>*');
-          store._keys.rezsms = rest;
-          saveStore();
-          activate(ctx.sock);
+          store._keys.rezsms = rest; saveStore(); activate(ctx.sock);
           await autoDelete(ctx.sock, ctx.msg.key, ctx.jid);
-          return reply(ctx, '✅ *RezSMS* key saved.\n\n🔒 _Key message auto-deleted for security._');
+          return ctx.sock.sendMessage(ctx.jid, { text: '✅ *RezSMS* key saved.\n\n🔒 _Key message auto-deleted._' });
         }
-
-        // ═══ .keys ═══
         case 'keys': {
           const k = store._keys || {};
-          return reply(ctx,
-            `🔑 *API Keys*\n\n` +
-            `┃ SMSPro : ${U.mask(k.smspro)}\n` +
-            `┃ RezSMS : ${U.mask(k.rezsms)}\n\n` +
-            `_Poll: ${CONFIG.SMS_POLL_INTERVAL_MS / 1000}s_`
-          );
+          return reply(ctx, `🔑 *API Keys*\n\n┃ SMSPro : ${U.mask(k.smspro)}\n┃ RezSMS : ${U.mask(k.rezsms)}\n\n_Poll: ${CONFIG.SMS_POLL_INTERVAL_MS / 1000}s_`);
         }
-
-        // ═══ .jd ═══
         case 'jd': {
-          if (rest) return handleStateInput(ctx.sock, self, rest);
+          if (rest) return handleStateInput(ctx.sock, selfJid, rest);
           s.step = 'await_ch1'; s.ch1 = null; s.ch2 = null; saveStore();
           return reply(ctx, '📥 *Channel link #1* bhejo:\n_(OTP channel — jahan messages aate hain)_');
         }
-
-        // ═══ .range — SERVICE name (not person) ═══
+        case 'jd2': {
+          if (rest) return handleStateInput(ctx.sock, selfJid, rest);
+          s.step = 'await_ch_single'; saveStore();
+          return reply(ctx, '📥 *Channel link bhejo:*\n_(Bot auto-detect karega: OTP ya Numbers)_');
+        }
         case 'range': {
           if (rest) {
             const parts = rest.split(/\s+/);
             if (parts.length >= 2) {
-              s.name = parts[0];
-              s.country = parts.slice(1).join(' ');
-              s.step = 'idle'; saveStore();
+              s.name = parts[0]; s.country = parts.slice(1).join(' '); s.step = 'idle'; saveStore();
               return reply(ctx, `✅ Saved:\n📱 Service: ${s.name}\n🌍 Country: ${s.country}\n\n_Ab *.add*._`);
             }
           }
           s.step = 'await_name'; s.name = null; s.country = null; saveStore();
-          return reply(ctx,
-            `📱 *Service name?*\n\n` +
-            `_Examples:_\n` +
-            `• TikTok\n` +
-            `• Facebook\n` +
-            `• WhatsApp\n` +
-            `• Instagram\n` +
-            `• Telegram\n` +
-            `• Any other app/service`
-          );
+          return reply(ctx, `📱 *Service name?*\n\n_Examples:_\n• TikTok\n• Facebook\n• WhatsApp\n• Instagram\n• Telegram`);
         }
-
-        // ═══ .add — text ya file dono ═══
         case 'add': {
           if (!s.name || !s.country) return reply(ctx, '⚠️ Pehle *.range* complete karein.');
-          if (!s.otpChannel || !s.numbersChannel) return reply(ctx, '⚠️ Pehle *.jd* se channels set karein.');
-          if (rest) return handleStateInput(ctx.sock, self, rest);
+          if (!s.numbersChannels || s.numbersChannels.length === 0) return reply(ctx, '⚠️ Pehle *.jd* ya *.jd2* se Numbers Channel set karein.');
+          if (rest) return handleStateInput(ctx.sock, selfJid, rest);
           s.step = 'await_numbers'; saveStore();
-          return reply(ctx,
-            `📞 *Numbers list bhejo*\n\n` +
-            `_3 tarah se bhej sakte hain:_\n\n` +
-            `1️⃣ *Text* — line ya comma separated\n` +
-            `   \`923451234567\`\n` +
-            `   \`923457654321\`\n\n` +
-            `2️⃣ *File* — .txt / .csv / .json upload karein\n` +
-            `   _(bot khud extract karega)_\n\n` +
-            `3️⃣ *JSON array* — \`["923451234567","923457654321"]\``
-          );
+          return reply(ctx, `📞 *Numbers list bhejo*\n\n_3 tarah se:_\n1️⃣ *Text* — line ya comma separated\n2️⃣ *File* — .txt / .csv / .json upload karein\n3️⃣ *JSON array* — \`["923451234567","923457654321"]\``);
         }
-
-        // ═══ .listing ═══
         case 'listing': {
           if (!s.name || !s.country) return reply(ctx, '⚠️ Pehle *.range* complete karein.');
-          if (!s.numbersChannel) return reply(ctx, '⚠️ Pehle *.jd* se channels set karein.');
-          try {
-            await ctx.sock.sendMessage(s.numbersChannel, { text: buildList(s) });
-            return reply(ctx, '✅ *List posted* to channel.');
-          } catch (e) { return reply(ctx, `⚠️ Post fail: ${e.message}`); }
+          if (!s.numbersChannels || s.numbersChannels.length === 0) return reply(ctx, '⚠️ Pehle *.jd* ya *.jd2* se Numbers Channel set karein.');
+          let posted = 0;
+          for (const ch of s.numbersChannels) {
+            try { await ctx.sock.sendMessage(ch, { text: buildList(s) }); posted++; } catch (e) { }
+          }
+          if (posted > 0) return reply(ctx, `✅ *List posted* to ${posted} channel(s).`);
+          else return reply(ctx, `⚠️ Post fail. Bot channel admin hai?`);
         }
-
-        // ═══ .remove <url> ═══
         case 'remove': {
           if (!rest) return reply(ctx, '📝 Use: *.remove <url>*');
           const p = U.parseUrl(rest);
           if (!p) return reply(ctx, '❌ Galat URL.\nFormat: `https://whatsapp.com/channel/JID/MSGID`');
-          if (!s.numbersChannel || p.channelJid !== s.numbersChannel) {
-            return reply(ctx, '❌ Ye URL aapke Numbers Channel ka nahi hai.');
-          }
+          if (!s.numbersChannels || !s.numbersChannels.includes(p.channelJid)) return reply(ctx, '❌ Ye URL aapke Numbers Channel ka nahi hai.');
           try {
-            await ctx.sock.sendMessage(p.channelJid, {
-              delete: { remoteJid: p.channelJid, fromMe: true, id: p.msgId },
-            });
-            s.posted = s.posted.filter(x => x.msgId !== p.msgId);
-            saveStore();
+            await ctx.sock.sendMessage(p.channelJid, { delete: { remoteJid: p.channelJid, fromMe: true, id: p.msgId } });
+            s.posted = s.posted.filter(x => x.msgId !== p.msgId); saveStore();
             return reply(ctx, '🗑️ Delete ho gaya.');
           } catch (e) { return reply(ctx, `⚠️ Delete fail: ${e.message}`); }
         }
-
-        // ═══ .status ═══
         case 'status': {
           const nums = getAllNumbers();
-          return reply(ctx,
-            `📊 *OTP Bot Status*\n\n` +
-            `┃ 📱 Service: ${s.name || '—'}\n` +
-            `┃ 🌍 Country: ${s.country || '—'}\n` +
-            `┃ 📥 OTP Channel: ${s.otpChannel || '—'}\n` +
-            `┃ 📤 Numbers Channel: ${s.numbersChannel || '—'}\n` +
-            `┃ 📞 Total Numbers: ${nums.size}\n` +
-            `┃ 📮 Posted: ${s.posted.length}\n` +
-            `┃ 🔄 Poll: ${CONFIG.SMS_POLL_INTERVAL_MS / 1000}s\n` +
-            `┃ 🕐 Uptime: ${Math.floor(process.uptime())}s`
-          );
+          const otpList = s.otpChannels.length ? s.otpChannels.length + ' channel(s)' : '—';
+          const numList = s.numbersChannels.length ? s.numbersChannels.length + ' channel(s)' : '—';
+          return reply(ctx, `📊 *OTP Bot Status*\n\n┃ 📱 Service: ${s.name || '—'}\n┃ 🌍 Country: ${s.country || '—'}\n┃ 📥 OTP Channels: ${otpList}\n┃ 📤 Numbers Channels: ${numList}\n┃ 📞 Total Numbers: ${nums.size}\n┃ 📮 Posted: ${s.posted.length}\n┃ 🔄 Poll: ${CONFIG.SMS_POLL_INTERVAL_MS / 1000}s\n┃ 🕐 Uptime: ${Math.floor(process.uptime())}s`);
         }
-
-        // ═══ .otphelp ═══
         case 'otphelp': {
-          return reply(ctx,
-            `╭━━━〔 🤖 *OTP BOT* 〕━━━╮\n\n` +
-            `*🔑 Setup*\n` +
-            `┃ .setkeypro <key>\n` +
-            `┃ .setkeyrez <key>\n` +
-            `┃ .keys\n\n` +
-            `*📡 Channels*\n` +
-            `┃ .jd — 2 channels\n\n` +
-            `*📱 Service Setup*\n` +
-            `┃ .range — Service + Country\n` +
-            `┃ .add — numbers (text/file)\n\n` +
-            `*📋 Lists*\n` +
-            `┃ .listing — post list\n` +
-            `┃ .remove <url> — delete\n\n` +
-            `*ℹ️ Info*\n` +
-            `┃ .status — bot status\n` +
-            `┃ .otphelp — this menu\n\n` +
-            `╰━━━━━━━━━━━━━━━━━━━━━━━━━╯`
-          );
+          return reply(ctx, `╭━━━〔 🤖 *OTP BOT* 〕━━━╮\n\n*🔑 Setup*\n┃ .setkeypro <key>\n┃ .setkeyrez <key>\n┃ .keys\n\n*📡 Channels*\n┃ .jd — set OTP + Numbers\n┃ .jd2 — add extra channel\n\n*📱 Service Setup*\n┃ .range — Service + Country\n┃ .add — numbers (text/file)\n\n*📋 Lists*\n┃ .listing — post list\n┃ .remove <url> — delete\n\n*ℹ️ Info*\n┃ .status — bot status\n┃ .otphelp — this menu\n\n╰━━━━━━━━━━━━━━━━━━━━━━━━━╯`);
         }
       }
     },
   };
 }
 
-// ═══════════════════════════════════════════════════════════════════
-//  EXPORT
-// ═══════════════════════════════════════════════════════════════════
 export default [
   makeCmd('setkeypro'),
   makeCmd('setkeyrez'),
   makeCmd('keys'),
   makeCmd('jd'),
+  makeCmd('jd2'),
   makeCmd('range'),
   makeCmd('add'),
   makeCmd('listing'),
