@@ -47,9 +47,6 @@
     }
   ],
   "guest_log": [
-    "07:09:27 ********3254: status ***********1372: seen ✅, react 🅰️ ✅",
-    "07:11:01 ********5182: status **********7579: seen ✅, react 😇 ✅",
-    "07:12:05 ********5182: status ***********3637: seen ✅, react 😳 ✅",
     "07:16:57 ********4254: status ***********9820: seen ✅",
     "07:22:56 ********4254: status **********1701: seen ✅",
     "07:26:45 ********5182: status ***********3637: seen ✅, react 😇 ✅",
@@ -66,7 +63,10 @@
     "07:58:48 ********5182: connection close 401 Stream Errored (conflict)",
     "07:58:48 ********5182: logged out",
     "08:02:34 ********6985: code bana",
-    "08:02:59 ********6985: LINKING (phone ne code accept kiya)"
+    "08:02:59 ********6985: LINKING (phone ne code accept kiya)",
+    "08:05:59 ********6985: connection close 428 Connection Terminated by Server",
+    "08:06:01 ********6985: connection close 401 Connection Failure",
+    "08:06:01 ********6985: logged out"
   ],
   "guest_frames": {
     "number": "********6985",
@@ -82,7 +82,8 @@
       "08:04:29 iq:result",
       "08:04:59 iq:result",
       "08:05:29 iq:result",
-      "08:05:31 notification:link_code_companion_reg <link_code_companion_reg[refresh_code]>"
+      "08:05:31 notification:link_code_companion_reg <link_code_companion_reg[refresh_code]>",
+      "08:05:59 xmlstreamend:"
     ]
   },
   "mem": {
@@ -103,6 +104,6 @@
     "opted_in": 1,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-08T08:05:35.535Z",
-  "uptime_s": 7449
+  "updated_at": "2026-11-08T08:06:01.737Z",
+  "uptime_s": 7476
 }
