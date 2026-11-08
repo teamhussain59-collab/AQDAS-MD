@@ -53,9 +53,10 @@
     "03:41:06 ********2128: LINKING (phone ne code accept kiya)",
     "03:41:06 ********4254: CONNECTED ✅",
     "03:41:06 ********2563: CONNECTED ✅",
-    "03:41:07 ********2128: CONNECTED ✅"
+    "03:41:07 ********2128: CONNECTED ✅",
+    "03:41:45 ********4254: status ***********9002: seen ✅"
   ],
   "guest_frames": null,
-  "updated_at": "2026-11-08T03:41:11.226Z",
-  "uptime_s": 131
+  "updated_at": "2026-11-08T03:41:49.153Z",
+  "uptime_s": 169
 }
