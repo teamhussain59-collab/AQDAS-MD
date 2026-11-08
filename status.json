@@ -79,6 +79,16 @@
       "03:46:25 xmlstreamend:"
     ]
   },
-  "updated_at": "2026-11-08T03:46:35.131Z",
-  "uptime_s": 168
+  "mem": {
+    "sessions": 7,
+    "free_mb": 109584,
+    "total_mb": 393439,
+    "rss_mb": 120,
+    "heap_mb": 38,
+    "heap_limit_mb": 489,
+    "per_session_mb": 15,
+    "room_for": 37
+  },
+  "updated_at": "2026-11-08T03:46:53.049Z",
+  "uptime_s": 186
 }
