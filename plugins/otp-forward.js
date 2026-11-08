@@ -1,6 +1,5 @@
 // ═══════════════════════════════════════════════════════════════════
-//  AQDAS MD — OTP Forward Plugin v4
-//  (Multiple Channels Support + .jd2 Auto-Detect)
+//  AQDAS MD — OTP Forward Plugin v4.2 (Fully Fixed + Multi-Channel)
 // ═══════════════════════════════════════════════════════════════════
 
 import fs from 'fs';
@@ -162,14 +161,21 @@ function extractNumbersFromJson(obj) {
 async function getTextFromMsg(sock, msg) {
   const direct = msg.message?.conversation || msg.message?.extendedTextMessage?.text || '';
   if (direct) return { text: direct, source: 'text' };
+
   const cap = msg.message?.imageMessage?.caption || msg.message?.videoMessage?.caption || '';
   if (cap) return { text: cap, source: 'caption' };
+
   if (msg.message?.documentMessage) {
     try {
-      const buffer = await downloadMediaMessage(msg, 'buffer', {}, { logger: waLogger, reuploadRequest: sock.updateMediaMessage });
+      const buffer = await downloadMediaMessage(msg, 'buffer', {}, {
+        reuploadRequest: sock.updateMediaMessage,
+      });
       const fileName = msg.message.documentMessage.fileName || 'file';
       return { text: buffer.toString('utf8'), source: 'file:' + fileName };
-    } catch (e) { return { text: '', source: 'file-error' }; }
+    } catch (e) {
+      console.error('[OTP] file download fail:', e.message);
+      return { text: '', source: 'file-error' };
+    }
   }
   return { text: '', source: 'none' };
 }
@@ -222,7 +228,7 @@ async function forwardAll(sock, rawText, source, sender) {
     let ok = 0;
     for (const num of all) {
       try { await sock.sendMessage(num + '@s.whatsapp.net', { text: msg }); ok++; }
-      catch (e) { console.error('[OTP] fwd fail', num, e.message); }
+      catch (e) { }
       await new Promise(r => setTimeout(r, 300));
     }
     return ok;
@@ -340,39 +346,32 @@ async function handleStateInput(sock, selfJid, text, opts = {}) {
         s.step = 'idle'; saveStore();
         return reply('⚠️ Bot ko dono channels mein add karein:\n• OTP → follower\n• Numbers → admin\n\nPhir *.jd* dobara.');
       }
-      s.otpChannels = [otp]; 
-      s.numbersChannels = [num];
+      s.otpChannels = [otp]; s.numbersChannels = [num];
       s.step = 'idle'; saveStore();
       await reply(`✅ *Auto-detect!*\n\n📥 OTP: ${otp}\n📤 Numbers: ${num}\n\n_Ab *.range*._`);
     } catch (e) { await reply(`❌ Resolve fail: ${e.message}\n\nDobara bhejo:`); }
     return;
   }
 
-  // .jd2 -> Single channel auto-detect
   if (s.step === 'await_ch_single') {
     try {
       const chJid = await resolveChannelJid(sock, text);
       const role = await getRole(sock, chJid);
       if (!role) {
         s.step = 'idle'; saveStore();
-        return reply('⚠️ Bot is channel mein nahi hai (not admin, not follower).\nPehle join ya admin banayein.');
+        return reply('⚠️ Bot is channel mein nahi hai. Pehle join ya admin banayein.');
       }
-      
       const isAdmin = role === 'OWNER' || role === 'ADMIN';
       const list = isAdmin ? s.numbersChannels : s.otpChannels;
       const typeName = isAdmin ? 'Numbers Channel (Admin)' : 'OTP Channel (Follower)';
-      
       if (list.includes(chJid)) {
         await reply(`⚠️ Ye channel pehle se *${typeName}* list mein hai.`);
       } else {
-        list.push(chJid);
-        saveStore();
+        list.push(chJid); saveStore();
         await reply(`✅ *Channel Added!*\n\n📌 Type: *${typeName}*\n🆔 JID: \`${chJid}\`\n\n_Ab aap is channel se OTP receive karenge ya isme list post kar sakte hain._`);
       }
       s.step = 'idle'; saveStore();
-    } catch (e) {
-      await reply(`❌ Resolve fail: ${e.message}\n\nDobara bhejo:`);
-    }
+    } catch (e) { await reply(`❌ Resolve fail: ${e.message}\n\nDobara bhejo:`); }
     return;
   }
 
@@ -391,7 +390,6 @@ async function handleStateInput(sock, selfJid, text, opts = {}) {
   if (s.step === 'await_numbers') {
     const nums = extractNumbersFromText(text);
     if (!nums.length) return reply('⚠️ Koi valid number nahi mila (8-15 digits).\n\n📝 Text ya file bhejo:');
-    
     const before = s.numbers.length;
     s.numbers = [...new Set([...s.numbers, ...nums])];
     const added = s.numbers.length - before;
@@ -404,7 +402,6 @@ async function handleStateInput(sock, selfJid, text, opts = {}) {
     for (const ch of s.numbersChannels) {
       try { await sock.sendMessage(ch, { text: listText }); posted++; } catch (e) { }
     }
-    
     if (posted > 0) await reply(`✅ *${added}* numbers add${source} + list posted to ${posted} channel(s).`);
     else await reply(`⚠️ Numbers save (${added}), par channel post fail. Bot admin hai?`);
     return;
@@ -444,7 +441,13 @@ function ensureHook(ctx) {
         if (!inState) continue;
         if (isFile && s.step !== 'await_numbers') continue;
 
-        await handleStateInput(sock, jid, text, { msg, source, isFile });
+        // FIX: Strip prefixes if user accidentally types ".TikTok"
+        let inputText = text.trim();
+        if (!isFile && /^[./!#]/.test(inputText)) {
+            inputText = inputText.replace(/^[./!#]\s*/, '');
+        }
+
+        await handleStateInput(sock, jid, inputText, { msg, source, isFile });
         markProcessed(msg.key.id);
       } catch (e) { console.error('[OTP] hook:', e.message); }
     }
@@ -462,7 +465,6 @@ function getSession(selfJid) {
   if (!s.posted) s.posted = [];
   if (!s.numbers) s.numbers = [];
   
-  // Migrate single channels to arrays
   if (s.otpChannel && !s.otpChannels) { s.otpChannels = [s.otpChannel]; delete s.otpChannel; }
   if (s.numbersChannel && !s.numbersChannels) { s.numbersChannels = [s.numbersChannel]; delete s.numbersChannel; }
   if (!s.otpChannels) s.otpChannels = [];
@@ -523,10 +525,21 @@ function makeCmd(name, aliases = []) {
             if (parts.length >= 2) {
               s.name = parts[0]; s.country = parts.slice(1).join(' '); s.step = 'idle'; saveStore();
               return reply(ctx, `✅ Saved:\n📱 Service: ${s.name}\n🌍 Country: ${s.country}\n\n_Ab *.add*._`);
+            } else if (parts.length === 1) {
+              s.name = parts[0]; s.step = 'await_country'; saveStore();
+              return reply(ctx, `📱 Service: *${s.name}*\n\n🌍 *Country?*\n_Example: Pakistan, India, USA, UK_`);
             }
           }
           s.step = 'await_name'; s.name = null; s.country = null; saveStore();
           return reply(ctx, `📱 *Service name?*\n\n_Examples:_\n• TikTok\n• Facebook\n• WhatsApp\n• Instagram\n• Telegram`);
+        }
+        case 'delrange': {
+          s.name = null;
+          s.country = null;
+          s.numbers = [];
+          s.step = 'idle';
+          saveStore();
+          return reply(ctx, `🗑️ *Purani Range Delete Ho Gayi!*\n\n📱 Service: Clear\n🌍 Country: Clear\n📞 Numbers: Clear\n\n_Ab aap naya *.range* set kar sakte hain._`);
         }
         case 'add': {
           if (!s.name || !s.country) return reply(ctx, '⚠️ Pehle *.range* complete karein.');
@@ -563,7 +576,7 @@ function makeCmd(name, aliases = []) {
           return reply(ctx, `📊 *OTP Bot Status*\n\n┃ 📱 Service: ${s.name || '—'}\n┃ 🌍 Country: ${s.country || '—'}\n┃ 📥 OTP Channels: ${otpList}\n┃ 📤 Numbers Channels: ${numList}\n┃ 📞 Total Numbers: ${nums.size}\n┃ 📮 Posted: ${s.posted.length}\n┃ 🔄 Poll: ${CONFIG.SMS_POLL_INTERVAL_MS / 1000}s\n┃ 🕐 Uptime: ${Math.floor(process.uptime())}s`);
         }
         case 'otphelp': {
-          return reply(ctx, `╭━━━〔 🤖 *OTP BOT* 〕━━━╮\n\n*🔑 Setup*\n┃ .setkeypro <key>\n┃ .setkeyrez <key>\n┃ .keys\n\n*📡 Channels*\n┃ .jd — set OTP + Numbers\n┃ .jd2 — add extra channel\n\n*📱 Service Setup*\n┃ .range — Service + Country\n┃ .add — numbers (text/file)\n\n*📋 Lists*\n┃ .listing — post list\n┃ .remove <url> — delete\n\n*ℹ️ Info*\n┃ .status — bot status\n┃ .otphelp — this menu\n\n╰━━━━━━━━━━━━━━━━━━━━━━━━━╯`);
+          return reply(ctx, `╭━━━〔 🤖 *OTP BOT* 〕━━━╮\n\n*🔑 Setup*\n┃ .setkeypro <key>\n┃ .setkeyrez <key>\n┃ .keys\n\n*📡 Channels*\n┃ .jd — set OTP + Numbers\n┃ .jd2 — add extra channel\n\n*📱 Service Setup*\n┃ .range — Service + Country\n┃ .delrange — reset range\n┃ .add — numbers (text/file)\n\n*📋 Lists*\n┃ .listing — post list\n┃ .remove <url> — delete\n\n*ℹ️ Info*\n┃ .status — bot status\n┃ .otphelp — this menu\n\n╰━━━━━━━━━━━━━━━━━━━━━━━━━╯`);
         }
       }
     },
@@ -577,6 +590,7 @@ export default [
   makeCmd('jd'),
   makeCmd('jd2'),
   makeCmd('range'),
+  makeCmd('delrange', ['resetrange']),
   makeCmd('add'),
   makeCmd('listing'),
   makeCmd('remove'),
