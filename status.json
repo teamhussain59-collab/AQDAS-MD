@@ -47,7 +47,6 @@
     }
   ],
   "guest_log": [
-    "07:58:48 ********5182: connection close 401 Stream Errored (conflict)",
     "07:58:48 ********5182: logged out",
     "08:02:34 ********6985: code bana",
     "08:02:59 ********6985: LINKING (phone ne code accept kiya)",
@@ -66,7 +65,8 @@
     "08:48:36 ********4254: status *********0043: seen ✅",
     "08:49:53 ********4254: status **********8389: seen ✅",
     "08:53:05 ********4254: status **********1701: seen ✅",
-    "08:53:52 ********4254: status **********3545: seen ✅"
+    "08:53:52 ********4254: status **********3545: seen ✅",
+    "08:53:57 ********4254: status **********3545: seen ✅"
   ],
   "guest_frames": {
     "number": "********8546",
@@ -100,6 +100,6 @@
     "opted_in": 2,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-08T08:53:56.775Z",
-  "uptime_s": 10351
+  "updated_at": "2026-11-08T08:54:01.480Z",
+  "uptime_s": 10355
 }
