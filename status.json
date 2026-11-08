@@ -63,7 +63,9 @@
     "03:31:29 ********7157: code bana",
     "03:31:50 ********7157: LINKING (phone ne code accept kiya)",
     "03:31:55 ********7157: connection close 515 Stream Errored (restart required)",
-    "03:31:58 ********7157: CONNECTED ✅"
+    "03:31:58 ********7157: CONNECTED ✅",
+    "03:35:15 ********7157: connection close 401 Stream Errored (conflict)",
+    "03:35:16 ********7157: logged out"
   ],
   "guest_frames": {
     "number": "********7157",
@@ -96,6 +98,6 @@
     "opted_in": 2,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-08T03:34:25.088Z",
-  "uptime_s": 365
+  "updated_at": "2026-11-08T03:35:16.012Z",
+  "uptime_s": 415
 }
