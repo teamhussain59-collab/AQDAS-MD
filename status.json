@@ -59,7 +59,8 @@
     "03:30:27 ********2563: LINKING (phone ne code accept kiya)",
     "03:30:28 ********5182: CONNECTED ✅",
     "03:30:28 ********2563: CONNECTED ✅",
-    "03:30:53 ********4254: status *********0043: seen ✅"
+    "03:30:53 ********4254: status *********0043: seen ✅",
+    "03:31:29 ********7157: code bana"
   ],
   "guest_frames": {
     "number": "********7157",
@@ -79,6 +80,6 @@
     "per_session_mb": 15,
     "room_for": 37
   },
-  "updated_at": "2026-11-08T03:31:29.326Z",
-  "uptime_s": 189
+  "updated_at": "2026-11-08T03:31:33.898Z",
+  "uptime_s": 193
 }
