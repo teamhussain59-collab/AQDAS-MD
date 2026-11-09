@@ -47,7 +47,6 @@
     }
   ],
   "guest_log": [
-    "07:19:31 ********2701: connection close 401 Connection Failure",
     "07:19:31 ********2701: logged out",
     "07:23:26 ********4254: status *********0043: seen ✅",
     "07:26:21 ********4254: status *********0043: seen ✅",
@@ -66,7 +65,8 @@
     "07:56:36 ********4254: status *********0043: seen ✅",
     "07:57:30 ********4254: status *********0043: seen ✅",
     "08:00:55 ********4254: status ***********5232: seen ✅",
-    "08:02:41 ********4254: status ***********3723: seen ✅"
+    "08:02:41 ********4254: status ***********3723: seen ✅",
+    "08:02:59 ********4254: status **********1701: seen ✅"
   ],
   "guest_frames": {
     "number": "********7324",
@@ -99,6 +99,6 @@
     "opted_in": 2,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-09T08:02:45.401Z",
-  "uptime_s": 60437
+  "updated_at": "2026-11-09T08:03:03.356Z",
+  "uptime_s": 60455
 }
