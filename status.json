@@ -42,8 +42,6 @@
     }
   ],
   "guest_log": [
-    "04:22:53 ********3254: LINKING (phone ne code accept kiya)",
-    "04:22:53 ********8546: CONNECTED ✅",
     "04:22:53 ********2128: CONNECTED ✅",
     "04:22:53 ********2563: CONNECTED ✅",
     "04:22:53 ********3254: CONNECTED ✅",
@@ -61,7 +59,9 @@
     "05:00:48 ********4254: status ***********3723: seen ✅",
     "05:05:25 ********4254: status ***********1325: seen ✅",
     "05:20:47 ********4254: status ***********3723: seen ✅",
-    "05:24:27 ********4254: status ***********3723: seen ✅"
+    "05:24:27 ********4254: status ***********3723: seen ✅",
+    "05:31:11 ********8546: connection close 500 Stream Errored (ack)",
+    "05:31:13 ********8546: CONNECTED ✅"
   ],
   "guest_frames": null,
   "mem": {
@@ -82,6 +82,6 @@
     "opted_in": 2,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-10T05:30:51.033Z",
-  "uptime_s": 4205
+  "updated_at": "2026-11-10T05:31:17.700Z",
+  "uptime_s": 4231
 }
