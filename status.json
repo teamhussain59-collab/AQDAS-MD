@@ -9,6 +9,67 @@
   "panel_at": "2026-11-10T17:12:06.607Z",
   "slots_max": "unlimited",
   "commands": 591,
-  "updated_at": "2026-11-10T17:12:09.791Z",
-  "uptime_s": 128
+  "linked": [
+    {
+      "number": "*********6829",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "*********9980",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********2563",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********3254",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********8546",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********2128",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********7157",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********4254",
+      "state": "connected",
+      "autostatus": "view"
+    }
+  ],
+  "guest_log": [
+    "17:12:09 ********7157: LINKING (phone ne code accept kiya)",
+    "17:12:09 ********4254: LINKING (phone ne code accept kiya)",
+    "17:12:09 ********2563: LINKING (phone ne code accept kiya)",
+    "17:12:09 ********3254: LINKING (phone ne code accept kiya)",
+    "17:12:09 ********7157: CONNECTED ✅",
+    "17:12:09 ********4254: CONNECTED ✅",
+    "17:12:09 *********9980: LINKING (phone ne code accept kiya)",
+    "17:12:09 ********3254: CONNECTED ✅",
+    "17:12:09 *********9980: CONNECTED ✅",
+    "17:12:09 ********8546: LINKING (phone ne code accept kiya)",
+    "17:12:09 *********6829: LINKING (phone ne code accept kiya)",
+    "17:12:09 ********2128: LINKING (phone ne code accept kiya)",
+    "17:12:10 ********2563: CONNECTED ✅",
+    "17:12:10 ********8546: CONNECTED ✅",
+    "17:12:10 *********6829: CONNECTED ✅",
+    "17:12:10 ********2128: CONNECTED ✅"
+  ],
+  "guest_frames": null,
+  "updated_at": "2026-11-10T17:12:14.945Z",
+  "uptime_s": 134
 }
