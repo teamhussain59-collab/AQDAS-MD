@@ -57,8 +57,6 @@
     }
   ],
   "guest_log": [
-    "19:20:26 ********8546: CONNECTED ✅",
-    "19:24:53 *********9980: connection close 428 Connection Terminated",
     "19:24:55 *********9980: CONNECTED ✅",
     "19:33:00 ********2876: code bana",
     "19:33:10 ********2876: LINKING (phone ne code accept kiya)",
@@ -76,7 +74,9 @@
     "20:49:49 *********5974: connection close 428 Connection Terminated",
     "20:49:52 *********5974: CONNECTED ✅",
     "21:32:13 ********3254: connection close 428 Connection Terminated",
-    "21:32:16 ********3254: CONNECTED ✅"
+    "21:32:16 ********3254: CONNECTED ✅",
+    "21:32:27 ********7157: connection close 428 Connection Terminated",
+    "21:32:29 ********7157: CONNECTED ✅"
   ],
   "guest_frames": {
     "number": "*********5974",
@@ -110,6 +110,6 @@
     "opted_in": 2,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-10T21:32:20.125Z",
-  "uptime_s": 15739
+  "updated_at": "2026-11-10T21:32:33.845Z",
+  "uptime_s": 15752
 }
