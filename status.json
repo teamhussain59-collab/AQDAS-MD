@@ -47,7 +47,6 @@
     }
   ],
   "guest_log": [
-    "14:11:50 ********3254: status ***********6705: seen ✅, react 🅰️ ✅",
     "14:12:37 ********4254: status ***********6705: seen ✅",
     "14:12:40 ********3254: status ***********6705: seen ✅, react 🅰️ ✅",
     "14:13:02 ********4254: status ***********6705: seen ✅",
@@ -66,7 +65,8 @@
     "15:02:14 *********6829: code bana",
     "15:02:29 *********6829: LINKING (phone ne code accept kiya)",
     "15:02:34 *********6829: connection close 515 Stream Errored (restart required)",
-    "15:02:37 *********6829: CONNECTED ✅"
+    "15:02:37 *********6829: CONNECTED ✅",
+    "15:02:46 ********4254: status ***********1057: seen ✅"
   ],
   "guest_frames": {
     "number": "*********6829",
@@ -99,6 +99,6 @@
     "opted_in": 1,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-10T15:02:45.651Z",
-  "uptime_s": 38519
+  "updated_at": "2026-11-10T15:02:50.788Z",
+  "uptime_s": 38524
 }
