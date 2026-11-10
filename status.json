@@ -62,6 +62,16 @@
       "02:12:20 iq:result <link_code_companion_reg[companion_hello]>"
     ]
   },
-  "updated_at": "2026-11-10T02:12:29.144Z",
-  "uptime_s": 162
+  "mem": {
+    "sessions": 6,
+    "free_mb": 120263,
+    "total_mb": 380681,
+    "rss_mb": 114,
+    "heap_mb": 36,
+    "heap_limit_mb": 489,
+    "per_session_mb": 15,
+    "room_for": 37
+  },
+  "updated_at": "2026-11-10T02:12:52.963Z",
+  "uptime_s": 185
 }
