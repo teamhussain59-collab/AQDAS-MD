@@ -1,5 +1,5 @@
 // ═══════════════════════════════════════════════════════════════════
-//  AQDAS MD — OTP Forward Plugin (Manual Channel Setup Fix)
+//  AQDAS MD — OTP Forward Plugin (Professional Format v6)
 // ═══════════════════════════════════════════════════════════════════
 
 import fs from 'fs';
@@ -15,7 +15,7 @@ const CONFIG = {
   OTP_KEYWORDS: ['otp', 'code', 'verification', 'verify', 'pin', 'login', 'signin', '2fa', 'passcode', 'auth', 'authentication', 'one time', 'onetime', 'tac', 'security code'],
   SMSPRO_BASE: 'https://smspro.tel/api/v1/sms-logs',
   REZSMS_BASE: 'https://rezsms.org/api/cdr.php',
-  SMS_POLL_INTERVAL_MS: 20_000, // 20 second
+  SMS_POLL_INTERVAL_MS: 20_000, 
   SMS_FETCH_LENGTH: 50,
   STATE_DIR: path.join(__dirname, '..', 'data'),
   STATE_FILE: path.join(__dirname, '..', 'data', 'otp-state.json'),
@@ -41,7 +41,11 @@ function saveStore() {
 
 const U = {
   strip(t) { return String(t || '').replace(/```/g, '').replace(/[*_~`]/g, '').replace(/[^\S\r\n]+/g, ' ').trim(); },
-  isOtp(t) { const c = this.strip(t).toLowerCase(); return CONFIG.OTP_KEYWORDS.some(k => c.includes(k)); },
+  isOtp(t) { 
+    const c = this.strip(t).toLowerCase(); 
+    if (c.includes('otp received')) return false;
+    return CONFIG.OTP_KEYWORDS.some(k => c.includes(k)); 
+  },
   code(t) {
     const c = this.strip(t);
     for (const p of [/(?:otp|code|pin|verification|passcode|tac)\D{0,20}(\d{4,8})/i, /\b(\d{3}[- ]\d{3})\b/, /\b(\d{4,8})\b/]) {
@@ -54,6 +58,7 @@ const U = {
   smsText(l) { if (typeof l === 'string') return l; if (!l || typeof l !== 'object') return ''; for (const k of ['message', 'text', 'body', 'content', 'msg', 'sms', 'sms_text']) if (l[k] && typeof l[k] === 'string') return l[k]; return JSON.stringify(l); },
   smsId(l, i) { if (l && typeof l === 'object') for (const k of ['id', '_id', 'message_id', 'sms_id', 'cdr_id', 'uid', 'uuid']) if (l[k] != null) return String(l[k]); return String(i); },
   smsSender(l) { if (!l || typeof l !== 'object') return ''; for (const k of ['sender', 'from', 'sender_id', 'sender_name', 'originator']) if (l[k]) return String(l[k]); return ''; },
+  destNum(l) { if (!l || typeof l !== 'object') return ''; for (const k of ['number', 'msisdn', 'to', 'recipient', 'destination', 'dst', 'phone']) if (l[k]) return String(l[k]).replace(/[^\d+]/g, ''); return ''; },
   async json(url, t = 15000) {
     const ctrl = new AbortController(); const tim = setTimeout(() => ctrl.abort(), t);
     try { const r = await fetch(url, { signal: ctrl.signal }); if (!r.ok) throw new Error('HTTP ' + r.status); return await r.json(); } finally { clearTimeout(tim); }
@@ -91,14 +96,44 @@ async function getTextFromMsg(sock, msg) {
   return { text: '', source: 'none' };
 }
 
-function stylishOtp({ code, source, rawText, sender }) {
+// ✅ NAYA PROFESSIONAL OTP FORMAT
+function stylishOtp({ code, source, rawText, sender, destNum, serviceName }) {
   const time = new Date().toLocaleString('en-GB', { day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit', hour12: true });
+
+  let appName = serviceName || 'Unknown App';
+  let countryName = 'Unknown';
+  let flag = '🌍';
+  let maskedNum = 'N/A';
+
+  if (destNum) {
+    const cleanNum = destNum.replace(/[^\d]/g, '');
+    const codes = {
+      '92': { name: 'Pakistan', flag: '🇵🇰' }, '91': { name: 'India', flag: '🇮🇳' },
+      '49': { name: 'Germany', flag: '🇩🇪' }, '44': { name: 'UK', flag: '🇬🇧' },
+      '1': { name: 'USA', flag: '🇺🇸' }, '971': { name: 'UAE', flag: '🇦🇪' },
+      '966': { name: 'Saudi Arabia', flag: '🇸🇦' }, '62': { name: 'Indonesia', flag: '🇮🇩' },
+      '880': { name: 'Bangladesh', flag: '🇧🇩' }, '7': { name: 'Russia', flag: '🇷🇺' },
+      '33': { name: 'France', flag: '🇫🇷' }, '39': { name: 'Italy', flag: '🇮🇹' },
+      '90': { name: 'Turkey', flag: '🇹🇷' }, '20': { name: 'Egypt', flag: '🇪🇬' },
+      '27': { name: 'South Africa', flag: '🇿🇦' }
+    };
+    for (const c of Object.keys(codes).sort((a,b) => b.length - a.length)) {
+      if (cleanNum.startsWith(c)) { countryName = codes[c].name; flag = codes[c].flag; break; }
+    }
+    if (cleanNum.length > 8) { maskedNum = cleanNum.slice(0, 4) + '****' + cleanNum.slice(-3); } 
+    else { maskedNum = cleanNum; }
+  }
+
   const L = ['╭━━━〔 🔐 *OTP RECEIVED* 〕━━━╮'];
-  L.push(`┃ 💎 *Code* : ${code ? `*${code}*` : '_(auto-detect fail)_'}`);
-  if (sender) L.push(`┃ 📨 *From* : ${sender}`);
-  L.push(`┃ 📡 *Via*  : ${source}`);
-  L.push(`┃ 🕐 *Time* : ${time}`);
-  L.push('╰━━━━━━━━━━━━━━━━━━━━━━━━╯', '', '📝 *Original Message:*', '```' + String(rawText || '').trim().slice(0, CONFIG.MAX_OTP_TEXT_LENGTH) + '```');
+  L.push(`┃ 📱 *Category* : ${appName}`);
+  L.push(`┃ 🌍 *Country*  : ${countryName} ${flag}`);
+  L.push(`┃ 📞 *Number*   : ${maskedNum}`);
+  L.push(`┃ 🔑 *OTP*      : *${code || 'N/A'}*`);
+  L.push(`┃ 🕐 *Time*     : ${time}`);
+  L.push('╰━━━━━━━━━━━━━━━━━━━━━━━━╯');
+  L.push('');
+  L.push('📝 *Original Message:*');
+  L.push('```' + String(rawText || '').trim().slice(0, CONFIG.MAX_OTP_TEXT_LENGTH) + '```');
   return L.join('\n');
 }
 
@@ -122,21 +157,19 @@ function getAllNumbers() {
   return all;
 }
 
-// 🚀 SIRF OTP CHANNEL MEIN BHEJEGA (No DMs)
-async function forwardAll(sock, rawText, source, sender) {
+async function forwardAll(sock, rawText, source, sender, destNum = '') {
   try {
     const code = U.code(rawText);
-    const msg = stylishOtp({ code, source, rawText, sender });
+    const activeS = Object.values(store).find(o => o && o.name);
+    const msg = stylishOtp({ code, source, rawText, sender, destNum, serviceName: activeS?.name });
     
     let posted = 0;
     for (const [jid, o] of Object.entries(store)) {
         if (jid.startsWith('_') || !o || typeof o !== 'object') continue;
         if (o.otpChannels && o.otpChannels.length > 0) {
             for (const ch of o.otpChannels) {
-                try { 
-                    await sock.sendMessage(ch, { text: msg }); 
-                    posted++;
-                } catch (e) { console.error('[OTP] Send fail to channel:', e.message); }
+                try { await sock.sendMessage(ch, { text: msg }); posted++; } 
+                catch (e) { console.error('[OTP] Send fail:', e.message); }
             }
         }
     }
@@ -155,7 +188,8 @@ async function pollSmsPro(sock) {
       if (seenSmsIds.has(sid)) continue;
       const raw = U.smsText(logs[i]);
       if (!raw || !U.isOtp(raw)) { seenSmsIds.add(sid); continue; }
-      await forwardAll(sock, raw, 'SMSPro API', U.smsSender(logs[i]));
+      const destNum = U.destNum(logs[i]); // ✅ Extract target number
+      await forwardAll(sock, raw, 'SMSPro API', U.smsSender(logs[i]), destNum);
       seenSmsIds.add(sid);
     }
   } catch (e) { }
@@ -173,7 +207,8 @@ async function pollRezSms(sock) {
       if (seenSmsIds.has(sid)) continue;
       const raw = U.smsText(logs[i]);
       if (!raw || !U.isOtp(raw)) { seenSmsIds.add(sid); continue; }
-      await forwardAll(sock, raw, 'RezSMS API', U.smsSender(logs[i]));
+      const destNum = U.destNum(logs[i]); // ✅ Extract target number
+      await forwardAll(sock, raw, 'RezSMS API', U.smsSender(logs[i]), destNum);
       seenSmsIds.add(sid);
     }
   } catch (e) { }
@@ -202,6 +237,8 @@ function markProcessed(id) {
 
 async function handleChannelOtp(sock, msg) {
   const jid = msg.key.remoteJid;
+  if (msg.key.fromMe) return; 
+
   let session = null;
   for (const key of Object.keys(store)) {
     if (key.startsWith('_')) continue;
@@ -209,9 +246,15 @@ async function handleChannelOtp(sock, msg) {
     if (s.otpChannels.includes(jid)) { session = s; break; }
   }
   if (!session) return;
+  
   const raw = msg.message.conversation || msg.message.extendedTextMessage?.text || msg.message.imageMessage?.caption || msg.message.videoMessage?.caption || '';
-  if (!raw || !U.isOtp(raw)) return;
-  await forwardAll(sock, raw, 'OTP Channel', msg.key.participant || msg.pushName || jid);
+  if (!raw || !U.isOtp(raw) || raw.includes('OTP RECEIVED')) return;
+  
+  // Try to auto-detect target number from channel message text
+  const numMatch = raw.match(/(?:\+?\d{1,3}[-.\s]?)?\(?\d{2,4}\)?[-.\s]?\d{3,4}[-.\s]?\d{3,4}/);
+  const destNum = numMatch ? numMatch[0].replace(/[^\d]/g, '') : '';
+
+  await forwardAll(sock, raw, 'OTP Channel', msg.key.participant || msg.pushName || jid, destNum);
 }
 
 async function handleStateInput(sock, selfJid, text, opts = {}) {
@@ -327,21 +370,19 @@ function makeCmd(name, aliases = []) {
           const kPro = settings.get('otp_key_pro'); const kRez = settings.get('otp_key_rez');
           return reply(ctx, `🔑 *API Keys*\n\n┃ SMSPro : ${U.mask(kPro)}\n┃ RezSMS : ${U.mask(kRez)}\n\n_Poll: ${CONFIG.SMS_POLL_INTERVAL_MS / 1000}s_`);
         }
-        // ✅ MANUAL CHANNEL SETTING COMMANDS
         case 'setotp': {
           if (!rest) return reply(ctx, '📝 Use: *.setotp <channel_link>*');
-          try { const chJid = await resolveChannelJid(ctx.sock, rest); s.otpChannels = [chJid]; saveStore(); return reply(ctx, `✅ *OTP Channel Set!*\nAb OTPs yahan aayenge:\n\`${chJid}\``); } catch (e) { return reply(ctx, `❌ Error: ${e.message}`); }
+          try { const chJid = await resolveChannelJid(ctx.sock, rest); s.otpChannels = [chJid]; saveStore(); return reply(ctx, `✅ *OTP Channel Set!*`); } catch (e) { return reply(ctx, `❌ Error: ${e.message}`); }
         }
         case 'setnum': {
           if (!rest) return reply(ctx, '📝 Use: *.setnum <channel_link>*');
-          try { const chJid = await resolveChannelJid(ctx.sock, rest); s.numbersChannels = [chJid]; saveStore(); return reply(ctx, `✅ *Numbers Channel Set!*\nAb lists yahan post hongi:\n\`${chJid}\``); } catch (e) { return reply(ctx, `❌ Error: ${e.message}`); }
+          try { const chJid = await resolveChannelJid(ctx.sock, rest); s.numbersChannels = [chJid]; saveStore(); return reply(ctx, `✅ *Numbers Channel Set!*`); } catch (e) { return reply(ctx, `❌ Error: ${e.message}`); }
         }
         case 'testotp': {
           if (!s.otpChannels || !s.otpChannels.length) return reply(ctx, '❌ Pehle *.setotp* se OTP channel set karein.');
-          const testMsg = stylishOtp({ code: '123456', source: 'Test System', rawText: 'Your OTP code is 123456. Test karein.', sender: 'AQDAS BOT' });
+          const testMsg = stylishOtp({ code: '123456', source: 'Test System', rawText: 'Your OTP code is 123456. Test karein.', sender: 'AQDAS BOT', destNum: '923001234567', serviceName: s.name });
           try { for (const ch of s.otpChannels) await ctx.sock.sendMessage(ch, { text: testMsg }); return reply(ctx, '✅ Test OTP bhej diya gaya. Apna channel check karein!'); } catch (e) { return reply(ctx, `❌ Send fail: ${e.message}`); }
         }
-        // ✅ AUTO DETECT
         case 'jd': {
           if (rest) return handleStateInput(ctx.sock, selfJid, rest);
           s.step = 'await_ch1'; s.ch1 = null; s.ch2 = null; saveStore();
