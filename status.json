@@ -62,7 +62,6 @@
     }
   ],
   "guest_log": [
-    "18:49:13 ********8546: status **********6894: seen ✅, react 😘 ✅",
     "18:52:22 ********4254: status ***********0084: seen ✅",
     "19:09:00 ********3254: connection close 428 Connection Terminated",
     "19:09:04 ********3254: CONNECTED ✅",
@@ -81,7 +80,8 @@
     "19:24:53 *********9980: connection close 428 Connection Terminated",
     "19:24:55 *********9980: CONNECTED ✅",
     "19:33:00 ********2876: code bana",
-    "19:33:10 ********2876: LINKING (phone ne code accept kiya)"
+    "19:33:10 ********2876: LINKING (phone ne code accept kiya)",
+    "19:33:18 ********2876: connection close 516 Stream Errored (unknown)"
   ],
   "guest_frames": {
     "number": "********2876",
@@ -90,7 +90,10 @@
       "19:32:55 iq:set <pair-device>",
       "19:32:56 iq:result <link_code_companion_reg[companion_hello]>",
       "19:33:10 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
-      "19:33:10 iq:result"
+      "19:33:10 iq:result",
+      "19:33:16 iq:set <pair-success>",
+      "19:33:17 stream:error: code=516",
+      "19:33:17 xmlstreamend:"
     ]
   },
   "mem": {
@@ -111,6 +114,6 @@
     "opted_in": 2,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-10T19:33:14.963Z",
-  "uptime_s": 8594
+  "updated_at": "2026-11-10T19:33:22.086Z",
+  "uptime_s": 8601
 }
