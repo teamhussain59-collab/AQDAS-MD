@@ -37,7 +37,7 @@
     },
     {
       "number": "********7157",
-      "state": "linking",
+      "state": "connected",
       "autostatus": "off"
     }
   ],
@@ -54,11 +54,12 @@
     "02:11:55 ********2128: CONNECTED ✅",
     "02:12:25 ********7157: code bana",
     "02:12:47 ********7157: LINKING (phone ne code accept kiya)",
-    "02:12:52 ********7157: connection close 515 Stream Errored (restart required)"
+    "02:12:52 ********7157: connection close 515 Stream Errored (restart required)",
+    "02:12:57 ********7157: CONNECTED ✅"
   ],
   "guest_frames": {
     "number": "********7157",
-    "state": "linking",
+    "state": "connected",
     "frames": [
       "02:12:20 iq:set <pair-device>",
       "02:12:20 iq:result <link_code_companion_reg[companion_hello]>",
@@ -80,6 +81,6 @@
     "per_session_mb": 15,
     "room_for": 37
   },
-  "updated_at": "2026-11-10T02:12:56.651Z",
-  "uptime_s": 189
+  "updated_at": "2026-11-10T02:13:01.388Z",
+  "uptime_s": 194
 }
