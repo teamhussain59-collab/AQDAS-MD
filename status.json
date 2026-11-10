@@ -34,6 +34,11 @@
       "number": "********4254",
       "state": "connected",
       "autostatus": "view"
+    },
+    {
+      "number": "********7157",
+      "state": "pairing",
+      "autostatus": "off"
     }
   ],
   "guest_log": [
@@ -48,7 +53,14 @@
     "02:11:55 ********4254: CONNECTED ✅",
     "02:11:55 ********2128: CONNECTED ✅"
   ],
-  "guest_frames": null,
-  "updated_at": "2026-11-10T02:11:59.240Z",
-  "uptime_s": 132
+  "guest_frames": {
+    "number": "********7157",
+    "state": "pairing",
+    "frames": [
+      "02:12:20 iq:set <pair-device>",
+      "02:12:20 iq:result <link_code_companion_reg[companion_hello]>"
+    ]
+  },
+  "updated_at": "2026-11-10T02:12:24.459Z",
+  "uptime_s": 157
 }
