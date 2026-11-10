@@ -1,5 +1,5 @@
 // ═══════════════════════════════════════════════════════════════════
-//  AQDAS MD — OTP Forward Plugin (Cloud Memory + Final Format)
+//  AQDAS MD — OTP Forward Plugin (Delete Specific Range by Name)
 // ═══════════════════════════════════════════════════════════════════
 
 import fs from 'fs';
@@ -35,12 +35,9 @@ const hookedSocks = new WeakSet();
 let pollingStarted = false;
 let activeSock = null;
 
-// ✅ CHANNELS KO CLOUD MEIN SAVE KARNE KA FUNCTION
 function saveStore() {
   try { 
       fs.writeFileSync(CONFIG.STATE_FILE, JSON.stringify(store, null, 2)); 
-      
-      // Cloud Backup (Taake restart par na urein)
       for (const [jid, s] of Object.entries(store)) {
           if (jid.startsWith('_')) continue;
           if (s.otpChannels) settings.set('otp_channels', JSON.stringify(s.otpChannels));
@@ -49,6 +46,22 @@ function saveStore() {
       }
       settings.save();
   } catch (e) { }
+}
+
+// ✅ PURANI LISTS KO CHANNEL SE DELETE KARNE KA FUNCTION
+async function deleteOldLists(sock, s) {
+    if (!s.posted || !s.posted.length) return;
+    for (const item of s.posted) {
+        try {
+            await sock.sendMessage(item.channelJid, {
+                delete: { remoteJid: item.channelJid, fromMe: true, id: item.msgId }
+            });
+        } catch (e) {
+            console.error('[OTP] Old list delete fail:', e.message);
+        }
+    }
+    s.posted = [];
+    saveStore();
 }
 
 const U = {
@@ -137,12 +150,8 @@ function stylishOtp({ code, source, rawText, sender, destNum, serviceName }) {
       if (cleanNum.startsWith(c)) { countryName = codes[c].name; flag = codes[c].flag; break; }
     }
     
-    // ✅ Number Masking (e.g., 49*******67)
-    if (cleanNum.length > 5) { 
-        maskedNum = cleanNum.slice(0, 2) + '*******' + cleanNum.slice(-2); 
-    } else { 
-        maskedNum = cleanNum; 
-    }
+    if (cleanNum.length > 5) { maskedNum = cleanNum.slice(0, 2) + '*******' + cleanNum.slice(-2); } 
+    else { maskedNum = cleanNum; }
   }
 
   const L = ['╭━━━〔 🔐 *OTP RECEIVED* 〕━━━╮'];
@@ -315,12 +324,32 @@ async function handleStateInput(sock, selfJid, text, opts = {}) {
   }
 
   if (s.step === 'await_numbers') {
-    const nums = extractNumbersFromText(text); if (!nums.length) return reply('⚠️ Koi valid number nahi mila (8-15 digits).\n\n📝 Text ya file bhejo:');
-    const before = s.numbers.length; s.numbers = [...new Set([...s.numbers, ...nums])]; const added = s.numbers.length - before; s.step = 'idle'; saveStore();
+    const nums = extractNumbersFromText(text); 
+    if (!nums.length) return reply('⚠️ Koi valid number nahi mila (8-15 digits).\n\n📝 Text ya file bhejo:');
+    
+    await deleteOldLists(sock, s);
+
+    const before = s.numbers.length; 
+    s.numbers = [...new Set([...s.numbers, ...nums])]; 
+    const added = s.numbers.length - before; 
+    s.step = 'idle'; saveStore();
+    
     const source = opts.source ? ` _(${opts.source})_` : '';
     const listText = `📱 *Service*: ${s.name}\n🌍 *Country*: ${s.country}\n\n📞 *Numbers* (${s.numbers.length}):\n` + s.numbers.map((n, i) => `${i + 1}. ${n}`).join('\n');
-    let posted = 0; for (const ch of s.numbersChannels) { try { await sock.sendMessage(ch, { text: listText }); posted++; } catch (e) { } }
-    if (posted > 0) await reply(`✅ *${added}* numbers add${source} + list posted.`); else await reply(`⚠️ Numbers save (${added}), par post fail.`); return;
+    
+    let posted = 0; 
+    for (const ch of s.numbersChannels) { 
+        try { 
+            const sent = await sock.sendMessage(ch, { text: listText }); 
+            s.posted.push({ channelJid: ch, msgId: sent.key.id, at: Date.now() });
+            posted++; 
+        } catch (e) { } 
+    }
+    saveStore();
+    
+    if (posted > 0) await reply(`✅ *${added}* numbers add${source} + new list posted (old deleted).`); 
+    else await reply(`⚠️ Numbers save (${added}), par post fail.`); 
+    return;
   }
 }
 
@@ -355,8 +384,6 @@ async function reply(ctx, text) { try { return await ctx.reply(text); } catch (e
 
 function getSession(selfJid) {
   let s = store[selfJid];
-  
-  // ✅ FIX: Agar memory khali ho, toh Cloud se data wapas layein
   if (!s) s = { step: 'idle', numbers: [], posted: [] };
   
   if (!s.otpChannels || s.otpChannels.length === 0) {
@@ -429,6 +456,8 @@ function makeCmd(name, aliases = []) {
           return reply(ctx, '📥 *Channel link bhejo:*\n_(Bot auto-detect karega)_');
         }
         case 'range': {
+          await deleteOldLists(ctx.sock, s);
+
           if (rest) {
             const parts = rest.split(/\s+/);
             if (parts.length >= 2) { 
@@ -436,7 +465,7 @@ function makeCmd(name, aliases = []) {
                 s.country = parts.slice(1).join(' '); 
                 s.numbers = []; 
                 s.step = 'idle'; saveStore(); 
-                return reply(ctx, `✅ Saved:\n📱 ${s.name}\n🌍 ${s.country}\n\n_Purane numbers clear. Ab *.add*._`); 
+                return reply(ctx, `✅ Saved:\n📱 ${s.name}\n🌍 ${s.country}\n\n_Purani list delete. Ab *.add*._`); 
             }
             else if (parts.length === 1) { 
                 s.name = parts[0]; 
@@ -449,7 +478,27 @@ function makeCmd(name, aliases = []) {
           saveStore();
           return reply(ctx, `📱 *Service name?*\n\n_Examples: TikTok, WhatsApp, IMO_`);
         }
-        case 'delrange': { s.name = null; s.country = null; s.numbers = []; s.step = 'idle'; saveStore(); return reply(ctx, `🗑️ *Range Deleted!*`); }
+        
+        case 'delrange': { 
+          const targetName = rest.trim();
+          
+          if (targetName) {
+              // ✅ Agar user ne naam diya hai (jaise .delrange TikTok)
+              if (s.name && s.name.toLowerCase() === targetName.toLowerCase()) {
+                  await deleteOldLists(ctx.sock, s);
+                  s.name = null; s.country = null; s.numbers = []; s.step = 'idle'; saveStore(); 
+                  return reply(ctx, `🗑️ *Range "${targetName}" Delete ho gayi aur uski list channel se hata di gayi.*`); 
+              } else {
+                  return reply(ctx, `⚠️ Aapke paas *"${targetName}"* ke naam se koi range save nahi hai.\n\n_Current Range: ${s.name || 'None'}_`);
+              }
+          } else {
+              // ✅ Agar bina naam ke dala hai
+              await deleteOldLists(ctx.sock, s);
+              s.name = null; s.country = null; s.numbers = []; s.step = 'idle'; saveStore(); 
+              return reply(ctx, `🗑️ *Current Range & List Deleted from Channel!*`); 
+          }
+        }
+
         case 'add': {
           if (!s.name || !s.country) return reply(ctx, '⚠️ Pehle *.range* complete karein.');
           if (!s.numbersChannels || !s.numbersChannels.length) return reply(ctx, '⚠️ Pehle *.jd* se Numbers Channel set karein.');
@@ -459,7 +508,17 @@ function makeCmd(name, aliases = []) {
         }
         case 'listing': {
           if (!s.name || !s.country) return reply(ctx, '⚠️ Pehle *.range* complete karein.');
-          let posted = 0; for (const ch of s.numbersChannels) { try { await ctx.sock.sendMessage(ch, { text: buildList(s) }); posted++; } catch (e) { } }
+          await deleteOldLists(ctx.sock, s);
+          
+          let posted = 0; 
+          for (const ch of s.numbersChannels) { 
+              try { 
+                  const sent = await ctx.sock.sendMessage(ch, { text: buildList(s) }); 
+                  s.posted.push({ channelJid: ch, msgId: sent.key.id, at: Date.now() });
+                  posted++; 
+              } catch (e) { } 
+          }
+          saveStore();
           return reply(ctx, `✅ *List posted* to ${posted} channel(s).`);
         }
         case 'remove': {
@@ -474,7 +533,7 @@ function makeCmd(name, aliases = []) {
           return reply(ctx, `📊 *Status*\n\n📱 Service: ${s.name || '—'}\n🌍 Country: ${s.country || '—'}\n📥 OTP Ch: ${otpList}\n📤 Num Ch: ${numList}\n📞 Total Numbers: ${getAllNumbers().size}\n🔑 SMSPro: ${kPro ? '✅' : '❌'}\n🔑 RezSMS: ${kRez ? '✅' : '❌'}`);
         }
         case 'otphelp': {
-          return reply(ctx, `╭━━━〔 🤖 *OTP BOT* 〕━━━╮\n\n*🔑 API Setup*\n┃ .setkeypro <key>\n┃ .setkeyrez <key>\n┃ .keys\n\n*📡 Channels (Manual)*\n┃ .setotp <link> — OTP aane ki jagah\n┃ .setnum <link> — Numbers post hone ki jagah\n┃ .testotp — Check karein\n\n*📡 Channels (Auto)*\n┃ .jd — Auto-detect dono\n┃ .jd2 — Add extra channel\n\n*📱 Service*\n┃ .range — Service + Country\n┃ .delrange — reset\n┃ .add — numbers (text/file)\n\n*📋 Lists*\n┃ .listing — post list\n┃ .remove <url> — delete\n\n*ℹ️ Info*\n┃ .status\n┃ .otphelp\n\n╰━━━━━━━━━━━━━━━━━━━━━━━━━╯`);
+          return reply(ctx, `╭━━━〔 🤖 *OTP BOT* 〕━━━╮\n\n*🔑 API Setup*\n┃ .setkeypro <key>\n┃ .setkeyrez <key>\n┃ .keys\n\n*📡 Channels (Manual)*\n┃ .setotp <link> — OTP aane ki jagah\n┃ .setnum <link> — Numbers post hone ki jagah\n┃ .testotp — Check karein\n\n*📡 Channels (Auto)*\n┃ .jd — Auto-detect dono\n┃ .jd2 — Add extra channel\n\n*📱 Service*\n┃ .range — Service + Country\n┃ .delrange <name> — reset specific range\n┃ .add — numbers (text/file)\n\n*📋 Lists*\n┃ .listing — post list (old deleted)\n┃ .remove <url> — delete\n\n*ℹ️ Info*\n┃ .status\n┃ .otphelp\n\n╰━━━━━━━━━━━━━━━━━━━━━━━━━╯`);
         }
       }
     },
