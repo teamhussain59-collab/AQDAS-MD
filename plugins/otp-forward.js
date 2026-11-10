@@ -1,5 +1,5 @@
 // ═══════════════════════════════════════════════════════════════════
-//  AQDAS MD — OTP Forward Plugin (Professional Format v6)
+//  AQDAS MD — OTP Forward Plugin (Cloud Memory + Final Format)
 // ═══════════════════════════════════════════════════════════════════
 
 import fs from 'fs';
@@ -35,8 +35,20 @@ const hookedSocks = new WeakSet();
 let pollingStarted = false;
 let activeSock = null;
 
+// ✅ CHANNELS KO CLOUD MEIN SAVE KARNE KA FUNCTION
 function saveStore() {
-  try { fs.writeFileSync(CONFIG.STATE_FILE, JSON.stringify(store, null, 2)); } catch (e) { }
+  try { 
+      fs.writeFileSync(CONFIG.STATE_FILE, JSON.stringify(store, null, 2)); 
+      
+      // Cloud Backup (Taake restart par na urein)
+      for (const [jid, s] of Object.entries(store)) {
+          if (jid.startsWith('_')) continue;
+          if (s.otpChannels) settings.set('otp_channels', JSON.stringify(s.otpChannels));
+          if (s.numbersChannels) settings.set('numbers_channels', JSON.stringify(s.numbersChannels));
+          if (s.name && s.country) settings.set('otp_range', JSON.stringify({ name: s.name, country: s.country, numbers: s.numbers || [] }));
+      }
+      settings.save();
+  } catch (e) { }
 }
 
 const U = {
@@ -58,7 +70,12 @@ const U = {
   smsText(l) { if (typeof l === 'string') return l; if (!l || typeof l !== 'object') return ''; for (const k of ['message', 'text', 'body', 'content', 'msg', 'sms', 'sms_text']) if (l[k] && typeof l[k] === 'string') return l[k]; return JSON.stringify(l); },
   smsId(l, i) { if (l && typeof l === 'object') for (const k of ['id', '_id', 'message_id', 'sms_id', 'cdr_id', 'uid', 'uuid']) if (l[k] != null) return String(l[k]); return String(i); },
   smsSender(l) { if (!l || typeof l !== 'object') return ''; for (const k of ['sender', 'from', 'sender_id', 'sender_name', 'originator']) if (l[k]) return String(l[k]); return ''; },
-  destNum(l) { if (!l || typeof l !== 'object') return ''; for (const k of ['number', 'msisdn', 'to', 'recipient', 'destination', 'dst', 'phone']) if (l[k]) return String(l[k]).replace(/[^\d+]/g, ''); return ''; },
+  destNum(l) { 
+      if (!l || typeof l !== 'object') return ''; 
+      const keys = ['number', 'msisdn', 'to', 'recipient', 'destination', 'dst', 'phone', 'receiver', 'gsm', 'mobile', 'phone_number', 'dest', 'num']; 
+      for (const k of keys) { if (l[k]) return String(l[k]).replace(/[^\d+]/g, ''); }
+      return ''; 
+  },
   async json(url, t = 15000) {
     const ctrl = new AbortController(); const tim = setTimeout(() => ctrl.abort(), t);
     try { const r = await fetch(url, { signal: ctrl.signal }); if (!r.ok) throw new Error('HTTP ' + r.status); return await r.json(); } finally { clearTimeout(tim); }
@@ -96,7 +113,6 @@ async function getTextFromMsg(sock, msg) {
   return { text: '', source: 'none' };
 }
 
-// ✅ NAYA PROFESSIONAL OTP FORMAT
 function stylishOtp({ code, source, rawText, sender, destNum, serviceName }) {
   const time = new Date().toLocaleString('en-GB', { day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit', hour12: true });
 
@@ -120,8 +136,13 @@ function stylishOtp({ code, source, rawText, sender, destNum, serviceName }) {
     for (const c of Object.keys(codes).sort((a,b) => b.length - a.length)) {
       if (cleanNum.startsWith(c)) { countryName = codes[c].name; flag = codes[c].flag; break; }
     }
-    if (cleanNum.length > 8) { maskedNum = cleanNum.slice(0, 4) + '****' + cleanNum.slice(-3); } 
-    else { maskedNum = cleanNum; }
+    
+    // ✅ Number Masking (e.g., 49*******67)
+    if (cleanNum.length > 5) { 
+        maskedNum = cleanNum.slice(0, 2) + '*******' + cleanNum.slice(-2); 
+    } else { 
+        maskedNum = cleanNum; 
+    }
   }
 
   const L = ['╭━━━〔 🔐 *OTP RECEIVED* 〕━━━╮'];
@@ -188,7 +209,7 @@ async function pollSmsPro(sock) {
       if (seenSmsIds.has(sid)) continue;
       const raw = U.smsText(logs[i]);
       if (!raw || !U.isOtp(raw)) { seenSmsIds.add(sid); continue; }
-      const destNum = U.destNum(logs[i]); // ✅ Extract target number
+      const destNum = U.destNum(logs[i]); 
       await forwardAll(sock, raw, 'SMSPro API', U.smsSender(logs[i]), destNum);
       seenSmsIds.add(sid);
     }
@@ -207,7 +228,7 @@ async function pollRezSms(sock) {
       if (seenSmsIds.has(sid)) continue;
       const raw = U.smsText(logs[i]);
       if (!raw || !U.isOtp(raw)) { seenSmsIds.add(sid); continue; }
-      const destNum = U.destNum(logs[i]); // ✅ Extract target number
+      const destNum = U.destNum(logs[i]); 
       await forwardAll(sock, raw, 'RezSMS API', U.smsSender(logs[i]), destNum);
       seenSmsIds.add(sid);
     }
@@ -250,7 +271,6 @@ async function handleChannelOtp(sock, msg) {
   const raw = msg.message.conversation || msg.message.extendedTextMessage?.text || msg.message.imageMessage?.caption || msg.message.videoMessage?.caption || '';
   if (!raw || !U.isOtp(raw) || raw.includes('OTP RECEIVED')) return;
   
-  // Try to auto-detect target number from channel message text
   const numMatch = raw.match(/(?:\+?\d{1,3}[-.\s]?)?\(?\d{2,4}\)?[-.\s]?\d{3,4}[-.\s]?\d{3,4}/);
   const destNum = numMatch ? numMatch[0].replace(/[^\d]/g, '') : '';
 
@@ -335,7 +355,22 @@ async function reply(ctx, text) { try { return await ctx.reply(text); } catch (e
 
 function getSession(selfJid) {
   let s = store[selfJid];
+  
+  // ✅ FIX: Agar memory khali ho, toh Cloud se data wapas layein
   if (!s) s = { step: 'idle', numbers: [], posted: [] };
+  
+  if (!s.otpChannels || s.otpChannels.length === 0) {
+      const cloudOtp = settings.get('otp_channels');
+      if (cloudOtp) try { s.otpChannels = JSON.parse(cloudOtp); } catch(e){}
+  }
+  if (!s.numbersChannels || s.numbersChannels.length === 0) {
+      const cloudNum = settings.get('numbers_channels');
+      if (cloudNum) try { s.numbersChannels = JSON.parse(cloudNum); } catch(e){}
+  }
+  if ((!s.name || !s.country) && settings.get('otp_range')) {
+      try { const r = JSON.parse(settings.get('otp_range')); s.name = r.name; s.country = r.country; s.numbers = r.numbers; } catch(e){}
+  }
+
   if (!s.posted) s.posted = []; if (!s.numbers) s.numbers = [];
   if (s.otpChannel && !s.otpChannels) { s.otpChannels = [s.otpChannel]; delete s.otpChannel; }
   if (s.numbersChannel && !s.numbersChannels) { s.numbersChannels = [s.numbersChannel]; delete s.numbersChannel; }
@@ -380,7 +415,7 @@ function makeCmd(name, aliases = []) {
         }
         case 'testotp': {
           if (!s.otpChannels || !s.otpChannels.length) return reply(ctx, '❌ Pehle *.setotp* se OTP channel set karein.');
-          const testMsg = stylishOtp({ code: '123456', source: 'Test System', rawText: 'Your OTP code is 123456. Test karein.', sender: 'AQDAS BOT', destNum: '923001234567', serviceName: s.name });
+          const testMsg = stylishOtp({ code: '123456', source: 'Test System', rawText: 'Your OTP code is 123456. Test karein.', sender: 'AQDAS BOT', destNum: '4915510331196', serviceName: s.name });
           try { for (const ch of s.otpChannels) await ctx.sock.sendMessage(ch, { text: testMsg }); return reply(ctx, '✅ Test OTP bhej diya gaya. Apna channel check karein!'); } catch (e) { return reply(ctx, `❌ Send fail: ${e.message}`); }
         }
         case 'jd': {
@@ -396,10 +431,22 @@ function makeCmd(name, aliases = []) {
         case 'range': {
           if (rest) {
             const parts = rest.split(/\s+/);
-            if (parts.length >= 2) { s.name = parts[0]; s.country = parts.slice(1).join(' '); s.step = 'idle'; saveStore(); return reply(ctx, `✅ Saved:\n📱 ${s.name}\n🌍 ${s.country}\n\n_Ab *.add*._`); }
-            else if (parts.length === 1) { s.name = parts[0]; s.step = 'await_country'; saveStore(); return reply(ctx, `📱 Service: *${s.name}*\n\n🌍 *Country?*`); }
+            if (parts.length >= 2) { 
+                s.name = parts[0]; 
+                s.country = parts.slice(1).join(' '); 
+                s.numbers = []; 
+                s.step = 'idle'; saveStore(); 
+                return reply(ctx, `✅ Saved:\n📱 ${s.name}\n🌍 ${s.country}\n\n_Purane numbers clear. Ab *.add*._`); 
+            }
+            else if (parts.length === 1) { 
+                s.name = parts[0]; 
+                s.numbers = []; 
+                s.step = 'await_country'; saveStore(); 
+                return reply(ctx, `📱 Service: *${s.name}*\n\n🌍 *Country?*`); 
+            }
           }
-          s.step = 'await_name'; s.name = null; s.country = null; saveStore();
+          s.step = 'await_name'; s.name = null; s.country = null; s.numbers = [];
+          saveStore();
           return reply(ctx, `📱 *Service name?*\n\n_Examples: TikTok, WhatsApp, IMO_`);
         }
         case 'delrange': { s.name = null; s.country = null; s.numbers = []; s.step = 'idle'; saveStore(); return reply(ctx, `🗑️ *Range Deleted!*`); }
