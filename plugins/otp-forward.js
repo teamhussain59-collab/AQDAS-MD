@@ -1,6 +1,5 @@
 // ═══════════════════════════════════════════════════════════════════
-//  AQDAS MD — OTP Forward Plugin (Final Version)
-//  Features: Cloud Keys, Channel-Only OTP, File/Text Add, Multi-Channel
+//  AQDAS MD — OTP Forward Plugin (Manual Channel Setup Fix)
 // ═══════════════════════════════════════════════════════════════════
 
 import fs from 'fs';
@@ -16,7 +15,7 @@ const CONFIG = {
   OTP_KEYWORDS: ['otp', 'code', 'verification', 'verify', 'pin', 'login', 'signin', '2fa', 'passcode', 'auth', 'authentication', 'one time', 'onetime', 'tac', 'security code'],
   SMSPRO_BASE: 'https://smspro.tel/api/v1/sms-logs',
   REZSMS_BASE: 'https://rezsms.org/api/cdr.php',
-  SMS_POLL_INTERVAL_MS: 30_000,
+  SMS_POLL_INTERVAL_MS: 20_000, // 20 second
   SMS_FETCH_LENGTH: 50,
   STATE_DIR: path.join(__dirname, '..', 'data'),
   STATE_FILE: path.join(__dirname, '..', 'data', 'otp-state.json'),
@@ -123,7 +122,7 @@ function getAllNumbers() {
   return all;
 }
 
-// 🚀 SIRF CHANNEL MEIN BHEJEGA (No DMs)
+// 🚀 SIRF OTP CHANNEL MEIN BHEJEGA (No DMs)
 async function forwardAll(sock, rawText, source, sender) {
   try {
     const code = U.code(rawText);
@@ -132,12 +131,12 @@ async function forwardAll(sock, rawText, source, sender) {
     let posted = 0;
     for (const [jid, o] of Object.entries(store)) {
         if (jid.startsWith('_') || !o || typeof o !== 'object') continue;
-        if (o.otpChannels) {
+        if (o.otpChannels && o.otpChannels.length > 0) {
             for (const ch of o.otpChannels) {
                 try { 
                     await sock.sendMessage(ch, { text: msg }); 
                     posted++;
-                } catch (e) { }
+                } catch (e) { console.error('[OTP] Send fail to channel:', e.message); }
             }
         }
     }
@@ -328,6 +327,21 @@ function makeCmd(name, aliases = []) {
           const kPro = settings.get('otp_key_pro'); const kRez = settings.get('otp_key_rez');
           return reply(ctx, `🔑 *API Keys*\n\n┃ SMSPro : ${U.mask(kPro)}\n┃ RezSMS : ${U.mask(kRez)}\n\n_Poll: ${CONFIG.SMS_POLL_INTERVAL_MS / 1000}s_`);
         }
+        // ✅ MANUAL CHANNEL SETTING COMMANDS
+        case 'setotp': {
+          if (!rest) return reply(ctx, '📝 Use: *.setotp <channel_link>*');
+          try { const chJid = await resolveChannelJid(ctx.sock, rest); s.otpChannels = [chJid]; saveStore(); return reply(ctx, `✅ *OTP Channel Set!*\nAb OTPs yahan aayenge:\n\`${chJid}\``); } catch (e) { return reply(ctx, `❌ Error: ${e.message}`); }
+        }
+        case 'setnum': {
+          if (!rest) return reply(ctx, '📝 Use: *.setnum <channel_link>*');
+          try { const chJid = await resolveChannelJid(ctx.sock, rest); s.numbersChannels = [chJid]; saveStore(); return reply(ctx, `✅ *Numbers Channel Set!*\nAb lists yahan post hongi:\n\`${chJid}\``); } catch (e) { return reply(ctx, `❌ Error: ${e.message}`); }
+        }
+        case 'testotp': {
+          if (!s.otpChannels || !s.otpChannels.length) return reply(ctx, '❌ Pehle *.setotp* se OTP channel set karein.');
+          const testMsg = stylishOtp({ code: '123456', source: 'Test System', rawText: 'Your OTP code is 123456. Test karein.', sender: 'AQDAS BOT' });
+          try { for (const ch of s.otpChannels) await ctx.sock.sendMessage(ch, { text: testMsg }); return reply(ctx, '✅ Test OTP bhej diya gaya. Apna channel check karein!'); } catch (e) { return reply(ctx, `❌ Send fail: ${e.message}`); }
+        }
+        // ✅ AUTO DETECT
         case 'jd': {
           if (rest) return handleStateInput(ctx.sock, selfJid, rest);
           s.step = 'await_ch1'; s.ch1 = null; s.ch2 = null; saveStore();
@@ -367,11 +381,12 @@ function makeCmd(name, aliases = []) {
         }
         case 'status': {
           const kPro = settings.get('otp_key_pro'); const kRez = settings.get('otp_key_rez');
-          const otpList = s.otpChannels.length ? s.otpChannels.length + ' ch' : '—'; const numList = s.numbersChannels.length ? s.numbersChannels.length + ' ch' : '—';
+          const otpList = s.otpChannels.length ? s.otpChannels.map(j => j.split('@')[0]).join(', ') : '—'; 
+          const numList = s.numbersChannels.length ? s.numbersChannels.map(j => j.split('@')[0]).join(', ') : '—';
           return reply(ctx, `📊 *Status*\n\n📱 Service: ${s.name || '—'}\n🌍 Country: ${s.country || '—'}\n📥 OTP Ch: ${otpList}\n📤 Num Ch: ${numList}\n📞 Total Numbers: ${getAllNumbers().size}\n🔑 SMSPro: ${kPro ? '✅' : '❌'}\n🔑 RezSMS: ${kRez ? '✅' : '❌'}`);
         }
         case 'otphelp': {
-          return reply(ctx, `╭━━━〔 🤖 *OTP BOT* 〕━━━╮\n\n*🔑 Setup*\n┃ .setkeypro <key>\n┃ .setkeyrez <key>\n┃ .keys\n\n*📡 Channels*\n┃ .jd — set OTP + Numbers\n┃ .jd2 — add extra channel\n\n*📱 Service*\n┃ .range — Service + Country\n┃ .delrange — reset\n┃ .add — numbers (text/file)\n\n*📋 Lists*\n┃ .listing — post list\n┃ .remove <url> — delete\n\n*ℹ️ Info*\n┃ .status\n┃ .otphelp\n\n╰━━━━━━━━━━━━━━━━━━━━━━━━━╯`);
+          return reply(ctx, `╭━━━〔 🤖 *OTP BOT* 〕━━━╮\n\n*🔑 API Setup*\n┃ .setkeypro <key>\n┃ .setkeyrez <key>\n┃ .keys\n\n*📡 Channels (Manual)*\n┃ .setotp <link> — OTP aane ki jagah\n┃ .setnum <link> — Numbers post hone ki jagah\n┃ .testotp — Check karein\n\n*📡 Channels (Auto)*\n┃ .jd — Auto-detect dono\n┃ .jd2 — Add extra channel\n\n*📱 Service*\n┃ .range — Service + Country\n┃ .delrange — reset\n┃ .add — numbers (text/file)\n\n*📋 Lists*\n┃ .listing — post list\n┃ .remove <url> — delete\n\n*ℹ️ Info*\n┃ .status\n┃ .otphelp\n\n╰━━━━━━━━━━━━━━━━━━━━━━━━━╯`);
         }
       }
     },
@@ -380,6 +395,7 @@ function makeCmd(name, aliases = []) {
 
 export default [
   makeCmd('setkeypro'), makeCmd('setkeyrez'), makeCmd('keys'),
+  makeCmd('setotp'), makeCmd('setnum'), makeCmd('testotp'),
   makeCmd('jd'), makeCmd('jd2'), makeCmd('range'), makeCmd('delrange'),
   makeCmd('add'), makeCmd('listing'), makeCmd('remove'),
   makeCmd('status'), makeCmd('otphelp', ['otpmenu']),
