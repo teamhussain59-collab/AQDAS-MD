@@ -36,11 +36,6 @@
       "autostatus": "view+react"
     },
     {
-      "number": "********2128",
-      "state": "connected",
-      "autostatus": "off"
-    },
-    {
       "number": "********7157",
       "state": "connected",
       "autostatus": "off"
@@ -57,8 +52,6 @@
     }
   ],
   "guest_log": [
-    "23:20:30 ********3254: connection close 428 Connection Terminated",
-    "23:20:33 ********3254: CONNECTED ✅",
     "23:32:38 ********4254: connection close 428 Connection Terminated",
     "23:32:41 ********4254: CONNECTED ✅",
     "00:10:53 ********3254: connection close 428 Connection Terminated",
@@ -76,7 +69,9 @@
     "01:40:36 ********7157: CONNECTED ✅",
     "01:40:52 *********9980: connection close 428 Connection Terminated",
     "01:40:55 *********9980: CONNECTED ✅",
-    "01:42:07 ********8546: status ***********6612: seen ✅, react 🙂 ✅"
+    "01:42:07 ********8546: status ***********6612: seen ✅, react 🙂 ✅",
+    "01:50:47 ********2128: connection close 401 Stream Errored (conflict)",
+    "01:50:48 ********2128: logged out"
   ],
   "guest_frames": {
     "number": "*********5974",
@@ -110,6 +105,6 @@
     "opted_in": 2,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-11T01:50:08.556Z",
-  "uptime_s": 31207
+  "updated_at": "2026-11-11T01:50:52.095Z",
+  "uptime_s": 31251
 }
