@@ -62,7 +62,6 @@
     }
   ],
   "guest_log": [
-    "20:06:40 *********5974: connection close 500 Stream Errored (ack)",
     "20:06:43 *********5974: CONNECTED ✅",
     "20:17:11 ********8546: connection close 428 Connection Terminated",
     "20:17:15 ********8546: CONNECTED ✅",
@@ -81,7 +80,8 @@
     "20:47:10 ********2563: connection close 428 Connection Terminated",
     "20:47:13 ********2563: CONNECTED ✅",
     "20:56:43 *********5974: connection close 500 Stream Errored (ack)",
-    "20:56:47 *********5974: CONNECTED ✅"
+    "20:56:47 *********5974: CONNECTED ✅",
+    "21:09:47 ********0890: code bana"
   ],
   "guest_frames": {
     "number": "********0890",
@@ -109,6 +109,6 @@
     "opted_in": 2,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-11T21:09:46.445Z",
-  "uptime_s": 100785
+  "updated_at": "2026-11-11T21:09:51.280Z",
+  "uptime_s": 100790
 }
