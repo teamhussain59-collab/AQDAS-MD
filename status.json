@@ -57,8 +57,6 @@
     }
   ],
   "guest_log": [
-    "16:51:44 ********8546: status **********0921: seen ✅, react 😍 ✅",
-    "16:55:20 ********8546: status **********0921: seen ✅, react 😘 ✅",
     "16:55:34 ********8546: status **********0921: seen ✅, react 🥺 ✅",
     "16:59:24 ********8546: status ***********2745: seen ✅, react 🥺 ✅",
     "16:59:50 ********8546: status **********0921: seen ✅, react 😢 ✅",
@@ -76,11 +74,13 @@
     "17:11:27 ********8546: CONNECTED ✅",
     "17:16:39 ********3254: connection close 428 Connection Terminated",
     "17:16:47 ********3254: CONNECTED ✅",
-    "17:22:20 *********1795: code bana"
+    "17:22:20 *********1795: code bana",
+    "17:25:45 *********1795: connection close 428 Connection Terminated by Server",
+    "17:25:45 *********1795: expired / closed (code 428)"
   ],
   "guest_frames": {
     "number": "*********1795",
-    "state": "pairing",
+    "state": "expired",
     "frames": [
       "17:22:15 iq:set <pair-device>",
       "17:22:15 iq:result <link_code_companion_reg[companion_hello]>",
@@ -90,7 +90,8 @@
       "17:23:45 iq:result",
       "17:24:15 iq:result",
       "17:24:45 iq:result",
-      "17:25:15 iq:result"
+      "17:25:15 iq:result",
+      "17:25:45 xmlstreamend:"
     ]
   },
   "mem": {
@@ -111,6 +112,6 @@
     "opted_in": 2,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-11T17:25:19.316Z",
-  "uptime_s": 87318
+  "updated_at": "2026-11-11T17:25:45.437Z",
+  "uptime_s": 87344
 }
