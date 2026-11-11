@@ -62,8 +62,6 @@
     }
   ],
   "guest_log": [
-    "20:21:47 *********9980: connection close 500 Stream Errored (ack)",
-    "20:21:50 *********9980: CONNECTED ✅",
     "20:22:12 *********6829: connection close 428 Connection Terminated",
     "20:22:15 *********6829: CONNECTED ✅",
     "20:26:29 ********3254: connection close 500 Stream Errored (ack)",
@@ -81,7 +79,9 @@
     "21:09:47 ********0890: code bana",
     "21:10:05 ********0890: LINKING (phone ne code accept kiya)",
     "21:11:50 *********9980: connection close 500 Stream Errored (ack)",
-    "21:11:54 *********9980: CONNECTED ✅"
+    "21:11:54 *********9980: CONNECTED ✅",
+    "21:12:15 *********6829: connection close 500 Stream Errored (ack)",
+    "21:12:18 *********6829: CONNECTED ✅"
   ],
   "guest_frames": {
     "number": "********0890",
@@ -96,7 +96,8 @@
       "21:10:42 iq:result",
       "21:11:12 iq:result",
       "21:11:42 iq:get",
-      "21:11:42 iq:result"
+      "21:11:42 iq:result",
+      "21:12:12 iq:result"
     ]
   },
   "mem": {
@@ -117,6 +118,6 @@
     "opted_in": 2,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-11T21:12:16.034Z",
-  "uptime_s": 100935
+  "updated_at": "2026-11-11T21:12:22.233Z",
+  "uptime_s": 100941
 }
