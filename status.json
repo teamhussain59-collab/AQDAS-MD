@@ -62,7 +62,6 @@
     }
   ],
   "guest_log": [
-    "08:31:30 ********7170: CONNECTED ✅",
     "08:40:11 ********9425: code bana",
     "08:40:37 ********9425: LINKING (phone ne code accept kiya)",
     "08:40:44 ********9425: connection close 515 Stream Errored (restart required)",
@@ -81,7 +80,8 @@
     "09:21:11 *********1795: CONNECTED ✅",
     "09:21:30 ********7170: connection close 500 Stream Errored (ack)",
     "09:21:33 ********7170: CONNECTED ✅",
-    "09:27:01 ********8546: status *********6893: seen ✅, react 😍 ✅"
+    "09:27:01 ********8546: status *********6893: seen ✅, react 😍 ✅",
+    "09:28:16 ********4254: status ***********6484: seen ✅"
   ],
   "guest_frames": {
     "number": "********9425",
@@ -115,6 +115,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-12T09:27:31.757Z",
-  "uptime_s": 28215
+  "updated_at": "2026-11-12T09:28:20.923Z",
+  "uptime_s": 28265
 }
