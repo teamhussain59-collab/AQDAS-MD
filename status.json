@@ -62,14 +62,6 @@
     }
   ],
   "guest_log": [
-    "03:00:27 ********8546: status ***********4475: seen ✅, react 😢 ✅",
-    "03:00:29 ********8546: status ***********4475: seen ✅, react 🙂 ✅",
-    "03:00:46 ********8546: status ***********4475: seen ✅, react 😍 ✅",
-    "03:00:47 ********8546: status ***********4475: seen ✅, react 😊 ✅",
-    "03:00:47 ********8546: status ***********4475: seen ✅, react 😌 ✅",
-    "03:02:53 ********8546: status ***********4475: seen ✅, react 😍 ✅",
-    "03:02:55 ********8546: status ***********4475: seen ✅, react 🥺 ✅",
-    "03:03:28 ********4254: connection close 428 Connection Terminated",
     "03:03:30 ********4254: CONNECTED ✅",
     "03:04:09 ********8546: status ***********4475: seen ✅, react 😇 ✅",
     "03:08:20 ********8546: status **********4700: seen ✅, react 🙂 ✅",
@@ -81,7 +73,15 @@
     "03:30:54 ********7170: CONNECTED ✅",
     "03:32:44 *********9980: connection close 428 Connection Terminated",
     "03:32:48 *********9980: CONNECTED ✅",
-    "03:33:20 ********8546: status ***********4475: seen ✅, react 😍 ✅"
+    "03:33:20 ********8546: status ***********4475: seen ✅, react 😍 ✅",
+    "03:40:39 ********3254: connection close 408 Connection was lost",
+    "03:40:39 ********8546: connection close 408 Connection was lost",
+    "03:40:39 ********2563: connection close 408 Connection was lost",
+    "03:40:39 ********4254: connection close 408 Connection was lost",
+    "03:40:42 ********3254: CONNECTED ✅",
+    "03:40:42 ********8546: CONNECTED ✅",
+    "03:40:43 ********4254: CONNECTED ✅",
+    "03:40:43 ********2563: CONNECTED ✅"
   ],
   "guest_frames": null,
   "mem": {
@@ -102,6 +102,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-12T03:39:26.133Z",
-  "uptime_s": 7330
+  "updated_at": "2026-11-12T03:40:47.403Z",
+  "uptime_s": 7411
 }
