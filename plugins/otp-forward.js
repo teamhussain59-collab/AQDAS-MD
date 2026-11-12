@@ -1,5 +1,5 @@
 // ═══════════════════════════════════════════════════════════════════
-//  AQDAS MD — OTP Forward Plugin (Delete Specific Range by Name)
+//  AQDAS MD — OTP Forward Plugin (Advanced Remove & CRAPI API)
 // ═══════════════════════════════════════════════════════════════════
 
 import fs from 'fs';
@@ -15,6 +15,7 @@ const CONFIG = {
   OTP_KEYWORDS: ['otp', 'code', 'verification', 'verify', 'pin', 'login', 'signin', '2fa', 'passcode', 'auth', 'authentication', 'one time', 'onetime', 'tac', 'security code'],
   SMSPRO_BASE: 'https://smspro.tel/api/v1/sms-logs',
   REZSMS_BASE: 'https://rezsms.org/api/cdr.php',
+  CRAPI_BASE: 'http://167.86.126.217/crapi/viewstats', // ✅ Naya API Add
   SMS_POLL_INTERVAL_MS: 20_000, 
   SMS_FETCH_LENGTH: 50,
   STATE_DIR: path.join(__dirname, '..', 'data'),
@@ -43,12 +44,12 @@ function saveStore() {
           if (s.otpChannels) settings.set('otp_channels', JSON.stringify(s.otpChannels));
           if (s.numbersChannels) settings.set('numbers_channels', JSON.stringify(s.numbersChannels));
           if (s.name && s.country) settings.set('otp_range', JSON.stringify({ name: s.name, country: s.country, numbers: s.numbers || [] }));
+          else settings.set('otp_range', null);
       }
       settings.save();
   } catch (e) { }
 }
 
-// ✅ PURANI LISTS KO CHANNEL SE DELETE KARNE KA FUNCTION
 async function deleteOldLists(sock, s) {
     if (!s.posted || !s.posted.length) return;
     for (const item of s.posted) {
@@ -56,9 +57,7 @@ async function deleteOldLists(sock, s) {
             await sock.sendMessage(item.channelJid, {
                 delete: { remoteJid: item.channelJid, fromMe: true, id: item.msgId }
             });
-        } catch (e) {
-            console.error('[OTP] Old list delete fail:', e.message);
-        }
+        } catch (e) { }
     }
     s.posted = [];
     saveStore();
@@ -199,7 +198,7 @@ async function forwardAll(sock, rawText, source, sender, destNum = '') {
         if (o.otpChannels && o.otpChannels.length > 0) {
             for (const ch of o.otpChannels) {
                 try { await sock.sendMessage(ch, { text: msg }); posted++; } 
-                catch (e) { console.error('[OTP] Send fail:', e.message); }
+                catch (e) { }
             }
         }
     }
@@ -244,9 +243,28 @@ async function pollRezSms(sock) {
   } catch (e) { }
 }
 
+// ✅ Naya API CRAPI
+async function pollCrapi(sock) {
+  const key = settings.get('otp_key_crapi');
+  if (!key) return;
+  try {
+    const url = `${CONFIG.CRAPI_BASE}?key=${encodeURIComponent(key)}`; 
+    const logs = U.pick(await U.json(url));
+    for (let i = 0; i < logs.length; i++) {
+      const sid = `crapi_${U.smsId(logs[i], i)}`;
+      if (seenSmsIds.has(sid)) continue;
+      const raw = U.smsText(logs[i]);
+      if (!raw || !U.isOtp(raw)) { seenSmsIds.add(sid); continue; }
+      const destNum = U.destNum(logs[i]); 
+      await forwardAll(sock, raw, 'CRAPI Panel', U.smsSender(logs[i]), destNum);
+      seenSmsIds.add(sid);
+    }
+  } catch (e) { }
+}
+
 async function pollTick() {
   if (!activeSock?.user) return;
-  try { await pollSmsPro(activeSock); await pollRezSms(activeSock); } catch (e) { }
+  try { await pollSmsPro(activeSock); await pollRezSms(activeSock); await pollCrapi(activeSock); } catch (e) { }
 }
 
 function activate(sock) {
@@ -289,6 +307,22 @@ async function handleChannelOtp(sock, msg) {
 async function handleStateInput(sock, selfJid, text, opts = {}) {
   const s = store[selfJid]; if (!s || !s.step || s.step === 'idle') return;
   const reply = (t) => sock.sendMessage(selfJid, { text: t }).catch(() => {});
+
+  // ✅ NAYA STATE: Remove target identify karne ke liye
+  if (s.step === 'await_remove_target') {
+      const target = text.toLowerCase().trim();
+      const current = `${s.country || ''} ${s.name || ''}`.toLowerCase();
+      
+      if (current.includes(target) || target.includes(s.name?.toLowerCase() || 'xxx') || target.includes(s.country?.toLowerCase() || 'xxx')) {
+          await deleteOldLists(sock, s);
+          s.name = null; s.country = null; s.numbers = []; s.step = 'idle'; saveStore(); 
+          await reply(`🗑️ *Range "${text}" permanently delete ho gayi!*\n\nNumbers memory se nikal diye gaye hain aur channel se list hata di gayi hai.`);
+      } else {
+          s.step = 'idle'; saveStore();
+          await reply(`⚠️ *"${text}"* ke naam se koi list save nahi mili.\n\n_Current List: ${s.country || ''} ${s.name || 'None'}_`);
+      }
+      return;
+  }
 
   if (s.step === 'await_ch1') {
     try { s.ch1 = await resolveChannelJid(sock, text); s.step = 'await_ch2'; saveStore(); await reply('✅ *Saved #1*\n\n📤 Ab *Channel link #2* bhejo:'); } catch (e) { await reply(`❌ Resolve fail: ${e.message}\n\nDobara bhejo:`); } return;
@@ -347,7 +381,7 @@ async function handleStateInput(sock, selfJid, text, opts = {}) {
     }
     saveStore();
     
-    if (posted > 0) await reply(`✅ *${added}* numbers add${source} + new list posted (old deleted).`); 
+    if (posted > 0) await reply(`✅ *${added}* numbers add${source} + new list posted.`); 
     else await reply(`⚠️ Numbers save (${added}), par post fail.`); 
     return;
   }
@@ -428,9 +462,15 @@ function makeCmd(name, aliases = []) {
           await autoDelete(ctx.sock, ctx.msg.key, ctx.jid);
           return ctx.sock.sendMessage(ctx.jid, { text: '✅ *RezSMS* key saved to Cloud.\n\n🔒 _Key auto-deleted._' });
         }
+        case 'setkeycrapi': { // ✅ Naya Command CRAPI ke liye
+          if (!rest) return reply(ctx, '📝 Use: *.setkeycrapi <key>*');
+          settings.set('otp_key_crapi', rest); settings.save(); activate(ctx.sock);
+          await autoDelete(ctx.sock, ctx.msg.key, ctx.jid);
+          return ctx.sock.sendMessage(ctx.jid, { text: '✅ *CRAPI* key saved to Cloud.\n\n🔒 _Key auto-deleted._' });
+        }
         case 'keys': {
-          const kPro = settings.get('otp_key_pro'); const kRez = settings.get('otp_key_rez');
-          return reply(ctx, `🔑 *API Keys*\n\n┃ SMSPro : ${U.mask(kPro)}\n┃ RezSMS : ${U.mask(kRez)}\n\n_Poll: ${CONFIG.SMS_POLL_INTERVAL_MS / 1000}s_`);
+          const kPro = settings.get('otp_key_pro'); const kRez = settings.get('otp_key_rez'); const kCrapi = settings.get('otp_key_crapi');
+          return reply(ctx, `🔑 *API Keys*\n\n┃ SMSPro : ${U.mask(kPro)}\n┃ RezSMS : ${U.mask(kRez)}\n┃ CRAPI  : ${U.mask(kCrapi)}\n\n_Poll: ${CONFIG.SMS_POLL_INTERVAL_MS / 1000}s_`);
         }
         case 'setotp': {
           if (!rest) return reply(ctx, '📝 Use: *.setotp <channel_link>*');
@@ -481,18 +521,15 @@ function makeCmd(name, aliases = []) {
         
         case 'delrange': { 
           const targetName = rest.trim();
-          
           if (targetName) {
-              // ✅ Agar user ne naam diya hai (jaise .delrange TikTok)
               if (s.name && s.name.toLowerCase() === targetName.toLowerCase()) {
                   await deleteOldLists(ctx.sock, s);
                   s.name = null; s.country = null; s.numbers = []; s.step = 'idle'; saveStore(); 
                   return reply(ctx, `🗑️ *Range "${targetName}" Delete ho gayi aur uski list channel se hata di gayi.*`); 
               } else {
-                  return reply(ctx, `⚠️ Aapke paas *"${targetName}"* ke naam se koi range save nahi hai.\n\n_Current Range: ${s.name || 'None'}_`);
+                  return reply(ctx, `⚠️ Aapke paas *"${targetName}"* ke naam se koi range save nahi hai.`);
               }
           } else {
-              // ✅ Agar bina naam ke dala hai
               await deleteOldLists(ctx.sock, s);
               s.name = null; s.country = null; s.numbers = []; s.step = 'idle'; saveStore(); 
               return reply(ctx, `🗑️ *Current Range & List Deleted from Channel!*`); 
@@ -509,7 +546,6 @@ function makeCmd(name, aliases = []) {
         case 'listing': {
           if (!s.name || !s.country) return reply(ctx, '⚠️ Pehle *.range* complete karein.');
           await deleteOldLists(ctx.sock, s);
-          
           let posted = 0; 
           for (const ch of s.numbersChannels) { 
               try { 
@@ -521,19 +557,44 @@ function makeCmd(name, aliases = []) {
           saveStore();
           return reply(ctx, `✅ *List posted* to ${posted} channel(s).`);
         }
+
+        // ✅ NAYA .remove UPDATE (Asks for target if no args)
         case 'remove': {
-          if (!rest) return reply(ctx, '📝 Use: *.remove <url>*');
-          const p = U.parseUrl(rest); if (!p) return reply(ctx, '❌ Galat URL.');
-          try { await ctx.sock.sendMessage(p.channelJid, { delete: { remoteJid: p.channelJid, fromMe: true, id: p.msgId } }); return reply(ctx, '🗑️ Delete ho gaya.'); } catch (e) { return reply(ctx, `⚠️ Delete fail.`); }
+          if (!rest) {
+              // Agar user ne kuch nahi likha, toh state machine start karo
+              s.step = 'await_remove_target'; saveStore();
+              return reply(ctx, `🗑️ *Aap kaunsi list/panel remove karna chahte hain?*\n\n_Example: Pakistan SMSPro, TikTok Germany, etc._\n\nType karke bhejein:`);
+          }
+          
+          // Agar user ne direct text diya hai .remove Pakistan SMSPro
+          const p = U.parseUrl(rest); 
+          if (p) {
+              try { 
+                  await ctx.sock.sendMessage(p.channelJid, { delete: { remoteJid: p.channelJid, fromMe: true, id: p.msgId } }); 
+                  return reply(ctx, '🗑️ *Channel Post URL Delete ho gaya.*'); 
+              } catch (e) { return reply(ctx, `⚠️ Delete fail.`); }
+          }
+          
+          const targetName = rest.toLowerCase().trim();
+          const current = `${s.country || ''} ${s.name || ''}`.toLowerCase();
+          
+          if (current.includes(targetName) || targetName.includes(s.name?.toLowerCase() || 'xxx') || targetName.includes(s.country?.toLowerCase() || 'xxx')) {
+              await deleteOldLists(ctx.sock, s);
+              s.name = null; s.country = null; s.numbers = []; s.step = 'idle'; saveStore(); 
+              return reply(ctx, `🗑️ *List "${rest}" permanently remove ho gayi!*`);
+          } else {
+              return reply(ctx, `⚠️ *"${rest}"* ke naam se koi list save nahi hai.\n\n_Current List: ${s.country || ''} ${s.name || 'None'}_`);
+          }
         }
+
         case 'status': {
-          const kPro = settings.get('otp_key_pro'); const kRez = settings.get('otp_key_rez');
+          const kPro = settings.get('otp_key_pro'); const kRez = settings.get('otp_key_rez'); const kCrapi = settings.get('otp_key_crapi');
           const otpList = s.otpChannels.length ? s.otpChannels.map(j => j.split('@')[0]).join(', ') : '—'; 
           const numList = s.numbersChannels.length ? s.numbersChannels.map(j => j.split('@')[0]).join(', ') : '—';
-          return reply(ctx, `📊 *Status*\n\n📱 Service: ${s.name || '—'}\n🌍 Country: ${s.country || '—'}\n📥 OTP Ch: ${otpList}\n📤 Num Ch: ${numList}\n📞 Total Numbers: ${getAllNumbers().size}\n🔑 SMSPro: ${kPro ? '✅' : '❌'}\n🔑 RezSMS: ${kRez ? '✅' : '❌'}`);
+          return reply(ctx, `📊 *Status*\n\n📱 Service: ${s.name || '—'}\n🌍 Country: ${s.country || '—'}\n📥 OTP Ch: ${otpList}\n📤 Num Ch: ${numList}\n📞 Total Numbers: ${getAllNumbers().size}\n🔑 SMSPro: ${kPro ? '✅' : '❌'}\n🔑 RezSMS: ${kRez ? '✅' : '❌'}\n🔑 CRAPI: ${kCrapi ? '✅' : '❌'}`);
         }
         case 'otphelp': {
-          return reply(ctx, `╭━━━〔 🤖 *OTP BOT* 〕━━━╮\n\n*🔑 API Setup*\n┃ .setkeypro <key>\n┃ .setkeyrez <key>\n┃ .keys\n\n*📡 Channels (Manual)*\n┃ .setotp <link> — OTP aane ki jagah\n┃ .setnum <link> — Numbers post hone ki jagah\n┃ .testotp — Check karein\n\n*📡 Channels (Auto)*\n┃ .jd — Auto-detect dono\n┃ .jd2 — Add extra channel\n\n*📱 Service*\n┃ .range — Service + Country\n┃ .delrange <name> — reset specific range\n┃ .add — numbers (text/file)\n\n*📋 Lists*\n┃ .listing — post list (old deleted)\n┃ .remove <url> — delete\n\n*ℹ️ Info*\n┃ .status\n┃ .otphelp\n\n╰━━━━━━━━━━━━━━━━━━━━━━━━━╯`);
+          return reply(ctx, `╭━━━〔 🤖 *OTP BOT* 〕━━━╮\n\n*🔑 API Setup*\n┃ .setkeypro <key>\n┃ .setkeyrez <key>\n┃ .setkeycrapi <key>\n┃ .keys\n\n*📡 Channels (Manual)*\n┃ .setotp <link>\n┃ .setnum <link>\n┃ .testotp\n\n*📡 Channels (Auto)*\n┃ .jd — Auto-detect dono\n┃ .jd2 — Add extra channel\n\n*📱 Service*\n┃ .range — Service + Country\n┃ .delrange <name>\n┃ .add — numbers\n\n*📋 Lists*\n┃ .listing — post list\n┃ .remove — interactively delete list\n\n*ℹ️ Info*\n┃ .status\n┃ .otphelp\n\n╰━━━━━━━━━━━━━━━━━━━━━━━━━╯`);
         }
       }
     },
@@ -541,7 +602,7 @@ function makeCmd(name, aliases = []) {
 }
 
 export default [
-  makeCmd('setkeypro'), makeCmd('setkeyrez'), makeCmd('keys'),
+  makeCmd('setkeypro'), makeCmd('setkeyrez'), makeCmd('setkeycrapi'), makeCmd('keys'),
   makeCmd('setotp'), makeCmd('setnum'), makeCmd('testotp'),
   makeCmd('jd'), makeCmd('jd2'), makeCmd('range'), makeCmd('delrange'),
   makeCmd('add'), makeCmd('listing'), makeCmd('remove'),
