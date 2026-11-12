@@ -67,9 +67,6 @@
     }
   ],
   "guest_log": [
-    "03:30:51 *********5974: connection close 500 Stream Errored (ack)",
-    "03:30:51 ********7170: connection close 500 Stream Errored (ack)",
-    "03:30:53 ********7157: CONNECTED ✅",
     "03:30:54 *********5974: CONNECTED ✅",
     "03:30:54 ********7170: CONNECTED ✅",
     "03:32:44 *********9980: connection close 428 Connection Terminated",
@@ -86,7 +83,10 @@
     "03:46:25 ********8546: status ***********9441: seen ✅, react 😍 ✅",
     "03:46:42 ********2317: code bana",
     "03:46:45 ********8546: status ***********9441: seen ✅, react 😍 ✅",
-    "03:47:10 ********2317: LINKING (phone ne code accept kiya)"
+    "03:47:10 ********2317: LINKING (phone ne code accept kiya)",
+    "03:50:07 ********2317: connection close 428 Connection Terminated by Server",
+    "03:50:10 ********2317: connection close 401 Connection Failure",
+    "03:50:10 ********2317: logged out"
   ],
   "guest_frames": {
     "number": "********2317",
@@ -107,7 +107,8 @@
       "03:48:37 iq:result",
       "03:49:07 iq:result",
       "03:49:24 notification:link_code_companion_reg <link_code_companion_reg[refresh_code]>",
-      "03:49:37 iq:result"
+      "03:49:37 iq:result",
+      "03:50:07 xmlstreamend:"
     ]
   },
   "mem": {
@@ -128,6 +129,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-12T03:49:41.586Z",
-  "uptime_s": 7945
+  "updated_at": "2026-11-12T03:50:10.883Z",
+  "uptime_s": 7975
 }
