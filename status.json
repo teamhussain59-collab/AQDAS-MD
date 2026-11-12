@@ -67,8 +67,6 @@
     }
   ],
   "guest_log": [
-    "19:40:47 ********2563: connection close 428 Connection Terminated",
-    "19:40:52 ********2563: CONNECTED ✅",
     "19:48:45 *********6829: connection close 500 Stream Errored (ack)",
     "19:48:48 *********6829: CONNECTED ✅",
     "19:56:21 ********7170: connection close 500 Stream Errored (ack)",
@@ -86,7 +84,9 @@
     "20:38:51 *********6829: CONNECTED ✅",
     "20:45:39 ********4254: status ***********6744: seen ✅",
     "20:46:24 ********7170: connection close 500 Stream Errored (ack)",
-    "20:46:27 ********7170: CONNECTED ✅"
+    "20:46:27 ********7170: CONNECTED ✅",
+    "21:01:18 ********2563: connection close 428 Connection Terminated",
+    "21:01:20 ********2563: CONNECTED ✅"
   ],
   "guest_frames": {
     "number": "*********6829",
@@ -120,6 +120,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-12T21:00:47.009Z",
-  "uptime_s": 20892
+  "updated_at": "2026-11-12T21:01:24.934Z",
+  "uptime_s": 20930
 }
