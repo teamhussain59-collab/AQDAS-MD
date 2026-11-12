@@ -62,7 +62,6 @@
     }
   ],
   "guest_log": [
-    "00:50:16 ********4254: status **********8278: seen ✅",
     "00:50:22 ********7170: code bana",
     "00:50:47 ********7170: LINKING (phone ne code accept kiya)",
     "00:50:51 ********7170: connection close 515 Stream Errored (restart required)",
@@ -81,7 +80,8 @@
     "01:21:50 ********3254: connection close 428 Connection Terminated",
     "01:21:54 ********3254: CONNECTED ✅",
     "01:24:35 ********8546: status ***********6612: seen ✅, react 😳 ✅",
-    "01:26:18 ********7170: connection close 428 Connection Terminated"
+    "01:26:18 ********7170: connection close 428 Connection Terminated",
+    "01:26:22 ********7170: CONNECTED ✅"
   ],
   "guest_frames": {
     "number": "********7170",
@@ -115,6 +115,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-12T01:26:22.634Z",
-  "uptime_s": 116181
+  "updated_at": "2026-11-12T01:26:26.908Z",
+  "uptime_s": 116186
 }
