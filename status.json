@@ -54,6 +54,11 @@
       "number": "********4254",
       "state": "connected",
       "autostatus": "view"
+    },
+    {
+      "number": "********9425",
+      "state": "pairing",
+      "autostatus": "off"
     }
   ],
   "guest_log": [
@@ -78,7 +83,14 @@
     "08:31:27 ********7170: connection close 500 Stream Errored (ack)",
     "08:31:30 ********7170: CONNECTED ✅"
   ],
-  "guest_frames": null,
+  "guest_frames": {
+    "number": "********9425",
+    "state": "pairing",
+    "frames": [
+      "08:40:06 iq:set <pair-device>",
+      "08:40:07 iq:result <link_code_companion_reg[companion_hello]>"
+    ]
+  },
   "mem": {
     "sessions": 9,
     "free_mb": 109853,
@@ -97,6 +109,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-12T08:39:31.732Z",
-  "uptime_s": 25335
+  "updated_at": "2026-11-12T08:40:11.474Z",
+  "uptime_s": 25375
 }
