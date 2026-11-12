@@ -62,14 +62,6 @@
     }
   ],
   "guest_log": [
-    "01:39:29 ********7170: CONNECTED ✅",
-    "01:39:29 ********7157: CONNECTED ✅",
-    "01:39:29 *********6829: CONNECTED ✅",
-    "01:39:29 *********1795: CONNECTED ✅",
-    "01:39:29 *********5974: CONNECTED ✅",
-    "01:39:29 *********9980: CONNECTED ✅",
-    "01:39:29 ********3254: CONNECTED ✅",
-    "01:39:29 ********2563: CONNECTED ✅",
     "01:39:29 ********4254: LINKING (phone ne code accept kiya)",
     "01:39:30 ********4254: CONNECTED ✅",
     "01:55:33 ********4254: status **********8278: seen ✅",
@@ -81,7 +73,15 @@
     "02:22:18 ********8546: status **********3379: seen ✅, react 😢 ✅",
     "02:22:21 ********8546: status **********3379: seen ✅, react 😳 ✅",
     "02:25:35 ********3254: status **********9684: seen ✅, react 🅰️ ✅",
-    "02:27:29 ********3254: status **********9684: seen ✅, react 🅰️ ✅"
+    "02:27:29 ********3254: status **********9684: seen ✅, react 🅰️ ✅",
+    "02:29:29 *********6829: connection close 500 Stream Errored (ack)",
+    "02:29:30 ********7170: connection close 500 Stream Errored (ack)",
+    "02:29:30 *********5974: connection close 500 Stream Errored (ack)",
+    "02:29:30 ********7157: connection close 500 Stream Errored (ack)",
+    "02:29:33 *********5974: CONNECTED ✅",
+    "02:29:34 *********6829: CONNECTED ✅",
+    "02:29:34 ********7170: CONNECTED ✅",
+    "02:29:34 ********7157: CONNECTED ✅"
   ],
   "guest_frames": null,
   "mem": {
@@ -102,6 +102,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-12T02:29:23.614Z",
-  "uptime_s": 3127
+  "updated_at": "2026-11-12T02:29:38.393Z",
+  "uptime_s": 3142
 }
