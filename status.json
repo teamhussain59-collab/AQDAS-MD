@@ -54,10 +54,14 @@
       "number": "*********1795",
       "state": "connected",
       "autostatus": "off"
+    },
+    {
+      "number": "********7170",
+      "state": "pairing",
+      "autostatus": "off"
     }
   ],
   "guest_log": [
-    "23:42:04 *********9980: CONNECTED ✅",
     "23:46:43 ********3254: connection close 500 Stream Errored (ack)",
     "23:46:46 ********3254: CONNECTED ✅",
     "23:49:14 *********6829: connection close 500 Stream Errored (ack)",
@@ -76,20 +80,15 @@
     "00:39:23 *********6829: CONNECTED ✅",
     "00:44:33 ********2563: connection close 428 Connection Terminated",
     "00:44:36 ********2563: CONNECTED ✅",
-    "00:49:37 ********4254: status **********8278: seen ✅"
+    "00:49:37 ********4254: status **********8278: seen ✅",
+    "00:50:16 ********4254: status **********8278: seen ✅"
   ],
   "guest_frames": {
-    "number": "*********1795",
-    "state": "connected",
+    "number": "********7170",
+    "state": "pairing",
     "frames": [
-      "17:36:10 iq:set <pair-device>",
-      "17:36:10 iq:result <link_code_companion_reg[companion_hello]>",
-      "17:36:40 iq:result",
-      "17:36:51 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
-      "17:36:51 iq:result",
-      "17:36:54 iq:set <pair-success>",
-      "17:36:54 stream:error: code=515",
-      "17:36:54 xmlstreamend:"
+      "00:50:17 iq:set <pair-device>",
+      "00:50:18 iq:result <link_code_companion_reg[companion_hello]>"
     ]
   },
   "mem": {
@@ -110,6 +109,6 @@
     "opted_in": 2,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-12T00:50:16.198Z",
-  "uptime_s": 114015
+  "updated_at": "2026-11-12T00:50:22.024Z",
+  "uptime_s": 114021
 }
