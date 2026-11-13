@@ -72,9 +72,6 @@
     }
   ],
   "guest_log": [
-    "09:31:47 ********5346: LINKING (phone ne code accept kiya)",
-    "09:34:42 ********5346: connection close 428 Connection Terminated by Server",
-    "09:34:45 ********5346: connection close 401 Connection Failure",
     "09:34:45 ********5346: logged out",
     "09:36:07 *********5974: connection close 500 Stream Errored (ack)",
     "09:36:10 *********5974: CONNECTED ✅",
@@ -91,7 +88,10 @@
     "09:54:50 ********8546: connection close 428 Connection Terminated",
     "09:54:53 ********8546: CONNECTED ✅",
     "09:58:19 ********4254: connection close 428 Connection Terminated",
-    "09:58:21 ********4254: CONNECTED ✅"
+    "09:58:21 ********4254: CONNECTED ✅",
+    "09:59:45 ********7170: connection close 500 Stream Errored (ack)",
+    "09:59:47 ********7170: CONNECTED ✅",
+    "09:59:49 ********4254: status ***********1760: seen ✅"
   ],
   "guest_frames": {
     "number": "********1254",
@@ -124,6 +124,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-13T09:59:47.546Z",
-  "uptime_s": 67632
+  "updated_at": "2026-11-13T09:59:53.870Z",
+  "uptime_s": 67639
 }
