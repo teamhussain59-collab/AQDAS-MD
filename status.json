@@ -77,8 +77,6 @@
     }
   ],
   "guest_log": [
-    "12:32:51 ********9425: CONNECTED ✅",
-    "12:33:28 ********7170: connection close 408 Connection was lost",
     "12:33:28 ********9425: connection close 408 Connection was lost",
     "12:33:31 ********7170: CONNECTED ✅",
     "12:33:32 ********9425: CONNECTED ✅",
@@ -96,7 +94,9 @@
     "12:51:11 ********7170: connection close 428 Connection Terminated",
     "12:51:14 ********7170: CONNECTED ✅",
     "12:52:11 ********4254: status ***********0512: seen ✅",
-    "12:55:37 ******7321: code bana"
+    "12:55:37 ******7321: code bana",
+    "12:57:43 *********5974: connection close 428 Connection Terminated",
+    "12:57:46 *********5974: CONNECTED ✅"
   ],
   "guest_frames": {
     "number": "******7321",
@@ -128,6 +128,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-13T12:57:36.577Z",
-  "uptime_s": 78301
+  "updated_at": "2026-11-13T12:57:50.668Z",
+  "uptime_s": 78315
 }
