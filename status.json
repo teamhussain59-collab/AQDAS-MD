@@ -72,7 +72,6 @@
     }
   ],
   "guest_log": [
-    "12:55:37 ******7321: code bana",
     "12:57:43 *********5974: connection close 428 Connection Terminated",
     "12:57:46 *********5974: CONNECTED ✅",
     "12:59:03 ******7321: connection close 428 Connection Terminated by Server",
@@ -91,7 +90,8 @@
     "13:04:01 ********1254: CONNECTED ✅",
     "13:04:01 ********8546: CONNECTED ✅",
     "13:04:01 ********2563: CONNECTED ✅",
-    "13:04:02 ********4254: CONNECTED ✅"
+    "13:04:02 ********4254: CONNECTED ✅",
+    "13:06:22 ********4254: status ***********8938: seen ✅"
   ],
   "guest_frames": {
     "number": "********1254",
@@ -124,6 +124,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-13T13:05:28.708Z",
-  "uptime_s": 78774
+  "updated_at": "2026-11-13T13:06:26.175Z",
+  "uptime_s": 78831
 }
