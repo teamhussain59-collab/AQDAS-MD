@@ -72,7 +72,6 @@
     }
   ],
   "guest_log": [
-    "13:46:22 ********2563: CONNECTED ✅",
     "13:46:22 *********5974: CONNECTED ✅",
     "13:46:22 *********6829: LINKING (phone ne code accept kiya)",
     "13:46:22 ********4254: LINKING (phone ne code accept kiya)",
@@ -91,7 +90,8 @@
     "13:55:17 ********1254: status **********6249: seen ✅, react 🅰️ ✅",
     "13:55:18 ********3254: status **********6249: seen ✅, react 🅰️ ✅",
     "13:56:34 ********8546: status ***********5165: seen ✅, react 🙂 ✅",
-    "13:58:09 ********1254: status *********9481: seen ✅, react 🅰️ ✅"
+    "13:58:09 ********1254: status *********9481: seen ✅, react 🅰️ ✅",
+    "14:03:55 ********8546: status ***********5165: seen ✅, react 😊 ✅"
   ],
   "guest_frames": null,
   "mem": {
@@ -112,6 +112,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-13T14:02:09.277Z",
-  "uptime_s": 1090
+  "updated_at": "2026-11-13T14:03:59.652Z",
+  "uptime_s": 1200
 }
