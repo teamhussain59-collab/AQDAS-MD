@@ -72,8 +72,6 @@
     }
   ],
   "guest_log": [
-    "09:36:10 *********5974: CONNECTED ✅",
-    "09:41:48 *********1795: connection close 428 Connection Terminated",
     "09:41:52 *********1795: CONNECTED ✅",
     "09:42:34 ********4254: status ***********5086: seen ✅",
     "09:42:43 ********7157: connection close 428 Connection Terminated",
@@ -91,7 +89,9 @@
     "09:59:47 ********7170: CONNECTED ✅",
     "09:59:49 ********4254: status ***********1760: seen ✅",
     "10:02:59 ********8546: connection close 408 Connection was lost",
-    "10:03:01 ********8546: CONNECTED ✅"
+    "10:03:01 ********8546: CONNECTED ✅",
+    "10:03:18 ********2563: connection close 503 Stream Errored (unknown)",
+    "10:03:21 ********2563: CONNECTED ✅"
   ],
   "guest_frames": {
     "number": "********1254",
@@ -124,6 +124,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-13T10:03:05.770Z",
-  "uptime_s": 67831
+  "updated_at": "2026-11-13T10:03:25.827Z",
+  "uptime_s": 67851
 }
