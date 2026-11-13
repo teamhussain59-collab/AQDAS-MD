@@ -72,16 +72,6 @@
     }
   ],
   "guest_log": [
-    "10:17:34 *********9980: connection close 428 Connection Terminated",
-    "10:17:34 ********4254: status ***********0368: seen ✅",
-    "10:17:37 *********9980: CONNECTED ✅",
-    "10:19:05 ********4254: status ***********6259: seen ✅",
-    "10:21:15 ********8546: status ***********0860: seen ✅, react 😌 ✅",
-    "10:23:17 ********4254: status **********3545: seen ✅",
-    "10:26:12 *********5974: connection close 500 Stream Errored (ack)",
-    "10:26:15 *********5974: CONNECTED ✅",
-    "10:27:30 ********4254: status ***********0732: seen ✅",
-    "10:28:09 ********4254: status **********3657: seen ✅",
     "10:30:32 ********4254: status ***********7722: seen ✅",
     "10:31:41 ********4254: status ***********5766: seen ✅",
     "10:32:27 ********4254: status ***********7722: seen ✅",
@@ -91,7 +81,17 @@
     "10:32:51 ********7157: CONNECTED ✅",
     "10:37:26 *********5974: connection close 408 Connection was lost",
     "10:37:32 *********5974: CONNECTED ✅",
-    "10:39:22 ********4254: status ***********7722: seen ✅"
+    "10:39:22 ********4254: status ***********7722: seen ✅",
+    "10:41:05 ********2563: connection close 408 Connection was lost",
+    "10:41:05 ********4254: connection close 408 Connection was lost",
+    "10:41:05 ********9425: connection close 408 Connection was lost",
+    "10:41:05 *********5974: connection close 408 Connection was lost",
+    "10:41:05 ********1254: connection close 408 Connection was lost",
+    "10:41:08 ********4254: CONNECTED ✅",
+    "10:41:08 ********2563: CONNECTED ✅",
+    "10:41:09 ********9425: CONNECTED ✅",
+    "10:41:09 ********1254: CONNECTED ✅",
+    "10:41:09 *********5974: CONNECTED ✅"
   ],
   "guest_frames": {
     "number": "********1254",
@@ -124,6 +124,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-13T10:40:55.113Z",
-  "uptime_s": 70100
+  "updated_at": "2026-11-13T10:41:13.905Z",
+  "uptime_s": 70119
 }
