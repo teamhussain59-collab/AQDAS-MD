@@ -72,16 +72,6 @@
     }
   ],
   "guest_log": [
-    "11:24:46 ********4254: status **********1701: seen ✅",
-    "11:33:28 ********8546: status ***********0860: seen ✅, react 😢 ✅",
-    "11:34:38 ********4254: status ***********8671: seen ✅",
-    "11:48:20 ********1254: status **********1352: seen ✅, react 🅰️ ✅",
-    "11:53:56 ********3254: connection close 408 Connection was lost",
-    "11:53:56 ********9425: connection close 408 Connection was lost",
-    "11:53:56 ********7170: connection close 408 Connection was lost",
-    "11:53:56 ********4254: connection close 408 Connection was lost",
-    "11:53:56 ********1254: connection close 408 Connection was lost",
-    "11:53:56 ********8546: connection close 408 Connection was lost",
     "11:54:00 ********7170: CONNECTED ✅",
     "11:54:00 ********1254: CONNECTED ✅",
     "11:54:00 ********4254: CONNECTED ✅",
@@ -91,7 +81,17 @@
     "11:56:15 ********4254: status ***********5513: seen ✅",
     "12:01:24 *********5974: connection close 500 Stream Errored (ack)",
     "12:01:27 *********5974: CONNECTED ✅",
-    "12:05:25 ********4254: status ***********8648: seen ✅"
+    "12:05:25 ********4254: status ***********8648: seen ✅",
+    "12:12:41 ********4254: connection close 408 Connection was lost",
+    "12:12:41 ********1254: connection close 408 Connection was lost",
+    "12:12:41 ********3254: connection close 408 Connection was lost",
+    "12:12:41 ********8546: connection close 408 Connection was lost",
+    "12:12:43 ********4254: CONNECTED ✅",
+    "12:12:44 ********3254: CONNECTED ✅",
+    "12:12:44 ********1254: CONNECTED ✅",
+    "12:12:44 ********8546: CONNECTED ✅",
+    "12:12:46 ********7157: connection close 500 Stream Errored (ack)",
+    "12:12:50 ********7157: CONNECTED ✅"
   ],
   "guest_frames": {
     "number": "********1254",
@@ -124,6 +124,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-13T12:11:24.859Z",
-  "uptime_s": 75530
+  "updated_at": "2026-11-13T12:12:54.408Z",
+  "uptime_s": 75619
 }
