@@ -126,9 +126,9 @@
     "name": "AQDAS TECH",
     "latest_post": 110,
     "auto": true,
-    "opted_in": 1,
+    "opted_in": 2,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-15T15:39:07.526Z",
-  "uptime_s": 19260
+  "updated_at": "2026-11-15T15:39:36.565Z",
+  "uptime_s": 19289
 }
