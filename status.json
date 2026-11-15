@@ -72,10 +72,6 @@
     }
   ],
   "guest_log": [
-    "17:18:32 qr: expired / closed (code 428)",
-    "17:19:02 ********4254: status ***********3723: seen ✅",
-    "17:19:51 ********1254: connection close 408 Connection was lost",
-    "17:19:51 ********8546: connection close 408 Connection was lost",
     "17:19:55 ********1254: CONNECTED ✅",
     "17:19:55 ********8546: CONNECTED ✅",
     "17:21:20 ********2563: connection close 408 Connection was lost",
@@ -91,7 +87,11 @@
     "17:22:35 ********8546: CONNECTED ✅",
     "17:22:35 ********1254: CONNECTED ✅",
     "17:23:21 ********4254: status ***********3723: seen ✅",
-    "17:23:23 ********8546: status ***********4475: seen ✅, react 😘 ✅"
+    "17:23:23 ********8546: status ***********4475: seen ✅, react 😘 ✅",
+    "17:24:31 ********7157: connection close 408 Connection was lost",
+    "17:24:31 ********9425: connection close 408 Connection was lost",
+    "17:24:33 ********7157: CONNECTED ✅",
+    "17:24:33 ********9425: CONNECTED ✅"
   ],
   "guest_frames": {
     "number": "*********9787",
@@ -125,6 +125,6 @@
     "opted_in": 2,
     "fetch": "updates err Connection Closed | messages err Connection Closed"
   },
-  "updated_at": "2026-11-15T17:24:31.209Z",
-  "uptime_s": 25583
+  "updated_at": "2026-11-15T17:24:37.978Z",
+  "uptime_s": 25590
 }
