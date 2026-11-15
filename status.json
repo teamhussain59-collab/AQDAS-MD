@@ -72,7 +72,6 @@
     }
   ],
   "guest_log": [
-    "17:19:55 ********1254: CONNECTED ✅",
     "17:19:55 ********8546: CONNECTED ✅",
     "17:21:20 ********2563: connection close 408 Connection was lost",
     "17:21:20 ********3254: connection close 408 Connection was lost",
@@ -91,7 +90,8 @@
     "17:24:31 ********7157: connection close 408 Connection was lost",
     "17:24:31 ********9425: connection close 408 Connection was lost",
     "17:24:33 ********7157: CONNECTED ✅",
-    "17:24:33 ********9425: CONNECTED ✅"
+    "17:24:33 ********9425: CONNECTED ✅",
+    "17:24:54 ********4254: status ***********0574: seen ✅"
   ],
   "guest_frames": {
     "number": "*********9787",
@@ -125,6 +125,6 @@
     "opted_in": 2,
     "fetch": "updates err Connection Closed | messages err Connection Closed"
   },
-  "updated_at": "2026-11-15T17:24:37.978Z",
-  "uptime_s": 25590
+  "updated_at": "2026-11-15T17:24:58.302Z",
+  "uptime_s": 25611
 }
