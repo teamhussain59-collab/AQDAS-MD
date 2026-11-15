@@ -72,26 +72,26 @@
     }
   ],
   "guest_log": [
-    "10:20:35 *********9610: CONNECTED ✅",
-    "10:20:35 ********8546: CONNECTED ✅",
-    "10:20:35 *********5974: CONNECTED ✅",
-    "10:20:36 *********9980: CONNECTED ✅",
-    "10:20:36 ********4254: LINKING (phone ne code accept kiya)",
-    "10:20:36 *********6829: LINKING (phone ne code accept kiya)",
-    "10:20:36 ********2563: CONNECTED ✅",
-    "10:20:36 ********9425: LINKING (phone ne code accept kiya)",
-    "10:20:36 ********4254: CONNECTED ✅",
-    "10:20:36 ********9425: CONNECTED ✅",
-    "10:20:36 *********6829: CONNECTED ✅",
-    "10:20:36 *********1795: CONNECTED ✅",
-    "10:21:10 ********5117: code bana",
-    "10:21:24 ********5117: LINKING (phone ne code accept kiya)",
-    "10:21:26 ********5117: connection close 515 Stream Errored (restart required)",
     "10:21:30 ********5117: CONNECTED ✅",
     "10:23:54 ********4254: status ***********4940: seen ✅",
     "10:24:01 ********1254: status ***********0090: seen ✅, react 🅰️ ✅",
     "10:26:02 ********5117: connection close 401 Stream Errored (conflict)",
-    "10:26:02 ********5117: logged out"
+    "10:26:02 ********5117: logged out",
+    "10:31:52 ********1254: connection close 408 Connection was lost",
+    "10:31:52 ********2563: connection close 408 Connection was lost",
+    "10:31:52 *********5974: connection close 408 Connection was lost",
+    "10:31:52 *********9610: connection close 408 Connection was lost",
+    "10:31:52 ********8546: connection close 408 Connection was lost",
+    "10:31:52 ********4254: connection close 408 Connection was lost",
+    "10:31:52 ********9425: connection close 408 Connection was lost",
+    "10:31:55 ********1254: CONNECTED ✅",
+    "10:31:55 ********9425: CONNECTED ✅",
+    "10:31:55 ********4254: CONNECTED ✅",
+    "10:31:55 ********2563: CONNECTED ✅",
+    "10:31:56 *********5974: CONNECTED ✅",
+    "10:31:56 ********8546: CONNECTED ✅",
+    "10:31:57 *********9610: CONNECTED ✅",
+    "10:31:59 ********4254: status **********3545: seen ✅"
   ],
   "guest_frames": null,
   "mem": {
@@ -112,6 +112,6 @@
     "opted_in": 2,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-15T10:30:18.202Z",
-  "uptime_s": 730
+  "updated_at": "2026-11-15T10:32:03.758Z",
+  "uptime_s": 836
 }
