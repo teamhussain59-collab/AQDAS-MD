@@ -77,7 +77,6 @@
     }
   ],
   "guest_log": [
-    "13:05:12 ********3254: CONNECTED ✅",
     "13:05:13 ********8546: CONNECTED ✅",
     "13:05:53 ********8546: status ***********7798: seen ✅, react 😢 ✅",
     "13:06:11 ********4254: status **********2311: seen ✅",
@@ -96,7 +95,8 @@
     "13:21:55 *********9610: LINKING (phone ne code accept kiya)",
     "13:21:58 ********4254: CONNECTED ✅",
     "13:22:23 ********4254: status ***********2422: seen ✅",
-    "13:23:52 ********4254: status **********2520: seen ✅"
+    "13:23:52 ********4254: status **********2520: seen ✅",
+    "13:24:28 *********9610: connection close 428 Connection Terminated by Server"
   ],
   "guest_frames": {
     "number": "*********9610",
@@ -112,7 +112,8 @@
       "13:23:00 iq:get",
       "13:23:00 iq:result",
       "13:23:30 iq:result",
-      "13:24:00 iq:result"
+      "13:24:00 iq:result",
+      "13:24:28 xmlstreamend:"
     ]
   },
   "mem": {
@@ -133,6 +134,6 @@
     "opted_in": 2,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-15T13:24:27.836Z",
-  "uptime_s": 11180
+  "updated_at": "2026-11-15T13:24:32.404Z",
+  "uptime_s": 11185
 }
