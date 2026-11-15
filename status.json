@@ -72,16 +72,11 @@
     },
     {
       "number": "*********9787",
-      "state": "pairing",
+      "state": "connected",
       "autostatus": "off"
     }
   ],
   "guest_log": [
-    "12:44:04 ********4254: status **********6172: seen ✅",
-    "12:44:15 ********8546: status ***********7798: seen ✅, react 😌 ✅",
-    "12:44:31 ********8546: status ***********7798: seen ✅, react 😇 ✅",
-    "12:44:39 ********8546: status ***********7798: seen ✅, react 🥺 ✅",
-    "12:44:56 ********8546: status ***********7798: seen ✅, react 🥺 ✅",
     "12:44:57 ********8546: status ***********7798: seen ✅, react 😢 ✅",
     "12:45:09 ********8546: status ***********7798: seen ✅, react 😘 ✅",
     "12:45:20 ********8546: status ***********7798: seen ✅, react 😳 ✅",
@@ -96,15 +91,25 @@
     "12:47:20 ********8546: status ***********7798: seen ✅, react 🙂 ✅",
     "12:47:21 ********8546: status ***********7798: seen ✅, react 🙂 ✅",
     "12:47:40 ********8546: status ***********7798: seen ✅, react 😘 ✅",
-    "12:52:57 *********9787: code bana"
+    "12:52:57 *********9787: code bana",
+    "12:53:40 *********9787: LINKING (phone ne code accept kiya)",
+    "12:53:43 *********9787: connection close 515 Stream Errored (restart required)",
+    "12:53:47 *********9787: CONNECTED ✅",
+    "12:53:50 *********6829: connection close 500 Stream Errored (ack)",
+    "12:53:54 *********6829: CONNECTED ✅"
   ],
   "guest_frames": {
     "number": "*********9787",
-    "state": "pairing",
+    "state": "connected",
     "frames": [
       "12:52:52 iq:set <pair-device>",
       "12:52:52 iq:result <link_code_companion_reg[companion_hello]>",
-      "12:53:21 iq:result"
+      "12:53:21 iq:result",
+      "12:53:39 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
+      "12:53:40 iq:result",
+      "12:53:43 iq:set <pair-success>",
+      "12:53:43 stream:error: code=515",
+      "12:53:43 xmlstreamend:"
     ]
   },
   "mem": {
@@ -125,6 +130,6 @@
     "opted_in": 2,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-15T12:53:25.881Z",
-  "uptime_s": 9318
+  "updated_at": "2026-11-15T12:53:58.521Z",
+  "uptime_s": 9351
 }
