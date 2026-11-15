@@ -77,14 +77,6 @@
     }
   ],
   "guest_log": [
-    "12:46:56 ********8546: status ***********7798: seen ✅, react 🥺 ✅",
-    "12:47:20 ********8546: status ***********7798: seen ✅, react 🙂 ✅",
-    "12:47:21 ********8546: status ***********7798: seen ✅, react 🙂 ✅",
-    "12:47:40 ********8546: status ***********7798: seen ✅, react 😘 ✅",
-    "12:52:57 *********9787: code bana",
-    "12:53:40 *********9787: LINKING (phone ne code accept kiya)",
-    "12:53:43 *********9787: connection close 515 Stream Errored (restart required)",
-    "12:53:47 *********9787: CONNECTED ✅",
     "12:53:50 *********6829: connection close 500 Stream Errored (ack)",
     "12:53:54 *********6829: CONNECTED ✅",
     "12:55:54 ********4254: status ***********7519: seen ✅",
@@ -96,7 +88,15 @@
     "12:59:14 ********3254: status ***********2370: seen ✅, react 🅰️ ✅",
     "13:01:27 ********7157: connection close 408 Connection was lost",
     "13:01:32 ********7157: connection close 408 WebSocket Error ()",
-    "13:01:42 ********7157: CONNECTED ✅"
+    "13:01:42 ********7157: CONNECTED ✅",
+    "13:05:09 ********9425: connection close 408 Connection was lost",
+    "13:05:09 ********8546: connection close 408 Connection was lost",
+    "13:05:09 ********1254: connection close 408 Connection was lost",
+    "13:05:09 ********3254: connection close 408 Connection was lost",
+    "13:05:12 ********9425: CONNECTED ✅",
+    "13:05:12 ********1254: CONNECTED ✅",
+    "13:05:12 ********3254: CONNECTED ✅",
+    "13:05:13 ********8546: CONNECTED ✅"
   ],
   "guest_frames": {
     "number": "*********9787",
@@ -130,6 +130,6 @@
     "opted_in": 2,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-15T13:05:16.748Z",
-  "uptime_s": 10029
+  "updated_at": "2026-11-15T13:05:18.537Z",
+  "uptime_s": 10031
 }
