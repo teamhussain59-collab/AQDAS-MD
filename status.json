@@ -94,6 +94,16 @@
     "19:06:52 ********4254: status ***********1057: seen ✅"
   ],
   "guest_frames": null,
-  "updated_at": "2026-11-15T19:06:56.453Z",
-  "uptime_s": 185
+  "mem": {
+    "sessions": 12,
+    "free_mb": 112218,
+    "total_mb": 393439,
+    "rss_mb": 157,
+    "heap_mb": 45,
+    "heap_limit_mb": 489,
+    "per_session_mb": 15,
+    "room_for": 37
+  },
+  "updated_at": "2026-11-15T19:07:02.391Z",
+  "uptime_s": 191
 }
