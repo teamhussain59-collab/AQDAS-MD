@@ -72,8 +72,6 @@
     }
   ],
   "guest_log": [
-    "17:16:47 ********4254: status ***********3723: seen ✅",
-    "17:17:34 ********4254: status **********2311: seen ✅",
     "17:17:48 ********4254: status **********1701: seen ✅",
     "17:18:32 qr: connection close 428 Connection Terminated by Server",
     "17:18:32 qr: expired / closed (code 428)",
@@ -91,7 +89,9 @@
     "17:21:22 ********3254: CONNECTED ✅",
     "17:21:24 ********2563: CONNECTED ✅",
     "17:22:30 ********1254: connection close 408 Connection was lost",
-    "17:22:30 ********8546: connection close 408 Connection was lost"
+    "17:22:30 ********8546: connection close 408 Connection was lost",
+    "17:22:35 ********8546: CONNECTED ✅",
+    "17:22:35 ********1254: CONNECTED ✅"
   ],
   "guest_frames": {
     "number": "*********9787",
@@ -125,6 +125,6 @@
     "opted_in": 2,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-15T17:22:34.607Z",
-  "uptime_s": 25467
+  "updated_at": "2026-11-15T17:22:39.078Z",
+  "uptime_s": 25471
 }
