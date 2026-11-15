@@ -72,16 +72,6 @@
     }
   ],
   "guest_log": [
-    "18:12:38 ********9425: CONNECTED ✅",
-    "18:12:39 ********7157: CONNECTED ✅",
-    "18:12:39 ********2563: CONNECTED ✅",
-    "18:12:39 ********4254: status ***********9024: seen ✅",
-    "18:25:02 ********4254: status ***********9024: seen ✅",
-    "18:32:07 ********4254: status ***********9024: seen ✅",
-    "18:34:09 ********4254: connection close 408 Connection was lost",
-    "18:34:12 ********4254: CONNECTED ✅",
-    "18:35:14 ********4254: status ***********8161: seen ✅",
-    "18:35:15 ********3254: status ***********8161: seen ✅, react 🅰️ ✅",
     "18:35:17 ********1254: status ***********8161: seen ✅, react 🅰️ ✅",
     "18:38:16 ********3254: status ***********7025: seen ✅, react 🅰️ ✅",
     "18:38:17 ********1254: status ***********7025: seen ✅, react 🅰️ ✅",
@@ -91,7 +81,17 @@
     "18:38:55 ********4254: status ***********5513: seen ✅",
     "18:39:28 ********4254: status **********2834: seen ✅",
     "18:39:30 ********1254: status **********2834: seen ✅, react 🅰️ ✅",
-    "18:42:16 ********4254: status ***********1057: seen ✅"
+    "18:42:16 ********4254: status ***********1057: seen ✅",
+    "18:43:27 ********3254: connection close 408 Connection was lost",
+    "18:43:27 ********7157: connection close 408 Connection was lost",
+    "18:43:27 ********2563: connection close 408 Connection was lost",
+    "18:43:28 ********1254: connection close 408 Connection was lost",
+    "18:43:28 ********8546: connection close 408 Connection was lost",
+    "18:43:30 ********7157: CONNECTED ✅",
+    "18:43:30 ********8546: CONNECTED ✅",
+    "18:43:31 ********1254: CONNECTED ✅",
+    "18:43:32 ********3254: CONNECTED ✅",
+    "18:43:32 ********2563: CONNECTED ✅"
   ],
   "guest_frames": {
     "number": "*********9787",
@@ -125,6 +125,6 @@
     "opted_in": 2,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-15T18:42:20.029Z",
-  "uptime_s": 30252
+  "updated_at": "2026-11-15T18:43:36.314Z",
+  "uptime_s": 30329
 }
