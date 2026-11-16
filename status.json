@@ -77,26 +77,26 @@
     }
   ],
   "guest_log": [
-    "16:18:54 ********1254: connection close 408 Connection was lost",
-    "16:18:54 *********6829: connection close 408 Connection was lost",
-    "16:18:54 *********9787: connection close 408 Connection was lost",
-    "16:18:57 *********5974: connection close 408 WebSocket Error ()",
-    "16:18:57 ********3254: connection close 408 WebSocket Error ()",
-    "16:18:57 ********2563: connection close 408 WebSocket Error ()",
-    "16:18:57 ********4254: connection close 408 WebSocket Error ()",
-    "16:18:58 ********9425: CONNECTED ✅",
-    "16:18:59 ********7157: CONNECTED ✅",
-    "16:18:59 *********9980: CONNECTED ✅",
-    "16:18:59 *********1795: CONNECTED ✅",
-    "16:18:59 ********6760: CONNECTED ✅",
-    "16:19:00 ********1254: CONNECTED ✅",
     "16:19:01 ********8546: CONNECTED ✅",
     "16:19:01 *********9787: CONNECTED ✅",
     "16:19:01 *********6829: CONNECTED ✅",
     "16:19:04 ********3254: CONNECTED ✅",
     "16:19:04 ********4254: CONNECTED ✅",
     "16:19:04 *********5974: CONNECTED ✅",
-    "16:19:06 ********2563: CONNECTED ✅"
+    "16:19:06 ********2563: CONNECTED ✅",
+    "16:20:26 *********9787: connection close 408 Connection was lost",
+    "16:20:26 ********2563: connection close 408 Connection was lost",
+    "16:20:26 ********4254: connection close 408 Connection was lost",
+    "16:20:26 ********3254: connection close 408 Connection was lost",
+    "16:20:26 *********5974: connection close 408 Connection was lost",
+    "16:20:26 *********6829: connection close 408 Connection was lost",
+    "16:20:26 ********1254: connection close 408 Connection was lost",
+    "16:20:26 ********8546: connection close 408 Connection was lost",
+    "16:20:26 ********6760: connection close 408 Connection was lost",
+    "16:20:26 ********7157: connection close 408 Connection was lost",
+    "16:20:26 *********9980: connection close 408 Connection was lost",
+    "16:20:26 ********9425: connection close 408 Connection was lost",
+    "16:20:26 *********1795: connection close 408 Connection was lost"
   ],
   "guest_frames": null,
   "mem": {
@@ -113,6 +113,6 @@
     "ok": false,
     "error": "koi connected number nahi"
   },
-  "updated_at": "2026-11-16T16:20:28.128Z",
-  "uptime_s": 4379
+  "updated_at": "2026-11-16T16:20:30.923Z",
+  "uptime_s": 4382
 }
