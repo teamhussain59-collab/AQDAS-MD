@@ -77,26 +77,26 @@
     }
   ],
   "guest_log": [
-    "14:29:44 ********7157: CONNECTED ✅",
-    "14:29:44 ********9425: CONNECTED ✅",
-    "14:29:45 *********1795: CONNECTED ✅",
-    "14:29:45 ********6760: CONNECTED ✅",
-    "14:29:45 ********8546: CONNECTED ✅",
-    "14:29:45 *********5974: CONNECTED ✅",
-    "14:29:55 ********3254: CONNECTED ✅",
-    "14:30:31 *********9980: connection close 428 Connection Terminated",
-    "14:31:40 ********9425: connection close 408 Connection was lost",
-    "14:31:40 ********4254: connection close 408 Connection was lost",
-    "14:31:40 ********6760: connection close 408 Connection was lost",
-    "14:31:40 *********1795: connection close 408 Connection was lost",
-    "14:31:40 ********2563: connection close 408 Connection was lost",
     "14:31:40 *********9787: connection close 408 Connection was lost",
     "14:31:40 *********6829: connection close 408 Connection was lost",
     "14:31:40 ********3254: connection close 408 Connection was lost",
     "14:31:40 ********8546: connection close 408 Connection was lost",
     "14:31:40 *********5974: connection close 408 Connection was lost",
     "14:31:40 ********7157: connection close 408 Connection was lost",
-    "14:31:40 ********1254: connection close 408 Connection was lost"
+    "14:31:40 ********1254: connection close 408 Connection was lost",
+    "14:31:44 *********9980: CONNECTED ✅",
+    "14:31:47 ********4254: CONNECTED ✅",
+    "14:31:47 ********7157: CONNECTED ✅",
+    "14:31:48 ********9425: CONNECTED ✅",
+    "14:31:48 ********8546: CONNECTED ✅",
+    "14:31:48 ********3254: CONNECTED ✅",
+    "14:31:48 *********1795: CONNECTED ✅",
+    "14:31:48 ********1254: CONNECTED ✅",
+    "14:31:49 ********6760: CONNECTED ✅",
+    "14:31:49 *********5974: CONNECTED ✅",
+    "14:32:58 ********2563: CONNECTED ✅",
+    "14:32:58 *********9787: CONNECTED ✅",
+    "14:32:58 *********6829: CONNECTED ✅"
   ],
   "guest_frames": {
     "number": "********6760",
@@ -129,6 +129,6 @@
     "opted_in": 2,
     "fetch": "updates err Connection Closed | messages err Connection Closed"
   },
-  "updated_at": "2026-11-16T14:31:44.661Z",
-  "uptime_s": 6330
+  "updated_at": "2026-11-16T14:34:41.098Z",
+  "uptime_s": 6506
 }
