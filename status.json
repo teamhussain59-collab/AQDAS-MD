@@ -67,13 +67,6 @@
     }
   ],
   "guest_log": [
-    "17:18:16 ********2563: CONNECTED ✅",
-    "17:18:16 ********1254: CONNECTED ✅",
-    "17:18:17 ********8546: CONNECTED ✅",
-    "17:18:17 *********1795: CONNECTED ✅",
-    "17:18:17 *********9980: CONNECTED ✅",
-    "17:19:09 ********9425: connection close 408 Connection was lost",
-    "17:19:09 ********4254: connection close 408 Connection was lost",
     "17:19:09 ********2563: connection close 408 Connection was lost",
     "17:19:09 ********3254: connection close 408 Connection was lost",
     "17:19:09 *********5974: connection close 408 Connection was lost",
@@ -86,7 +79,14 @@
     "17:19:13 ********2563: CONNECTED ✅",
     "17:19:13 *********6829: CONNECTED ✅",
     "17:19:19 *********5974: CONNECTED ✅",
-    "17:19:19 ********1254: CONNECTED ✅"
+    "17:19:19 ********1254: CONNECTED ✅",
+    "17:19:34 ********9425: CONNECTED ✅",
+    "17:19:35 *********9787: CONNECTED ✅",
+    "17:19:36 *********1795: CONNECTED ✅",
+    "17:19:36 ********8546: CONNECTED ✅",
+    "17:19:36 ********3254: CONNECTED ✅",
+    "17:19:37 ********4254: CONNECTED ✅",
+    "17:19:37 *********9980: CONNECTED ✅"
   ],
   "guest_frames": null,
   "mem": {
@@ -102,11 +102,11 @@
   "channel": {
     "ok": true,
     "name": "AQDAS TECH",
-    "latest_post": 110,
+    "latest_post": null,
     "auto": true,
     "opted_in": 0,
-    "fetch": "updates err channel posts timeout | messages:messages:10"
+    "fetch": "updates err channel posts timeout | messages err channel posts (web) timeout"
   },
-  "updated_at": "2026-11-16T17:19:34.370Z",
-  "uptime_s": 7925
+  "updated_at": "2026-11-16T17:21:09.424Z",
+  "uptime_s": 8020
 }
