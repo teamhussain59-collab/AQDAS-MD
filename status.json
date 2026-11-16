@@ -84,6 +84,16 @@
     "20:49:44 *********6829: logged out"
   ],
   "guest_frames": null,
-  "updated_at": "2026-11-16T20:49:48.865Z",
-  "uptime_s": 17
+  "mem": {
+    "sessions": 10,
+    "free_mb": 14408,
+    "total_mb": 15701,
+    "rss_mb": 365,
+    "heap_mb": 192,
+    "heap_limit_mb": 2096,
+    "per_session_mb": 15,
+    "room_for": 158
+  },
+  "updated_at": "2026-11-16T20:50:38.021Z",
+  "uptime_s": 67
 }
