@@ -77,16 +77,6 @@
     }
   ],
   "guest_log": [
-    "15:27:53 *********1795: connection close 408 Connection was lost",
-    "15:27:53 ********2563: connection close 408 Connection was lost",
-    "15:27:53 *********5974: connection close 408 Connection was lost",
-    "15:27:53 ********1254: connection close 408 Connection was lost",
-    "15:27:53 *********6829: connection close 408 Connection was lost",
-    "15:27:53 ********6760: connection close 408 Connection was lost",
-    "15:27:53 ********9425: connection close 408 Connection was lost",
-    "15:30:00 ********7157: CONNECTED ✅",
-    "15:30:00 ********9425: CONNECTED ✅",
-    "15:30:01 *********9787: CONNECTED ✅",
     "15:30:01 ********4254: CONNECTED ✅",
     "15:30:01 ********2563: CONNECTED ✅",
     "15:30:02 ********1254: CONNECTED ✅",
@@ -96,7 +86,17 @@
     "15:30:02 *********9980: CONNECTED ✅",
     "15:30:03 ********8546: CONNECTED ✅",
     "15:30:03 *********6829: CONNECTED ✅",
-    "15:30:04 ********3254: CONNECTED ✅"
+    "15:30:04 ********3254: CONNECTED ✅",
+    "15:30:59 *********5974: connection close 408 Connection was lost",
+    "15:30:59 ********3254: connection close 408 Connection was lost",
+    "15:30:59 ********8546: connection close 408 Connection was lost",
+    "15:30:59 ********1254: connection close 408 Connection was lost",
+    "15:30:59 *********9980: connection close 408 Connection was lost",
+    "15:30:59 ********9425: connection close 408 Connection was lost",
+    "15:30:59 ********2563: connection close 408 Connection was lost",
+    "15:30:59 ********4254: connection close 408 Connection was lost",
+    "15:30:59 ********7157: connection close 408 Connection was lost",
+    "15:30:59 *********1795: connection close 408 Connection was lost"
   ],
   "guest_frames": null,
   "mem": {
@@ -112,11 +112,11 @@
   "channel": {
     "ok": true,
     "name": "AQDAS TECH",
-    "latest_post": null,
+    "latest_post": 110,
     "auto": true,
     "opted_in": 2,
-    "fetch": "updates err Connection Closed | messages err Connection Closed"
+    "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-16T15:30:27.886Z",
-  "uptime_s": 1379
+  "updated_at": "2026-11-16T15:31:56.220Z",
+  "uptime_s": 1467
 }
