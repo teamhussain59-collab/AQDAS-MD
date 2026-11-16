@@ -77,26 +77,26 @@
     }
   ],
   "guest_log": [
-    "14:25:25 ********4254: connection close 440 Stream Errored (conflict)",
-    "14:25:25 ********1254: connection close 440 Stream Errored (conflict)",
-    "14:25:25 *********9787: connection close 440 Stream Errored (conflict)",
-    "14:25:25 *********9980: connection close 440 Stream Errored (conflict)",
-    "14:25:25 ********3254: connection close 440 Stream Errored (conflict)",
-    "14:25:27 ********8546: CONNECTED ✅",
-    "14:25:27 *********5974: CONNECTED ✅",
-    "14:25:28 ********1254: CONNECTED ✅",
-    "14:25:28 ********6760: CONNECTED ✅",
-    "14:25:28 *********6829: CONNECTED ✅",
-    "14:25:28 ********9425: CONNECTED ✅",
-    "14:25:28 ********2563: CONNECTED ✅",
-    "14:25:28 ********7157: CONNECTED ✅",
-    "14:25:28 *********1795: CONNECTED ✅",
-    "14:25:28 ********4254: CONNECTED ✅",
-    "14:25:28 ********3254: CONNECTED ✅",
-    "14:25:28 *********9980: CONNECTED ✅",
-    "14:25:29 *********9787: CONNECTED ✅",
-    "14:26:26 ********8546: status ***********6612: seen ✅, react 😍 ✅",
-    "14:26:34 ********8546: status ***********4475: seen ✅, react 😌 ✅"
+    "14:26:45 ********3254: connection close 440 Stream Errored (conflict)",
+    "14:26:45 ********2563: connection close 440 Stream Errored (conflict)",
+    "14:26:45 ********6760: connection close 440 Stream Errored (conflict)",
+    "14:26:45 ********8546: connection close 440 Stream Errored (conflict)",
+    "14:26:45 ********9425: connection close 440 Stream Errored (conflict)",
+    "14:26:45 ********7157: connection close 440 Stream Errored (conflict)",
+    "14:26:46 ********8546: status ***********4475: seen ✅, react 😢 ❌ Connection Closed",
+    "14:26:47 *********1795: CONNECTED ✅",
+    "14:26:47 *********9787: CONNECTED ✅",
+    "14:26:47 ********4254: CONNECTED ✅",
+    "14:26:47 *********9980: CONNECTED ✅",
+    "14:26:47 ********6760: CONNECTED ✅",
+    "14:26:47 ********2563: CONNECTED ✅",
+    "14:26:47 ********9425: CONNECTED ✅",
+    "14:26:47 *********5974: CONNECTED ✅",
+    "14:26:48 ********7157: CONNECTED ✅",
+    "14:26:48 ********1254: CONNECTED ✅",
+    "14:26:48 *********6829: CONNECTED ✅",
+    "14:26:48 ********8546: CONNECTED ✅",
+    "14:26:49 ********3254: CONNECTED ✅"
   ],
   "guest_frames": null,
   "mem": {
@@ -117,6 +117,6 @@
     "opted_in": 2,
     "fetch": "updates err channel posts timeout | messages err Connection Closed"
   },
-  "updated_at": "2026-11-16T14:26:47.579Z",
-  "uptime_s": 216
+  "updated_at": "2026-11-16T14:26:53.201Z",
+  "uptime_s": 222
 }
