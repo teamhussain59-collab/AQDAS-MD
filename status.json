@@ -72,16 +72,6 @@
     }
   ],
   "guest_log": [
-    "01:43:08 ********9425: CONNECTED ✅",
-    "01:43:08 ********4254: CONNECTED ✅",
-    "01:43:08 *********9980: CONNECTED ✅",
-    "01:43:09 *********1795: CONNECTED ✅",
-    "01:43:09 *********5974: CONNECTED ✅",
-    "01:43:09 ********3254: CONNECTED ✅",
-    "01:47:33 ********8546: status *********7156: seen ✅, react 😳 ✅",
-    "01:47:37 ********8546: status *********7156: seen ✅, react 😳 ✅",
-    "01:49:16 ********8546: status *********7156: seen ✅, react 🥺 ✅",
-    "01:52:09 ********4254: status ***********5513: seen ✅",
     "01:54:36 *********5974: connection close 408 Connection was lost",
     "01:54:36 *********9980: connection close 408 Connection was lost",
     "01:54:36 ********7157: connection close 408 Connection was lost",
@@ -91,7 +81,17 @@
     "01:54:39 *********9980: CONNECTED ✅",
     "01:54:39 ********9425: CONNECTED ✅",
     "01:54:40 ********7157: CONNECTED ✅",
-    "01:54:40 ********1254: CONNECTED ✅"
+    "01:54:40 ********1254: CONNECTED ✅",
+    "01:55:19 *********9980: connection close 408 Connection was lost",
+    "01:55:19 ********9425: connection close 408 Connection was lost",
+    "01:55:19 *********5974: connection close 408 Connection was lost",
+    "01:55:19 ********7157: connection close 408 Connection was lost",
+    "01:55:19 ********1254: connection close 408 Connection was lost",
+    "01:55:23 *********9980: connection close 408 WebSocket Error ()",
+    "01:55:23 ********9425: connection close 408 WebSocket Error ()",
+    "01:55:23 *********5974: connection close 408 WebSocket Error ()",
+    "01:55:23 ********1254: CONNECTED ✅",
+    "01:55:24 ********7157: CONNECTED ✅"
   ],
   "guest_frames": null,
   "mem": {
@@ -112,6 +112,6 @@
     "opted_in": 2,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-16T01:55:04.910Z",
-  "uptime_s": 24673
+  "updated_at": "2026-11-16T01:55:30.007Z",
+  "uptime_s": 24698
 }
