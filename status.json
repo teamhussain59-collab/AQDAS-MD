@@ -77,10 +77,6 @@
     }
   ],
   "guest_log": [
-    "12:49:05 ********6760: LINKING (phone ne code accept kiya)",
-    "12:49:08 ********6760: connection close 515 Stream Errored (restart required)",
-    "12:49:12 ********6760: CONNECTED ✅",
-    "12:50:40 *********9980: connection close 428 Connection Terminated",
     "12:50:40 ********9425: connection close 408 Connection was lost",
     "12:50:40 ********8546: connection close 408 Connection was lost",
     "12:50:40 ********1254: connection close 408 Connection was lost",
@@ -96,7 +92,11 @@
     "12:51:54 *********9980: CONNECTED ✅",
     "12:51:54 ********9425: CONNECTED ✅",
     "12:51:55 ********8546: CONNECTED ✅",
-    "12:52:13 ********4254: status ***********0574: seen ✅"
+    "12:52:13 ********4254: status ***********0574: seen ✅",
+    "12:52:32 ********1254: connection close 408 Connection was lost",
+    "12:52:32 ********9425: connection close 408 Connection was lost",
+    "12:52:35 ********9425: CONNECTED ✅",
+    "12:52:36 ********1254: CONNECTED ✅"
   ],
   "guest_frames": {
     "number": "********6760",
@@ -129,6 +129,6 @@
     "opted_in": 2,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-16T12:52:39.925Z",
-  "uptime_s": 385
+  "updated_at": "2026-11-16T12:52:41.030Z",
+  "uptime_s": 386
 }
