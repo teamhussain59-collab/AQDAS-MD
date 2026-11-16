@@ -26,11 +26,6 @@
       "autostatus": "off"
     },
     {
-      "number": "********6760",
-      "state": "connected",
-      "autostatus": "off"
-    },
-    {
       "number": "*********6829",
       "state": "connected",
       "autostatus": "off"
@@ -72,26 +67,26 @@
     }
   ],
   "guest_log": [
-    "16:48:48 ********1254: connection close 408 Connection was lost",
-    "16:48:55 ********1254: CONNECTED ✅",
-    "16:50:13 ********9425: connection close 408 Connection was lost",
-    "16:50:13 ********8546: connection close 408 Connection was lost",
-    "16:50:13 ********2563: connection close 408 Connection was lost",
-    "16:50:13 *********5974: connection close 408 Connection was lost",
-    "16:50:13 ********1254: connection close 408 Connection was lost",
-    "16:50:30 *********5974: CONNECTED ✅",
-    "16:50:30 ********9425: CONNECTED ✅",
-    "16:50:30 ********1254: CONNECTED ✅",
-    "16:50:30 ********2563: CONNECTED ✅",
-    "16:50:30 ********8546: CONNECTED ✅",
-    "16:52:11 ********9425: connection close 408 Connection was lost",
-    "16:52:11 ********8546: connection close 408 Connection was lost",
     "16:52:11 ********2563: connection close 408 Connection was lost",
     "16:52:19 ********9425: CONNECTED ✅",
     "16:52:19 ********2563: CONNECTED ✅",
     "16:52:19 ********8546: CONNECTED ✅",
     "16:52:20 ********4254: status ***********9024: seen ✅",
-    "16:52:22 ********3254: status **********3501: seen ✅, react 🅰️ ✅"
+    "16:52:22 ********3254: status **********3501: seen ✅, react 🅰️ ✅",
+    "16:53:01 ********1254: connection close 408 Connection was lost",
+    "16:53:01 ********2563: connection close 408 Connection was lost",
+    "16:53:01 ********8546: connection close 408 Connection was lost",
+    "16:53:01 ********9425: connection close 408 Connection was lost",
+    "16:53:01 *********9980: connection close 408 Connection was lost",
+    "16:53:01 ********6760: connection close 401 Stream Errored (conflict)",
+    "16:53:01 ********6760: logged out",
+    "16:53:04 ********9425: CONNECTED ✅",
+    "16:53:04 ********8546: CONNECTED ✅",
+    "16:53:05 ********1254: CONNECTED ✅",
+    "16:53:05 ********2563: CONNECTED ✅",
+    "16:53:06 *********9980: CONNECTED ✅",
+    "16:53:08 ********3254: status **********3501: seen ✅, react 🅰️ ✅",
+    "16:53:08 ********4254: status ***********3151: seen ✅"
   ],
   "guest_frames": null,
   "mem": {
@@ -112,6 +107,6 @@
     "opted_in": 1,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-16T16:52:41.506Z",
-  "uptime_s": 6312
+  "updated_at": "2026-11-16T16:53:12.700Z",
+  "uptime_s": 6343
 }
