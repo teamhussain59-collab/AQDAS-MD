@@ -77,26 +77,26 @@
     }
   ],
   "guest_log": [
-    "13:28:35 ********7157: CONNECTED ✅",
-    "13:28:35 ********4254: CONNECTED ✅",
-    "13:28:35 ********1254: CONNECTED ✅",
-    "13:28:36 ********3254: CONNECTED ✅",
-    "13:30:20 ********9425: connection close 408 Connection was lost",
-    "13:30:20 ********2563: connection close 408 Connection was lost",
-    "13:30:20 ********8546: connection close 408 Connection was lost",
-    "13:30:20 *********5974: connection close 408 Connection was lost",
-    "13:30:20 ********7157: connection close 408 Connection was lost",
-    "13:30:20 ********1254: connection close 408 Connection was lost",
-    "13:30:20 ********3254: connection close 408 Connection was lost",
-    "13:30:20 ********4254: status ***********8614: seen ✅",
-    "13:30:23 ********8546: CONNECTED ✅",
-    "13:30:23 ********2563: CONNECTED ✅",
     "13:30:23 ********3254: CONNECTED ✅",
     "13:30:24 *********5974: CONNECTED ✅",
     "13:30:24 ********7157: CONNECTED ✅",
     "13:30:24 ********9425: CONNECTED ✅",
     "13:30:25 ********1254: CONNECTED ✅",
-    "13:30:44 ********4254: status ***********6484: seen ✅"
+    "13:30:44 ********4254: status ***********6484: seen ✅",
+    "13:32:05 ********1254: connection close 428 Connection Terminated",
+    "13:32:05 ********9425: connection close 428 Connection Terminated",
+    "13:32:05 *********5974: connection close 428 Connection Terminated",
+    "13:32:05 ********3254: connection close 428 Connection Terminated",
+    "13:32:05 ********2563: connection close 428 Connection Terminated",
+    "13:32:06 ********8546: connection close 408 Connection was lost",
+    "13:32:06 ********7157: connection close 408 Connection was lost",
+    "13:32:08 *********5974: CONNECTED ✅",
+    "13:32:09 ********8546: CONNECTED ✅",
+    "13:32:09 ********2563: CONNECTED ✅",
+    "13:32:09 ********9425: CONNECTED ✅",
+    "13:32:09 ********1254: CONNECTED ✅",
+    "13:32:10 ********7157: CONNECTED ✅",
+    "13:32:10 ********3254: CONNECTED ✅"
   ],
   "guest_frames": {
     "number": "********6760",
@@ -129,6 +129,6 @@
     "opted_in": 2,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-16T13:32:05.808Z",
-  "uptime_s": 2751
+  "updated_at": "2026-11-16T13:32:14.278Z",
+  "uptime_s": 2759
 }
