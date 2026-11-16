@@ -9,6 +9,96 @@
   "panel_at": "2026-11-16T15:09:41.390Z",
   "slots_max": "unlimited",
   "commands": 592,
-  "updated_at": "2026-11-16T15:10:08.676Z",
-  "uptime_s": 159
+  "linked": [
+    {
+      "number": "*********9787",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********9425",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "*********1795",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********6760",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "*********6829",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "*********5974",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "*********9980",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********2563",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********1254",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********3254",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********8546",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********7157",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********4254",
+      "state": "connected",
+      "autostatus": "view"
+    }
+  ],
+  "guest_log": [
+    "15:10:07 ********2563: LINKING (phone ne code accept kiya)",
+    "15:10:07 ********1254: LINKING (phone ne code accept kiya)",
+    "15:10:08 ********9425: LINKING (phone ne code accept kiya)",
+    "15:10:08 *********9980: LINKING (phone ne code accept kiya)",
+    "15:10:08 ********7157: CONNECTED ✅",
+    "15:10:08 ********4254: CONNECTED ✅",
+    "15:10:08 *********6829: CONNECTED ✅",
+    "15:10:08 *********9787: CONNECTED ✅",
+    "15:10:08 ********3254: CONNECTED ✅",
+    "15:10:08 *********5974: CONNECTED ✅",
+    "15:10:08 ********2563: CONNECTED ✅",
+    "15:10:09 ********6760: CONNECTED ✅",
+    "15:10:09 ********9425: CONNECTED ✅",
+    "15:10:09 ********1254: CONNECTED ✅",
+    "15:10:09 ********8546: CONNECTED ✅",
+    "15:10:10 *********9980: CONNECTED ✅",
+    "15:10:10 ********4254: status **********2520: seen ✅",
+    "15:10:13 ********4254: status ***********5232: seen ✅",
+    "15:10:14 ********4254: status ***********6484: seen ✅",
+    "15:10:15 ********4254: status ***********0738: seen ✅"
+  ],
+  "guest_frames": null,
+  "updated_at": "2026-11-16T15:10:19.896Z",
+  "uptime_s": 171
 }
