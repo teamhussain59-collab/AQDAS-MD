@@ -67,18 +67,6 @@
     }
   ],
   "guest_log": [
-    "19:09:21 ********2563: connection close 408 Connection was lost",
-    "19:09:21 *********9980: connection close 408 Connection was lost",
-    "19:09:21 ********9425: connection close 408 Connection was lost",
-    "19:09:21 ********1254: connection close 408 Connection was lost",
-    "19:09:21 ********3254: connection close 408 Connection was lost",
-    "19:09:24 ********2563: CONNECTED ✅",
-    "19:09:24 ********3254: CONNECTED ✅",
-    "19:09:24 ********9425: CONNECTED ✅",
-    "19:09:25 ********1254: CONNECTED ✅",
-    "19:09:26 *********9980: CONNECTED ✅",
-    "19:10:40 ********1254: status ***********6514: seen ✅, react 🅰️ ✅",
-    "19:11:27 ********4254: status **********2520: seen ✅",
     "19:12:25 ********1254: status **********8679: seen ✅, react 🅰️ ✅",
     "19:14:03 ********1254: status **********8679: seen ✅, react 🅰️ ✅",
     "19:15:00 *********5974: connection close 408 Connection was lost",
@@ -86,7 +74,19 @@
     "19:16:18 ********8546: connection close 408 Connection was lost",
     "19:16:18 ********4254: connection close 408 Connection was lost",
     "19:16:22 ********8546: CONNECTED ✅",
-    "19:16:22 ********4254: CONNECTED ✅"
+    "19:16:22 ********4254: CONNECTED ✅",
+    "19:20:58 ********1254: connection close 428 Connection Terminated",
+    "19:20:58 *********9980: connection close 428 Connection Terminated",
+    "19:20:58 ********9425: connection close 428 Connection Terminated",
+    "19:20:58 ********2563: connection close 428 Connection Terminated",
+    "19:20:58 ********8546: connection close 408 Connection was lost",
+    "19:20:59 ********4254: connection close 408 Connection was lost",
+    "19:21:02 ********9425: CONNECTED ✅",
+    "19:21:03 ********8546: CONNECTED ✅",
+    "19:21:03 ********1254: CONNECTED ✅",
+    "19:21:03 ********2563: CONNECTED ✅",
+    "19:21:04 ********4254: CONNECTED ✅",
+    "19:21:04 *********9980: CONNECTED ✅"
   ],
   "guest_frames": null,
   "mem": {
@@ -107,6 +107,6 @@
     "opted_in": 1,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-16T19:21:00.076Z",
-  "uptime_s": 5661
+  "updated_at": "2026-11-16T19:21:08.174Z",
+  "uptime_s": 5669
 }
