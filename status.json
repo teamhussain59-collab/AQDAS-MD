@@ -67,7 +67,6 @@
     }
   ],
   "guest_log": [
-    "17:49:10 ********1254: LINKING (phone ne code accept kiya)",
     "17:49:11 *********6829: CONNECTED ✅",
     "17:49:11 ********8546: CONNECTED ✅",
     "17:49:11 ********3254: LINKING (phone ne code accept kiya)",
@@ -86,7 +85,8 @@
     "17:49:12 ********2563: CONNECTED ✅",
     "17:49:12 ********9425: CONNECTED ✅",
     "17:49:13 ********4254: status ***********4647: seen ✅",
-    "17:49:14 ********8546: status ***********4475: seen ✅, react 😘 ✅"
+    "17:49:14 ********8546: status ***********4475: seen ✅, react 😘 ✅",
+    "17:50:46 ********9425: connection close 428 Connection Terminated"
   ],
   "guest_frames": null,
   "mem": {
@@ -99,6 +99,14 @@
     "per_session_mb": 15,
     "room_for": 36
   },
-  "updated_at": "2026-11-16T17:51:19.592Z",
-  "uptime_s": 280
+  "channel": {
+    "ok": true,
+    "name": "AQDAS TECH",
+    "latest_post": null,
+    "auto": true,
+    "opted_in": 1,
+    "fetch": "updates err channel posts timeout | messages err undefined"
+  },
+  "updated_at": "2026-11-16T17:51:20.667Z",
+  "uptime_s": 281
 }
