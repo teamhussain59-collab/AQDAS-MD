@@ -77,11 +77,6 @@
     }
   ],
   "guest_log": [
-    "14:40:24 ********1254: CONNECTED ✅",
-    "14:41:50 ********6760: CONNECTED ✅",
-    "14:42:09 ********6760: connection close 408 Connection was lost",
-    "14:42:09 ********1254: connection close 408 Connection was lost",
-    "14:42:09 ********9425: connection close 408 Connection was lost",
     "14:42:10 *********9787: connection close 428 Connection Terminated",
     "14:42:28 ********7157: connection close 428 Connection Terminated",
     "14:42:28 ********3254: connection close 428 Connection Terminated",
@@ -96,7 +91,12 @@
     "14:44:19 ********7157: connection close 408 Connection was lost",
     "14:44:19 ********6760: connection close 408 Connection was lost",
     "14:44:19 ********9425: connection close 408 Connection was lost",
-    "14:44:19 ********8546: connection close 408 Connection was lost"
+    "14:44:19 ********8546: connection close 408 Connection was lost",
+    "14:44:24 ********9425: CONNECTED ✅",
+    "14:44:24 ********6760: CONNECTED ✅",
+    "14:44:24 ********8546: CONNECTED ✅",
+    "14:44:24 ********1254: CONNECTED ✅",
+    "14:44:24 ********7157: CONNECTED ✅"
   ],
   "guest_frames": {
     "number": "********6760",
@@ -129,6 +129,6 @@
     "opted_in": 2,
     "fetch": "updates err Connection Closed | messages err Connection Closed"
   },
-  "updated_at": "2026-11-16T14:44:23.938Z",
-  "uptime_s": 7089
+  "updated_at": "2026-11-16T14:44:30.805Z",
+  "uptime_s": 7096
 }
