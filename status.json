@@ -77,11 +77,6 @@
     }
   ],
   "guest_log": [
-    "14:27:41 ********9425: CONNECTED ✅",
-    "14:27:41 *********5974: CONNECTED ✅",
-    "14:27:42 ********7157: CONNECTED ✅",
-    "14:27:42 ********3254: CONNECTED ✅",
-    "14:27:42 ********8546: CONNECTED ✅",
     "14:27:42 *********1795: CONNECTED ✅",
     "14:27:42 ********4254: CONNECTED ✅",
     "14:27:42 *********6829: CONNECTED ✅",
@@ -96,7 +91,12 @@
     "14:27:43 *********6829: connection close 440 Stream Errored (conflict)",
     "14:27:43 *********1795: connection close 440 Stream Errored (conflict)",
     "14:27:43 ********2563: connection close 440 Stream Errored (conflict)",
-    "14:27:43 *********9980: CONNECTED ✅"
+    "14:27:43 *********9980: CONNECTED ✅",
+    "14:28:31 *********9980: connection close 440 Stream Errored (conflict)",
+    "14:28:32 ********4254: connection close 440 Stream Errored (conflict)",
+    "14:28:33 ********7157: CONNECTED ✅",
+    "14:28:38 ********1254: CONNECTED ✅",
+    "14:28:38 ********9425: CONNECTED ✅"
   ],
   "guest_frames": {
     "number": "********6760",
@@ -129,6 +129,6 @@
     "opted_in": 0,
     "fetch": "updates err Connection Closed | messages err Connection Closed"
   },
-  "updated_at": "2026-11-16T14:28:31.926Z",
-  "uptime_s": 6137
+  "updated_at": "2026-11-16T14:28:52.209Z",
+  "uptime_s": 6157
 }
