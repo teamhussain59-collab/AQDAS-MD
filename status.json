@@ -91,13 +91,13 @@
   "guest_frames": null,
   "mem": {
     "sessions": 11,
-    "free_mb": 121402,
+    "free_mb": 122220,
     "total_mb": 393439,
-    "rss_mb": 235,
-    "heap_mb": 75,
+    "rss_mb": 278,
+    "heap_mb": 82,
     "heap_limit_mb": 489,
     "per_session_mb": 15,
-    "room_for": 34
+    "room_for": 33
   },
   "channel": {
     "ok": true,
@@ -107,6 +107,6 @@
     "opted_in": 1,
     "fetch": "updates err Connection Closed | messages err Connection Closed"
   },
-  "updated_at": "2026-11-16T18:14:34.965Z",
-  "uptime_s": 1675
+  "updated_at": "2026-11-16T18:14:35.851Z",
+  "uptime_s": 1676
 }
