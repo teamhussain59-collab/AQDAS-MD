@@ -77,37 +77,37 @@
     }
   ],
   "guest_log": [
-    "15:23:49 ********3254: connection close 408 Connection was lost",
-    "15:23:49 ********6760: connection close 408 Connection was lost",
-    "15:23:49 *********5974: connection close 408 Connection was lost",
-    "15:23:49 *********6829: connection close 408 Connection was lost",
-    "15:23:52 ********6760: CONNECTED ✅",
-    "15:23:52 ********9425: CONNECTED ✅",
-    "15:23:52 ********1254: CONNECTED ✅",
-    "15:23:52 *********1795: CONNECTED ✅",
-    "15:23:52 *********6829: CONNECTED ✅",
-    "15:23:53 *********5974: CONNECTED ✅",
-    "15:23:53 ********2563: CONNECTED ✅",
-    "15:23:53 ********8546: CONNECTED ✅",
-    "15:23:54 ********3254: CONNECTED ✅",
-    "15:23:54 *********9787: CONNECTED ✅",
-    "15:23:54 ********7157: CONNECTED ✅",
-    "15:23:55 *********9980: CONNECTED ✅",
-    "15:23:55 ********4254: CONNECTED ✅",
-    "15:23:56 ********4254: status **********2520: seen ✅",
-    "15:23:57 ********4254: status ***********9024: seen ✅",
-    "15:24:14 ********4254: status ***********0364: seen ✅"
+    "15:27:53 *********1795: connection close 408 Connection was lost",
+    "15:27:53 ********2563: connection close 408 Connection was lost",
+    "15:27:53 *********5974: connection close 408 Connection was lost",
+    "15:27:53 ********1254: connection close 408 Connection was lost",
+    "15:27:53 *********6829: connection close 408 Connection was lost",
+    "15:27:53 ********6760: connection close 408 Connection was lost",
+    "15:27:53 ********9425: connection close 408 Connection was lost",
+    "15:30:00 ********7157: CONNECTED ✅",
+    "15:30:00 ********9425: CONNECTED ✅",
+    "15:30:01 *********9787: CONNECTED ✅",
+    "15:30:01 ********4254: CONNECTED ✅",
+    "15:30:01 ********2563: CONNECTED ✅",
+    "15:30:02 ********1254: CONNECTED ✅",
+    "15:30:02 *********5974: CONNECTED ✅",
+    "15:30:02 *********1795: CONNECTED ✅",
+    "15:30:02 ********6760: CONNECTED ✅",
+    "15:30:02 *********9980: CONNECTED ✅",
+    "15:30:03 ********8546: CONNECTED ✅",
+    "15:30:03 *********6829: CONNECTED ✅",
+    "15:30:04 ********3254: CONNECTED ✅"
   ],
   "guest_frames": null,
   "mem": {
     "sessions": 13,
-    "free_mb": 110980,
+    "free_mb": 110810,
     "total_mb": 393439,
-    "rss_mb": 423,
-    "heap_mb": 231,
+    "rss_mb": 380,
+    "heap_mb": 172,
     "heap_limit_mb": 489,
-    "per_session_mb": 16,
-    "room_for": 18
+    "per_session_mb": 15,
+    "room_for": 24
   },
   "channel": {
     "ok": true,
@@ -117,6 +117,6 @@
     "opted_in": 2,
     "fetch": "updates err Connection Closed | messages err Connection Closed"
   },
-  "updated_at": "2026-11-16T15:24:18.723Z",
-  "uptime_s": 1009
+  "updated_at": "2026-11-16T15:30:08.375Z",
+  "uptime_s": 1359
 }
