@@ -67,15 +67,6 @@
     }
   ],
   "guest_log": [
-    "18:34:48 ********1254: CONNECTED ✅",
-    "18:34:48 *********6829: CONNECTED ✅",
-    "18:34:49 *********9787: CONNECTED ✅",
-    "18:34:49 *********9980: CONNECTED ✅",
-    "18:34:49 ********2563: CONNECTED ✅",
-    "18:35:49 ********2563: connection close 428 Connection Terminated",
-    "18:35:49 ********1254: connection close 428 Connection Terminated",
-    "18:35:49 ********8546: connection close 428 Connection Terminated",
-    "18:35:49 ********3254: connection close 428 Connection Terminated",
     "18:35:49 ********9425: connection close 428 Connection Terminated",
     "18:35:49 *********5974: connection close 428 Connection Terminated",
     "18:36:36 ********4254: connection close 428 Connection Terminated",
@@ -86,7 +77,16 @@
     "18:36:50 *********5974: CONNECTED ✅",
     "18:36:50 ********4254: CONNECTED ✅",
     "18:36:50 ********2563: CONNECTED ✅",
-    "18:36:51 ********4254: status **********0153: seen ✅"
+    "18:36:51 ********4254: status **********0153: seen ✅",
+    "18:37:48 ********9425: connection close 428 Connection Terminated",
+    "18:37:52 ********3254: connection close 428 Connection Terminated",
+    "18:37:52 *********1795: connection close 408 Connection was lost",
+    "18:37:52 *********9980: connection close 408 Connection was lost",
+    "18:37:56 ********3254: CONNECTED ✅",
+    "18:37:56 ********9425: CONNECTED ✅",
+    "18:37:57 *********1795: CONNECTED ✅",
+    "18:37:57 *********9980: CONNECTED ✅",
+    "18:38:00 ********3254: status ***********0652: seen ✅, react 🅰️ ✅"
   ],
   "guest_frames": null,
   "mem": {
@@ -107,6 +107,6 @@
     "opted_in": 1,
     "fetch": "updates err Connection Closed | messages err Connection Closed"
   },
-  "updated_at": "2026-11-16T18:36:55.560Z",
-  "uptime_s": 3016
+  "updated_at": "2026-11-16T18:38:04.423Z",
+  "uptime_s": 3085
 }
