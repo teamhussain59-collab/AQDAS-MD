@@ -77,26 +77,26 @@
     }
   ],
   "guest_log": [
-    "15:40:47 *********5974: connection close 408 Connection was lost",
-    "15:40:47 ********1254: connection close 408 Connection was lost",
-    "15:40:47 ********6760: connection close 408 Connection was lost",
-    "15:40:47 ********4254: connection close 408 Connection was lost",
-    "15:40:47 ********2563: connection close 408 Connection was lost",
-    "15:40:47 ********9425: connection close 408 Connection was lost",
-    "15:40:47 ********8546: connection close 408 Connection was lost",
-    "15:40:51 ********6760: CONNECTED ✅",
-    "15:40:51 ********7157: CONNECTED ✅",
-    "15:40:51 ********9425: CONNECTED ✅",
-    "15:40:51 ********8546: CONNECTED ✅",
-    "15:40:51 *********1795: CONNECTED ✅",
-    "15:40:51 *********9787: CONNECTED ✅",
-    "15:40:51 *********6829: CONNECTED ✅",
-    "15:40:51 ********4254: CONNECTED ✅",
-    "15:40:51 ********2563: CONNECTED ✅",
-    "15:40:52 ********1254: CONNECTED ✅",
-    "15:40:52 *********5974: CONNECTED ✅",
-    "15:40:52 ********3254: CONNECTED ✅",
-    "15:40:53 *********9980: CONNECTED ✅"
+    "15:42:39 ********2563: connection close 408 Connection was lost",
+    "15:42:39 ********8546: connection close 408 Connection was lost",
+    "15:42:39 ********4254: connection close 408 Connection was lost",
+    "15:42:39 ********7157: connection close 408 Connection was lost",
+    "15:42:39 *********9787: connection close 408 Connection was lost",
+    "15:42:39 *********1795: connection close 408 Connection was lost",
+    "15:42:43 ********6760: CONNECTED ✅",
+    "15:42:43 *********9787: CONNECTED ✅",
+    "15:42:43 ********7157: CONNECTED ✅",
+    "15:42:43 *********9980: CONNECTED ✅",
+    "15:42:43 *********5974: CONNECTED ✅",
+    "15:42:43 *********6829: CONNECTED ✅",
+    "15:42:43 ********8546: CONNECTED ✅",
+    "15:42:44 ********2563: CONNECTED ✅",
+    "15:42:44 *********1795: CONNECTED ✅",
+    "15:42:44 ********1254: CONNECTED ✅",
+    "15:42:44 ********9425: CONNECTED ✅",
+    "15:42:45 ********4254: CONNECTED ✅",
+    "15:42:45 ********3254: CONNECTED ✅",
+    "15:42:49 ********1254: status ***********2817: seen ✅, react 🅰️ ✅"
   ],
   "guest_frames": null,
   "mem": {
@@ -113,6 +113,6 @@
     "ok": false,
     "error": "koi connected number nahi"
   },
-  "updated_at": "2026-11-16T15:42:39.386Z",
-  "uptime_s": 2110
+  "updated_at": "2026-11-16T15:42:53.095Z",
+  "uptime_s": 2124
 }
