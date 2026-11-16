@@ -9,6 +9,81 @@
   "commands": 592,
   "panel_url": "https://pubmed-wood-loop-variety.trycloudflare.com",
   "panel_at": "2026-11-16T20:49:41.326Z",
-  "updated_at": "2026-11-16T20:49:42.014Z",
-  "uptime_s": 11
+  "linked": [
+    {
+      "number": "*********9787",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********9425",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "*********1795",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "*********5974",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "*********9980",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********2563",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********1254",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********3254",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********8546",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********4254",
+      "state": "connected",
+      "autostatus": "view"
+    }
+  ],
+  "guest_log": [
+    "20:49:41 ********9425: CONNECTED ✅",
+    "20:49:41 ********8546: CONNECTED ✅",
+    "20:49:41 *********5974: CONNECTED ✅",
+    "20:49:41 ********4254: CONNECTED ✅",
+    "20:49:41 ********1254: CONNECTED ✅",
+    "20:49:41 *********9980: LINKING (phone ne code accept kiya)",
+    "20:49:41 ********4254: status **********6172: seen ✅",
+    "20:49:41 ********4254: status ***********0025: seen ✅",
+    "20:49:41 ********4254: status **********8278: seen ✅",
+    "20:49:41 ********4254: status **********6172: seen ✅",
+    "20:49:41 ********4254: status **********8278: seen ✅",
+    "20:49:41 *********9787: CONNECTED ✅",
+    "20:49:41 ********4254: status **********8729: seen ✅",
+    "20:49:42 *********1795: CONNECTED ✅",
+    "20:49:42 *********9980: CONNECTED ✅",
+    "20:49:42 ********4254: status **********8278: seen ✅",
+    "20:49:43 ********1254: status ***********0090: seen ✅, react 🅰️ ✅",
+    "20:49:44 ********1254: status ***********0090: seen ✅, react 🅰️ ✅",
+    "20:49:44 *********6829: connection close 401 Connection Failure",
+    "20:49:44 *********6829: logged out"
+  ],
+  "guest_frames": null,
+  "updated_at": "2026-11-16T20:49:48.865Z",
+  "uptime_s": 17
 }
