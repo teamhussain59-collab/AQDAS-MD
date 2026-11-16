@@ -72,10 +72,6 @@
     }
   ],
   "guest_log": [
-    "16:36:46 *********9980: connection close 408 Connection was lost",
-    "16:36:50 ********1254: CONNECTED ✅",
-    "16:36:50 ********6760: CONNECTED ✅",
-    "16:36:51 ********9425: CONNECTED ✅",
     "16:36:51 *********1795: CONNECTED ✅",
     "16:36:51 *********5974: CONNECTED ✅",
     "16:36:51 *********9980: CONNECTED ✅",
@@ -91,7 +87,11 @@
     "16:38:04 ********4254: status ***********6484: seen ✅",
     "16:38:06 ********2563: CONNECTED ✅",
     "16:38:06 ********4254: status **********2520: seen ✅",
-    "16:38:07 ********8546: CONNECTED ✅"
+    "16:38:07 ********8546: CONNECTED ✅",
+    "16:38:32 *********5974: connection close 408 Connection was lost",
+    "16:38:32 ********1254: connection close 408 Connection was lost",
+    "16:38:32 *********6829: connection close 408 Connection was lost",
+    "16:38:32 ********9425: connection close 408 Connection was lost"
   ],
   "guest_frames": null,
   "mem": {
@@ -108,6 +108,6 @@
     "ok": false,
     "error": "koi connected number nahi"
   },
-  "updated_at": "2026-11-16T16:38:32.284Z",
-  "uptime_s": 5463
+  "updated_at": "2026-11-16T16:38:37.562Z",
+  "uptime_s": 5468
 }
