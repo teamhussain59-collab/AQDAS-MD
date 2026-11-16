@@ -77,8 +77,6 @@
     }
   ],
   "guest_log": [
-    "14:29:39 ********1254: connection close 408 Connection was lost",
-    "14:29:39 ********7157: connection close 408 Connection was lost",
     "14:29:39 ********9425: connection close 408 Connection was lost",
     "14:29:39 ********3254: connection close 408 Connection was lost",
     "14:29:39 ********2563: connection close 408 Connection was lost",
@@ -96,7 +94,9 @@
     "14:29:45 *********1795: CONNECTED ✅",
     "14:29:45 ********6760: CONNECTED ✅",
     "14:29:45 ********8546: CONNECTED ✅",
-    "14:29:45 *********5974: CONNECTED ✅"
+    "14:29:45 *********5974: CONNECTED ✅",
+    "14:29:55 ********3254: CONNECTED ✅",
+    "14:30:31 *********9980: connection close 428 Connection Terminated"
   ],
   "guest_frames": {
     "number": "********6760",
@@ -126,9 +126,9 @@
     "name": "AQDAS TECH",
     "latest_post": null,
     "auto": true,
-    "opted_in": 0,
+    "opted_in": 2,
     "fetch": "updates err Connection Closed | messages err Connection Closed"
   },
-  "updated_at": "2026-11-16T14:29:51.998Z",
-  "uptime_s": 6217
+  "updated_at": "2026-11-16T14:31:40.349Z",
+  "uptime_s": 6325
 }
