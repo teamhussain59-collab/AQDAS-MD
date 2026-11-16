@@ -77,26 +77,26 @@
     }
   ],
   "guest_log": [
-    "14:55:19 ********2563: connection close 408 Connection was lost",
-    "14:55:19 ********9425: connection close 408 Connection was lost",
-    "14:55:19 ********7157: connection close 408 Connection was lost",
-    "14:55:19 *********5974: connection close 408 Connection was lost",
-    "14:55:19 *********6829: connection close 408 Connection was lost",
-    "14:55:19 *********9787: connection close 408 Connection was lost",
-    "14:55:24 ********3254: CONNECTED ✅",
-    "14:55:24 *********9980: CONNECTED ✅",
-    "14:55:24 *********5974: CONNECTED ✅",
-    "14:55:25 *********9787: CONNECTED ✅",
-    "14:55:25 *********1795: CONNECTED ✅",
-    "14:55:25 ********1254: CONNECTED ✅",
-    "14:55:25 ********9425: CONNECTED ✅",
-    "14:55:26 ********4254: CONNECTED ✅",
-    "14:55:26 ********7157: CONNECTED ✅",
-    "14:55:26 ********2563: CONNECTED ✅",
-    "14:55:27 *********6829: CONNECTED ✅",
-    "14:55:27 ********6760: CONNECTED ✅",
-    "14:55:27 ********8546: CONNECTED ✅",
-    "14:55:33 ********4254: status ***********6484: seen ✅"
+    "14:57:08 ********4254: connection close 408 Connection was lost",
+    "14:57:08 ********9425: connection close 408 Connection was lost",
+    "14:57:08 ********1254: connection close 408 Connection was lost",
+    "14:57:08 *********1795: connection close 408 Connection was lost",
+    "14:57:08 *********9787: connection close 408 Connection was lost",
+    "14:57:08 *********5974: connection close 408 Connection was lost",
+    "14:57:08 *********9980: connection close 408 Connection was lost",
+    "14:57:08 ********3254: connection close 408 Connection was lost",
+    "14:57:08 ********3254: status ***********3256: seen ✅, react 🅰️ ✅",
+    "14:57:13 *********6829: connection close 408 WebSocket Error ()",
+    "14:57:14 ********2563: connection close 408 WebSocket Error ()",
+    "14:57:14 ********7157: connection close 408 WebSocket Error ()",
+    "14:57:14 ********4254: connection close 408 WebSocket Error ()",
+    "14:57:14 ********9425: connection close 408 WebSocket Error ()",
+    "14:57:14 ********1254: connection close 408 WebSocket Error ()",
+    "14:57:14 *********1795: connection close 408 WebSocket Error ()",
+    "14:57:14 *********5974: connection close 408 WebSocket Error ()",
+    "14:57:14 *********9787: connection close 408 WebSocket Error ()",
+    "14:57:14 ********3254: connection close 408 WebSocket Error ()",
+    "14:57:14 *********9980: connection close 408 WebSocket Error ()"
   ],
   "guest_frames": {
     "number": "********6760",
@@ -129,6 +129,6 @@
     "opted_in": 2,
     "fetch": "updates err Connection Closed | messages err Connection Closed"
   },
-  "updated_at": "2026-11-16T14:55:37.520Z",
-  "uptime_s": 7762
+  "updated_at": "2026-11-16T14:57:18.701Z",
+  "uptime_s": 7864
 }
