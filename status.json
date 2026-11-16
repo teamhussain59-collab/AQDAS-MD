@@ -6,6 +6,9 @@
   "number_masked": null,
   "run_id": "43885105270",
   "slots_max": "unlimited",
-  "updated_at": "2026-11-16T14:23:25.704Z",
-  "uptime_s": 15
+  "commands": 592,
+  "panel_url": "https://romance-feeding-spare-raise.trycloudflare.com",
+  "panel_at": "2026-11-16T14:23:29.255Z",
+  "updated_at": "2026-11-16T14:23:29.907Z",
+  "uptime_s": 19
 }
