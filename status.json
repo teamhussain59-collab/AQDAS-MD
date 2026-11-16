@@ -72,13 +72,11 @@
     },
     {
       "number": "********6760",
-      "state": "pairing",
+      "state": "linking",
       "autostatus": "off"
     }
   ],
   "guest_log": [
-    "12:48:41 ********9425: CONNECTED ✅",
-    "12:48:41 *********9787: LINKING (phone ne code accept kiya)",
     "12:48:41 ********2563: LINKING (phone ne code accept kiya)",
     "12:48:41 ********3254: LINKING (phone ne code accept kiya)",
     "12:48:41 ********7157: CONNECTED ✅",
@@ -96,16 +94,23 @@
     "12:48:42 *********5974: CONNECTED ✅",
     "12:48:42 *********1795: CONNECTED ✅",
     "12:48:43 *********9980: CONNECTED ✅",
-    "12:48:53 ********6760: code bana"
+    "12:48:53 ********6760: code bana",
+    "12:49:05 ********6760: LINKING (phone ne code accept kiya)",
+    "12:49:08 ********6760: connection close 515 Stream Errored (restart required)"
   ],
   "guest_frames": {
     "number": "********6760",
-    "state": "pairing",
+    "state": "linking",
     "frames": [
       "12:48:48 iq:set <pair-device>",
-      "12:48:48 iq:result <link_code_companion_reg[companion_hello]>"
+      "12:48:48 iq:result <link_code_companion_reg[companion_hello]>",
+      "12:49:05 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
+      "12:49:05 iq:result",
+      "12:49:08 iq:set <pair-success>",
+      "12:49:08 stream:error: code=515",
+      "12:49:08 xmlstreamend:"
     ]
   },
-  "updated_at": "2026-11-16T12:48:57.271Z",
-  "uptime_s": 162
+  "updated_at": "2026-11-16T12:49:12.594Z",
+  "uptime_s": 178
 }
