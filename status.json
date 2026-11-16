@@ -77,7 +77,6 @@
     }
   ],
   "guest_log": [
-    "14:47:02 ********1254: connection close 408 Connection was lost",
     "14:47:02 ********9425: connection close 408 Connection was lost",
     "14:47:02 ********4254: connection close 408 Connection was lost",
     "14:47:02 *********9980: connection close 408 Connection was lost",
@@ -96,7 +95,8 @@
     "14:48:24 ********8546: connection close 408 Connection was lost",
     "14:48:27 ********8546: CONNECTED ✅",
     "14:48:28 ********9425: CONNECTED ✅",
-    "14:48:29 ********1254: CONNECTED ✅"
+    "14:48:29 ********1254: CONNECTED ✅",
+    "14:48:43 ********4254: status **********2520: seen ✅"
   ],
   "guest_frames": {
     "number": "********6760",
@@ -129,6 +129,6 @@
     "opted_in": 2,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-16T14:48:41.908Z",
-  "uptime_s": 7347
+  "updated_at": "2026-11-16T14:48:47.058Z",
+  "uptime_s": 7352
 }
