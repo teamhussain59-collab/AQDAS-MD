@@ -77,13 +77,6 @@
     }
   ],
   "guest_log": [
-    "16:22:06 *********9980: connection close 428 Connection Terminated",
-    "16:22:06 *********9787: connection close 428 Connection Terminated",
-    "16:22:06 ********3254: connection close 428 Connection Terminated",
-    "16:22:06 ********4254: connection close 428 Connection Terminated",
-    "16:22:06 ********6760: connection close 428 Connection Terminated",
-    "16:22:06 *********6829: connection close 428 Connection Terminated",
-    "16:22:06 ********3254: status **********4127: seen ❌ Connection Closed, react 🅰️ ❌ Connection Closed",
     "16:22:09 ********7157: CONNECTED ✅",
     "16:22:10 ********2563: CONNECTED ✅",
     "16:22:11 *********5974: connection close 408 WebSocket Error ()",
@@ -96,7 +89,14 @@
     "16:22:11 ********9425: CONNECTED ✅",
     "16:22:12 ********1254: CONNECTED ✅",
     "16:22:12 ********8546: CONNECTED ✅",
-    "16:22:13 *********6829: CONNECTED ✅"
+    "16:22:13 *********6829: CONNECTED ✅",
+    "16:22:32 ********4254: connection close 428 Connection Terminated",
+    "16:22:32 ********3254: connection close 428 Connection Terminated",
+    "16:22:32 *********1795: connection close 428 Connection Terminated",
+    "16:22:33 ********6760: CONNECTED ✅",
+    "16:22:33 *********5974: CONNECTED ✅",
+    "16:22:33 *********9980: CONNECTED ✅",
+    "16:22:33 *********9787: CONNECTED ✅"
   ],
   "guest_frames": null,
   "mem": {
@@ -113,6 +113,6 @@
     "ok": false,
     "error": "koi connected number nahi"
   },
-  "updated_at": "2026-11-16T16:22:32.895Z",
-  "uptime_s": 4504
+  "updated_at": "2026-11-16T16:23:17.807Z",
+  "uptime_s": 4548
 }
