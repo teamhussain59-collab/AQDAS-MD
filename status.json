@@ -72,16 +72,6 @@
     }
   ],
   "guest_log": [
-    "07:34:43 *********6829: LINKING (phone ne code accept kiya)",
-    "07:34:43 ********1254: LINKING (phone ne code accept kiya)",
-    "07:34:43 *********9787: LINKING (phone ne code accept kiya)",
-    "07:34:43 ********2563: LINKING (phone ne code accept kiya)",
-    "07:34:43 ********3254: LINKING (phone ne code accept kiya)",
-    "07:34:44 ********1254: CONNECTED ✅",
-    "07:34:44 *********6829: CONNECTED ✅",
-    "07:34:44 *********9787: CONNECTED ✅",
-    "07:34:44 ********2563: CONNECTED ✅",
-    "07:34:44 *********1795: CONNECTED ✅",
     "07:34:44 ********3254: CONNECTED ✅",
     "07:36:20 ********8546: connection close 408 Connection was lost",
     "07:36:20 ********9425: connection close 408 Connection was lost",
@@ -91,7 +81,17 @@
     "07:36:24 ********9425: CONNECTED ✅",
     "07:36:24 ********8546: CONNECTED ✅",
     "07:36:25 ********2563: CONNECTED ✅",
-    "07:36:31 ********4254: status ***********6484: seen ✅"
+    "07:36:31 ********4254: status ***********6484: seen ✅",
+    "07:37:03 ********1254: connection close 408 Connection was lost",
+    "07:37:03 ********2563: connection close 408 Connection was lost",
+    "07:37:03 ********9425: connection close 408 Connection was lost",
+    "07:37:03 ********8546: connection close 408 Connection was lost",
+    "07:37:03 ********3254: connection close 408 Connection was lost",
+    "07:37:05 ********1254: CONNECTED ✅",
+    "07:37:06 ********9425: CONNECTED ✅",
+    "07:37:07 ********8546: CONNECTED ✅",
+    "07:37:07 ********3254: CONNECTED ✅",
+    "07:37:07 ********2563: CONNECTED ✅"
   ],
   "guest_frames": null,
   "mem": {
@@ -112,6 +112,6 @@
     "opted_in": 2,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-16T07:36:35.472Z",
-  "uptime_s": 260
+  "updated_at": "2026-11-16T07:37:11.969Z",
+  "uptime_s": 296
 }
