@@ -77,26 +77,26 @@
     }
   ],
   "guest_log": [
-    "13:42:10 ********1254: connection close 408 Connection was lost",
-    "13:42:10 *********6829: connection close 408 Connection was lost",
-    "13:42:10 *********5974: connection close 408 Connection was lost",
-    "13:42:10 ********3254: connection close 408 Connection was lost",
-    "13:42:13 ********1254: connection close 408 WebSocket Error ()",
-    "13:42:13 ********9425: connection close 408 WebSocket Error ()",
-    "13:42:18 ********6760: CONNECTED ✅",
-    "13:42:19 ********2563: CONNECTED ✅",
-    "13:42:19 *********9787: CONNECTED ✅",
-    "13:42:20 ********7157: CONNECTED ✅",
-    "13:42:20 ********4254: CONNECTED ✅",
-    "13:42:20 *********1795: CONNECTED ✅",
-    "13:42:20 *********9980: CONNECTED ✅",
-    "13:42:20 ********8546: CONNECTED ✅",
-    "13:42:20 *********6829: CONNECTED ✅",
-    "13:42:21 ********9425: CONNECTED ✅",
-    "13:42:21 ********1254: CONNECTED ✅",
-    "13:42:21 *********5974: CONNECTED ✅",
-    "13:42:22 ********3254: CONNECTED ✅",
-    "13:42:25 ********8546: status ***********6110: seen ✅, react 🥺 ✅"
+    "13:44:01 *********9980: connection close 408 Connection was lost",
+    "13:44:01 ********7157: connection close 408 Connection was lost",
+    "13:44:01 ********8546: connection close 408 Connection was lost",
+    "13:44:01 *********9787: connection close 408 Connection was lost",
+    "13:44:01 ********2563: connection close 408 Connection was lost",
+    "13:44:01 ********6760: connection close 408 Connection was lost",
+    "13:44:05 *********1795: CONNECTED ✅",
+    "13:44:05 ********6760: CONNECTED ✅",
+    "13:44:05 ********1254: CONNECTED ✅",
+    "13:44:05 *********9787: CONNECTED ✅",
+    "13:44:05 ********3254: CONNECTED ✅",
+    "13:44:05 *********9980: CONNECTED ✅",
+    "13:44:05 *********6829: CONNECTED ✅",
+    "13:44:06 *********5974: CONNECTED ✅",
+    "13:44:06 ********8546: CONNECTED ✅",
+    "13:44:06 ********9425: CONNECTED ✅",
+    "13:44:06 ********7157: CONNECTED ✅",
+    "13:44:06 ********4254: CONNECTED ✅",
+    "13:44:06 ********2563: CONNECTED ✅",
+    "13:44:08 ********1254: status **********9028: seen ✅, react 🅰️ ✅"
   ],
   "guest_frames": {
     "number": "********6760",
@@ -129,6 +129,6 @@
     "opted_in": 2,
     "fetch": "updates err Connection Closed | messages err Connection Closed"
   },
-  "updated_at": "2026-11-16T13:44:10.332Z",
-  "uptime_s": 3475
+  "updated_at": "2026-11-16T13:44:12.726Z",
+  "uptime_s": 3478
 }
