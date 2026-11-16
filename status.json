@@ -77,17 +77,6 @@
     }
   ],
   "guest_log": [
-    "14:47:02 ********4254: connection close 408 Connection was lost",
-    "14:47:02 *********9980: connection close 408 Connection was lost",
-    "14:47:02 ********7157: connection close 408 Connection was lost",
-    "14:47:08 ********9425: CONNECTED ✅",
-    "14:47:09 ********7157: CONNECTED ✅",
-    "14:47:10 ********1254: CONNECTED ✅",
-    "14:47:11 *********9980: CONNECTED ✅",
-    "14:47:12 ********6760: CONNECTED ✅",
-    "14:47:12 ********4254: CONNECTED ✅",
-    "14:47:12 ********2563: CONNECTED ✅",
-    "14:47:37 ********4254: status ***********2286: seen ✅",
     "14:48:02 ********4254: status ***********1493: seen ✅",
     "14:48:24 ********1254: connection close 408 Connection was lost",
     "14:48:24 ********9425: connection close 408 Connection was lost",
@@ -96,7 +85,18 @@
     "14:48:28 ********9425: CONNECTED ✅",
     "14:48:29 ********1254: CONNECTED ✅",
     "14:48:43 ********4254: status **********2520: seen ✅",
-    "14:48:55 ********4254: status **********2520: seen ✅"
+    "14:48:55 ********4254: status **********2520: seen ✅",
+    "14:49:58 ********2563: connection close 408 Connection was lost",
+    "14:49:58 ********7157: connection close 408 Connection was lost",
+    "14:49:58 ********3254: connection close 408 Connection was lost",
+    "14:49:58 ********6760: connection close 408 Connection was lost",
+    "14:49:58 *********1795: connection close 408 Connection was lost",
+    "14:49:58 ********4254: status ***********9024: seen ✅",
+    "14:50:01 *********1795: CONNECTED ✅",
+    "14:50:02 ********7157: CONNECTED ✅",
+    "14:50:02 ********6760: CONNECTED ✅",
+    "14:50:03 ********2563: CONNECTED ✅",
+    "14:50:03 ********3254: CONNECTED ✅"
   ],
   "guest_frames": {
     "number": "********6760",
@@ -129,6 +129,6 @@
     "opted_in": 2,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-16T14:48:59.183Z",
-  "uptime_s": 7364
+  "updated_at": "2026-11-16T14:50:07.560Z",
+  "uptime_s": 7433
 }
