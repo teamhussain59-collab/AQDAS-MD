@@ -67,9 +67,6 @@
     }
   ],
   "guest_log": [
-    "17:41:19 *********9787: connection close 428 Connection Terminated",
-    "17:41:19 ********4254: connection close 408 Connection was lost",
-    "17:41:19 ********2563: connection close 408 Connection was lost",
     "17:41:19 ********3254: connection close 408 Connection was lost",
     "17:41:23 ********8546: CONNECTED ✅",
     "17:41:24 *********1795: CONNECTED ✅",
@@ -86,7 +83,10 @@
     "17:42:18 ********1254: CONNECTED ✅",
     "17:42:20 *********1795: connection close 408 WebSocket Error ()",
     "17:43:04 ********1254: connection close 408 Connection was lost",
-    "17:43:04 ********4254: connection close 408 Connection was lost"
+    "17:43:04 ********4254: connection close 408 Connection was lost",
+    "17:43:22 ********1254: connection close 408 WebSocket Error ()",
+    "17:43:22 ********4254: connection close 408 WebSocket Error ()",
+    "17:43:23 *********1795: CONNECTED ✅"
   ],
   "guest_frames": null,
   "mem": {
@@ -107,6 +107,6 @@
     "opted_in": 0,
     "fetch": "updates err channel posts timeout | messages err Connection Closed"
   },
-  "updated_at": "2026-11-16T17:43:24.358Z",
-  "uptime_s": 9355
+  "updated_at": "2026-11-16T17:43:30.818Z",
+  "uptime_s": 9361
 }
