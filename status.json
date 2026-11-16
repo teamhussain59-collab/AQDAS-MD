@@ -67,26 +67,26 @@
     }
   ],
   "guest_log": [
-    "17:35:14 *********1795: CONNECTED ✅",
-    "17:35:15 ********2563: CONNECTED ✅",
-    "17:35:15 ********4254: CONNECTED ✅",
-    "17:35:15 ********1254: CONNECTED ✅",
-    "17:35:16 *********5974: CONNECTED ✅",
-    "17:35:17 *********6829: CONNECTED ✅",
-    "17:35:17 ********8546: CONNECTED ✅",
-    "17:35:18 ********3254: CONNECTED ✅",
-    "17:37:09 ********9425: CONNECTED ✅",
-    "17:37:19 ********9425: connection close 408 Connection was lost",
-    "17:37:19 ********3254: connection close 408 Connection was lost",
-    "17:37:19 *********9787: connection close 408 Connection was lost",
-    "17:37:19 *********6829: connection close 408 Connection was lost",
     "17:37:19 ********8546: connection close 408 Connection was lost",
     "17:37:19 *********9980: connection close 408 Connection was lost",
     "17:37:19 ********2563: connection close 408 Connection was lost",
     "17:37:19 ********1254: connection close 408 Connection was lost",
     "17:37:19 ********4254: connection close 408 Connection was lost",
     "17:37:19 *********5974: connection close 408 Connection was lost",
-    "17:37:19 *********1795: connection close 408 Connection was lost"
+    "17:37:19 *********1795: connection close 408 Connection was lost",
+    "17:37:35 *********9980: connection close 408 WebSocket Error ()",
+    "17:37:36 ********1254: CONNECTED ✅",
+    "17:37:36 ********9425: CONNECTED ✅",
+    "17:37:38 *********5974: CONNECTED ✅",
+    "17:37:38 ********4254: CONNECTED ✅",
+    "17:37:38 ********3254: CONNECTED ✅",
+    "17:37:39 ********2563: CONNECTED ✅",
+    "17:38:21 *********6829: CONNECTED ✅",
+    "17:38:21 *********1795: CONNECTED ✅",
+    "17:38:22 ********8546: CONNECTED ✅",
+    "17:38:22 *********9787: connection close 408 Connection was lost",
+    "17:38:37 ********9425: connection close 408 Connection was lost",
+    "17:38:37 *********1795: connection close 428 Connection Terminated"
   ],
   "guest_frames": null,
   "mem": {
@@ -107,6 +107,6 @@
     "opted_in": 1,
     "fetch": "updates err Connection Closed | messages err Connection Closed"
   },
-  "updated_at": "2026-11-16T17:37:23.605Z",
-  "uptime_s": 8994
+  "updated_at": "2026-11-16T17:39:14.231Z",
+  "uptime_s": 9105
 }
