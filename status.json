@@ -77,15 +77,6 @@
     }
   ],
   "guest_log": [
-    "15:18:34 *********6829: connection close 408 Connection was lost",
-    "15:18:34 ********6760: connection close 408 Connection was lost",
-    "15:18:34 *********5974: connection close 408 Connection was lost",
-    "15:18:34 ********1254: connection close 408 Connection was lost",
-    "15:18:34 ********8546: connection close 408 Connection was lost",
-    "15:18:34 *********9787: connection close 408 Connection was lost",
-    "15:18:34 *********9980: connection close 408 Connection was lost",
-    "15:18:37 ********3254: CONNECTED ✅",
-    "15:18:37 *********1795: CONNECTED ✅",
     "15:18:37 *********6829: CONNECTED ✅",
     "15:18:37 *********5974: CONNECTED ✅",
     "15:18:37 ********4254: CONNECTED ✅",
@@ -96,7 +87,16 @@
     "15:18:38 ********7157: CONNECTED ✅",
     "15:18:39 ********1254: CONNECTED ✅",
     "15:18:39 *********9787: CONNECTED ✅",
-    "15:18:39 *********9980: CONNECTED ✅"
+    "15:18:39 *********9980: CONNECTED ✅",
+    "15:19:39 *********9980: connection close 428 Connection Terminated",
+    "15:19:39 ********1254: connection close 428 Connection Terminated",
+    "15:19:39 ********8546: connection close 428 Connection Terminated",
+    "15:19:39 ********9425: connection close 428 Connection Terminated",
+    "15:19:39 ********2563: connection close 428 Connection Terminated",
+    "15:19:39 ********3254: connection close 428 Connection Terminated",
+    "15:19:39 ********7157: connection close 428 Connection Terminated",
+    "15:20:26 ********4254: connection close 428 Connection Terminated",
+    "15:20:26 *********9787: connection close 428 Connection Terminated"
   ],
   "guest_frames": null,
   "mem": {
@@ -112,11 +112,11 @@
   "channel": {
     "ok": true,
     "name": "AQDAS TECH",
-    "latest_post": 110,
+    "latest_post": null,
     "auto": true,
-    "opted_in": 1,
-    "fetch": "updates err channel posts timeout | messages:messages:10"
+    "opted_in": 0,
+    "fetch": "updates err Connection Closed | messages err Connection Closed"
   },
-  "updated_at": "2026-11-16T15:18:43.469Z",
-  "uptime_s": 674
+  "updated_at": "2026-11-16T15:21:42.455Z",
+  "uptime_s": 853
 }
