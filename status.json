@@ -77,8 +77,6 @@
     }
   ],
   "guest_log": [
-    "14:34:59 ********8546: status ***********4475: seen ✅, react 😇 ✅",
-    "14:34:59 ********8546: status ***********4475: seen ✅, react 🥺 ✅",
     "14:35:02 ********4254: status ***********6484: seen ✅",
     "14:37:04 *********5974: connection close 408 Connection was lost",
     "14:37:04 ********3254: connection close 408 Connection was lost",
@@ -96,7 +94,9 @@
     "14:38:10 ********3254: CONNECTED ✅",
     "14:39:56 ********6760: connection close 408 Connection was lost",
     "14:39:56 ********1254: connection close 408 Connection was lost",
-    "14:39:56 ********9425: connection close 408 Connection was lost"
+    "14:39:56 ********9425: connection close 408 Connection was lost",
+    "14:40:24 ********9425: CONNECTED ✅",
+    "14:40:24 ********1254: CONNECTED ✅"
   ],
   "guest_frames": {
     "number": "********6760",
@@ -113,22 +113,22 @@
   },
   "mem": {
     "sessions": 13,
-    "free_mb": 113149,
+    "free_mb": 112580,
     "total_mb": 393439,
-    "rss_mb": 498,
-    "heap_mb": 269,
+    "rss_mb": 484,
+    "heap_mb": 242,
     "heap_limit_mb": 489,
-    "per_session_mb": 23,
-    "room_for": 10
+    "per_session_mb": 22,
+    "room_for": 13
   },
   "channel": {
     "ok": true,
     "name": "AQDAS TECH",
-    "latest_post": 110,
+    "latest_post": null,
     "auto": true,
-    "opted_in": 1,
-    "fetch": "updates err channel posts timeout | messages:messages:10"
+    "opted_in": 2,
+    "fetch": "updates err Connection Closed | messages err Connection Closed"
   },
-  "updated_at": "2026-11-16T14:40:17.799Z",
-  "uptime_s": 6843
+  "updated_at": "2026-11-16T14:42:28.528Z",
+  "uptime_s": 6974
 }
