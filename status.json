@@ -77,26 +77,26 @@
     }
   ],
   "guest_log": [
-    "13:46:01 ********4254: CONNECTED ✅",
-    "13:46:02 *********1795: CONNECTED ✅",
-    "13:46:03 ********8546: CONNECTED ✅",
-    "13:46:03 ********2563: CONNECTED ✅",
-    "13:46:06 ********4254: status ***********4940: seen ✅",
-    "13:46:07 ********4254: status ***********6484: seen ✅",
-    "13:46:08 ********4254: status **********2311: seen ✅",
-    "13:47:38 *********1795: connection close 408 Connection was lost",
-    "13:47:38 ********8546: connection close 408 Connection was lost",
-    "13:47:38 ********2563: connection close 408 Connection was lost",
-    "13:47:38 ********4254: connection close 408 Connection was lost",
-    "13:47:38 *********9787: connection close 408 Connection was lost",
-    "13:47:38 ********3254: connection close 408 Connection was lost",
-    "13:47:38 ********1254: connection close 408 Connection was lost",
-    "13:47:38 *********6829: connection close 408 Connection was lost",
-    "13:47:38 *********9980: connection close 408 Connection was lost",
     "13:47:38 ********6760: connection close 408 Connection was lost",
     "13:47:38 *********5974: connection close 408 Connection was lost",
     "13:47:38 ********7157: connection close 408 Connection was lost",
-    "13:47:38 ********9425: connection close 408 Connection was lost"
+    "13:47:38 ********9425: connection close 408 Connection was lost",
+    "13:47:43 ********8546: CONNECTED ✅",
+    "13:47:43 *********1795: CONNECTED ✅",
+    "13:47:43 ********1254: CONNECTED ✅",
+    "13:47:43 ********7157: CONNECTED ✅",
+    "13:47:43 *********6829: CONNECTED ✅",
+    "13:47:43 ********2563: CONNECTED ✅",
+    "13:47:43 ********9425: CONNECTED ✅",
+    "13:47:44 ********4254: CONNECTED ✅",
+    "13:47:44 *********5974: CONNECTED ✅",
+    "13:47:44 ********6760: CONNECTED ✅",
+    "13:47:44 ********3254: CONNECTED ✅",
+    "13:47:44 *********9787: CONNECTED ✅",
+    "13:47:45 *********9980: CONNECTED ✅",
+    "13:47:45 ********4254: status ***********9024: seen ✅",
+    "13:47:45 ********4254: status ***********9024: seen ✅",
+    "13:47:46 ********4254: status ***********6484: seen ✅"
   ],
   "guest_frames": {
     "number": "********6760",
@@ -129,6 +129,6 @@
     "opted_in": 2,
     "fetch": "updates err Connection Closed | messages err Connection Closed"
   },
-  "updated_at": "2026-11-16T13:47:42.918Z",
-  "uptime_s": 3688
+  "updated_at": "2026-11-16T13:47:50.839Z",
+  "uptime_s": 3696
 }
