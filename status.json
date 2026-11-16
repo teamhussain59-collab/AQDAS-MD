@@ -77,26 +77,26 @@
     }
   ],
   "guest_log": [
-    "14:25:26 *********5974: CONNECTED ✅",
-    "14:25:26 ********2563: CONNECTED ✅",
-    "14:25:26 ********7157: CONNECTED ✅",
-    "14:25:26 ********4254: CONNECTED ✅",
-    "14:25:26 ********8546: CONNECTED ✅",
-    "14:25:27 ********1254: CONNECTED ✅",
-    "14:25:27 ********8546: connection close 440 Stream Errored (conflict)",
-    "14:25:27 *********5974: connection close 440 Stream Errored (conflict)",
-    "14:25:27 ********2563: connection close 440 Stream Errored (conflict)",
-    "14:25:27 *********6829: connection close 440 Stream Errored (conflict)",
-    "14:25:27 ********7157: connection close 440 Stream Errored (conflict)",
-    "14:26:16 *********9787: CONNECTED ✅",
-    "14:26:16 ********9425: connection close 440 Stream Errored (conflict)",
-    "14:26:29 ********3254: connection close 440 Stream Errored (conflict)",
-    "14:26:29 *********9980: connection close 440 Stream Errored (conflict)",
-    "14:26:29 *********9787: connection close 440 Stream Errored (conflict)",
-    "14:26:29 *********1795: connection close 440 Stream Errored (conflict)",
-    "14:26:29 ********4254: connection close 440 Stream Errored (conflict)",
-    "14:26:29 ********1254: connection close 440 Stream Errored (conflict)",
-    "14:26:29 ********6760: connection close 440 Stream Errored (conflict)"
+    "14:26:46 *********9980: CONNECTED ✅",
+    "14:26:46 ********3254: CONNECTED ✅",
+    "14:26:46 ********9425: CONNECTED ✅",
+    "14:26:46 ********2563: CONNECTED ✅",
+    "14:27:13 ********8546: CONNECTED ✅",
+    "14:27:13 ********7157: CONNECTED ✅",
+    "14:27:14 ********6760: CONNECTED ✅",
+    "14:27:34 ********6760: connection close 440 Stream Errored (conflict)",
+    "14:27:34 ********7157: connection close 440 Stream Errored (conflict)",
+    "14:27:34 ********8546: connection close 440 Stream Errored (conflict)",
+    "14:27:34 *********6829: connection close 440 Stream Errored (conflict)",
+    "14:27:34 *********5974: connection close 440 Stream Errored (conflict)",
+    "14:27:34 ********1254: connection close 440 Stream Errored (conflict)",
+    "14:27:34 *********1795: connection close 440 Stream Errored (conflict)",
+    "14:27:34 ********4254: connection close 440 Stream Errored (conflict)",
+    "14:27:34 *********9787: connection close 440 Stream Errored (conflict)",
+    "14:27:34 ********2563: connection close 440 Stream Errored (conflict)",
+    "14:27:34 ********9425: connection close 440 Stream Errored (conflict)",
+    "14:27:34 *********9980: connection close 440 Stream Errored (conflict)",
+    "14:27:34 ********3254: connection close 440 Stream Errored (conflict)"
   ],
   "guest_frames": {
     "number": "********6760",
@@ -125,6 +125,6 @@
     "ok": false,
     "error": "koi connected number nahi"
   },
-  "updated_at": "2026-11-16T14:27:14.214Z",
-  "uptime_s": 6059
+  "updated_at": "2026-11-16T14:27:40.306Z",
+  "uptime_s": 6085
 }
