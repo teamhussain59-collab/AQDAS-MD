@@ -77,18 +77,6 @@
     }
   ],
   "guest_log": [
-    "13:25:34 ********3254: connection close 408 Connection was lost",
-    "13:25:37 ********8546: CONNECTED ✅",
-    "13:25:37 ********1254: CONNECTED ✅",
-    "13:25:37 ********2563: CONNECTED ✅",
-    "13:25:37 ********9425: CONNECTED ✅",
-    "13:25:38 ********3254: CONNECTED ✅",
-    "13:27:03 ********3254: connection close 408 Connection was lost",
-    "13:27:03 ********1254: connection close 408 Connection was lost",
-    "13:27:03 ********2563: connection close 408 Connection was lost",
-    "13:27:03 ********8546: connection close 408 Connection was lost",
-    "13:27:03 ********9425: connection close 408 Connection was lost",
-    "13:27:03 ********7157: connection close 408 Connection was lost",
     "13:27:03 ********4254: connection close 408 Connection was lost",
     "13:27:06 ********7157: CONNECTED ✅",
     "13:27:06 ********1254: CONNECTED ✅",
@@ -96,7 +84,19 @@
     "13:27:07 ********8546: CONNECTED ✅",
     "13:27:07 ********2563: CONNECTED ✅",
     "13:27:07 ********4254: CONNECTED ✅",
-    "13:27:08 ********3254: CONNECTED ✅"
+    "13:27:08 ********3254: CONNECTED ✅",
+    "13:27:50 ********1254: connection close 408 Connection was lost",
+    "13:27:50 ********2563: connection close 408 Connection was lost",
+    "13:27:50 ********3254: connection close 408 Connection was lost",
+    "13:27:50 ********9425: connection close 408 Connection was lost",
+    "13:27:50 ********8546: connection close 408 Connection was lost",
+    "13:27:50 ********4254: connection close 408 Connection was lost",
+    "13:27:53 ********9425: CONNECTED ✅",
+    "13:27:53 ********8546: CONNECTED ✅",
+    "13:27:53 ********3254: CONNECTED ✅",
+    "13:27:54 ********4254: CONNECTED ✅",
+    "13:27:54 ********2563: CONNECTED ✅",
+    "13:27:54 ********1254: CONNECTED ✅"
   ],
   "guest_frames": {
     "number": "********6760",
@@ -129,6 +129,6 @@
     "opted_in": 1,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-16T13:27:50.234Z",
-  "uptime_s": 2495
+  "updated_at": "2026-11-16T13:27:58.776Z",
+  "uptime_s": 2504
 }
