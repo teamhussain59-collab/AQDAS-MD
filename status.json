@@ -115,8 +115,8 @@
     "latest_post": null,
     "auto": true,
     "opted_in": 2,
-    "fetch": "updates err channel posts timeout | messages err Connection Closed"
+    "fetch": "updates err Connection Closed | messages err Connection Closed"
   },
-  "updated_at": "2026-11-16T16:02:15.397Z",
-  "uptime_s": 3286
+  "updated_at": "2026-11-16T16:03:57.111Z",
+  "uptime_s": 3388
 }
