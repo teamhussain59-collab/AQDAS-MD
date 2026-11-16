@@ -72,8 +72,6 @@
     }
   ],
   "guest_log": [
-    "06:35:29 ********7157: connection close 408 Connection was lost",
-    "06:35:29 ********1254: connection close 408 Connection was lost",
     "06:35:29 ********2563: connection close 408 Connection was lost",
     "06:35:29 ********4254: connection close 408 Connection was lost",
     "06:35:48 ********8546: connection close 408 WebSocket Error ()",
@@ -91,7 +89,9 @@
     "06:43:09 ********8546: CONNECTED ✅",
     "06:45:44 ********4254: status **********2756: seen ✅",
     "06:46:17 ********8546: connection close 408 Connection was lost",
-    "06:46:21 ********8546: CONNECTED ✅"
+    "06:46:21 ********8546: CONNECTED ✅",
+    "06:47:46 ********3254: connection close 408 Connection was lost",
+    "06:47:49 ********3254: CONNECTED ✅"
   ],
   "guest_frames": null,
   "mem": {
@@ -112,6 +112,6 @@
     "opted_in": 2,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-16T06:47:24.461Z",
-  "uptime_s": 42213
+  "updated_at": "2026-11-16T06:47:53.377Z",
+  "uptime_s": 42242
 }
