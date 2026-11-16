@@ -66,22 +66,12 @@
       "autostatus": "view+react"
     },
     {
-      "number": "********7157",
-      "state": "logged_out",
-      "autostatus": "off"
-    },
-    {
       "number": "********4254",
       "state": "connected",
       "autostatus": "view"
     }
   ],
   "guest_log": [
-    "16:25:36 ********7157: connection close 408 Connection was lost",
-    "16:25:40 ********9425: CONNECTED ✅",
-    "16:25:40 ********7157: CONNECTED ✅",
-    "16:25:41 ********2563: CONNECTED ✅",
-    "16:25:42 *********9980: CONNECTED ✅",
     "16:27:17 *********9980: connection close 408 Connection was lost",
     "16:27:17 ********7157: connection close 408 Connection was lost",
     "16:27:17 ********2563: connection close 408 Connection was lost",
@@ -96,7 +86,12 @@
     "16:27:35 *********1795: CONNECTED ✅",
     "16:27:36 ********3254: CONNECTED ✅",
     "16:28:44 ********7157: connection close 401 Stream Errored (conflict)",
-    "16:28:44 ********7157: logged out"
+    "16:28:44 ********7157: logged out",
+    "16:29:01 ********8546: connection close 408 Connection was lost",
+    "16:29:01 ********1254: connection close 408 Connection was lost",
+    "16:29:01 ********3254: connection close 408 Connection was lost",
+    "16:29:01 ********2563: connection close 408 Connection was lost",
+    "16:29:01 ********9425: connection close 408 Connection was lost"
   ],
   "guest_frames": null,
   "mem": {
@@ -117,6 +112,6 @@
     "opted_in": 2,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-16T16:29:02.532Z",
-  "uptime_s": 4893
+  "updated_at": "2026-11-16T16:29:05.243Z",
+  "uptime_s": 4896
 }
