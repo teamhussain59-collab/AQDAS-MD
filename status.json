@@ -101,18 +101,22 @@
   "guest_frames": null,
   "mem": {
     "sessions": 13,
-    "free_mb": 110607,
+    "free_mb": 111437,
     "total_mb": 393439,
-    "rss_mb": 358,
-    "heap_mb": 162,
+    "rss_mb": 380,
+    "heap_mb": 166,
     "heap_limit_mb": 489,
     "per_session_mb": 15,
-    "room_for": 25
+    "room_for": 24
   },
   "channel": {
-    "ok": false,
-    "error": "koi connected number nahi"
+    "ok": true,
+    "name": "AQDAS TECH",
+    "latest_post": null,
+    "auto": true,
+    "opted_in": 2,
+    "fetch": "updates err Connection Closed | messages err Connection Closed"
   },
-  "updated_at": "2026-11-16T15:42:53.095Z",
-  "uptime_s": 2124
+  "updated_at": "2026-11-16T15:45:03.807Z",
+  "uptime_s": 2254
 }
