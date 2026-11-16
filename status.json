@@ -67,7 +67,7 @@
     },
     {
       "number": "********7157",
-      "state": "connected",
+      "state": "logged_out",
       "autostatus": "off"
     },
     {
@@ -77,8 +77,6 @@
     }
   ],
   "guest_log": [
-    "16:25:36 *********9980: connection close 428 Connection Terminated",
-    "16:25:36 ********2563: connection close 408 Connection was lost",
     "16:25:36 ********7157: connection close 408 Connection was lost",
     "16:25:40 ********9425: CONNECTED ✅",
     "16:25:40 ********7157: CONNECTED ✅",
@@ -96,7 +94,9 @@
     "16:27:35 ********2563: CONNECTED ✅",
     "16:27:35 *********9980: CONNECTED ✅",
     "16:27:35 *********1795: CONNECTED ✅",
-    "16:27:36 ********3254: CONNECTED ✅"
+    "16:27:36 ********3254: CONNECTED ✅",
+    "16:28:44 ********7157: connection close 401 Stream Errored (conflict)",
+    "16:28:44 ********7157: logged out"
   ],
   "guest_frames": null,
   "mem": {
@@ -117,6 +117,6 @@
     "opted_in": 2,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-16T16:28:55.526Z",
-  "uptime_s": 4886
+  "updated_at": "2026-11-16T16:29:02.532Z",
+  "uptime_s": 4893
 }
