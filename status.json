@@ -77,26 +77,26 @@
     }
   ],
   "guest_log": [
-    "13:49:10 ********1254: connection close 408 Connection was lost",
-    "13:49:10 ********7157: connection close 408 Connection was lost",
-    "13:49:10 ********2563: connection close 408 Connection was lost",
-    "13:49:10 *********6829: connection close 408 Connection was lost",
-    "13:49:10 *********1795: connection close 408 Connection was lost",
-    "13:49:10 ********8546: connection close 408 Connection was lost",
-    "13:49:14 ********1254: CONNECTED ✅",
-    "13:49:14 ********3254: CONNECTED ✅",
-    "13:49:15 *********5974: CONNECTED ✅",
-    "13:49:15 *********6829: CONNECTED ✅",
-    "13:49:15 ********7157: CONNECTED ✅",
-    "13:49:15 ********2563: CONNECTED ✅",
-    "13:49:15 ********6760: CONNECTED ✅",
     "13:49:15 *********1795: CONNECTED ✅",
     "13:49:16 ********9425: CONNECTED ✅",
     "13:49:16 ********4254: CONNECTED ✅",
     "13:49:16 ********8546: CONNECTED ✅",
     "13:49:16 *********9787: CONNECTED ✅",
     "13:49:16 *********9980: CONNECTED ✅",
-    "13:49:17 ********4254: status **********2311: seen ✅"
+    "13:49:17 ********4254: status **********2311: seen ✅",
+    "13:50:29 ********8546: connection close 408 Connection was lost",
+    "13:50:29 ********4254: connection close 408 Connection was lost",
+    "13:50:29 ********9425: connection close 408 Connection was lost",
+    "13:50:29 ********7157: connection close 408 Connection was lost",
+    "13:50:29 ********2563: connection close 408 Connection was lost",
+    "13:50:29 *********9980: connection close 408 Connection was lost",
+    "13:50:29 *********5974: connection close 408 Connection was lost",
+    "13:50:29 *********6829: connection close 408 Connection was lost",
+    "13:50:29 *********1795: connection close 408 Connection was lost",
+    "13:50:29 *********9787: connection close 408 Connection was lost",
+    "13:50:29 ********6760: connection close 408 Connection was lost",
+    "13:50:29 ********1254: connection close 408 Connection was lost",
+    "13:50:29 ********3254: connection close 408 Connection was lost"
   ],
   "guest_frames": {
     "number": "********6760",
@@ -129,6 +129,6 @@
     "opted_in": 2,
     "fetch": "updates err Connection Closed | messages err Connection Closed"
   },
-  "updated_at": "2026-11-16T13:49:21.309Z",
-  "uptime_s": 3786
+  "updated_at": "2026-11-16T13:50:59.165Z",
+  "uptime_s": 3884
 }
