@@ -77,10 +77,6 @@
     }
   ],
   "guest_log": [
-    "16:22:11 *********1795: connection close 408 WebSocket Error ()",
-    "16:22:11 ********4254: connection close 408 WebSocket Error ()",
-    "16:22:11 ********6760: connection close 408 WebSocket Error ()",
-    "16:22:11 ********9425: CONNECTED ✅",
     "16:22:12 ********1254: CONNECTED ✅",
     "16:22:12 ********8546: CONNECTED ✅",
     "16:22:13 *********6829: CONNECTED ✅",
@@ -96,7 +92,11 @@
     "16:23:27 ********1254: connection close 408 Connection was lost",
     "16:23:27 ********8546: connection close 408 Connection was lost",
     "16:23:27 ********7157: connection close 408 Connection was lost",
-    "16:23:27 ********2563: connection close 408 Connection was lost"
+    "16:23:27 ********2563: connection close 408 Connection was lost",
+    "16:23:32 ********3254: CONNECTED ✅",
+    "16:23:32 *********1795: CONNECTED ✅",
+    "16:23:32 ********1254: CONNECTED ✅",
+    "16:23:33 ********7157: CONNECTED ✅"
   ],
   "guest_frames": null,
   "mem": {
@@ -113,6 +113,6 @@
     "ok": false,
     "error": "koi connected number nahi"
   },
-  "updated_at": "2026-11-16T16:23:31.463Z",
-  "uptime_s": 4562
+  "updated_at": "2026-11-16T16:23:40.493Z",
+  "uptime_s": 4571
 }
