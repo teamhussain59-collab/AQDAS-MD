@@ -110,13 +110,9 @@
     "room_for": 25
   },
   "channel": {
-    "ok": true,
-    "name": "AQDAS TECH",
-    "latest_post": null,
-    "auto": true,
-    "opted_in": 2,
-    "fetch": "updates err Connection Closed | messages err Connection Closed"
+    "ok": false,
+    "error": "koi connected number nahi"
   },
-  "updated_at": "2026-11-16T15:38:46.378Z",
-  "uptime_s": 1877
+  "updated_at": "2026-11-16T15:40:47.901Z",
+  "uptime_s": 1999
 }
