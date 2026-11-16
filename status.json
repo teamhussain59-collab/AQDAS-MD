@@ -110,13 +110,9 @@
     "room_for": 20
   },
   "channel": {
-    "ok": true,
-    "name": "AQDAS TECH",
-    "latest_post": 110,
-    "auto": true,
-    "opted_in": 0,
-    "fetch": "updates err channel posts timeout | messages:messages:10"
+    "ok": false,
+    "error": "koi connected number nahi"
   },
-  "updated_at": "2026-11-16T16:20:09.810Z",
-  "uptime_s": 4360
+  "updated_at": "2026-11-16T16:20:28.128Z",
+  "uptime_s": 4379
 }
