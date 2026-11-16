@@ -77,26 +77,26 @@
     }
   ],
   "guest_log": [
-    "16:20:26 ********8546: connection close 408 Connection was lost",
-    "16:20:26 ********6760: connection close 408 Connection was lost",
-    "16:20:26 ********7157: connection close 408 Connection was lost",
-    "16:20:26 *********9980: connection close 408 Connection was lost",
-    "16:20:26 ********9425: connection close 408 Connection was lost",
-    "16:20:26 *********1795: connection close 408 Connection was lost",
-    "16:20:32 ********7157: CONNECTED ✅",
-    "16:20:32 ********2563: CONNECTED ✅",
-    "16:20:32 ********9425: CONNECTED ✅",
-    "16:20:33 ********8546: CONNECTED ✅",
-    "16:20:33 *********1795: CONNECTED ✅",
-    "16:20:33 *********6829: CONNECTED ✅",
-    "16:20:33 *********9980: CONNECTED ✅",
-    "16:20:34 ********1254: CONNECTED ✅",
-    "16:20:34 ********6760: CONNECTED ✅",
-    "16:20:34 ********4254: CONNECTED ✅",
-    "16:20:34 *********5974: CONNECTED ✅",
-    "16:20:34 ********3254: CONNECTED ✅",
-    "16:20:35 *********9787: CONNECTED ✅",
-    "16:20:38 ********4254: status ***********5513: seen ✅"
+    "16:22:06 *********9980: connection close 428 Connection Terminated",
+    "16:22:06 *********9787: connection close 428 Connection Terminated",
+    "16:22:06 ********3254: connection close 428 Connection Terminated",
+    "16:22:06 ********4254: connection close 428 Connection Terminated",
+    "16:22:06 ********6760: connection close 428 Connection Terminated",
+    "16:22:06 *********6829: connection close 428 Connection Terminated",
+    "16:22:06 ********3254: status **********4127: seen ❌ Connection Closed, react 🅰️ ❌ Connection Closed",
+    "16:22:09 ********7157: CONNECTED ✅",
+    "16:22:10 ********2563: CONNECTED ✅",
+    "16:22:11 *********5974: connection close 408 WebSocket Error ()",
+    "16:22:11 *********9787: connection close 408 WebSocket Error ()",
+    "16:22:11 ********3254: connection close 408 WebSocket Error ()",
+    "16:22:11 *********9980: connection close 408 WebSocket Error ()",
+    "16:22:11 *********1795: connection close 408 WebSocket Error ()",
+    "16:22:11 ********4254: connection close 408 WebSocket Error ()",
+    "16:22:11 ********6760: connection close 408 WebSocket Error ()",
+    "16:22:11 ********9425: CONNECTED ✅",
+    "16:22:12 ********1254: CONNECTED ✅",
+    "16:22:12 ********8546: CONNECTED ✅",
+    "16:22:13 *********6829: CONNECTED ✅"
   ],
   "guest_frames": null,
   "mem": {
@@ -113,6 +113,6 @@
     "ok": false,
     "error": "koi connected number nahi"
   },
-  "updated_at": "2026-11-16T16:22:12.139Z",
-  "uptime_s": 4483
+  "updated_at": "2026-11-16T16:22:32.895Z",
+  "uptime_s": 4504
 }
