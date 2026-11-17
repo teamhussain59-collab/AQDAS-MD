@@ -9,6 +9,75 @@
   "commands": 592,
   "panel_url": "https://importance-labs-rays-welfare.trycloudflare.com",
   "panel_at": "2026-11-17T07:11:49.173Z",
-  "updated_at": "2026-11-17T07:11:49.513Z",
-  "uptime_s": 11
+  "linked": [
+    {
+      "number": "*********9787",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********9425",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "*********1795",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "*********5974",
+      "state": "restoring",
+      "autostatus": "off"
+    },
+    {
+      "number": "*********9980",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********1254",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********3254",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********8546",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********4254",
+      "state": "connected",
+      "autostatus": "view"
+    }
+  ],
+  "guest_log": [
+    "07:11:48 ********9425: LINKING (phone ne code accept kiya)",
+    "07:11:48 *********1795: LINKING (phone ne code accept kiya)",
+    "07:11:48 *********9980: LINKING (phone ne code accept kiya)",
+    "07:11:48 ********4254: LINKING (phone ne code accept kiya)",
+    "07:11:49 *********9787: LINKING (phone ne code accept kiya)",
+    "07:11:49 ********8546: LINKING (phone ne code accept kiya)",
+    "07:11:49 ********1254: LINKING (phone ne code accept kiya)",
+    "07:11:49 ********9425: CONNECTED ✅",
+    "07:11:49 ********3254: LINKING (phone ne code accept kiya)",
+    "07:11:49 *********1795: CONNECTED ✅",
+    "07:11:49 *********9980: CONNECTED ✅",
+    "07:11:49 ********1254: CONNECTED ✅",
+    "07:11:49 *********9787: CONNECTED ✅",
+    "07:11:49 ********4254: CONNECTED ✅",
+    "07:11:49 ********8546: CONNECTED ✅",
+    "07:11:49 ********4254: status ***********9024: seen ✅",
+    "07:11:50 ********3254: CONNECTED ✅",
+    "07:11:50 *********5974: connection close 403 Connection Failure",
+    "07:11:53 *********5974: connection close 403 Connection Failure"
+  ],
+  "guest_frames": null,
+  "updated_at": "2026-11-17T07:11:57.483Z",
+  "uptime_s": 19
 }
