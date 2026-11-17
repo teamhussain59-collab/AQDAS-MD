@@ -62,7 +62,6 @@
     }
   ],
   "guest_log": [
-    "01:07:49 *********5974: connection close 403 Connection Failure",
     "01:08:21 *********5974: connection close 403 Connection Failure",
     "01:08:53 *********5974: connection close 403 Connection Failure",
     "01:09:28 *********5974: connection close 403 Connection Failure",
@@ -81,7 +80,8 @@
     "01:16:03 *********5974: connection close 403 Connection Failure",
     "01:16:24 ********4254: connection close 428 Connection Terminated",
     "01:16:28 ********4254: CONNECTED ✅",
-    "01:16:34 *********5974: connection close 403 Connection Failure"
+    "01:16:34 *********5974: connection close 403 Connection Failure",
+    "01:17:06 *********5974: connection close 403 Connection Failure"
   ],
   "guest_frames": null,
   "mem": {
@@ -102,6 +102,6 @@
     "opted_in": 1,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-17T01:16:38.959Z",
-  "uptime_s": 16027
+  "updated_at": "2026-11-17T01:17:10.437Z",
+  "uptime_s": 16059
 }
