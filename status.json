@@ -6,6 +6,9 @@
   "number_masked": null,
   "run_id": "44036757714",
   "slots_max": "unlimited",
-  "updated_at": "2026-11-17T07:11:44.084Z",
-  "uptime_s": 5
+  "commands": 592,
+  "panel_url": "https://importance-labs-rays-welfare.trycloudflare.com",
+  "panel_at": "2026-11-17T07:11:49.173Z",
+  "updated_at": "2026-11-17T07:11:49.513Z",
+  "uptime_s": 11
 }
