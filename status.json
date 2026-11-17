@@ -6,6 +6,9 @@
   "number_masked": null,
   "run_id": "44112340219",
   "slots_max": "unlimited",
-  "updated_at": "2026-11-17T15:16:39.899Z",
-  "uptime_s": 10
+  "commands": 592,
+  "panel_url": "https://makeup-diesel-metropolitan-berlin.trycloudflare.com",
+  "panel_at": "2026-11-17T15:16:43.075Z",
+  "updated_at": "2026-11-17T15:16:43.703Z",
+  "uptime_s": 14
 }
