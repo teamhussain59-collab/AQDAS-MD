@@ -74,9 +74,11 @@
     "21:07:07 ********1254: CONNECTED ✅",
     "21:07:08 *********1795: CONNECTED ✅",
     "21:07:08 ********8546: CONNECTED ✅",
-    "21:07:08 *********9980: CONNECTED ✅"
+    "21:07:08 *********9980: CONNECTED ✅",
+    "21:07:37 ********4254: connection close 503 Stream Errored (unknown)",
+    "21:07:39 ********4254: CONNECTED ✅"
   ],
   "guest_frames": null,
-  "updated_at": "2026-11-17T21:07:12.633Z",
-  "uptime_s": 14
+  "updated_at": "2026-11-17T21:07:43.763Z",
+  "uptime_s": 45
 }
