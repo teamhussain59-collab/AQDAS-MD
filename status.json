@@ -62,7 +62,6 @@
     }
   ],
   "guest_log": [
-    "07:42:04 ********5634: code bana",
     "07:42:21 ********5634: LINKING (phone ne code accept kiya)",
     "07:42:22 *********5974: connection close 403 Connection Failure",
     "07:42:24 ********5634: connection close 515 Stream Errored (restart required)",
@@ -81,7 +80,8 @@
     "07:46:49 *********5974: connection close 403 Connection Failure",
     "07:47:24 *********5974: connection close 403 Connection Failure",
     "07:47:59 *********5974: connection close 403 Connection Failure",
-    "07:48:31 *********5974: connection close 403 Connection Failure"
+    "07:48:31 *********5974: connection close 403 Connection Failure",
+    "07:49:05 *********5974: connection close 403 Connection Failure"
   ],
   "guest_frames": {
     "number": "********5634",
@@ -114,6 +114,6 @@
     "opted_in": 1,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-17T07:48:35.454Z",
-  "uptime_s": 2217
+  "updated_at": "2026-11-17T07:49:09.345Z",
+  "uptime_s": 2251
 }
