@@ -9,6 +9,74 @@
   "commands": 592,
   "panel_url": "https://adjustable-acquire-depot-tubes.trycloudflare.com",
   "panel_at": "2026-11-17T21:07:08.648Z",
-  "updated_at": "2026-11-17T21:07:08.880Z",
-  "uptime_s": 10
+  "linked": [
+    {
+      "number": "*********9787",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********9425",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********5634",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "*********1795",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "*********9980",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********1254",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********3254",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********8546",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********4254",
+      "state": "connected",
+      "autostatus": "view"
+    }
+  ],
+  "guest_log": [
+    "21:07:07 ********9425: LINKING (phone ne code accept kiya)",
+    "21:07:07 ********4254: LINKING (phone ne code accept kiya)",
+    "21:07:07 ********3254: LINKING (phone ne code accept kiya)",
+    "21:07:07 ********5634: LINKING (phone ne code accept kiya)",
+    "21:07:07 ********9425: CONNECTED ✅",
+    "21:07:07 ********5634: CONNECTED ✅",
+    "21:07:07 *********9787: LINKING (phone ne code accept kiya)",
+    "21:07:07 ********8546: LINKING (phone ne code accept kiya)",
+    "21:07:07 ********4254: CONNECTED ✅",
+    "21:07:07 ********1254: LINKING (phone ne code accept kiya)",
+    "21:07:07 *********1795: LINKING (phone ne code accept kiya)",
+    "21:07:07 ********3254: CONNECTED ✅",
+    "21:07:07 *********9980: LINKING (phone ne code accept kiya)",
+    "21:07:07 *********9787: CONNECTED ✅",
+    "21:07:07 ********1254: CONNECTED ✅",
+    "21:07:08 *********1795: CONNECTED ✅",
+    "21:07:08 ********8546: CONNECTED ✅",
+    "21:07:08 *********9980: CONNECTED ✅"
+  ],
+  "guest_frames": null,
+  "updated_at": "2026-11-17T21:07:12.633Z",
+  "uptime_s": 14
 }
