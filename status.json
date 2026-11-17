@@ -9,6 +9,81 @@
   "panel_url": "https://stolen-refused-blackjack-expiration.trycloudflare.com",
   "panel_at": "2026-11-17T01:21:20.845Z",
   "commands": 592,
-  "updated_at": "2026-11-17T01:21:21.928Z",
-  "uptime_s": 12
+  "linked": [
+    {
+      "number": "*********9787",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********9425",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "*********1795",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "*********5974",
+      "state": "restoring",
+      "autostatus": "off"
+    },
+    {
+      "number": "*********9980",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********2563",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********1254",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********3254",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********8546",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********4254",
+      "state": "connected",
+      "autostatus": "view"
+    }
+  ],
+  "guest_log": [
+    "01:21:21 ********8546: LINKING (phone ne code accept kiya)",
+    "01:21:21 ********4254: LINKING (phone ne code accept kiya)",
+    "01:21:21 ********9425: LINKING (phone ne code accept kiya)",
+    "01:21:21 *********5974: connection close 403 Connection Failure",
+    "01:21:21 ********2563: LINKING (phone ne code accept kiya)",
+    "01:21:21 *********1795: LINKING (phone ne code accept kiya)",
+    "01:21:21 ********3254: LINKING (phone ne code accept kiya)",
+    "01:21:22 ********1254: LINKING (phone ne code accept kiya)",
+    "01:21:22 ********9425: CONNECTED ✅",
+    "01:21:22 ********8546: CONNECTED ✅",
+    "01:21:22 ********4254: CONNECTED ✅",
+    "01:21:22 *********9787: LINKING (phone ne code accept kiya)",
+    "01:21:22 *********9980: LINKING (phone ne code accept kiya)",
+    "01:21:22 *********1795: CONNECTED ✅",
+    "01:21:22 ********3254: CONNECTED ✅",
+    "01:21:22 ********2563: CONNECTED ✅",
+    "01:21:22 ********1254: CONNECTED ✅",
+    "01:21:22 *********9787: CONNECTED ✅",
+    "01:21:23 *********9980: CONNECTED ✅",
+    "01:21:26 *********5974: connection close 403 Connection Failure"
+  ],
+  "guest_frames": null,
+  "updated_at": "2026-11-17T01:21:30.616Z",
+  "uptime_s": 21
 }
