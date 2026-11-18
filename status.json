@@ -82,26 +82,26 @@
     }
   ],
   "guest_log": [
-    "14:14:33 ********8574: status ***********9024: seen ✅, react 👆🏻 ✅",
-    "14:14:36 ********8582: status **********0109: seen ✅, react 🎈 ✅",
-    "14:14:40 ********8582: status **********0109: seen ✅, react 🧸 ✅",
-    "14:14:43 ********8582: status **********0109: seen ✅, react 🧸 ✅",
-    "14:14:45 ********8582: status **********0109: seen ✅, react 🪄 ✅",
-    "14:14:47 ********8582: status **********0109: seen ✅, react 🪄 ✅",
-    "14:14:49 ********8582: status **********0109: seen ✅, react 🪄 ✅",
-    "14:14:52 ********8582: status **********0109: seen ✅, react 🧸 ✅",
-    "14:14:55 ********8582: status **********0109: seen ✅, react 🌝 ✅",
-    "14:14:55 ********8582: status **********2745: seen ✅, react 🎈 ✅",
-    "14:14:56 ********8574: status **********2745: seen ✅, react 🙂 ✅",
-    "14:14:58 ********8582: status **********0109: seen ✅, react 🌝 ✅",
-    "14:15:00 ********8582: status **********0109: seen ✅, react 🌝 ✅",
-    "14:15:01 ********1254: connection close 428 Connection Terminated",
-    "14:15:01 ********8582: status **********0109: seen ✅, react 🧸 ✅",
-    "14:15:04 ********8582: status **********0109: seen ✅, react 🪄 ✅",
-    "14:15:04 ********1254: CONNECTED ✅",
-    "14:15:07 ********8582: status **********0109: seen ✅, react 🪄 ✅",
-    "14:15:49 ********4254: status ***********9024: seen ✅",
-    "14:15:51 ********8574: status ***********9024: seen ✅, react 👆🏻 ✅"
+    "14:17:48 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
+    "14:17:48 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
+    "14:17:49 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
+    "14:17:49 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
+    "14:17:49 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
+    "14:17:49 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
+    "14:17:50 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
+    "14:17:50 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
+    "14:17:50 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
+    "14:17:50 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
+    "14:17:51 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
+    "14:17:51 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
+    "14:17:51 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
+    "14:17:52 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
+    "14:17:52 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
+    "14:17:52 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
+    "14:17:52 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
+    "14:17:53 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
+    "14:17:53 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
+    "14:17:53 ********8582: status ***********0143: seen ✅, react skip (120/ghanta had)"
   ],
   "guest_frames": null,
   "mem": {
@@ -122,6 +122,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-18T14:16:36.000Z",
-  "uptime_s": 8286
+  "updated_at": "2026-11-18T14:17:57.632Z",
+  "uptime_s": 8368
 }
