@@ -104,6 +104,16 @@
     "14:54:02 ********8574: status ***********6484: seen ✅, react 🌝 ✅"
   ],
   "guest_frames": null,
-  "updated_at": "2026-11-18T14:54:06.111Z",
-  "uptime_s": 53
+  "mem": {
+    "sessions": 14,
+    "free_mb": 14845,
+    "total_mb": 15982,
+    "rss_mb": 160,
+    "heap_mb": 45,
+    "heap_limit_mb": 4144,
+    "per_session_mb": 15,
+    "room_for": 347
+  },
+  "updated_at": "2026-11-18T14:54:20.532Z",
+  "uptime_s": 68
 }
