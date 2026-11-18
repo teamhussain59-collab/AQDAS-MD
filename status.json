@@ -82,26 +82,26 @@
     }
   ],
   "guest_log": [
-    "12:40:42 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
-    "12:42:04 ********4254: status ***********6280: seen ✅",
-    "12:42:24 ********4254: status ***********2763: seen ✅",
-    "12:42:50 ********4254: status **********2520: seen ✅",
-    "12:42:52 ********4254: status **********2520: seen ✅",
-    "12:42:52 ********8574: status **********2520: seen ✅, react 👆🏻 ✅",
-    "12:42:54 ********8574: status **********2520: seen ✅, react 🌷 ✅",
-    "12:43:29 ********8582: status **********8119: seen ✅, react skip (120/ghanta had)",
-    "12:43:29 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
-    "12:43:33 ********8582: status ***********1252: seen ✅, react skip (120/ghanta had)",
-    "12:43:33 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
-    "12:44:41 ********4254: status ***********2763: seen ✅",
-    "12:44:56 ********3254: connection close 428 Connection Terminated",
-    "12:44:59 ********3254: CONNECTED ✅",
-    "12:45:12 ********8582: status ***********2956: seen ✅, react skip (120/ghanta had)",
-    "12:45:12 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
-    "12:47:29 ********8574: status **********1842: seen ✅, react 👆🏻 ✅",
-    "12:47:49 ********4254: status ***********6280: seen ✅",
-    "12:47:57 ********8582: status ***********1252: seen ✅, react skip (120/ghanta had)",
-    "12:47:57 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)"
+    "12:48:39 ********8582: status ***********6823: seen ✅, react skip (120/ghanta had)",
+    "12:48:40 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
+    "12:48:41 ********8574: status ***********6823: seen ✅, react 🙂 ✅",
+    "12:48:41 ********7157: connection close 500 Stream Errored (ack)",
+    "12:48:41 ********5634: connection close 500 Stream Errored (ack)",
+    "12:48:41 *********9787: connection close 500 Stream Errored (ack)",
+    "12:48:42 ********2634: connection close 500 Stream Errored (ack)",
+    "12:48:42 ********8574: connection close 500 Stream Errored (ack)",
+    "12:48:42 ********9425: connection close 500 Stream Errored (ack)",
+    "12:48:42 *********9980: connection close 500 Stream Errored (ack)",
+    "12:48:44 ********7157: CONNECTED ✅",
+    "12:48:45 ********2634: connection close 428 Connection Terminated",
+    "12:48:45 ********5634: CONNECTED ✅",
+    "12:48:45 *********9787: CONNECTED ✅",
+    "12:48:45 ********8574: CONNECTED ✅",
+    "12:48:45 ********9425: CONNECTED ✅",
+    "12:48:45 ********8582: status ***********1252: seen ✅, react skip (120/ghanta had)",
+    "12:48:46 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
+    "12:48:46 *********9980: CONNECTED ✅",
+    "12:48:50 ********2634: CONNECTED ✅"
   ],
   "guest_frames": null,
   "mem": {
@@ -122,6 +122,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-18T12:48:37.006Z",
-  "uptime_s": 3007
+  "updated_at": "2026-11-18T12:48:54.520Z",
+  "uptime_s": 3025
 }
