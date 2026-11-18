@@ -57,12 +57,11 @@
     },
     {
       "number": "********2634",
-      "state": "pairing",
+      "state": "linking",
       "autostatus": "off"
     }
   ],
   "guest_log": [
-    "03:12:48 ********1254: CONNECTED ✅",
     "03:14:52 ********4254: status ***********3578: seen ✅",
     "03:15:35 ********1254: status ***********0399: seen ✅, react 🅰️ ✅",
     "03:31:57 ********3254: status **********9684: seen ✅, react 🅰️ ✅",
@@ -81,15 +80,18 @@
     "03:53:22 ********8546: status ***********9441: seen ✅, react 😳 ✅",
     "03:53:30 ********8546: status ***********9441: seen ✅, react 😇 ✅",
     "03:54:09 ********8546: status ***********9441: seen ✅, react 😍 ✅",
-    "03:54:25 ********2634: code bana"
+    "03:54:25 ********2634: code bana",
+    "03:55:02 ********2634: LINKING (phone ne code accept kiya)"
   ],
   "guest_frames": {
     "number": "********2634",
-    "state": "pairing",
+    "state": "linking",
     "frames": [
       "03:54:20 iq:set <pair-device>",
       "03:54:21 iq:result <link_code_companion_reg[companion_hello]>",
-      "03:54:50 iq:result"
+      "03:54:50 iq:result",
+      "03:55:02 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
+      "03:55:02 iq:result"
     ]
   },
   "mem": {
@@ -110,6 +112,6 @@
     "opted_in": 1,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-18T03:54:54.478Z",
-  "uptime_s": 13038
+  "updated_at": "2026-11-18T03:55:06.451Z",
+  "uptime_s": 13050
 }
