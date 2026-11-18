@@ -6,6 +6,9 @@
   "number_masked": null,
   "run_id": "44299470460",
   "slots_max": "unlimited",
-  "updated_at": "2026-11-18T11:58:35.962Z",
-  "uptime_s": 6
+  "panel_url": "https://deserve-our-assist-peterson.trycloudflare.com",
+  "panel_at": "2026-11-18T11:58:40.846Z",
+  "commands": 592,
+  "updated_at": "2026-11-18T11:58:41.848Z",
+  "uptime_s": 12
 }
