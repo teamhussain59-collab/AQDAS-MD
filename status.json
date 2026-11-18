@@ -9,6 +9,91 @@
   "panel_url": "https://artificial-advances-grams-island.trycloudflare.com",
   "panel_at": "2026-11-18T06:08:12.563Z",
   "commands": 592,
-  "updated_at": "2026-11-18T06:08:13.677Z",
-  "uptime_s": 11
+  "linked": [
+    {
+      "number": "*********9787",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********9425",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********5634",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "*********1795",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********8574",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********8582",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "*********9980",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********1254",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********3254",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********8546",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********7157",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********4254",
+      "state": "connected",
+      "autostatus": "view"
+    }
+  ],
+  "guest_log": [
+    "06:08:13 *********1795: CONNECTED ✅",
+    "06:08:13 *********9980: CONNECTED ✅",
+    "06:08:13 ********8574: LINKING (phone ne code accept kiya)",
+    "06:08:13 *********9787: CONNECTED ✅",
+    "06:08:13 ********9425: LINKING (phone ne code accept kiya)",
+    "06:08:13 ********8546: LINKING (phone ne code accept kiya)",
+    "06:08:13 ********5634: LINKING (phone ne code accept kiya)",
+    "06:08:13 ********7157: LINKING (phone ne code accept kiya)",
+    "06:08:13 ********4254: CONNECTED ✅",
+    "06:08:13 ********1254: LINKING (phone ne code accept kiya)",
+    "06:08:13 ********8574: CONNECTED ✅",
+    "06:08:13 ********3254: LINKING (phone ne code accept kiya)",
+    "06:08:14 ********9425: CONNECTED ✅",
+    "06:08:14 ********8582: LINKING (phone ne code accept kiya)",
+    "06:08:14 ********7157: CONNECTED ✅",
+    "06:08:14 ********1254: CONNECTED ✅",
+    "06:08:14 ********5634: CONNECTED ✅",
+    "06:08:14 ********8546: CONNECTED ✅",
+    "06:08:14 ********3254: CONNECTED ✅",
+    "06:08:14 ********8582: CONNECTED ✅"
+  ],
+  "guest_frames": null,
+  "updated_at": "2026-11-18T06:08:18.719Z",
+  "uptime_s": 16
 }
