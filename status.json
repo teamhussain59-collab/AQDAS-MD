@@ -6,6 +6,9 @@
   "number_masked": null,
   "run_id": "44329146727",
   "slots_max": "unlimited",
-  "updated_at": "2026-11-18T14:53:20.530Z",
-  "uptime_s": 8
+  "commands": 592,
+  "panel_url": "https://node-usb-analyst-arcade.trycloudflare.com",
+  "panel_at": "2026-11-18T14:53:23.884Z",
+  "updated_at": "2026-11-18T14:53:24.006Z",
+  "uptime_s": 11
 }
