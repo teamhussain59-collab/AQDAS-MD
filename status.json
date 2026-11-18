@@ -72,13 +72,11 @@
     },
     {
       "number": "********0439",
-      "state": "pairing",
+      "state": "linking",
       "autostatus": "off"
     }
   ],
   "guest_log": [
-    "06:08:13 ********8546: LINKING (phone ne code accept kiya)",
-    "06:08:13 ********5634: LINKING (phone ne code accept kiya)",
     "06:08:13 ********7157: LINKING (phone ne code accept kiya)",
     "06:08:13 ********4254: CONNECTED ✅",
     "06:08:13 ********1254: LINKING (phone ne code accept kiya)",
@@ -96,15 +94,22 @@
     "06:08:42 ********8582: status ***********7006: seen ✅, react 🎈 ✅",
     "06:08:42 ********8582: status ***********7006: seen ✅, react 🪄 ✅",
     "06:09:18 ********8582: status ***********3857: seen ✅, react 🎈 ✅",
-    "06:11:14 ********0439: code bana"
+    "06:11:14 ********0439: code bana",
+    "06:11:48 ********0439: LINKING (phone ne code accept kiya)",
+    "06:11:50 ********0439: connection close 515 Stream Errored (restart required)"
   ],
   "guest_frames": {
     "number": "********0439",
-    "state": "pairing",
+    "state": "linking",
     "frames": [
       "06:11:09 iq:set <pair-device>",
       "06:11:09 iq:result <link_code_companion_reg[companion_hello]>",
-      "06:11:39 iq:result"
+      "06:11:39 iq:result",
+      "06:11:48 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
+      "06:11:48 iq:result",
+      "06:11:50 iq:set <pair-success>",
+      "06:11:50 stream:error: code=515",
+      "06:11:50 xmlstreamend:"
     ]
   },
   "mem": {
@@ -125,6 +130,6 @@
     "opted_in": 2,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-18T06:11:43.564Z",
-  "uptime_s": 221
+  "updated_at": "2026-11-18T06:11:54.747Z",
+  "uptime_s": 232
 }
