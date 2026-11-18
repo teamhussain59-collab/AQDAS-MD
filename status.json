@@ -82,15 +82,6 @@
     }
   ],
   "guest_log": [
-    "13:34:22 ********8574: status ***********2669: seen ✅, react 👆🏻 ✅",
-    "13:34:46 ********8582: status ***********3444: seen ✅, react skip (120/ghanta had)",
-    "13:35:00 ********3254: connection close 500 Stream Errored (ack)",
-    "13:35:03 ********3254: CONNECTED ✅",
-    "13:35:34 ********1254: status ***********8871: seen ✅, react 🅰️ ✅",
-    "13:35:48 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
-    "13:35:59 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
-    "13:36:05 ********8574: status **********2311: seen ✅, react 🙂 ✅",
-    "13:36:11 ********8582: status ***********9069: seen ✅, react skip (120/ghanta had)",
     "13:36:11 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
     "13:36:19 ********4254: status ***********0222: seen ✅",
     "13:36:21 ********1254: status ***********0222: seen ✅, react 🅰️ ✅",
@@ -101,7 +92,16 @@
     "13:38:15 ********8574: status ***********2669: seen ✅, react 🌷 ✅",
     "13:38:23 ********4254: status ***********0695: seen ✅",
     "13:38:23 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
-    "13:38:23 ********8582: status ***********0695: seen ✅, react skip (120/ghanta had)"
+    "13:38:23 ********8582: status ***********0695: seen ✅, react skip (120/ghanta had)",
+    "13:38:44 ********7157: connection close 500 Stream Errored (ack)",
+    "13:38:46 *********9980: connection close 500 Stream Errored (ack)",
+    "13:38:46 ********8574: connection close 500 Stream Errored (ack)",
+    "13:38:47 ********7157: CONNECTED ✅",
+    "13:38:48 ********8574: CONNECTED ✅",
+    "13:38:49 *********9980: CONNECTED ✅",
+    "13:38:50 ********2634: connection close 500 Stream Errored (ack)",
+    "13:38:52 ********1254: status ***********8871: seen ✅, react 🅰️ ✅",
+    "13:38:54 ********2634: CONNECTED ✅"
   ],
   "guest_frames": null,
   "mem": {
@@ -122,6 +122,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-18T13:38:37.049Z",
-  "uptime_s": 6007
+  "updated_at": "2026-11-18T13:38:58.095Z",
+  "uptime_s": 6028
 }
