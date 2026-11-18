@@ -9,6 +9,96 @@
   "panel_url": "https://lowest-pockets-tropical-doll.trycloudflare.com",
   "panel_at": "2026-11-18T20:46:13.817Z",
   "commands": 592,
-  "updated_at": "2026-11-18T20:46:15.021Z",
-  "uptime_s": 14
+  "linked": [
+    {
+      "number": "*********9787",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********9425",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********2634",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********5634",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "*********1795",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********8574",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********8582",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********0439",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "*********9980",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********1254",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********3254",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********7157",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********4254",
+      "state": "connected",
+      "autostatus": "view"
+    }
+  ],
+  "guest_log": [
+    "20:46:14 *********9980: LINKING (phone ne code accept kiya)",
+    "20:46:14 ********7157: CONNECTED ✅",
+    "20:46:14 ********0439: LINKING (phone ne code accept kiya)",
+    "20:46:14 *********1795: CONNECTED ✅",
+    "20:46:14 ********8574: CONNECTED ✅",
+    "20:46:14 ********4254: CONNECTED ✅",
+    "20:46:14 ********8582: CONNECTED ✅",
+    "20:46:14 ********1254: LINKING (phone ne code accept kiya)",
+    "20:46:14 ********5634: CONNECTED ✅",
+    "20:46:14 *********9787: CONNECTED ✅",
+    "20:46:14 *********9980: CONNECTED ✅",
+    "20:46:15 ********9425: LINKING (phone ne code accept kiya)",
+    "20:46:15 ********3254: LINKING (phone ne code accept kiya)",
+    "20:46:15 ********0439: CONNECTED ✅",
+    "20:46:15 ********2634: LINKING (phone ne code accept kiya)",
+    "20:46:15 ********1254: CONNECTED ✅",
+    "20:46:15 ********9425: CONNECTED ✅",
+    "20:46:15 ********2634: CONNECTED ✅",
+    "20:46:15 ********3254: CONNECTED ✅",
+    "20:46:17 ********1254: status *********9481: seen ✅, react 🅰️ ✅"
+  ],
+  "guest_frames": null,
+  "updated_at": "2026-11-18T20:46:21.231Z",
+  "uptime_s": 20
 }
