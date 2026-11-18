@@ -9,6 +9,101 @@
   "commands": 592,
   "panel_url": "https://node-usb-analyst-arcade.trycloudflare.com",
   "panel_at": "2026-11-18T14:53:23.884Z",
-  "updated_at": "2026-11-18T14:53:24.006Z",
-  "uptime_s": 11
+  "linked": [
+    {
+      "number": "*********9787",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********9425",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********2634",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********5634",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "*********1795",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********8574",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********8582",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********0439",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "*********9980",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********1254",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********3254",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********8546",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********7157",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********4254",
+      "state": "connected",
+      "autostatus": "view"
+    }
+  ],
+  "guest_log": [
+    "14:53:23 ********5634: LINKING (phone ne code accept kiya)",
+    "14:53:23 ********0439: LINKING (phone ne code accept kiya)",
+    "14:53:23 ********7157: LINKING (phone ne code accept kiya)",
+    "14:53:23 ********2634: CONNECTED ✅",
+    "14:53:23 ********0439: CONNECTED ✅",
+    "14:53:23 ********8546: LINKING (phone ne code accept kiya)",
+    "14:53:23 *********9787: CONNECTED ✅",
+    "14:53:23 ********5634: CONNECTED ✅",
+    "14:53:23 ********8574: CONNECTED ✅",
+    "14:53:23 ********9425: CONNECTED ✅",
+    "14:53:23 *********9980: LINKING (phone ne code accept kiya)",
+    "14:53:23 *********1795: CONNECTED ✅",
+    "14:53:23 ********7157: CONNECTED ✅",
+    "14:53:23 ********4254: CONNECTED ✅",
+    "14:53:23 ********8582: LINKING (phone ne code accept kiya)",
+    "14:53:23 ********8546: CONNECTED ✅",
+    "14:53:23 ********3254: LINKING (phone ne code accept kiya)",
+    "14:53:24 *********9980: CONNECTED ✅",
+    "14:53:24 ********8582: CONNECTED ✅",
+    "14:53:24 ********3254: CONNECTED ✅"
+  ],
+  "guest_frames": null,
+  "updated_at": "2026-11-18T14:53:28.924Z",
+  "uptime_s": 16
 }
