@@ -82,16 +82,6 @@
     }
   ],
   "guest_log": [
-    "14:23:31 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
-    "14:23:31 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
-    "14:23:32 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
-    "14:23:32 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
-    "14:23:32 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
-    "14:23:32 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
-    "14:23:33 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
-    "14:23:33 ********8582: status ***********7006: seen ✅, react 🎈 ✅",
-    "14:23:33 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
-    "14:23:33 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
     "14:23:34 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
     "14:23:34 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
     "14:25:03 ********3254: connection close 500 Stream Errored (ack)",
@@ -101,7 +91,17 @@
     "14:26:40 ********8582: status ***********7006: seen ✅, react 🌝 ✅",
     "14:26:41 ********8582: status *********8088: seen ✅, react 🎈 ✅",
     "14:28:12 ********8582: status ***********3857: seen ✅, react 🧸 ✅",
-    "14:28:28 ********8582: status ***********7353: seen ✅, react 🪄 ✅"
+    "14:28:28 ********8582: status ***********7353: seen ✅, react 🪄 ✅",
+    "14:28:47 ********7157: connection close 500 Stream Errored (ack)",
+    "14:28:48 ********8574: connection close 500 Stream Errored (ack)",
+    "14:28:49 *********9980: connection close 500 Stream Errored (ack)",
+    "14:28:50 ********7157: CONNECTED ✅",
+    "14:28:52 ********8574: CONNECTED ✅",
+    "14:28:53 *********9980: CONNECTED ✅",
+    "14:28:54 ********2634: connection close 500 Stream Errored (ack)",
+    "14:28:58 ********2634: CONNECTED ✅",
+    "14:29:00 ********8582: status ***********7353: seen ✅, react 🪄 ✅",
+    "14:29:00 ********8582: status ***********6489: seen ✅, react 🧸 ✅"
   ],
   "guest_frames": null,
   "mem": {
@@ -122,6 +122,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-18T14:28:36.938Z",
-  "uptime_s": 9007
+  "updated_at": "2026-11-18T14:29:04.972Z",
+  "uptime_s": 9035
 }
