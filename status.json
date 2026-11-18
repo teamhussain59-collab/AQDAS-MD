@@ -9,6 +9,101 @@
   "panel_url": "https://deserve-our-assist-peterson.trycloudflare.com",
   "panel_at": "2026-11-18T11:58:40.846Z",
   "commands": 592,
-  "updated_at": "2026-11-18T11:58:41.848Z",
-  "uptime_s": 12
+  "linked": [
+    {
+      "number": "*********9787",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********9425",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********2634",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********5634",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "*********1795",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********8574",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********8582",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********0439",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "*********9980",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********1254",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********3254",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********8546",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********7157",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********4254",
+      "state": "connected",
+      "autostatus": "view"
+    }
+  ],
+  "guest_log": [
+    "11:58:41 ********1254: LINKING (phone ne code accept kiya)",
+    "11:58:41 ********4254: LINKING (phone ne code accept kiya)",
+    "11:58:41 ********5634: CONNECTED ✅",
+    "11:58:42 ********7157: CONNECTED ✅",
+    "11:58:42 ********8574: CONNECTED ✅",
+    "11:58:42 *********9787: CONNECTED ✅",
+    "11:58:42 *********9980: LINKING (phone ne code accept kiya)",
+    "11:58:42 ********8546: CONNECTED ✅",
+    "11:58:42 ********8582: LINKING (phone ne code accept kiya)",
+    "11:58:42 ********9425: CONNECTED ✅",
+    "11:58:42 ********3254: CONNECTED ✅",
+    "11:58:42 ********1254: CONNECTED ✅",
+    "11:58:42 *********1795: CONNECTED ✅",
+    "11:58:42 ********4254: CONNECTED ✅",
+    "11:58:43 *********9980: CONNECTED ✅",
+    "11:58:43 ********4254: status ***********6280: seen ✅",
+    "11:58:43 ********8582: CONNECTED ✅",
+    "11:58:45 ********8582: status ***********7006: seen ✅, react 🌝 ✅",
+    "11:58:45 ********8582: status ***********7006: seen ✅, react 🎈 ✅",
+    "11:58:46 ********8582: status ***********7006: seen ✅, react 🧸 ✅"
+  ],
+  "guest_frames": null,
+  "updated_at": "2026-11-18T11:58:50.442Z",
+  "uptime_s": 20
 }
