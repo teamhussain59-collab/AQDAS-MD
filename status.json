@@ -68,19 +68,10 @@
     {
       "number": "********8582",
       "state": "connected",
-      "autostatus": "view"
+      "autostatus": "view+react"
     }
   ],
   "guest_log": [
-    "05:37:12 ********7157: CONNECTED ✅",
-    "05:41:57 ********4254: status ***********5513: seen ✅",
-    "05:47:21 ********4254: status ***********2763: seen ✅",
-    "05:47:48 ********4254: status ***********2763: seen ✅",
-    "05:48:30 ********1254: status ***********4534: seen ✅, react 🅰️ ✅",
-    "05:49:15 ********1254: status ***********4534: seen ✅, react 🅰️ ✅",
-    "05:49:47 ********1254: status ***********4534: seen ✅, react 🅰️ ✅",
-    "05:52:20 ********1254: status ***********4534: seen ✅, react 🅰️ ✅",
-    "05:55:47 ********8574: code bana",
     "05:56:09 ********8574: LINKING (phone ne code accept kiya)",
     "05:56:14 ********8574: connection close 515 Stream Errored (restart required)",
     "05:56:18 ********8574: CONNECTED ✅",
@@ -91,7 +82,16 @@
     "06:00:09 ********8582: CONNECTED ✅",
     "06:00:30 ********8574: status ***********9024: seen ✅, react 🌝 ✅",
     "06:00:37 ********4254: status ***********9024: seen ✅",
-    "06:00:39 ********8574: status ***********9024: seen ✅, react 🌷 ✅"
+    "06:00:39 ********8574: status ***********9024: seen ✅, react 🌷 ✅",
+    "06:01:24 ********8582: status ***********7006: seen ✅, react 😘 ✅",
+    "06:01:25 ********8582: status ***********7006: seen ✅, react 😇 ✅",
+    "06:01:25 ********8582: status ***********7006: seen ✅, react 😘 ✅",
+    "06:01:26 ********8582: status ***********7006: seen ✅, react 😳 ✅",
+    "06:01:26 ********8582: status ***********7006: seen ✅, react 🥺 ✅",
+    "06:01:27 ********8582: status ***********7006: seen ✅, react 😌 ✅",
+    "06:01:27 ********8582: status ***********7006: seen ✅, react 😌 ✅",
+    "06:01:28 ********8582: status ***********7006: seen ✅, react 😘 ✅",
+    "06:01:29 ********8582: status ***********7006: seen ✅, react 🙂 ✅"
   ],
   "guest_frames": {
     "number": "********8582",
@@ -124,6 +124,6 @@
     "opted_in": 2,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-18T06:00:43.996Z",
-  "uptime_s": 20587
+  "updated_at": "2026-11-18T06:01:33.386Z",
+  "uptime_s": 20636
 }
