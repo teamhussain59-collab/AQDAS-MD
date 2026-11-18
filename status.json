@@ -57,12 +57,11 @@
     },
     {
       "number": "********2634",
-      "state": "pairing",
+      "state": "linking",
       "autostatus": "off"
     }
   ],
   "guest_log": [
-    "03:50:29 ********2634: connection close 401 Connection Failure",
     "03:50:29 ********2634: logged out",
     "03:53:22 ********8546: status ***********9441: seen ✅, react 😳 ✅",
     "03:53:30 ********8546: status ***********9441: seen ✅, react 😇 ✅",
@@ -81,15 +80,18 @@
     "04:01:43 ********2634: connection close 401 Connection Failure",
     "04:01:43 ********2634: logged out",
     "04:02:45 ********4254: status ***********9024: seen ✅",
-    "04:07:41 ********2634: code bana"
+    "04:07:41 ********2634: code bana",
+    "04:08:10 ********2634: LINKING (phone ne code accept kiya)"
   ],
   "guest_frames": {
     "number": "********2634",
-    "state": "pairing",
+    "state": "linking",
     "frames": [
       "04:07:36 iq:set <pair-device>",
       "04:07:36 iq:result <link_code_companion_reg[companion_hello]>",
-      "04:08:05 iq:result"
+      "04:08:05 iq:result",
+      "04:08:10 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
+      "04:08:10 iq:result"
     ]
   },
   "mem": {
@@ -110,6 +112,6 @@
     "opted_in": 1,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-18T04:08:09.946Z",
-  "uptime_s": 13833
+  "updated_at": "2026-11-18T04:08:14.689Z",
+  "uptime_s": 13838
 }
