@@ -57,12 +57,11 @@
     },
     {
       "number": "********7157",
-      "state": "linking",
+      "state": "connected",
       "autostatus": "off"
     }
   ],
   "guest_log": [
-    "04:50:28 ********4254: status ***********9024: seen ✅",
     "04:55:46 ********3254: status ***********2935: seen ✅, react 🅰️ ✅",
     "04:57:43 ********4254: status ***********9024: seen ✅",
     "05:00:33 ********4254: status ***********3723: seen ✅",
@@ -81,11 +80,12 @@
     "05:36:34 ********4254: status **********3456: seen ✅",
     "05:36:53 ********7157: code bana",
     "05:37:03 ********7157: LINKING (phone ne code accept kiya)",
-    "05:37:08 ********7157: connection close 515 Stream Errored (restart required)"
+    "05:37:08 ********7157: connection close 515 Stream Errored (restart required)",
+    "05:37:12 ********7157: CONNECTED ✅"
   ],
   "guest_frames": {
     "number": "********7157",
-    "state": "linking",
+    "state": "connected",
     "frames": [
       "05:36:48 iq:set <pair-device>",
       "05:36:48 iq:result <link_code_companion_reg[companion_hello]>",
@@ -114,6 +114,6 @@
     "opted_in": 1,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-18T05:37:12.513Z",
-  "uptime_s": 19176
+  "updated_at": "2026-11-18T05:37:16.648Z",
+  "uptime_s": 19180
 }
