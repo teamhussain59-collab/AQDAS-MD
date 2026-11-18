@@ -72,9 +72,6 @@
     }
   ],
   "guest_log": [
-    "06:08:13 *********1795: CONNECTED ✅",
-    "06:08:13 *********9980: CONNECTED ✅",
-    "06:08:13 ********8574: LINKING (phone ne code accept kiya)",
     "06:08:13 *********9787: CONNECTED ✅",
     "06:08:13 ********9425: LINKING (phone ne code accept kiya)",
     "06:08:13 ********8546: LINKING (phone ne code accept kiya)",
@@ -91,9 +88,12 @@
     "06:08:14 ********5634: CONNECTED ✅",
     "06:08:14 ********8546: CONNECTED ✅",
     "06:08:14 ********3254: CONNECTED ✅",
-    "06:08:14 ********8582: CONNECTED ✅"
+    "06:08:14 ********8582: CONNECTED ✅",
+    "06:08:40 ********8582: status ***********7006: seen ✅, react 🧸 ✅",
+    "06:08:42 ********8582: status ***********7006: seen ✅, react 🎈 ✅",
+    "06:08:42 ********8582: status ***********7006: seen ✅, react 🪄 ✅"
   ],
   "guest_frames": null,
-  "updated_at": "2026-11-18T06:08:18.719Z",
-  "uptime_s": 16
+  "updated_at": "2026-11-18T06:08:46.160Z",
+  "uptime_s": 44
 }
