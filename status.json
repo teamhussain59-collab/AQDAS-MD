@@ -72,15 +72,6 @@
     }
   ],
   "guest_log": [
-    "16:36:04 ********8582: status ***********5498: seen ✅, react 🎈 ✅",
-    "16:36:30 ********8582: connection close 500 Stream Errored (ack)",
-    "16:36:34 ********8582: CONNECTED ✅",
-    "16:36:42 ********8574: status **********3137: seen ✅, react 🌝 ✅",
-    "16:36:59 ********8582: status ***********7266: seen ✅, react 🪄 ✅",
-    "16:37:01 ********8582: status ***********7266: seen ✅, react 🌝 ✅",
-    "16:37:02 ********8582: status ***********7266: seen ✅, react 🎈 ✅",
-    "16:37:03 ********8582: status ***********7266: seen ✅, react 🪄 ✅",
-    "16:37:07 ********8582: status ***********7006: seen ✅, react 🌝 ✅",
     "16:37:07 ********8582: status ***********7006: seen ✅, react 🌝 ✅",
     "16:37:07 ********8582: status ***********7006: seen ✅, react 🪄 ✅",
     "16:37:08 ********8582: status ***********7006: seen ✅, react 🌝 ✅",
@@ -91,7 +82,16 @@
     "16:37:39 ********8582: status ***********7006: seen ✅, react 🌝 ✅",
     "16:37:45 ********8582: status ***********1785: seen ✅, react 🧸 ✅",
     "16:37:48 ********8582: status ***********2117: seen ✅, react 🎈 ✅",
-    "16:38:10 ********8574: status ***********8218: seen ✅, react 🌝 ✅"
+    "16:38:10 ********8574: status ***********8218: seen ✅, react 🌝 ✅",
+    "16:38:43 ********9425: connection close 500 Stream Errored (ack)",
+    "16:38:43 ********2634: connection close 500 Stream Errored (ack)",
+    "16:38:45 *********9787: connection close 500 Stream Errored (ack)",
+    "16:38:45 ********8574: connection close 500 Stream Errored (ack)",
+    "16:38:46 ********9425: CONNECTED ✅",
+    "16:38:47 ********2634: CONNECTED ✅",
+    "16:38:48 ********8574: CONNECTED ✅",
+    "16:38:49 *********9787: CONNECTED ✅",
+    "16:38:49 ********8582: status ***********7006: seen ✅, react 🎈 ✅"
   ],
   "guest_frames": null,
   "mem": {
@@ -112,6 +112,6 @@
     "opted_in": 2,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-19T16:38:36.606Z",
-  "uptime_s": 6009
+  "updated_at": "2026-11-19T16:38:53.712Z",
+  "uptime_s": 6027
 }
