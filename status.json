@@ -6,6 +6,9 @@
   "number_masked": null,
   "run_id": "44549455854",
   "slots_max": "unlimited",
-  "updated_at": "2026-11-19T14:58:35.443Z",
-  "uptime_s": 8
+  "commands": 592,
+  "panel_url": "https://sleeve-modify-antibodies-transit.trycloudflare.com",
+  "panel_at": "2026-11-19T14:58:38.885Z",
+  "updated_at": "2026-11-19T14:58:39.734Z",
+  "uptime_s": 13
 }
