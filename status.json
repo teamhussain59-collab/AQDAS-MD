@@ -77,8 +77,6 @@
     }
   ],
   "guest_log": [
-    "14:58:39 ********8582: CONNECTED ✅",
-    "14:58:39 ********5634: CONNECTED ✅",
     "14:58:39 ********0439: LINKING (phone ne code accept kiya)",
     "14:58:39 *********9787: LINKING (phone ne code accept kiya)",
     "14:58:39 ********1254: CONNECTED ✅",
@@ -96,9 +94,11 @@
     "14:58:41 *********9980: connection close 403 Connection Failure",
     "14:58:43 ********8582: status ***********7006: seen ✅, react 🌝 ✅",
     "14:58:47 *********9980: connection close 403 Connection Failure",
-    "14:58:52 *********9980: connection close 403 Connection Failure"
+    "14:58:52 *********9980: connection close 403 Connection Failure",
+    "14:59:01 *********9980: connection close 403 Connection Failure",
+    "14:59:03 ********8582: status ***********7006: seen ✅, react 🪄 ✅"
   ],
   "guest_frames": null,
-  "updated_at": "2026-11-19T14:58:56.940Z",
-  "uptime_s": 30
+  "updated_at": "2026-11-19T14:59:07.390Z",
+  "uptime_s": 40
 }
