@@ -77,7 +77,6 @@
     }
   ],
   "guest_log": [
-    "23:44:36 ********8582: CONNECTED ✅",
     "23:44:36 ********9425: LINKING (phone ne code accept kiya)",
     "23:44:36 *********9980: LINKING (phone ne code accept kiya)",
     "23:44:36 *********1795: CONNECTED ✅",
@@ -96,7 +95,8 @@
     "00:27:02 ********8582: status ***********7006: seen ✅, react 🎈 ✅",
     "00:32:40 ********5634: connection close 428 Connection Terminated",
     "00:32:43 ********5634: CONNECTED ✅",
-    "00:33:36 ********8582: status **********8528: seen ✅, react 🪄 ✅"
+    "00:33:36 ********8582: status **********8528: seen ✅, react 🪄 ✅",
+    "00:33:54 *********1795: connection close 428 Connection Terminated"
   ],
   "guest_frames": null,
   "mem": {
@@ -117,6 +117,6 @@
     "opted_in": 2,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-19T00:33:40.198Z",
-  "uptime_s": 2955
+  "updated_at": "2026-11-19T00:33:58.831Z",
+  "uptime_s": 2974
 }
