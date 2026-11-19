@@ -104,18 +104,11 @@
     "16:47:13 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)"
   ],
   "guest_frames": {
-    "number": "********5702",
+    "number": "********4819",
     "state": "pairing",
     "frames": [
-      "16:44:24 iq:set <pair-device>",
-      "16:44:24 iq:result <link_code_companion_reg[companion_hello]>",
-      "16:44:54 iq:result",
-      "16:45:24 iq:result",
-      "16:45:54 iq:result",
-      "16:46:24 iq:result",
-      "16:46:54 iq:get",
-      "16:46:54 iq:result",
-      "16:47:24 iq:result"
+      "16:47:28 iq:set <pair-device>",
+      "16:47:28 iq:result <link_code_companion_reg[companion_hello]>"
     ]
   },
   "mem": {
@@ -136,6 +129,6 @@
     "opted_in": 2,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-19T16:47:28.031Z",
-  "uptime_s": 6541
+  "updated_at": "2026-11-19T16:47:32.258Z",
+  "uptime_s": 6545
 }
