@@ -77,8 +77,6 @@
     }
   ],
   "guest_log": [
-    "09:01:13 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
-    "09:01:50 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
     "09:02:00 ********8582: status ***********6823: seen ✅, react skip (120/ghanta had)",
     "09:02:01 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
     "09:02:21 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
@@ -96,7 +94,9 @@
     "09:04:33 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
     "09:05:11 ********8582: status ***********7006: seen ✅, react 🎈 ✅",
     "09:05:41 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
-    "09:05:54 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)"
+    "09:05:54 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
+    "09:06:17 *********9980: connection close 428 Connection Terminated",
+    "09:06:19 *********9980: CONNECTED ✅"
   ],
   "guest_frames": null,
   "mem": {
@@ -117,6 +117,6 @@
     "opted_in": 2,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-19T09:05:58.888Z",
-  "uptime_s": 13774
+  "updated_at": "2026-11-19T09:06:23.980Z",
+  "uptime_s": 13799
 }
