@@ -99,6 +99,16 @@
     "14:59:26 *********9980: connection close 403 Connection Failure"
   ],
   "guest_frames": null,
-  "updated_at": "2026-11-19T14:59:30.321Z",
-  "uptime_s": 63
+  "mem": {
+    "sessions": 13,
+    "free_mb": 14805,
+    "total_mb": 15982,
+    "rss_mb": 199,
+    "heap_mb": 47,
+    "heap_limit_mb": 4144,
+    "per_session_mb": 15,
+    "room_for": 347
+  },
+  "updated_at": "2026-11-19T14:59:35.445Z",
+  "uptime_s": 68
 }
