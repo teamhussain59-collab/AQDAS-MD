@@ -51,11 +51,6 @@
       "autostatus": "off"
     },
     {
-      "number": "*********9980",
-      "state": "restoring",
-      "autostatus": "off"
-    },
-    {
       "number": "********1254",
       "state": "connected",
       "autostatus": "view+react"
@@ -77,16 +72,6 @@
     }
   ],
   "guest_log": [
-    "15:56:25 *********9980: connection close 403 Connection Failure",
-    "15:56:57 ********8574: status **********2208: seen ✅, react 🌝 ✅",
-    "15:56:58 *********9980: connection close 403 Connection Failure",
-    "15:57:06 ********8574: status *********5791: seen ✅, react 🙂 ✅",
-    "15:57:33 ********8582: status *********0067: seen ✅, react skip (120/ghanta had)",
-    "15:57:33 *********9980: connection close 403 Connection Failure",
-    "15:57:49 ********8582: status ***********9069: seen ✅, react skip (120/ghanta had)",
-    "15:58:04 *********9980: connection close 403 Connection Failure",
-    "15:58:04 ********4254: status ***********9024: seen ✅",
-    "15:58:07 ********8574: status ***********9024: seen ✅, react 🌷 ✅",
     "15:58:21 ********8574: status ***********8298: seen ✅, react 🌝 ✅",
     "15:58:36 ********8574: status ***********8218: seen ✅, react 🙂 ✅",
     "15:58:38 *********9980: connection close 403 Connection Failure",
@@ -96,7 +81,17 @@
     "15:58:51 ********8574: status ***********0368: seen ✅, react 🌝 ✅",
     "15:58:52 ********8582: status ***********3162: seen ✅, react 🧸 ✅",
     "15:58:52 ********8582: status ***********0368: seen ✅, react 🎈 ✅",
-    "15:59:02 ********4254: status ***********8064: seen ✅"
+    "15:59:02 ********4254: status ***********8064: seen ✅",
+    "15:59:12 *********9980: connection close 401 Connection Failure",
+    "15:59:13 *********9980: logged out",
+    "15:59:14 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
+    "15:59:14 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
+    "15:59:14 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
+    "15:59:15 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
+    "15:59:15 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
+    "15:59:15 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
+    "15:59:16 ********8582: status ***********7006: seen ✅, react 🪄 ✅",
+    "15:59:16 ********8582: status ***********7006: seen ✅, react 🎈 ✅"
   ],
   "guest_frames": null,
   "mem": {
@@ -117,6 +112,6 @@
     "opted_in": 2,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-19T15:59:06.134Z",
-  "uptime_s": 3639
+  "updated_at": "2026-11-19T15:59:20.547Z",
+  "uptime_s": 3653
 }
