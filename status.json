@@ -77,17 +77,11 @@
     },
     {
       "number": "********3523",
-      "state": "pairing",
+      "state": "linking",
       "autostatus": "off"
     }
   ],
   "guest_log": [
-    "15:11:22 ********8582: status ***********7006: seen ✅, react 🧸 ✅",
-    "15:11:40 *********9980: connection close 403 Connection Failure",
-    "15:11:43 ********8574: status ***********1981: seen ✅, react 👆🏻 ✅",
-    "15:11:44 ********8582: status ***********1981: seen ✅, react 🧸 ✅",
-    "15:12:11 *********9980: connection close 403 Connection Failure",
-    "15:12:22 ********8582: status ***********7006: seen ✅, react 🎈 ✅",
     "15:12:22 ********8582: status ***********7006: seen ✅, react 🧸 ✅",
     "15:12:23 ********8582: status ***********7006: seen ✅, react 🎈 ✅",
     "15:12:23 ********8582: status ***********7006: seen ✅, react 🎈 ✅",
@@ -101,15 +95,24 @@
     "15:13:23 ********8582: status ***********7006: seen ✅, react 🌝 ✅",
     "15:13:23 ********8582: status ***********9343: seen ✅, react 🪄 ✅",
     "15:13:24 ********8582: status ***********7006: seen ✅, react 🌝 ✅",
-    "15:13:29 ********8582: status ***********7006: seen ✅, react 🎈 ✅"
+    "15:13:29 ********8582: status ***********7006: seen ✅, react 🎈 ✅",
+    "15:13:47 ********3523: LINKING (phone ne code accept kiya)",
+    "15:13:49 ********8582: status ***********7006: seen ✅, react 🌝 ✅",
+    "15:13:52 *********9980: connection close 403 Connection Failure",
+    "15:13:55 ********8582: status ***********7006: seen ✅, react 🧸 ✅",
+    "15:13:59 ********8582: status ***********7006: seen ✅, react 🌝 ✅",
+    "15:14:00 ********8582: status ***********9343: seen ✅, react 🌝 ✅"
   ],
   "guest_frames": {
     "number": "********3523",
-    "state": "pairing",
+    "state": "linking",
     "frames": [
       "15:13:01 iq:set <pair-device>",
       "15:13:01 iq:result <link_code_companion_reg[companion_hello]>",
-      "15:13:31 iq:result"
+      "15:13:31 iq:result",
+      "15:13:47 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
+      "15:13:47 iq:result",
+      "15:14:01 iq:result"
     ]
   },
   "mem": {
@@ -130,6 +133,6 @@
     "opted_in": 2,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-19T15:13:36.398Z",
-  "uptime_s": 909
+  "updated_at": "2026-11-19T15:14:05.239Z",
+  "uptime_s": 938
 }
