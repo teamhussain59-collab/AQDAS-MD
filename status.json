@@ -82,8 +82,6 @@
     }
   ],
   "guest_log": [
-    "15:13:29 ********8582: status ***********7006: seen ✅, react 🎈 ✅",
-    "15:13:47 ********3523: LINKING (phone ne code accept kiya)",
     "15:13:49 ********8582: status ***********7006: seen ✅, react 🌝 ✅",
     "15:13:52 *********9980: connection close 403 Connection Failure",
     "15:13:55 ********8582: status ***********7006: seen ✅, react 🧸 ✅",
@@ -101,7 +99,9 @@
     "15:15:23 ********8582: status ***********7006: seen ✅, react 🎈 ✅",
     "15:15:30 *********9980: connection close 403 Connection Failure",
     "15:15:45 ********8582: status ***********7006: seen ✅, react 🧸 ✅",
-    "15:15:49 ********8582: status ***********7006: seen ✅, react 🧸 ✅"
+    "15:15:49 ********8582: status ***********7006: seen ✅, react 🧸 ✅",
+    "15:16:00 *********9980: connection close 403 Connection Failure",
+    "15:16:03 ********8582: status ***********7006: seen ✅, react 🌝 ✅"
   ],
   "guest_frames": {
     "number": "********3523",
@@ -117,7 +117,9 @@
       "15:15:01 iq:result",
       "15:15:02 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
       "15:15:02 iq:result",
-      "15:15:31 iq:result"
+      "15:15:31 iq:result",
+      "15:16:01 iq:get",
+      "15:16:01 iq:result"
     ]
   },
   "mem": {
@@ -138,6 +140,6 @@
     "opted_in": 2,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-19T15:15:53.662Z",
-  "uptime_s": 1046
+  "updated_at": "2026-11-19T15:16:07.688Z",
+  "uptime_s": 1061
 }
