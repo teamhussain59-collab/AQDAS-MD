@@ -9,6 +9,96 @@
   "commands": 592,
   "panel_url": "https://sleeve-modify-antibodies-transit.trycloudflare.com",
   "panel_at": "2026-11-19T14:58:38.885Z",
-  "updated_at": "2026-11-19T14:58:39.734Z",
-  "uptime_s": 13
+  "linked": [
+    {
+      "number": "*********9787",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********9425",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********2634",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********5634",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "*********1795",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********8574",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********8582",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********0439",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "*********9980",
+      "state": "restoring",
+      "autostatus": "off"
+    },
+    {
+      "number": "********1254",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********3254",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********7157",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********4254",
+      "state": "connected",
+      "autostatus": "view"
+    }
+  ],
+  "guest_log": [
+    "14:58:39 ********9425: LINKING (phone ne code accept kiya)",
+    "14:58:39 ********8574: CONNECTED ✅",
+    "14:58:39 ********8582: CONNECTED ✅",
+    "14:58:39 ********5634: CONNECTED ✅",
+    "14:58:39 ********0439: LINKING (phone ne code accept kiya)",
+    "14:58:39 *********9787: LINKING (phone ne code accept kiya)",
+    "14:58:39 ********1254: CONNECTED ✅",
+    "14:58:39 ********3254: CONNECTED ✅",
+    "14:58:39 ********2634: CONNECTED ✅",
+    "14:58:39 ********4254: CONNECTED ✅",
+    "14:58:39 ********7157: CONNECTED ✅",
+    "14:58:39 ********9425: CONNECTED ✅",
+    "14:58:39 *********1795: LINKING (phone ne code accept kiya)",
+    "14:58:40 ********0439: CONNECTED ✅",
+    "14:58:40 *********9787: CONNECTED ✅",
+    "14:58:40 *********1795: CONNECTED ✅",
+    "14:58:41 ********8582: status ***********7006: seen ✅, react 🧸 ✅",
+    "14:58:41 ********8582: status ***********7006: seen ✅, react 🧸 ✅",
+    "14:58:41 *********9980: connection close 403 Connection Failure",
+    "14:58:43 ********8582: status ***********7006: seen ✅, react 🌝 ✅"
+  ],
+  "guest_frames": null,
+  "updated_at": "2026-11-19T14:58:47.131Z",
+  "uptime_s": 20
 }
