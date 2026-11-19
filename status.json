@@ -77,8 +77,6 @@
     }
   ],
   "guest_log": [
-    "16:40:51 ********8582: status ***********7006: seen ✅, react 🎈 ✅",
-    "16:41:09 ********8582: status **********6230: seen ✅, react 🪄 ✅",
     "16:42:04 ********8574: status ***********8298: seen ✅, react 🌷 ✅",
     "16:43:22 ********4254: status **********9711: seen ✅",
     "16:43:24 ********8582: status **********9711: seen ✅, react 🌝 ✅",
@@ -96,7 +94,9 @@
     "16:44:05 ********8574: status ***********0368: seen ✅, react 🌷 ✅",
     "16:44:29 ********5702: code bana",
     "16:44:58 ********8582: status ***********7006: seen ✅, react 🪄 ✅",
-    "16:44:58 ********8582: status ***********7006: seen ✅, react 🧸 ✅"
+    "16:44:58 ********8582: status ***********7006: seen ✅, react 🧸 ✅",
+    "16:45:57 ********8582: status ***********7006: seen ✅, react 🧸 ✅",
+    "16:45:58 ********8582: status ***********7006: seen ✅, react 🪄 ✅"
   ],
   "guest_frames": {
     "number": "********5702",
@@ -105,7 +105,8 @@
       "16:44:24 iq:set <pair-device>",
       "16:44:24 iq:result <link_code_companion_reg[companion_hello]>",
       "16:44:54 iq:result",
-      "16:45:24 iq:result"
+      "16:45:24 iq:result",
+      "16:45:54 iq:result"
     ]
   },
   "mem": {
@@ -126,6 +127,6 @@
     "opted_in": 2,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-19T16:45:28.030Z",
-  "uptime_s": 6421
+  "updated_at": "2026-11-19T16:46:02.640Z",
+  "uptime_s": 6455
 }
