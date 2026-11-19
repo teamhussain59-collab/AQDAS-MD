@@ -77,7 +77,6 @@
     }
   ],
   "guest_log": [
-    "14:45:46 *********9980: connection close 403 Connection Failure",
     "14:46:10 ********8582: status ***********7006: seen ✅, react 🌝 ✅",
     "14:46:19 *********9980: connection close 403 Connection Failure",
     "14:46:33 ********8582: status ***********7006: seen ✅, react 🎈 ✅",
@@ -96,7 +95,8 @@
     "14:48:35 ********8582: status ***********7006: seen ✅, react 🌝 ✅",
     "14:48:37 ********4254: status ***********6280: seen ✅",
     "14:48:53 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
-    "14:49:02 ********4254: status ***********6280: seen ✅"
+    "14:49:02 ********4254: status ***********6280: seen ✅",
+    "14:49:07 *********9980: connection close 403 Connection Failure"
   ],
   "guest_frames": null,
   "mem": {
@@ -117,6 +117,6 @@
     "opted_in": 2,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-19T14:49:06.126Z",
-  "uptime_s": 13336
+  "updated_at": "2026-11-19T14:49:11.136Z",
+  "uptime_s": 13341
 }
