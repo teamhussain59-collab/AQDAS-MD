@@ -72,13 +72,6 @@
     }
   ],
   "guest_log": [
-    "13:07:17 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
-    "13:07:21 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
-    "13:07:24 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
-    "13:07:28 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
-    "13:07:30 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
-    "13:07:45 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
-    "13:07:51 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
     "13:07:58 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
     "13:08:03 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
     "13:08:03 ********8582: status ***********7792: seen ✅, react skip (120/ghanta had)",
@@ -91,7 +84,14 @@
     "13:08:42 ********8574: status **********1842: seen ✅, react 👆🏻 ✅",
     "13:08:42 ********8574: status **********6503: seen ✅, react 🙂 ✅",
     "13:09:20 ********4254: status ***********0695: seen ✅",
-    "13:09:20 ********8582: status ***********0695: seen ✅, react skip (120/ghanta had)"
+    "13:09:20 ********8582: status ***********0695: seen ✅, react skip (120/ghanta had)",
+    "13:09:27 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
+    "13:09:27 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
+    "13:09:27 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
+    "13:09:27 ********4254: status ***********0695: seen ✅",
+    "13:09:27 ********8582: status ***********0695: seen ✅, react skip (120/ghanta had)",
+    "13:09:28 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
+    "13:09:29 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)"
   ],
   "guest_frames": null,
   "mem": {
@@ -112,6 +112,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-20T13:09:24.731Z",
-  "uptime_s": 5033
+  "updated_at": "2026-11-20T13:09:33.739Z",
+  "uptime_s": 5042
 }
