@@ -77,7 +77,6 @@
     }
   ],
   "guest_log": [
-    "16:30:45 ********8574: connection close 403 Connection Failure",
     "16:31:17 ********8574: connection close 403 Connection Failure",
     "16:31:25 ********8582: status ***********7006: seen ✅, react 🎈 ✅",
     "16:31:49 ********8574: connection close 403 Connection Failure",
@@ -96,7 +95,8 @@
     "16:35:16 ********0931: LINKING (phone ne code accept kiya)",
     "16:35:21 ********0931: connection close 515 Stream Errored (restart required)",
     "16:35:24 ********0931: CONNECTED ✅",
-    "16:35:30 ********8582: status ***********7006: seen ✅, react 🧸 ✅"
+    "16:35:30 ********8582: status ***********7006: seen ✅, react 🧸 ✅",
+    "16:35:38 ********8574: connection close 403 Connection Failure"
   ],
   "guest_frames": {
     "number": "********0931",
@@ -131,6 +131,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-20T16:35:34.300Z",
-  "uptime_s": 6868
+  "updated_at": "2026-11-20T16:35:42.618Z",
+  "uptime_s": 6876
 }
