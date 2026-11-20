@@ -9,6 +9,101 @@
   "panel_url": "https://mug-sapphire-fill-albuquerque.trycloudflare.com",
   "panel_at": "2026-11-20T20:31:45.681Z",
   "commands": 592,
-  "updated_at": "2026-11-20T20:31:46.631Z",
-  "uptime_s": 11
+  "linked": [
+    {
+      "number": "*********9787",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********9425",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********2634",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "*********1795",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********8574",
+      "state": "restoring",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********8582",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********0931",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********0439",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********2563",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********1254",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********3254",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********7157",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********7170",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********4254",
+      "state": "connected",
+      "autostatus": "view"
+    }
+  ],
+  "guest_log": [
+    "20:31:46 *********9787: LINKING (phone ne code accept kiya)",
+    "20:31:46 ********0931: LINKING (phone ne code accept kiya)",
+    "20:31:46 *********1795: LINKING (phone ne code accept kiya)",
+    "20:31:46 ********7170: CONNECTED ✅",
+    "20:31:46 ********9425: LINKING (phone ne code accept kiya)",
+    "20:31:46 ********8582: LINKING (phone ne code accept kiya)",
+    "20:31:46 ********1254: LINKING (phone ne code accept kiya)",
+    "20:31:46 ********2634: LINKING (phone ne code accept kiya)",
+    "20:31:47 ********0439: CONNECTED ✅",
+    "20:31:47 ********0931: CONNECTED ✅",
+    "20:31:47 ********3254: LINKING (phone ne code accept kiya)",
+    "20:31:47 ********8582: CONNECTED ✅",
+    "20:31:47 *********9787: CONNECTED ✅",
+    "20:31:47 ********9425: CONNECTED ✅",
+    "20:31:47 ********7157: CONNECTED ✅",
+    "20:31:47 *********1795: CONNECTED ✅",
+    "20:31:47 ********1254: CONNECTED ✅",
+    "20:31:47 ********2634: CONNECTED ✅",
+    "20:31:48 ********3254: CONNECTED ✅",
+    "20:31:48 ********8574: connection close 403 Connection Failure"
+  ],
+  "guest_frames": null,
+  "updated_at": "2026-11-20T20:31:52.234Z",
+  "uptime_s": 16
 }
