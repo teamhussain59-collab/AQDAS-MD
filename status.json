@@ -6,6 +6,9 @@
   "number_masked": null,
   "run_id": "44812097622",
   "slots_max": "unlimited",
-  "updated_at": "2026-11-20T20:31:42.394Z",
-  "uptime_s": 6
+  "panel_url": "https://mug-sapphire-fill-albuquerque.trycloudflare.com",
+  "panel_at": "2026-11-20T20:31:45.681Z",
+  "commands": 592,
+  "updated_at": "2026-11-20T20:31:46.631Z",
+  "uptime_s": 11
 }
