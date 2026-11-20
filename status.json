@@ -72,13 +72,6 @@
     }
   ],
   "guest_log": [
-    "15:31:23 *********9787: connection close 428 Connection Terminated",
-    "15:31:23 ********7170: CONNECTED ✅",
-    "15:31:25 ********2634: CONNECTED ✅",
-    "15:31:28 *********9787: CONNECTED ✅",
-    "15:31:45 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
-    "15:31:47 ********8574: connection close 403 Connection Failure",
-    "15:31:53 ********8582: status ***********2956: seen ✅, react skip (120/ghanta had)",
     "15:31:54 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
     "15:32:18 ********8574: connection close 403 Connection Failure",
     "15:32:43 ********8582: status ***********2956: seen ✅, react skip (120/ghanta had)",
@@ -91,7 +84,14 @@
     "15:33:43 ********8582: status **********0965: seen ✅, react skip (120/ghanta had)",
     "15:33:51 ********4254: status **********2520: seen ✅",
     "15:34:01 ********8574: connection close 403 Connection Failure",
-    "15:34:36 ********8574: connection close 403 Connection Failure"
+    "15:34:36 ********8574: connection close 403 Connection Failure",
+    "15:34:42 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
+    "15:34:42 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
+    "15:34:42 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
+    "15:34:43 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
+    "15:34:43 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
+    "15:34:43 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
+    "15:34:43 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)"
   ],
   "guest_frames": null,
   "mem": {
@@ -112,6 +112,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-20T15:34:40.860Z",
-  "uptime_s": 3215
+  "updated_at": "2026-11-20T15:34:47.911Z",
+  "uptime_s": 3222
 }
