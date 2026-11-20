@@ -72,8 +72,6 @@
     }
   ],
   "guest_log": [
-    "13:25:57 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
-    "13:25:57 ********8582: status ***********2480: seen ✅, react skip (120/ghanta had)",
     "13:26:26 ********8574: status ***********0462: seen ✅, react 🌝 ✅",
     "13:26:27 ********8574: status **********6503: seen ✅, react 👆🏻 ✅",
     "13:26:58 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
@@ -91,7 +89,9 @@
     "13:27:40 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
     "13:27:41 ********8582: status ***********2956: seen ✅, react skip (120/ghanta had)",
     "13:27:41 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
-    "13:27:42 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)"
+    "13:27:42 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
+    "13:27:47 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
+    "13:27:49 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)"
   ],
   "guest_frames": null,
   "mem": {
@@ -112,6 +112,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-20T13:27:46.968Z",
-  "uptime_s": 6136
+  "updated_at": "2026-11-20T13:27:53.416Z",
+  "uptime_s": 6142
 }
