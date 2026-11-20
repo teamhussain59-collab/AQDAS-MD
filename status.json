@@ -9,6 +9,91 @@
   "commands": 592,
   "panel_url": "https://maintained-withdrawal-paying-total.trycloudflare.com",
   "panel_at": "2026-11-20T00:04:43.838Z",
-  "updated_at": "2026-11-20T00:04:43.966Z",
-  "uptime_s": 10
+  "linked": [
+    {
+      "number": "*********9787",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********9425",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********2634",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********5634",
+      "state": "restoring",
+      "autostatus": "off"
+    },
+    {
+      "number": "*********1795",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********8574",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********8582",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********0439",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********1254",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********3254",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********7157",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********4254",
+      "state": "connected",
+      "autostatus": "view"
+    }
+  ],
+  "guest_log": [
+    "00:04:43 ********8582: CONNECTED ✅",
+    "00:04:43 ********3254: LINKING (phone ne code accept kiya)",
+    "00:04:43 ********1254: LINKING (phone ne code accept kiya)",
+    "00:04:43 *********1795: LINKING (phone ne code accept kiya)",
+    "00:04:43 ********0439: LINKING (phone ne code accept kiya)",
+    "00:04:43 ********4254: CONNECTED ✅",
+    "00:04:43 ********1254: CONNECTED ✅",
+    "00:04:43 ********8574: CONNECTED ✅",
+    "00:04:43 ********3254: CONNECTED ✅",
+    "00:04:43 ********0439: CONNECTED ✅",
+    "00:04:43 *********1795: CONNECTED ✅",
+    "00:04:43 ********7157: LINKING (phone ne code accept kiya)",
+    "00:04:44 ********2634: LINKING (phone ne code accept kiya)",
+    "00:04:44 ********9425: LINKING (phone ne code accept kiya)",
+    "00:04:44 *********9787: LINKING (phone ne code accept kiya)",
+    "00:04:44 ********9425: CONNECTED ✅",
+    "00:04:44 ********7157: CONNECTED ✅",
+    "00:04:44 ********2634: CONNECTED ✅",
+    "00:04:45 *********9787: CONNECTED ✅",
+    "00:04:45 ********5634: connection close 403 Connection Failure"
+  ],
+  "guest_frames": null,
+  "updated_at": "2026-11-20T00:04:49.965Z",
+  "uptime_s": 16
 }
