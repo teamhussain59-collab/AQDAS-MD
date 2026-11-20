@@ -82,7 +82,6 @@
     }
   ],
   "guest_log": [
-    "16:39:00 ********8582: status ***********2956: seen ✅, react skip (120/ghanta had)",
     "16:39:01 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
     "16:39:14 ********1453: code bana",
     "16:39:24 ********8574: connection close 403 Connection Failure",
@@ -101,7 +100,8 @@
     "16:42:37 ********8574: connection close 403 Connection Failure",
     "16:42:39 ********1453: connection close 428 Connection Terminated by Server",
     "16:42:39 ********1453: expired / closed (code 428)",
-    "16:42:41 ********4254: status **********1701: seen ✅"
+    "16:42:41 ********4254: status **********1701: seen ✅",
+    "16:43:02 ********8582: status ***********7006: seen ✅, react 🌝 ✅"
   ],
   "guest_frames": {
     "number": "********2563",
@@ -133,6 +133,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-20T16:42:45.834Z",
-  "uptime_s": 7300
+  "updated_at": "2026-11-20T16:43:06.537Z",
+  "uptime_s": 7320
 }
