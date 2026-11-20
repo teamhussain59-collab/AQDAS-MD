@@ -82,26 +82,26 @@
     }
   ],
   "guest_log": [
-    "16:52:33 ********4254: status **********1701: seen ✅",
-    "16:52:42 ********8574: connection close 403 Connection Failure",
-    "16:52:46 ********8582: status ***********0242: seen ✅, react 🪄 ✅",
-    "16:52:47 ********8582: status ***********7006: seen ✅, react 🎈 ✅",
-    "16:52:58 ********8582: status **********0579: seen ✅, react 🧸 ✅",
-    "16:53:12 ********9425: connection close 500 Stream Errored (ack)",
-    "16:53:14 ********8574: connection close 403 Connection Failure",
-    "16:53:15 ********9425: CONNECTED ✅",
-    "16:53:45 ********8574: connection close 403 Connection Failure",
-    "16:54:08 ********8582: status **********0579: seen ✅, react 🌝 ✅",
-    "16:54:09 ********8582: status **********0579: seen ✅, react 🌝 ✅",
-    "16:54:17 ********8574: connection close 403 Connection Failure",
-    "16:54:22 ********4254: status ***********0695: seen ✅",
-    "16:54:25 ********8582: status ***********0695: seen ✅, react 🧸 ✅",
-    "16:54:25 ********8582: status ***********7006: seen ✅, react 🧸 ✅",
-    "16:54:37 ********8582: status ***********7006: seen ✅, react 🎈 ✅",
     "16:54:50 ********8574: connection close 403 Connection Failure",
     "16:55:24 ********8574: connection close 403 Connection Failure",
     "16:55:58 ********8574: connection close 403 Connection Failure",
-    "16:56:32 ********8574: connection close 403 Connection Failure"
+    "16:56:32 ********8574: connection close 403 Connection Failure",
+    "16:56:38 ********8582: status **********0579: seen ✅, react 🪄 ✅",
+    "16:56:38 ********8582: status ***********7006: seen ✅, react 🌝 ✅",
+    "16:56:39 ********8582: status **********0579: seen ✅, react 🌝 ✅",
+    "16:56:39 ********8582: status ***********0242: seen ✅, react 🪄 ✅",
+    "16:56:39 ********8582: status ***********7006: seen ✅, react 🪄 ✅",
+    "16:56:39 ********8582: status ***********7006: seen ✅, react 🪄 ✅",
+    "16:56:40 ********8582: status ***********7006: seen ✅, react 🧸 ✅",
+    "16:56:40 ********8582: status ***********7006: seen ✅, react 🌝 ✅",
+    "16:56:40 ********8582: status **********0579: seen ✅, react 🎈 ✅",
+    "16:56:40 ********8582: status **********0579: seen ✅, react 🌝 ✅",
+    "16:56:41 ********8582: status ***********7006: seen ✅, react 🌝 ✅",
+    "16:56:41 ********8582: status ***********7006: seen ✅, react 🌝 ✅",
+    "16:56:42 ********8582: status ***********7006: seen ✅, react 🪄 ✅",
+    "16:56:42 ********8582: status ***********7006: seen ✅, react 🌝 ✅",
+    "16:56:44 ********8582: status **********1368: seen ✅, react 🌝 ✅",
+    "16:56:44 ********8582: status ***********7006: seen ✅, react 🪄 ✅"
   ],
   "guest_frames": {
     "number": "********2563",
@@ -135,6 +135,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-20T16:56:36.623Z",
-  "uptime_s": 8130
+  "updated_at": "2026-11-20T16:56:48.829Z",
+  "uptime_s": 8143
 }
