@@ -72,11 +72,6 @@
     }
   ],
   "guest_log": [
-    "13:01:42 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
-    "13:01:49 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
-    "13:01:52 ********8582: status ***********2956: seen ✅, react skip (120/ghanta had)",
-    "13:01:53 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
-    "13:01:53 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
     "13:01:56 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
     "13:02:00 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
     "13:02:04 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
@@ -91,7 +86,12 @@
     "13:03:01 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
     "13:03:03 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
     "13:03:08 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
-    "13:03:13 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)"
+    "13:03:13 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
+    "13:03:17 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
+    "13:03:17 ********4254: status ***********0695: seen ✅",
+    "13:03:17 ********8582: status ***********0695: seen ✅, react skip (120/ghanta had)",
+    "13:03:18 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
+    "13:03:19 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)"
   ],
   "guest_frames": null,
   "mem": {
@@ -112,6 +112,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-20T13:03:17.157Z",
-  "uptime_s": 4666
+  "updated_at": "2026-11-20T13:03:23.617Z",
+  "uptime_s": 4672
 }
