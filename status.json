@@ -6,6 +6,9 @@
   "number_masked": null,
   "run_id": "44684148023",
   "slots_max": "unlimited",
-  "updated_at": "2026-11-20T05:55:09.811Z",
-  "uptime_s": 6
+  "panel_url": "https://toxic-nano-prospect-aid.trycloudflare.com",
+  "panel_at": "2026-11-20T05:55:14.961Z",
+  "commands": 592,
+  "updated_at": "2026-11-20T05:55:16.161Z",
+  "uptime_s": 12
 }
