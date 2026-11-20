@@ -59,6 +59,11 @@
       "number": "********4254",
       "state": "connected",
       "autostatus": "view"
+    },
+    {
+      "number": "********8574",
+      "state": "pairing",
+      "autostatus": "off"
     }
   ],
   "guest_log": [
@@ -83,7 +88,14 @@
     "08:13:09 ********8582: status ***********3578: seen ✅, react 🧸 ✅",
     "08:13:10 ********8582: status ***********7006: seen ✅, react 🌝 ✅"
   ],
-  "guest_frames": null,
+  "guest_frames": {
+    "number": "********8574",
+    "state": "pairing",
+    "frames": [
+      "08:13:40 iq:set <pair-device>",
+      "08:13:40 iq:result <link_code_companion_reg[companion_hello]>"
+    ]
+  },
   "mem": {
     "sessions": 10,
     "free_mb": 14715,
@@ -102,6 +114,6 @@
     "opted_in": 2,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-20T08:13:15.987Z",
-  "uptime_s": 8292
+  "updated_at": "2026-11-20T08:13:44.155Z",
+  "uptime_s": 8320
 }
