@@ -6,6 +6,9 @@
   "number_masked": null,
   "run_id": "44837418087",
   "slots_max": "unlimited",
-  "updated_at": "2026-11-20T23:32:02.263Z",
-  "uptime_s": 6
+  "panel_url": "https://potentially-question-darwin-reserved.trycloudflare.com",
+  "panel_at": "2026-11-20T23:32:07.097Z",
+  "commands": 592,
+  "updated_at": "2026-11-20T23:32:08.185Z",
+  "uptime_s": 12
 }
