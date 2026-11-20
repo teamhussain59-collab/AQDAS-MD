@@ -6,6 +6,9 @@
   "number_masked": null,
   "run_id": "44730146874",
   "slots_max": "unlimited",
-  "updated_at": "2026-11-20T11:45:37.538Z",
-  "uptime_s": 6
+  "commands": 592,
+  "panel_url": "https://strategies-cyber-fiber-logic.trycloudflare.com",
+  "panel_at": "2026-11-20T11:45:40.959Z",
+  "updated_at": "2026-11-20T11:45:41.716Z",
+  "uptime_s": 10
 }
