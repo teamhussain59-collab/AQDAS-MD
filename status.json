@@ -94,6 +94,16 @@
     "00:05:30 ********5634: connection close 403 Connection Failure"
   ],
   "guest_frames": null,
-  "updated_at": "2026-11-20T00:05:34.808Z",
-  "uptime_s": 61
+  "mem": {
+    "sessions": 12,
+    "free_mb": 14579,
+    "total_mb": 15701,
+    "rss_mb": 178,
+    "heap_mb": 40,
+    "heap_limit_mb": 2096,
+    "per_session_mb": 15,
+    "room_for": 174
+  },
+  "updated_at": "2026-11-20T00:05:40.895Z",
+  "uptime_s": 67
 }
