@@ -82,15 +82,11 @@
     },
     {
       "number": "********2563",
-      "state": "pairing",
+      "state": "connected",
       "autostatus": "off"
     }
   ],
   "guest_log": [
-    "16:44:12 ********2563: connection close 428 Connection Terminated by Server",
-    "16:44:12 ********2563: expired / closed (code 428)",
-    "16:44:20 ********8574: connection close 403 Connection Failure",
-    "16:44:32 ********8582: status ***********7006: seen ✅, react 🎈 ✅",
     "16:44:45 ********8582: status ***********4471: seen ✅, react 🌝 ✅",
     "16:44:55 ********8574: connection close 403 Connection Failure",
     "16:45:29 ********8574: connection close 403 Connection Failure",
@@ -106,15 +102,24 @@
     "16:47:11 ********8574: connection close 403 Connection Failure",
     "16:47:37 ********2563: code bana",
     "16:47:44 ********8574: connection close 403 Connection Failure",
-    "16:47:55 ********4254: status **********1701: seen ✅"
+    "16:47:55 ********4254: status **********1701: seen ✅",
+    "16:48:14 ********2563: LINKING (phone ne code accept kiya)",
+    "16:48:17 ********2563: connection close 515 Stream Errored (restart required)",
+    "16:48:19 ********8574: connection close 403 Connection Failure",
+    "16:48:21 ********2563: CONNECTED ✅"
   ],
   "guest_frames": {
     "number": "********2563",
-    "state": "pairing",
+    "state": "connected",
     "frames": [
       "16:47:32 iq:set <pair-device>",
       "16:47:33 iq:result <link_code_companion_reg[companion_hello]>",
-      "16:48:02 iq:result"
+      "16:48:02 iq:result",
+      "16:48:14 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
+      "16:48:14 iq:result",
+      "16:48:16 iq:set <pair-success>",
+      "16:48:17 stream:error: code=515",
+      "16:48:17 xmlstreamend:"
     ]
   },
   "mem": {
@@ -135,6 +140,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-20T16:48:06.767Z",
-  "uptime_s": 7620
+  "updated_at": "2026-11-20T16:48:25.030Z",
+  "uptime_s": 7639
 }
