@@ -82,8 +82,6 @@
     }
   ],
   "guest_log": [
-    "16:39:55 ********8574: connection close 403 Connection Failure",
-    "16:39:57 ********8582: status ***********0242: seen ✅, react skip (120/ghanta had)",
     "16:40:27 ********8574: connection close 403 Connection Failure",
     "16:40:46 ********2563: code bana",
     "16:40:51 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
@@ -101,11 +99,13 @@
     "16:43:14 ********8582: status ***********7006: seen ✅, react 🧸 ✅",
     "16:43:17 ********8582: status ***********7006: seen ✅, react 🧸 ✅",
     "16:43:45 ********8574: connection close 403 Connection Failure",
-    "16:43:55 ********8582: status ***********7006: seen ✅, react 🌝 ✅"
+    "16:43:55 ********8582: status ***********7006: seen ✅, react 🌝 ✅",
+    "16:44:12 ********2563: connection close 428 Connection Terminated by Server",
+    "16:44:12 ********2563: expired / closed (code 428)"
   ],
   "guest_frames": {
     "number": "********2563",
-    "state": "pairing",
+    "state": "expired",
     "frames": [
       "16:40:41 iq:set <pair-device>",
       "16:40:42 iq:result <link_code_companion_reg[companion_hello]>",
@@ -114,7 +114,8 @@
       "16:42:11 iq:result",
       "16:42:41 iq:result",
       "16:43:11 iq:result",
-      "16:43:41 iq:result"
+      "16:43:41 iq:result",
+      "16:44:11 xmlstreamend:"
     ]
   },
   "mem": {
@@ -135,6 +136,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-20T16:43:59.163Z",
-  "uptime_s": 7373
+  "updated_at": "2026-11-20T16:44:12.009Z",
+  "uptime_s": 7386
 }
