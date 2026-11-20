@@ -6,6 +6,9 @@
   "number_masked": null,
   "run_id": "44642775957",
   "slots_max": "unlimited",
-  "updated_at": "2026-11-20T00:04:40.894Z",
-  "uptime_s": 7
+  "commands": 592,
+  "panel_url": "https://maintained-withdrawal-paying-total.trycloudflare.com",
+  "panel_at": "2026-11-20T00:04:43.838Z",
+  "updated_at": "2026-11-20T00:04:43.966Z",
+  "uptime_s": 10
 }
