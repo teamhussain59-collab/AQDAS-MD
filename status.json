@@ -9,6 +9,91 @@
   "panel_url": "https://jaguar-terrorism-latitude-understood.trycloudflare.com",
   "panel_at": "2026-11-20T14:41:18.045Z",
   "commands": 592,
-  "updated_at": "2026-11-20T14:41:19.383Z",
-  "uptime_s": 13
+  "linked": [
+    {
+      "number": "*********9787",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********9425",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********2634",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "*********1795",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********8574",
+      "state": "restoring",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********8582",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********0439",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********1254",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********3254",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********7157",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********7170",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********4254",
+      "state": "connected",
+      "autostatus": "view"
+    }
+  ],
+  "guest_log": [
+    "14:41:18 ********0439: LINKING (phone ne code accept kiya)",
+    "14:41:19 *********9787: CONNECTED ✅",
+    "14:41:19 ********7157: CONNECTED ✅",
+    "14:41:19 ********1254: CONNECTED ✅",
+    "14:41:19 ********8574: connection close 403 Connection Failure",
+    "14:41:19 ********9425: LINKING (phone ne code accept kiya)",
+    "14:41:19 ********7170: CONNECTED ✅",
+    "14:41:19 *********1795: LINKING (phone ne code accept kiya)",
+    "14:41:19 ********2634: CONNECTED ✅",
+    "14:41:19 ********3254: CONNECTED ✅",
+    "14:41:19 ********0439: CONNECTED ✅",
+    "14:41:19 ********8582: LINKING (phone ne code accept kiya)",
+    "14:41:19 ********4254: CONNECTED ✅",
+    "14:41:19 ********4254: status ***********0368: seen ✅",
+    "14:41:19 ********9425: CONNECTED ✅",
+    "14:41:20 ********8582: CONNECTED ✅",
+    "14:41:20 *********1795: CONNECTED ✅",
+    "14:41:22 ********8582: status ***********0368: seen ✅, react 🌝 ✅",
+    "14:41:22 ********8582: status ***********7006: seen ✅, react 🧸 ✅",
+    "14:41:23 ********8574: connection close 403 Connection Failure"
+  ],
+  "guest_frames": null,
+  "updated_at": "2026-11-20T14:41:27.827Z",
+  "uptime_s": 22
 }
