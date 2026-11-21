@@ -6,6 +6,9 @@
   "number_masked": null,
   "run_id": "44942831861",
   "slots_max": "unlimited",
-  "updated_at": "2026-11-21T19:48:14.610Z",
-  "uptime_s": 9
+  "commands": 592,
+  "panel_url": "https://refine-talking-anthropology-displayed.trycloudflare.com",
+  "panel_at": "2026-11-21T19:48:18.122Z",
+  "updated_at": "2026-11-21T19:48:18.961Z",
+  "uptime_s": 13
 }
