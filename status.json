@@ -77,26 +77,26 @@
     }
   ],
   "guest_log": [
-    "17:10:22 ********8582: status ***********7006: seen ✅, react 🪄 ✅",
-    "17:10:23 ********8582: status ***********7006: seen ✅, react 🎈 ✅",
-    "17:10:23 ********8582: status ***********7006: seen ✅, react 🌝 ✅",
-    "17:10:23 ********8582: status ***********7006: seen ✅, react 🧸 ✅",
-    "17:10:24 ********8582: status ***********7006: seen ✅, react 🪄 ✅",
-    "17:10:24 ********8582: status ***********7006: seen ✅, react 🪄 ✅",
-    "17:10:25 ********8582: status ***********7006: seen ✅, react 🌝 ✅",
-    "17:10:29 ********8582: status ***********7006: seen ✅, react 🎈 ✅",
-    "17:10:42 ********8582: status ***********7006: seen ✅, react 🎈 ✅",
-    "17:10:53 ********8582: status ***********7006: seen ✅, react 🌝 ✅",
-    "17:11:04 ********8582: status ***********7006: seen ✅, react 🪄 ✅",
-    "17:11:17 ********8582: status ***********7006: seen ✅, react 🧸 ✅",
-    "17:11:30 ********8582: status ***********7006: seen ✅, react 🌝 ✅",
-    "17:11:42 ********8582: status ***********7006: seen ✅, react 🪄 ✅",
     "17:12:18 ********8582: status ***********7006: seen ✅, react 🎈 ✅",
     "17:12:46 ********8582: status **********7533: seen ✅, react 🧸 ✅",
     "17:13:50 ********8582: status ***********7006: seen ✅, react 🧸 ✅",
     "17:14:50 ********4254: status ***********3985: seen ✅",
     "17:14:51 ********8582: status ***********3985: seen ✅, react 🌝 ✅",
-    "17:14:53 ********8582: status ***********7006: seen ✅, react 🧸 ✅"
+    "17:14:53 ********8582: status ***********7006: seen ✅, react 🧸 ✅",
+    "17:17:54 ********0931: connection close 500 Stream Errored (ack)",
+    "17:17:56 ********2634: connection close 500 Stream Errored (ack)",
+    "17:17:56 ********9425: connection close 500 Stream Errored (ack)",
+    "17:17:56 ********0931: CONNECTED ✅",
+    "17:17:57 ********7157: connection close 500 Stream Errored (ack)",
+    "17:17:57 ********7170: connection close 500 Stream Errored (ack)",
+    "17:18:00 ********9425: CONNECTED ✅",
+    "17:18:00 *********9787: connection close 500 Stream Errored (ack)",
+    "17:18:00 ********7170: CONNECTED ✅",
+    "17:18:00 ********2634: CONNECTED ✅",
+    "17:18:01 ********7157: CONNECTED ✅",
+    "17:18:03 *********9787: CONNECTED ✅",
+    "17:18:04 ********8582: status ***********4625: seen ✅, react 🎈 ✅",
+    "17:18:05 ********8582: status ***********7006: seen ✅, react 🧸 ✅"
   ],
   "guest_frames": null,
   "mem": {
@@ -117,6 +117,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-21T17:17:40.697Z",
-  "uptime_s": 12008
+  "updated_at": "2026-11-21T17:18:09.052Z",
+  "uptime_s": 12037
 }
