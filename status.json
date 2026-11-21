@@ -77,16 +77,6 @@
     }
   ],
   "guest_log": [
-    "21:48:17 ********8582: status ***********7006: seen ✅, react 🎈 ✅",
-    "21:49:06 ********4254: status **********6724: seen ✅",
-    "21:49:25 ********8582: status **********0232: seen ✅, react 🌝 ✅",
-    "21:52:27 ********8582: status ***********7006: seen ✅, react 🧸 ✅",
-    "21:52:29 ********8582: status ***********7006: seen ✅, react 🎈 ✅",
-    "21:56:39 ********7170: connection close 428 Connection Terminated",
-    "21:56:43 ********7170: CONNECTED ✅",
-    "22:00:33 ********8582: status **********5464: seen ✅, react 🪄 ✅",
-    "22:01:33 ********8582: status ***********7006: seen ✅, react 🎈 ✅",
-    "22:04:32 ********8582: status ***********6976: seen ✅, react 🌝 ✅",
     "22:04:32 ********8582: status ***********7006: seen ✅, react 🪄 ✅",
     "22:07:36 ********8582: status ***********7006: seen ✅, react 🧸 ✅",
     "22:07:40 ********8582: status ***********7006: seen ✅, react 🌝 ✅",
@@ -96,7 +86,17 @@
     "22:13:53 ********8582: status ***********1252: seen ✅, react 🌝 ✅",
     "22:13:53 ********8582: status ***********7006: seen ✅, react 🧸 ✅",
     "22:16:11 ********8582: status **********0965: seen ✅, react 🌝 ✅",
-    "22:17:13 ********8582: status ***********7006: seen ✅, react 🧸 ✅"
+    "22:17:13 ********8582: status ***********7006: seen ✅, react 🧸 ✅",
+    "22:18:25 ********8582: connection close 500 Stream Errored (ack)",
+    "22:18:25 ********2634: connection close 500 Stream Errored (ack)",
+    "22:18:27 ********0931: connection close 500 Stream Errored (ack)",
+    "22:18:27 ********7157: connection close 500 Stream Errored (ack)",
+    "22:18:27 *********9787: connection close 500 Stream Errored (ack)",
+    "22:18:28 ********2634: CONNECTED ✅",
+    "22:18:29 ********8582: CONNECTED ✅",
+    "22:18:29 ********0931: CONNECTED ✅",
+    "22:18:30 ********7157: CONNECTED ✅",
+    "22:18:30 *********9787: CONNECTED ✅"
   ],
   "guest_frames": null,
   "mem": {
@@ -117,6 +117,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-21T22:18:15.700Z",
-  "uptime_s": 9010
+  "updated_at": "2026-11-21T22:18:34.585Z",
+  "uptime_s": 9029
 }
