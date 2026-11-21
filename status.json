@@ -77,7 +77,6 @@
     }
   ],
   "guest_log": [
-    "17:17:56 ********0931: CONNECTED ✅",
     "17:17:57 ********7157: connection close 500 Stream Errored (ack)",
     "17:17:57 ********7170: connection close 500 Stream Errored (ack)",
     "17:18:00 ********9425: CONNECTED ✅",
@@ -96,7 +95,8 @@
     "17:19:04 ********8582: status ***********7006: seen ✅, react 🧸 ✅",
     "17:19:10 ********8582: status ***********7006: seen ✅, react 🧸 ✅",
     "17:19:14 ********8582: status ***********7006: seen ✅, react 🧸 ✅",
-    "17:19:16 ********4254: status ***********6484: seen ✅"
+    "17:19:16 ********4254: status ***********6484: seen ✅",
+    "17:19:21 ********8582: status ***********7006: seen ✅, react 🪄 ✅"
   ],
   "guest_frames": null,
   "mem": {
@@ -117,6 +117,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-21T17:19:20.258Z",
-  "uptime_s": 12108
+  "updated_at": "2026-11-21T17:19:25.274Z",
+  "uptime_s": 12113
 }
