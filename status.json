@@ -6,6 +6,9 @@
   "number_masked": null,
   "run_id": "44896033516",
   "slots_max": "unlimited",
-  "updated_at": "2026-11-21T10:48:20.170Z",
-  "uptime_s": 7
+  "panel_url": "https://graphic-oregon-trustee-hazardous.trycloudflare.com",
+  "panel_at": "2026-11-21T10:48:24.397Z",
+  "commands": 592,
+  "updated_at": "2026-11-21T10:48:25.468Z",
+  "uptime_s": 12
 }
