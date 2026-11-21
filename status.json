@@ -9,6 +9,96 @@
   "commands": 592,
   "panel_url": "https://refine-talking-anthropology-displayed.trycloudflare.com",
   "panel_at": "2026-11-21T19:48:18.122Z",
-  "updated_at": "2026-11-21T19:48:18.961Z",
-  "uptime_s": 13
+  "linked": [
+    {
+      "number": "*********9787",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********9425",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********2634",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "*********1795",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********8582",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********0931",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********0439",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********2563",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********1254",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********3254",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********7157",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********7170",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********4254",
+      "state": "connected",
+      "autostatus": "view"
+    }
+  ],
+  "guest_log": [
+    "19:48:18 ********9425: CONNECTED ✅",
+    "19:48:18 *********1795: LINKING (phone ne code accept kiya)",
+    "19:48:18 ********2563: CONNECTED ✅",
+    "19:48:18 ********7157: CONNECTED ✅",
+    "19:48:18 ********2634: CONNECTED ✅",
+    "19:48:18 ********4254: CONNECTED ✅",
+    "19:48:18 ********1254: LINKING (phone ne code accept kiya)",
+    "19:48:18 ********0439: LINKING (phone ne code accept kiya)",
+    "19:48:18 *********9787: CONNECTED ✅",
+    "19:48:18 ********7170: LINKING (phone ne code accept kiya)",
+    "19:48:18 ********0931: LINKING (phone ne code accept kiya)",
+    "19:48:18 ********8582: LINKING (phone ne code accept kiya)",
+    "19:48:19 ********3254: LINKING (phone ne code accept kiya)",
+    "19:48:19 *********1795: CONNECTED ✅",
+    "19:48:19 ********1254: CONNECTED ✅",
+    "19:48:19 ********7170: CONNECTED ✅",
+    "19:48:19 ********0439: CONNECTED ✅",
+    "19:48:19 ********0931: CONNECTED ✅",
+    "19:48:19 ********8582: CONNECTED ✅",
+    "19:48:20 ********3254: CONNECTED ✅"
+  ],
+  "guest_frames": null,
+  "updated_at": "2026-11-21T19:48:24.147Z",
+  "uptime_s": 18
 }
