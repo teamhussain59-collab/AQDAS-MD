@@ -66,11 +66,6 @@
       "autostatus": "view"
     },
     {
-      "number": "********7478",
-      "state": "linking",
-      "autostatus": "off"
-    },
-    {
       "number": "qr",
       "state": "pairing",
       "autostatus": "off"
@@ -99,25 +94,12 @@
     "11:04:47 ********7478: logged out"
   ],
   "guest_frames": {
-    "number": "********7478",
-    "state": "linking",
+    "number": "",
+    "state": "pairing",
     "frames": [
-      "11:01:14 iq:set <pair-device>",
-      "11:01:14 iq:result <link_code_companion_reg[companion_hello]>",
-      "11:01:37 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
-      "11:01:37 iq:result",
-      "11:01:44 iq:result",
-      "11:01:46 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
-      "11:01:46 iq:result",
-      "11:02:14 iq:result",
-      "11:02:28 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
-      "11:02:28 iq:result",
-      "11:02:44 iq:result",
-      "11:03:14 iq:result",
-      "11:03:44 iq:result",
-      "11:04:14 iq:get",
-      "11:04:14 iq:result",
-      "11:04:44 xmlstreamend:"
+      "11:03:21 iq:set <pair-device>",
+      "11:03:51 iq:result",
+      "11:04:21 iq:result"
     ]
   },
   "mem": {
@@ -138,6 +120,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-22T11:04:51.232Z",
-  "uptime_s": 3306
+  "updated_at": "2026-11-22T11:04:52.144Z",
+  "uptime_s": 3307
 }
