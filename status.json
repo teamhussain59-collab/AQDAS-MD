@@ -91,13 +91,13 @@
   "guest_frames": null,
   "mem": {
     "sessions": 11,
-    "free_mb": 14450,
+    "free_mb": 14419,
     "total_mb": 15982,
-    "rss_mb": 549,
-    "heap_mb": 138,
+    "rss_mb": 578,
+    "heap_mb": 161,
     "heap_limit_mb": 4144,
-    "per_session_mb": 17,
-    "room_for": 331
+    "per_session_mb": 19,
+    "room_for": 294
   },
   "channel": {
     "ok": true,
@@ -107,6 +107,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-22T08:57:20.320Z",
-  "uptime_s": 16689
+  "updated_at": "2026-11-22T08:59:19.179Z",
+  "uptime_s": 16808
 }
