@@ -9,6 +9,86 @@
   "commands": 592,
   "panel_url": "https://array-boundary-camera-ceremony.trycloudflare.com",
   "panel_at": "2026-11-22T19:41:11.895Z",
-  "updated_at": "2026-11-22T19:41:11.895Z",
-  "uptime_s": 13
+  "linked": [
+    {
+      "number": "*********9787",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********9425",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********2634",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "*********1795",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********0439",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********2563",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********1254",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********3254",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********7157",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********7170",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********4254",
+      "state": "connected",
+      "autostatus": "view"
+    }
+  ],
+  "guest_log": [
+    "19:41:08 *********9787: LINKING (phone ne code accept kiya)",
+    "19:41:08 ********7170: LINKING (phone ne code accept kiya)",
+    "19:41:08 ********0439: CONNECTED ✅",
+    "19:41:09 ********9425: LINKING (phone ne code accept kiya)",
+    "19:41:09 ********7157: CONNECTED ✅",
+    "19:41:09 *********9787: CONNECTED ✅",
+    "19:41:09 ********7170: CONNECTED ✅",
+    "19:41:09 *********1795: LINKING (phone ne code accept kiya)",
+    "19:41:09 ********1254: LINKING (phone ne code accept kiya)",
+    "19:41:09 ********4254: LINKING (phone ne code accept kiya)",
+    "19:41:09 ********9425: CONNECTED ✅",
+    "19:41:09 ********3254: LINKING (phone ne code accept kiya)",
+    "19:41:09 ********2563: LINKING (phone ne code accept kiya)",
+    "19:41:09 ********2634: LINKING (phone ne code accept kiya)",
+    "19:41:09 ********1254: CONNECTED ✅",
+    "19:41:09 ********2563: CONNECTED ✅",
+    "19:41:10 *********1795: CONNECTED ✅",
+    "19:41:10 ********3254: CONNECTED ✅",
+    "19:41:10 ********4254: CONNECTED ✅",
+    "19:41:10 ********2634: CONNECTED ✅"
+  ],
+  "guest_frames": null,
+  "updated_at": "2026-11-22T19:41:14.553Z",
+  "uptime_s": 16
 }
