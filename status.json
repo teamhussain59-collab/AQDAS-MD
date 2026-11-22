@@ -72,11 +72,6 @@
     }
   ],
   "guest_log": [
-    "05:09:25 ********2634: connection close 500 Stream Errored (ack)",
-    "05:09:28 ********2634: CONNECTED ✅",
-    "05:09:28 ********7170: CONNECTED ✅",
-    "05:09:45 ********8582: status ***********7722: seen ✅, react skip (120/ghanta had)",
-    "05:09:45 ********4254: status ***********7722: seen ✅",
     "05:10:01 ********8582: status ***********4733: seen ✅, react skip (120/ghanta had)",
     "05:10:22 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
     "05:10:22 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
@@ -91,7 +86,12 @@
     "05:16:08 ********8582: status **********7226: seen ✅, react skip (120/ghanta had)",
     "05:16:09 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
     "05:16:16 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
-    "05:16:16 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)"
+    "05:16:16 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
+    "05:16:20 ********8582: status ***********4733: seen ✅, react skip (120/ghanta had)",
+    "05:16:20 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
+    "05:16:21 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
+    "05:16:22 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
+    "05:16:23 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)"
   ],
   "guest_frames": null,
   "mem": {
@@ -112,6 +112,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-22T05:16:20.313Z",
-  "uptime_s": 3429
+  "updated_at": "2026-11-22T05:16:27.032Z",
+  "uptime_s": 3436
 }
