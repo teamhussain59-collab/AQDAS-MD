@@ -72,8 +72,6 @@
     }
   ],
   "guest_log": [
-    "10:09:54 ********3254: CONNECTED ✅",
-    "10:09:54 ********7157: CONNECTED ✅",
     "10:12:19 ********4254: status **********6198: seen ✅",
     "10:35:49 ********3254: status **********3501: seen ✅, react 🅰️ ✅",
     "10:38:59 ********4254: status ***********3985: seen ✅",
@@ -91,11 +89,13 @@
     "11:01:37 ********7478: LINKING (phone ne code accept kiya)",
     "11:04:44 ********7478: connection close 428 Connection Terminated by Server",
     "11:04:47 ********7478: connection close 401 Connection Failure",
-    "11:04:47 ********7478: logged out"
+    "11:04:47 ********7478: logged out",
+    "11:06:51 qr: connection close 428 Connection Terminated by Server",
+    "11:06:51 qr: expired / closed (code 428)"
   ],
   "guest_frames": {
     "number": "",
-    "state": "pairing",
+    "state": "expired",
     "frames": [
       "11:03:21 iq:set <pair-device>",
       "11:03:51 iq:result",
@@ -103,7 +103,8 @@
       "11:04:51 iq:result",
       "11:05:21 iq:result",
       "11:05:51 iq:result",
-      "11:06:21 iq:result"
+      "11:06:21 iq:result",
+      "11:06:51 xmlstreamend:"
     ]
   },
   "mem": {
@@ -124,6 +125,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-22T11:06:25.836Z",
-  "uptime_s": 3401
+  "updated_at": "2026-11-22T11:06:51.972Z",
+  "uptime_s": 3427
 }
