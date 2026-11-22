@@ -64,11 +64,6 @@
       "number": "********4254",
       "state": "connected",
       "autostatus": "view"
-    },
-    {
-      "number": "qr",
-      "state": "pairing",
-      "autostatus": "off"
     }
   ],
   "guest_log": [
@@ -93,20 +88,7 @@
     "11:06:51 qr: connection close 428 Connection Terminated by Server",
     "11:06:51 qr: expired / closed (code 428)"
   ],
-  "guest_frames": {
-    "number": "",
-    "state": "expired",
-    "frames": [
-      "11:03:21 iq:set <pair-device>",
-      "11:03:51 iq:result",
-      "11:04:21 iq:result",
-      "11:04:51 iq:result",
-      "11:05:21 iq:result",
-      "11:05:51 iq:result",
-      "11:06:21 iq:result",
-      "11:06:51 xmlstreamend:"
-    ]
-  },
+  "guest_frames": null,
   "mem": {
     "sessions": 12,
     "free_mb": 14392,
@@ -125,6 +107,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-22T11:06:51.972Z",
-  "uptime_s": 3427
+  "updated_at": "2026-11-22T11:06:55.973Z",
+  "uptime_s": 3431
 }
