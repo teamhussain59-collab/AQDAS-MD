@@ -72,12 +72,6 @@
     }
   ],
   "guest_log": [
-    "05:06:05 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
-    "05:06:07 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
-    "05:06:40 ********4254: status **********6724: seen ✅",
-    "05:07:24 ********8582: status ***********9319: seen ✅, react skip (120/ghanta had)",
-    "05:07:25 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
-    "05:07:59 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
     "05:07:59 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
     "05:08:06 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
     "05:08:07 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
@@ -91,7 +85,13 @@
     "05:10:01 ********8582: status ***********4733: seen ✅, react skip (120/ghanta had)",
     "05:10:22 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
     "05:10:22 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
-    "05:10:23 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)"
+    "05:10:23 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
+    "05:11:08 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
+    "05:11:09 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
+    "05:11:10 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
+    "05:11:10 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
+    "05:11:13 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)",
+    "05:11:13 ********8582: status ***********7006: seen ✅, react skip (120/ghanta had)"
   ],
   "guest_frames": null,
   "mem": {
@@ -112,6 +112,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-22T05:10:28.571Z",
-  "uptime_s": 3077
+  "updated_at": "2026-11-22T05:11:17.877Z",
+  "uptime_s": 3126
 }
