@@ -77,9 +77,6 @@
     }
   ],
   "guest_log": [
-    "10:09:54 ********1254: CONNECTED ✅",
-    "10:09:54 ********2634: CONNECTED ✅",
-    "10:09:54 *********1795: CONNECTED ✅",
     "10:09:54 ********3254: CONNECTED ✅",
     "10:09:54 ********7157: CONNECTED ✅",
     "10:12:19 ********4254: status **********6198: seen ✅",
@@ -96,15 +93,31 @@
     "10:59:58 ********2634: CONNECTED ✅",
     "11:00:01 ********7157: CONNECTED ✅",
     "11:01:19 ********7478: code bana",
-    "11:01:37 ********7478: LINKING (phone ne code accept kiya)"
+    "11:01:37 ********7478: LINKING (phone ne code accept kiya)",
+    "11:04:44 ********7478: connection close 428 Connection Terminated by Server",
+    "11:04:47 ********7478: connection close 401 Connection Failure",
+    "11:04:47 ********7478: logged out"
   ],
   "guest_frames": {
-    "number": "",
-    "state": "pairing",
+    "number": "********7478",
+    "state": "linking",
     "frames": [
-      "11:03:21 iq:set <pair-device>",
-      "11:03:51 iq:result",
-      "11:04:21 iq:result"
+      "11:01:14 iq:set <pair-device>",
+      "11:01:14 iq:result <link_code_companion_reg[companion_hello]>",
+      "11:01:37 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
+      "11:01:37 iq:result",
+      "11:01:44 iq:result",
+      "11:01:46 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
+      "11:01:46 iq:result",
+      "11:02:14 iq:result",
+      "11:02:28 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
+      "11:02:28 iq:result",
+      "11:02:44 iq:result",
+      "11:03:14 iq:result",
+      "11:03:44 iq:result",
+      "11:04:14 iq:get",
+      "11:04:14 iq:result",
+      "11:04:44 xmlstreamend:"
     ]
   },
   "mem": {
@@ -125,6 +138,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-22T11:04:25.835Z",
-  "uptime_s": 3281
+  "updated_at": "2026-11-22T11:04:47.448Z",
+  "uptime_s": 3303
 }
