@@ -67,7 +67,6 @@
     }
   ],
   "guest_log": [
-    "13:50:39 *********1795: LINKING (phone ne code accept kiya)",
     "13:50:39 ********0439: CONNECTED ✅",
     "13:50:39 ********9425: CONNECTED ✅",
     "13:50:39 ********1254: LINKING (phone ne code accept kiya)",
@@ -86,9 +85,10 @@
     "13:50:40 ********2634: CONNECTED ✅",
     "13:50:40 ********3254: CONNECTED ✅",
     "13:50:40 ********7157: CONNECTED ✅",
-    "13:50:40 *********9787: CONNECTED ✅"
+    "13:50:40 *********9787: CONNECTED ✅",
+    "13:50:48 ********4254: status **********9711: seen ✅"
   ],
   "guest_frames": null,
-  "updated_at": "2026-11-22T13:50:44.928Z",
-  "uptime_s": 13
+  "updated_at": "2026-11-22T13:50:52.984Z",
+  "uptime_s": 21
 }
