@@ -72,7 +72,6 @@
     }
   ],
   "guest_log": [
-    "04:19:23 ********2563: CONNECTED ✅",
     "04:19:23 ********4254: LINKING (phone ne code accept kiya)",
     "04:19:23 ********2634: LINKING (phone ne code accept kiya)",
     "04:19:23 ********8582: CONNECTED ✅",
@@ -91,9 +90,10 @@
     "04:19:25 ********8582: status ***********7006: seen ✅, react 🪄 ✅",
     "04:19:26 ********8582: status **********2544: seen ✅, react 🎈 ✅",
     "04:19:26 ********8582: status ***********7006: seen ✅, react 🌝 ✅",
-    "04:19:27 ********8582: status **********2544: seen ✅, react 🎈 ✅"
+    "04:19:27 ********8582: status **********2544: seen ✅, react 🎈 ✅",
+    "04:19:51 ********4254: status **********6724: seen ✅"
   ],
   "guest_frames": null,
-  "updated_at": "2026-11-22T04:19:31.325Z",
-  "uptime_s": 20
+  "updated_at": "2026-11-22T04:19:55.146Z",
+  "uptime_s": 44
 }
