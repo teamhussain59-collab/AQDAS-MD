@@ -69,6 +69,11 @@
       "number": "********7478",
       "state": "linking",
       "autostatus": "off"
+    },
+    {
+      "number": "qr",
+      "state": "pairing",
+      "autostatus": "off"
     }
   ],
   "guest_log": [
@@ -94,21 +99,10 @@
     "11:01:37 ********7478: LINKING (phone ne code accept kiya)"
   ],
   "guest_frames": {
-    "number": "********7478",
-    "state": "linking",
+    "number": "",
+    "state": "pairing",
     "frames": [
-      "11:01:14 iq:set <pair-device>",
-      "11:01:14 iq:result <link_code_companion_reg[companion_hello]>",
-      "11:01:37 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
-      "11:01:37 iq:result",
-      "11:01:44 iq:result",
-      "11:01:46 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
-      "11:01:46 iq:result",
-      "11:02:14 iq:result",
-      "11:02:28 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
-      "11:02:28 iq:result",
-      "11:02:44 iq:result",
-      "11:03:14 iq:result"
+      "11:03:21 iq:set <pair-device>"
     ]
   },
   "mem": {
@@ -129,6 +123,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-22T11:03:18.068Z",
-  "uptime_s": 3213
+  "updated_at": "2026-11-22T11:03:25.969Z",
+  "uptime_s": 3221
 }
