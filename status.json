@@ -6,6 +6,9 @@
   "number_masked": null,
   "run_id": "45242694387",
   "slots_max": "unlimited",
-  "updated_at": "2026-11-23T18:51:28.020Z",
-  "uptime_s": 6
+  "panel_url": "https://near-thesis-forestry-ended.trycloudflare.com",
+  "panel_at": "2026-11-23T18:51:32.388Z",
+  "commands": 593,
+  "updated_at": "2026-11-23T18:51:33.593Z",
+  "uptime_s": 12
 }
