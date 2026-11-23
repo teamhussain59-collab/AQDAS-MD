@@ -69,16 +69,9 @@
       "number": "********7170",
       "state": "connected",
       "autostatus": "off"
-    },
-    {
-      "number": "********4254",
-      "state": "connected",
-      "autostatus": "view"
     }
   ],
   "guest_log": [
-    "13:17:59 ********7157: connection close 500 Stream Errored (ack)",
-    "13:18:00 ********7170: connection close 500 Stream Errored (ack)",
     "13:18:00 ********2634: connection close 500 Stream Errored (ack)",
     "13:18:02 ********7157: CONNECTED ✅",
     "13:18:02 ********7170: CONNECTED ✅",
@@ -96,7 +89,9 @@
     "13:31:11 *********9787: CONNECTED ✅",
     "13:37:51 ********4254: status ***********9002: seen ✅",
     "13:38:06 ********4254: status ***********9024: seen ✅",
-    "13:38:41 ********4254: status ***********4940: seen ✅"
+    "13:38:41 ********4254: status ***********4940: seen ✅",
+    "13:43:29 ********4254: connection close 401 Stream Errored (conflict)",
+    "13:43:30 ********4254: logged out"
   ],
   "guest_frames": null,
   "mem": {
@@ -117,6 +112,6 @@
     "opted_in": 4,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-23T13:42:47.017Z",
-  "uptime_s": 10506
+  "updated_at": "2026-11-23T13:43:34.377Z",
+  "uptime_s": 10554
 }
