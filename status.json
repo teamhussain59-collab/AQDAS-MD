@@ -69,11 +69,6 @@
       "number": "********0206",
       "state": "connected",
       "autostatus": "off"
-    },
-    {
-      "number": "********6325",
-      "state": "linking",
-      "autostatus": "off"
     }
   ],
   "guest_log": [
@@ -99,24 +94,17 @@
     "06:08:09 ********6325: logged out"
   ],
   "guest_frames": {
-    "number": "********6325",
-    "state": "linking",
+    "number": "********0206",
+    "state": "connected",
     "frames": [
-      "06:04:33 iq:set <pair-device>",
-      "06:04:33 iq:result <link_code_companion_reg[companion_hello]>",
-      "06:05:02 iq:result",
-      "06:05:16 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
-      "06:05:16 iq:result",
-      "06:05:16 notification:link_code_companion_reg <link_code_companion_reg[refresh_code]>",
-      "06:05:32 iq:result",
-      "06:06:02 iq:get",
-      "06:06:02 iq:result",
-      "06:06:32 iq:result",
-      "06:07:02 iq:get",
-      "06:07:02 iq:result",
-      "06:07:32 iq:get",
-      "06:07:32 iq:result",
-      "06:08:02 xmlstreamend:"
+      "05:57:02 iq:set <pair-device>",
+      "05:57:03 iq:result <link_code_companion_reg[companion_hello]>",
+      "05:57:32 iq:result",
+      "05:57:33 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
+      "05:57:33 iq:result",
+      "05:57:35 iq:set <pair-success>",
+      "05:57:36 stream:error: code=515",
+      "05:57:36 xmlstreamend:"
     ]
   },
   "mem": {
@@ -137,6 +125,6 @@
     "opted_in": 4,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-23T06:08:09.905Z",
-  "uptime_s": 4257
+  "updated_at": "2026-11-23T06:08:13.906Z",
+  "uptime_s": 4261
 }
