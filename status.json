@@ -9,6 +9,91 @@
   "commands": 592,
   "panel_url": "https://defensive-raymond-vision-efficiency.trycloudflare.com",
   "panel_at": "2026-11-23T16:57:33.321Z",
-  "updated_at": "2026-11-23T16:57:33.815Z",
-  "uptime_s": 13
+  "linked": [
+    {
+      "number": "*********9787",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********9425",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********2634",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "*********1795",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********0206",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********0439",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********6325",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********2563",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********1254",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********3254",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********7157",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********7170",
+      "state": "connected",
+      "autostatus": "off"
+    }
+  ],
+  "guest_log": [
+    "16:57:32 ********3254: LINKING (phone ne code accept kiya)",
+    "16:57:32 *********1795: LINKING (phone ne code accept kiya)",
+    "16:57:32 ********0206: CONNECTED ✅",
+    "16:57:32 ********7157: CONNECTED ✅",
+    "16:57:32 ********3254: CONNECTED ✅",
+    "16:57:32 ********2563: LINKING (phone ne code accept kiya)",
+    "16:57:32 ********1254: LINKING (phone ne code accept kiya)",
+    "16:57:32 ********6325: LINKING (phone ne code accept kiya)",
+    "16:57:32 ********9425: LINKING (phone ne code accept kiya)",
+    "16:57:32 ********2634: LINKING (phone ne code accept kiya)",
+    "16:57:32 *********9787: LINKING (phone ne code accept kiya)",
+    "16:57:33 ********7170: LINKING (phone ne code accept kiya)",
+    "16:57:33 *********1795: CONNECTED ✅",
+    "16:57:33 ********2563: CONNECTED ✅",
+    "16:57:33 ********1254: CONNECTED ✅",
+    "16:57:33 ********6325: CONNECTED ✅",
+    "16:57:33 ********9425: CONNECTED ✅",
+    "16:57:33 *********9787: CONNECTED ✅",
+    "16:57:33 ********7170: CONNECTED ✅",
+    "16:57:33 ********2634: CONNECTED ✅"
+  ],
+  "guest_frames": null,
+  "updated_at": "2026-11-23T16:57:37.842Z",
+  "uptime_s": 17
 }
