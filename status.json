@@ -6,6 +6,9 @@
   "number_masked": null,
   "run_id": "45114783890",
   "slots_max": "unlimited",
-  "updated_at": "2026-11-23T04:57:18.769Z",
-  "uptime_s": 6
+  "panel_url": "https://frontier-paper-button-donna.trycloudflare.com",
+  "panel_at": "2026-11-23T04:57:23.269Z",
+  "commands": 592,
+  "updated_at": "2026-11-23T04:57:24.331Z",
+  "uptime_s": 12
 }
