@@ -77,12 +77,11 @@
     },
     {
       "number": "********1482",
-      "state": "pairing",
+      "state": "linking",
       "autostatus": "off"
     }
   ],
   "guest_log": [
-    "12:27:56 ********7157: connection close 500 Stream Errored (ack)",
     "12:27:57 ********7170: connection close 500 Stream Errored (ack)",
     "12:27:59 ********7157: CONNECTED ✅",
     "12:27:59 ********7170: CONNECTED ✅",
@@ -101,15 +100,18 @@
     "12:57:45 ********1254: status ***********5227: seen ✅, react 🅰️ ✅",
     "13:03:05 ********1482: code bana",
     "13:03:16 ********4254: status ***********5086: seen ✅",
-    "13:03:51 ********1482: code bana"
+    "13:03:51 ********1482: code bana",
+    "13:04:27 ********1482: LINKING (phone ne code accept kiya)"
   ],
   "guest_frames": {
     "number": "********1482",
-    "state": "pairing",
+    "state": "linking",
     "frames": [
       "13:03:46 iq:set <pair-device>",
       "13:03:46 iq:result <link_code_companion_reg[companion_hello]>",
-      "13:04:16 iq:result"
+      "13:04:16 iq:result",
+      "13:04:27 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
+      "13:04:27 iq:result"
     ]
   },
   "mem": {
@@ -130,6 +132,6 @@
     "opted_in": 4,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-23T13:04:20.357Z",
-  "uptime_s": 8200
+  "updated_at": "2026-11-23T13:04:31.171Z",
+  "uptime_s": 8211
 }
