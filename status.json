@@ -99,6 +99,16 @@
     "10:47:53 ********0206: CONNECTED ✅"
   ],
   "guest_frames": null,
-  "updated_at": "2026-11-23T10:47:57.266Z",
-  "uptime_s": 17
+  "mem": {
+    "sessions": 13,
+    "free_mb": 14859,
+    "total_mb": 15983,
+    "rss_mb": 189,
+    "heap_mb": 44,
+    "heap_limit_mb": 4144,
+    "per_session_mb": 15,
+    "room_for": 347
+  },
+  "updated_at": "2026-11-23T10:48:46.989Z",
+  "uptime_s": 66
 }
