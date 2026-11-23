@@ -6,6 +6,9 @@
   "number_masked": null,
   "run_id": "45218663847",
   "slots_max": "unlimited",
-  "updated_at": "2026-11-23T16:38:16.768Z",
-  "uptime_s": 8
+  "commands": 592,
+  "panel_url": "https://publications-leaving-shift-golden.trycloudflare.com",
+  "panel_at": "2026-11-23T16:38:21.264Z",
+  "updated_at": "2026-11-23T16:38:22.201Z",
+  "uptime_s": 13
 }
