@@ -9,6 +9,91 @@
   "commands": 593,
   "panel_url": "https://logged-dos-pathology-reasonably.trycloudflare.com",
   "panel_at": "2026-11-24T00:41:58.689Z",
-  "updated_at": "2026-11-24T00:41:59.608Z",
-  "uptime_s": 12
+  "linked": [
+    {
+      "number": "*********9787",
+      "state": "restoring",
+      "autostatus": "off"
+    },
+    {
+      "number": "********9425",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********2634",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "*********1795",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********0206",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********0439",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********6325",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********2563",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********1254",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********3254",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********7157",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********7170",
+      "state": "connected",
+      "autostatus": "off"
+    }
+  ],
+  "guest_log": [
+    "00:41:58 ********0439: CONNECTED ✅",
+    "00:41:58 ********2563: CONNECTED ✅",
+    "00:41:58 ********3254: CONNECTED ✅",
+    "00:41:58 ********7170: LINKING (phone ne code accept kiya)",
+    "00:41:58 ********1254: LINKING (phone ne code accept kiya)",
+    "00:41:58 ********9425: LINKING (phone ne code accept kiya)",
+    "00:41:58 *********1795: LINKING (phone ne code accept kiya)",
+    "00:41:58 ********6325: LINKING (phone ne code accept kiya)",
+    "00:41:58 ********0206: LINKING (phone ne code accept kiya)",
+    "00:41:58 ********7157: LINKING (phone ne code accept kiya)",
+    "00:41:58 ********2634: LINKING (phone ne code accept kiya)",
+    "00:41:59 ********7170: CONNECTED ✅",
+    "00:41:59 ********6325: CONNECTED ✅",
+    "00:41:59 ********9425: CONNECTED ✅",
+    "00:41:59 ********1254: CONNECTED ✅",
+    "00:41:59 ********0206: CONNECTED ✅",
+    "00:41:59 *********1795: CONNECTED ✅",
+    "00:41:59 ********7157: CONNECTED ✅",
+    "00:41:59 ********2634: CONNECTED ✅",
+    "00:42:02 *********9787: connection close 403 Connection Failure"
+  ],
+  "guest_frames": null,
+  "updated_at": "2026-11-24T00:42:06.302Z",
+  "uptime_s": 19
 }
