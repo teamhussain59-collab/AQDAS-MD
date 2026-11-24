@@ -1,5 +1,5 @@
 // ═══════════════════════════════════════════════════════════════════
-//  AQDAS MD — View Once Bypass (.vv2) - Fixed Version
+//  AQDAS MD — View Once Bypass (.vv2) - Bulletproof Version
 //  Command: .vv2 (Reply to any Image/Video/Audio)
 // ═══════════════════════════════════════════════════════════════════
 
@@ -11,43 +11,53 @@ export default {
   category: 'tools',
 
   async run(ctx) {
-    // 1. Check karein ke kya user ne kisi message ko reply kiya hai
     if (!ctx.quoted) {
       return ctx.reply('⚠️ *Kaise use karein?*\n\nKisi bhi *View Once* (One-time) photo, video ya audio ko reply karein aur `.vv2` likh kar bhejein.');
     }
 
-    // 2. Message object nikaalein (Handler ke hisaab se)
-    let msgObj = ctx.quoted.message || ctx.quoted;
-    let type = Object.keys(msgObj)[0];
+    let quoted = ctx.quoted;
+    let innerMsg = quoted.message;
 
-    // 3. Agar View Once ka wrapper laga hua hai, toh usko kholain
-    if (type === 'viewOnceMessage' || type === 'viewOnceMessageV2' || type === 'viewOnceMessageV2Extension') {
-        msgObj = msgObj[type].message;
-        type = Object.keys(msgObj)[0];
+    // 1. Har tarah ke View Once wrapper ko kholain (Unwrap)
+    if (innerMsg.viewOnceMessageV2) {
+        innerMsg = innerMsg.viewOnceMessageV2.message;
+    } else if (innerMsg.viewOnceMessageV2Extension) {
+        innerMsg = innerMsg.viewOnceMessageV2Extension.message;
+    } else if (innerMsg.viewOnceMessage) {
+        innerMsg = innerMsg.viewOnceMessage.message;
     }
 
-    // 4. Check karein ke ye Image, Video ya Audio hai
+    let type = Object.keys(innerMsg)[0];
+
+    // 2. Check karein ke valid media hai ya nahi
     if (type !== 'imageMessage' && type !== 'videoMessage' && type !== 'audioMessage') {
-        return ctx.reply('❌ Ye koi Photo, Video ya Audio nahi hai. Sahi message ko reply karke `.vv2` bhejein.');
+        return ctx.reply('❌ Ye koi Photo, Video ya Audio nahi hai. Sahi message ko reply karein.');
     }
 
     try {
-        // Process shuru hone ka reaction lagayein
         await ctx.react('⏳');
 
-        // 5. Media Download Karein
+        // 3. Exact object banayein jo Baileys ko chahiye
+        const msgToDownload = {
+            key: quoted.key,
+            message: innerMsg
+        };
+
+        // 4. Media Download karein (Bina kisi waLogger error ke)
         const buffer = await downloadMediaMessage(
-            { key: ctx.quoted.key, message: msgObj }, // Asli message object pass karein
-            'buffer',
-            {},
-            { reuploadRequest: ctx.sock.updateMediaMessage }
+            msgToDownload, 
+            'buffer', 
+            {}, 
+            { 
+                logger: console, // Logger error fix
+                reuploadRequest: ctx.sock.updateMediaMessage 
+            }
         );
 
-        if (!buffer) throw new Error("Media download fail");
+        if (!buffer || buffer.length === 0) throw new Error("File download fail ho gayi.");
 
-        // 6. Media ka payload taiyar karein
+        // 5. Media wapas bhejein
         let payload = {};
-        
         if (type === 'imageMessage') {
             payload = { image: buffer, caption: '👁️ *View Once Photo Saved!*\n\n_Powered by AQDAS MD_' };
         } else if (type === 'videoMessage') {
@@ -56,16 +66,19 @@ export default {
             payload = { audio: buffer, mimetype: 'audio/mp4' };
         }
 
-        // 7. Media wapas bhej dein
         await ctx.sock.sendMessage(ctx.jid, payload);
-        
-        // Success reaction
         await ctx.react('✅');
 
     } catch (error) {
         console.error('[VV2 Error]:', error);
         await ctx.react('❌');
-        return ctx.reply(`⚠️ Media download karne mein error aya: ${error.message}`);
+        
+        // Agar URL missing ka error aaye toh saaf message dein
+        if (error.message.includes('No valid media URL') || error.message.includes('directPath')) {
+            return ctx.reply('⚠️ *Download Fail:* WhatsApp ne is media ka link block kar diya hai ya media expire ho gayi hai.\n\n👉 Media aane ke *foran baad* `.vv2` reply karein, thodi der baad WhatsApp link block kar deta hai.');
+        }
+        
+        return ctx.reply(`⚠️ Media download fail: ${error.message}`);
     }
   }
 };
