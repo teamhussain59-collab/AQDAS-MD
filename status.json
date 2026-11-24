@@ -74,10 +74,14 @@
       "number": "********4254",
       "state": "connected",
       "autostatus": "view+react"
+    },
+    {
+      "number": "********1013",
+      "state": "pairing",
+      "autostatus": "off"
     }
   ],
   "guest_log": [
-    "05:23:40 *********9787: connection close 403 Connection Failure",
     "05:24:13 *********9787: connection close 403 Connection Failure",
     "05:24:47 *********9787: connection close 403 Connection Failure",
     "05:25:22 *********9787: connection close 403 Connection Failure",
@@ -96,9 +100,17 @@
     "05:31:11 ********1013: connection close 428 Connection Terminated by Server",
     "05:31:18 ********1013: connection close 401 Connection Failure",
     "05:31:18 ********1013: logged out",
-    "05:31:19 *********9787: connection close 403 Connection Failure"
+    "05:31:19 *********9787: connection close 403 Connection Failure",
+    "05:31:50 *********9787: connection close 403 Connection Failure"
   ],
-  "guest_frames": null,
+  "guest_frames": {
+    "number": "********1013",
+    "state": "pairing",
+    "frames": [
+      "05:31:50 iq:set <pair-device>",
+      "05:31:50 iq:result <link_code_companion_reg[companion_hello]>"
+    ]
+  },
   "mem": {
     "sessions": 14,
     "free_mb": 14511,
@@ -117,6 +129,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-24T05:31:23.956Z",
-  "uptime_s": 6688
+  "updated_at": "2026-11-24T05:31:54.812Z",
+  "uptime_s": 6719
 }
