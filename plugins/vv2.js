@@ -1,6 +1,6 @@
 // ═══════════════════════════════════════════════════════════════════
-//  AQDAS MD — View Once Bypass (.vv2)
-//  Command: .vv2 (Reply to any View Once Image/Video/Audio)
+//  AQDAS MD — View Once Bypass (.vv2) - Fixed Version
+//  Command: .vv2 (Reply to any Image/Video/Audio)
 // ═══════════════════════════════════════════════════════════════════
 
 import { downloadMediaMessage } from '@whiskeysockets/baileys';
@@ -11,32 +11,33 @@ export default {
   category: 'tools',
 
   async run(ctx) {
-    // Check karein ke kya user ne kisi message ko reply kiya hai
+    // 1. Check karein ke kya user ne kisi message ko reply kiya hai
     if (!ctx.quoted) {
       return ctx.reply('⚠️ *Kaise use karein?*\n\nKisi bhi *View Once* (One-time) photo, video ya audio ko reply karein aur `.vv2` likh kar bhejein.');
     }
 
-    const quotedMsg = ctx.quoted.message;
+    // 2. Message object nikaalein (Handler ke hisaab se)
+    let msgObj = ctx.quoted.message || ctx.quoted;
+    let type = Object.keys(msgObj)[0];
 
-    // View Once message ka type check karein (Baileys V2 formats)
-    const type = Object.keys(quotedMsg)[0];
-    
-    // Agar ye view once nahi hai toh error dein
-    if (type !== 'viewOnceMessageV2' && type !== 'viewOnceMessageV2Extension' && type !== 'viewOnceMessage') {
-        return ctx.reply('❌ Ye koi View Once message nahi hai. Sahi message ko reply karke `.vv2` bhejein.');
+    // 3. Agar View Once ka wrapper laga hua hai, toh usko kholain
+    if (type === 'viewOnceMessage' || type === 'viewOnceMessageV2' || type === 'viewOnceMessageV2Extension') {
+        msgObj = msgObj[type].message;
+        type = Object.keys(msgObj)[0];
+    }
+
+    // 4. Check karein ke ye Image, Video ya Audio hai
+    if (type !== 'imageMessage' && type !== 'videoMessage' && type !== 'audioMessage') {
+        return ctx.reply('❌ Ye koi Photo, Video ya Audio nahi hai. Sahi message ko reply karke `.vv2` bhejein.');
     }
 
     try {
         // Process shuru hone ka reaction lagayein
         await ctx.react('⏳');
 
-        // Asli media message nikaalein
-        const innerMsg = quotedMsg[type].message;
-        const mediaType = Object.keys(innerMsg)[0];
-
-        // Media download karein
+        // 5. Media Download Karein
         const buffer = await downloadMediaMessage(
-            { key: ctx.quoted.key, message: innerMsg },
+            { key: ctx.quoted.key, message: msgObj }, // Asli message object pass karein
             'buffer',
             {},
             { reuploadRequest: ctx.sock.updateMediaMessage }
@@ -44,20 +45,18 @@ export default {
 
         if (!buffer) throw new Error("Media download fail");
 
-        // Media ka payload taiyar karein (Image, Video, Audio)
+        // 6. Media ka payload taiyar karein
         let payload = {};
         
-        if (mediaType === 'imageMessage') {
-            payload = { image: buffer, caption: '👁️ *View Once Image Saved!*\n\n_Powered by AQDAS MD_' };
-        } else if (mediaType === 'videoMessage') {
+        if (type === 'imageMessage') {
+            payload = { image: buffer, caption: '👁️ *View Once Photo Saved!*\n\n_Powered by AQDAS MD_' };
+        } else if (type === 'videoMessage') {
             payload = { video: buffer, caption: '👁️ *View Once Video Saved!*\n\n_Powered by AQDAS MD_' };
-        } else if (mediaType === 'audioMessage') {
+        } else if (type === 'audioMessage') {
             payload = { audio: buffer, mimetype: 'audio/mp4' };
-        } else {
-            return ctx.reply('❌ Ye media type support nahi karta.');
         }
 
-        // Media wapas bhej dein
+        // 7. Media wapas bhej dein
         await ctx.sock.sendMessage(ctx.jid, payload);
         
         // Success reaction
