@@ -77,7 +77,6 @@
     }
   ],
   "guest_log": [
-    "05:38:24 *********9787: connection close 403 Connection Failure",
     "05:38:40 ********6254: LINKING (phone ne code accept kiya)",
     "05:38:58 *********9787: connection close 403 Connection Failure",
     "05:38:59 ********7170: connection close 500 Stream Errored (ack)",
@@ -96,7 +95,8 @@
     "05:41:41 ********6254: connection close 428 Connection Terminated by Server",
     "05:41:46 ********6254: connection close 401 Connection Failure",
     "05:41:46 ********6254: logged out",
-    "05:41:48 *********9787: connection close 403 Connection Failure"
+    "05:41:48 *********9787: connection close 403 Connection Failure",
+    "05:42:19 *********9787: connection close 403 Connection Failure"
   ],
   "guest_frames": null,
   "mem": {
@@ -117,6 +117,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-24T05:42:01.162Z",
-  "uptime_s": 7325
+  "updated_at": "2026-11-24T05:42:23.230Z",
+  "uptime_s": 7347
 }
