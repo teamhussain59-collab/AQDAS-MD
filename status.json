@@ -82,7 +82,6 @@
     }
   ],
   "guest_log": [
-    "05:22:04 *********9787: connection close 403 Connection Failure",
     "05:22:16 ********4254: status ***********6454: seen ✅, react 🅰️ ✅",
     "05:22:38 *********9787: connection close 403 Connection Failure",
     "05:23:09 *********9787: connection close 403 Connection Failure",
@@ -101,7 +100,8 @@
     "05:29:12 *********9787: connection close 403 Connection Failure",
     "05:29:46 *********9787: connection close 403 Connection Failure",
     "05:30:17 *********9787: connection close 403 Connection Failure",
-    "05:30:49 *********9787: connection close 403 Connection Failure"
+    "05:30:49 *********9787: connection close 403 Connection Failure",
+    "05:31:11 ********1013: connection close 428 Connection Terminated by Server"
   ],
   "guest_frames": {
     "number": "********1013",
@@ -120,7 +120,8 @@
       "05:29:49 iq:result",
       "05:30:11 iq:result",
       "05:30:41 iq:get",
-      "05:30:41 iq:result"
+      "05:30:41 iq:result",
+      "05:31:11 xmlstreamend:"
     ]
   },
   "mem": {
@@ -141,6 +142,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-24T05:30:53.366Z",
-  "uptime_s": 6658
+  "updated_at": "2026-11-24T05:31:15.969Z",
+  "uptime_s": 6680
 }
