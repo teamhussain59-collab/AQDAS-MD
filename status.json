@@ -6,6 +6,9 @@
   "number_masked": null,
   "run_id": "45337218049",
   "slots_max": "unlimited",
-  "updated_at": "2026-11-24T06:00:45.819Z",
-  "uptime_s": 6
+  "panel_url": "https://pmid-effectively-shot-parcel.trycloudflare.com",
+  "panel_at": "2026-11-24T06:00:50.261Z",
+  "commands": 594,
+  "updated_at": "2026-11-24T06:00:51.389Z",
+  "uptime_s": 12
 }
