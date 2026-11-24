@@ -64,11 +64,14 @@
       "number": "********7170",
       "state": "connected",
       "autostatus": "off"
+    },
+    {
+      "number": "********4254",
+      "state": "pairing",
+      "autostatus": "off"
     }
   ],
   "guest_log": [
-    "11:51:15 ********7157: CONNECTED ✅",
-    "11:51:15 ********3254: CONNECTED ✅",
     "12:05:29 ********4254: status ***********9445: seen ✅, react 🅰️ ✅",
     "12:05:59 ********4254: status **********6724: seen ✅, react 🅰️ ✅",
     "12:06:21 ********4254: status **********6724: seen ✅, react 🅰️ ✅",
@@ -86,9 +89,18 @@
     "12:23:18 ********1254: status ***********0399: seen ✅, react 🅰️ ✅",
     "12:23:53 ********6325: status ***********5165: seen ✅, react 😘 ✅",
     "12:24:45 ********4254: connection close 401 Stream Errored (conflict)",
-    "12:24:45 ********4254: logged out"
+    "12:24:45 ********4254: logged out",
+    "12:25:39 ********3254: status **********6521: seen ✅, react 🅰️ ✅",
+    "12:25:39 ********1254: status **********6521: seen ✅, react 🅰️ ✅"
   ],
-  "guest_frames": null,
+  "guest_frames": {
+    "number": "********4254",
+    "state": "pairing",
+    "frames": [
+      "12:25:39 iq:set <pair-device>",
+      "12:25:39 iq:result <link_code_companion_reg[companion_hello]>"
+    ]
+  },
   "mem": {
     "sessions": 12,
     "free_mb": 14798,
@@ -107,6 +119,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-24T12:25:11.275Z",
-  "uptime_s": 2046
+  "updated_at": "2026-11-24T12:25:43.415Z",
+  "uptime_s": 2078
 }
