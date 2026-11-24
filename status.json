@@ -82,8 +82,6 @@
     }
   ],
   "guest_log": [
-    "05:37:19 *********9787: connection close 403 Connection Failure",
-    "05:37:51 *********9787: connection close 403 Connection Failure",
     "05:38:16 ********6254: code bana",
     "05:38:24 *********9787: connection close 403 Connection Failure",
     "05:38:40 ********6254: LINKING (phone ne code accept kiya)",
@@ -101,7 +99,9 @@
     "05:40:39 *********9787: connection close 403 Connection Failure",
     "05:41:13 *********9787: connection close 403 Connection Failure",
     "05:41:19 ********1254: status ***********6514: seen ✅, react 🅰️ ✅",
-    "05:41:41 ********6254: connection close 428 Connection Terminated by Server"
+    "05:41:41 ********6254: connection close 428 Connection Terminated by Server",
+    "05:41:46 ********6254: connection close 401 Connection Failure",
+    "05:41:46 ********6254: logged out"
   ],
   "guest_frames": {
     "number": "********6254",
@@ -140,6 +140,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-24T05:41:45.239Z",
-  "uptime_s": 7309
+  "updated_at": "2026-11-24T05:41:46.804Z",
+  "uptime_s": 7311
 }
