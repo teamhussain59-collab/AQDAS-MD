@@ -9,6 +9,91 @@
   "commands": 594,
   "panel_url": "https://teachers-institute-cruises-officials.trycloudflare.com",
   "panel_at": "2026-11-24T22:37:27.379Z",
-  "updated_at": "2026-11-24T22:37:27.381Z",
-  "uptime_s": 10
+  "linked": [
+    {
+      "number": "********9425",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********2634",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "*********1795",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********0206",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********0439",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********6325",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********2563",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********1254",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********3254",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********7157",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********7170",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********4254",
+      "state": "connected",
+      "autostatus": "view+react"
+    }
+  ],
+  "guest_log": [
+    "22:37:26 ********7170: LINKING (phone ne code accept kiya)",
+    "22:37:26 ********7157: CONNECTED ✅",
+    "22:37:26 ********3254: LINKING (phone ne code accept kiya)",
+    "22:37:27 ********1254: LINKING (phone ne code accept kiya)",
+    "22:37:27 ********9425: CONNECTED ✅",
+    "22:37:27 *********1795: CONNECTED ✅",
+    "22:37:27 ********6325: CONNECTED ✅",
+    "22:37:27 ********7170: CONNECTED ✅",
+    "22:37:27 ********2563: LINKING (phone ne code accept kiya)",
+    "22:37:27 ********1254: CONNECTED ✅",
+    "22:37:27 ********0206: LINKING (phone ne code accept kiya)",
+    "22:37:27 ********4254: LINKING (phone ne code accept kiya)",
+    "22:37:27 ********3254: CONNECTED ✅",
+    "22:37:27 ********0439: LINKING (phone ne code accept kiya)",
+    "22:37:27 ********2634: LINKING (phone ne code accept kiya)",
+    "22:37:27 ********2563: CONNECTED ✅",
+    "22:37:27 ********0439: CONNECTED ✅",
+    "22:37:27 ********0206: CONNECTED ✅",
+    "22:37:27 ********4254: CONNECTED ✅",
+    "22:37:28 ********2634: CONNECTED ✅"
+  ],
+  "guest_frames": null,
+  "updated_at": "2026-11-24T22:37:32.424Z",
+  "uptime_s": 15
 }
