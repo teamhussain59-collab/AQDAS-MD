@@ -9,6 +9,91 @@
   "commands": 593,
   "panel_url": "https://omaha-lens-educators-aviation.trycloudflare.com",
   "panel_at": "2026-11-24T02:19:20.251Z",
-  "updated_at": "2026-11-24T02:19:21.155Z",
-  "uptime_s": 11
+  "linked": [
+    {
+      "number": "*********9787",
+      "state": "restoring",
+      "autostatus": "off"
+    },
+    {
+      "number": "********9425",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********2634",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "*********1795",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********0206",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********0439",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********6325",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********2563",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********1254",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********3254",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********7157",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********7170",
+      "state": "connected",
+      "autostatus": "off"
+    }
+  ],
+  "guest_log": [
+    "02:19:20 ********9425: LINKING (phone ne code accept kiya)",
+    "02:19:20 *********1795: LINKING (phone ne code accept kiya)",
+    "02:19:20 ********0206: LINKING (phone ne code accept kiya)",
+    "02:19:20 ********0439: CONNECTED ✅",
+    "02:19:20 ********6325: CONNECTED ✅",
+    "02:19:20 ********1254: CONNECTED ✅",
+    "02:19:20 ********9425: CONNECTED ✅",
+    "02:19:20 ********7157: LINKING (phone ne code accept kiya)",
+    "02:19:20 *********1795: CONNECTED ✅",
+    "02:19:20 ********0206: CONNECTED ✅",
+    "02:19:21 ********2563: LINKING (phone ne code accept kiya)",
+    "02:19:21 ********7170: LINKING (phone ne code accept kiya)",
+    "02:19:21 ********7157: CONNECTED ✅",
+    "02:19:21 ********2634: LINKING (phone ne code accept kiya)",
+    "02:19:21 ********3254: LINKING (phone ne code accept kiya)",
+    "02:19:21 ********2563: CONNECTED ✅",
+    "02:19:21 ********7170: CONNECTED ✅",
+    "02:19:22 ********2634: CONNECTED ✅",
+    "02:19:22 ********3254: CONNECTED ✅",
+    "02:19:23 *********9787: connection close 403 Connection Failure"
+  ],
+  "guest_frames": null,
+  "updated_at": "2026-11-24T02:19:27.479Z",
+  "uptime_s": 17
 }
