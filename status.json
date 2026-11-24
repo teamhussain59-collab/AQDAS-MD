@@ -77,7 +77,7 @@
     },
     {
       "number": "********1013",
-      "state": "pairing",
+      "state": "linking",
       "autostatus": "off"
     },
     {
@@ -87,7 +87,6 @@
     }
   ],
   "guest_log": [
-    "05:26:27 *********9787: connection close 403 Connection Failure",
     "05:26:59 *********9787: connection close 403 Connection Failure",
     "05:27:31 *********9787: connection close 403 Connection Failure",
     "05:27:46 ********1013: code bana",
@@ -106,7 +105,8 @@
     "05:31:55 ********1013: code bana",
     "05:32:25 *********9787: connection close 403 Connection Failure",
     "05:32:58 *********9787: connection close 403 Connection Failure",
-    "05:33:00 ********6254: code bana"
+    "05:33:00 ********6254: code bana",
+    "05:33:14 ********1013: LINKING (phone ne code accept kiya)"
   ],
   "guest_frames": {
     "number": "********6254",
@@ -134,6 +134,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-24T05:33:04.201Z",
-  "uptime_s": 6788
+  "updated_at": "2026-11-24T05:33:18.581Z",
+  "uptime_s": 6803
 }
