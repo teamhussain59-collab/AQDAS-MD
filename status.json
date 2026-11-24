@@ -68,11 +68,10 @@
     {
       "number": "********4254",
       "state": "connected",
-      "autostatus": "off"
+      "autostatus": "view+react"
     }
   ],
   "guest_log": [
-    "12:13:50 ********6325: status ***********5165: seen ✅, react 😳 ✅",
     "12:15:24 ********4254: status ***********5766: seen ✅, react 🅰️ ✅",
     "12:16:09 ********4254: status ***********5766: seen ✅, react 🅰️ ✅",
     "12:22:08 ********1254: status ***********4265: seen ✅, react 🅰️ ✅",
@@ -91,7 +90,8 @@
     "12:26:06 ********4254: connection close 515 Stream Errored (restart required)",
     "12:26:08 ********4254: CONNECTED ✅",
     "12:29:58 ********1254: status ***********1325: seen ✅, react 🅰️ ✅",
-    "12:30:41 ********6325: status **********0819: seen ✅, react 🙂 ✅"
+    "12:30:41 ********6325: status **********0819: seen ✅, react 🙂 ✅",
+    "12:33:38 ********4254: status **********6521: seen ✅, react 🅰️ ✅"
   ],
   "guest_frames": {
     "number": "********4254",
@@ -124,6 +124,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-24T12:33:11.280Z",
-  "uptime_s": 2526
+  "updated_at": "2026-11-24T12:33:42.457Z",
+  "uptime_s": 2557
 }
