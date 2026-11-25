@@ -6,6 +6,9 @@
   "number_masked": null,
   "run_id": "45655171486",
   "slots_max": "unlimited",
-  "updated_at": "2026-11-25T16:34:13.804Z",
-  "uptime_s": 7
+  "commands": 594,
+  "panel_url": "https://hybrid-dash-importance-carey.trycloudflare.com",
+  "panel_at": "2026-11-25T16:34:17.360Z",
+  "updated_at": "2026-11-25T16:34:17.387Z",
+  "uptime_s": 11
 }
