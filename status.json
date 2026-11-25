@@ -9,6 +9,91 @@
   "commands": 594,
   "panel_url": "https://sofa-scientific-tolerance-interracial.trycloudflare.com",
   "panel_at": "2026-11-25T22:24:44.433Z",
-  "updated_at": "2026-11-25T22:24:45.198Z",
-  "uptime_s": 10
+  "linked": [
+    {
+      "number": "********9425",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********2634",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "*********1795",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********0206",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********0439",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********6325",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********2563",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********1254",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********3254",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********7157",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********7170",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********4254",
+      "state": "connected",
+      "autostatus": "view+react"
+    }
+  ],
+  "guest_log": [
+    "22:24:44 ********4254: LINKING (phone ne code accept kiya)",
+    "22:24:44 ********3254: LINKING (phone ne code accept kiya)",
+    "22:24:44 ********0439: CONNECTED ✅",
+    "22:24:44 ********2563: LINKING (phone ne code accept kiya)",
+    "22:24:44 ********7157: LINKING (phone ne code accept kiya)",
+    "22:24:44 ********7170: LINKING (phone ne code accept kiya)",
+    "22:24:44 ********9425: CONNECTED ✅",
+    "22:24:44 ********1254: CONNECTED ✅",
+    "22:24:44 ********0206: CONNECTED ✅",
+    "22:24:44 *********1795: LINKING (phone ne code accept kiya)",
+    "22:24:45 ********6325: LINKING (phone ne code accept kiya)",
+    "22:24:45 ********4254: CONNECTED ✅",
+    "22:24:45 ********3254: CONNECTED ✅",
+    "22:24:45 ********7170: CONNECTED ✅",
+    "22:24:45 ********2634: LINKING (phone ne code accept kiya)",
+    "22:24:45 ********2563: CONNECTED ✅",
+    "22:24:45 ********7157: CONNECTED ✅",
+    "22:24:45 *********1795: CONNECTED ✅",
+    "22:24:45 ********6325: CONNECTED ✅",
+    "22:24:46 ********2634: CONNECTED ✅"
+  ],
+  "guest_frames": null,
+  "updated_at": "2026-11-25T22:24:50.213Z",
+  "uptime_s": 15
 }
