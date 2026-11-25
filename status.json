@@ -9,6 +9,91 @@
   "commands": 594,
   "panel_url": "https://builds-tract-tuner-commons.trycloudflare.com",
   "panel_at": "2026-11-25T07:38:36.735Z",
-  "updated_at": "2026-11-25T07:38:36.735Z",
-  "uptime_s": 9
+  "linked": [
+    {
+      "number": "********9425",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********2634",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "*********1795",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********0206",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********0439",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********6325",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********2563",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********1254",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********3254",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********7157",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********7170",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********4254",
+      "state": "connected",
+      "autostatus": "view+react"
+    }
+  ],
+  "guest_log": [
+    "07:38:34 ********7170: LINKING (phone ne code accept kiya)",
+    "07:38:34 ********4254: CONNECTED ✅",
+    "07:38:34 ********0206: CONNECTED ✅",
+    "07:38:34 ********1254: LINKING (phone ne code accept kiya)",
+    "07:38:34 ********9425: LINKING (phone ne code accept kiya)",
+    "07:38:34 ********0439: CONNECTED ✅",
+    "07:38:34 ********2634: CONNECTED ✅",
+    "07:38:34 ********1254: CONNECTED ✅",
+    "07:38:35 ********3254: LINKING (phone ne code accept kiya)",
+    "07:38:35 ********2563: LINKING (phone ne code accept kiya)",
+    "07:38:35 ********7170: CONNECTED ✅",
+    "07:38:35 ********9425: CONNECTED ✅",
+    "07:38:35 *********1795: LINKING (phone ne code accept kiya)",
+    "07:38:35 ********7157: LINKING (phone ne code accept kiya)",
+    "07:38:35 ********6325: LINKING (phone ne code accept kiya)",
+    "07:38:35 ********3254: CONNECTED ✅",
+    "07:38:35 ********2563: CONNECTED ✅",
+    "07:38:35 *********1795: CONNECTED ✅",
+    "07:38:36 ********6325: CONNECTED ✅",
+    "07:38:36 ********7157: CONNECTED ✅"
+  ],
+  "guest_frames": null,
+  "updated_at": "2026-11-25T07:38:40.039Z",
+  "uptime_s": 12
 }
