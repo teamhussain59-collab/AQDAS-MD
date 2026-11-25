@@ -72,7 +72,6 @@
     }
   ],
   "guest_log": [
-    "16:34:17 *********1795: LINKING (phone ne code accept kiya)",
     "16:34:17 ********0206: LINKING (phone ne code accept kiya)",
     "16:34:17 ********2563: LINKING (phone ne code accept kiya)",
     "16:34:17 ********2634: LINKING (phone ne code accept kiya)",
@@ -91,7 +90,8 @@
     "16:34:18 ********7170: CONNECTED ✅",
     "16:34:18 ********2634: CONNECTED ✅",
     "16:34:18 ********7157: CONNECTED ✅",
-    "16:34:18 ********6325: CONNECTED ✅"
+    "16:34:18 ********6325: CONNECTED ✅",
+    "16:35:16 ********4254: status ***********8151: seen ✅, react 🥰 ✅"
   ],
   "guest_frames": null,
   "mem": {
@@ -104,6 +104,6 @@
     "per_session_mb": 15,
     "room_for": 347
   },
-  "updated_at": "2026-11-25T16:35:13.806Z",
-  "uptime_s": 67
+  "updated_at": "2026-11-25T16:35:20.363Z",
+  "uptime_s": 73
 }
