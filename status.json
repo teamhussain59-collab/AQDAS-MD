@@ -72,26 +72,26 @@
     }
   ],
   "guest_log": [
-    "13:29:09 ********7157: CONNECTED ✅",
-    "13:29:10 ********6325: CONNECTED ✅",
-    "13:29:10 ********3254: CONNECTED ✅",
-    "13:29:58 ********4254: status ***********9024: seen ✅, react 🅰️ ✅",
-    "13:30:22 ********1254: status **********1022: seen ✅, react 🅰️ ✅",
-    "13:31:55 ********4254: status **********6724: seen ✅, react 🅰️ ✅",
-    "13:43:34 ********4254: status ***********6454: seen ✅, react 🅰️ ✅",
-    "13:44:17 ********4254: status ***********5513: seen ✅, react 🅰️ ✅",
-    "13:47:56 ********4254: status **********6724: seen ✅, react 🅰️ ✅",
-    "13:58:51 ********3254: status ***********7276: seen ✅, react 🅰️ ✅",
-    "13:58:51 ********1254: status ***********7276: seen ✅, react 🅰️ ✅",
-    "13:58:57 ********4254: status ***********0738: seen ✅, react 🅰️ ✅",
-    "14:08:43 ********3254: status **********5793: seen ✅, react 🅰️ ✅",
-    "14:08:44 ********1254: status **********5793: seen ✅, react 🅰️ ✅",
     "14:08:48 ********3254: status **********5793: seen ✅, react 🅰️ ✅",
     "14:08:48 ********1254: status **********5793: seen ✅, react 🅰️ ✅",
     "14:08:49 ********1254: status **********5793: seen ✅, react 🅰️ ✅",
     "14:08:49 ********3254: status **********5793: seen ✅, react 🅰️ ✅",
     "14:09:46 ********6325: status ***********7001: seen ✅, react 🙂 ✅",
-    "14:14:24 ********4254: status ***********1139: seen ✅, react 🅰️ ✅"
+    "14:14:24 ********4254: status ***********1139: seen ✅, react 🅰️ ✅",
+    "14:19:09 ********7170: connection close 500 Stream Errored (ack)",
+    "14:19:09 ********6325: connection close 500 Stream Errored (ack)",
+    "14:19:09 ********9425: connection close 500 Stream Errored (ack)",
+    "14:19:09 ********2563: connection close 500 Stream Errored (ack)",
+    "14:19:09 ********7157: connection close 500 Stream Errored (ack)",
+    "14:19:09 ********0206: connection close 500 Stream Errored (ack)",
+    "14:19:10 ********2634: connection close 500 Stream Errored (ack)",
+    "14:19:11 ********7170: CONNECTED ✅",
+    "14:19:12 ********2563: CONNECTED ✅",
+    "14:19:12 ********6325: CONNECTED ✅",
+    "14:19:13 ********9425: CONNECTED ✅",
+    "14:19:13 ********0206: CONNECTED ✅",
+    "14:19:13 ********7157: CONNECTED ✅",
+    "14:19:14 ********2634: CONNECTED ✅"
   ],
   "guest_frames": null,
   "mem": {
@@ -112,6 +112,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-25T14:19:08.494Z",
-  "uptime_s": 3008
+  "updated_at": "2026-11-25T14:19:18.587Z",
+  "uptime_s": 3018
 }
