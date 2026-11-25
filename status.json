@@ -6,7 +6,7 @@
   "number_masked": null,
   "run_id": "45528257221",
   "slots_max": "unlimited",
-  "panel_url": null,
+  "panel_url": "https://available-forget-thumbzilla-invalid.trycloudflare.com",
   "commands": 594,
   "linked": [
     {
@@ -93,6 +93,7 @@
     "01:47:38 ********2634: CONNECTED ✅"
   ],
   "guest_frames": null,
-  "updated_at": "2026-11-25T01:47:42.099Z",
-  "uptime_s": 16
+  "panel_at": "2026-11-25T01:47:53.959Z",
+  "updated_at": "2026-11-25T01:47:53.959Z",
+  "uptime_s": 27
 }
