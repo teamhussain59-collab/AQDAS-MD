@@ -96,9 +96,9 @@
   "panel_at": "2026-11-25T01:47:53.959Z",
   "mem": {
     "sessions": 12,
-    "free_mb": 14750,
+    "free_mb": 14743,
     "total_mb": 15983,
-    "rss_mb": 291,
+    "rss_mb": 286,
     "heap_mb": 53,
     "heap_limit_mb": 4144,
     "per_session_mb": 15,
@@ -112,6 +112,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-25T04:16:17.437Z",
-  "uptime_s": 8931
+  "updated_at": "2026-11-25T04:17:33.767Z",
+  "uptime_s": 9007
 }
