@@ -72,8 +72,6 @@
     }
   ],
   "guest_log": [
-    "22:24:44 *********1795: LINKING (phone ne code accept kiya)",
-    "22:24:45 ********6325: LINKING (phone ne code accept kiya)",
     "22:24:45 ********4254: CONNECTED ✅",
     "22:24:45 ********3254: CONNECTED ✅",
     "22:24:45 ********7170: CONNECTED ✅",
@@ -91,7 +89,9 @@
     "22:45:41 ********6325: CONNECTED ✅",
     "22:45:44 ********7170: connection close 503 Stream Errored (unknown)",
     "22:45:48 ********7170: CONNECTED ✅",
-    "22:48:49 ********4254: status ***********5324: seen ✅, react 🥰 ✅"
+    "22:48:49 ********4254: status ***********5324: seen ✅, react 🥰 ✅",
+    "22:50:59 ********4254: connection close 503 Stream Errored (unknown)",
+    "22:51:02 ********4254: CONNECTED ✅"
   ],
   "guest_frames": null,
   "mem": {
@@ -112,6 +112,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-25T22:50:41.627Z",
-  "uptime_s": 1567
+  "updated_at": "2026-11-25T22:51:06.874Z",
+  "uptime_s": 1592
 }
