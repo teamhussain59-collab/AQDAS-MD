@@ -96,13 +96,13 @@
   "panel_at": "2026-11-26T13:06:51.054Z",
   "mem": {
     "sessions": 12,
-    "free_mb": 14667,
+    "free_mb": 14673,
     "total_mb": 15983,
-    "rss_mb": 363,
-    "heap_mb": 99,
+    "rss_mb": 355,
+    "heap_mb": 77,
     "heap_limit_mb": 4144,
     "per_session_mb": 15,
-    "room_for": 342
+    "room_for": 344
   },
   "channel": {
     "ok": true,
@@ -112,6 +112,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-26T15:36:30.597Z",
-  "uptime_s": 9008
+  "updated_at": "2026-11-26T15:36:31.668Z",
+  "uptime_s": 9009
 }
