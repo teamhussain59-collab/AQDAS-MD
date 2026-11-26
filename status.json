@@ -94,6 +94,16 @@
   ],
   "guest_frames": null,
   "panel_at": "2026-11-26T13:06:51.054Z",
-  "updated_at": "2026-11-26T13:06:51.055Z",
-  "uptime_s": 28
+  "mem": {
+    "sessions": 12,
+    "free_mb": 14881,
+    "total_mb": 15983,
+    "rss_mb": 196,
+    "heap_mb": 47,
+    "heap_limit_mb": 4144,
+    "per_session_mb": 15,
+    "room_for": 347
+  },
+  "updated_at": "2026-11-26T13:07:30.502Z",
+  "uptime_s": 68
 }
