@@ -9,6 +9,91 @@
   "commands": 594,
   "panel_url": "https://horses-color-deeply-basic.trycloudflare.com",
   "panel_at": "2026-11-26T07:16:02.371Z",
-  "updated_at": "2026-11-26T07:16:02.621Z",
-  "uptime_s": 10
+  "linked": [
+    {
+      "number": "********9425",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********2634",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "*********1795",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********0206",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********0439",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********6325",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********2563",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********1254",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********3254",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********7157",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********7170",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********4254",
+      "state": "connected",
+      "autostatus": "view+react"
+    }
+  ],
+  "guest_log": [
+    "07:16:02 ********1254: LINKING (phone ne code accept kiya)",
+    "07:16:02 ********6325: LINKING (phone ne code accept kiya)",
+    "07:16:02 ********7170: LINKING (phone ne code accept kiya)",
+    "07:16:02 ********4254: LINKING (phone ne code accept kiya)",
+    "07:16:02 ********2634: CONNECTED ✅",
+    "07:16:02 ********2563: LINKING (phone ne code accept kiya)",
+    "07:16:02 ********3254: LINKING (phone ne code accept kiya)",
+    "07:16:02 ********9425: LINKING (phone ne code accept kiya)",
+    "07:16:02 ********7170: CONNECTED ✅",
+    "07:16:02 ********1254: CONNECTED ✅",
+    "07:16:02 ********4254: CONNECTED ✅",
+    "07:16:02 ********2563: CONNECTED ✅",
+    "07:16:02 *********1795: CONNECTED ✅",
+    "07:16:02 ********7157: CONNECTED ✅",
+    "07:16:03 ********6325: CONNECTED ✅",
+    "07:16:03 ********9425: CONNECTED ✅",
+    "07:16:03 ********3254: CONNECTED ✅",
+    "07:16:05 ********4254: status ***********6705: seen ✅, react 🥰 ✅",
+    "07:16:05 ********1254: status ***********6705: seen ✅, react 🅰️ ✅",
+    "07:16:06 ********3254: status ***********6705: seen ✅, react 🅰️ ✅"
+  ],
+  "guest_frames": null,
+  "updated_at": "2026-11-26T07:16:10.300Z",
+  "uptime_s": 18
 }
