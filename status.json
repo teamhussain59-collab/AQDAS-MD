@@ -6,6 +6,8 @@
   "number_masked": null,
   "run_id": "45825850585",
   "slots_max": "unlimited",
-  "updated_at": "2026-11-26T13:06:30.499Z",
-  "uptime_s": 8
+  "panel_url": null,
+  "commands": 594,
+  "updated_at": "2026-11-26T13:06:34.305Z",
+  "uptime_s": 12
 }
