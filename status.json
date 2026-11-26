@@ -71,14 +71,6 @@
     }
   ],
   "guest_log": [
-    "13:06:33 ********6325: LINKING (phone ne code accept kiya)",
-    "13:06:34 ********7170: LINKING (phone ne code accept kiya)",
-    "13:06:34 *********1795: CONNECTED ✅",
-    "13:06:34 ********3254: LINKING (phone ne code accept kiya)",
-    "13:06:34 ********0439: LINKING (phone ne code accept kiya)",
-    "13:06:34 ********0206: CONNECTED ✅",
-    "13:06:34 ********7170: CONNECTED ✅",
-    "13:06:34 ********6325: CONNECTED ✅",
     "13:06:34 ********0439: CONNECTED ✅",
     "13:06:35 ********3254: CONNECTED ✅",
     "13:12:34 ********2634: status ***********1393: seen ✅, react ✨ ✅",
@@ -90,7 +82,15 @@
     "13:34:04 ********2634: status ***********8616: seen ✅, react ✨ ✅",
     "13:41:18 ********4254: status **********2520: seen ✅, react 🥰 ✅",
     "13:46:55 ********1254: status ***********4282: seen ✅, react 🅰️ ✅",
-    "13:48:32 ********2634: status **********1595: seen ✅, react ✨ ✅"
+    "13:48:32 ********2634: status **********1595: seen ✅, react ✨ ✅",
+    "13:56:34 ********7157: connection close 500 Stream Errored (ack)",
+    "13:56:35 ********2563: connection close 500 Stream Errored (ack)",
+    "13:56:35 ********2634: connection close 500 Stream Errored (ack)",
+    "13:56:35 ********7170: connection close 500 Stream Errored (ack)",
+    "13:56:37 ********7157: CONNECTED ✅",
+    "13:56:37 ********2563: CONNECTED ✅",
+    "13:56:37 ********7170: CONNECTED ✅",
+    "13:56:38 ********2634: CONNECTED ✅"
   ],
   "guest_frames": null,
   "panel_at": "2026-11-26T13:06:51.054Z",
@@ -112,6 +112,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-26T13:56:31.610Z",
-  "uptime_s": 3009
+  "updated_at": "2026-11-26T13:56:42.101Z",
+  "uptime_s": 3019
 }
