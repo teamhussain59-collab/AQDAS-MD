@@ -6,6 +6,9 @@
   "number_masked": null,
   "run_id": "45773699454",
   "slots_max": "unlimited",
-  "updated_at": "2026-11-26T07:15:58.813Z",
-  "uptime_s": 6
+  "commands": 594,
+  "panel_url": "https://horses-color-deeply-basic.trycloudflare.com",
+  "panel_at": "2026-11-26T07:16:02.371Z",
+  "updated_at": "2026-11-26T07:16:02.621Z",
+  "uptime_s": 10
 }
