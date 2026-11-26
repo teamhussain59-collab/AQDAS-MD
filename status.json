@@ -68,11 +68,6 @@
       "number": "********4254",
       "state": "connected",
       "autostatus": "view+react"
-    },
-    {
-      "number": "********4185",
-      "state": "connected",
-      "autostatus": "off"
     }
   ],
   "guest_log": [
@@ -97,20 +92,7 @@
     "15:22:12 ********4185: connection close 401 Stream Errored (conflict)",
     "15:22:12 ********4185: logged out"
   ],
-  "guest_frames": {
-    "number": "********4185",
-    "state": "connected",
-    "frames": [
-      "14:31:53 iq:set <pair-device>",
-      "14:31:53 iq:result <link_code_companion_reg[companion_hello]>",
-      "14:32:23 notification:link_code_companion_reg <link_code_companion_reg[primary_hello]>",
-      "14:32:23 iq:result",
-      "14:32:23 iq:result",
-      "14:32:25 iq:set <pair-success>",
-      "14:32:26 stream:error: code=515",
-      "14:32:26 xmlstreamend:"
-    ]
-  },
+  "guest_frames": null,
   "panel_at": "2026-11-26T13:06:51.054Z",
   "mem": {
     "sessions": 13,
@@ -130,6 +112,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-26T15:22:12.606Z",
-  "uptime_s": 8150
+  "updated_at": "2026-11-26T15:22:16.607Z",
+  "uptime_s": 8154
 }
