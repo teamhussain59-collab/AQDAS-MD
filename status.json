@@ -6,7 +6,7 @@
   "number_masked": null,
   "run_id": "45825850585",
   "slots_max": "unlimited",
-  "panel_url": null,
+  "panel_url": "https://hiv-vegetable-aka-eyes.trycloudflare.com",
   "commands": 594,
   "linked": [
     {
@@ -93,6 +93,7 @@
     "13:06:35 ********3254: CONNECTED ✅"
   ],
   "guest_frames": null,
-  "updated_at": "2026-11-26T13:06:39.187Z",
-  "uptime_s": 17
+  "panel_at": "2026-11-26T13:06:51.054Z",
+  "updated_at": "2026-11-26T13:06:51.055Z",
+  "uptime_s": 28
 }
