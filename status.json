@@ -72,7 +72,6 @@
     }
   ],
   "guest_log": [
-    "21:59:08 *********1795: CONNECTED ✅",
     "21:59:08 ********2634: CONNECTED ✅",
     "21:59:08 ********7170: LINKING (phone ne code accept kiya)",
     "21:59:08 ********4254: CONNECTED ✅",
@@ -91,7 +90,8 @@
     "21:59:26 ********2563: connection close 403 Connection Failure",
     "21:59:33 ********4254: status **********6724: seen ✅, react 🥰 ✅",
     "21:59:37 ********2563: connection close 403 Connection Failure",
-    "21:59:46 ********2563: connection close 403 Connection Failure"
+    "21:59:46 ********2563: connection close 403 Connection Failure",
+    "22:00:01 ********2563: connection close 403 Connection Failure"
   ],
   "guest_frames": null,
   "mem": {
@@ -104,6 +104,6 @@
     "per_session_mb": 15,
     "room_for": 347
   },
-  "updated_at": "2026-11-26T22:00:04.022Z",
-  "uptime_s": 66
+  "updated_at": "2026-11-26T22:00:05.234Z",
+  "uptime_s": 67
 }
