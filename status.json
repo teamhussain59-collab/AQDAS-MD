@@ -6,6 +6,9 @@
   "number_masked": null,
   "run_id": "46072219520",
   "slots_max": "unlimited",
-  "updated_at": "2026-11-27T21:46:53.551Z",
-  "uptime_s": 6
+  "commands": 594,
+  "panel_url": "https://philosophy-feeling-linux-inbox.trycloudflare.com",
+  "panel_at": "2026-11-27T21:46:57.797Z",
+  "updated_at": "2026-11-27T21:46:58.005Z",
+  "uptime_s": 10
 }
