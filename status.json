@@ -6,6 +6,9 @@
   "number_masked": null,
   "run_id": "45922053789",
   "slots_max": "unlimited",
-  "updated_at": "2026-11-27T01:21:41.440Z",
-  "uptime_s": 7
+  "commands": 594,
+  "panel_url": "https://vehicle-social-named-efforts.trycloudflare.com",
+  "panel_at": "2026-11-27T01:21:44.664Z",
+  "updated_at": "2026-11-27T01:21:45.213Z",
+  "uptime_s": 10
 }
