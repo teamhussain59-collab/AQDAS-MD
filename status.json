@@ -9,6 +9,91 @@
   "commands": 594,
   "panel_url": "https://button-benjamin-eliminate-express.trycloudflare.com",
   "panel_at": "2026-11-27T15:54:20.641Z",
-  "updated_at": "2026-11-27T15:54:21.002Z",
-  "uptime_s": 10
+  "linked": [
+    {
+      "number": "********9425",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********2634",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "*********1795",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********0206",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********0439",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********6325",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********2563",
+      "state": "restoring",
+      "autostatus": "off"
+    },
+    {
+      "number": "********1254",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********3254",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********7157",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********7170",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********4254",
+      "state": "connected",
+      "autostatus": "view+react"
+    }
+  ],
+  "guest_log": [
+    "15:54:19 ********0439: CONNECTED ✅",
+    "15:54:19 ********2634: LINKING (phone ne code accept kiya)",
+    "15:54:19 ********0206: LINKING (phone ne code accept kiya)",
+    "15:54:19 *********1795: LINKING (phone ne code accept kiya)",
+    "15:54:19 ********4254: LINKING (phone ne code accept kiya)",
+    "15:54:19 ********1254: CONNECTED ✅",
+    "15:54:19 ********3254: LINKING (phone ne code accept kiya)",
+    "15:54:19 ********7170: CONNECTED ✅",
+    "15:54:19 ********9425: LINKING (phone ne code accept kiya)",
+    "15:54:19 ********7157: LINKING (phone ne code accept kiya)",
+    "15:54:19 ********0206: CONNECTED ✅",
+    "15:54:19 ********4254: CONNECTED ✅",
+    "15:54:19 ********3254: CONNECTED ✅",
+    "15:54:19 *********1795: CONNECTED ✅",
+    "15:54:20 ********6325: LINKING (phone ne code accept kiya)",
+    "15:54:20 ********2634: CONNECTED ✅",
+    "15:54:20 ********9425: CONNECTED ✅",
+    "15:54:20 ********2563: connection close 403 Connection Failure",
+    "15:54:20 ********7157: CONNECTED ✅",
+    "15:54:20 ********6325: CONNECTED ✅"
+  ],
+  "guest_frames": null,
+  "updated_at": "2026-11-27T15:54:24.735Z",
+  "uptime_s": 14
 }
