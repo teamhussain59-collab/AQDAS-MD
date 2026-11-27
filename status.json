@@ -9,6 +9,91 @@
   "commands": 594,
   "panel_url": "https://philosophy-feeling-linux-inbox.trycloudflare.com",
   "panel_at": "2026-11-27T21:46:57.797Z",
-  "updated_at": "2026-11-27T21:46:58.005Z",
-  "uptime_s": 10
+  "linked": [
+    {
+      "number": "********9425",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********2634",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "*********1795",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********0206",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********0439",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********6325",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********2563",
+      "state": "restoring",
+      "autostatus": "off"
+    },
+    {
+      "number": "********1254",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********3254",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********7157",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********7170",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********4254",
+      "state": "connected",
+      "autostatus": "view+react"
+    }
+  ],
+  "guest_log": [
+    "21:46:57 ********0439: LINKING (phone ne code accept kiya)",
+    "21:46:57 ********1254: LINKING (phone ne code accept kiya)",
+    "21:46:57 ********2634: LINKING (phone ne code accept kiya)",
+    "21:46:57 ********4254: LINKING (phone ne code accept kiya)",
+    "21:46:57 ********0206: CONNECTED ✅",
+    "21:46:57 ********7157: CONNECTED ✅",
+    "21:46:57 ********0439: CONNECTED ✅",
+    "21:46:57 ********1254: CONNECTED ✅",
+    "21:46:57 *********1795: LINKING (phone ne code accept kiya)",
+    "21:46:57 ********3254: LINKING (phone ne code accept kiya)",
+    "21:46:57 ********9425: LINKING (phone ne code accept kiya)",
+    "21:46:57 ********6325: LINKING (phone ne code accept kiya)",
+    "21:46:57 ********4254: CONNECTED ✅",
+    "21:46:57 ********2634: CONNECTED ✅",
+    "21:46:57 ********7170: LINKING (phone ne code accept kiya)",
+    "21:46:58 *********1795: CONNECTED ✅",
+    "21:46:58 ********3254: CONNECTED ✅",
+    "21:46:58 ********9425: CONNECTED ✅",
+    "21:46:58 ********6325: CONNECTED ✅",
+    "21:46:58 ********7170: CONNECTED ✅"
+  ],
+  "guest_frames": null,
+  "updated_at": "2026-11-27T21:47:02.479Z",
+  "uptime_s": 15
 }
