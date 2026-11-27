@@ -72,7 +72,6 @@
     }
   ],
   "guest_log": [
-    "14:44:58 ********0206: connection close 500 Stream Errored (ack)",
     "14:44:58 ********9425: connection close 500 Stream Errored (ack)",
     "14:44:59 ********7157: connection close 500 Stream Errored (ack)",
     "14:45:00 ********3254: connection close 500 Stream Errored (ack)",
@@ -91,7 +90,8 @@
     "14:47:24 ********2563: connection close 403 Connection Failure",
     "14:47:56 ********2563: connection close 403 Connection Failure",
     "14:48:03 ********1254: status ***********7025: seen ✅, react 🅰️ ✅",
-    "14:48:04 ********3254: status ***********7025: seen ✅, react 🅰️ ✅"
+    "14:48:04 ********3254: status ***********7025: seen ✅, react 🅰️ ✅",
+    "14:48:28 ********2563: connection close 403 Connection Failure"
   ],
   "guest_frames": null,
   "mem": {
@@ -112,6 +112,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-27T14:48:08.502Z",
-  "uptime_s": 6202
+  "updated_at": "2026-11-27T14:48:32.554Z",
+  "uptime_s": 6226
 }
