@@ -107,11 +107,11 @@
   "channel": {
     "ok": true,
     "name": "AQDAS TECH",
-    "latest_post": 110,
+    "latest_post": null,
     "auto": true,
     "opted_in": 3,
-    "fetch": "updates err channel posts timeout | messages:messages:10"
+    "fetch": "updates err channel posts timeout | messages err Connection Closed"
   },
-  "updated_at": "2026-11-27T15:35:11.594Z",
-  "uptime_s": 9025
+  "updated_at": "2026-11-27T15:35:14.502Z",
+  "uptime_s": 9028
 }
