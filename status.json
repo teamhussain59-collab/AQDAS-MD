@@ -9,6 +9,91 @@
   "commands": 594,
   "panel_url": "https://charming-jimmy-suspension-regularly.trycloudflare.com",
   "panel_at": "2026-11-27T07:14:29.211Z",
-  "updated_at": "2026-11-27T07:14:29.364Z",
-  "uptime_s": 10
+  "linked": [
+    {
+      "number": "********9425",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********2634",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "*********1795",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********0206",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********0439",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********6325",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********2563",
+      "state": "restoring",
+      "autostatus": "off"
+    },
+    {
+      "number": "********1254",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********3254",
+      "state": "connected",
+      "autostatus": "view+react"
+    },
+    {
+      "number": "********7157",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********7170",
+      "state": "connected",
+      "autostatus": "off"
+    },
+    {
+      "number": "********4254",
+      "state": "connected",
+      "autostatus": "view+react"
+    }
+  ],
+  "guest_log": [
+    "07:14:29 ********4254: LINKING (phone ne code accept kiya)",
+    "07:14:29 ********0439: LINKING (phone ne code accept kiya)",
+    "07:14:29 ********2634: LINKING (phone ne code accept kiya)",
+    "07:14:29 ********3254: LINKING (phone ne code accept kiya)",
+    "07:14:29 ********7170: LINKING (phone ne code accept kiya)",
+    "07:14:29 *********1795: CONNECTED ✅",
+    "07:14:29 ********0206: CONNECTED ✅",
+    "07:14:29 ********9425: CONNECTED ✅",
+    "07:14:29 ********1254: CONNECTED ✅",
+    "07:14:29 ********0439: CONNECTED ✅",
+    "07:14:29 ********4254: CONNECTED ✅",
+    "07:14:30 ********2563: connection close 403 Connection Failure",
+    "07:14:30 ********7157: CONNECTED ✅",
+    "07:14:30 ********7170: CONNECTED ✅",
+    "07:14:30 ********2634: CONNECTED ✅",
+    "07:14:30 ********3254: CONNECTED ✅",
+    "07:14:32 ********4254: status ***********8938: seen ✅, react 🥰 ✅",
+    "07:14:33 ********4254: status **********2180: seen ✅, react 🥰 ✅",
+    "07:14:33 ********4254: status ***********9024: seen ✅, react 🥰 ✅",
+    "07:14:34 ********2563: connection close 403 Connection Failure"
+  ],
+  "guest_frames": null,
+  "updated_at": "2026-11-27T07:14:38.021Z",
+  "uptime_s": 18
 }
