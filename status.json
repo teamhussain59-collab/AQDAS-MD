@@ -96,10 +96,10 @@
   "guest_frames": null,
   "mem": {
     "sessions": 12,
-    "free_mb": 14875,
+    "free_mb": 14887,
     "total_mb": 15983,
-    "rss_mb": 182,
-    "heap_mb": 43,
+    "rss_mb": 188,
+    "heap_mb": 45,
     "heap_limit_mb": 4144,
     "per_session_mb": 15,
     "room_for": 347
@@ -112,6 +112,6 @@
     "opted_in": 3,
     "fetch": "updates err channel posts timeout | messages:messages:10"
   },
-  "updated_at": "2026-11-27T21:51:26.925Z",
-  "uptime_s": 279
+  "updated_at": "2026-11-27T21:51:53.554Z",
+  "uptime_s": 306
 }
