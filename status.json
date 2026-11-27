@@ -72,7 +72,6 @@
     }
   ],
   "guest_log": [
-    "07:14:29 *********1795: CONNECTED ✅",
     "07:14:29 ********0206: CONNECTED ✅",
     "07:14:29 ********9425: CONNECTED ✅",
     "07:14:29 ********1254: CONNECTED ✅",
@@ -91,7 +90,8 @@
     "07:14:46 ********2563: connection close 403 Connection Failure",
     "07:14:55 ********2563: connection close 403 Connection Failure",
     "07:15:08 ********2563: connection close 403 Connection Failure",
-    "07:15:25 ********2563: connection close 403 Connection Failure"
+    "07:15:25 ********2563: connection close 403 Connection Failure",
+    "07:15:42 ********2563: connection close 403 Connection Failure"
   ],
   "guest_frames": null,
   "mem": {
@@ -104,6 +104,6 @@
     "per_session_mb": 15,
     "room_for": 346
   },
-  "updated_at": "2026-11-27T07:15:31.043Z",
-  "uptime_s": 71
+  "updated_at": "2026-11-27T07:15:46.569Z",
+  "uptime_s": 87
 }
