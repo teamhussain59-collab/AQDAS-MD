@@ -6,6 +6,9 @@
   "number_masked": null,
   "run_id": "46118004238",
   "slots_max": "unlimited",
-  "updated_at": "2026-11-28T06:44:52.972Z",
-  "uptime_s": 5
+  "commands": 594,
+  "panel_url": "https://twist-fishing-barcelona-hearing.trycloudflare.com",
+  "panel_at": "2026-11-28T06:44:55.921Z",
+  "updated_at": "2026-11-28T06:44:56.817Z",
+  "uptime_s": 9
 }
