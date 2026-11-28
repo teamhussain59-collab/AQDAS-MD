@@ -72,7 +72,6 @@
     }
   ],
   "guest_log": [
-    "00:54:30 ********9425: CONNECTED ✅",
     "00:54:30 ********7170: CONNECTED ✅",
     "00:54:30 ********2563: connection close 403 Connection Failure",
     "00:54:30 ********1254: CONNECTED ✅",
@@ -91,9 +90,10 @@
     "00:54:36 ********2563: connection close 403 Connection Failure",
     "00:54:44 ********2563: connection close 403 Connection Failure",
     "00:54:56 ********2563: connection close 403 Connection Failure",
-    "00:55:04 ********2563: connection close 403 Connection Failure"
+    "00:55:04 ********2563: connection close 403 Connection Failure",
+    "00:55:19 ********2563: connection close 403 Connection Failure"
   ],
   "guest_frames": null,
-  "updated_at": "2026-11-28T00:55:08.525Z",
-  "uptime_s": 47
+  "updated_at": "2026-11-28T00:55:23.249Z",
+  "uptime_s": 62
 }
