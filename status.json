@@ -99,6 +99,14 @@
     "per_session_mb": 15,
     "room_for": 347
   },
-  "updated_at": "2026-11-28T12:36:35.437Z",
-  "uptime_s": 83
+  "channel": {
+    "ok": true,
+    "name": "AQDAS TECH",
+    "latest_post": 110,
+    "auto": true,
+    "opted_in": 2,
+    "fetch": "updates err channel posts timeout | messages:messages:10"
+  },
+  "updated_at": "2026-11-28T12:36:40.565Z",
+  "uptime_s": 88
 }
